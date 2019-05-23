@@ -9,7 +9,7 @@
 		<status>READY</status>
 		<type>VULNERABILITY</type>
 		<tag>owasp-a6</tag>
-		<tag>cwe-311</tag>		
+		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
