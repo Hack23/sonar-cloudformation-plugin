@@ -1,0 +1,49 @@
+language: java
+sudo: true
+install: true
+addons:
+  sonarcloud:
+    organization: "hack23"
+    github_token: "$GITHUB_TOKEN"
+  apt:
+    packages:
+      - graphviz
+      - locales
+      - tzdata
+      - ca-certificates-java
+      - ca-certificates
+      - wget
+
+jdk:
+  - openjdk8
+
+env:
+  global:
+    - JAVA_HOME=/home/travis/openjdk8
+    
+cache:
+  directories:
+  - $HOME/.m2
+
+before_script:
+  - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
+  - export DEBIAN_FRONTEND=noninteractive
+  - sudo rm /etc/localtime
+  - sudo ln -s /usr/share/zoneinfo/Europe/Stockholm /etc/localtime 
+  - sudo dpkg-reconfigure -f noninteractive tzdata 
+  - sudo echo 'LANG=\"en_US.UTF-8\"' | sudo tee --append /etc/default/locale
+  - sudo locale-gen en_US.UTF-8 en_GB.UTF-8 sv_SE.UTF-8 
+  - sudo dpkg-reconfigure --frontend=noninteractive locales
+
+script:
+  - wget http://apache.mirrors.spacedump.net/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+  - tar xzvf apache-maven-3.6.1-bin.tar.gz
+  - export PATH=`pwd`/apache-maven-3.6.1/bin:$PATH
+  - mvn -v
+  - export PATH=$JAVA_HOME/bin:$PATH
+  - mvn clean install
+ 
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
+  - fossa init
+  - fossa analyze
