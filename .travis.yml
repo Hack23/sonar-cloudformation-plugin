@@ -10,23 +10,18 @@ addons:
       - graphviz
       - locales
       - tzdata
-      - ca-certificates-java
-      - ca-certificates
-      - wget
 
 jdk:
   - openjdk8
 
 env:
   global:
-    - JAVA_HOME=/home/travis/openjdk8
     
 cache:
   directories:
   - $HOME/.m2
 
 before_script:
-  - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
   - export DEBIAN_FRONTEND=noninteractive
   - sudo rm /etc/localtime
   - sudo ln -s /usr/share/zoneinfo/Europe/Stockholm /etc/localtime 
@@ -40,10 +35,6 @@ script:
   - tar xzvf apache-maven-3.6.1-bin.tar.gz
   - export PATH=`pwd`/apache-maven-3.6.1/bin:$PATH
   - mvn -v
-  - export PATH=$JAVA_HOME/bin:$PATH
   - mvn clean install
  
 after_success:
-  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
-  - fossa init
-  - fossa analyze
