@@ -762,13 +762,11 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
-W31 S3 Bucket likely should not have a public read acl
 	<rule>
-		<key>W1</key>
-		<name>Specifying credentials in the template itself is probably not the safest thing</name>
-		<internalKey>W1</internalKey>
-		<description>Specifying credentials in the template itself is probably not the safest thing</description>
+		<key>W31</key>
+		<name>S3 Bucket likely should not have a public read acl</name>
+		<internalKey>W31</internalKey>
+		<description>S3 Bucket likely should not have a public read acl</description>
 		<severity>MAJOR</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
