@@ -1,7 +1,7 @@
 # sonarqube-cloudformation-plugin
 Cloudformation template rules (cgn-nag,...)
 
-[![license](https://img.shields.io/github/license/Hack23/sonar-cloudformation-plugin.svg)](https://raw.githubusercontent.com/Hack23/sonarqube-cloudformation-plugin/master/LICENSE.txt)
+[![license](https://img.shields.io/github/license/Hack23/sonar-cloudformation-plugin.svg)](https://github.com/Hack23/sonarqube-cloudformation-plugin/raw/master/LICENSE)
 [![Jenkins](https://img.shields.io/jenkins/s/https://www.hack23.com/jenkins/view/Tools/job/sonarqube-cloudformation-plugin.svg)](https://www.hack23.com/jenkins/view/Tools/job/sonarqube-cloudformation-plugin/)
 [![Jenkins tests](https://img.shields.io/jenkins/t/https://www.hack23.com/jenkins/view/Tools/job/sonarqube-cloudformation-plugin.svg)](https://www.hack23.com/jenkins/view/Tools/job/sonarqube-cloudformation-plugin/lastCompletedBuild/testReport/)
 [![SonarQube Coverage](https://www.hack23.com/sonar/api/badges/measure?key=com.hack23.sonar%3Asonar-cloudformation-plugin&metric=coverage)](https://www.hack23.com/sonar/component_measures/domain/Coverage?id=com.hack23.sonar%3Asonar-cloudformation-plugin)
