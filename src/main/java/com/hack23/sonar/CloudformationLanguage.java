@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package com.hack23.sonar;
 
 import java.util.ArrayList;
@@ -7,19 +10,36 @@ import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.resources.AbstractLanguage;
 
+/**
+ * The Class CloudformationLanguage.
+ */
 public class CloudformationLanguage extends AbstractLanguage {
 
-	  public static final String NAME = "Cloudformation";
-	  public static final String KEY = "cfn";
+	  /** The Constant NAME. */
+  	public static final String NAME = "Cloudformation";
+	  
+  	/** The Constant KEY. */
+  	public static final String KEY = "cfn";
 
-	  private final Configuration config;
+	  /** The config. */
+  	private final Configuration config;
 
-	  public CloudformationLanguage(Configuration config) {
+	  /**
+  	 * Instantiates a new cloudformation language.
+  	 *
+  	 * @param config the config
+  	 */
+  	public CloudformationLanguage(Configuration config) {
 	    super(KEY, NAME);
 	    this.config = config;
 	  }
 
-	  @Override
+	  /**
+  	 * Gets the file suffixes.
+  	 *
+  	 * @return the file suffixes
+  	 */
+  	@Override
 	  public String[] getFileSuffixes() {
 	    String[] suffixes = filterEmptyStrings(config.getStringArray(CloudformationProperties.FILE_SUFFIXES_KEY));
 	    if (suffixes.length == 0) {
@@ -28,7 +48,13 @@ public class CloudformationLanguage extends AbstractLanguage {
 	    return suffixes;
 	  }
 
-	  private String[] filterEmptyStrings(String[] stringArray) {
+	  /**
+  	 * Filter empty strings.
+  	 *
+  	 * @param stringArray the string array
+  	 * @return the string[]
+  	 */
+  	private String[] filterEmptyStrings(String[] stringArray) {
 	    List<String> nonEmptyStrings = new ArrayList<String>();
 	    for (String string : stringArray) {
 	      if (StringUtils.isNotBlank(string.trim())) {

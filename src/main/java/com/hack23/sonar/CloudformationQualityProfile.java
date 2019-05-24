@@ -1,10 +1,21 @@
+/*
+ * 
+ */
 package com.hack23.sonar;
 
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 
+/**
+ * The Class CloudformationQualityProfile.
+ */
 public class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
 
-	  @Override
+	  /**
+  	 * Define.
+  	 *
+  	 * @param context the context
+  	 */
+  	@Override
 	  public void define(Context context) {
 	    NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Cloudformation Rules", CloudformationLanguage.KEY);
 	    profile.setDefault(true);
