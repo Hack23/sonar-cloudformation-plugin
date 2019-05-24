@@ -97,22 +97,192 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	<rule>
+		<key>F8</key>
+		<name>SNS Topic policy should not allow Allow+NotPrincipal</name>
+		<internalKey>F8</internalKey>
+		<description>SNS Topic policy should not allow Allow+NotPrincipal</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>     
+	<rule>
+		<key>F9</key>
+		<name>S3 Bucket policy should not allow Allow+NotPrincipal</name>
+		<internalKey>F9</internalKey>
+		<description>S3 Bucket policy should not allow Allow+NotPrincipal</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F10</key>
+		<name>IAM user should not have any inline policies.  Should be centralized Policy object on group</name>
+		<internalKey>F10</internalKey>
+		<description>IAM user should not have any inline policies. Should be centralized Policy object on group</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F11</key>
+		<name>IAM policy should not apply directly to users.  Should be on group</name>
+		<internalKey>F11</internalKey>
+		<description>IAM policy should not apply directly to users.  Should be on group</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F12</key>
+		<name>IAM managed policy should not apply directly to users.  Should be on group</name>
+		<internalKey>F12</internalKey>
+		<description>IAM managed policy should not apply directly to users.  Should be on group</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F13</key>
+		<name>Lambda permission principal should not be wildcard</name>
+		<internalKey>F13</internalKey>
+		<description>Lambda permission principal should not be wildcard</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F14</key>
+		<name>S3 Bucket should not have a public read-write acl</name>
+		<internalKey>F14</internalKey>
+		<description>S3 Bucket should not have a public read-write acl</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F15</key>
+		<name>S3 Bucket policy should not allow * action</name>
+		<internalKey>F15</internalKey>
+		<description>S3 Bucket policy should not allow * action</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F16</key>
+		<name>S3 Bucket policy should not allow * principal</name>
+		<internalKey>F16</internalKey>
+		<description>S3 Bucket policy should not allow * principal</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F18</key>
+		<name>SNS topic policy should not allow * principal</name>
+		<internalKey>F18</internalKey>
+		<description>SNS topic policy should not allow * principal</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F20</key>
+		<name>SQS Queue policy should not allow * action</name>
+		<internalKey>F2+</internalKey>
+		<description>SQS Queue policy should not allow * action</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F21</key>
+		<name>SQS Queue policy should not allow * principal</name>
+		<internalKey>F21</internalKey>
+		<description>SQS Queue policy should not allow * principal</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F22</key>
+		<name>RDS instance should not be publicly accessible</name>
+		<internalKey>F22</internalKey>
+		<description>RDS instance should not be publicly accessible</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+
 
      <!-- 
 Failing violations
-F8 SNS Topic policy should not allow Allow+NotPrincipal
-F9 S3 Bucket policy should not allow Allow+NotPrincipal
-F10 IAM user should not have any inline policies.  Should be centralized Policy object on group
-F11 IAM policy should not apply directly to users.  Should be on group
-F12 IAM managed policy should not apply directly to users.  Should be on group
-F13 Lambda permission principal should not be wildcard
-F14 S3 Bucket should not have a public read-write acl
-F15 S3 Bucket policy should not allow * action
-F16 S3 Bucket policy should not allow * principal
-F18 SNS topic policy should not allow * principal
-F20 SQS Queue policy should not allow * action
-F21 SQS Queue policy should not allow * principal
-F22 RDS instance should not be publicly accessible
 
 F23 RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended
 F24 ElastiCache ReplicationGroup should have encryption enabled for in transit
@@ -126,9 +296,6 @@ F31 DirectoryService::SimpleAD should use a parameter for password, with NoEcho
 F665 WebAcl DefaultAction should not be ALLOW
 F1000 Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration
 F2000 User is not assigned to a group
-
-
-
 
 
      
@@ -159,8 +326,7 @@ W29 Security Groups found egress with port range instead of just a single port
 W31 S3 Bucket likely should not have a public read acl
 W32 CodeBuild project should specify an EncryptionKey value
 W33 EC2 Subnet should not have MapPublicIpOnLaunch set to true
-W34 Batch Job Definition Container Properties should not have Privileged set to true     
-     
+W34 Batch Job Definition Container Properties should not have Privileged set to true          
       -->
      
 </cloudformation-rules>
