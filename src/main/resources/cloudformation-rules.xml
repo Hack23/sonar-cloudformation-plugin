@@ -377,46 +377,447 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	<rule>
+		<key>F23</key>
+		<name>RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</name>
+		<internalKey>F30</internalKey>
+		<description>RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F31</key>
+		<name>DirectoryService::SimpleAD should use a parameter for password, with NoEcho</name>
+		<internalKey>F31</internalKey>
+		<description>DirectoryService::SimpleAD should use a parameter for password, with NoEcho</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F665</key>
+		<name>WebAcl DefaultAction should not be ALLOW</name>
+		<internalKey>F665</internalKey>
+		<description>WebAcl DefaultAction should not be ALLOW</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F1000</key>
+		<name>Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration</name>
+		<internalKey>F1000</internalKey>
+		<description>Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F2000</key>
+		<name>User is not assigned to a group</name>
+		<internalKey>F2000</internalKey>
+		<description>User is not assigned to a group</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W1</key>
+		<name>Specifying credentials in the template itself is probably not the safest thing</name>
+		<internalKey>W1</internalKey>
+		<description>Specifying credentials in the template itself is probably not the safest thing</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W2</key>
+		<name>Security Groups found with cidr open to world on ingress.  This should never be true on instance.  Permissible on ELB</name>
+		<internalKey>W2</internalKey>
+		<description>Security Groups found with cidr open to world on ingress.  This should never be true on instance.  Permissible on ELB</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W5</key>
+		<name>Security Groups found with cidr open to world on egress</name>
+		<internalKey>W5</internalKey>
+		<description>Security Groups found with cidr open to world on egress</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W9</key>
+		<name>Security Groups found with ingress cidr that is not /32</name>
+		<internalKey>W9</internalKey>
+		<description>Security Groups found with ingress cidr that is not /32</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W10</key>
+		<name>CloudFront Distribution should enable access logging</name>
+		<internalKey>W10</internalKey>
+		<description>CloudFront Distribution should enable access logging</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a10</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W11</key>
+		<name>IAM role should not allow * resource on its permissions policy</name>
+		<internalKey>W11</internalKey>
+		<description>IAM role should not allow * resource on its permissions policy</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W12</key>
+		<name>IAM policy should not allow * resource</name>
+		<internalKey>W12</internalKey>
+		<description>IAM policy should not allow * resource</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W13</key>
+		<name>IAM managed policy should not allow * resource</name>
+		<internalKey>W13</internalKey>
+		<description>IAM managed policy should not allow * resource</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W14</key>
+		<name>IAM role should not allow Allow+NotAction on trust permissions</name>
+		<internalKey>W14</internalKey>
+		<description>IAM role should not allow Allow+NotAction on trust permissions</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W15</key>
+		<name>IAM role should not allow Allow+NotAction</name>
+		<internalKey>W15</internalKey>
+		<description>IAM role should not allow Allow+NotAction</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W16</key>
+		<name>IAM policy should not allow Allow+NotAction</name>
+		<internalKey>W16</internalKey>
+		<description>IAM policy should not allow Allow+NotAction</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W17</key>
+		<name>IAM managed policy should not allow Allow+NotAction</name>
+		<internalKey>W17</internalKey>
+		<description>IAM managed policy should not allow Allow+NotAction</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W18</key>
+		<name>SQS Queue policy should not allow Allow+NotAction</name>
+		<internalKey>W18</internalKey>
+		<description>SQS Queue policy should not allow Allow+NotAction</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W19</key>
+		<name>SNS Topic policy should not allow Allow+NotAction</name>
+		<internalKey>W19</internalKey>
+		<description>SNS Topic policy should not allow Allow+NotAction</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W20</key>
+		<name>S3 Bucket policy should not allow Allow+NotAction</name>
+		<internalKey>W20</internalKey>
+		<description>S3 Bucket policy should not allow Allow+NotAction</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W21</key>
+		<name>IAM role should not allow Allow+NotResource</name>
+		<internalKey>W21</internalKey>
+		<description>IAM role should not allow Allow+NotResource</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W22</key>
+		<name>IAM policy should not allow Allow+NotResource</name>
+		<internalKey>W22</internalKey>
+		<description>IAM policy should not allow Allow+NotResource</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W23</key>
+		<name>IAM managed policy should not allow Allow+NotResource</name>
+		<internalKey>W23</internalKey>
+		<description>IAM managed policy should not allow Allow+NotResource</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W24</key>
+		<name>Lambda permission beside InvokeFunction might not be what you want? Not sure!?</name>
+		<internalKey>W24</internalKey>
+		<description>Lambda permission beside InvokeFunction might not be what you want? Not sure!?</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W26</key>
+		<name>Elastic Load Balancer should have access logging enabled</name>
+		<internalKey>W26</internalKey>
+		<description>Elastic Load Balancer should have access logging enabled</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a10</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W27</key>
+		<name>Security Groups found ingress with port range instead of just a single port</name>
+		<internalKey>W27</internalKey>
+		<description>Security Groups found ingress with port range instead of just a single port</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W28</key>
+		<name>Resource found with an explicit name, this disallows updates that require replacement of this resource</name>
+		<internalKey>W28</internalKey>
+		<description>Resource found with an explicit name, this disallows updates that require replacement of this resource</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W29</key>
+		<name>Security Groups found egress with port range instead of just a single port</name>
+		<internalKey>W29</internalKey>
+		<description>Security Groups found egress with port range instead of just a single port</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 
-     <!-- 
-Failing violations
-
-F23 RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended
-F31 DirectoryService::SimpleAD should use a parameter for password, with NoEcho
-F665 WebAcl DefaultAction should not be ALLOW
-F1000 Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration
-F2000 User is not assigned to a group
-
-
-     
-WARNING VIOLATIONS:
-W1 Specifying credentials in the template itself is probably not the safest thing
-W2 Security Groups found with cidr open to world on ingress.  This should never be true on instance.  Permissible on ELB
-W5 Security Groups found with cidr open to world on egress
-W9 Security Groups found with ingress cidr that is not /32
-W10 CloudFront Distribution should enable access logging
-W11 IAM role should not allow * resource on its permissions policy
-W12 IAM policy should not allow * resource
-W13 IAM managed policy should not allow * resource
-W14 IAM role should not allow Allow+NotAction on trust permissions
-W15 IAM role should not allow Allow+NotAction
-W16 IAM policy should not allow Allow+NotAction
-W17 IAM managed policy should not allow Allow+NotAction
-W18 SQS Queue policy should not allow Allow+NotAction
-W19 SNS Topic policy should not allow Allow+NotAction
-W20 S3 Bucket policy should not allow Allow+NotAction
-W21 IAM role should not allow Allow+NotResource
-W22 IAM policy should not allow Allow+NotResource
-W23 IAM managed policy should not allow Allow+NotResource
-W24 Lambda permission beside InvokeFunction might not be what you want? Not sure!?
-W26 Elastic Load Balancer should have access logging enabled
-W27 Security Groups found ingress with port range instead of just a single port
-W28 Resource found with an explicit name, this disallows updates that require replacement of this resource
-W29 Security Groups found egress with port range instead of just a single port
 W31 S3 Bucket likely should not have a public read acl
-W32 CodeBuild project should specify an EncryptionKey value
-W33 EC2 Subnet should not have MapPublicIpOnLaunch set to true
-W34 Batch Job Definition Container Properties should not have Privileged set to true          
-      -->
-     
+	<rule>
+		<key>W1</key>
+		<name>Specifying credentials in the template itself is probably not the safest thing</name>
+		<internalKey>W1</internalKey>
+		<description>Specifying credentials in the template itself is probably not the safest thing</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W32</key>
+		<name>CodeBuild project should specify an EncryptionKey value</name>
+		<internalKey>W32</internalKey>
+		<description>CodeBuild project should specify an EncryptionKey value</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W33</key>
+		<name>EC2 Subnet should not have MapPublicIpOnLaunch set to true</name>
+		<internalKey>W33</internalKey>
+		<description>EC2 Subnet should not have MapPublicIpOnLaunch set to true</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W34</key>
+		<name>Batch Job Definition Container Properties should not have Privileged set to true</name>
+		<internalKey>W34</internalKey>
+		<description>Batch Job Definition Container Properties should not have Privileged set to true</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>     
 </cloudformation-rules>
