@@ -32,11 +32,11 @@ public class CloudformationQualityProfile implements BuiltInQualityProfilesDefin
   	 * @param context the context
   	 */
   	@Override
-	  public void define(Context context) {
-	    NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Cloudformation Rules", CloudformationLanguage.KEY);
+	  public void define(final Context context) {
+	    final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Cloudformation Rules", CloudformationLanguage.KEY);
 	    profile.setDefault(true);
 
-	    NewBuiltInActiveRule rule1 = profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F1");
+	    final NewBuiltInActiveRule rule1 = profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F1");
 
 	    profile.done();
 	  }

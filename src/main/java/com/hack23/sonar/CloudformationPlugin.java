@@ -32,7 +32,7 @@ public class CloudformationPlugin implements Plugin {
 	 * @param context the context
 	 */
 	@Override
-	public void define(Context context) {
+	public void define(final Context context) {
 		context.addExtensions(CloudformationLanguage.class, CloudformationProperties.class);
 		
 	}

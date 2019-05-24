@@ -37,12 +37,12 @@ public class CloudformationRulesDefinitionTest {
 	@Test
 	public void defineContextTest() {		
 
-		CloudformationRulesDefinition ruleDefinition = new CloudformationRulesDefinition();
+		final CloudformationRulesDefinition ruleDefinition = new CloudformationRulesDefinition();
 		
-		Context context = new Context();
+		final Context context = new Context();
 		ruleDefinition.define(context);
 
-		for (Rule rule : context.repositories().get(0).rules()) {
+		for (final Rule rule : context.repositories().get(0).rules()) {
 			assertFalse(rule.tags().isEmpty());
 		}
 	}

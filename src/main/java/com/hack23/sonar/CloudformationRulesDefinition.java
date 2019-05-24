@@ -64,20 +64,20 @@ public class CloudformationRulesDefinition implements RulesDefinition {
   	 * @param repositoryName the repository name
   	 * @param languageKey the language key
   	 */
-  	private void defineRulesForLanguage(Context context, String repositoryKey, String repositoryName, String languageKey) {
-	    NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
+  	private void defineRulesForLanguage(final Context context, final String repositoryKey, final String repositoryName, final String languageKey) {
+	    final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
 
-	    InputStream rulesXml = this.getClass().getResourceAsStream(rulesDefinitionFilePath());
+	    final InputStream rulesXml = this.getClass().getResourceAsStream(rulesDefinitionFilePath());
 	    if (rulesXml != null) {
-	      RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();
+	      final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();
 	      rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());
 	      
 	      
-	      for (NewRule newRule : repository.rules()) {
+	      for (final NewRule newRule : repository.rules()) {
 	      	
 	  		try {
 	  			final Set<String> tags = (Set<String>) FieldUtils.readField(newRule, "tags", true);
-	  			for (String tag : tags) {
+	  			for (final String tag : tags) {
 	  				
 	  				if (tag.contains("cweid-")) {
 	  					newRule.addCwe(Integer.parseInt(tag.replace("cweid-", "")));					
@@ -87,7 +87,7 @@ public class CloudformationRulesDefinition implements RulesDefinition {
 	  					newRule.addOwaspTop10(OwaspTop10.valueOf(tag.replace("owasp-", "").toUpperCase()));				
 	  				}
 	  			}
-	  		} catch (IllegalAccessException e) {
+	  		} catch (final IllegalAccessException e) {
 	  			//LOGGER.warn("Problem parsing security tags",e);
 	  		} 
 	      }
@@ -103,7 +103,7 @@ public class CloudformationRulesDefinition implements RulesDefinition {
   	 * @param context the context
   	 */
   	@Override
-	  public void define(Context context) {
+	  public void define(final Context context) {
 	    defineRulesForLanguage(context, REPO_KEY, REPO_NAME, CloudformationLanguage.KEY);
 	  }
 

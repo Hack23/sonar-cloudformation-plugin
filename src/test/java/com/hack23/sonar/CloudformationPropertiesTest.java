@@ -38,7 +38,7 @@ public class CloudformationPropertiesTest {
 	 */
 	@Test
 	public void getPropertiesTest() {
-		List<PropertyDefinition> properties = CloudformationProperties.getProperties();
+		final List<PropertyDefinition> properties = CloudformationProperties.getProperties();
 		assertEquals(1,properties.size());
 	}
 }

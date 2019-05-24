@@ -45,7 +45,7 @@ public class CloudformationLanguage extends AbstractLanguage {
   	 *
   	 * @param config the config
   	 */
-  	public CloudformationLanguage(Configuration config) {
+  	public CloudformationLanguage(final Configuration config) {
 	    super(KEY, NAME);
 	    this.config = config;
 	  }
@@ -70,9 +70,9 @@ public class CloudformationLanguage extends AbstractLanguage {
   	 * @param stringArray the string array
   	 * @return the string[]
   	 */
-  	private String[] filterEmptyStrings(String[] stringArray) {
-	    List<String> nonEmptyStrings = new ArrayList<String>();
-	    for (String string : stringArray) {
+  	private String[] filterEmptyStrings(final String[] stringArray) {
+	    final List<String> nonEmptyStrings = new ArrayList<String>();
+	    for (final String string : stringArray) {
 	      if (StringUtils.isNotBlank(string.trim())) {
 	        nonEmptyStrings.add(string.trim());
 	      }
