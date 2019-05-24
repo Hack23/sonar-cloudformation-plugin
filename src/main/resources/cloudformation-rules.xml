@@ -4,7 +4,7 @@
 		<name>EBS volumes should be encrypted</name>
 		<internalKey>F1</internalKey>
 		<description>EBS volume should have server-side encryption enabled</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -18,7 +18,7 @@
 		<name>IAM role should not allow * action on its trust policy</name>
 		<internalKey>F2</internalKey>
 		<description>IAM role should not allow * action on its trust policy</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -32,7 +32,7 @@
 		<name>IAM role should not allow * action on its permissions policy</name>
 		<internalKey>F3</internalKey>
 		<description>IAM role should not allow * action on its permissions policy</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -46,7 +46,7 @@
 		<name>IAM policy should not allow * action</name>
 		<internalKey>F4</internalKey>
 		<description>IAM policy should not allow * action</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -60,7 +60,7 @@
 		<name>IAM managed policy should not allow * action</name>
 		<internalKey>F5</internalKey>
 		<description>IAM managed policy should not allow * action</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -74,7 +74,7 @@
 		<name>IAM role should not allow Allow+NotPrincipal in its trust policy</name>
 		<internalKey>F6</internalKey>
 		<description>IAM role should not allow Allow+NotPrincipal in its trust policy</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -88,7 +88,7 @@
 		<name>SQS Queue policy should not allow Allow+NotPrincipal</name>
 		<internalKey>F7</internalKey>
 		<description>SQS Queue policy should not allow Allow+NotPrincipal</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -102,7 +102,7 @@
 		<name>SNS Topic policy should not allow Allow+NotPrincipal</name>
 		<internalKey>F8</internalKey>
 		<description>SNS Topic policy should not allow Allow+NotPrincipal</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -116,7 +116,7 @@
 		<name>S3 Bucket policy should not allow Allow+NotPrincipal</name>
 		<internalKey>F9</internalKey>
 		<description>S3 Bucket policy should not allow Allow+NotPrincipal</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -130,7 +130,7 @@
 		<name>IAM user should not have any inline policies.  Should be centralized Policy object on group</name>
 		<internalKey>F10</internalKey>
 		<description>IAM user should not have any inline policies. Should be centralized Policy object on group</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -144,7 +144,7 @@
 		<name>IAM policy should not apply directly to users.  Should be on group</name>
 		<internalKey>F11</internalKey>
 		<description>IAM policy should not apply directly to users.  Should be on group</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -158,7 +158,7 @@
 		<name>IAM managed policy should not apply directly to users.  Should be on group</name>
 		<internalKey>F12</internalKey>
 		<description>IAM managed policy should not apply directly to users.  Should be on group</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -172,7 +172,7 @@
 		<name>Lambda permission principal should not be wildcard</name>
 		<internalKey>F13</internalKey>
 		<description>Lambda permission principal should not be wildcard</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -186,7 +186,7 @@
 		<name>S3 Bucket should not have a public read-write acl</name>
 		<internalKey>F14</internalKey>
 		<description>S3 Bucket should not have a public read-write acl</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -200,7 +200,7 @@
 		<name>S3 Bucket policy should not allow * action</name>
 		<internalKey>F15</internalKey>
 		<description>S3 Bucket policy should not allow * action</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -214,7 +214,7 @@
 		<name>S3 Bucket policy should not allow * principal</name>
 		<internalKey>F16</internalKey>
 		<description>S3 Bucket policy should not allow * principal</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -228,7 +228,7 @@
 		<name>SNS topic policy should not allow * principal</name>
 		<internalKey>F18</internalKey>
 		<description>SNS topic policy should not allow * principal</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -242,7 +242,7 @@
 		<name>SQS Queue policy should not allow * action</name>
 		<internalKey>F2+</internalKey>
 		<description>SQS Queue policy should not allow * action</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -256,7 +256,7 @@
 		<name>SQS Queue policy should not allow * principal</name>
 		<internalKey>F21</internalKey>
 		<description>SQS Queue policy should not allow * principal</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -270,7 +270,7 @@
 		<name>RDS instance should not be publicly accessible</name>
 		<internalKey>F22</internalKey>
 		<description>RDS instance should not be publicly accessible</description>
-		<severity>Blocker</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
