@@ -4,7 +4,7 @@
 		<name>EBS volumes should be encrypted</name>
 		<internalKey>F1</internalKey>
 		<description>EBS volume should have server-side encryption enabled</description>
-		<severity>CRITICAL</severity>
+		<severity>Blocker</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -13,9 +13,126 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	<rule>
+		<key>F2</key>
+		<name>IAM role should not allow * action on its trust policy</name>
+		<internalKey>F2</internalKey>
+		<description>IAM role should not allow * action on its trust policy</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F3</key>
+		<name>IAM role should not allow * action on its permissions policy</name>
+		<internalKey>F3</internalKey>
+		<description>IAM role should not allow * action on its permissions policy</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F4</key>
+		<name>IAM policy should not allow * action</name>
+		<internalKey>F4</internalKey>
+		<description>IAM policy should not allow * action</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F5</key>
+		<name>IAM managed policy should not allow * action</name>
+		<internalKey>F5</internalKey>
+		<description>IAM managed policy should not allow * action</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F6</key>
+		<name>IAM role should not allow Allow+NotPrincipal in its trust policy</name>
+		<internalKey>F6</internalKey>
+		<description>IAM role should not allow Allow+NotPrincipal in its trust policy</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F7</key>
+		<name>SQS Queue policy should not allow Allow+NotPrincipal</name>
+		<internalKey>F7</internalKey>
+		<description>SQS Queue policy should not allow Allow+NotPrincipal</description>
+		<severity>Blocker</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+
      <!-- 
+Failing violations
+F8 SNS Topic policy should not allow Allow+NotPrincipal
+F9 S3 Bucket policy should not allow Allow+NotPrincipal
+F10 IAM user should not have any inline policies.  Should be centralized Policy object on group
+F11 IAM policy should not apply directly to users.  Should be on group
+F12 IAM managed policy should not apply directly to users.  Should be on group
+F13 Lambda permission principal should not be wildcard
+F14 S3 Bucket should not have a public read-write acl
+F15 S3 Bucket policy should not allow * action
+F16 S3 Bucket policy should not allow * principal
+F18 SNS topic policy should not allow * principal
+F20 SQS Queue policy should not allow * action
+F21 SQS Queue policy should not allow * principal
+F22 RDS instance should not be publicly accessible
+
+F23 RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended
+F24 ElastiCache ReplicationGroup should have encryption enabled for in transit
+F25 ElastiCache ReplicationGroup should have encryption enabled for at rest
+F26 RDS DBCluster should have StorageEncrypted enabled
+F27 EFS FileSystem should have encryption enabled
+F28 Redshift Cluster should have encryption enabled
+F29 Workspace should have encryption enabled
+F30 Neptune database cluster storage should have encryption enabled
+F31 DirectoryService::SimpleAD should use a parameter for password, with NoEcho
+F665 WebAcl DefaultAction should not be ALLOW
+F1000 Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration
+F2000 User is not assigned to a group
+
+
+
+
+
      
-     WARNING VIOLATIONS:
+WARNING VIOLATIONS:
 W1 Specifying credentials in the template itself is probably not the safest thing
 W2 Security Groups found with cidr open to world on ingress.  This should never be true on instance.  Permissible on ELB
 W5 Security Groups found with cidr open to world on egress
@@ -42,42 +159,7 @@ W29 Security Groups found egress with port range instead of just a single port
 W31 S3 Bucket likely should not have a public read acl
 W32 CodeBuild project should specify an EncryptionKey value
 W33 EC2 Subnet should not have MapPublicIpOnLaunch set to true
-W34 Batch Job Definition Container Properties should not have Privileged set to true
-
-FAILING VIOLATIONS:
-F1 EBS volume should have server-side encryption enabled
-F2 IAM role should not allow * action on its trust policy
-F3 IAM role should not allow * action on its permissions policy
-F4 IAM policy should not allow * action
-F5 IAM managed policy should not allow * action
-F6 IAM role should not allow Allow+NotPrincipal in its trust policy
-F7 SQS Queue policy should not allow Allow+NotPrincipal
-F8 SNS Topic policy should not allow Allow+NotPrincipal
-F9 S3 Bucket policy should not allow Allow+NotPrincipal
-F10 IAM user should not have any inline policies.  Should be centralized Policy object on group
-F11 IAM policy should not apply directly to users.  Should be on group
-F12 IAM managed policy should not apply directly to users.  Should be on group
-F13 Lambda permission principal should not be wildcard
-F14 S3 Bucket should not have a public read-write acl
-F15 S3 Bucket policy should not allow * action
-F16 S3 Bucket policy should not allow * principal
-F18 SNS topic policy should not allow * principal
-F20 SQS Queue policy should not allow * action
-F21 SQS Queue policy should not allow * principal
-F22 RDS instance should not be publicly accessible
-F23 RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended
-F24 ElastiCache ReplicationGroup should have encryption enabled for in transit
-F25 ElastiCache ReplicationGroup should have encryption enabled for at rest
-F26 RDS DBCluster should have StorageEncrypted enabled
-F27 EFS FileSystem should have encryption enabled
-F28 Redshift Cluster should have encryption enabled
-F29 Workspace should have encryption enabled
-F30 Neptune database cluster storage should have encryption enabled
-F31 DirectoryService::SimpleAD should use a parameter for password, with NoEcho
-F665 WebAcl DefaultAction should not be ALLOW
-F1000 Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration
-F2000 User is not assigned to a group
-     
+W34 Batch Job Definition Container Properties should not have Privileged set to true     
      
       -->
      
