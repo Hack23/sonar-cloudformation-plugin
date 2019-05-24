@@ -12,7 +12,7 @@
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-     </rule>
+     </rule>     
 	<rule>
 		<key>F2</key>
 		<name>IAM role should not allow * action on its trust policy</name>
@@ -279,19 +279,109 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
+	<rule>
+		<key>F24</key>
+		<name>ElastiCache ReplicationGroup should have encryption enabled for in transit</name>
+		<internalKey>F24</internalKey>
+		<description>ElastiCache ReplicationGroup should have encryption enabled for in transit</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F25</key>
+		<name>ElastiCache ReplicationGroup should have encryption enabled for at rest</name>
+		<internalKey>F25</internalKey>
+		<description>ElastiCache ReplicationGroup should have encryption enabled for at rest</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F26</key>
+		<name>RDS DBCluster should have StorageEncrypted enabled</name>
+		<internalKey>F26</internalKey>
+		<description>RDS DBCluster should have StorageEncrypted enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F27</key>
+		<name>EFS FileSystem should have encryption enabled</name>
+		<internalKey>F27</internalKey>
+		<description>EFS FileSystem should have encryption enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F28</key>
+		<name>Redshift Cluster should have encryption enabled</name>
+		<internalKey>F28</internalKey>
+		<description>Redshift Cluster should have encryption enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F29</key>
+		<name>Workspace should have encryption enabled</name>
+		<internalKey>F29</internalKey>
+		<description>Workspace should have encryption enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F30</key>
+		<name>Neptune database cluster storage should have encryption enabled</name>
+		<internalKey>F30</internalKey>
+		<description>Neptune database cluster storage should have encryption enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 
      <!-- 
 Failing violations
 
 F23 RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended
-F24 ElastiCache ReplicationGroup should have encryption enabled for in transit
-F25 ElastiCache ReplicationGroup should have encryption enabled for at rest
-F26 RDS DBCluster should have StorageEncrypted enabled
-F27 EFS FileSystem should have encryption enabled
-F28 Redshift Cluster should have encryption enabled
-F29 Workspace should have encryption enabled
-F30 Neptune database cluster storage should have encryption enabled
 F31 DirectoryService::SimpleAD should use a parameter for password, with NoEcho
 F665 WebAcl DefaultAction should not be ALLOW
 F1000 Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration
