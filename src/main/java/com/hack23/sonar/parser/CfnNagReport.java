@@ -31,7 +31,7 @@ public class CfnNagReport {
 		return failure_count;
 	}
 
-	public void setFailure_count(int failure_count) {
+	public void setFailure_count(final int failure_count) {
 		this.failure_count = failure_count;
 	}
 
@@ -39,7 +39,7 @@ public class CfnNagReport {
 		return violations;
 	}
 
-	public void setViolations(List<CfnNagViolation> violations) {
+	public void setViolations(final List<CfnNagViolation> violations) {
 		this.violations = violations;
 	}
 

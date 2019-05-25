@@ -19,45 +19,26 @@
  */
 package com.hack23.sonar.parser;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
 
-public class CfnNagViolation {
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
 
-	private String id;
-	private String type;
-	private String message;
-	private List<String> logical_resource_ids = new ArrayList<>();
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-	public String getId() {
-		return id;
-	}
+public class CfnNagReportReader {
 
-	public void setId(final String id) {
-		this.id = id;
-	}
+	private static final Logger LOGGER = Loggers.get(CfnNagReportReader.class);
 
-	public String getType() {
-		return type;
-	}
+	public CfnNagReport readReport(final InputStream input) {
+		final ObjectMapper objectMapper = new ObjectMapper();
 
-	public void setType(final String type) {
-		this.type = type;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(final String message) {
-		this.message = message;
-	}
-
-	public List<String> getLogical_resource_ids() {
-		return logical_resource_ids;
-	}
-
-	public void setLogical_resource_ids(final List<String> logical_resource_ids) {
-		this.logical_resource_ids = logical_resource_ids;
+		try {
+			return objectMapper.readValue(input, CfnNagReport.class);
+		} catch (final IOException e) {
+			LOGGER.error("Problem reading cfn nag report json", e);
+			return null;
+		}
 	}
 }

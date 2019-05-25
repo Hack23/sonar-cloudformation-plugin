@@ -26,16 +26,21 @@ import java.util.Set;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.api.server.rule.RulesDefinitionXmlLoader;
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
 
 /**
  * The Class CloudformationRulesDefinition.
  */
 public class CloudformationRulesDefinition implements RulesDefinition {
 
-	  /** The Constant PATH_TO_RULES_XML. */
+	private static final Logger LOGGER = Loggers.get(CloudformationRulesDefinition.class);
+
+	
+	/** The Constant PATH_TO_RULES_XML. */
   	private static final String PATH_TO_RULES_XML = "/cloudformation-rules.xml";
 
-	  /** The Constant KEY. */
+	/** The Constant KEY. */
   	protected static final String KEY = "repo";
 	  
   	/** The Constant NAME. */
@@ -88,7 +93,7 @@ public class CloudformationRulesDefinition implements RulesDefinition {
 	  				}
 	  			}
 	  		} catch (final IllegalAccessException e) {
-	  			//LOGGER.warn("Problem parsing security tags",e);
+	  			LOGGER.warn("Problem parsing security tags",e);
 	  		} 
 	      }
 	      }

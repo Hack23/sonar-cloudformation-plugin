@@ -19,45 +19,22 @@
  */
 package com.hack23.sonar.parser;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class CfnNagViolation {
+public class CfnNagReportReaderTest extends Assert {
 
-	private String id;
-	private String type;
-	private String message;
-	private List<String> logical_resource_ids = new ArrayList<>();
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(final String id) {
-		this.id = id;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(final String type) {
-		this.type = type;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(final String message) {
-		this.message = message;
-	}
-
-	public List<String> getLogical_resource_ids() {
-		return logical_resource_ids;
-	}
-
-	public void setLogical_resource_ids(final List<String> logical_resource_ids) {
-		this.logical_resource_ids = logical_resource_ids;
+	@Test
+	public void readReportTest() {
+		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(CfnNagReportReaderTest.class.getResourceAsStream("/cfn_nag_report.json"));
+		assertNotNull(cfnNagReport);
+		assertEquals(1,cfnNagReport.getFailure_count());
+		assertEquals(4,cfnNagReport.getViolations().size());
+		final CfnNagViolation nagViolation = cfnNagReport.getViolations().get(0);
+		assertEquals("W12",nagViolation.getId());
+		assertEquals("WARN",nagViolation.getType());
+		assertEquals("IAM policy should not allow * resource",nagViolation.getMessage());
+		assertEquals(4,nagViolation.getLogical_resource_ids().size());
+		
 	}
 }
