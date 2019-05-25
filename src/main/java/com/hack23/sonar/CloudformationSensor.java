@@ -48,9 +48,9 @@ public class CloudformationSensor implements Sensor {
 	private final PathResolver pathResolver;
 	private final FileSystem fileSystem;
 
-	public CloudformationSensor(final CfnNagReportReader cfnNagReportReader, final CloudformationSensorConfiguration configuration,final FileSystem fileSystem, final PathResolver pathResolver) {
+	public CloudformationSensor(final CloudformationSensorConfiguration configuration,final FileSystem fileSystem, final PathResolver pathResolver) {
 		super();
-		this.cfnNagReportReader = cfnNagReportReader;
+		this.cfnNagReportReader = new CfnNagReportReader();
 		this.configuration = configuration;
 		this.fileSystem = fileSystem;
 		this.pathResolver = pathResolver;

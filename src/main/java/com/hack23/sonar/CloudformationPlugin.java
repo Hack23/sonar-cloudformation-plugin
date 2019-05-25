@@ -21,8 +21,6 @@ package com.hack23.sonar;
 
 import org.sonar.api.Plugin;
 
-import com.hack23.sonar.parser.CfnNagReportReader;
-
 /**
  * The Class CloudformationPlugin.
  */
@@ -37,7 +35,7 @@ public class CloudformationPlugin implements Plugin {
 	public void define(final Context context) {
 		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,
 				CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
-				CloudformationSensorConfiguration.class,CfnNagReportReader.class);
+				CloudformationSensorConfiguration.class);
 
 	}
 
