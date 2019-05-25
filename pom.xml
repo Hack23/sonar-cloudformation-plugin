@@ -57,6 +57,7 @@
 		<license.mailto>james@hack23.com</license.mailto>
 		<license.title>Cloudformation Plugin for SonarQube</license.title>
 		<license.years>2019</license.years>
+		<sonar.cfn.nag.reportFiles>src/test/resources/cfn_nag_report.json</sonar.cfn.nag.reportFiles>
 	</properties>
 	<dependencies>
 		<dependency>
