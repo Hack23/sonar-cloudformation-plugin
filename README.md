@@ -16,3 +16,17 @@ Cloudformation template rules (cgn-nag,...)
 [![JDK-11 or higher](https://img.shields.io/badge/jdk-11-orange.svg)]
 [![JDK-12](https://img.shields.io/badge/jdk-12-orange.svg)]
 [![JDK-13](https://img.shields.io/badge/jdk-13-orange.svg)]
+
+
+# Support
+
+Sonarqube 7.7+ and currently only cfn_nag reports (https://github.com/stelligent/cfn_nag)
+
+# Howto
+
+Prepare cfn_nag reports running (cfn_nag src/main/config/template.yml > target/template.yml.nagreport)
+and set the sonar.cfn.nag.reportFile=target/template.yml.nagreport
+
+# Roadmap
+
+Support cfn-lint (https://github.com/aws-cloudformation/cfn-python-lint) 
