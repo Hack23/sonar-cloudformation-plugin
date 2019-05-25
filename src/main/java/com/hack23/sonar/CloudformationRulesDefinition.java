@@ -36,16 +36,16 @@ public class CloudformationRulesDefinition implements RulesDefinition {
   	private static final String PATH_TO_RULES_XML = "/cloudformation-rules.xml";
 
 	  /** The Constant KEY. */
-  	protected static final String KEY = "cfn";
+  	protected static final String KEY = "repo";
 	  
   	/** The Constant NAME. */
-  	protected static final String NAME = "Cloudformation";
+  	protected static final String NAME = "repository";
 
 	  /** The Constant REPO_KEY. */
   	public static final String REPO_KEY = CloudformationLanguage.KEY + "-" + KEY;
 	  
   	/** The Constant REPO_NAME. */
-  	protected static final String REPO_NAME = CloudformationLanguage.KEY + "-" + NAME;
+  	protected static final String REPO_NAME = CloudformationLanguage.NAME + "-" + NAME;
 
 	  /**
   	 * Rules definition file path.
