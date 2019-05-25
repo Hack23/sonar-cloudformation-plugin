@@ -19,16 +19,17 @@
  */
 package com.hack23.sonar;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Optional;
 
+import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
 import org.sonar.api.rule.RuleKey;
+import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.utils.log.Profiler;
@@ -44,11 +45,15 @@ public class CloudformationSensor implements Sensor {
 
 	private final CfnNagReportReader cfnNagReportReader;
 	private final CloudformationSensorConfiguration configuration;
+	private final PathResolver pathResolver;
+	private final FileSystem fileSystem;
 
-	public CloudformationSensor(final CfnNagReportReader cfnNagReportReader, final CloudformationSensorConfiguration configuration) {
+	public CloudformationSensor(final CfnNagReportReader cfnNagReportReader, final CloudformationSensorConfiguration configuration,final FileSystem fileSystem, final PathResolver pathResolver) {
 		super();
 		this.cfnNagReportReader = cfnNagReportReader;
 		this.configuration = configuration;
+		this.fileSystem = fileSystem;
+		this.pathResolver = pathResolver;
 	}
 
 	@Override
@@ -63,9 +68,11 @@ public class CloudformationSensor implements Sensor {
 		profiler.startInfo("Process cfn-nag reports");
 		try {
 			final Optional<String> reportFiles = configuration.getReportFiles();
-			if (reportFiles.isPresent() && new File(configuration.getReportFiles().get()).exists()) {
+
+			
+			if (reportFiles.isPresent() && pathResolver.relativeFile(fileSystem.baseDir(), configuration.getReportFiles().get()).exists()) {
 				final CfnNagReport cfnNagReport = cfnNagReportReader
-						.readReport(new FileInputStream(new File(configuration.getReportFiles().get())));
+						.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), configuration.getReportFiles().get())));
 				if (cfnNagReport != null) {
 					final List<CfnNagViolation> violations = cfnNagReport.getViolations();
 					for (final CfnNagViolation cfnNagViolation : violations) {
