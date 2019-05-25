@@ -36,11 +36,11 @@ public class CfnNagReport {
 	}
 
 	public List<CfnNagViolation> getViolations() {
-		return violations;
+		return new ArrayList<>(violations);
 	}
 
 	public void setViolations(final List<CfnNagViolation> violations) {
-		this.violations = violations;
+		this.violations = new ArrayList<>(violations);
 	}
 
 }

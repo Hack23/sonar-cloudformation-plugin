@@ -54,10 +54,10 @@ public class CfnNagViolation {
 	}
 
 	public List<String> getLogical_resource_ids() {
-		return logical_resource_ids;
+		return new ArrayList<>(logical_resource_ids);
 	}
 
 	public void setLogical_resource_ids(final List<String> logical_resource_ids) {
-		this.logical_resource_ids = logical_resource_ids;
+		this.logical_resource_ids = new ArrayList<>(logical_resource_ids);
 	}
 }
