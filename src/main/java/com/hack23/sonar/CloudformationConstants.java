@@ -19,23 +19,12 @@
  */
 package com.hack23.sonar;
 
-import org.sonar.api.Plugin;
+public final class CloudformationConstants {
 
-/**
- * The Class CloudformationPlugin.
- */
-public class CloudformationPlugin implements Plugin {
+	public static final String REPORT_FILES_PROPERTY = "sonar.cfn.nag.reportFiles";
+	public static final String REPORT_DIR_PROPERTY = "sonar.cfn.nag.reportDir";
 
-	/**
-	 * Define.
-	 *
-	 * @param context the context
-	 */
-	@Override
-	public void define(final Context context) {
-		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,
-				CloudformationProperties.class, CloudformationQualityProfile.class,CloudformationSensor.class);
-
+	private CloudformationConstants() {
 	}
 
 }

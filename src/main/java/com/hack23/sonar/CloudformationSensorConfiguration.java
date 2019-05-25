@@ -19,23 +19,25 @@
  */
 package com.hack23.sonar;
 
-import org.sonar.api.Plugin;
+import java.util.Optional;
 
-/**
- * The Class CloudformationPlugin.
- */
-public class CloudformationPlugin implements Plugin {
+import org.sonar.api.config.Configuration;
+import org.sonar.api.scanner.ScannerSide;
 
-	/**
-	 * Define.
-	 *
-	 * @param context the context
-	 */
-	@Override
-	public void define(final Context context) {
-		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,
-				CloudformationProperties.class, CloudformationQualityProfile.class,CloudformationSensor.class);
+@ScannerSide
+public class CloudformationSensorConfiguration {
 
+	private final Configuration configuration;
+
+	public CloudformationSensorConfiguration(final Configuration configuration) {
+		this.configuration = configuration;
 	}
 
+	public Optional<String> getReportDir() {
+		return this.configuration.get(CloudformationConstants.REPORT_DIR_PROPERTY);
+	}
+
+	public Optional<String> getReportFiles() {
+		return this.configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY);
+	}
 }
