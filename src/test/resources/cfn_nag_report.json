@@ -1,44 +1,47 @@
 {
-  "failure_count": 1,
-  "violations": [
-    {
-      "id": "W12",
-      "type": "WARN",
-      "message": "IAM policy should not allow * resource",
-      "logical_resource_ids": [
-        "CloudwatchLogsCloudformationPolicy",
-        "AccessLinksHandlerExecRolePolicy",
-        "S3DynamoDBSNSPolicy",
-        "IAMPolicy"
-      ]
-    },
-    {
-      "id": "F3",
-      "type": "FAIL",
-      "message": "IAM role should not allow * action on its permissions policy",
-      "logical_resource_ids": [
-        "RoleEventHandlerExecRole"
-      ]
-    },
-    {
-      "id": "W11",
-      "type": "WARN",
-      "message": "IAM role should not allow * resource on its permissions policy",
-      "logical_resource_ids": [
-        "RoleEventHandlerExecRole",
-        "SolutionHelperRole"
-      ]
-    },
-    {
-      "id": "W28",
-      "type": "WARN",
-      "message": "Resource found with an explicit name, this disallows updates that require replacement of this resource",
-      "logical_resource_ids": [
-        "CreateAccountsDDBTable",
-        "CreateRolesDDBTable",
-        "CreateAccountRolesDDBTable",
-        "RoleEventHandlerExecRole"
-      ]
-    }
-  ]
+	"failure_count": 1,
+	"violations": [
+		{
+			"id": "W12",
+			"type": "WARN",
+			"message": "IAM policy should not allow * resource",
+			"logical_resource_ids": [
+				"CloudwatchLogsCloudformationPolicy",
+				"AccessLinksHandlerExecRolePolicy",
+				"S3DynamoDBSNSPolicy",
+				"IAMPolicy"
+			],
+          "line_numbers": [
+            13
+          ]			
+		},
+		{
+			"id": "F3",
+			"type": "FAIL",
+			"message": "IAM role should not allow * action on its permissions policy",
+			"logical_resource_ids": [
+				"RoleEventHandlerExecRole"
+			]
+		},
+		{
+			"id": "W11",
+			"type": "WARN",
+			"message": "IAM role should not allow * resource on its permissions policy",
+			"logical_resource_ids": [
+				"RoleEventHandlerExecRole",
+				"SolutionHelperRole"
+			]
+		},
+		{
+			"id": "W28",
+			"type": "WARN",
+			"message": "Resource found with an explicit name, this disallows updates that require replacement of this resource",
+			"logical_resource_ids": [
+				"CreateAccountsDDBTable",
+				"CreateRolesDDBTable",
+				"CreateAccountRolesDDBTable",
+				"RoleEventHandlerExecRole"
+			]
+		}
+	]
 }

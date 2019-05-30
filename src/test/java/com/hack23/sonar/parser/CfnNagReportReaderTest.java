@@ -35,6 +35,6 @@ public class CfnNagReportReaderTest extends Assert {
 		assertEquals("WARN",nagViolation.getType());
 		assertEquals("IAM policy should not allow * resource",nagViolation.getMessage());
 		assertEquals(4,nagViolation.getLogical_resource_ids().size());
-		
+		assertEquals(1,nagViolation.getLine_numbers().size());
 	}
 }
