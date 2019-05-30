@@ -20,10 +20,12 @@
 package com.hack23.sonar;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.sonar.api.batch.fs.FileSystem;
+import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
@@ -66,11 +68,18 @@ public class CloudformationSensor implements Sensor {
 	public void execute(final SensorContext context) {
 		final Profiler profiler = Profiler.create(LOGGER);
 		profiler.startInfo("Process cfn-nag reports");
+				
 		try {
 			final Optional<String> reportFiles = configuration.getReportFiles();
 
 			
 			if (reportFiles.isPresent() && pathResolver.relativeFile(fileSystem.baseDir(), configuration.getReportFiles().get()).exists()) {
+				
+				List<InputFile> potentialReportTargets = new ArrayList<>();
+				fileSystem.inputFiles(fileSystem.predicates().or(fileSystem.predicates().hasLanguage(CloudformationLanguage.KEY),fileSystem.predicates().hasLanguage("yaml"),
+						fileSystem.predicates().hasLanguage("json"))).forEach(potentialReportTargets::add);
+
+				
 				final CfnNagReport cfnNagReport = cfnNagReportReader
 						.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), configuration.getReportFiles().get())));
 				if (cfnNagReport != null) {
