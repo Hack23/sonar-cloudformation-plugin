@@ -28,6 +28,8 @@ public class CfnNagViolation {
 	private String type;
 	private String message;
 	private List<String> logical_resource_ids = new ArrayList<>();
+	private List<Integer> line_numbers = new ArrayList<>();
+
 
 	public String getId() {
 		return id;
@@ -60,4 +62,13 @@ public class CfnNagViolation {
 	public void setLogical_resource_ids(final List<String> logical_resource_ids) {
 		this.logical_resource_ids = new ArrayList<>(logical_resource_ids);
 	}
+	
+	public List<Integer> getLine_numbers() {
+		return new ArrayList<>(line_numbers);
+	}
+
+	public void setLine_numbers(final List<Integer> line_numbers) {
+		this.line_numbers = new ArrayList<>(line_numbers);
+	}
+
 }
