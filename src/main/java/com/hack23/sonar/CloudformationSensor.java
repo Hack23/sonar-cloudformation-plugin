@@ -79,6 +79,10 @@ public class CloudformationSensor implements Sensor {
 				fileSystem.inputFiles(fileSystem.predicates().or(fileSystem.predicates().hasLanguage(CloudformationLanguage.KEY),fileSystem.predicates().hasLanguage("yaml"),
 						fileSystem.predicates().hasLanguage("json"))).forEach(potentialReportTargets::add);
 
+				for (InputFile inputFile : potentialReportTargets) {
+					LOGGER.warn("WIP:"+ configuration.getReportFiles().get() + " = " + inputFile.filename());
+				}
+								
 				
 				final CfnNagReport cfnNagReport = cfnNagReportReader
 						.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), configuration.getReportFiles().get())));

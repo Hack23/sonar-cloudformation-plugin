@@ -57,7 +57,7 @@
 		<license.mailto>james@hack23.com</license.mailto>
 		<license.title>Cloudformation Plugin for SonarQube</license.title>
 		<license.years>2019</license.years>
-		<!-- <sonar.cfn.nag.reportFiles>src/test/resources/cfn_nag_report.json</sonar.cfn.nag.reportFiles>-->
+		<sonar.cfn.nag.reportFiles>src/test/resources/aws-cross-account-manager-master.yml.nag</sonar.cfn.nag.reportFiles>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -66,6 +66,24 @@
 			<version>7.7</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+		    <groupId>org.sonarsource.sonarqube</groupId>
+		    <artifactId>sonar-testing-harness</artifactId>
+		    <version>7.7</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.sonarsource.analyzer-commons</groupId>
+			<artifactId>sonar-analyzer-commons</artifactId>
+			<version>1.10.2.456</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.sonarsource.sonarqube</groupId>
+					<artifactId>sonar-plugin-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>

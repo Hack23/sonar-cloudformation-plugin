@@ -26,15 +26,15 @@ public class CfnNagReportReaderTest extends Assert {
 
 	@Test
 	public void readReportTest() {
-		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(CfnNagReportReaderTest.class.getResourceAsStream("/cfn_nag_report.json"));
+		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(CfnNagReportReaderTest.class.getResourceAsStream("/aws-cross-account-manager-master.yml.nag"));
 		assertNotNull(cfnNagReport);
 		assertEquals(1,cfnNagReport.getFailure_count());
-		assertEquals(4,cfnNagReport.getViolations().size());
+		assertEquals(5,cfnNagReport.getViolations().size());
 		final CfnNagViolation nagViolation = cfnNagReport.getViolations().get(0);
 		assertEquals("W12",nagViolation.getId());
 		assertEquals("WARN",nagViolation.getType());
 		assertEquals("IAM policy should not allow * resource",nagViolation.getMessage());
 		assertEquals(4,nagViolation.getLogical_resource_ids().size());
-		assertEquals(1,nagViolation.getLine_numbers().size());
+		assertEquals(4,nagViolation.getLine_numbers().size());
 	}
 }
