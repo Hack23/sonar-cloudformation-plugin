@@ -24,9 +24,17 @@ Sonarqube 7.7+ and currently only cfn_nag reports (https://github.com/stelligent
 
 # Howto
 
-Prepare cfn_nag reports running (cfn_nag src/main/config/template.yml > target/template.yml.nagreport)
-and set the sonar.cfn.nag.reportFile=target/template.yml.nagreport
+Prepare cfn_nag reports running (cfn_nag src/main/config/template.yml > target/template.yml.nag)
+and set the property sonar.cfn.nag.reportFile=target/template.yml.nag
+
+Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan 
+
+Or use the property sonar.cfn.nag.reportDir=target (will include all *.nag and *.nagscan in the specified directory/directories)
+
+Properties supported 
+sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan (one or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix).
+sonar.cfn.nag.reportDir=target (any relative dir from project root, will scan for .*.nag and *.nagscan)
 
 # Roadmap
 
-Support cfn-lint (https://github.com/aws-cloudformation/cfn-python-lint) 
+Support more cloudformation checkers and add more rules for cfn_nag.  

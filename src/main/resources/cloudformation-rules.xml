@@ -8,6 +8,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -22,8 +24,10 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
-		<tag>cweid-732</tag>		
+		<tag>cweid-732</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -36,6 +40,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -50,6 +56,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -64,6 +72,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -78,6 +88,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -92,6 +104,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -106,6 +120,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -120,6 +136,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -127,13 +145,15 @@
      </rule>
 	<rule>
 		<key>F10</key>
-		<name>IAM user should not have any inline policies.  Should be centralized Policy object on group</name>
+		<name>IAM user should not have any inline policies.</name>
 		<internalKey>F10</internalKey>
 		<description>IAM user should not have any inline policies. Should be centralized Policy object on group</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -141,13 +161,15 @@
      </rule>
 	<rule>
 		<key>F11</key>
-		<name>IAM policy should not apply directly to users.  Should be on group</name>
+		<name>IAM policy should not apply directly to users.</name>
 		<internalKey>F11</internalKey>
 		<description>IAM policy should not apply directly to users.  Should be on group</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -155,13 +177,15 @@
      </rule>
 	<rule>
 		<key>F12</key>
-		<name>IAM managed policy should not apply directly to users.  Should be on group</name>
+		<name>IAM managed policy should not apply directly to users.</name>
 		<internalKey>F12</internalKey>
 		<description>IAM managed policy should not apply directly to users.  Should be on group</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -176,6 +200,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -190,6 +216,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -204,6 +232,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -218,6 +248,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -232,6 +264,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -246,6 +280,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -260,6 +296,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -274,6 +312,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -288,6 +328,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -302,6 +344,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -316,6 +360,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -330,6 +376,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -344,6 +392,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -358,6 +408,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -372,6 +424,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -379,13 +433,15 @@
      </rule>
 	<rule>
 		<key>F23</key>
-		<name>RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</name>
+		<name>RDS instance master user password must be Ref to NoEcho Parameter.</name>
 		<internalKey>F30</internalKey>
 		<description>RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -399,6 +455,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -412,19 +470,23 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
 		<key>F1000</key>
-		<name>Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration</name>
+		<name>Missing egress rule means all traffic is allowed outbound.</name>
 		<internalKey>F1000</internalKey>
 		<description>Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -438,6 +500,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -451,6 +515,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -458,13 +524,15 @@
      </rule>
 	<rule>
 		<key>W2</key>
-		<name>Security Groups found with cidr open to world on ingress.  This should never be true on instance.  Permissible on ELB</name>
+		<name>Security Groups found with cidr open to world on ingress.</name>
 		<internalKey>W2</internalKey>
 		<description>Security Groups found with cidr open to world on ingress.  This should never be true on instance.  Permissible on ELB</description>
 		<severity>MAJOR</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -479,6 +547,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -493,6 +563,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -507,6 +579,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a10</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -520,6 +594,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -534,6 +610,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -548,6 +626,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -562,6 +642,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -576,6 +658,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -590,6 +674,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -604,6 +690,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -618,6 +706,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -632,6 +722,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -646,6 +738,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -660,6 +754,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -674,6 +770,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -688,6 +786,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -695,13 +795,15 @@
      </rule>
 	<rule>
 		<key>W24</key>
-		<name>Lambda permission beside InvokeFunction might not be what you want? Not sure!?</name>
+		<name>Lambda permission beside InvokeFunction might not be what you want?</name>
 		<internalKey>W24</internalKey>
 		<description>Lambda permission beside InvokeFunction might not be what you want? Not sure!?</description>
 		<severity>MAJOR</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -716,6 +818,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a10</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -729,6 +833,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -743,6 +849,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -757,6 +865,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -771,6 +881,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -785,6 +897,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -799,6 +913,8 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
@@ -813,9 +929,26 @@
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-     </rule>     
+     </rule>
+	<rule>
+		<key>W35</key>
+		<name>S3 Bucket should have access logging configured</name>
+		<internalKey>W35</internalKey>
+		<description>S3 Bucket should have access logging configured</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a10</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>          
 </cloudformation-rules>

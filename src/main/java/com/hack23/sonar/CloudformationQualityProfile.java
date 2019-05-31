@@ -97,6 +97,7 @@ public class CloudformationQualityProfile implements BuiltInQualityProfilesDefin
 		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W32");
 		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W33");
 		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W34");
+		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W35");		
 		profile.done();
 	}
 }
