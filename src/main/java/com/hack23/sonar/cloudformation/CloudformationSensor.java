@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.Sensor;
@@ -71,23 +72,33 @@ public class CloudformationSensor implements Sensor {
 		profiler.startInfo("Process cfn-nag reports");
 
 		try {
-			final Optional<String> reportFiles = configuration.getReportFiles();
+			final Optional<String> reportFilesProperty = configuration.getReportFiles();
 
-			if (reportFiles.isPresent()
-					&& pathResolver.relativeFile(fileSystem.baseDir(), configuration.getReportFiles().get()).exists()) {
+			if (reportFilesProperty.isPresent()) {
 
-				String templateName = pathResolver
-						.relativeFile(fileSystem.baseDir(), configuration.getReportFiles().get()).getName()
-						.replace(".nag", "");
+				String reports = reportFilesProperty.get();
 
-				InputFile templateInputFile = findTemplate(templateName);
+				String[] reportFiles = StringUtils.split(reports, ",");
 
-				final CfnNagReport cfnNagReport = cfnNagReportReader.readReport(new FileInputStream(
-						pathResolver.relativeFile(fileSystem.baseDir(), configuration.getReportFiles().get())));
-				if (cfnNagReport != null) {
-					final List<CfnNagViolation> violations = cfnNagReport.getViolations();
-					for (final CfnNagViolation cfnNagViolation : violations) {
-						addIssue(context, cfnNagViolation, templateInputFile);
+				for (String report : reportFiles) {
+
+					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && report.endsWith(".nag")) {
+
+						String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName()
+								.replace(".nag", "");
+
+						InputFile templateInputFile = findTemplate(templateName);
+
+						final CfnNagReport cfnNagReport = cfnNagReportReader.readReport(
+								new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+						if (cfnNagReport != null) {
+							final List<CfnNagViolation> violations = cfnNagReport.getViolations();
+							for (final CfnNagViolation cfnNagViolation : violations) {
+								addIssue(context, cfnNagViolation, templateInputFile);
+							}
+						}
+					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && report.endsWith(".nagscan")) {
+						
 					}
 				}
 			}
