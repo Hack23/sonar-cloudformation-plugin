@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar;
+package com.hack23.sonar.cloudformation;
 
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 

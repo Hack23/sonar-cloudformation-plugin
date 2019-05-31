@@ -17,10 +17,14 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.parser;
+package com.hack23.sonar.cloudformation.parser;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.hack23.sonar.cloudformation.parser.CfnNagReport;
+import com.hack23.sonar.cloudformation.parser.CfnNagReportReader;
+import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
 
 public class CfnNagReportReaderTest extends Assert {
 

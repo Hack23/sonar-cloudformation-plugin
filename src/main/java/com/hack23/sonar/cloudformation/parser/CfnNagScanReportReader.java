@@ -17,25 +17,30 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar;
+package com.hack23.sonar.cloudformation.parser;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.BuiltInQualityProfile;
-import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.Context;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 
-public class CloudformationQualityProfileTest extends Assert {
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
 
-	@Test
-	public void defineTest() {
-		final Context context = new Context();
-		new CloudformationQualityProfile().define(context);
-		final BuiltInQualityProfile qualityProfile = context.profile(CloudformationLanguage.KEY,"Cloudformation Rules");
-		assertNotNull(qualityProfile);
-		assertTrue(qualityProfile.isDefault());
-		assertEquals(59,qualityProfile.rules().size());
-		
-		
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class CfnNagScanReportReader {
+
+	private static final Logger LOGGER = Loggers.get(CfnNagScanReportReader.class);
+
+	public List<CfnNagScanReport> readReport(final InputStream input) {
+		final ObjectMapper objectMapper = new ObjectMapper();
+
+		try {
+			return objectMapper.readValue(input, new TypeReference<List<CfnNagScanReport>>() {});
+		} catch (final IOException e) {
+			LOGGER.error("Problem reading cfn nag report json", e);
+			return null;
+		}
 	}
-	
 }

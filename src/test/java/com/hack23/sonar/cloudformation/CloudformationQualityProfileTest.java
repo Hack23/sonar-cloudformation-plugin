@@ -17,27 +17,28 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar;
+package com.hack23.sonar.cloudformation;
 
-import java.util.Optional;
+import org.junit.Assert;
+import org.junit.Test;
+import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.BuiltInQualityProfile;
+import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.Context;
 
-import org.sonar.api.config.Configuration;
-import org.sonar.api.scanner.ScannerSide;
+import com.hack23.sonar.cloudformation.CloudformationLanguage;
+import com.hack23.sonar.cloudformation.CloudformationQualityProfile;
 
-@ScannerSide
-public class CloudformationSensorConfiguration {
+public class CloudformationQualityProfileTest extends Assert {
 
-	private final Configuration configuration;
-
-	public CloudformationSensorConfiguration(final Configuration configuration) {
-		this.configuration = configuration;
+	@Test
+	public void defineTest() {
+		final Context context = new Context();
+		new CloudformationQualityProfile().define(context);
+		final BuiltInQualityProfile qualityProfile = context.profile(CloudformationLanguage.KEY,"Cloudformation Rules");
+		assertNotNull(qualityProfile);
+		assertTrue(qualityProfile.isDefault());
+		assertEquals(59,qualityProfile.rules().size());
+		
+		
 	}
-
-	public Optional<String> getReportDir() {
-		return this.configuration.get(CloudformationConstants.REPORT_DIR_PROPERTY);
-	}
-
-	public Optional<String> getReportFiles() {
-		return this.configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY);
-	}
+	
 }

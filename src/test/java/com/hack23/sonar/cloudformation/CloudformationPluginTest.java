@@ -17,30 +17,26 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.parser;
+package com.hack23.sonar.cloudformation;
 
-import java.util.ArrayList;
-import java.util.List;
+import static org.mockito.Mockito.mock;
 
-public class CfnNagReport {
+import org.junit.Test;
+import org.sonar.api.Plugin;
 
-	private int failure_count;
-	private List<CfnNagViolation> violations = new ArrayList<>();
+import com.hack23.sonar.cloudformation.CloudformationPlugin;
 
-	public int getFailure_count() {
-		return failure_count;
+/**
+ * The Class CloudformationPluginTest.
+ */
+public class CloudformationPluginTest {
+
+	/**
+	 * Extensions test.
+	 */
+	@Test
+	public void extensionsTest() {
+		final Plugin.Context context = mock(Plugin.Context.class);
+		new CloudformationPlugin().define(context);
 	}
-
-	public void setFailure_count(final int failure_count) {
-		this.failure_count = failure_count;
-	}
-
-	public List<CfnNagViolation> getViolations() {
-		return new ArrayList<>(violations);
-	}
-
-	public void setViolations(final List<CfnNagViolation> violations) {
-		this.violations = new ArrayList<>(violations);
-	}
-
 }

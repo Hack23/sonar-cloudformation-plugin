@@ -17,26 +17,28 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar;
+package com.hack23.sonar.cloudformation.parser;
 
-import org.sonar.api.Plugin;
+import java.io.IOException;
+import java.io.InputStream;
 
-/**
- * The Class CloudformationPlugin.
- */
-public class CloudformationPlugin implements Plugin {
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
 
-	/**
-	 * Define.
-	 *
-	 * @param context the context
-	 */
-	@Override
-	public void define(final Context context) {
-		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,
-				CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
-				CloudformationSensorConfiguration.class);
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+public class CfnNagReportReader {
+
+	private static final Logger LOGGER = Loggers.get(CfnNagReportReader.class);
+
+	public CfnNagReport readReport(final InputStream input) {
+		final ObjectMapper objectMapper = new ObjectMapper();
+
+		try {
+			return objectMapper.readValue(input, CfnNagReport.class);
+		} catch (final IOException e) {
+			LOGGER.error("Problem reading cfn nag report json", e);
+			return null;
+		}
 	}
-
 }

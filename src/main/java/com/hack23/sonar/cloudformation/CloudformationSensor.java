@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar;
+package com.hack23.sonar.cloudformation;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -36,9 +36,9 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.utils.log.Profiler;
 
-import com.hack23.sonar.parser.CfnNagReport;
-import com.hack23.sonar.parser.CfnNagReportReader;
-import com.hack23.sonar.parser.CfnNagViolation;
+import com.hack23.sonar.cloudformation.parser.CfnNagReport;
+import com.hack23.sonar.cloudformation.parser.CfnNagReportReader;
+import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
 
 public class CloudformationSensor implements Sensor {
 

@@ -16,10 +16,10 @@
 	<packaging>sonar-plugin</packaging>
 
 	<scm>
-		<connection>scm:git:https://github.com/Hack23/sonarqube-cloudformation-plugin.git</connection>
-		<developerConnection>scm:git:https://github.com/Hack23/sonarqube-cloudformation-plugin.git</developerConnection>
+		<connection>scm:git:https://github.com/Hack23/sonar-cloudformation-plugin.git</connection>
+		<developerConnection>scm:git:https://github.com/Hack23/sonar-cloudformation-plugin.git</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/Hack23/sonarqube-cloudformation-plugin</url>
+		<url>https://github.com/Hack23/sonar-cloudformation-plugin</url>
 	</scm>
 
 	<licenses>
@@ -41,11 +41,11 @@
 
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/Hack23/sonarqube-cloudformation-plugin</url>
+		<url>https://github.com/Hack23/sonar-cloudformation-plugin</url>
 	</issueManagement>
 	<ciManagement>
 		<system>jenkins</system>
-		<url>https://www.hack23.com/jenkins/view/Tools/job/sonarqube-cloudformation-plugin/</url>
+		<url>https://www.hack23.com/jenkins/view/Tools/job/sonar-cloudformation-plugin/</url>
 	</ciManagement>
 
 	<properties>
@@ -169,7 +169,7 @@
 				<version>1.18.0.372</version>
 				<extensions>true</extensions>
 				<configuration>
-					<pluginClass>com.hack23.sonar.CloudformationPlugin</pluginClass>
+					<pluginClass>com.hack23.sonar.cloudformation.CloudformationPlugin</pluginClass>
 					<pluginDescription>Cloudformation rules, supporting cfn-nag</pluginDescription>
 				</configuration>
 			</plugin>

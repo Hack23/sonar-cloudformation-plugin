@@ -17,28 +17,14 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.parser;
+package com.hack23.sonar.cloudformation;
 
-import java.io.IOException;
-import java.io.InputStream;
+public final class CloudformationConstants {
 
-import org.sonar.api.utils.log.Logger;
-import org.sonar.api.utils.log.Loggers;
+	public static final String REPORT_FILES_PROPERTY = "sonar.cfn.nag.reportFiles";
+	public static final String REPORT_DIR_PROPERTY = "sonar.cfn.nag.reportDir";
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-public class CfnNagReportReader {
-
-	private static final Logger LOGGER = Loggers.get(CfnNagReportReader.class);
-
-	public CfnNagReport readReport(final InputStream input) {
-		final ObjectMapper objectMapper = new ObjectMapper();
-
-		try {
-			return objectMapper.readValue(input, CfnNagReport.class);
-		} catch (final IOException e) {
-			LOGGER.error("Problem reading cfn nag report json", e);
-			return null;
-		}
+	private CloudformationConstants() {
 	}
+
 }

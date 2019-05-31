@@ -17,24 +17,30 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.parser;
+package com.hack23.sonar.cloudformation.parser;
 
-public class CfnNagScanReport {
+import java.util.ArrayList;
+import java.util.List;
 
-	private String filename;
-	private CfnNagReport file_results;
+public class CfnNagReport {
 
-	public String getFilename() {
-		return filename;
+	private int failure_count;
+	private List<CfnNagViolation> violations = new ArrayList<>();
+
+	public int getFailure_count() {
+		return failure_count;
 	}
-	public void setFilename(String filename) {
-		this.filename = filename;
+
+	public void setFailure_count(final int failure_count) {
+		this.failure_count = failure_count;
 	}
-	public CfnNagReport getFile_results() {
-		return file_results;
+
+	public List<CfnNagViolation> getViolations() {
+		return new ArrayList<>(violations);
 	}
-	public void setFile_results(CfnNagReport file_results) {
-		this.file_results = file_results;
+
+	public void setViolations(final List<CfnNagViolation> violations) {
+		this.violations = new ArrayList<>(violations);
 	}
-	
+
 }

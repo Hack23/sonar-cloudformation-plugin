@@ -17,14 +17,27 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar;
+package com.hack23.sonar.cloudformation;
 
-public final class CloudformationConstants {
+import java.util.Optional;
 
-	public static final String REPORT_FILES_PROPERTY = "sonar.cfn.nag.reportFiles";
-	public static final String REPORT_DIR_PROPERTY = "sonar.cfn.nag.reportDir";
+import org.sonar.api.config.Configuration;
+import org.sonar.api.scanner.ScannerSide;
 
-	private CloudformationConstants() {
+@ScannerSide
+public class CloudformationSensorConfiguration {
+
+	private final Configuration configuration;
+
+	public CloudformationSensorConfiguration(final Configuration configuration) {
+		this.configuration = configuration;
 	}
 
+	public Optional<String> getReportDir() {
+		return this.configuration.get(CloudformationConstants.REPORT_DIR_PROPERTY);
+	}
+
+	public Optional<String> getReportFiles() {
+		return this.configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY);
+	}
 }

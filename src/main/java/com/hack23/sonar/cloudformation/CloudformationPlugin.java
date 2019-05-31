@@ -17,24 +17,26 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar;
+package com.hack23.sonar.cloudformation;
 
-import static org.mockito.Mockito.mock;
-
-import org.junit.Test;
 import org.sonar.api.Plugin;
 
 /**
- * The Class CloudformationPluginTest.
+ * The Class CloudformationPlugin.
  */
-public class CloudformationPluginTest {
+public class CloudformationPlugin implements Plugin {
 
 	/**
-	 * Extensions test.
+	 * Define.
+	 *
+	 * @param context the context
 	 */
-	@Test
-	public void extensionsTest() {
-		final Plugin.Context context = mock(Plugin.Context.class);
-		new CloudformationPlugin().define(context);
+	@Override
+	public void define(final Context context) {
+		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,
+				CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
+				CloudformationSensorConfiguration.class);
+
 	}
+
 }
