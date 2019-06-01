@@ -111,7 +111,7 @@ public class CloudformationSensor implements Sensor {
 						for (CfnNagScanReport nagScanReport : cfnNagscanReports) {
 														
 							String filename = nagScanReport.getFilename();
-							InputFile templateInputFile = findTemplate(filename.substring(filename.lastIndexOf(File.separator),filename.length()));
+							InputFile templateInputFile = findTemplate(filename.substring(filename.lastIndexOf(File.separator)+1,filename.length()));
 							
 							final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
 							for (final CfnNagViolation cfnNagViolation : violations) {
