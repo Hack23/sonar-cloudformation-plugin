@@ -12,7 +12,7 @@
 	<artifactId>sonar-cloudformation-plugin</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>sonar-plugin</packaging>
-	<url>github:https://hack23.github.io/sonar-cloudformation-plugin/</url>
+	<url>https://hack23.github.io/sonar-cloudformation-plugin/</url>
 	<name>Sonar cloudformation plugin</name>
 
 	<scm>
