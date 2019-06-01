@@ -82,11 +82,11 @@ public class CloudformationSensor implements Sensor {
 			if (reportFilesProperty.isPresent()) {
 
 				String reports = reportFilesProperty.get();
-
+				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY +"=" + reports);
 				String[] reportFiles = StringUtils.split(reports, ",");
 
 				for (String report : reportFiles) {
-
+					LOGGER.info("Processing:" +report);
 					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && report.endsWith(".nag")) {
 
 						String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName()
@@ -135,7 +135,7 @@ public class CloudformationSensor implements Sensor {
 
 		for (InputFile inputFile : potentialReportTargets) {
 			if (templateName.equals(inputFile.filename())) {
-				LOGGER.warn("matching:" + templateName + " = " + inputFile.filename());
+				LOGGER.info("matching:" + templateName + " = " + inputFile.filename());
 				return inputFile;
 			}
 		}
