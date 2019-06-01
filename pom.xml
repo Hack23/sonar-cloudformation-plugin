@@ -12,7 +12,7 @@
 	<artifactId>sonar-cloudformation-plugin</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>sonar-plugin</packaging>
-	<url>https://github.com/Hack23/sonar-cloudformation-plugin</url>
+	<url>github:https://hack23.github.io/sonar-cloudformation-plugin/</url>
 	<name>Sonar cloudformation plugin</name>
 
 	<scm>
@@ -72,12 +72,17 @@
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.jacoco.reportPath>${project.basedir}/target/jacoco-ut.exec</sonar.jacoco.reportPath>
 		<surefire.version>3.0.0-M3</surefire.version>
+		<scm-publish.scmBranch>gh-pages</scm-publish.scmBranch>
+		<scm-publish.pubScmUrl>scm:git:https://github.com/Hack23/sonar-cloudformation-plugin.git</scm-publish.pubScmUrl>
+		<scm-publish.siteDocOuputDirectory>${project.build.directory}/site</scm-publish.siteDocOuputDirectory>
 		<license.owner>James Pether Sörling</license.owner>
 		<license.mailto>james@hack23.com</license.mailto>
 		<license.title>Cloudformation Plugin for SonarQube</license.title>
 		<license.years>2019</license.years>
 		<sonar.cfn.nag.reportFiles>src/test/resources/aws-cross-account-manager-master.yml.nag,src/test/resources/cfn-nag-scan.nagscan</sonar.cfn.nag.reportFiles>
 	</properties>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.sonarsource.sonarqube</groupId>
@@ -220,6 +225,86 @@
 	</profiles>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-publish-plugin</artifactId>
+					<version>3.0.0</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.scm</groupId>
+							<artifactId>maven-scm-api</artifactId>
+							<version>1.11.2</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.scm</groupId>
+							<artifactId>maven-scm-provider-gitexe</artifactId>
+							<version>1.11.2</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.scm</groupId>
+							<artifactId>maven-scm-provider-svn-commons</artifactId>
+							<version>1.11.2</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.scm</groupId>
+							<artifactId>maven-scm-provider-svnexe</artifactId>
+							<version>1.11.2</version>
+						</dependency>
+						<dependency>
+							<groupId>commons-io</groupId>
+							<artifactId>commons-io</artifactId>
+							<version>2.6</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.commons</groupId>
+							<artifactId>commons-lang3</artifactId>
+							<version>3.8.1</version>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-utils</artifactId>
+							<version>3.2.0</version>
+						</dependency>
+					</dependencies>
+					<inherited>true</inherited>
+					<configuration>
+						<checkoutDirectory>${scmPublish.checkoutDirectory}</checkoutDirectory>
+						<checkinComment>Publishing Site Docs for
+							${project.artifactId}:${project.version}</checkinComment>
+						<content>${project.build.directory}/site</content>
+						<skipDeletedFiles>true</skipDeletedFiles>
+						<pubScmUrl>${scm-publish.pubScmUrl}</pubScmUrl>
+						<scmBranch>${scm-publish.scmBranch}</scmBranch>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.7.1</version>
+					<dependencies>
+						<dependency>
+							<groupId>xml-apis</groupId>
+							<artifactId>xml-apis</artifactId>
+							<version>1.4.01</version>
+						</dependency>
+						<dependency>
+							<groupId>net.trajano.wagon</groupId>
+							<artifactId>wagon-git</artifactId>
+							<version>2.0.4</version>
+						</dependency>
+						<dependency>
+							<groupId>com.jcraft</groupId>
+							<artifactId>jsch</artifactId>
+							<version>0.1.55</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
 		<plugins>
 			<plugin>
 				<groupId>org.jacoco</groupId>
