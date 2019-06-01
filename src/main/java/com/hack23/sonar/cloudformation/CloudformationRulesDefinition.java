@@ -34,6 +34,7 @@ import org.sonar.api.utils.log.Loggers;
  */
 public class CloudformationRulesDefinition implements RulesDefinition {
 
+	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Loggers.get(CloudformationRulesDefinition.class);
 
 	

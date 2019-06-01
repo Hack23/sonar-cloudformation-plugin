@@ -22,51 +22,113 @@ package com.hack23.sonar.cloudformation.parser;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Class CfnNagViolation.
+ */
 public class CfnNagViolation {
 
+	/** The id. */
 	private String id;
+	
+	/** The type. */
 	private String type;
+	
+	/** The message. */
 	private String message;
+	
+	/** The logical resource ids. */
 	private List<String> logical_resource_ids = new ArrayList<>();
+	
+	/** The line numbers. */
 	private List<Integer> line_numbers = new ArrayList<>();
 
 
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
 	public String getId() {
 		return id;
 	}
 
+	/**
+	 * Sets the id.
+	 *
+	 * @param id the new id
+	 */
 	public void setId(final String id) {
 		this.id = id;
 	}
 
+	/**
+	 * Gets the type.
+	 *
+	 * @return the type
+	 */
 	public String getType() {
 		return type;
 	}
 
+	/**
+	 * Sets the type.
+	 *
+	 * @param type the new type
+	 */
 	public void setType(final String type) {
 		this.type = type;
 	}
 
+	/**
+	 * Gets the message.
+	 *
+	 * @return the message
+	 */
 	public String getMessage() {
 		return message;
 	}
 
+	/**
+	 * Sets the message.
+	 *
+	 * @param message the new message
+	 */
 	public void setMessage(final String message) {
 		this.message = message;
 	}
 
+	/**
+	 * Gets the logical resource ids.
+	 *
+	 * @return the logical resource ids
+	 */
 	public List<String> getLogical_resource_ids() {
 		return new ArrayList<>(logical_resource_ids);
 	}
 
+	/**
+	 * Sets the logical resource ids.
+	 *
+	 * @param logical_resource_ids the new logical resource ids
+	 */
 	public void setLogical_resource_ids(final List<String> logical_resource_ids) {
 		this.logical_resource_ids = new ArrayList<>(logical_resource_ids);
 	}
 	
+	/**
+	 * Gets the line numbers.
+	 *
+	 * @return the line numbers
+	 */
 	public List<Integer> getLine_numbers() {
 		return new ArrayList<>(line_numbers);
 	}
 
+	/**
+	 * Sets the line numbers.
+	 *
+	 * @param line_numbers the new line numbers
+	 */
 	public void setLine_numbers(final List<Integer> line_numbers) {
 		this.line_numbers = new ArrayList<>(line_numbers);
 	}

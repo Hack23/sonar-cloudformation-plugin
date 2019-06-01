@@ -3,13 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>org.sonarsource.parent</groupId>
 		<artifactId>parent</artifactId>
 		<version>52</version>
 	</parent>
-
 	<groupId>com.hack23.sonar</groupId>
 	<artifactId>sonar-cloudformation-plugin</artifactId>
 	<version>1.0-SNAPSHOT</version>
@@ -49,12 +47,31 @@
 		<system>jenkins</system>
 		<url>https://www.hack23.com/jenkins/view/Tools/job/sonar-cloudformation-plugin/</url>
 	</ciManagement>
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>cia-releases</id>
+			<name>CIA Staging Repository</name>
+			<url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>hack23nexus</id>
+			<name>CIA hack23 Snapshot Repository</name>
+			<url>https://www.hack23.com/nexus/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<site>
+			<id>github</id>
+			<url>github:http://hack23.github.io/sonar-cloudformation-plugin/</url>
+		</site>
+	</distributionManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.jacoco.reportPath>${project.basedir}/target/jacoco-ut.exec</sonar.jacoco.reportPath>
+		<surefire.version>3.0.0-M3</surefire.version>
 		<license.owner>James Pether Sörling</license.owner>
 		<license.mailto>james@hack23.com</license.mailto>
 		<license.title>Cloudformation Plugin for SonarQube</license.title>
@@ -69,10 +86,10 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-		    <groupId>org.sonarsource.sonarqube</groupId>
-		    <artifactId>sonar-testing-harness</artifactId>
-		    <version>7.7</version>
-		    <scope>test</scope>
+			<groupId>org.sonarsource.sonarqube</groupId>
+			<artifactId>sonar-testing-harness</artifactId>
+			<version>7.7</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.sonarsource.analyzer-commons</groupId>
@@ -85,7 +102,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -114,6 +130,94 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.1.0</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>jar</goal>
+									<goal>resource-bundle</goal>
+								</goals>
+							</execution>
+						</executions>
+						<inherited>true</inherited>
+						<configuration>
+							<source>8</source>
+							<release>8</release>
+							<debug>true</debug>
+							<detectJavaApiLink>true</detectJavaApiLink>
+							<linksource>true</linksource>
+							<includeDependencySources>true</includeDependencySources>
+							<dependencySourceIncludes>
+								<dependencySourceInclude>com.hack23.sonar:*</dependencySourceInclude>
+							</dependencySourceIncludes>
+							<doclet>nl.talsmasoftware.umldoclet.UMLDoclet</doclet>
+							<docletArtifact>
+								<groupId>nl.talsmasoftware</groupId>
+								<artifactId>umldoclet</artifactId>
+								<version>2.0.2</version>
+							</docletArtifact>
+							<useStandardDocletOptions>true</useStandardDocletOptions>
+							<charset>UTF-8</charset>
+							<encoding>UTF-8</encoding>
+							<!-- <sourcepath>${basedir}/src/main/java</sourcepath> -->
+							<sourcepath>src/main/java</sourcepath>
+							<docencoding>UTF-8</docencoding>
+							<!-- <additionalOptions>-html5</additionalOptions> -->
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>bundle-sources</id>
+								<phase>package</phase>
+								<goals>
+									<!-- produce source artifact for main project sources -->
+									<goal>jar-no-fork</goal>
+									<!-- produce source artifact for project test sources -->
+									<goal>test-jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+						<inherited>true</inherited>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+						<inherited>true</inherited>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
 
 	<build>
 		<plugins>
@@ -177,4 +281,107 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.0</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>8</source>
+					<release>8</release>
+					<includeDependencySources>true</includeDependencySources>
+					<detectOfflineLinks>false</detectOfflineLinks>
+					<dependencySourceIncludes>
+						<dependencySourceInclude>com.hack23.sonar:*</dependencySourceInclude>
+					</dependencySourceIncludes>
+					<doclet>nl.talsmasoftware.umldoclet.UMLDoclet</doclet>
+					<docletArtifact>
+						<groupId>nl.talsmasoftware</groupId>
+						<artifactId>umldoclet</artifactId>
+						<version>2.0.2</version>
+					</docletArtifact>
+					<useStandardDocletOptions>true</useStandardDocletOptions>
+					<charset>UTF-8</charset>
+					<encoding>UTF-8</encoding>
+					<sourcepath>${basedir}/src/main/java</sourcepath>
+					<docencoding>UTF-8</docencoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.0.0</version>
+				<inherited>true</inherited>
+				<configuration>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${surefire.version}</version>
+				<inherited>true</inherited>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.4</version>
+				<inherited>true</inherited>
+				<configuration>
+					<dataFile>${sonar.jacoco.reportPath}</dataFile>
+					<outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${surefire.version}</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>report-only</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+				<inherited>true</inherited>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>3.0.0</version>
+				<inherited>true</inherited>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.7</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>dependency-updates-report</report>
+							<report>plugin-updates-report</report>
+							<report>property-updates-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+				<inherited>true</inherited>
+				<configuration>
+					<allowSnapshots>true</allowSnapshots>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changelog-plugin</artifactId>
+				<version>2.3</version>
+				<inherited>true</inherited>
+				<configuration>
+					<type>range</type>
+					<range>30</range>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>

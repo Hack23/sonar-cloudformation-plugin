@@ -24,19 +24,38 @@ import java.util.Optional;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.scanner.ScannerSide;
 
+/**
+ * The Class CloudformationSensorConfiguration.
+ */
 @ScannerSide
 public class CloudformationSensorConfiguration {
 
+	/** The configuration. */
 	private final Configuration configuration;
 
+	/**
+	 * Instantiates a new cloudformation sensor configuration.
+	 *
+	 * @param configuration the configuration
+	 */
 	public CloudformationSensorConfiguration(final Configuration configuration) {
 		this.configuration = configuration;
 	}
 
+	/**
+	 * Gets the report dir.
+	 *
+	 * @return the report dir
+	 */
 	public Optional<String> getReportDir() {
 		return this.configuration.get(CloudformationConstants.REPORT_DIR_PROPERTY);
 	}
 
+	/**
+	 * Gets the report files.
+	 *
+	 * @return the report files
+	 */
 	public Optional<String> getReportFiles() {
 		return this.configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY);
 	}

@@ -24,8 +24,14 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * The Class CfnNagScanReportReaderTest.
+ */
 public class CfnNagScanReportReaderTest extends Assert {
 
+	/**
+	 * Read report test.
+	 */
 	@Test
 	public void readReportTest() {
 		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(CfnNagScanReportReaderTest.class.getResourceAsStream("/cfn-nag-scan.nagscan"));

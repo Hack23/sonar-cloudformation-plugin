@@ -24,8 +24,14 @@ import org.junit.Test;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.BuiltInQualityProfile;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.Context;
 
+/**
+ * The Class CloudformationQualityProfileTest.
+ */
 public class CloudformationQualityProfileTest extends Assert {
 
+	/**
+	 * Define test.
+	 */
 	@Test
 	public void defineTest() {
 		final Context context = new Context();

@@ -27,10 +27,20 @@ import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * The Class CfnNagReportReader.
+ */
 public class CfnNagReportReader {
 
+	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Loggers.get(CfnNagReportReader.class);
 
+	/**
+	 * Read report.
+	 *
+	 * @param input the input
+	 * @return the cfn nag report
+	 */
 	public CfnNagReport readReport(final InputStream input) {
 		final ObjectMapper objectMapper = new ObjectMapper();
 

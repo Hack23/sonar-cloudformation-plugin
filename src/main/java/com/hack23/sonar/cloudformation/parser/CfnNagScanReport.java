@@ -19,21 +19,50 @@
  */
 package com.hack23.sonar.cloudformation.parser;
 
+/**
+ * The Class CfnNagScanReport.
+ */
 public class CfnNagScanReport {
 
+	/** The filename. */
 	private String filename;
+	
+	/** The file results. */
 	private CfnNagReport file_results;
 
+	/**
+	 * Gets the filename.
+	 *
+	 * @return the filename
+	 */
 	public String getFilename() {
 		return filename;
 	}
-	public void setFilename(String filename) {
+	
+	/**
+	 * Sets the filename.
+	 *
+	 * @param filename the new filename
+	 */
+	public void setFilename(final String filename) {
 		this.filename = filename;
 	}
+	
+	/**
+	 * Gets the file results.
+	 *
+	 * @return the file results
+	 */
 	public CfnNagReport getFile_results() {
 		return file_results;
 	}
-	public void setFile_results(CfnNagReport file_results) {
+	
+	/**
+	 * Sets the file results.
+	 *
+	 * @param file_results the new file results
+	 */
+	public void setFile_results(final CfnNagReport file_results) {
 		this.file_results = file_results;
 	}
 	

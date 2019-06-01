@@ -44,17 +44,39 @@ import com.hack23.sonar.cloudformation.parser.CfnNagScanReport;
 import com.hack23.sonar.cloudformation.parser.CfnNagScanReportReader;
 import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
 
+/**
+ * The Class CloudformationSensor.
+ */
 public class CloudformationSensor implements Sensor {
 
+	/** The Constant SENSOR_NAME. */
 	private static final String SENSOR_NAME = "Cloudformation Check";
+	
+	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Loggers.get(CloudformationSensor.class);
 
+	/** The cfn nag report reader. */
 	private final CfnNagReportReader cfnNagReportReader;
+	
+	/** The cfn nag scan report reader. */
 	private final CfnNagScanReportReader cfnNagScanReportReader;
+	
+	/** The configuration. */
 	private final CloudformationSensorConfiguration configuration;
+	
+	/** The path resolver. */
 	private final PathResolver pathResolver;
+	
+	/** The file system. */
 	private final FileSystem fileSystem;
 
+	/**
+	 * Instantiates a new cloudformation sensor.
+	 *
+	 * @param configuration the configuration
+	 * @param fileSystem the file system
+	 * @param pathResolver the path resolver
+	 */
 	public CloudformationSensor(final CloudformationSensorConfiguration configuration, final FileSystem fileSystem,
 			final PathResolver pathResolver) {
 		super();
@@ -65,12 +87,22 @@ public class CloudformationSensor implements Sensor {
 		this.pathResolver = pathResolver;
 	}
 
+	/**
+	 * Describe.
+	 *
+	 * @param descriptor the descriptor
+	 */
 	@Override
 	public void describe(final SensorDescriptor descriptor) {
 		descriptor.name(SENSOR_NAME);
 
 	}
 
+	/**
+	 * Execute.
+	 *
+	 * @param context the context
+	 */
 	@Override
 	public void execute(final SensorContext context) {
 		final Profiler profiler = Profiler.create(LOGGER);
@@ -81,18 +113,18 @@ public class CloudformationSensor implements Sensor {
 
 			if (reportFilesProperty.isPresent()) {
 
-				String reports = reportFilesProperty.get();
+				final String reports = reportFilesProperty.get();
 				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY +"=" + reports);
-				String[] reportFiles = StringUtils.split(reports, ",");
+				final String[] reportFiles = StringUtils.split(reports, ",");
 
-				for (String report : reportFiles) {
+				for (final String report : reportFiles) {
 					LOGGER.info("Processing:" +report);
 					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && report.endsWith(".nag")) {
 
-						String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName()
+						final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName()
 								.replace(".nag", "");
 
-						InputFile templateInputFile = findTemplate(templateName);
+						final InputFile templateInputFile = findTemplate(templateName);
 
 						final CfnNagReport cfnNagReport = cfnNagReportReader.readReport(
 								new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
@@ -108,10 +140,10 @@ public class CloudformationSensor implements Sensor {
 						final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader.readReport(
 								new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 						
-						for (CfnNagScanReport nagScanReport : cfnNagscanReports) {
+						for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
 														
-							String filename = nagScanReport.getFilename();
-							InputFile templateInputFile = findTemplate(filename.substring(filename.lastIndexOf(File.separator)+1,filename.length()));
+							final String filename = nagScanReport.getFilename();
+							final InputFile templateInputFile = findTemplate(filename.substring(filename.lastIndexOf(File.separator)+1,filename.length()));
 							
 							final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
 							for (final CfnNagViolation cfnNagViolation : violations) {
@@ -128,12 +160,18 @@ public class CloudformationSensor implements Sensor {
 		}
 	}
 
-	private InputFile findTemplate(String templateName) {
-		List<InputFile> potentialReportTargets = new ArrayList<>();
+	/**
+	 * Find template.
+	 *
+	 * @param templateName the template name
+	 * @return the input file
+	 */
+	private InputFile findTemplate(final String templateName) {
+		final List<InputFile> potentialReportTargets = new ArrayList<>();
 		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);
 		LOGGER.info("Looking for cloudformation template matching:" + templateName);
 
-		for (InputFile inputFile : potentialReportTargets) {
+		for (final InputFile inputFile : potentialReportTargets) {
 			if (templateName.equals(inputFile.filename())) {
 				LOGGER.info("matching:" + templateName + " = " + inputFile.filename());
 				return inputFile;
@@ -142,15 +180,22 @@ public class CloudformationSensor implements Sensor {
 		return null;
 	}
 
-	private void addIssue(final SensorContext context, final CfnNagViolation violation, InputFile templateInputFile) {
+	/**
+	 * Adds the issue.
+	 *
+	 * @param context the context
+	 * @param violation the violation
+	 * @param templateInputFile the template input file
+	 */
+	private void addIssue(final SensorContext context, final CfnNagViolation violation, final InputFile templateInputFile) {
 		if (templateInputFile != null) {
 
 			if (violation.getLine_numbers().isEmpty()) {
 				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
 						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();
 			} else {
-				List<Integer> line_numbers = violation.getLine_numbers();
-				for (Integer line : line_numbers) {
+				final List<Integer> line_numbers = violation.getLine_numbers();
+				for (final Integer line : line_numbers) {
 					context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
 							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
 									.at(templateInputFile.selectLine(line)))

@@ -22,23 +22,49 @@ package com.hack23.sonar.cloudformation.parser;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Class CfnNagReport.
+ */
 public class CfnNagReport {
 
+	/** The failure count. */
 	private int failure_count;
+	
+	/** The violations. */
 	private List<CfnNagViolation> violations = new ArrayList<>();
 
+	/**
+	 * Gets the failure count.
+	 *
+	 * @return the failure count
+	 */
 	public int getFailure_count() {
 		return failure_count;
 	}
 
+	/**
+	 * Sets the failure count.
+	 *
+	 * @param failure_count the new failure count
+	 */
 	public void setFailure_count(final int failure_count) {
 		this.failure_count = failure_count;
 	}
 
+	/**
+	 * Gets the violations.
+	 *
+	 * @return the violations
+	 */
 	public List<CfnNagViolation> getViolations() {
 		return new ArrayList<>(violations);
 	}
 
+	/**
+	 * Sets the violations.
+	 *
+	 * @param violations the new violations
+	 */
 	public void setViolations(final List<CfnNagViolation> violations) {
 		this.violations = new ArrayList<>(violations);
 	}

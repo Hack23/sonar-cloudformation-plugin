@@ -22,8 +22,14 @@ package com.hack23.sonar.cloudformation.parser;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * The Class CfnNagReportReaderTest.
+ */
 public class CfnNagReportReaderTest extends Assert {
 
+	/**
+	 * Read report test.
+	 */
 	@Test
 	public void readReportTest() {
 		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(CfnNagReportReaderTest.class.getResourceAsStream("/aws-cross-account-manager-master.yml.nag"));

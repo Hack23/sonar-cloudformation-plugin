@@ -26,8 +26,16 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.sonar.api.config.Configuration;
 
+/**
+ * The Class CloudformationLanguageTest.
+ */
 public class CloudformationLanguageTest extends Assert {
 
+	/**
+	 * Gets the file suffixes test.
+	 *
+	 * @return the file suffixes test
+	 */
 	@Test
 	public void getFileSuffixesTest() {
 		final Configuration configuration = mock(Configuration.class);
@@ -38,6 +46,11 @@ public class CloudformationLanguageTest extends Assert {
 		assertEquals(".template",suffixes[0]);
 	}
 	
+	/**
+	 * Gets the file suffixes multiple values test.
+	 *
+	 * @return the file suffixes multiple values test
+	 */
 	@Test
 	public void getFileSuffixesMultipleValuesTest() {
 		final Configuration configuration = mock(Configuration.class);
