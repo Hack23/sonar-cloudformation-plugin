@@ -24,9 +24,6 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.hack23.sonar.cloudformation.parser.CfnNagScanReport;
-import com.hack23.sonar.cloudformation.parser.CfnNagScanReportReader;
-
 public class CfnNagScanReportReaderTest extends Assert {
 
 	@Test

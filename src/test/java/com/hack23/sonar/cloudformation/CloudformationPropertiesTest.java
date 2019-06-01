@@ -26,8 +26,6 @@ import java.util.List;
 import org.junit.Test;
 import org.sonar.api.config.PropertyDefinition;
 
-import com.hack23.sonar.cloudformation.CloudformationProperties;
-
 /**
  * The Class CloudformationPropertiesTest.
  */

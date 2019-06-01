@@ -26,9 +26,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.sonar.api.config.Configuration;
 
-import com.hack23.sonar.cloudformation.CloudformationLanguage;
-import com.hack23.sonar.cloudformation.CloudformationProperties;
-
 public class CloudformationLanguageTest extends Assert {
 
 	@Test

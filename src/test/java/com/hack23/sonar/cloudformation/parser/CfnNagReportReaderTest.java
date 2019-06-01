@@ -22,10 +22,6 @@ package com.hack23.sonar.cloudformation.parser;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.hack23.sonar.cloudformation.parser.CfnNagReport;
-import com.hack23.sonar.cloudformation.parser.CfnNagReportReader;
-import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
-
 public class CfnNagReportReaderTest extends Assert {
 
 	@Test

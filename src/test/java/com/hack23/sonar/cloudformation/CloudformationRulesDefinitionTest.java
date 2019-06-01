@@ -25,8 +25,6 @@ import org.junit.Test;
 import org.sonar.api.server.rule.RulesDefinition.Context;
 import org.sonar.api.server.rule.RulesDefinition.Rule;
 
-import com.hack23.sonar.cloudformation.CloudformationRulesDefinition;
-
 /**
  * The Class CloudformationRulesDefinitionTest.
  */

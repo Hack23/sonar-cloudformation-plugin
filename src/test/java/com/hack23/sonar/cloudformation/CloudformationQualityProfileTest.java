@@ -24,9 +24,6 @@ import org.junit.Test;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.BuiltInQualityProfile;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.Context;
 
-import com.hack23.sonar.cloudformation.CloudformationLanguage;
-import com.hack23.sonar.cloudformation.CloudformationQualityProfile;
-
 public class CloudformationQualityProfileTest extends Assert {
 
 	@Test

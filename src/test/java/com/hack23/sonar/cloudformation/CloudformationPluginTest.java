@@ -24,8 +24,6 @@ import static org.mockito.Mockito.mock;
 import org.junit.Test;
 import org.sonar.api.Plugin;
 
-import com.hack23.sonar.cloudformation.CloudformationPlugin;
-
 /**
  * The Class CloudformationPluginTest.
  */
