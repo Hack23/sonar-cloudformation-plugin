@@ -211,7 +211,7 @@ public final class CloudformationSensor implements Sensor {
 	 * @param violation the violation
 	 * @param templateInputFile the template input file
 	 */
-	private void addIssue(final SensorContext context, final CfnNagViolation violation, final InputFile templateInputFile) {
+	private static void addIssue(final SensorContext context, final CfnNagViolation violation, final InputFile templateInputFile) {
 		if (templateInputFile != null) {
 
 			if (violation.getLine_numbers().isEmpty()) {
