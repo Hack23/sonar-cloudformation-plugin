@@ -172,6 +172,58 @@ public class CloudformationSensorTest extends Assert {
 		cloudformationSensor.execute(sensorContext);
 	}
 
+	/**
+	 * Execute nag scan report bad property test.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	@Test
+	public void executeNagScanReportBadPropertyTest() throws IOException {
+		final Configuration configuration = mock(Configuration.class);
+		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+				.thenReturn(Optional.of("src/test/resources/file-not-exist.nagscan"));
+
+		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
+				configuration);
+
+		final DefaultFileSystem fileSystem = new DefaultFileSystem(
+				FileSystems.getDefault().getPath(".").toAbsolutePath());
+
+		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
+				fileSystem, new PathResolver());
+
+		final SensorContext sensorContext = SensorContextTester
+				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
+		cloudformationSensor.execute(sensorContext);
+	}
+
+	
+	
+	/**
+	 * Execute missing property test.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	@Test
+	public void executeMissingPropertyTest() throws IOException {
+		final Configuration configuration = mock(Configuration.class);
+		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+				.thenReturn(Optional.empty());
+
+		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
+				configuration);
+
+		final DefaultFileSystem fileSystem = new DefaultFileSystem(
+				FileSystems.getDefault().getPath(".").toAbsolutePath());
+
+		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
+				fileSystem, new PathResolver());
+
+		final SensorContext sensorContext = SensorContextTester
+				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
+		cloudformationSensor.execute(sensorContext);
+	}
+
 	
 	/**
 	 * Execute mixed file report test.
