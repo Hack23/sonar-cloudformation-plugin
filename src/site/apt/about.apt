@@ -15,6 +15,7 @@ Howto
  Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan 
 
 Properties supported 
+
  sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan 
  
  one or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
