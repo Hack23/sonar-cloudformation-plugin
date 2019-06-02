@@ -52,22 +52,22 @@ public final class CloudformationSensor implements Sensor {
 
 	/** The Constant SENSOR_NAME. */
 	public static final String SENSOR_NAME = "Cloudformation Check";
-	
+
 	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Loggers.get(CloudformationSensor.class);
 
 	/** The cfn nag report reader. */
 	private final CfnNagReportReader cfnNagReportReader;
-	
+
 	/** The cfn nag scan report reader. */
 	private final CfnNagScanReportReader cfnNagScanReportReader;
-	
+
 	/** The configuration. */
 	private final CloudformationSensorConfiguration configuration;
-	
+
 	/** The path resolver. */
 	private final PathResolver pathResolver;
-	
+
 	/** The file system. */
 	private final FileSystem fileSystem;
 
@@ -75,8 +75,8 @@ public final class CloudformationSensor implements Sensor {
 	 * Instantiates a new cloudformation sensor.
 	 *
 	 * @param configuration the configuration
-	 * @param fileSystem the file system
-	 * @param pathResolver the path resolver
+	 * @param fileSystem    the file system
+	 * @param pathResolver  the path resolver
 	 */
 	public CloudformationSensor(final CloudformationSensorConfiguration configuration, final FileSystem fileSystem,
 			final PathResolver pathResolver) {
@@ -115,11 +115,11 @@ public final class CloudformationSensor implements Sensor {
 			if (reportFilesProperty.isPresent()) {
 
 				final String reports = reportFilesProperty.get();
-				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY +"=" + reports);
+				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY + "=" + reports);
 				final String[] reportFiles = StringUtils.split(reports, ",");
 
 				for (final String report : reportFiles) {
-					LOGGER.info("Processing:" +report);
+					LOGGER.info("Processing:" + report);
 					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && report.endsWith(".nag")) {
 
 						handleCfnNagReports(context, report);
@@ -141,17 +141,17 @@ public final class CloudformationSensor implements Sensor {
 	 * Handle cfn nag reports.
 	 *
 	 * @param context the context
-	 * @param report the report
+	 * @param report  the report
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
-		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName()
-				.replace(".nag", "");
+		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag",
+				"");
 
 		final InputFile templateInputFile = findTemplate(templateName);
 
-		final CfnNagReport cfnNagReport = cfnNagReportReader.readReport(
-				new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+		final CfnNagReport cfnNagReport = cfnNagReportReader
+				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 		if (cfnNagReport != null) {
 			final List<CfnNagViolation> violations = cfnNagReport.getViolations();
 			for (final CfnNagViolation cfnNagViolation : violations) {
@@ -164,19 +164,20 @@ public final class CloudformationSensor implements Sensor {
 	 * Handle cfn nag scan reports.
 	 *
 	 * @param context the context
-	 * @param report the report
+	 * @param report  the report
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
 			throws FileNotFoundException {
-		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader.readReport(
-				new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
-		
+		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader
+				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+
 		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
-										
+
 			final String filename = nagScanReport.getFilename();
-			final InputFile templateInputFile = findTemplate(filename.substring(filename.lastIndexOf(File.separator)+1,filename.length()));
-			
+			final InputFile templateInputFile = findTemplate(
+					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()));
+
 			final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
 			for (final CfnNagViolation cfnNagViolation : violations) {
 				addIssue(context, cfnNagViolation, templateInputFile);
@@ -207,28 +208,35 @@ public final class CloudformationSensor implements Sensor {
 	/**
 	 * Adds the issue.
 	 *
-	 * @param context the context
-	 * @param violation the violation
+	 * @param context           the context
+	 * @param violation         the violation
 	 * @param templateInputFile the template input file
 	 */
-	private static void addIssue(final SensorContext context, final CfnNagViolation violation, final InputFile templateInputFile) {
-		if (templateInputFile != null) {
+	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
+			final InputFile templateInputFile) {
+		if (CloudformationQualityProfile.SUPPORTED_RULES.contains(violation.getId())) {
+			if (templateInputFile != null) {
 
-			if (violation.getLine_numbers().isEmpty()) {
-				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
-						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();
-			} else {
-				final List<Integer> line_numbers = violation.getLine_numbers();
-				for (final Integer line : line_numbers) {
+				if (violation.getLine_numbers().isEmpty()) {
 					context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
-							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
-									.at(templateInputFile.selectLine(line)))
+							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
 							.save();
+				} else {
+					final List<Integer> line_numbers = violation.getLine_numbers();
+					for (final Integer line : line_numbers) {
+						context.newIssue()
+								.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
+								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
+										.at(templateInputFile.selectLine(line)))
+								.save();
+					}
 				}
+			} else {
+				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
+						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
 			}
 		} else {
-			context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
-					.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
+			LOGGER.warn("Rule not supported {}:{}", violation.getId(), violation.getMessage());
 		}
 	}
 }

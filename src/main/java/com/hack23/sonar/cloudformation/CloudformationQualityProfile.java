@@ -19,12 +19,83 @@
  */
 package com.hack23.sonar.cloudformation;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 
 /**
  * The Class CloudformationQualityProfile.
  */
 public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
+
+	/** The Constant SUPPORTED_RULES. */
+	public static final Set<String> SUPPORTED_RULES = new HashSet<>();
+
+	static {
+		SUPPORTED_RULES.add("F1");
+		SUPPORTED_RULES.add("F2");
+		SUPPORTED_RULES.add("F3");
+		SUPPORTED_RULES.add("F4");
+		SUPPORTED_RULES.add("F5");
+		SUPPORTED_RULES.add("F6");
+		SUPPORTED_RULES.add("F7");
+		SUPPORTED_RULES.add("F8");
+		SUPPORTED_RULES.add("F9");
+		SUPPORTED_RULES.add("F10");
+		SUPPORTED_RULES.add("F11");
+		SUPPORTED_RULES.add("F12");
+		SUPPORTED_RULES.add("F13");
+		SUPPORTED_RULES.add("F14");
+		SUPPORTED_RULES.add("F15");
+		SUPPORTED_RULES.add("F16");
+		SUPPORTED_RULES.add("F18");
+		SUPPORTED_RULES.add("F20");
+		SUPPORTED_RULES.add("F21");
+		SUPPORTED_RULES.add("F22");
+		SUPPORTED_RULES.add("F23");
+		SUPPORTED_RULES.add("F24");
+		SUPPORTED_RULES.add("F25");
+		SUPPORTED_RULES.add("F26");
+		SUPPORTED_RULES.add("F27");
+		SUPPORTED_RULES.add("F28");
+		SUPPORTED_RULES.add("F29");
+		SUPPORTED_RULES.add("F30");
+		SUPPORTED_RULES.add("F31");
+		SUPPORTED_RULES.add("F665");
+		SUPPORTED_RULES.add("F1000");
+		SUPPORTED_RULES.add("F2000");
+
+		SUPPORTED_RULES.add("W1");
+		SUPPORTED_RULES.add("W2");
+		SUPPORTED_RULES.add("W5");
+		SUPPORTED_RULES.add("W9");
+		SUPPORTED_RULES.add("W10");
+		SUPPORTED_RULES.add("W11");
+		SUPPORTED_RULES.add("W12");
+		SUPPORTED_RULES.add("W13");
+		SUPPORTED_RULES.add("W14");
+		SUPPORTED_RULES.add("W15");
+		SUPPORTED_RULES.add("W16");
+		SUPPORTED_RULES.add("W17");
+		SUPPORTED_RULES.add("W18");
+		SUPPORTED_RULES.add("W19");
+		SUPPORTED_RULES.add("W20");
+		SUPPORTED_RULES.add("W21");
+		SUPPORTED_RULES.add("W22");
+		SUPPORTED_RULES.add("W23");
+		SUPPORTED_RULES.add("W24");
+		SUPPORTED_RULES.add("W26");
+		SUPPORTED_RULES.add("W27");
+		SUPPORTED_RULES.add("W28");
+		SUPPORTED_RULES.add("W29");
+		SUPPORTED_RULES.add("W31");
+		SUPPORTED_RULES.add("W32");
+		SUPPORTED_RULES.add("W33");
+		SUPPORTED_RULES.add("W34");
+		SUPPORTED_RULES.add("W35");
+
+	}
 
 	/**
 	 * Define.
@@ -37,67 +108,10 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 				CloudformationLanguage.KEY);
 		profile.setDefault(true);
 
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F1");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F2");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F3");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F4");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F5");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F6");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F7");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F8");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F9");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F10");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F11");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F12");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F13");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F14");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F15");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F16");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F18");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F20");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F21");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F22");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F23");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F24");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F25");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F26");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F27");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F28");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F29");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F30");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F31");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F665");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F1000");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "F2000");
+		for (final String ruleKey : SUPPORTED_RULES) {
+			profile.activateRule(CloudformationRulesDefinition.REPO_KEY, ruleKey);
+		}
 
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W1");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W2");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W5");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W9");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W10");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W11");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W12");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W13");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W14");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W15");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W16");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W17");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W18");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W19");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W20");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W21");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W22");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W23");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W24");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W26");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W27");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W28");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W29");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W31");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W32");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W33");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W34");
-		profile.activateRule(CloudformationRulesDefinition.REPO_KEY, "W35");		
 		profile.done();
 	}
 }

@@ -14,11 +14,10 @@ Howto
 
  Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan 
 
- Or use the property sonar.cfn.nag.reportDir=target (will include all *.nag and *.nagscan in the specified directory/directories)
-
- Properties supported 
- sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan (one or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix).
- sonar.cfn.nag.reportDir=target (any relative dir from project root, will scan for .*.nag and *.nagscan)
+Properties supported 
+ sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan 
+ 
+ one or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
 
 Roadmap
 

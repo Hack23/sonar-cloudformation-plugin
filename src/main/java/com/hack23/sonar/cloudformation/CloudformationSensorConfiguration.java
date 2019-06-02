@@ -43,15 +43,6 @@ public final class CloudformationSensorConfiguration {
 	}
 
 	/**
-	 * Gets the report dir.
-	 *
-	 * @return the report dir
-	 */
-	public Optional<String> getReportDir() {
-		return this.configuration.get(CloudformationConstants.REPORT_DIR_PROPERTY);
-	}
-
-	/**
 	 * Gets the report files.
 	 *
 	 * @return the report files

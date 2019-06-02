@@ -27,9 +27,6 @@ public final class CloudformationConstants {
 	/** The Constant REPORT_FILES_PROPERTY. */
 	public static final String REPORT_FILES_PROPERTY = "sonar.cfn.nag.reportFiles";
 	
-	/** The Constant REPORT_DIR_PROPERTY. */
-	public static final String REPORT_DIR_PROPERTY = "sonar.cfn.nag.reportDir";
-
 	/**
 	 * Instantiates a new cloudformation constants.
 	 */

@@ -18,6 +18,6 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 /**
- * Provides...
+ * Provides cfn-nag report readers and model.
  */
 package com.hack23.sonar.cloudformation.parser;

@@ -1,5 +1,5 @@
 # sonar-cloudformation-plugin
-Cloudformation template rules (cgn-nag,...)
+Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag)
 
 [![license](https://img.shields.io/github/license/Hack23/sonar-cloudformation-plugin.svg)](https://github.com/Hack23/sonar-cloudformation-plugin/raw/master/LICENSE.txt)
 [![Maven Central](https://img.shields.io/maven-central/v/com.hack23.sonar/sonar-cloudformation-plugin.svg)](http://mvnrepository.com/artifact/com.hack23.sonar/sonar-cloudformation-plugin)
@@ -30,11 +30,11 @@ and set the property sonar.cfn.nag.reportFile=target/template.yml.nag
 
 Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan 
 
-Or use the property sonar.cfn.nag.reportDir=target (will include all *.nag and *.nagscan in the specified directory/directories)
+# Properties supported 
 
-Properties supported 
-sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan (one or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix).
-sonar.cfn.nag.reportDir=target (any relative dir from project root, will scan for .*.nag and *.nagscan)
+sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan 
+
+One or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
 
 # Roadmap
 
