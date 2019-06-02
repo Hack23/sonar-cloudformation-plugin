@@ -19,7 +19,7 @@
  */
 package com.hack23.sonar.cloudformation;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.sonar.api.config.PropertyDefinition;
@@ -29,7 +29,7 @@ import org.sonar.api.resources.Qualifiers;
 /**
  * The Class CloudformationProperties.
  */
-public class CloudformationProperties {
+public final class CloudformationProperties {
 
 	  /** The Constant FILE_SUFFIXES_KEY. */
   	public static final String FILE_SUFFIXES_KEY = &quot;sonar.cloudformation.file.suffixes&quot;;
@@ -50,7 +50,7 @@ public class CloudformationProperties {
   	 * @return the properties
   	 */
   	public static List&lt;PropertyDefinition&gt; getProperties() {
-<span class="fc" id="L53">	    return Arrays.asList(PropertyDefinition.builder(FILE_SUFFIXES_KEY)</span>
+<span class="fc" id="L53">	    return Collections.singletonList(PropertyDefinition.builder(FILE_SUFFIXES_KEY)</span>
 <span class="fc" id="L54">	      .defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)</span>
 <span class="fc" id="L55">	      .category(&quot;Cloudformation&quot;)</span>
 <span class="fc" id="L56">	      .name(&quot;File Suffixes&quot;)</span>

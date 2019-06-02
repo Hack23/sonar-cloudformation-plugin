@@ -116,9 +116,10 @@
 <div class="section">
 <h2><a name="Howto"></a>Howto</h2>
 <p>Prepare cfn_nag reports running (cfn_nag src/main/config/template.yml &gt; target/template.yml.nag) and set the property sonar.cfn.nag.reportFile=target/template.yml.nag</p>
-<p>Or scan directories using cfn_nag_scan running (cfn_nag_scan --input-path src/main/config/ -o json -&gt; target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan </p>
-<p>Or use the property sonar.cfn.nag.reportDir=target (will include all *.nag and *.nagscan in the specified directory/directories)</p>
-<p>Properties supported sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan (one or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix). sonar.cfn.nag.reportDir=target (any relative dir from project root, will scan for .*.nag and *.nagscan)</p></div>
+<p>Or scan directories using cfn_nag_scan running (cfn_nag_scan --input-path src/main/config/ -o json -&gt; target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan </p></div>
+<div class="section">
+<h2><a name="Properties_supported_sonar.cfn.nag.reportFile.3Dtarget.2Ftemplate.yml.nag.2Ctarget.2Fcfn-nag-scan.nagscan"></a>Properties supported sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan </h2>
+<p>one or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.</p></div>
 <div class="section">
 <h2><a name="Roadmap"></a>Roadmap</h2>
 <p>Support more cloudformation checkers and add more rules for cfn_nag. </p></div>

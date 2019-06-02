@@ -28,7 +28,7 @@ import org.sonar.api.scanner.ScannerSide;
  * The Class CloudformationSensorConfiguration.
  */
 @ScannerSide
-public class CloudformationSensorConfiguration {
+public final class CloudformationSensorConfiguration {
 
 	/** The configuration. */
 	private final Configuration configuration;
@@ -38,18 +38,9 @@ public class CloudformationSensorConfiguration {
 	 *
 	 * @param configuration the configuration
 	 */
-<span class="nc" id="L41">	public CloudformationSensorConfiguration(final Configuration configuration) {</span>
-<span class="nc" id="L42">		this.configuration = configuration;</span>
-<span class="nc" id="L43">	}</span>
-
-	/**
-	 * Gets the report dir.
-	 *
-	 * @return the report dir
-	 */
-	public Optional&lt;String&gt; getReportDir() {
-<span class="nc" id="L51">		return this.configuration.get(CloudformationConstants.REPORT_DIR_PROPERTY);</span>
-	}
+<span class="fc" id="L41">	public CloudformationSensorConfiguration(final Configuration configuration) {</span>
+<span class="fc" id="L42">		this.configuration = configuration;</span>
+<span class="fc" id="L43">	}</span>
 
 	/**
 	 * Gets the report files.
@@ -57,7 +48,7 @@ public class CloudformationSensorConfiguration {
 	 * @return the report files
 	 */
 	public Optional&lt;String&gt; getReportFiles() {
-<span class="nc" id="L60">		return this.configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY);</span>
+<span class="fc" id="L51">		return this.configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY);</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
