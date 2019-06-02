@@ -21,6 +21,7 @@ package com.hack23.sonar.cloudformation;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -50,7 +51,7 @@ import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
 public class CloudformationSensor implements Sensor {
 
 	/** The Constant SENSOR_NAME. */
-	private static final String SENSOR_NAME = "Cloudformation Check";
+	public static final String SENSOR_NAME = "Cloudformation Check";
 	
 	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Loggers.get(CloudformationSensor.class);
@@ -121,35 +122,11 @@ public class CloudformationSensor implements Sensor {
 					LOGGER.info("Processing:" +report);
 					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && report.endsWith(".nag")) {
 
-						final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName()
-								.replace(".nag", "");
-
-						final InputFile templateInputFile = findTemplate(templateName);
-
-						final CfnNagReport cfnNagReport = cfnNagReportReader.readReport(
-								new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
-						if (cfnNagReport != null) {
-							final List<CfnNagViolation> violations = cfnNagReport.getViolations();
-							for (final CfnNagViolation cfnNagViolation : violations) {
-								addIssue(context, cfnNagViolation, templateInputFile);
-							}
-						}
+						handleCfnNagReports(context, report);
 					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()
 							&& report.endsWith(".nagscan")) {
 
-						final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader.readReport(
-								new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
-						
-						for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
-														
-							final String filename = nagScanReport.getFilename();
-							final InputFile templateInputFile = findTemplate(filename.substring(filename.lastIndexOf(File.separator)+1,filename.length()));
-							
-							final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
-							for (final CfnNagViolation cfnNagViolation : violations) {
-								addIssue(context, cfnNagViolation, templateInputFile);
-							}
-						}
+						handleCfnNagScanReports(context, report);
 					}
 				}
 			}
@@ -157,6 +134,53 @@ public class CloudformationSensor implements Sensor {
 			throw new RuntimeException("Can not process cfn-nag reports.", e);
 		} finally {
 			profiler.stopInfo();
+		}
+	}
+
+	/**
+	 * Handle cfn nag reports.
+	 *
+	 * @param context the context
+	 * @param report the report
+	 * @throws FileNotFoundException the file not found exception
+	 */
+	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
+		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName()
+				.replace(".nag", "");
+
+		final InputFile templateInputFile = findTemplate(templateName);
+
+		final CfnNagReport cfnNagReport = cfnNagReportReader.readReport(
+				new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+		if (cfnNagReport != null) {
+			final List<CfnNagViolation> violations = cfnNagReport.getViolations();
+			for (final CfnNagViolation cfnNagViolation : violations) {
+				addIssue(context, cfnNagViolation, templateInputFile);
+			}
+		}
+	}
+
+	/**
+	 * Handle cfn nag scan reports.
+	 *
+	 * @param context the context
+	 * @param report the report
+	 * @throws FileNotFoundException the file not found exception
+	 */
+	private void handleCfnNagScanReports(final SensorContext context, final String report)
+			throws FileNotFoundException {
+		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader.readReport(
+				new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+		
+		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
+										
+			final String filename = nagScanReport.getFilename();
+			final InputFile templateInputFile = findTemplate(filename.substring(filename.lastIndexOf(File.separator)+1,filename.length()));
+			
+			final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
+			for (final CfnNagViolation cfnNagViolation : violations) {
+				addIssue(context, cfnNagViolation, templateInputFile);
+			}
 		}
 	}
 
