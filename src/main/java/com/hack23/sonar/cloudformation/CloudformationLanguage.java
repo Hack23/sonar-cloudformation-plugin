@@ -29,7 +29,7 @@ import org.sonar.api.resources.AbstractLanguage;
 /**
  * The Class CloudformationLanguage.
  */
-public class CloudformationLanguage extends AbstractLanguage {
+public final class CloudformationLanguage extends AbstractLanguage {
 
 	/** The Constant NAME. */
 	public static final String NAME = "Cloudformation";

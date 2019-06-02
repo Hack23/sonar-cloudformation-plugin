@@ -28,7 +28,7 @@ import org.sonar.api.scanner.ScannerSide;
  * The Class CloudformationSensorConfiguration.
  */
 @ScannerSide
-public class CloudformationSensorConfiguration {
+public final class CloudformationSensorConfiguration {
 
 	/** The configuration. */
 	private final Configuration configuration;

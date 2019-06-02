@@ -59,8 +59,24 @@ public class CloudformationLanguageTest extends Assert {
 		final CloudformationLanguage cloudformationLanguage = new CloudformationLanguage(configuration);
 		final String[] suffixes = cloudformationLanguage.getFileSuffixes();
 		assertEquals(".template",suffixes[0]);
-		assertEquals(".yml",suffixes[1]);
+		assertEquals(".yml",suffixes[1]);		
+	}
+	
+	/**
+	 * Gets the file suffixes default value test.
+	 *
+	 * @return the file suffixes default value test
+	 */
+	@Test
+	public void getFileSuffixesDefaultValueTest() {
+		final Configuration configuration = mock(Configuration.class);
+		when(configuration.getStringArray(CloudformationProperties.FILE_SUFFIXES_KEY)).thenReturn(new String[] {});
+		
+		final CloudformationLanguage cloudformationLanguage = new CloudformationLanguage(configuration);
+		final String[] suffixes = cloudformationLanguage.getFileSuffixes();
+		assertEquals(".template",suffixes[0]);
 		
 	}
+
 
 }

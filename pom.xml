@@ -77,7 +77,6 @@
 		<license.mailto>james@hack23.com</license.mailto>
 		<license.title>Cloudformation Plugin for SonarQube</license.title>
 		<license.years>2019</license.years>
-		<sonar.cfn.nag.reportFiles>src/test/resources/aws-cross-account-manager-master.yml.nag,src/test/resources/cfn-nag-scan.nagscan</sonar.cfn.nag.reportFiles>
 	</properties>
 
 

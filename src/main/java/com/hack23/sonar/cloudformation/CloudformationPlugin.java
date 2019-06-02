@@ -24,7 +24,7 @@ import org.sonar.api.Plugin;
 /**
  * The Class CloudformationPlugin.
  */
-public class CloudformationPlugin implements Plugin {
+public final class CloudformationPlugin implements Plugin {
 
 	/**
 	 * Define.

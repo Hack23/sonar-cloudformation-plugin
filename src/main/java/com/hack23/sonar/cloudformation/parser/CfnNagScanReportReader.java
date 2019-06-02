@@ -21,6 +21,7 @@ package com.hack23.sonar.cloudformation.parser;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.sonar.api.utils.log.Logger;
@@ -50,7 +51,7 @@ public class CfnNagScanReportReader {
 			return objectMapper.readValue(input, new TypeReference<List<CfnNagScanReport>>() {});
 		} catch (final IOException e) {
 			LOGGER.error("Problem reading cfn nag report json", e);
-			return null;
+			return new ArrayList<>();
 		}
 	}
 }

@@ -32,86 +32,92 @@ import org.sonar.api.utils.log.Loggers;
 /**
  * The Class CloudformationRulesDefinition.
  */
-public class CloudformationRulesDefinition implements RulesDefinition {
+public final class CloudformationRulesDefinition implements RulesDefinition {
 
 	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Loggers.get(CloudformationRulesDefinition.class);
 
-	
 	/** The Constant PATH_TO_RULES_XML. */
-  	private static final String PATH_TO_RULES_XML = "/cloudformation-rules.xml";
+	private static final String PATH_TO_RULES_XML = "/cloudformation-rules.xml";
 
 	/** The Constant KEY. */
-  	protected static final String KEY = "repo";
-	  
-  	/** The Constant NAME. */
-  	protected static final String NAME = "repository";
+	protected static final String KEY = "repo";
 
-	  /** The Constant REPO_KEY. */
-  	public static final String REPO_KEY = CloudformationLanguage.KEY + "-" + KEY;
-	  
-  	/** The Constant REPO_NAME. */
-  	protected static final String REPO_NAME = CloudformationLanguage.NAME + "-" + NAME;
+	/** The Constant NAME. */
+	protected static final String NAME = "repository";
 
-	  /**
-  	 * Rules definition file path.
-  	 *
-  	 * @return the string
-  	 */
-  	protected String rulesDefinitionFilePath() {
-	    return PATH_TO_RULES_XML;
-	  }
+	/** The Constant REPO_KEY. */
+	public static final String REPO_KEY = CloudformationLanguage.KEY + "-" + KEY;
 
-	  /**
-  	 * Define rules for language.
-  	 *
-  	 * @param context the context
-  	 * @param repositoryKey the repository key
-  	 * @param repositoryName the repository name
-  	 * @param languageKey the language key
-  	 */
-  	private void defineRulesForLanguage(final Context context, final String repositoryKey, final String repositoryName, final String languageKey) {
-	    final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
+	/** The Constant REPO_NAME. */
+	protected static final String REPO_NAME = CloudformationLanguage.NAME + "-" + NAME;
 
-	    final InputStream rulesXml = this.getClass().getResourceAsStream(rulesDefinitionFilePath());
-	    if (rulesXml != null) {
-	      final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();
-	      rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());
-	      
-	      
-	      for (final NewRule newRule : repository.rules()) {
-	      	
-	  		try {
-	  			final Set<String> tags = (Set<String>) FieldUtils.readField(newRule, "tags", true);
-	  			for (final String tag : tags) {
-	  				
-	  				if (tag.contains("cweid-")) {
-	  					newRule.addCwe(Integer.parseInt(tag.replace("cweid-", "")));					
-	  				}
-	  		    	
-	  				if (tag.contains("owasp-")) {
-	  					newRule.addOwaspTop10(OwaspTop10.valueOf(tag.replace("owasp-", "").toUpperCase()));				
-	  				}
-	  			}
-	  		} catch (final IllegalAccessException e) {
-	  			LOGGER.warn("Problem parsing security tags",e);
-	  		} 
-	      }
-	      }
-	    repository.done();
-	    
-	  }
-	  
+	/**
+	 * Rules definition file path.
+	 *
+	 * @return the string
+	 */
+	protected String rulesDefinitionFilePath() {
+		return PATH_TO_RULES_XML;
+	}
 
-	  /**
-  	 * Define.
-  	 *
-  	 * @param context the context
-  	 */
-  	@Override
-	  public void define(final Context context) {
-	    defineRulesForLanguage(context, REPO_KEY, REPO_NAME, CloudformationLanguage.KEY);
-	  }
+	/**
+	 * Define rules for language.
+	 *
+	 * @param context        the context
+	 * @param repositoryKey  the repository key
+	 * @param repositoryName the repository name
+	 * @param languageKey    the language key
+	 */
+	private void defineRulesForLanguage(final Context context, final String repositoryKey, final String repositoryName,
+			final String languageKey) {
+		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
 
-	
+		final InputStream rulesXml = this.getClass().getResourceAsStream(rulesDefinitionFilePath());
+		if (rulesXml != null) {
+			final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();
+			rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());
+
+			for (final NewRule newRule : repository.rules()) {
+
+				addNewRule(newRule);
+			}
+		}
+		repository.done();
+
+	}
+
+	/**
+	 * Adds the new rule.
+	 *
+	 * @param newRule the new rule
+	 */
+	private void addNewRule(final NewRule newRule) {
+		try {
+			final Set<String> tags = (Set<String>) FieldUtils.readField(newRule, "tags", true);
+			for (final String tag : tags) {
+
+				if (tag.contains("cweid-")) {
+					newRule.addCwe(Integer.parseInt(tag.replace("cweid-", "")));
+				}
+
+				if (tag.contains("owasp-")) {
+					newRule.addOwaspTop10(OwaspTop10.valueOf(tag.replace("owasp-", "").toUpperCase()));
+				}
+			}
+		} catch (final IllegalAccessException e) {
+			LOGGER.warn("Problem parsing security tags", e);
+		}
+	}
+
+	/**
+	 * Define.
+	 *
+	 * @param context the context
+	 */
+	@Override
+	public void define(final Context context) {
+		defineRulesForLanguage(context, REPO_KEY, REPO_NAME, CloudformationLanguage.KEY);
+	}
+
 }

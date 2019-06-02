@@ -48,7 +48,7 @@ import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
 /**
  * The Class CloudformationSensor.
  */
-public class CloudformationSensor implements Sensor {
+public final class CloudformationSensor implements Sensor {
 
 	/** The Constant SENSOR_NAME. */
 	public static final String SENSOR_NAME = "Cloudformation Check";

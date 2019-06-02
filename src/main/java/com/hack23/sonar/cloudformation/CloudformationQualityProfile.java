@@ -24,7 +24,7 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 /**
  * The Class CloudformationQualityProfile.
  */
-public class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
+public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
 
 	/**
 	 * Define.
