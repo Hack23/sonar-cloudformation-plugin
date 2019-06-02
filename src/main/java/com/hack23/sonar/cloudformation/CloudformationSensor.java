@@ -22,6 +22,7 @@ package com.hack23.sonar.cloudformation;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -127,10 +128,12 @@ public final class CloudformationSensor implements Sensor {
 							&& report.endsWith(".nagscan")) {
 
 						handleCfnNagScanReports(context, report);
+					} else {
+						LOGGER.warn("Processing:" + report + " missing or do not end with .nag or .nagscan");
 					}
 				}
 			}
-		} catch (final Exception e) {
+		} catch (final IOException e) {
 			throw new RuntimeException("Can not process cfn-nag reports.", e);
 		} finally {
 			profiler.stopInfo();
@@ -214,7 +217,7 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
 			final InputFile templateInputFile) {
-		if (CloudformationQualityProfile.SUPPORTED_RULES.contains(violation.getId())) {
+		if (CloudformationQualityProfile.hasRule(violation.getId())) {
 			if (templateInputFile != null) {
 
 				if (violation.getLine_numbers().isEmpty()) {

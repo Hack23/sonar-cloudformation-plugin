@@ -30,7 +30,7 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
 
 	/** The Constant SUPPORTED_RULES. */
-	public static final Set<String> SUPPORTED_RULES = new HashSet<>();
+	private static final Set<String> SUPPORTED_RULES = new HashSet<>();
 
 	static {
 		SUPPORTED_RULES.add("F1");
@@ -97,6 +97,10 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 
 	}
 
+	public static boolean hasRule(final String id) {
+		return SUPPORTED_RULES.contains(id);
+	}
+	
 	/**
 	 * Define.
 	 *
