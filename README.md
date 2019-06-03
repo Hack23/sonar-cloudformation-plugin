@@ -32,7 +32,7 @@ Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/m
 
 # Properties supported 
 
-sonar.cfn.nag.reportFile=target/template.yml.nag,target/cfn-nag-scan.nagscan 
+sonar.cfn.nag.reportFiles=target/template.yml.nag,target/cfn-nag-scan.nagscan 
 
 One or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
 
