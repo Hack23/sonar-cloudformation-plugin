@@ -132,6 +132,8 @@ public final class CloudformationSensor implements Sensor {
 						LOGGER.warn("Processing:" + report + " missing or do not end with .nag or .nagscan");
 					}
 				}
+			} else {
+				LOGGER.warn("Missing property:{}",CloudformationConstants.REPORT_FILES_PROPERTY);
 			}
 		} catch (final IOException e) {
 			throw new RuntimeException("Can not process cfn-nag reports.", e);
@@ -148,8 +150,7 @@ public final class CloudformationSensor implements Sensor {
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
-		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag",
-				"");
+		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag","");
 
 		final InputFile templateInputFile = findTemplate(templateName);
 

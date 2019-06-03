@@ -36,6 +36,8 @@ public final class CloudformationPlugin implements Plugin {
 		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,
 				CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
 				CloudformationSensorConfiguration.class);
+		context.addExtensions(CloudformationProperties.getProperties());
+
 
 	}
 
