@@ -30,7 +30,7 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 <span class="fc" id="L30">public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {</span>
 
 	/** The Constant SUPPORTED_RULES. */
-<span class="fc" id="L33">	public static final Set&lt;String&gt; SUPPORTED_RULES = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L33">	private static final Set&lt;String&gt; SUPPORTED_RULES = new HashSet&lt;&gt;();</span>
 
 	static {
 <span class="fc" id="L36">		SUPPORTED_RULES.add(&quot;F1&quot;);</span>
@@ -97,6 +97,10 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 
 <span class="fc" id="L98">	}</span>
 
+	public static boolean hasRule(final String id) {
+<span class="fc" id="L101">		return SUPPORTED_RULES.contains(id);</span>
+	}
+	
 	/**
 	 * Define.
 	 *
@@ -104,15 +108,15 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L107">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,</span>
+<span class="fc" id="L111">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,</span>
 				CloudformationLanguage.KEY);
-<span class="fc" id="L109">		profile.setDefault(true);</span>
+<span class="fc" id="L113">		profile.setDefault(true);</span>
 
-<span class="fc bfc" id="L111" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
-<span class="fc" id="L112">			profile.activateRule(CloudformationRulesDefinition.REPO_KEY, ruleKey);</span>
-<span class="fc" id="L113">		}</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
+<span class="fc" id="L116">			profile.activateRule(CloudformationRulesDefinition.REPO_KEY, ruleKey);</span>
+<span class="fc" id="L117">		}</span>
 
-<span class="fc" id="L115">		profile.done();</span>
-<span class="fc" id="L116">	}</span>
+<span class="fc" id="L119">		profile.done();</span>
+<span class="fc" id="L120">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

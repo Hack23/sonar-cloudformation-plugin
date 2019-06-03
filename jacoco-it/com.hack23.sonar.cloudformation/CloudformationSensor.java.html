@@ -22,6 +22,7 @@ package com.hack23.sonar.cloudformation;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -54,7 +55,7 @@ public final class CloudformationSensor implements Sensor {
 	public static final String SENSOR_NAME = &quot;Cloudformation Check&quot;;
 
 	/** The Constant LOGGER. */
-<span class="fc" id="L57">	private static final Logger LOGGER = Loggers.get(CloudformationSensor.class);</span>
+<span class="fc" id="L58">	private static final Logger LOGGER = Loggers.get(CloudformationSensor.class);</span>
 
 	/** The cfn nag report reader. */
 	private final CfnNagReportReader cfnNagReportReader;
@@ -80,13 +81,13 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	public CloudformationSensor(final CloudformationSensorConfiguration configuration, final FileSystem fileSystem,
 			final PathResolver pathResolver) {
-<span class="fc" id="L83">		super();</span>
-<span class="fc" id="L84">		this.cfnNagReportReader = new CfnNagReportReader();</span>
-<span class="fc" id="L85">		this.cfnNagScanReportReader = new CfnNagScanReportReader();</span>
-<span class="fc" id="L86">		this.configuration = configuration;</span>
-<span class="fc" id="L87">		this.fileSystem = fileSystem;</span>
-<span class="fc" id="L88">		this.pathResolver = pathResolver;</span>
-<span class="fc" id="L89">	}</span>
+<span class="fc" id="L84">		super();</span>
+<span class="fc" id="L85">		this.cfnNagReportReader = new CfnNagReportReader();</span>
+<span class="fc" id="L86">		this.cfnNagScanReportReader = new CfnNagScanReportReader();</span>
+<span class="fc" id="L87">		this.configuration = configuration;</span>
+<span class="fc" id="L88">		this.fileSystem = fileSystem;</span>
+<span class="fc" id="L89">		this.pathResolver = pathResolver;</span>
+<span class="fc" id="L90">	}</span>
 
 	/**
 	 * Describe.
@@ -95,9 +96,9 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	@Override
 	public void describe(final SensorDescriptor descriptor) {
-<span class="fc" id="L98">		descriptor.name(SENSOR_NAME);</span>
+<span class="fc" id="L99">		descriptor.name(SENSOR_NAME);</span>
 
-<span class="fc" id="L100">	}</span>
+<span class="fc" id="L101">	}</span>
 
 	/**
 	 * Execute.
@@ -106,36 +107,40 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	@Override
 	public void execute(final SensorContext context) {
-<span class="fc" id="L109">		final Profiler profiler = Profiler.create(LOGGER);</span>
-<span class="fc" id="L110">		profiler.startInfo(&quot;Process cfn-nag reports&quot;);</span>
+<span class="fc" id="L110">		final Profiler profiler = Profiler.create(LOGGER);</span>
+<span class="fc" id="L111">		profiler.startInfo(&quot;Process cfn-nag reports&quot;);</span>
 
 		try {
-<span class="fc" id="L113">			final Optional&lt;String&gt; reportFilesProperty = configuration.getReportFiles();</span>
+<span class="fc" id="L114">			final Optional&lt;String&gt; reportFilesProperty = configuration.getReportFiles();</span>
 
-<span class="fc bfc" id="L115" title="All 2 branches covered.">			if (reportFilesProperty.isPresent()) {</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">			if (reportFilesProperty.isPresent()) {</span>
 
-<span class="fc" id="L117">				final String reports = reportFilesProperty.get();</span>
-<span class="fc" id="L118">				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY + &quot;=&quot; + reports);</span>
-<span class="fc" id="L119">				final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
+<span class="fc" id="L118">				final String reports = reportFilesProperty.get();</span>
+<span class="fc" id="L119">				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY + &quot;=&quot; + reports);</span>
+<span class="fc" id="L120">				final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
 
-<span class="fc bfc" id="L121" title="All 2 branches covered.">				for (final String report : reportFiles) {</span>
-<span class="fc" id="L122">					LOGGER.info(&quot;Processing:&quot; + report);</span>
-<span class="fc bfc" id="L123" title="All 4 branches covered.">					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() &amp;&amp; report.endsWith(&quot;.nag&quot;)) {</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">				for (final String report : reportFiles) {</span>
+<span class="fc" id="L123">					LOGGER.info(&quot;Processing:&quot; + report);</span>
+<span class="fc bfc" id="L124" title="All 4 branches covered.">					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() &amp;&amp; report.endsWith(&quot;.nag&quot;)) {</span>
 
-<span class="fc" id="L125">						handleCfnNagReports(context, report);</span>
-<span class="fc bfc" id="L126" title="All 2 branches covered.">					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()</span>
-<span class="pc bpc" id="L127" title="1 of 2 branches missed.">							&amp;&amp; report.endsWith(&quot;.nagscan&quot;)) {</span>
+<span class="fc" id="L126">						handleCfnNagReports(context, report);</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()</span>
+<span class="pc bpc" id="L128" title="1 of 2 branches missed.">							&amp;&amp; report.endsWith(&quot;.nagscan&quot;)) {</span>
 
-<span class="fc" id="L129">						handleCfnNagScanReports(context, report);</span>
+<span class="fc" id="L130">						handleCfnNagScanReports(context, report);</span>
+					} else {
+<span class="fc" id="L132">						LOGGER.warn(&quot;Processing:&quot; + report + &quot; missing or do not end with .nag or .nagscan&quot;);</span>
 					}
 				}
+<span class="fc" id="L135">			} else {</span>
+<span class="fc" id="L136">				LOGGER.warn(&quot;Missing property:{}&quot;,CloudformationConstants.REPORT_FILES_PROPERTY);</span>
 			}
-<span class="nc" id="L133">		} catch (final Exception e) {</span>
-<span class="nc" id="L134">			throw new RuntimeException(&quot;Can not process cfn-nag reports.&quot;, e);</span>
+<span class="nc" id="L138">		} catch (final IOException e) {</span>
+<span class="nc" id="L139">			throw new RuntimeException(&quot;Can not process cfn-nag reports.&quot;, e);</span>
 		} finally {
-<span class="fc" id="L136">			profiler.stopInfo();</span>
+<span class="fc" id="L141">			profiler.stopInfo();</span>
 		}
-<span class="fc" id="L138">	}</span>
+<span class="fc" id="L143">	}</span>
 
 	/**
 	 * Handle cfn nag reports.
@@ -145,20 +150,19 @@ public final class CloudformationSensor implements Sensor {
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
-<span class="fc" id="L148">		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(&quot;.nag&quot;,</span>
-				&quot;&quot;);
+<span class="fc" id="L153">		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(&quot;.nag&quot;,&quot;&quot;);</span>
 
-<span class="fc" id="L151">		final InputFile templateInputFile = findTemplate(templateName);</span>
+<span class="fc" id="L155">		final InputFile templateInputFile = findTemplate(templateName);</span>
 
-<span class="fc" id="L153">		final CfnNagReport cfnNagReport = cfnNagReportReader</span>
-<span class="fc" id="L154">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
-<span class="pc bpc" id="L155" title="1 of 2 branches missed.">		if (cfnNagReport != null) {</span>
-<span class="fc" id="L156">			final List&lt;CfnNagViolation&gt; violations = cfnNagReport.getViolations();</span>
-<span class="fc bfc" id="L157" title="All 2 branches covered.">			for (final CfnNagViolation cfnNagViolation : violations) {</span>
-<span class="fc" id="L158">				addIssue(context, cfnNagViolation, templateInputFile);</span>
-<span class="fc" id="L159">			}</span>
+<span class="fc" id="L157">		final CfnNagReport cfnNagReport = cfnNagReportReader</span>
+<span class="fc" id="L158">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
+<span class="pc bpc" id="L159" title="1 of 2 branches missed.">		if (cfnNagReport != null) {</span>
+<span class="fc" id="L160">			final List&lt;CfnNagViolation&gt; violations = cfnNagReport.getViolations();</span>
+<span class="fc bfc" id="L161" title="All 2 branches covered.">			for (final CfnNagViolation cfnNagViolation : violations) {</span>
+<span class="fc" id="L162">				addIssue(context, cfnNagViolation, templateInputFile);</span>
+<span class="fc" id="L163">			}</span>
 		}
-<span class="fc" id="L161">	}</span>
+<span class="fc" id="L165">	}</span>
 
 	/**
 	 * Handle cfn nag scan reports.
@@ -169,21 +173,21 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
 			throws FileNotFoundException {
-<span class="fc" id="L172">		final List&lt;CfnNagScanReport&gt; cfnNagscanReports = cfnNagScanReportReader</span>
-<span class="fc" id="L173">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
+<span class="fc" id="L176">		final List&lt;CfnNagScanReport&gt; cfnNagscanReports = cfnNagScanReportReader</span>
+<span class="fc" id="L177">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
 
-<span class="fc bfc" id="L175" title="All 2 branches covered.">		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {</span>
+<span class="fc bfc" id="L179" title="All 2 branches covered.">		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {</span>
 
-<span class="fc" id="L177">			final String filename = nagScanReport.getFilename();</span>
-<span class="fc" id="L178">			final InputFile templateInputFile = findTemplate(</span>
-<span class="fc" id="L179">					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()));</span>
+<span class="fc" id="L181">			final String filename = nagScanReport.getFilename();</span>
+<span class="fc" id="L182">			final InputFile templateInputFile = findTemplate(</span>
+<span class="fc" id="L183">					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()));</span>
 
-<span class="fc" id="L181">			final List&lt;CfnNagViolation&gt; violations = nagScanReport.getFile_results().getViolations();</span>
-<span class="fc bfc" id="L182" title="All 2 branches covered.">			for (final CfnNagViolation cfnNagViolation : violations) {</span>
-<span class="fc" id="L183">				addIssue(context, cfnNagViolation, templateInputFile);</span>
-<span class="fc" id="L184">			}</span>
-<span class="fc" id="L185">		}</span>
-<span class="fc" id="L186">	}</span>
+<span class="fc" id="L185">			final List&lt;CfnNagViolation&gt; violations = nagScanReport.getFile_results().getViolations();</span>
+<span class="fc bfc" id="L186" title="All 2 branches covered.">			for (final CfnNagViolation cfnNagViolation : violations) {</span>
+<span class="fc" id="L187">				addIssue(context, cfnNagViolation, templateInputFile);</span>
+<span class="fc" id="L188">			}</span>
+<span class="fc" id="L189">		}</span>
+<span class="fc" id="L190">	}</span>
 
 	/**
 	 * Find template.
@@ -192,17 +196,17 @@ public final class CloudformationSensor implements Sensor {
 	 * @return the input file
 	 */
 	private InputFile findTemplate(final String templateName) {
-<span class="fc" id="L195">		final List&lt;InputFile&gt; potentialReportTargets = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L196">		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);</span>
-<span class="fc" id="L197">		LOGGER.info(&quot;Looking for cloudformation template matching:&quot; + templateName);</span>
+<span class="fc" id="L199">		final List&lt;InputFile&gt; potentialReportTargets = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L200">		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);</span>
+<span class="fc" id="L201">		LOGGER.info(&quot;Looking for cloudformation template matching:&quot; + templateName);</span>
 
-<span class="fc bfc" id="L199" title="All 2 branches covered.">		for (final InputFile inputFile : potentialReportTargets) {</span>
-<span class="fc bfc" id="L200" title="All 2 branches covered.">			if (templateName.equals(inputFile.filename())) {</span>
-<span class="fc" id="L201">				LOGGER.info(&quot;matching:&quot; + templateName + &quot; = &quot; + inputFile.filename());</span>
-<span class="fc" id="L202">				return inputFile;</span>
+<span class="fc bfc" id="L203" title="All 2 branches covered.">		for (final InputFile inputFile : potentialReportTargets) {</span>
+<span class="fc bfc" id="L204" title="All 2 branches covered.">			if (templateName.equals(inputFile.filename())) {</span>
+<span class="fc" id="L205">				LOGGER.info(&quot;matching:&quot; + templateName + &quot; = &quot; + inputFile.filename());</span>
+<span class="fc" id="L206">				return inputFile;</span>
 			}
-<span class="fc" id="L204">		}</span>
-<span class="fc" id="L205">		return null;</span>
+<span class="fc" id="L208">		}</span>
+<span class="fc" id="L209">		return null;</span>
 	}
 
 	/**
@@ -214,30 +218,30 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
 			final InputFile templateInputFile) {
-<span class="pc bpc" id="L217" title="1 of 2 branches missed.">		if (CloudformationQualityProfile.SUPPORTED_RULES.contains(violation.getId())) {</span>
-<span class="fc bfc" id="L218" title="All 2 branches covered.">			if (templateInputFile != null) {</span>
+<span class="pc bpc" id="L221" title="1 of 2 branches missed.">		if (CloudformationQualityProfile.hasRule(violation.getId())) {</span>
+<span class="fc bfc" id="L222" title="All 2 branches covered.">			if (templateInputFile != null) {</span>
 
-<span class="pc bpc" id="L220" title="1 of 2 branches missed.">				if (violation.getLine_numbers().isEmpty()) {</span>
-<span class="nc" id="L221">					context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
-<span class="nc" id="L222">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
-<span class="nc" id="L223">							.save();</span>
+<span class="pc bpc" id="L224" title="1 of 2 branches missed.">				if (violation.getLine_numbers().isEmpty()) {</span>
+<span class="nc" id="L225">					context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
+<span class="nc" id="L226">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
+<span class="nc" id="L227">							.save();</span>
 				} else {
-<span class="fc" id="L225">					final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
-<span class="fc bfc" id="L226" title="All 2 branches covered.">					for (final Integer line : line_numbers) {</span>
-<span class="fc" id="L227">						context.newIssue()</span>
-<span class="fc" id="L228">								.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
-<span class="fc" id="L229">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
-<span class="fc" id="L230">										.at(templateInputFile.selectLine(line)))</span>
-<span class="fc" id="L231">								.save();</span>
-<span class="fc" id="L232">					}</span>
-<span class="fc" id="L233">				}</span>
+<span class="fc" id="L229">					final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
+<span class="fc bfc" id="L230" title="All 2 branches covered.">					for (final Integer line : line_numbers) {</span>
+<span class="fc" id="L231">						context.newIssue()</span>
+<span class="fc" id="L232">								.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
+<span class="fc" id="L233">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
+<span class="fc" id="L234">										.at(templateInputFile.selectLine(line)))</span>
+<span class="fc" id="L235">								.save();</span>
+<span class="fc" id="L236">					}</span>
+<span class="fc" id="L237">				}</span>
 			} else {
-<span class="fc" id="L235">				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
-<span class="fc" id="L236">						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
+<span class="fc" id="L239">				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
+<span class="fc" id="L240">						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
 			}
 		} else {
-<span class="nc" id="L239">			LOGGER.warn(&quot;Rule not supported {}:{}&quot;, violation.getId(), violation.getMessage());</span>
+<span class="nc" id="L243">			LOGGER.warn(&quot;Rule not supported {}:{}&quot;, violation.getId(), violation.getMessage());</span>
 		}
-<span class="fc" id="L241">	}</span>
+<span class="fc" id="L245">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

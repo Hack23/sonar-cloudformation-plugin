@@ -36,8 +36,10 @@ import org.sonar.api.Plugin;
 <span class="fc" id="L36">		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,</span>
 				CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
 				CloudformationSensorConfiguration.class);
+<span class="fc" id="L39">		context.addExtensions(CloudformationProperties.getProperties());</span>
 
-<span class="fc" id="L40">	}</span>
+
+<span class="fc" id="L42">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
