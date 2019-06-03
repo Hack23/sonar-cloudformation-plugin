@@ -53,9 +53,9 @@ public final class CloudformationProperties {
 				PropertyDefinition.builder(FILE_SUFFIXES_KEY).defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)
 						.category("Cloudformation").name("File Suffixes")
 						.description("Comma-separated list of suffixes for files to analyze.")
-						.onQualifiers(Qualifiers.PROJECT).build(),
+						.build(),
 				PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY).subCategory("Paths")
 						.name(CloudformationConstants.REPORT_FILES_PROPERTY)
-						.description("path to the '.nag or .nagscan' files").defaultValue("").build());
+						.description("path to the '.nag or .nagscan' files").onQualifiers(Qualifiers.PROJECT).defaultValue("").build());
 	}
 }
