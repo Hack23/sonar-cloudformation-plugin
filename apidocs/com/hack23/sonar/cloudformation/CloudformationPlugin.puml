@@ -1,0 +1,17 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CloudformationPlugin\n<size:10>com.hack23.sonar.cloudformation" as com.hack23.sonar.cloudformation.CloudformationPlugin [[CloudformationPlugin.html]] {
+        +define(Context): void
+    }
+
+    interface "<size:14>Plugin\n<size:10>org.sonar.api" as org.sonar.api.Plugin {
+        {abstract} +define(Context): void
+    }
+
+    org.sonar.api.Plugin <|.. com.hack23.sonar.cloudformation.CloudformationPlugin
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

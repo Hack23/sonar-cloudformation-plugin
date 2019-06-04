@@ -1,0 +1,14 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CfnNagReport\n<size:10>com.hack23.sonar.cloudformation.parser" as com.hack23.sonar.cloudformation.parser.CfnNagReport [[CfnNagReport.html]] {
+        +getFailure_count(): int
+        +setFailure_count(int): void
+        +getViolations(): List<CfnNagViolation>
+        +setViolations(List<CfnNagViolation>): void
+    }
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

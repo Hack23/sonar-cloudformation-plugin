@@ -1,0 +1,21 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CloudformationSensor\n<size:10>com.hack23.sonar.cloudformation" as com.hack23.sonar.cloudformation.CloudformationSensor [[CloudformationSensor.html]] {
+        {static} +SENSOR_NAME: String
+        +CloudformationSensor(CloudformationSensorConfiguration, FileSystem, PathResolver)
+        +describe(SensorDescriptor): void
+        +execute(SensorContext): void
+    }
+
+    interface "<size:14>Sensor\n<size:10>org.sonar.api.batch.sensor" as org.sonar.api.batch.sensor.Sensor {
+        {abstract} +describe(SensorDescriptor): void
+        {abstract} +execute(SensorContext): void
+    }
+
+    org.sonar.api.batch.sensor.Sensor <|.. com.hack23.sonar.cloudformation.CloudformationSensor
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

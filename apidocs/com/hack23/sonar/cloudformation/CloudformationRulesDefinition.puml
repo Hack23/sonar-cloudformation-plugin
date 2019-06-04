@@ -1,0 +1,22 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CloudformationRulesDefinition\n<size:10>com.hack23.sonar.cloudformation" as com.hack23.sonar.cloudformation.CloudformationRulesDefinition [[CloudformationRulesDefinition.html]] {
+        {static} #KEY: String
+        {static} #NAME: String
+        {static} +REPO_KEY: String
+        {static} #REPO_NAME: String
+        #rulesDefinitionFilePath(): String
+        +define(Context): void
+    }
+
+    interface "<size:14>RulesDefinition\n<size:10>org.sonar.api.server.rule" as org.sonar.api.server.rule.RulesDefinition {
+        {abstract} +define(Context): void
+    }
+
+    org.sonar.api.server.rule.RulesDefinition <|.. com.hack23.sonar.cloudformation.CloudformationRulesDefinition
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

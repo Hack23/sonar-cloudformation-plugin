@@ -1,0 +1,11 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CfnNagScanReportReader\n<size:10>com.hack23.sonar.cloudformation.parser" as com.hack23.sonar.cloudformation.parser.CfnNagScanReportReader [[CfnNagScanReportReader.html]] {
+        +readReport(InputStream): List<CfnNagScanReport>
+    }
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

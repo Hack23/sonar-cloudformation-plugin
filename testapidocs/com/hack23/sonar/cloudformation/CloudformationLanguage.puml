@@ -1,0 +1,18 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CloudformationLanguage\n<size:10>com.hack23.sonar.cloudformation" as com.hack23.sonar.cloudformation.CloudformationLanguage [[CloudformationLanguage.html]] {
+        {static} +NAME: String
+        {static} +KEY: String
+        +CloudformationLanguage(Configuration)
+        +getFileSuffixes(): String[]
+    }
+
+    abstract class "<size:14>AbstractLanguage\n<size:10>org.sonar.api.resources" as org.sonar.api.resources.AbstractLanguage
+
+    org.sonar.api.resources.AbstractLanguage <|-- com.hack23.sonar.cloudformation.CloudformationLanguage
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

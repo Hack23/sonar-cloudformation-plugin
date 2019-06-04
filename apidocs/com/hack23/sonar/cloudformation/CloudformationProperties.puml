@@ -1,0 +1,13 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CloudformationProperties\n<size:10>com.hack23.sonar.cloudformation" as com.hack23.sonar.cloudformation.CloudformationProperties [[CloudformationProperties.html]] {
+        {static} +FILE_SUFFIXES_KEY: String
+        {static} +FILE_SUFFIXES_DEFAULT_VALUE: String
+        {static} +getProperties(): List<PropertyDefinition>
+    }
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

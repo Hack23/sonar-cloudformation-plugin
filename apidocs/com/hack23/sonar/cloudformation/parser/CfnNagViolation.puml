@@ -1,0 +1,20 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CfnNagViolation\n<size:10>com.hack23.sonar.cloudformation.parser" as com.hack23.sonar.cloudformation.parser.CfnNagViolation [[CfnNagViolation.html]] {
+        +getId(): String
+        +setId(String): void
+        +getType(): String
+        +setType(String): void
+        +getMessage(): String
+        +setMessage(String): void
+        +getLogical_resource_ids(): List<String>
+        +setLogical_resource_ids(List<String>): void
+        +getLine_numbers(): List<Integer>
+        +setLine_numbers(List<Integer>): void
+    }
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

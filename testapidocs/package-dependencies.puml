@@ -1,0 +1,28 @@
+@startuml
+    set namespaceSeparator none
+    hide circle
+    hide empty fields
+    hide empty methods
+
+    com.hack23.sonar.cloudformation --> org.sonar.api.batch.sensor
+    com.hack23.sonar.cloudformation --> org.sonar.api.utils.log
+    com.hack23.sonar.cloudformation --> com.hack23.sonar.cloudformation.parser
+    com.hack23.sonar.cloudformation --> org.sonar.api.scan.filesystem
+    com.hack23.sonar.cloudformation --> org.sonar.api.batch.fs
+    com.hack23.sonar.cloudformation --> org.sonar.api.server.profile
+    com.hack23.sonar.cloudformation --> org.sonar.api.resources
+    com.hack23.sonar.cloudformation --> org.sonar.api.config
+    com.hack23.sonar.cloudformation --> org.sonar.api.server.rule
+    com.hack23.sonar.cloudformation --> org.sonar.api
+    com.hack23.sonar.cloudformation --> org.junit
+    com.hack23.sonar.cloudformation.parser --> org.sonar.api.utils.log
+    com.hack23.sonar.cloudformation.parser --> org.junit
+
+    ' Package links
+    class "com.hack23.sonar.cloudformation" [[com/hack23/sonar/cloudformation/package-summary.html]] {
+    }
+    class "com.hack23.sonar.cloudformation.parser" [[com/hack23/sonar/cloudformation/parser/package-summary.html]] {
+    }
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

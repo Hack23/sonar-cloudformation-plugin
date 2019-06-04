@@ -1,0 +1,18 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>CloudformationQualityProfile\n<size:10>com.hack23.sonar.cloudformation" as com.hack23.sonar.cloudformation.CloudformationQualityProfile [[CloudformationQualityProfile.html]] {
+        {static} +hasRule(String): boolean
+        +define(Context): void
+    }
+
+    interface "<size:14>BuiltInQualityProfilesDefinition\n<size:10>org.sonar.api.server.profile" as org.sonar.api.server.profile.BuiltInQualityProfilesDefinition {
+        {abstract} +define(Context): void
+    }
+
+    org.sonar.api.server.profile.BuiltInQualityProfilesDefinition <|.. com.hack23.sonar.cloudformation.CloudformationQualityProfile
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml

@@ -1,0 +1,89 @@
+@startuml
+    namespace com.hack23.sonar.cloudformation {
+
+        class CloudformationSensor [[CloudformationSensor.html]] {
+            {static} +SENSOR_NAME: String
+            +CloudformationSensor(CloudformationSensorConfiguration, FileSystem, PathResolver)
+            +describe(SensorDescriptor): void
+            +execute(SensorContext): void
+        }
+
+        class CloudformationQualityProfile [[CloudformationQualityProfile.html]] {
+            {static} +hasRule(String): boolean
+            +define(Context): void
+        }
+
+        class CloudformationLanguage [[CloudformationLanguage.html]] {
+            {static} +NAME: String
+            {static} +KEY: String
+            +CloudformationLanguage(Configuration)
+            +getFileSuffixes(): String[]
+        }
+
+        class CloudformationSensorConfiguration [[CloudformationSensorConfiguration.html]] {
+            +CloudformationSensorConfiguration(Configuration)
+            +getReportFiles(): Optional<String>
+        }
+
+        class CloudformationConstants [[CloudformationConstants.html]] {
+            {static} +REPORT_FILES_PROPERTY: String
+        }
+
+        class CloudformationRulesDefinition [[CloudformationRulesDefinition.html]] {
+            {static} #KEY: String
+            {static} #NAME: String
+            {static} +REPO_KEY: String
+            {static} #REPO_NAME: String
+            #rulesDefinitionFilePath(): String
+            +define(Context): void
+        }
+
+        class CloudformationPlugin [[CloudformationPlugin.html]] {
+            +define(Context): void
+        }
+
+        class CloudformationProperties [[CloudformationProperties.html]] {
+            {static} +FILE_SUFFIXES_KEY: String
+            {static} +FILE_SUFFIXES_DEFAULT_VALUE: String
+            {static} +getProperties(): List<PropertyDefinition>
+        }
+
+        org.sonar.api.batch.sensor.Sensor <|.. CloudformationSensor
+        org.sonar.api.server.profile.BuiltInQualityProfilesDefinition <|.. CloudformationQualityProfile
+        org.sonar.api.resources.AbstractLanguage <|-- CloudformationLanguage
+        org.sonar.api.server.rule.RulesDefinition <|.. CloudformationRulesDefinition
+        org.sonar.api.Plugin <|.. CloudformationPlugin
+    }
+
+    namespace org.sonar.api.batch.sensor {
+        interface Sensor {
+            {abstract} +describe(SensorDescriptor): void
+            {abstract} +execute(SensorContext): void
+        }
+    }
+
+    namespace org.sonar.api.server.profile {
+        interface BuiltInQualityProfilesDefinition {
+            {abstract} +define(Context): void
+        }
+    }
+
+    namespace org.sonar.api.resources {
+        abstract class AbstractLanguage {
+        }
+    }
+
+    namespace org.sonar.api.server.rule {
+        interface RulesDefinition {
+            {abstract} +define(Context): void
+        }
+    }
+
+    namespace org.sonar.api {
+        interface Plugin {
+            {abstract} +define(Context): void
+        }
+    }
+
+    center footer UMLDoclet 2.0.3-SNAPSHOT, PlantUML 1.2019.06
+@enduml
