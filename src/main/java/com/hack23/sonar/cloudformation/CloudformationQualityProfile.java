@@ -62,6 +62,13 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("F29");
 		SUPPORTED_RULES.add("F30");
 		SUPPORTED_RULES.add("F31");
+		SUPPORTED_RULES.add("F32");
+		SUPPORTED_RULES.add("F33");
+		SUPPORTED_RULES.add("F34");
+		SUPPORTED_RULES.add("F35");
+		SUPPORTED_RULES.add("F36");
+		SUPPORTED_RULES.add("F37");		
+		
 		SUPPORTED_RULES.add("F665");
 		SUPPORTED_RULES.add("F1000");
 		SUPPORTED_RULES.add("F2000");

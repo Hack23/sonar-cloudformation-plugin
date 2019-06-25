@@ -320,6 +320,21 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
+		<key>F23</key>
+		<name>RDS instance master user password must be Ref to NoEcho Parameter.</name>
+		<internalKey>F30</internalKey>
+		<description>RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
 		<key>F24</key>
 		<name>ElastiCache ReplicationGroup should have encryption enabled for in transit</name>
 		<internalKey>F24</internalKey>
@@ -432,10 +447,10 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
-		<key>F23</key>
-		<name>RDS instance master user password must be Ref to NoEcho Parameter.</name>
-		<internalKey>F30</internalKey>
-		<description>RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
+		<key>F31</key>
+		<name>DirectoryService::SimpleAD should use a parameter for password, with NoEcho</name>
+		<internalKey>F31</internalKey>
+		<description>DirectoryService::SimpleAD should use a parameter for password, with NoEcho</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -447,10 +462,87 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
-		<key>F31</key>
-		<name>DirectoryService::SimpleAD should use a parameter for password, with NoEcho</name>
-		<internalKey>F31</internalKey>
-		<description>DirectoryService::SimpleAD should use a parameter for password, with NoEcho</description>
+		<key>F32</key>
+		<name>EFS FileSystem should have encryption enabled</name>
+		<internalKey>F32</internalKey>
+		<description>EFS FileSystem should have encryption enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F33</key>
+		<name>ElastiCache ReplicationGroup should have encryption enabled for in transit</name>
+		<internalKey>F33</internalKey>
+		<description>ElastiCache ReplicationGroup should have encryption enabled for in transit</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F34</key>
+		<name>RDS DB Cluster master user password must be Ref to NoEcho Parameter.</name>
+		<internalKey>F34</internalKey>
+		<description>RDS DB Cluster master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F35</key>
+		<name>Redshift Cluster master user password must be Ref to NoEcho Parameter.</name>
+		<internalKey>F35</internalKey>
+		<description>Redshift Cluster master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F36</key>
+		<name>Directory Service Microsoft AD must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F36</internalKey>
+		<description>Directory Service Microsoft AD must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F37</key>
+		<name>DMS Endpoint must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F37</internalKey>
+		<description>DMS Endpoint must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
