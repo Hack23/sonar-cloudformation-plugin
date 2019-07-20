@@ -554,6 +554,66 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
+		<key>F38</key>
+		<name>IAM role should not allow * resource with PassRole action on its permissions policy.</name>
+		<internalKey>F38</internalKey>
+		<description>IAM role should not allow * resource with PassRole action on its permissions policy.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F39</key>
+		<name>IAM policy should not allow * resource with PassRole action.</name>
+		<internalKey>F39</internalKey>
+		<description>IAM policy should not allow * resource with PassRole action.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F40</key>
+		<name>IAM managed policy should not allow a * resource with PassRole action.</name>
+		<internalKey>F40</internalKey>
+		<description>IAM managed policy should not allow a * resource with PassRole action.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F50</key>
+		<name>Amplify App BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F50</internalKey>
+		<description>Amplify App BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
 		<key>F665</key>
 		<name>WebAcl DefaultAction should not be ALLOW</name>
 		<internalKey>F665</internalKey>
@@ -1042,5 +1102,37 @@
 		<tag>owasp-a10</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-     </rule>          
+     </rule>   
+	<rule>
+		<key>W36</key>
+		<name>Security group rules without a description</name>
+		<internalKey>W36</internalKey>
+		<description>Security group rules without a description obscure their purpose and may lead to bad practices in ensuring they only allow traffic from the ports and sources/destinations required.</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W37</key>
+		<name>EBS Volume should specify a KmsKeyId value</name>
+		<internalKey>W37</internalKey>
+		<description>EBS Volume should specify a KmsKeyId value</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>     
 </cloudformation-rules>

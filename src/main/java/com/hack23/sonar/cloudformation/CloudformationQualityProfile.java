@@ -68,6 +68,10 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("F35");
 		SUPPORTED_RULES.add("F36");
 		SUPPORTED_RULES.add("F37");		
+		SUPPORTED_RULES.add("F38");		
+		SUPPORTED_RULES.add("F39");		
+		SUPPORTED_RULES.add("F40");		
+		SUPPORTED_RULES.add("F50");		
 		
 		SUPPORTED_RULES.add("F665");
 		SUPPORTED_RULES.add("F1000");
@@ -101,6 +105,8 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W33");
 		SUPPORTED_RULES.add("W34");
 		SUPPORTED_RULES.add("W35");
+		SUPPORTED_RULES.add("W36");
+		SUPPORTED_RULES.add("W37");
 
 	}
 
