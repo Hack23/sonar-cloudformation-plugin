@@ -52,7 +52,7 @@ public final class CloudformationProperties {
 		return Arrays.asList(
 				PropertyDefinition.builder(FILE_SUFFIXES_KEY).defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)
 						.category("Cloudformation").name("File Suffixes")
-						.description("Comma-separated list of suffixes for files to analyze.")
+						.description("Comma-separated list of suffixes for files to analyze.").multiValues(true)
 						.build(),
 				PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY).subCategory("Paths")
 						.name(CloudformationConstants.REPORT_FILES_PROPERTY)

@@ -19,6 +19,8 @@
  */
 package com.hack23.sonar.cloudformation.parser;
 
+import java.io.ByteArrayInputStream;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -43,4 +45,16 @@ public class CfnNagReportReaderTest extends Assert {
 		assertEquals(4,nagViolation.getLogical_resource_ids().size());
 		assertEquals(4,nagViolation.getLine_numbers().size());
 	}
+
+	/**
+	 * Read report failure test.
+	 */
+	@Test
+	public void readReportFailureTest() {
+		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(new ByteArrayInputStream("".getBytes()));
+		assertNotNull(cfnNagReport);
+		assertEquals(0,cfnNagReport.getFailure_count());
+		assertEquals(0,cfnNagReport.getViolations().size());
+	}
+
 }

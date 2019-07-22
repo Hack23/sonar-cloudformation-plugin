@@ -48,7 +48,7 @@ public class CfnNagReportReader {
 			return objectMapper.readValue(input, CfnNagReport.class);
 		} catch (final IOException e) {
 			LOGGER.error("Problem reading cfn nag report json", e);
-			return null;
+			return new CfnNagReport();
 		}
 	}
 }

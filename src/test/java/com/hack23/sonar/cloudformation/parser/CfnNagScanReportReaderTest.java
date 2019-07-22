@@ -19,6 +19,7 @@
  */
 package com.hack23.sonar.cloudformation.parser;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 
 import org.junit.Assert;
@@ -38,13 +39,17 @@ public class CfnNagScanReportReaderTest extends Assert {
 
 		assertNotNull(cfnNagReport);
 		assertFalse(cfnNagReport.isEmpty());
-//		assertEquals(1,cfnNagReport.getFailure_count());
-//		assertEquals(5,cfnNagReport.getViolations().size());
-//		final CfnNagViolation nagViolation = cfnNagReport.getViolations().get(0);
-//		assertEquals("W12",nagViolation.getId());
-//		assertEquals("WARN",nagViolation.getType());
-//		assertEquals("IAM policy should not allow * resource",nagViolation.getMessage());
-//		assertEquals(4,nagViolation.getLogical_resource_ids().size());
-//		assertEquals(4,nagViolation.getLine_numbers().size());
 	}
+		
+	/**
+	 * Read report failue test.
+	 */
+	@Test
+	public void readReportFailueTest() {
+		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(new ByteArrayInputStream("".getBytes()));
+
+		assertNotNull(cfnNagReport);
+		assertTrue(cfnNagReport.isEmpty());
+	}
+
 }
