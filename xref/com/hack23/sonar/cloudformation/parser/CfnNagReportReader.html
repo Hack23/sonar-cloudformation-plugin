@@ -56,7 +56,7 @@
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>  			<strong class="jxr_keyword">return</strong> objectMapper.readValue(input, CfnNagReport.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>  		} <strong class="jxr_keyword">catch</strong> (<strong class="jxr_keyword">final</strong> IOException e) {
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  			LOGGER.error(<span class="jxr_string">"Problem reading cfn nag report json"</span>, e);
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>  			<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  			<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a name="CfnNagReport" href="../../../../../com/hack23/sonar/cloudformation/parser/CfnNagReport.html#CfnNagReport">CfnNagReport</a>();
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  		}
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  	}
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  }

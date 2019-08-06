@@ -60,7 +60,7 @@
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  		<strong class="jxr_keyword">return</strong> Arrays.asList(
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  				PropertyDefinition.builder(FILE_SUFFIXES_KEY).defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  						.category(<span class="jxr_string">"Cloudformation"</span>).name(<span class="jxr_string">"File Suffixes"</span>)
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>  						.description(<span class="jxr_string">"Comma-separated list of suffixes for files to analyze."</span>)
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  						.description(<span class="jxr_string">"Comma-separated list of suffixes for files to analyze."</span>).multiValues(<strong class="jxr_keyword">true</strong>)
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>  						.build(),
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>  				PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY).subCategory(<span class="jxr_string">"Paths"</span>)
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>  						.name(CloudformationConstants.REPORT_FILES_PROPERTY)

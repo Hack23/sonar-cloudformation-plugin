@@ -46,9 +46,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 		try {
 <span class="fc" id="L48">			return objectMapper.readValue(input, CfnNagReport.class);</span>
-<span class="nc" id="L49">		} catch (final IOException e) {</span>
-<span class="nc" id="L50">			LOGGER.error(&quot;Problem reading cfn nag report json&quot;, e);</span>
-<span class="nc" id="L51">			return null;</span>
+<span class="fc" id="L49">		} catch (final IOException e) {</span>
+<span class="fc" id="L50">			LOGGER.error(&quot;Problem reading cfn nag report json&quot;, e);</span>
+<span class="fc" id="L51">			return new CfnNagReport();</span>
 		}
 	}
 }
