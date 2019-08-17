@@ -107,11 +107,15 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 <span class="fc" id="L107">		SUPPORTED_RULES.add(&quot;W35&quot;);</span>
 <span class="fc" id="L108">		SUPPORTED_RULES.add(&quot;W36&quot;);</span>
 <span class="fc" id="L109">		SUPPORTED_RULES.add(&quot;W37&quot;);</span>
-
-<span class="fc" id="L111">	}</span>
+<span class="fc" id="L110">		SUPPORTED_RULES.add(&quot;W38&quot;);</span>
+<span class="fc" id="L111">		SUPPORTED_RULES.add(&quot;W39&quot;);</span>
+<span class="fc" id="L112">		SUPPORTED_RULES.add(&quot;W40&quot;);</span>
+<span class="fc" id="L113">		SUPPORTED_RULES.add(&quot;W41&quot;);</span>
+<span class="fc" id="L114">		SUPPORTED_RULES.add(&quot;W42&quot;);</span>
+<span class="fc" id="L115">	}</span>
 
 	public static boolean hasRule(final String id) {
-<span class="fc" id="L114">		return SUPPORTED_RULES.contains(id);</span>
+<span class="fc" id="L118">		return SUPPORTED_RULES.contains(id);</span>
 	}
 	
 	/**
@@ -121,15 +125,15 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L124">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,</span>
+<span class="fc" id="L128">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,</span>
 				CloudformationLanguage.KEY);
-<span class="fc" id="L126">		profile.setDefault(true);</span>
+<span class="fc" id="L130">		profile.setDefault(true);</span>
 
-<span class="fc bfc" id="L128" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
-<span class="fc" id="L129">			profile.activateRule(CloudformationRulesDefinition.REPO_KEY, ruleKey);</span>
-<span class="fc" id="L130">		}</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
+<span class="fc" id="L133">			profile.activateRule(CloudformationRulesDefinition.REPO_KEY, ruleKey);</span>
+<span class="fc" id="L134">		}</span>
 
-<span class="fc" id="L132">		profile.done();</span>
-<span class="fc" id="L133">	}</span>
+<span class="fc" id="L136">		profile.done();</span>
+<span class="fc" id="L137">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
