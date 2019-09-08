@@ -1,3 +1,4 @@
+dist: bionic
 language: java
 sudo: true
 install: true
@@ -22,6 +23,7 @@ cache:
   - $HOME/.m2
 
 before_script:
+  - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
   - export DEBIAN_FRONTEND=noninteractive
   - sudo rm /etc/localtime
   - sudo ln -s /usr/share/zoneinfo/Europe/Stockholm /etc/localtime 
@@ -31,10 +33,14 @@ before_script:
   - sudo dpkg-reconfigure --frontend=noninteractive locales
 
 script:
-  - wget http://apache.mirrors.spacedump.net/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
-  - tar xzvf apache-maven-3.6.1-bin.tar.gz
-  - export PATH=`pwd`/apache-maven-3.6.1/bin:$PATH
+  - wget http://apache.mirrors.spacedump.net/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
+  - tar xzvf apache-maven-3.6.2-bin.tar.gz
+  - export PATH=`pwd`/apache-maven-3.6.2/bin:$PATH
   - mvn -v
-  - mvn clean install
+  - mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dhttps.protocols=TLSv1.2
+  - mvn sonar:sonar -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dhttps.protocols=TLSv1.2
  
 after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
+  - fossa init
+  - fossa analyze
