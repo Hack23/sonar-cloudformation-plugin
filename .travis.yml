@@ -2,6 +2,8 @@ dist: bionic
 language: java
 sudo: true
 install: true
+before_install:
+  - sudo apt-get install -y ca-certificates-java ca-certificates wget openjdk-11-jdk-headless
 addons:
   sonarcloud:
     organization: "hack23"
@@ -11,12 +13,10 @@ addons:
       - graphviz
       - locales
       - tzdata
-
-jdk:
-  - openjdk8
-
 env:
   global:
+    - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+    - PGPORT=5433
     
 cache:
   directories:
