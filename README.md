@@ -17,6 +17,7 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag)
 [![JDK-11 or higher](https://img.shields.io/badge/jdk-11-orange.svg)]
 [![JDK-12](https://img.shields.io/badge/jdk-12-orange.svg)]
 [![JDK-13](https://img.shields.io/badge/jdk-13-orange.svg)]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin?ref=badge_shield)
 
 
 # Support
@@ -39,3 +40,6 @@ One or multiple .nag or .nagscan files, note for .nag files the filename should 
 # Roadmap
 
 Support more cloudformation checkers and add more rules for cfn_nag.  
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin?ref=badge_large)
