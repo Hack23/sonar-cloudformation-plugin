@@ -79,7 +79,7 @@
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>  <em class="jxr_javadoccomment">	 * @return the string[]</em>
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>  	<strong class="jxr_keyword">private</strong> String[] filterEmptyStrings(<strong class="jxr_keyword">final</strong> String[] stringArray) {
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>  		<strong class="jxr_keyword">final</strong> List&lt;String&gt; nonEmptyStrings = <strong class="jxr_keyword">new</strong> ArrayList&lt;String&gt;();
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  		<strong class="jxr_keyword">final</strong> List&lt;String&gt; nonEmptyStrings = <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;();
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>  		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> String string : stringArray) {
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>  			<strong class="jxr_keyword">if</strong> (StringUtils.isNotBlank(string.trim())) {
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>  				nonEmptyStrings.add(string.trim());
