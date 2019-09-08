@@ -71,7 +71,7 @@ public final class CloudformationLanguage extends AbstractLanguage {
 	 * @return the string[]
 	 */
 	private String[] filterEmptyStrings(final String[] stringArray) {
-		final List<String> nonEmptyStrings = new ArrayList<String>();
+		final List<String> nonEmptyStrings = new ArrayList<>();
 		for (final String string : stringArray) {
 			if (StringUtils.isNotBlank(string.trim())) {
 				nonEmptyStrings.add(string.trim());
