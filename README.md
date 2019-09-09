@@ -25,7 +25,7 @@ Sonarqube 7.7+ and currently only cfn_nag reports (https://github.com/stelligent
 
 # Howto
 
-Prepare cfn_nag reports running (cfn_nag src/main/config/template.yml > target/template.yml.nag)
+Prepare cfn_nag reports running (cfn_nag --output-format=json src/main/config/template.yml > target/template.yml.nag)
 and set the property sonar.cfn.nag.reportFile=target/template.yml.nag
 
 Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan 
