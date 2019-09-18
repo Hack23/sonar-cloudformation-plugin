@@ -46,7 +46,7 @@
       <uniqueVersion>false</uniqueVersion>
       <id>cia-releases</id>
       <name>CIA Staging Repository</name>
-      <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
     <snapshotRepository>
       <uniqueVersion>false</uniqueVersion>
