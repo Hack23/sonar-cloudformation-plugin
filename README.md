@@ -14,7 +14,7 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag)
 # Runtime
 
 [![JDK-8](https://img.shields.io/badge/jdk-8-green.svg)]
-[![JDK-11 or higher](https://img.shields.io/badge/jdk-11-greem.svg)]
+[![JDK-11 or higher](https://img.shields.io/badge/jdk-11-green.svg)]
 [![JDK-12](https://img.shields.io/badge/jdk-12-orange.svg)]
 [![JDK-13](https://img.shields.io/badge/jdk-13-orange.svg)]
 
