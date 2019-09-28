@@ -19,6 +19,11 @@
  */
 package com.hack23.sonar.cloudformation.parser;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 /**
  * The Class CfnNagScanReport.
  */
@@ -66,4 +71,19 @@ public class CfnNagScanReport {
 		this.file_results = file_results;
 	}
 	
+	@Override
+	public final String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	}
+
+	@Override
+    public boolean equals(final Object object) {
+    	return EqualsBuilder.reflectionEquals(this,object);
+    }
+
+	@Override
+	public final int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this);
+	}
+
 }

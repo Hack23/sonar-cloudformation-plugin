@@ -22,6 +22,11 @@ package com.hack23.sonar.cloudformation.parser;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 /**
  * The Class CfnNagReport.
  */
@@ -67,6 +72,22 @@ public class CfnNagReport {
 	 */
 	public void setViolations(final List<CfnNagViolation> violations) {
 		this.violations = new ArrayList<>(violations);
+	}
+
+
+	@Override
+	public final String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	}
+
+	@Override
+    public boolean equals(final Object object) {
+    	return EqualsBuilder.reflectionEquals(this,object);
+    }
+
+	@Override
+	public final int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this);
 	}
 
 }
