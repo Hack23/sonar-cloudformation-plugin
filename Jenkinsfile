@@ -10,7 +10,7 @@ pipeline {
 
 	   stage('Build') {
 	      steps {
-	         sh "mvn clean install"
+	         sh "mvn clean install site"
 	      }
 	   }
 
@@ -28,7 +28,7 @@ pipeline {
 	   }
        
 	   
-	   stage('Dependency Update Check') {
+	   stage('Publish results to Sonarqube') {
 	      steps {
 	         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/ -Dsonar.sources=. -Dsonar.dependencyCheck.reportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
 	      }
