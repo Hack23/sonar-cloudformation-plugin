@@ -27,7 +27,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * The Class CfnNagScanReport.
  */
-public class CfnNagScanReport {
+public final class CfnNagScanReport {
 
 	/** The filename. */
 	private String filename;

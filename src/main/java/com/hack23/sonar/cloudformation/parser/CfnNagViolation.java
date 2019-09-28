@@ -30,7 +30,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * The Class CfnNagViolation.
  */
-public class CfnNagViolation {
+public final class CfnNagViolation {
 
 	/** The id. */
 	private String id;

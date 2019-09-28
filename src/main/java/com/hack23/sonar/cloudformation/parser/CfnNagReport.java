@@ -30,7 +30,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * The Class CfnNagReport.
  */
-public class CfnNagReport {
+public final class CfnNagReport {
 
 	/** The failure count. */
 	private int failure_count;
