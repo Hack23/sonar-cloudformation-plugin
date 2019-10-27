@@ -148,7 +148,7 @@
 		<name>IAM user should not have any inline policies.</name>
 		<internalKey>F10</internalKey>
 		<description>IAM user should not have any inline policies. Should be centralized Policy object on group</description>
-		<severity>BLOCKER</severity>
+		<severity>MAJOR</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -164,7 +164,7 @@
 		<name>IAM policy should not apply directly to users.</name>
 		<internalKey>F11</internalKey>
 		<description>IAM policy should not apply directly to users.  Should be on group</description>
-		<severity>BLOCKER</severity>
+		<severity>MAJOR</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -180,7 +180,7 @@
 		<name>IAM managed policy should not apply directly to users.</name>
 		<internalKey>F12</internalKey>
 		<description>IAM managed policy should not apply directly to users.  Should be on group</description>
-		<severity>BLOCKER</severity>
+		<severity>MAJOR</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -648,7 +648,7 @@
 		<name>User is not assigned to a group</name>
 		<internalKey>F2000</internalKey>
 		<description>User is not assigned to a group</description>
-		<severity>BLOCKER</severity>
+		<severity>MAJOR</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -997,7 +997,7 @@
 		<name>Resource found with an explicit name, this disallows updates that require replacement of this resource</name>
 		<internalKey>W28</internalKey>
 		<description>Resource found with an explicit name, this disallows updates that require replacement of this resource</description>
-		<severity>MAJOR</severity>
+		<severity>INFO</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -1214,5 +1214,21 @@
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-     </rule>          
+     </rule> 
+	<rule>
+		<key>W43</key>
+		<name>IAM role should not have AdministratorAccess policy</name>
+		<internalKey>W43</internalKey>
+		<description>IAM role should not have AdministratorAccess policy</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 </cloudformation-rules>
