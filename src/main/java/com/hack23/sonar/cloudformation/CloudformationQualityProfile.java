@@ -112,7 +112,8 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W40");
 		SUPPORTED_RULES.add("W41");
 		SUPPORTED_RULES.add("W42");
-		SUPPORTED_RULES.add("W43");		
+		SUPPORTED_RULES.add("W43");
+		SUPPORTED_RULES.add("W44");		
 	}
 
 	public static boolean hasRule(final String id) {
