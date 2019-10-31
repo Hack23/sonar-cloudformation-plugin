@@ -19,10 +19,15 @@
  */
 package com.hack23.sonar.cloudformation.parser;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 /**
  * The Class CfnNagScanReport.
  */
-<span class="fc" id="L25">public class CfnNagScanReport {</span>
+<span class="fc" id="L30">public final class CfnNagScanReport {</span>
 
 	/** The filename. */
 	private String filename;
@@ -36,7 +41,7 @@ package com.hack23.sonar.cloudformation.parser;
 	 * @return the filename
 	 */
 	public String getFilename() {
-<span class="fc" id="L39">		return filename;</span>
+<span class="fc" id="L44">		return filename;</span>
 	}
 	
 	/**
@@ -45,8 +50,8 @@ package com.hack23.sonar.cloudformation.parser;
 	 * @param filename the new filename
 	 */
 	public void setFilename(final String filename) {
-<span class="fc" id="L48">		this.filename = filename;</span>
-<span class="fc" id="L49">	}</span>
+<span class="fc" id="L53">		this.filename = filename;</span>
+<span class="fc" id="L54">	}</span>
 	
 	/**
 	 * Gets the file results.
@@ -54,7 +59,7 @@ package com.hack23.sonar.cloudformation.parser;
 	 * @return the file results
 	 */
 	public CfnNagReport getFile_results() {
-<span class="fc" id="L57">		return file_results;</span>
+<span class="fc" id="L62">		return file_results;</span>
 	}
 	
 	/**
@@ -63,8 +68,23 @@ package com.hack23.sonar.cloudformation.parser;
 	 * @param file_results the new file results
 	 */
 	public void setFile_results(final CfnNagReport file_results) {
-<span class="fc" id="L66">		this.file_results = file_results;</span>
-<span class="fc" id="L67">	}</span>
+<span class="fc" id="L71">		this.file_results = file_results;</span>
+<span class="fc" id="L72">	}</span>
 	
+	@Override
+	public final String toString() {
+<span class="fc" id="L76">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+	}
+
+	@Override
+    public boolean equals(final Object object) {
+<span class="fc" id="L81">    	return EqualsBuilder.reflectionEquals(this,object);</span>
+    }
+
+	@Override
+	public final int hashCode() {
+<span class="fc" id="L86">		return HashCodeBuilder.reflectionHashCode(this);</span>
+	}
+
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
