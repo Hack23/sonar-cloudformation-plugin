@@ -740,7 +740,7 @@
 		<name>CloudFront Distribution should enable access logging</name>
 		<internalKey>W10</internalKey>
 		<description>CloudFront Distribution should enable access logging</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -980,7 +980,7 @@
 		<name>Elastic Load Balancer should have access logging enabled</name>
 		<internalKey>W26</internalKey>
 		<description>Elastic Load Balancer should have access logging enabled</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -1059,7 +1059,7 @@
 		<name>CodeBuild project should specify an EncryptionKey value</name>
 		<internalKey>W32</internalKey>
 		<description>CodeBuild project should specify an EncryptionKey value</description>
-		<severity>MAJOR</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -1107,7 +1107,7 @@
 		<name>S3 Bucket should have access logging configured</name>
 		<internalKey>W35</internalKey>
 		<description>S3 Bucket should have access logging configured</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -1139,7 +1139,7 @@
 		<name>EBS Volume should specify a KmsKeyId value</name>
 		<internalKey>W37</internalKey>
 		<description>EBS Volume should specify a KmsKeyId value</description>
-		<severity>MAJOR</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -1203,7 +1203,7 @@
 		<name>S3 Bucket should have encryption option set</name>
 		<internalKey>W41</internalKey>
 		<description>S3 Bucket should have encryption option set</description>
-		<severity>MAJOR</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -1251,7 +1251,7 @@
 		<name>Api gateway should have access logging configured</name>
 		<internalKey>W44</internalKey>
 		<description>Api gateway should have access logging configured</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
