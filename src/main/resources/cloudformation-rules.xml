@@ -330,7 +330,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -346,7 +346,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -458,7 +458,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -506,7 +506,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -522,7 +522,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -538,7 +538,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -554,7 +554,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -618,7 +618,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
