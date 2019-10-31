@@ -336,9 +336,9 @@
      </rule>
 	<rule>
 		<key>F24</key>
-		<name>ElastiCache ReplicationGroup should have encryption enabled for in transit</name>
+		<name>RDS instance master username must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
 		<internalKey>F24</internalKey>
-		<description>ElastiCache ReplicationGroup should have encryption enabled for in transit</description>
+		<description>RDS instance master username must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -734,6 +734,7 @@
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
 		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -973,6 +974,7 @@
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
 		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1100,6 +1102,7 @@
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
 		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>   
@@ -1243,6 +1246,7 @@
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
 		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>   
