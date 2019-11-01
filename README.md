@@ -37,6 +37,18 @@ sonar.cfn.nag.reportFiles=target/template.yml.nag,target/cfn-nag-scan.nagscan
 
 One or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
 
+
+
+# Group the cfn-nag rules to CWE
+
+CWE-311 - Missing Encryption of Sensitive Data
+CWE-732 - Incorrect Permission Assignment for Critical Resource
+CWE-257 - Storing Passwords in a Recoverable Format
+CWE-778 - Insufficient Logging
+CWE-272 - Least Privilege Violation
+CWE-286 - Incorrect User Management
+No CWE associated
+
 # Roadmap
 
 Support more cloudformation checkers and add more rules for cfn_nag.  
