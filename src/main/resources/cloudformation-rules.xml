@@ -20,7 +20,7 @@
 		<name>IAM role should not allow * action on its trust policy</name>
 		<internalKey>F2</internalKey>
 		<description>IAM role should not allow * action on its trust policy</description>
-		<severity>BLOCKER</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -36,7 +36,7 @@
 		<name>IAM role should not allow * action on its permissions policy</name>
 		<internalKey>F3</internalKey>
 		<description>IAM role should not allow * action on its permissions policy</description>
-		<severity>BLOCKER</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -52,7 +52,7 @@
 		<name>IAM policy should not allow * action</name>
 		<internalKey>F4</internalKey>
 		<description>IAM policy should not allow * action</description>
-		<severity>BLOCKER</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -68,7 +68,7 @@
 		<name>IAM managed policy should not allow * action</name>
 		<internalKey>F5</internalKey>
 		<description>IAM managed policy should not allow * action</description>
-		<severity>BLOCKER</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -84,7 +84,7 @@
 		<name>IAM role should not allow Allow+NotPrincipal in its trust policy</name>
 		<internalKey>F6</internalKey>
 		<description>IAM role should not allow Allow+NotPrincipal in its trust policy</description>
-		<severity>BLOCKER</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -106,7 +106,7 @@
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
+		<tag>owasp-a3</tag>
 		<tag>cweid-732</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
@@ -564,7 +564,7 @@
 		<name>IAM role should not allow * resource with PassRole action on its permissions policy.</name>
 		<internalKey>F38</internalKey>
 		<description>IAM role should not allow * resource with PassRole action on its permissions policy.</description>
-		<severity>BLOCKER</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -580,7 +580,7 @@
 		<name>IAM policy should not allow * resource with PassRole action.</name>
 		<internalKey>F39</internalKey>
 		<description>IAM policy should not allow * resource with PassRole action.</description>
-		<severity>BLOCKER</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -596,7 +596,7 @@
 		<name>IAM managed policy should not allow a * resource with PassRole action.</name>
 		<internalKey>F40</internalKey>
 		<description>IAM managed policy should not allow a * resource with PassRole action.</description>
-		<severity>BLOCKER</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -676,14 +676,14 @@
 		<name>Specifying credentials in the template itself is probably not the safest thing</name>
 		<internalKey>W1</internalKey>
 		<description>Specifying credentials in the template itself is probably not the safest thing</description>
-		<severity>MAJOR</severity>
+		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
 		<tag>security</tag>
 		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
-		<tag>cweid-732</tag>		
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -756,7 +756,7 @@
 		<name>IAM role should not allow * resource on its permissions policy</name>
 		<internalKey>W11</internalKey>
 		<description>IAM role should not allow * resource on its permissions policy</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -772,7 +772,7 @@
 		<name>IAM policy should not allow * resource</name>
 		<internalKey>W12</internalKey>
 		<description>IAM policy should not allow * resource</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -788,7 +788,7 @@
 		<name>IAM managed policy should not allow * resource</name>
 		<internalKey>W13</internalKey>
 		<description>IAM managed policy should not allow * resource</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -804,7 +804,7 @@
 		<name>IAM role should not allow Allow+NotAction on trust permissions</name>
 		<internalKey>W14</internalKey>
 		<description>IAM role should not allow Allow+NotAction on trust permissions</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -820,7 +820,7 @@
 		<name>IAM role should not allow Allow+NotAction</name>
 		<internalKey>W15</internalKey>
 		<description>IAM role should not allow Allow+NotAction</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -836,7 +836,7 @@
 		<name>IAM policy should not allow Allow+NotAction</name>
 		<internalKey>W16</internalKey>
 		<description>IAM policy should not allow Allow+NotAction</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -852,7 +852,7 @@
 		<name>IAM managed policy should not allow Allow+NotAction</name>
 		<internalKey>W17</internalKey>
 		<description>IAM managed policy should not allow Allow+NotAction</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -916,7 +916,7 @@
 		<name>IAM role should not allow Allow+NotResource</name>
 		<internalKey>W21</internalKey>
 		<description>IAM role should not allow Allow+NotResource</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -932,7 +932,7 @@
 		<name>IAM policy should not allow Allow+NotResource</name>
 		<internalKey>W22</internalKey>
 		<description>IAM policy should not allow Allow+NotResource</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -948,7 +948,7 @@
 		<name>IAM managed policy should not allow Allow+NotResource</name>
 		<internalKey>W23</internalKey>
 		<description>IAM managed policy should not allow Allow+NotResource</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
@@ -1235,7 +1235,7 @@
 		<name>IAM role should not have AdministratorAccess policy</name>
 		<internalKey>W43</internalKey>
 		<description>IAM role should not have AdministratorAccess policy</description>
-		<severity>MAJOR</severity>
+		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
 		<type>VULNERABILITY</type>
