@@ -56,7 +56,7 @@ pipeline {
 	    	}
 	   
 	      steps {
-	         sh "mvn org.owasp:dependency-check-maven:5.2.2:check -Dformat=ALL"
+	         sh "mvn org.owasp:dependency-check-maven:check -Dformat=ALL"
 	      }
 	   }
 
