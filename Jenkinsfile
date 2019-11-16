@@ -56,7 +56,7 @@ pipeline {
 	    	}
 	   
 	      steps {
-	         sh "mvn org.owasp:dependency-check-maven:check -Dformat=ALL"
+	         sh "mvn org.owasp:dependency-check-maven:check -Dformat=ALL -DsuppressionFile=${WORKSPACE}/src/config/suppressions.xml"
 	      }
 	   }
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions
+	xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+	<suppress>
+		<notes><![CDATA[This suppresses any jar.]]></notes>
+		<filePath regex="true">.*\b\.*</filePath>
+		<cve>CVE-2018-19413</cve>
+		<cve>CVE-2019-17579</cve>
+		<cve>CVE-2018-10237</cve>		
+	</suppress>
+</suppressions>
