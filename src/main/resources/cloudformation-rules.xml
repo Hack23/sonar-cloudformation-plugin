@@ -624,6 +624,54 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
+		<key>F51</key>
+		<name>If the IAM user LoginProile property exists, then its Password value should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</name>
+		<internalKey>F51</internalKey>
+		<description>If the IAM user LoginProile property exists, then its Password value should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule> 
+	<rule>
+		<key>F52</key>
+		<name>Amazon MQ Broker resource Users property should exist and its Password property value should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</name>
+		<internalKey>F52</internalKey>
+		<description>Amazon MQ Broker resource Users property should exist and its Password property value should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F54</key>
+		<name>OpsWorks Stack RDS DBInstance Password property should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</name>
+		<internalKey>F54</internalKey>
+		<description>OpsWorks Stack RDS DBInstance Password property should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
 		<key>F665</key>
 		<name>WebAcl DefaultAction should not be ALLOW</name>
 		<internalKey>F665</internalKey>
@@ -1248,8 +1296,24 @@
      </rule>
 	<rule>
 		<key>W44</key>
-		<name>Api gateway should have access logging configured</name>
+		<name>IAM role should not have Elevated Managed policy</name>
 		<internalKey>W44</internalKey>
+		<description>IAM role should not have Elevated Managed policy</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>     
+	<rule>
+		<key>W45</key>
+		<name>Api gateway should have access logging configured</name>
+		<internalKey>W45</internalKey>
 		<description>Api gateway should have access logging configured</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
@@ -1259,6 +1323,38 @@
 		<tag>cfn-nag</tag>	
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W50</key>
+		<name>IAM User Login Profile should exist and have PasswordResetRequired property set to true</name>
+		<internalKey>W50</internalKey>
+		<description>IAM User Login Profile should exist and have PasswordResetRequired property set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W51</key>
+		<name>S3 bucket should likely have a bucket policy</name>
+		<internalKey>W51</internalKey>
+		<description>S3 bucket should likely have a bucket policy</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>   
