@@ -385,9 +385,9 @@
      </rule>
 	<rule>
 		<key>F27</key>
-		<name>EFS FileSystem should have encryption enabled</name>
+		<name>RDS DBInstance should have StorageEncrypted enabled</name>
 		<internalKey>F27</internalKey>
-		<description>EFS FileSystem should have encryption enabled</description>
+		<description>RDS DBInstance should have StorageEncrypted enabled</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
