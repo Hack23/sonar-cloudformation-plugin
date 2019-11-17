@@ -6,6 +6,7 @@
 		<filePath regex="true">.*\b\.*</filePath>
 		<cve>CVE-2018-19413</cve>
 		<cve>CVE-2019-17579</cve>
-		<cve>CVE-2018-10237</cve>		
+		<cve>CVE-2018-10237</cve>
+		<cve>CVE-2018-19413</cve>		
 	</suppress>
 </suppressions>
