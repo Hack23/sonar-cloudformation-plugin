@@ -64,7 +64,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
     <sonar.jacoco.reportPath>${project.basedir}/target/jacoco-ut.exec</sonar.jacoco.reportPath>
-    <surefire.version>3.0.0-M3</surefire.version>
+    <surefire.version>3.0.0-M4</surefire.version>
     <scm-publish.scmBranch>gh-pages</scm-publish.scmBranch>
     <scm-publish.pubScmUrl>scm:git:https://github.com/Hack23/sonar-cloudformation-plugin.git</scm-publish.pubScmUrl>
     <scm-publish.siteDocOuputDirectory>${project.build.directory}/site</scm-publish.siteDocOuputDirectory>
@@ -333,7 +333,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M3</version>
+        <version>3.0.0-M4</version>
         <configuration>
           <argLine>${surefireArgLine}</argLine>
           <disableModules>false</disableModules>
