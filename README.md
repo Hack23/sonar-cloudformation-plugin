@@ -22,7 +22,7 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag)
 
 # Support
 
-Sonarqube 7.7+ and currently only cfn_nag reports (https://github.com/stelligent/cfn_nag)
+Sonarqube 7.7+ and currently only supports cfn_nag reports (https://github.com/stelligent/cfn_nag)
 
 # Howto
 
@@ -42,11 +42,17 @@ One or multiple .nag or .nagscan files, note for .nag files the filename should 
 # Group the cfn-nag rules to CWE
 
 CWE-311 - Missing Encryption of Sensitive Data
+
 CWE-732 - Incorrect Permission Assignment for Critical Resource
+
 CWE-257 - Storing Passwords in a Recoverable Format
+
 CWE-778 - Insufficient Logging
+
 CWE-272 - Least Privilege Violation
+
 CWE-286 - Incorrect User Management
+
 No CWE associated
 
 # Roadmap
