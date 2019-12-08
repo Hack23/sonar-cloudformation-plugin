@@ -1344,6 +1344,39 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 
+
+	<rule>
+		<key>W47</key>
+		<name>SNS Topic should specify KmsMasterKeyId property</name>
+		<internalKey>W47</internalKey>
+		<description>SNS Topic should specify KmsMasterKeyId property</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W48</key>
+		<name>SQS Queue should specify KmsMasterKeyId property</name>
+		<internalKey>W48</internalKey>
+		<description>SQS Queue should specify KmsMasterKeyId property</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 	<rule>
 		<key>W50</key>
 		<name>IAM User Login Profile should exist and have PasswordResetRequired property set to true</name>
@@ -1375,5 +1408,23 @@
 		<tag>cweid-272</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-     </rule>   
+     </rule>
+     
+	<rule>
+		<key>W52</key>
+		<name>Elastic Load Balancer V2 should have access logging enabled</name>
+		<internalKey>W52</internalKey>
+		<description>Elastic Load Balancer V2 should have access logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+ 
 </cloudformation-rules>
