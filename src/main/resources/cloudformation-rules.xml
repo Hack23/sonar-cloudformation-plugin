@@ -1378,6 +1378,22 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
+		<key>W49</key>
+		<name>Kinesis Stream should specify StreamEncryption.</name>
+		<internalKey>W49</internalKey>
+		<description>Kinesis Stream should specify StreamEncryption, EncryptionType should be KMS and specify KMS Key Id</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
 		<key>W50</key>
 		<name>IAM User Login Profile should exist and have PasswordResetRequired property set to true</name>
 		<internalKey>W50</internalKey>
