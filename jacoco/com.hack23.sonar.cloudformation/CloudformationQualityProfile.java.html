@@ -119,12 +119,16 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 <span class="fc" id="L119">		SUPPORTED_RULES.add(&quot;W44&quot;);</span>
 <span class="fc" id="L120">		SUPPORTED_RULES.add(&quot;W45&quot;);</span>
 <span class="fc" id="L121">		SUPPORTED_RULES.add(&quot;W46&quot;);</span>
-<span class="fc" id="L122">		SUPPORTED_RULES.add(&quot;W50&quot;);</span>
-<span class="fc" id="L123">		SUPPORTED_RULES.add(&quot;W51&quot;);		</span>
-<span class="fc" id="L124">	}</span>
+<span class="fc" id="L122">		SUPPORTED_RULES.add(&quot;W47&quot;);</span>
+<span class="fc" id="L123">		SUPPORTED_RULES.add(&quot;W48&quot;);</span>
+<span class="fc" id="L124">		SUPPORTED_RULES.add(&quot;W49&quot;);		</span>
+<span class="fc" id="L125">		SUPPORTED_RULES.add(&quot;W50&quot;);</span>
+<span class="fc" id="L126">		SUPPORTED_RULES.add(&quot;W51&quot;);</span>
+<span class="fc" id="L127">		SUPPORTED_RULES.add(&quot;W52&quot;);		</span>
+<span class="fc" id="L128">	}</span>
 
 	public static boolean hasRule(final String id) {
-<span class="fc" id="L127">		return SUPPORTED_RULES.contains(id);</span>
+<span class="fc" id="L131">		return SUPPORTED_RULES.contains(id);</span>
 	}
 	
 	/**
@@ -134,15 +138,15 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L137">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,</span>
+<span class="fc" id="L141">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,</span>
 				CloudformationLanguage.KEY);
-<span class="fc" id="L139">		profile.setDefault(true);</span>
+<span class="fc" id="L143">		profile.setDefault(true);</span>
 
-<span class="fc bfc" id="L141" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
-<span class="fc" id="L142">			profile.activateRule(CloudformationRulesDefinition.REPO_KEY, ruleKey);</span>
-<span class="fc" id="L143">		}</span>
+<span class="fc bfc" id="L145" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
+<span class="fc" id="L146">			profile.activateRule(CloudformationRulesDefinition.REPO_KEY, ruleKey);</span>
+<span class="fc" id="L147">		}</span>
 
-<span class="fc" id="L145">		profile.done();</span>
-<span class="fc" id="L146">	}</span>
+<span class="fc" id="L149">		profile.done();</span>
+<span class="fc" id="L150">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
