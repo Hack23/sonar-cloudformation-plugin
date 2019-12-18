@@ -350,7 +350,7 @@
 		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-     </rule>
+     </rule> 
 	<rule>
 		<key>F25</key>
 		<name>ElastiCache ReplicationGroup should have encryption enabled for at rest</name>
@@ -604,6 +604,22 @@
 		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F41</key>
+		<name>Amplify App AccessToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F41</internalKey>
+		<description>Amplify App AccessToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
