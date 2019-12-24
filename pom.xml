@@ -63,7 +63,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <sonar.jacoco.reportPath>${project.basedir}/target/jacoco-ut.exec</sonar.jacoco.reportPath>
+    <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <surefire.version>3.0.0-M4</surefire.version>
     <scm-publish.scmBranch>gh-pages</scm-publish.scmBranch>
     <scm-publish.pubScmUrl>scm:git:https://github.com/Hack23/sonar-cloudformation-plugin.git</scm-publish.pubScmUrl>
@@ -303,7 +303,6 @@
               <goal>prepare-agent</goal>
             </goals>
             <configuration>
-              <destFile>${sonar.jacoco.reportPath}</destFile>
               <append>true</append>
               <propertyName>surefireArgLine</propertyName>
             </configuration>
@@ -314,10 +313,6 @@
             <goals>
               <goal>report</goal>
             </goals>
-            <configuration>
-              <dataFile>${sonar.jacoco.reportPath}</dataFile>
-              <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
-            </configuration>
           </execution>
         </executions>
         <configuration>
@@ -400,10 +395,6 @@
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.5</version>
         <inherited>true</inherited>
-        <configuration>
-          <dataFile>${sonar.jacoco.reportPath}</dataFile>
-          <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
