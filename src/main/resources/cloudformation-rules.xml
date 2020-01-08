@@ -672,10 +672,106 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
+		<key>F53</key>
+		<name>AppStream DirectoryConfig ServiceAccountCredentials AccountPassword must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F53</internalKey>
+		<description>AppStream DirectoryConfig ServiceAccountCredentials AccountPassword must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
 		<key>F54</key>
 		<name>OpsWorks Stack RDS DBInstance Password property should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</name>
 		<internalKey>F54</internalKey>
 		<description>OpsWorks Stack RDS DBInstance Password property should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F55</key>
+		<name>DMS Endpoint MongoDbSettings Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F55</internalKey>
+		<description>DMS Endpoint MongoDbSettings Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F58</key>
+		<name>Amplify App OauthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F58</internalKey>
+		<description>Amplify App OauthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F60</key>
+		<name>Amplify Branch BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F60</internalKey>
+		<description>Amplify Branch BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F74</key>
+		<name>Alexa ASK Skill AuthenticationConfiguration ClientSecret must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F74</internalKey>
+		<description>Alexa ASK Skill AuthenticationConfiguration ClientSecret must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F75</key>
+		<name>Alexa ASK Skill AuthenticationConfiguration RefreshToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F75</internalKey>
+		<description>Alexa ASK Skill AuthenticationConfiguration RefreshToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
