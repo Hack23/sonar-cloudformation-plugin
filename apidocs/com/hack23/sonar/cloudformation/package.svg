@@ -21,7 +21,7 @@ reverse link org.sonar.api.server.profile.BuiltInQualityProfilesDefinition to co
 reverse link org.sonar.api.server.rule.RulesDefinition to com.hack23.sonar.cloudformation.CloudformationRulesDefinition--><path d="M989,130.8258 C989,145.4477 989,161.5702 989,176.8191 " fill="none" id="org.sonar.api.server.rule.RulesDefinition&lt;-com.hack23.sonar.cloudformation.CloudformationRulesDefinition" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="982.0001,130.7532,989,110.7532,996.0001,130.7532,982.0001,130.7532" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[3685ffe233817ba259f4776860359136]
 reverse link org.sonar.api.batch.sensor.Sensor to com.hack23.sonar.cloudformation.CloudformationSensor--><path d="M1393,137.6726 C1393,154.796 1393,173.3936 1393,189.9527 " fill="none" id="org.sonar.api.batch.sensor.Sensor&lt;-com.hack23.sonar.cloudformation.CloudformationSensor" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="1386.0001,137.3957,1393,117.3957,1400.0001,137.3956,1386.0001,137.3957" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[4267c0e0e1c496da44e4719aff5857d4]
 link com.hack23.sonar.cloudformation.CloudformationSensorConfiguration to com.hack23.sonar.cloudformation.CloudformationProperties--><!--MD5=[ccf7d02e476674fce818001880d01f60]
-link com.hack23.sonar.cloudformation.CloudformationSensorConfiguration to com.hack23.sonar.cloudformation.CloudformationConstants--><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="186" x="1071" y="458.2822">UMLDoclet 2.0.7, PlantUML 1.2019.12</text><!--MD5=[3cf82683f485c979bcc03dc673385228]
+link com.hack23.sonar.cloudformation.CloudformationSensorConfiguration to com.hack23.sonar.cloudformation.CloudformationConstants--><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="186" x="1071" y="458.2822">UMLDoclet 2.0.7, PlantUML 1.2019.12</text><!--MD5=[d03dd54cea93e62dbbdb5752ae880a68]
 @startuml
     namespace com.hack23.sonar.cloudformation {
 
@@ -116,7 +116,7 @@ PlantUML version 1.2019.12(Sun Nov 03 11:24:54 CET 2019)
 (APACHE source distribution)
 Java Runtime: OpenJDK Runtime Environment
 JVM: OpenJDK 64-Bit Server VM
-Java Version: 11.0.5-ea+10-post-Ubuntu-0ubuntu1
+Java Version: 11.0.5+10-post-Ubuntu-0ubuntu1.1
 Operating System: Linux
 Default Encoding: UTF-8
 Language: en

@@ -20,7 +20,7 @@ link com.hack23.sonar.cloudformation to org.sonar.api.batch.sensor--><path d="M8
 link com.hack23.sonar.cloudformation to com.hack23.sonar.cloudformation.parser--><path d="M915.6232,32.0352 C1002.3794,47.7073 1153.4318,74.9941 1242.5152,91.0866 " fill="none" id="com.hack23.sonar.cloudformation-&gt;com.hack23.sonar.cloudformation.parser" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1247.5004,91.9872,1239.355,86.4508,1242.5801,91.0982,1237.9326,94.3233,1247.5004,91.9872" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[5f5e471f652bd5049cf855397c54b3fd]
 link com.hack23.sonar.cloudformation to org.sonar.api.scan.filesystem--><path d="M953.3047,32.0352 C1092.9487,48.1479 1338.9948,76.5379 1476.6145,92.4171 " fill="none" id="com.hack23.sonar.cloudformation-&gt;org.sonar.api.scan.filesystem" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1481.869,93.0234,1473.3868,88.0181,1476.902,92.4503,1472.4698,95.9654,1481.869,93.0234" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[ffbdaecd4121bdbde80bb74ebcd5abe6]
 link com.hack23.sonar.cloudformation to org.sonar.api.batch.fs--><path d="M959.0304,27.7571 C1119.8241,39.4702 1428.3371,63.3711 1690,92 C1693.9664,92.434 1698.0283,92.8994 1702.1281,93.3859 " fill="none" id="com.hack23.sonar.cloudformation-&gt;org.sonar.api.batch.fs" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1707.3371,94.0126,1698.8795,88.9659,1702.3729,93.4152,1697.9236,96.9086,1707.3371,94.0126" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[29ec6cf35411d8200ad3af976b5addb3]
-link com.hack23.sonar.cloudformation.parser to org.sonar.api.utils.log--><path d="M1285.4882,116.0352 C1249.2838,131.3174 1186.9154,157.6438 1148.4859,173.8653 " fill="none" id="com.hack23.sonar.cloudformation.parser-&gt;org.sonar.api.utils.log" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1143.459,175.9872,1153.3061,176.1721,1148.0654,174.0426,1150.1948,168.8019,1143.459,175.9872" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="186" x="842.5" y="219.2822">UMLDoclet 2.0.7, PlantUML 1.2019.12</text><!--MD5=[b2e3d73db6a46b61f850e3fbd2adc403]
+link com.hack23.sonar.cloudformation.parser to org.sonar.api.utils.log--><path d="M1285.4882,116.0352 C1249.2838,131.3174 1186.9154,157.6438 1148.4859,173.8653 " fill="none" id="com.hack23.sonar.cloudformation.parser-&gt;org.sonar.api.utils.log" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1143.459,175.9872,1153.3061,176.1721,1148.0654,174.0426,1150.1948,168.8019,1143.459,175.9872" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="186" x="842.5" y="219.2822">UMLDoclet 2.0.7, PlantUML 1.2019.12</text><!--MD5=[962594ae650c6f1e13fe7d7d8adceaa1]
 @startuml
     set namespaceSeparator none
     hide circle
@@ -51,7 +51,7 @@ PlantUML version 1.2019.12(Sun Nov 03 11:24:54 CET 2019)
 (APACHE source distribution)
 Java Runtime: OpenJDK Runtime Environment
 JVM: OpenJDK 64-Bit Server VM
-Java Version: 11.0.5-ea+10-post-Ubuntu-0ubuntu1
+Java Version: 11.0.5+10-post-Ubuntu-0ubuntu1.1
 Operating System: Linux
 Default Encoding: UTF-8
 Language: en
