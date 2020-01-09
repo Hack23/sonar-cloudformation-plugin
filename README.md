@@ -20,9 +20,14 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag)
 [![JDK-13](https://img.shields.io/badge/jdk-13-orange.svg)]
 
 
+# Demo links
+
 Demo Sonarqube quality profile : https://www.hack23.com/sonar/profiles/show?language=cfn&name=Cloudformation+Rules
+
 Demo Sonarqube quality rules : https://www.hack23.com/sonar/coding_rules?languages=cfn
+
 Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=com.hack23.cia%3Acia-all&languages=cfn&resolutions=WONTFIX
+
 
 # Support
 
