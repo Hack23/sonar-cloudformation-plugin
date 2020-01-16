@@ -272,6 +272,22 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
+		<key>F19</key>
+		<name>EnableKeyRotation should not be false or absent on KMS::Key resource</name>
+		<internalKey>F19</internalKey>
+		<description>EnableKeyRotation should not be false or absent on KMS::Key resource</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-320</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
 		<key>F20</key>
 		<name>SQS Queue policy should not allow * action</name>
 		<internalKey>F2+</internalKey>
@@ -623,6 +639,134 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+     <rule>
+		<key>F42</key>
+		<name>Pinpoint APNSSandboxChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F42</internalKey>
+		<description>Pinpoint APNSSandboxChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F43</key>
+		<name>Pinpoint APNSSandboxChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F43</internalKey>
+		<description>Pinpoint APNSSandboxChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F44</key>
+		<name>ElastiCache ReplicationGroup AuthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F44</internalKey>
+		<description>ElastiCache ReplicationGroup AuthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F45</key>
+		<name>Lambda Permission EventSourceToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F45</internalKey>
+		<description>Lambda Permission EventSourceToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F46</key>
+		<name>Pinpoint APNSVoipSandboxChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F46</internalKey>
+		<description>Pinpoint APNSVoipSandboxChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F47</key>
+		<name>Pinpoint APNSVoipSandboxChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F47</internalKey>
+		<description>Pinpoint APNSVoipSandboxChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F48</key>
+		<name>Pinpoint APNSVoipChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F48</internalKey>
+		<description>Pinpoint APNSVoipChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F49</key>
+		<name>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F49</internalKey>
+		<description>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 	<rule>
 		<key>F50</key>
 		<name>Amplify App BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
@@ -720,6 +864,38 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
      <rule>
+		<key>F56</key>
+		<name>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F56</internalKey>
+		<description>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F57</key>
+		<name>Pinpoint APNSChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F57</internalKey>
+		<description>Pinpoint APNSChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
 		<key>F58</key>
 		<name>Amplify App OauthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
 		<internalKey>F58</internalKey>
@@ -740,6 +916,182 @@
 		<name>Amplify Branch BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
 		<internalKey>F60</internalKey>
 		<description>Amplify Branch BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F61</key>
+		<name>OpsWorks App SslConfiguration PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F61</internalKey>
+		<description>OpsWorks App SslConfiguration PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F62</key>
+		<name>OpsWorks Stack CustomCookbooksSource Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F62</internalKey>
+		<description>OpsWorks Stack CustomCookbooksSource Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F63</key>
+		<name>EMR Cluster KerberosAttributes AD Domain JoinPassword must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F63</internalKey>
+		<description>EMR Cluster KerberosAttributes AD Domain JoinPassword must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F64</key>
+		<name>EMR Cluster KerberosAttributes CrossRealmTrustPrincipal Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F64</internalKey>
+		<description>EMR Cluster KerberosAttributes CrossRealmTrustPrincipal Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F65</key>
+		<name>EMR Cluster KerberosAttributes KdcAdmin Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F65</internalKey>
+		<description>EMR Cluster KerberosAttributes KdcAdmin Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F66</key>
+		<name>Kinesis Firehose DeliveryStream RedshiftDestinationConfiguration Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F66</internalKey>
+		<description>Kinesis Firehose DeliveryStream RedshiftDestinationConfiguration Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F67</key>
+		<name>OpsWorks App AppSource Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F67</internalKey>
+		<description>OpsWorks App AppSource Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F68</key>
+		<name>Kinesis Firehose DeliveryStream SplunkDestinationConfiguration HECToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F68</internalKey>
+		<description>Kinesis Firehose DeliveryStream SplunkDestinationConfiguration HECToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F69</key>
+		<name>CodePipeline Webhook AuthenticationConfiguration SecretToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F69</internalKey>
+		<description>CodePipeline Webhook AuthenticationConfiguration SecretToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F70</key>
+		<name>DocDB DB Cluster master user password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F70</internalKey>
+		<description>DocDB DB Cluster master user password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>F71</key>
+		<name>ManagedBlockchain Member MemberFabricConfiguration AdminPasswordRule must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<internalKey>F71</internalKey>
+		<description>ManagedBlockchain Member MemberFabricConfiguration AdminPasswordRule must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -780,6 +1132,22 @@
 		<tag>cfn-nag</tag>	
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+ 	<rule>
+		<key>F76</key>
+		<name>KMS key should not allow * principal</name>
+		<internalKey>F76</internalKey>
+		<description>KMS key should not allow * principal (https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1583,22 +1951,6 @@
 		<tag>cfn-nag</tag>	
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>		
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-     </rule>
- 	<rule>
-		<key>W55</key>
-		<name>KMS key should not allow * principal</name>
-		<internalKey>W55</internalKey>
-		<description>KMS key should not allow * principal</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>cfn-nag</tag>	
-		<tag>owasp-a6</tag>
-		<tag>cweid-272</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
