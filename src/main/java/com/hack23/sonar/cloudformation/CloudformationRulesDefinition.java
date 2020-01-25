@@ -41,25 +41,16 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	private static final String PATH_TO_RULES_XML = "/cloudformation-rules.xml";
 
 	/** The Constant KEY. */
-	protected static final String KEY = "repo";
+	public static final String KEY = "repo";
 
 	/** The Constant NAME. */
-	protected static final String NAME = "repository";
+	public static final String NAME = "repository";
 
 	/** The Constant REPO_KEY. */
 	public static final String REPO_KEY = CloudformationLanguage.KEY + "-" + KEY;
 
 	/** The Constant REPO_NAME. */
-	protected static final String REPO_NAME = CloudformationLanguage.NAME + "-" + NAME;
-
-	/**
-	 * Rules definition file path.
-	 *
-	 * @return the string
-	 */
-	protected String rulesDefinitionFilePath() {
-		return PATH_TO_RULES_XML;
-	}
+	public static final String REPO_NAME = CloudformationLanguage.NAME + "-" + NAME;
 
 	/**
 	 * Define rules for language.
@@ -73,7 +64,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 			final String languageKey) {
 		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
 
-		final InputStream rulesXml = this.getClass().getResourceAsStream(rulesDefinitionFilePath());
+		final InputStream rulesXml = this.getClass().getResourceAsStream(PATH_TO_RULES_XML);
 		if (rulesXml != null) {
 			final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();
 			rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());

@@ -139,7 +139,7 @@ public final class CfnNagViolation {
 	}
 
 	@Override
-	public final String toString() {
+	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
@@ -149,7 +149,7 @@ public final class CfnNagViolation {
     }
 
 	@Override
-	public final int hashCode() {
+	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this);
 	}
 
