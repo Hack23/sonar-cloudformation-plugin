@@ -1954,4 +1954,36 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+     <rule>
+		<key>W55</key>
+		<name>Elastic Load Balancer V2 Listener SslPolicy should use TLS 1.2.</name>
+		<internalKey>W55</internalKey>
+		<description>Elastic Load Balancer V2 Listener SslPolicy should use TLS 1.2.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-326</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W56</key>
+		<name>Elastic Load Balancer V2 Listener Protocol should use HTTPS for ALBs.</name>
+		<internalKey>W56</internalKey>
+		<description>Elastic Load Balancer V2 Listener Protocol should use HTTPS for ALBs.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 </cloudformation-rules>
