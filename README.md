@@ -52,6 +52,8 @@ One or multiple .nag or .nagscan files, note for .nag files the filename should 
 
 CWE-311 - Missing Encryption of Sensitive Data
 
+CWE-326 - Inadequate Encryption Strength
+
 CWE-732 - Incorrect Permission Assignment for Critical Resource
 
 CWE-257 - Storing Passwords in a Recoverable Format
