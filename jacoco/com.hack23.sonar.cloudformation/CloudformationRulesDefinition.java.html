@@ -41,25 +41,16 @@ import org.sonar.api.utils.log.Loggers;
 	private static final String PATH_TO_RULES_XML = &quot;/cloudformation-rules.xml&quot;;
 
 	/** The Constant KEY. */
-	protected static final String KEY = &quot;repo&quot;;
+	public static final String KEY = &quot;repo&quot;;
 
 	/** The Constant NAME. */
-	protected static final String NAME = &quot;repository&quot;;
+	public static final String NAME = &quot;repository&quot;;
 
 	/** The Constant REPO_KEY. */
 	public static final String REPO_KEY = CloudformationLanguage.KEY + &quot;-&quot; + KEY;
 
 	/** The Constant REPO_NAME. */
-	protected static final String REPO_NAME = CloudformationLanguage.NAME + &quot;-&quot; + NAME;
-
-	/**
-	 * Rules definition file path.
-	 *
-	 * @return the string
-	 */
-	protected String rulesDefinitionFilePath() {
-<span class="fc" id="L61">		return PATH_TO_RULES_XML;</span>
-	}
+	public static final String REPO_NAME = CloudformationLanguage.NAME + &quot;-&quot; + NAME;
 
 	/**
 	 * Define rules for language.
@@ -71,21 +62,21 @@ import org.sonar.api.utils.log.Loggers;
 	 */
 	private void defineRulesForLanguage(final Context context, final String repositoryKey, final String repositoryName,
 			final String languageKey) {
-<span class="fc" id="L74">		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);</span>
+<span class="fc" id="L65">		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);</span>
 
-<span class="fc" id="L76">		final InputStream rulesXml = this.getClass().getResourceAsStream(rulesDefinitionFilePath());</span>
-<span class="pc bpc" id="L77" title="1 of 2 branches missed.">		if (rulesXml != null) {</span>
-<span class="fc" id="L78">			final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();</span>
-<span class="fc" id="L79">			rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());</span>
+<span class="fc" id="L67">		final InputStream rulesXml = this.getClass().getResourceAsStream(PATH_TO_RULES_XML);</span>
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">		if (rulesXml != null) {</span>
+<span class="fc" id="L69">			final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();</span>
+<span class="fc" id="L70">			rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());</span>
 
-<span class="fc bfc" id="L81" title="All 2 branches covered.">			for (final NewRule newRule : repository.rules()) {</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">			for (final NewRule newRule : repository.rules()) {</span>
 
-<span class="fc" id="L83">				addNewRule(newRule);</span>
-<span class="fc" id="L84">			}</span>
+<span class="fc" id="L74">				addNewRule(newRule);</span>
+<span class="fc" id="L75">			}</span>
 		}
-<span class="fc" id="L86">		repository.done();</span>
+<span class="fc" id="L77">		repository.done();</span>
 
-<span class="fc" id="L88">	}</span>
+<span class="fc" id="L79">	}</span>
 
 	/**
 	 * Adds the new rule.
@@ -94,21 +85,21 @@ import org.sonar.api.utils.log.Loggers;
 	 */
 	private void addNewRule(final NewRule newRule) {
 		try {
-<span class="fc" id="L97">			final Set&lt;String&gt; tags = (Set&lt;String&gt;) FieldUtils.readField(newRule, &quot;tags&quot;, true);</span>
-<span class="fc bfc" id="L98" title="All 2 branches covered.">			for (final String tag : tags) {</span>
+<span class="fc" id="L88">			final Set&lt;String&gt; tags = (Set&lt;String&gt;) FieldUtils.readField(newRule, &quot;tags&quot;, true);</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">			for (final String tag : tags) {</span>
 
-<span class="fc bfc" id="L100" title="All 2 branches covered.">				if (tag.contains(&quot;cweid-&quot;)) {</span>
-<span class="fc" id="L101">					newRule.addCwe(Integer.parseInt(tag.replace(&quot;cweid-&quot;, &quot;&quot;)));</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">				if (tag.contains(&quot;cweid-&quot;)) {</span>
+<span class="fc" id="L92">					newRule.addCwe(Integer.parseInt(tag.replace(&quot;cweid-&quot;, &quot;&quot;)));</span>
 				}
 
-<span class="fc bfc" id="L104" title="All 2 branches covered.">				if (tag.contains(&quot;owasp-&quot;)) {</span>
-<span class="fc" id="L105">					newRule.addOwaspTop10(OwaspTop10.valueOf(tag.replace(&quot;owasp-&quot;, &quot;&quot;).toUpperCase()));</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">				if (tag.contains(&quot;owasp-&quot;)) {</span>
+<span class="fc" id="L96">					newRule.addOwaspTop10(OwaspTop10.valueOf(tag.replace(&quot;owasp-&quot;, &quot;&quot;).toUpperCase()));</span>
 				}
-<span class="fc" id="L107">			}</span>
-<span class="nc" id="L108">		} catch (final IllegalAccessException e) {</span>
-<span class="nc" id="L109">			LOGGER.warn(&quot;Problem parsing security tags&quot;, e);</span>
-<span class="fc" id="L110">		}</span>
-<span class="fc" id="L111">	}</span>
+<span class="fc" id="L98">			}</span>
+<span class="nc" id="L99">		} catch (final IllegalAccessException e) {</span>
+<span class="nc" id="L100">			LOGGER.warn(&quot;Problem parsing security tags&quot;, e);</span>
+<span class="fc" id="L101">		}</span>
+<span class="fc" id="L102">	}</span>
 
 	/**
 	 * Define.
@@ -117,8 +108,8 @@ import org.sonar.api.utils.log.Loggers;
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L120">		defineRulesForLanguage(context, REPO_KEY, REPO_NAME, CloudformationLanguage.KEY);</span>
-<span class="fc" id="L121">	}</span>
+<span class="fc" id="L111">		defineRulesForLanguage(context, REPO_KEY, REPO_NAME, CloudformationLanguage.KEY);</span>
+<span class="fc" id="L112">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -139,7 +139,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 <span class="fc" id="L139">	}</span>
 
 	@Override
-	public final String toString() {
+	public String toString() {
 <span class="fc" id="L143">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
 	}
 
@@ -149,7 +149,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     }
 
 	@Override
-	public final int hashCode() {
+	public int hashCode() {
 <span class="fc" id="L153">		return HashCodeBuilder.reflectionHashCode(this);</span>
 	}
 
