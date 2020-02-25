@@ -104,7 +104,9 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("F71");		
 		SUPPORTED_RULES.add("F74");		
 		SUPPORTED_RULES.add("F75");
-		SUPPORTED_RULES.add("F76");		
+		SUPPORTED_RULES.add("F76");
+		SUPPORTED_RULES.add("F77");
+		SUPPORTED_RULES.add("F78");		
 		SUPPORTED_RULES.add("F665");
 		SUPPORTED_RULES.add("F1000");
 		SUPPORTED_RULES.add("F2000");
@@ -157,7 +159,13 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W53");
 		SUPPORTED_RULES.add("W54");
 		SUPPORTED_RULES.add("W55");
-		SUPPORTED_RULES.add("W56");		
+		SUPPORTED_RULES.add("W56");
+		
+		SUPPORTED_RULES.add("W57");
+		SUPPORTED_RULES.add("W58");
+		SUPPORTED_RULES.add("W59");
+		SUPPORTED_RULES.add("W62");
+		
 	}
 
 	public static boolean hasRule(final String id) {
