@@ -2065,6 +2065,22 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	<rule>
+		<key>W60</key>
+		<name>VPC should have a flow log attached</name>
+		<internalKey>W60</internalKey>
+		<description>VPC should have a flow log attached</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
      <rule>
 		<key>W62</key>
 		<name>ApiGateway SecurityPolicy should use TLS 1.2</name>

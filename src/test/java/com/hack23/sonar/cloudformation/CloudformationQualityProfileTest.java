@@ -39,7 +39,7 @@ public class CloudformationQualityProfileTest extends Assert {
 		final BuiltInQualityProfile qualityProfile = context.profile(CloudformationLanguage.KEY,"Cloudformation Rules");
 		assertNotNull(qualityProfile);
 		assertTrue(qualityProfile.isDefault());
-		assertEquals(130,qualityProfile.rules().size());
+		assertEquals(131,qualityProfile.rules().size());
 		
 		
 	}
