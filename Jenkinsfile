@@ -68,19 +68,12 @@ pipeline {
 	   }
        
 	   
-	   stage('Publish results to Sonarqube') {
+	   stage('Verify Sonarqube Quality Gate') {
 	      steps {
 	         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/ -Dsonar.sources=. -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
 	      }
 	   }
-	  
-	   stage('Quality Gate') {
-	      steps {
-	         sh "mvn com.hack23.maven:sonar-quality-gates-maven-plugin:1.0.4:inspect  -Dsonar.host.url=http://192.168.1.15:9000/sonar"
-	      }
-	   }
-	   
-	   
+	  	   
 	   stage('Results') {
 	      steps {
 	          archive 'target/*.jar'
