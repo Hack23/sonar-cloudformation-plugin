@@ -2096,5 +2096,55 @@
 		<tag>cweid-326</tag>		
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>         
+   	<rule>
+		<key>W61</key>
+		<name>EMR SecurityConfiguration should enable and properly configure encryption at rest and in transit.</name>
+		<internalKey>W61</internalKey>
+		<description>EMR SecurityConfiguration should enable and properly configure encryption at rest and in transit.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>     
+     <rule>
+		<key>W63</key>
+		<name>EMR Cluster should specify SecurityConfiguration.</name>
+		<internalKey>W63</internalKey>
+		<description>EMR Cluster should specify SecurityConfiguration.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+     
+
+    <rule>
+		<key>W64</key>
+		<name>AWS::ApiGateway::Stage resources should be associated with an AWS::ApiGateway::UsagePlan.</name>
+		<internalKey>W64</internalKey>
+		<description>AWS::ApiGateway::Stage resources should be associated with an AWS::ApiGateway::UsagePlan.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>	
+		<tag>cweid-770</tag>		
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     
 </cloudformation-rules>

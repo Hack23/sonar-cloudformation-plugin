@@ -64,6 +64,8 @@ CWE-272 - Least Privilege Violation
 
 CWE-286 - Incorrect User Management
 
+CWE-770: Allocation of Resources Without Limits or Throttling
+
 No CWE associated
 
 # Roadmap
