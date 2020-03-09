@@ -228,7 +228,7 @@ public final class CloudformationSensor implements Sensor {
 				} else {
 					final List<Integer> line_numbers = violation.getLine_numbers();
 					for (final Integer line : line_numbers) {
-						if (line >= 0) {
+						if (line != null && line >= 0) {
 							context.newIssue()
 									.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
 									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
