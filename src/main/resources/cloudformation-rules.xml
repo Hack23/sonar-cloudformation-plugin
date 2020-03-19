@@ -2168,7 +2168,7 @@
 
 	<rule>
 		<key>W66</key>
-		<name>To avoid opening all ports for Allow rules, EC2 NetworkACL Entry Protocol should be either 6 (for TCP), 17 (for UDP), 1 (for ICMP), or 58 (for ICMPv6, which must include an IPv6 CIDR block, ICMP type, and code).</name>
+		<name>To avoid opening all ports for Allow rules, EC2 NetworkACL Entry Protocol should be specified</name>
 		<internalKey>W66</internalKey>
 		<description>To avoid opening all ports for Allow rules, EC2 NetworkACL Entry Protocol should be either 6 (for TCP), 17 (for UDP), 1 (for ICMP), or 58 (for ICMPv6, which must include an IPv6 CIDR block, ICMP type, and code).</description>
 		<severity>MAJOR</severity>
