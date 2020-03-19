@@ -50,7 +50,7 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("F15");
 		SUPPORTED_RULES.add("F16");
 		SUPPORTED_RULES.add("F18");
-		SUPPORTED_RULES.add("F19");		
+		SUPPORTED_RULES.add("F19");
 		SUPPORTED_RULES.add("F20");
 		SUPPORTED_RULES.add("F21");
 		SUPPORTED_RULES.add("F22");
@@ -68,10 +68,10 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("F34");
 		SUPPORTED_RULES.add("F35");
 		SUPPORTED_RULES.add("F36");
-		SUPPORTED_RULES.add("F37");		
-		SUPPORTED_RULES.add("F38");		
-		SUPPORTED_RULES.add("F39");		
-		SUPPORTED_RULES.add("F40");	
+		SUPPORTED_RULES.add("F37");
+		SUPPORTED_RULES.add("F38");
+		SUPPORTED_RULES.add("F39");
+		SUPPORTED_RULES.add("F40");
 		SUPPORTED_RULES.add("F41");
 		SUPPORTED_RULES.add("F42");
 		SUPPORTED_RULES.add("F43");
@@ -80,16 +80,16 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("F46");
 		SUPPORTED_RULES.add("F47");
 		SUPPORTED_RULES.add("F48");
-		SUPPORTED_RULES.add("F49");		
-		SUPPORTED_RULES.add("F50");		
-		SUPPORTED_RULES.add("F51");		
-		SUPPORTED_RULES.add("F52");		
-		SUPPORTED_RULES.add("F53");		
-		SUPPORTED_RULES.add("F54");		
+		SUPPORTED_RULES.add("F49");
+		SUPPORTED_RULES.add("F50");
+		SUPPORTED_RULES.add("F51");
+		SUPPORTED_RULES.add("F52");
+		SUPPORTED_RULES.add("F53");
+		SUPPORTED_RULES.add("F54");
 		SUPPORTED_RULES.add("F55");
 		SUPPORTED_RULES.add("F56");
-		SUPPORTED_RULES.add("F57");		
-		SUPPORTED_RULES.add("F58");		
+		SUPPORTED_RULES.add("F57");
+		SUPPORTED_RULES.add("F58");
 		SUPPORTED_RULES.add("F60");
 		SUPPORTED_RULES.add("F61");
 		SUPPORTED_RULES.add("F62");
@@ -101,16 +101,16 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("F68");
 		SUPPORTED_RULES.add("F69");
 		SUPPORTED_RULES.add("F70");
-		SUPPORTED_RULES.add("F71");		
-		SUPPORTED_RULES.add("F74");		
+		SUPPORTED_RULES.add("F71");
+		SUPPORTED_RULES.add("F74");
 		SUPPORTED_RULES.add("F75");
 		SUPPORTED_RULES.add("F76");
 		SUPPORTED_RULES.add("F77");
-		SUPPORTED_RULES.add("F78");		
+		SUPPORTED_RULES.add("F78");
 		SUPPORTED_RULES.add("F665");
 		SUPPORTED_RULES.add("F1000");
 		SUPPORTED_RULES.add("F2000");
-		
+
 		SUPPORTED_RULES.add("W1");
 		SUPPORTED_RULES.add("W2");
 		SUPPORTED_RULES.add("W5");
@@ -152,7 +152,7 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W46");
 		SUPPORTED_RULES.add("W47");
 		SUPPORTED_RULES.add("W48");
-		SUPPORTED_RULES.add("W49");		
+		SUPPORTED_RULES.add("W49");
 		SUPPORTED_RULES.add("W50");
 		SUPPORTED_RULES.add("W51");
 		SUPPORTED_RULES.add("W52");
@@ -163,18 +163,22 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W57");
 		SUPPORTED_RULES.add("W58");
 		SUPPORTED_RULES.add("W59");
-		SUPPORTED_RULES.add("W60");		
-		SUPPORTED_RULES.add("W61");					
+		SUPPORTED_RULES.add("W60");
+		SUPPORTED_RULES.add("W61");
 		SUPPORTED_RULES.add("W62");
-		SUPPORTED_RULES.add("W63");		
-		SUPPORTED_RULES.add("W64");		
-		
+		SUPPORTED_RULES.add("W63");
+		SUPPORTED_RULES.add("W64");
+		SUPPORTED_RULES.add("W65");
+		SUPPORTED_RULES.add("W66");
+		SUPPORTED_RULES.add("W67");
+		SUPPORTED_RULES.add("W68");
+		SUPPORTED_RULES.add("W69");
 	}
 
 	public static boolean hasRule(final String id) {
 		return SUPPORTED_RULES.contains(id);
 	}
-	
+
 	/**
 	 * Define.
 	 *
