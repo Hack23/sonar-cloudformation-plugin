@@ -186,12 +186,15 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	 */
 	@Override
 	public void define(final Context context) {
-		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Cloudformation Rules",
-				CloudformationLanguage.KEY);
-		profile.setDefault(true);
+		extracted(context,"yaml");
+		extracted(context,"json");
+	}
+
+	private void extracted(final Context context,final String language) {
+		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Cloudformation Rules",language);
 
 		for (final String ruleKey : SUPPORTED_RULES) {
-			profile.activateRule(CloudformationRulesDefinition.REPO_KEY, ruleKey);
+			profile.activateRule("cfn-"+ language, ruleKey);
 		}
 
 		profile.done();

@@ -46,12 +46,6 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	/** The Constant NAME. */
 	public static final String NAME = "repository";
 
-	/** The Constant REPO_KEY. */
-	public static final String REPO_KEY = CloudformationLanguage.KEY + "-" + KEY;
-
-	/** The Constant REPO_NAME. */
-	public static final String REPO_NAME = CloudformationLanguage.NAME + "-" + NAME;
-
 	/**
 	 * Define rules for language.
 	 *
@@ -108,7 +102,8 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	 */
 	@Override
 	public void define(final Context context) {
-		defineRulesForLanguage(context, REPO_KEY, REPO_NAME, CloudformationLanguage.KEY);
+		defineRulesForLanguage(context, "cfn-yaml" ,"Cloudformation Yaml Rules", "yaml");
+		defineRulesForLanguage(context, "cfn-json" ,"Cloudformation Json Rules", "json");
 	}
 
 }

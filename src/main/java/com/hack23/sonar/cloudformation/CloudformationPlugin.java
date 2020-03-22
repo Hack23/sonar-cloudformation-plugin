@@ -33,7 +33,7 @@ public final class CloudformationPlugin implements Plugin {
 	 */
 	@Override
 	public void define(final Context context) {
-		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,
+		context.addExtensions(CloudformationRulesDefinition.class,
 				CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
 				CloudformationSensorConfiguration.class);
 		context.addExtensions(CloudformationProperties.getProperties());

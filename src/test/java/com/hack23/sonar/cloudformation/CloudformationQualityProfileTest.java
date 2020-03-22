@@ -36,10 +36,18 @@ public class CloudformationQualityProfileTest extends Assert {
 	public void defineTest() {
 		final Context context = new Context();
 		new CloudformationQualityProfile().define(context);
-		final BuiltInQualityProfile qualityProfile = context.profile(CloudformationLanguage.KEY,"Cloudformation Rules");
+		{
+		final BuiltInQualityProfile qualityProfile = context.profile("yaml","Cloudformation Rules");
 		assertNotNull(qualityProfile);
-		assertTrue(qualityProfile.isDefault());
+		assertFalse(qualityProfile.isDefault());
 		assertEquals(139,qualityProfile.rules().size());
+		}
+		{
+		final BuiltInQualityProfile qualityProfile = context.profile("json","Cloudformation Rules");
+		assertNotNull(qualityProfile);
+		assertFalse(qualityProfile.isDefault());
+		assertEquals(139,qualityProfile.rules().size());
+		}
 	}
 
 }

@@ -222,7 +222,7 @@ public final class CloudformationSensor implements Sensor {
 			if (templateInputFile != null) {
 
 				if (violation.getLine_numbers().isEmpty()) {
-					context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
+					context.newIssue().forRule(RuleKey.of("cfn-"+templateInputFile.language(), violation.getId()))
 							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
 							.save();
 				} else {
@@ -230,19 +230,19 @@ public final class CloudformationSensor implements Sensor {
 					for (final Integer line : line_numbers) {
 						if (line != null && line >= 0) {
 							context.newIssue()
-									.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
+									.forRule(RuleKey.of("cfn-"+templateInputFile.language(), violation.getId()))
 									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
 											.at(templateInputFile.selectLine(line)))
 									.save();
 						} else {
-							context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
+							context.newIssue().forRule(RuleKey.of("cfn-"+templateInputFile.language(), violation.getId()))
 							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
-							.save();							
+							.save();
 						}
 					}
 				}
 			} else {
-				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
+				context.newIssue().forRule(RuleKey.of("cfn-"+"yaml", violation.getId()))
 						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
 			}
 		} else {

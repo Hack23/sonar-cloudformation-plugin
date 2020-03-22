@@ -19,35 +19,26 @@
  */
 package com.hack23.sonar.cloudformation.parser;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
-import com.openpojo.log.LoggerFactory;
+
 import com.openpojo.random.RandomFactory;
 import com.openpojo.reflection.PojoClass;
 import com.openpojo.reflection.PojoClassFilter;
 import com.openpojo.reflection.PojoField;
-import com.openpojo.reflection.PojoMethod;
-import com.openpojo.reflection.PojoParameter;
 import com.openpojo.reflection.filters.FilterPackageInfo;
 import com.openpojo.reflection.impl.PojoClassFactory;
 import com.openpojo.validation.Validator;
 import com.openpojo.validation.ValidatorBuilder;
 import com.openpojo.validation.affirm.Affirm;
-import com.openpojo.validation.rule.Rule;
 import com.openpojo.validation.rule.impl.EqualsAndHashCodeMatchRule;
 import com.openpojo.validation.rule.impl.GetterMustExistRule;
 import com.openpojo.validation.rule.impl.SetterMustExistRule;
 import com.openpojo.validation.test.Tester;
 import com.openpojo.validation.test.impl.GetterTester;
 import com.openpojo.validation.test.impl.SetterTester;
-import com.openpojo.validation.utils.SameInstanceIdentityHandlerStub;
-import com.openpojo.validation.utils.ValidationHelper;
-
-
-import static com.openpojo.validation.utils.ToStringHelper.safeToString;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 /**
  * The Class ModelSanityTest.

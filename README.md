@@ -33,16 +33,21 @@ Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=c
 
 Sonarqube 7.7+ and currently only supports cfn_nag reports (https://github.com/stelligent/cfn_nag)
 
+Requires plugin for either json or yaml or both depending on format used for cloudformation templates.
+ Yaml plugin https://github.com/sbaudoin/sonar-yaml
+Json plugin https://github.com/racodond/sonar-json-plugin
+
+
 # Howto
 
 Prepare cfn_nag reports running (cfn_nag --output-format=json src/main/config/template.yml > target/template.yml.nag)
 and set the property sonar.cfn.nag.reportFile=target/template.yml.nag
 
-Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan 
+Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan
 
-# Properties supported 
+# Properties supported
 
-sonar.cfn.nag.reportFiles=target/template.yml.nag,target/cfn-nag-scan.nagscan 
+sonar.cfn.nag.reportFiles=target/template.yml.nag,target/cfn-nag-scan.nagscan
 
 One or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
 
@@ -70,7 +75,7 @@ No CWE associated
 
 # Roadmap
 
-Support more cloudformation checkers and add more rules for cfn_nag.  
+Support more cloudformation checkers and add more rules for cfn_nag.
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin?ref=badge_large)
