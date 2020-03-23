@@ -30,12 +30,6 @@ import org.sonar.api.resources.Qualifiers;
  */
 public final class CloudformationProperties {
 
-	/** The Constant FILE_SUFFIXES_KEY. */
-	public static final String FILE_SUFFIXES_KEY = "sonar.cloudformation.file.suffixes";
-
-	/** The Constant FILE_SUFFIXES_DEFAULT_VALUE. */
-	public static final String FILE_SUFFIXES_DEFAULT_VALUE = ".template";
-
 	/**
 	 * Instantiates a new cloudformation properties.
 	 */
@@ -49,13 +43,9 @@ public final class CloudformationProperties {
 	 * @return the properties
 	 */
 	public static List<PropertyDefinition> getProperties() {
-		return Arrays.asList(
-				PropertyDefinition.builder(FILE_SUFFIXES_KEY).defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)
-						.category("Cloudformation").name("File Suffixes")
-						.description("Comma-separated list of suffixes for files to analyze.").multiValues(true)
-						.build(),
-				PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY).subCategory("Paths")
-						.name(CloudformationConstants.REPORT_FILES_PROPERTY)
-						.description("path to the '.nag or .nagscan' files").onQualifiers(Qualifiers.PROJECT).defaultValue("").build());
+		return Arrays.asList(PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY)
+				.subCategory("Paths").name(CloudformationConstants.REPORT_FILES_PROPERTY)
+				.description("path to the '.nag or .nagscan' files").onQualifiers(Qualifiers.PROJECT).defaultValue("")
+				.build());
 	}
 }
