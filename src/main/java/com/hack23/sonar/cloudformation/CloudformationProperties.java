@@ -19,7 +19,7 @@
  */
 package com.hack23.sonar.cloudformation;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.sonar.api.config.PropertyDefinition;
@@ -43,7 +43,7 @@ public final class CloudformationProperties {
 	 * @return the properties
 	 */
 	public static List<PropertyDefinition> getProperties() {
-		return Arrays.asList(PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY)
+		return Collections.singletonList(PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY)
 				.subCategory("Paths").name(CloudformationConstants.REPORT_FILES_PROPERTY)
 				.description("path to the '.nag or .nagscan' files").onQualifiers(Qualifiers.PROJECT).defaultValue("")
 				.build());
