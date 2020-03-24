@@ -19,7 +19,7 @@
  */
 package com.hack23.sonar.cloudformation;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.sonar.api.config.PropertyDefinition;
@@ -29,12 +29,6 @@ import org.sonar.api.resources.Qualifiers;
  * The Class CloudformationProperties.
  */
 public final class CloudformationProperties {
-
-	/** The Constant FILE_SUFFIXES_KEY. */
-	public static final String FILE_SUFFIXES_KEY = &quot;sonar.cloudformation.file.suffixes&quot;;
-
-	/** The Constant FILE_SUFFIXES_DEFAULT_VALUE. */
-	public static final String FILE_SUFFIXES_DEFAULT_VALUE = &quot;.template&quot;;
 
 	/**
 	 * Instantiates a new cloudformation properties.
@@ -49,14 +43,10 @@ public final class CloudformationProperties {
 	 * @return the properties
 	 */
 	public static List&lt;PropertyDefinition&gt; getProperties() {
-<span class="fc" id="L52">		return Arrays.asList(</span>
-<span class="fc" id="L53">				PropertyDefinition.builder(FILE_SUFFIXES_KEY).defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)</span>
-<span class="fc" id="L54">						.category(&quot;Cloudformation&quot;).name(&quot;File Suffixes&quot;)</span>
-<span class="fc" id="L55">						.description(&quot;Comma-separated list of suffixes for files to analyze.&quot;).multiValues(true)</span>
-<span class="fc" id="L56">						.build(),</span>
-<span class="fc" id="L57">				PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY).subCategory(&quot;Paths&quot;)</span>
-<span class="fc" id="L58">						.name(CloudformationConstants.REPORT_FILES_PROPERTY)</span>
-<span class="fc" id="L59">						.description(&quot;path to the '.nag or .nagscan' files&quot;).onQualifiers(Qualifiers.PROJECT).defaultValue(&quot;&quot;).build());</span>
+<span class="fc" id="L46">		return Collections.singletonList(PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY)</span>
+<span class="fc" id="L47">				.subCategory(&quot;Paths&quot;).name(CloudformationConstants.REPORT_FILES_PROPERTY)</span>
+<span class="fc" id="L48">				.description(&quot;path to the '.nag or .nagscan' files&quot;).onQualifiers(Qualifiers.PROJECT).defaultValue(&quot;&quot;)</span>
+<span class="fc" id="L49">				.build());</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

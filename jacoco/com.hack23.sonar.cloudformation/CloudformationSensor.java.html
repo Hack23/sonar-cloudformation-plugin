@@ -222,26 +222,32 @@ public final class CloudformationSensor implements Sensor {
 <span class="fc bfc" id="L222" title="All 2 branches covered.">			if (templateInputFile != null) {</span>
 
 <span class="pc bpc" id="L224" title="1 of 2 branches missed.">				if (violation.getLine_numbers().isEmpty()) {</span>
-<span class="nc" id="L225">					context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
+<span class="nc" id="L225">					context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
 <span class="nc" id="L226">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
 <span class="nc" id="L227">							.save();</span>
 				} else {
 <span class="fc" id="L229">					final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
 <span class="fc bfc" id="L230" title="All 2 branches covered.">					for (final Integer line : line_numbers) {</span>
-<span class="fc" id="L231">						context.newIssue()</span>
-<span class="fc" id="L232">								.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
-<span class="fc" id="L233">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
-<span class="fc" id="L234">										.at(templateInputFile.selectLine(line)))</span>
-<span class="fc" id="L235">								.save();</span>
-<span class="fc" id="L236">					}</span>
-<span class="fc" id="L237">				}</span>
+<span class="pc bpc" id="L231" title="2 of 4 branches missed.">						if (line != null &amp;&amp; line &gt;= 0) {</span>
+<span class="fc" id="L232">							context.newIssue()</span>
+<span class="fc" id="L233">									.forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
+<span class="fc" id="L234">									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
+<span class="fc" id="L235">											.at(templateInputFile.selectLine(line)))</span>
+<span class="fc" id="L236">									.save();</span>
+						} else {
+<span class="nc" id="L238">							context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
+<span class="nc" id="L239">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
+<span class="nc" id="L240">							.save();</span>
+						}
+<span class="fc" id="L242">					}</span>
+<span class="fc" id="L243">				}</span>
 			} else {
-<span class="fc" id="L239">				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))</span>
-<span class="fc" id="L240">						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
+<span class="fc" id="L245">				context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+&quot;yaml&quot;, violation.getId()))</span>
+<span class="fc" id="L246">						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
 			}
 		} else {
-<span class="nc" id="L243">			LOGGER.warn(&quot;Rule not supported {}:{}&quot;, violation.getId(), violation.getMessage());</span>
+<span class="nc" id="L249">			LOGGER.warn(&quot;Rule not supported {}:{}&quot;, violation.getId(), violation.getMessage());</span>
 		}
-<span class="fc" id="L245">	}</span>
+<span class="fc" id="L251">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

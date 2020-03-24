@@ -33,7 +33,7 @@ import org.sonar.api.Plugin;
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L36">		context.addExtensions(CloudformationLanguage.class, CloudformationRulesDefinition.class,</span>
+<span class="fc" id="L36">		context.addExtensions(CloudformationRulesDefinition.class,</span>
 				CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
 				CloudformationSensorConfiguration.class);
 <span class="fc" id="L39">		context.addExtensions(CloudformationProperties.getProperties());</span>
