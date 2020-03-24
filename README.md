@@ -26,15 +26,15 @@ Demo Sonarqube quality profile : https://www.hack23.com/sonar/profiles/show?lang
 
 Demo Sonarqube quality rules : https://www.hack23.com/sonar/coding_rules?languages=yaml&repositories=cfn-yaml
 
-Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=com.hack23.cia%3Acia-all&languages=cfn-json&resolutions=WONTFIX
+Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=com.hack23.cia%3Acia-all&languages=yaml&resolutions=WONTFIX
 
 
 # Support
 
 Sonarqube 7.7+ and currently only supports cfn_nag reports (https://github.com/stelligent/cfn_nag)
 
-Requires plugin for either json or yaml or both depending on format used for cloudformation templates.
- Yaml plugin https://github.com/sbaudoin/sonar-yaml
+Requires Yaml plugin and optional Json plugin if json is used for cloudformation templates.
+Yaml plugin https://github.com/sbaudoin/sonar-yaml
 Json plugin https://github.com/racodond/sonar-json-plugin
 
 
