@@ -1,11 +1,11 @@
 pipeline {
    agent any
-  
-   tools { 
-        maven 'Maven' 
-        jdk 'Java11' 
+
+   tools {
+        maven 'Maven'
+        jdk 'Java11'
     }
-    
+
    stages {
 
 	   stage('Build') {
@@ -13,23 +13,23 @@ pipeline {
 	         sh "mvn clean install site"
 	         sh "rm -rf target/site/jacoco-aggregate"
 	         sh "rm -rf target/site/jacoco-ut"
-	         sh "rm -rf target/site/jacoco-it"	         	         
+	         sh "rm -rf target/site/jacoco-it"
 	      }
 	        post {
                 always {
                     junit 'target/surefire-reports/*.xml'
-                    
-                    jacoco( 
+
+                    jacoco(
 				      execPattern: 'target/jacoco.exec',
 				      classPattern: 'target/classes',
 				      sourcePattern: 'src/main/java',
 				      exclusionPattern: 'src/test*'
 				   )
-                    
+
                 }
             }
 	   }
-	   
+
 	    stage('Record Coverage') {
             when { branch 'master' }
             steps {
@@ -39,7 +39,7 @@ pipeline {
                 step([$class: 'MasterCoverageAction', scmVars: [GIT_URL: env.GIT_URL]])
             }
         }
-        
+
         stage('PR Coverage to Github') {
             when { allOf {not { branch 'master' }; expression { return env.CHANGE_ID != null }} }
             steps {
@@ -51,10 +51,10 @@ pipeline {
        }
 
 	   stage('Vulnerability Check') {
-	   	  tools { 
-    	    jdk 'Java8' 
+	   	  tools {
+    	    jdk 'Java8'
 	    	}
-	   
+
 	      steps {
 	         sh "mvn org.owasp:dependency-check-maven:check -Dformat=ALL -DsuppressionFile=src/config/suppressions.xml"
 	      }
@@ -66,14 +66,14 @@ pipeline {
 	         sh "mvn org.codehaus.mojo:versions-maven-plugin:2.7:dependency-updates-report -DdependencyUpdatesReportFormats=html,xml"
 	      }
 	   }
-       
-	   
+
+
 	   stage('Verify Sonarqube Quality Gate') {
 	      steps {
-	         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/ -Dsonar.sources=. -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
+	         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/ -Dsonar.cfn.nag.reportFile=src/test/resources/cfn-nag-scan.nagscan -Dsonar.sources=. -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
 	      }
 	   }
-	  	   
+
 	   stage('Results') {
 	      steps {
 	          archive 'target/*.jar'
