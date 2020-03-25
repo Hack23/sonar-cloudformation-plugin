@@ -41,7 +41,7 @@ Json plugin https://github.com/racodond/sonar-json-plugin
 # Howto
 
 Prepare cfn_nag reports running (cfn_nag --output-format=json src/main/config/template.yml > target/template.yml.nag)
-and set the property sonar.cfn.nag.reportFile=target/template.yml.nag
+and set the property sonar.cfn.nag.reportFiles=target/template.yml.nag (comma separated if multiple reports)
 
 Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan
 
