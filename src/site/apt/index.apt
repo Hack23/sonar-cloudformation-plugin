@@ -1,6 +1,6 @@
 sonar-cloudformation-plugin
 
- Cloudformation template rules (cgn-nag,...)
+ Cloudformation template rules (cfn-nag,...)
 
 
 Support
@@ -12,7 +12,7 @@ Howto
  Prepare cfn_nag reports running (cfn_nag src/main/config/template.yml > target/template.yml.nag)
  and set the property sonar.cfn.nag.reportFiles=target/template.yml.nag
 
- Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFile=target/cfn-nag-scan.nagscan 
+ Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFiles=target/cfn-nag-scan.nagscan 
 
 Properties supported 
 
