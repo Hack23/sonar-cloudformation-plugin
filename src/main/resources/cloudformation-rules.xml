@@ -1835,7 +1835,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
 	<rule>
 		<key>W46</key>
 		<name>ApiGateway V2 should have access logging configured</name>
@@ -1852,8 +1851,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
-
 	<rule>
 		<key>W47</key>
 		<name>SNS Topic should specify KmsMasterKeyId property</name>
@@ -2227,6 +2224,38 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	 <rule>
+		<key>W1200</key>
+		<name>SageMaker EndpointConfig should have a KmsKeyId property set.</name>
+		<internalKey>W1200</internalKey>
+		<description>SageMaker EndpointConfig should have a KmsKeyId property set.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+	<rule>
+		<key>W1201</key>
+		<name>SageMaker NotebookInstance should have a KmsKeyId property set.</name>
+		<internalKey>W1201</internalKey>
+		<description>SageMaker NotebookInstance should have a KmsKeyId property set.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
