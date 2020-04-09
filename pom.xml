@@ -10,7 +10,7 @@
   <artifactId>sonar-cloudformation-plugin</artifactId>
   <version>2.0.4-SNAPSHOT</version>
   <packaging>sonar-plugin</packaging>
-  <name>Cloudformation/cfn-nag</name>
+  <name>Cloudformation</name>
   <url>https://hack23.github.io/sonar-cloudformation-plugin/</url>
   <licenses>
     <license>
@@ -342,7 +342,7 @@
         <extensions>true</extensions>
         <configuration>
           <pluginClass>com.hack23.sonar.cloudformation.CloudformationPlugin</pluginClass>
-          <pluginDescription>Cloudformation rules, supporting cfn-nag reports</pluginDescription>
+          <pluginDescription>Integrates cfn-nag reports into SonarQube</pluginDescription>
           <requirePlugins>yaml:1.4.3</requirePlugins>
         </configuration>
       </plugin>
