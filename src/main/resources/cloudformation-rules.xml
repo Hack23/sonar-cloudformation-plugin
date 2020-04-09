@@ -2126,8 +2126,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
-
     <rule>
 		<key>W64</key>
 		<name>AWS::ApiGateway::Stage resources should be associated with an AWS::ApiGateway::UsagePlan.</name>
@@ -2143,9 +2141,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
-
-
      <rule>
 		<key>W65</key>
 		<name>GameLift fleet EC2InboundPermissions found with port range instead of just a single port</name>
@@ -2162,7 +2157,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
 	<rule>
 		<key>W66</key>
 		<name>To avoid opening all ports for Allow rules, EC2 NetworkACL Entry Protocol should be specified</name>
@@ -2224,6 +2218,22 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+      <rule>
+		<key>W70</key>
+		<name>Cloudfront should use minimum protocol version TLS 1.2</name>
+		<internalKey>W70</internalKey>
+		<description>Cloudfront should use minimum protocol version TLS 1.2</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-326</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
