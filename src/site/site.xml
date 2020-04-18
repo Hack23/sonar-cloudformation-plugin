@@ -4,12 +4,12 @@
 	<skin>
 		<groupId>org.apache.maven.skins</groupId>
 		<artifactId>maven-fluido-skin</artifactId>
-		<version>1.7</version>
+		<version>1.9</version>
 	</skin>
 
   <custom>
     <fluidoSkin>
-      <sideBarEnabled>true</sideBarEnabled>    
+      <sideBarEnabled>true</sideBarEnabled>
       <topBarEnabled>true</topBarEnabled>
    </fluidoSkin>
    </custom>
