@@ -1181,6 +1181,38 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
 	<rule>
+		<key>F79</key>
+		<name>A NetworkACL's rule numbers cannot be repeated unless one is egress and one is ingress.</name>
+		<internalKey>F79</internalKey>
+		<description>A NetworkACL's rule numbers cannot be repeated unless one is egress and one is ingress.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-284</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>F80</key>
+		<name>RDS instance should have deletion protection enabled.</name>
+		<internalKey>F80</internalKey>
+		<description>RDS instance should have deletion protection enabled.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-693</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
 		<key>F665</key>
 		<name>WebAcl DefaultAction should not be ALLOW</name>
 		<internalKey>F665</internalKey>
@@ -1835,7 +1867,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
 	<rule>
 		<key>W46</key>
 		<name>ApiGateway V2 should have access logging configured</name>
@@ -1852,8 +1883,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
-
 	<rule>
 		<key>W47</key>
 		<name>SNS Topic should specify KmsMasterKeyId property</name>
@@ -1934,7 +1963,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
 	<rule>
 		<key>W52</key>
 		<name>Elastic Load Balancer V2 should have access logging enabled</name>
@@ -2015,8 +2043,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
-
      <rule>
 		<key>W57</key>
 		<name>AWS::Cognito::IdentityPool AllowUnauthenticatedIdentities property should be false but CAN be true if proper restrictive IAM roles and permissions are established for unauthenticated users.</name>
@@ -2129,8 +2155,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
-
     <rule>
 		<key>W64</key>
 		<name>AWS::ApiGateway::Stage resources should be associated with an AWS::ApiGateway::UsagePlan.</name>
@@ -2146,9 +2170,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
-
-
      <rule>
 		<key>W65</key>
 		<name>GameLift fleet EC2InboundPermissions found with port range instead of just a single port</name>
@@ -2165,7 +2186,6 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
-
 	<rule>
 		<key>W66</key>
 		<name>To avoid opening all ports for Allow rules, EC2 NetworkACL Entry Protocol should be specified</name>
@@ -2227,6 +2247,132 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+      <rule>
+		<key>W70</key>
+		<name>Cloudfront should use minimum protocol version TLS 1.2</name>
+		<internalKey>W70</internalKey>
+		<description>Cloudfront should use minimum protocol version TLS 1.2</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-326</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W71</key>
+		<name>NetworkACL Entry Deny rules should affect all CIDR ranges.</name>
+		<internalKey>W71</internalKey>
+		<description>NetworkACL Entry Deny rules should affect all CIDR ranges.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-284</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W72</key>
+		<name>NetworkACL Entries are reusing or overlapping ports which may create ineffective rules.</name>
+		<internalKey>W72</internalKey>
+		<description>NetworkACL Entries are reusing or overlapping ports which may create ineffective rules.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-284</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W73</key>
+		<name>DynamoDB table should have billing mode set to either PAY_PER_REQUEST or PROVISIONED</name>
+		<internalKey>W73</internalKey>
+		<description>DynamoDB table should have billing mode set to either PAY_PER_REQUEST or PROVISIONED</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W74</key>
+		<name>DynamoDB table should have encryption enabled using a CMK stored in KMS</name>
+		<internalKey>W74</internalKey>
+		<description>DynamoDB table should have encryption enabled using a CMK stored in KMS</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W75</key>
+		<name>RDS instance should have backup retention period greater than 0.</name>
+		<internalKey>W75</internalKey>
+		<description>RDS instance should have backup retention period greater than 0.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-693</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	 <rule>
+		<key>W1200</key>
+		<name>SageMaker EndpointConfig should have a KmsKeyId property set.</name>
+		<internalKey>W1200</internalKey>
+		<description>SageMaker EndpointConfig should have a KmsKeyId property set.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+	<rule>
+		<key>W1201</key>
+		<name>SageMaker NotebookInstance should have a KmsKeyId property set.</name>
+		<internalKey>W1201</internalKey>
+		<description>SageMaker NotebookInstance should have a KmsKeyId property set.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
