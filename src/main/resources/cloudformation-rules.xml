@@ -12,7 +12,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -29,7 +29,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -46,7 +46,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -63,7 +63,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -80,7 +80,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -97,7 +97,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -114,7 +114,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -131,7 +131,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -148,7 +148,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -213,7 +213,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -230,7 +230,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -247,7 +247,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -264,7 +264,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -281,7 +281,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -298,7 +298,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-320</tag>
-		<tag>800-53-SC-12</tag>
+		<tag>800-53-sc-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -315,7 +315,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -332,7 +332,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -349,7 +349,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -366,7 +366,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -383,7 +383,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -400,7 +400,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -417,7 +417,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -434,7 +434,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -451,7 +451,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -468,7 +468,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -485,7 +485,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -502,7 +502,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -519,7 +519,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -536,7 +536,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -553,7 +553,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -570,7 +570,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -587,7 +587,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -604,7 +604,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -621,7 +621,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -638,7 +638,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -655,7 +655,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -672,7 +672,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -689,7 +689,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -706,7 +706,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -723,7 +723,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -740,7 +740,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -757,7 +757,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -774,7 +774,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -791,7 +791,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -808,7 +808,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -825,7 +825,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -842,7 +842,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -859,7 +859,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -876,7 +876,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -893,7 +893,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -910,7 +910,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -927,7 +927,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -944,7 +944,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -961,7 +961,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -978,7 +978,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -995,7 +995,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1012,7 +1012,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1029,7 +1029,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1046,7 +1046,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1063,7 +1063,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1080,7 +1080,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1097,7 +1097,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1114,7 +1114,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1131,7 +1131,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1148,7 +1148,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1165,7 +1165,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1182,7 +1182,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1199,7 +1199,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1216,7 +1216,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1262,7 +1262,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-284</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1311,7 +1311,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1344,7 +1344,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a3</tag>
 		<tag>cweid-257</tag>
-		<tag>800-53-IA-5</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1361,7 +1361,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1378,7 +1378,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1395,7 +1395,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1412,7 +1412,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1429,7 +1429,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1446,7 +1446,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1463,7 +1463,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1480,7 +1480,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1497,7 +1497,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1514,7 +1514,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1531,7 +1531,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1548,7 +1548,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1565,7 +1565,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1582,7 +1582,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1599,7 +1599,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1616,7 +1616,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1633,7 +1633,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1650,7 +1650,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1667,7 +1667,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1684,7 +1684,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1716,7 +1716,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1733,7 +1733,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1750,7 +1750,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1767,7 +1767,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1800,7 +1800,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1817,7 +1817,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1834,7 +1834,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1851,7 +1851,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1868,7 +1868,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1885,7 +1885,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1902,7 +1902,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1919,7 +1919,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1936,7 +1936,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1953,7 +1953,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1970,7 +1970,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -1987,7 +1987,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2004,7 +2004,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2021,7 +2021,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2038,7 +2038,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2071,7 +2071,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-272</tag>
-		<tag>800-53-AC-6</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2088,7 +2088,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2105,7 +2105,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2122,7 +2122,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2139,7 +2139,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-326</tag>
-		<tag>800-53-SC-8</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2156,7 +2156,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-8</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2189,7 +2189,7 @@
 		<tag>cfn-nag</tag>
 		<tag>cweid-778</tag>
 		<tag>owasp-a10</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2222,7 +2222,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2239,7 +2239,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-326</tag>
-		<tag>800-53-SC-8</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2256,7 +2256,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-8</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2273,7 +2273,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2305,7 +2305,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2322,7 +2322,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2339,7 +2339,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2372,7 +2372,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
-		<tag>800-53-AU-12</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2389,7 +2389,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-326</tag>
-		<tag>800-53-SC-8</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2406,7 +2406,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-284</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2423,7 +2423,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-284</tag>
-		<tag>800-53-AC-4</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2454,7 +2454,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2487,7 +2487,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2504,7 +2504,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
-		<tag>800-53-SC-13</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
