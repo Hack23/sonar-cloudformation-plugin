@@ -355,9 +355,9 @@
      </rule>
 	<rule>
 		<key>F23</key>
-		<name>RDS instance master user password must be Ref to NoEcho Parameter.</name>
-		<internalKey>F30</internalKey>
-		<description>RDS instance master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
+		<name>DS instance master user password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
+		<internalKey>F23</internalKey>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -372,9 +372,9 @@
      </rule>
 	<rule>
 		<key>F24</key>
-		<name>RDS instance master username must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>RDS instance master username must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F24</internalKey>
-		<description>RDS instance master username must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -2471,6 +2471,40 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-693</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W76</key>
+		<name>SPCM for IAM policy document is higher than 25</name>
+		<internalKey>W76</internalKey>
+		<description>Stelligent Policy Complexity Metric (SPCM) for IAM policy document is higher than 25</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W77</key>
+		<name>Secrets Manager Secret should explicitly specify KmsKeyId.</name>
+		<internalKey>W77</internalKey>
+		<description>Besides control of the key this will allow the secret to be shared cross-account.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
