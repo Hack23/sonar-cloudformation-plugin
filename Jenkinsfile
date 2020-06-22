@@ -6,6 +6,12 @@ pipeline {
         jdk 'Java11'
     }
 
+   parameters {
+       booleanParam(name: "RELEASE",
+               description: "Build a release from current commit.",
+               defaultValue: false)
+   }
+
    stages {
 
 	   stage('Build') {
@@ -73,6 +79,16 @@ pipeline {
 	         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/ -Dsonar.cfn.nag.reportFiles=src/main/resources/cfn-nag-scan.nagscan -Dsonar.sources=. -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
 	      }
 	   }
+
+	   stage('Release') {
+            when {
+                expression { params.RELEASE }
+            }
+            steps {
+                sh "mvn -B release:prepare"
+                sh "mvn -B release:perform"
+            }
+       }
 
 	   stage('Results') {
 	      steps {
