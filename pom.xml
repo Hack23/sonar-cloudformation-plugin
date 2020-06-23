@@ -380,7 +380,7 @@
           <docletArtifact>
             <groupId>nl.talsmasoftware</groupId>
             <artifactId>umldoclet</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </docletArtifact>
           <useStandardDocletOptions>true</useStandardDocletOptions>
           <charset>UTF-8</charset>
@@ -499,7 +499,7 @@
               <docletArtifact>
                 <groupId>nl.talsmasoftware</groupId>
                 <artifactId>umldoclet</artifactId>
-                <version>2.0.9</version>
+                <version>2.0.10</version>
               </docletArtifact>
               <useStandardDocletOptions>true</useStandardDocletOptions>
               <charset>UTF-8</charset>
