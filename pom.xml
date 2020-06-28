@@ -364,6 +364,15 @@
           <requirePlugins>yaml:1.4.3</requirePlugins>
         </configuration>
       </plugin>
+		<plugin>
+			<groupId>com.amashchenko.maven.plugin</groupId>
+			<artifactId>gitflow-maven-plugin</artifactId>
+			<configuration>
+				<gitFlowConfig>
+					<developmentBranch>master</developmentBranch>
+				</gitFlowConfig>
+			</configuration>
+		</plugin>
     </plugins>
   </build>
   <reporting>
