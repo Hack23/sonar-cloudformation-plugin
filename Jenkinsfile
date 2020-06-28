@@ -87,9 +87,7 @@ pipeline {
             steps {
                 sh "git checkout -f master"
                 sh "mvn -B clean"
-                sh "mvn -B release:clean"
-                sh "mvn -B release:prepare"
-                sh "mvn -B release:perform"
+                sh "gitflow:release"
             }
        }
 
