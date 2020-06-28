@@ -85,7 +85,9 @@ pipeline {
                 expression { params.RELEASE }
             }
             steps {
+                sh "git reset --hard origin/master"
                 sh "git checkout -f master"
+                sh "git reset --hard origin/master"
                 sh "mvn -B clean"
                 sh "gitflow:release"
             }
