@@ -85,6 +85,7 @@ pipeline {
                 expression { params.RELEASE }
             }
             steps {
+                sh "git checkout -f master"
                 sh "mvn -B release:prepare"
                 sh "mvn -B release:perform"
             }
