@@ -491,9 +491,9 @@
      </rule>
 	<rule>
 		<key>F31</key>
-		<name>DirectoryService::SimpleAD should use a parameter for password, with NoEcho</name>
+		<name>DirectoryService SimpleAD password must not be a plaintext string or a Ref to a Parameter with a Default value</name>
 		<internalKey>F31</internalKey>
-		<description>DirectoryService::SimpleAD should use a parameter for password, with NoEcho</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -542,9 +542,9 @@
      </rule>
 	<rule>
 		<key>F34</key>
-		<name>RDS DB Cluster master user password must be Ref to NoEcho Parameter.</name>
+		<name>RDS DB Cluster master user password must not be a plaintext string or a Ref to a Parameter with a Default value</name>
 		<internalKey>F34</internalKey>
-		<description>RDS DB Cluster master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -559,9 +559,9 @@
      </rule>
 	<rule>
 		<key>F35</key>
-		<name>Redshift Cluster master user password must be Ref to NoEcho Parameter.</name>
+		<name>Redshift Cluster master user password must not be a plaintext string or a Ref to a Parameter with a Default value</name>
 		<internalKey>F35</internalKey>
-		<description>Redshift Cluster master user password must be Ref to NoEcho Parameter. Default credentials are not recommended</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -576,9 +576,9 @@
      </rule>
 	<rule>
 		<key>F36</key>
-		<name>Directory Service Microsoft AD must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Directory Service Microsoft AD password must not be a plaintext string or a Ref to a Parameter with a Default value</name>
 		<internalKey>F36</internalKey>
-		<description>Directory Service Microsoft AD must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -593,9 +593,9 @@
      </rule>
 	<rule>
 		<key>F37</key>
-		<name>DMS Endpoint must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>DMS Endpoint password must not be a plaintext string or a Ref to a Parameter with a Default value</name>
 		<internalKey>F37</internalKey>
-		<description>DMS Endpoint must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
