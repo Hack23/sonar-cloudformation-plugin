@@ -64,7 +64,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
     <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-    <surefire.version>3.0.0-M4</surefire.version>
+    <surefire.version>3.0.0-M5</surefire.version>
     <scm-publish.scmBranch>gh-pages</scm-publish.scmBranch>
     <scm-publish.pubScmUrl>scm:git:https://github.com/Hack23/sonar-cloudformation-plugin.git</scm-publish.pubScmUrl>
     <scm-publish.siteDocOuputDirectory>${project.build.directory}/site</scm-publish.siteDocOuputDirectory>
@@ -100,7 +100,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.10</version>
+      <version>3.11</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.staxmate</groupId>
@@ -110,7 +110,7 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.11.0</version>
+      <version>2.11.2</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -127,7 +127,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>3.3.9</version>
+      <version>3.5.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -161,7 +161,7 @@
 		<plugin>
 			<groupId>org.owasp</groupId>
 			<artifactId>dependency-check-maven</artifactId>
-			<version>5.3.2</version>
+			<version>6.0.1</version>
 			<dependencies>
 				<dependency>
 					<groupId>com.h2database</groupId>
@@ -295,7 +295,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.5</version>
+        <version>0.8.6</version>
         <executions>
           <execution>
             <id>pre-unit-test</id>
@@ -328,7 +328,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M4</version>
+        <version>3.0.0-M5</version>
         <configuration>
           <argLine>${surefireArgLine}</argLine>
           <disableModules>false</disableModules>
@@ -366,7 +366,7 @@
           <docletArtifact>
             <groupId>nl.talsmasoftware</groupId>
             <artifactId>umldoclet</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.12</version>
           </docletArtifact>
           <useStandardDocletOptions>true</useStandardDocletOptions>
           <charset>UTF-8</charset>
@@ -378,7 +378,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.1</version>
         <inherited>true</inherited>
         <configuration>
           <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
@@ -393,7 +393,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.5</version>
+        <version>0.8.6</version>
         <inherited>true</inherited>
       </plugin>
       <plugin>
@@ -418,7 +418,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.7</version>
+        <version>2.8.1</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -485,7 +485,7 @@
               <docletArtifact>
                 <groupId>nl.talsmasoftware</groupId>
                 <artifactId>umldoclet</artifactId>
-                <version>2.0.8</version>
+                <version>2.0.12</version>
               </docletArtifact>
               <useStandardDocletOptions>true</useStandardDocletOptions>
               <charset>UTF-8</charset>
