@@ -182,13 +182,15 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 <span class="fc" id="L182">		SUPPORTED_RULES.add(&quot;W73&quot;);</span>
 <span class="fc" id="L183">		SUPPORTED_RULES.add(&quot;W74&quot;);</span>
 <span class="fc" id="L184">		SUPPORTED_RULES.add(&quot;W75&quot;);</span>
+<span class="fc" id="L185">		SUPPORTED_RULES.add(&quot;W76&quot;);</span>
+<span class="fc" id="L186">		SUPPORTED_RULES.add(&quot;W77&quot;);</span>
 
-<span class="fc" id="L186">		SUPPORTED_RULES.add(&quot;W1200&quot;);</span>
-<span class="fc" id="L187">		SUPPORTED_RULES.add(&quot;W1201&quot;);</span>
-<span class="fc" id="L188">	}</span>
+<span class="fc" id="L188">		SUPPORTED_RULES.add(&quot;W1200&quot;);</span>
+<span class="fc" id="L189">		SUPPORTED_RULES.add(&quot;W1201&quot;);</span>
+<span class="fc" id="L190">	}</span>
 
 	public static boolean hasRule(final String id) {
-<span class="fc" id="L191">		return SUPPORTED_RULES.contains(id);</span>
+<span class="fc" id="L193">		return SUPPORTED_RULES.contains(id);</span>
 	}
 
 	/**
@@ -198,18 +200,18 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L201">		extracted(context,&quot;yaml&quot;);</span>
-<span class="fc" id="L202">		extracted(context,&quot;json&quot;);</span>
-<span class="fc" id="L203">	}</span>
+<span class="fc" id="L203">		extracted(context,&quot;yaml&quot;);</span>
+<span class="fc" id="L204">		extracted(context,&quot;json&quot;);</span>
+<span class="fc" id="L205">	}</span>
 
 	private void extracted(final Context context,final String language) {
-<span class="fc" id="L206">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,language);</span>
+<span class="fc" id="L208">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,language);</span>
 
-<span class="fc bfc" id="L208" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
-<span class="fc" id="L209">			profile.activateRule(&quot;cfn-&quot;+ language, ruleKey);</span>
-<span class="fc" id="L210">		}</span>
+<span class="fc bfc" id="L210" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
+<span class="fc" id="L211">			profile.activateRule(&quot;cfn-&quot;+ language, ruleKey);</span>
+<span class="fc" id="L212">		}</span>
 
-<span class="fc" id="L212">		profile.done();</span>
-<span class="fc" id="L213">	}</span>
+<span class="fc" id="L214">		profile.done();</span>
+<span class="fc" id="L215">	}</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
