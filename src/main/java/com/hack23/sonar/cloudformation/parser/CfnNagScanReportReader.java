@@ -50,7 +50,7 @@ public class CfnNagScanReportReader {
 		try {
 			return objectMapper.readValue(input, new TypeReference<List<CfnNagScanReport>>() {});
 		} catch (final IOException e) {
-			LOGGER.error("Problem reading cfn nag report json", e);
+			LOGGER.warn("Problem reading cfn nag report json:{}", e.getMessage());
 			return new ArrayList<>();
 		}
 	}

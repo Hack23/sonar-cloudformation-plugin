@@ -173,12 +173,15 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
 			throws FileNotFoundException {
+		LOGGER.info("Reading cfn-nag reports:{}",  report);
 		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader
 				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 
 		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
 
 			final String filename = nagScanReport.getFilename();
+			LOGGER.info("Reading cfn-nag report:{}",  filename);
+
 			final InputFile templateInputFile = findTemplate(
 					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()));
 
