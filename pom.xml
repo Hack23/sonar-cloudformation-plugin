@@ -173,7 +173,7 @@
 		<plugin>
 			<groupId>com.amashchenko.maven.plugin</groupId>
 			<artifactId>gitflow-maven-plugin</artifactId>
-			<version>2.2.3</version>
+			<version>1.14.0</version>
 		</plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
