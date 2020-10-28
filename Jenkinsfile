@@ -3,7 +3,7 @@ pipeline {
 
    tools {
         maven 'Maven'
-        jdk 'Java8'
+        jdk 'Java11'
     }
 
    parameters {
@@ -75,9 +75,6 @@ pipeline {
 
 
 	   stage('Verify Sonarqube Quality Gate') {
-	   	  tools {
-    	    jdk 'Java11'
-	    	}
 	      steps {
 	         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/ -Dsonar.cfn.nag.reportFiles=src/main/resources/cfn-nag-scan.nagscan -Dsonar.sources=. -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
 	      }
@@ -87,6 +84,10 @@ pipeline {
 	   	 environment {
            MAVEN_OPTS = '-server -Xmx6048m -Xms6048m -Duser.timezone=CET --illegal-access=warn --add-exports java.base/sun.nio.ch=ALL-UNNAMED --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.desktop/java.awt.font=ALL-UNNAMED'
          }
+
+	   	  tools {
+    	    jdk 'Java8'
+	    	}
 
             when {
                 expression { params.RELEASE }
