@@ -173,8 +173,8 @@
 		<plugin>
 			<groupId>com.amashchenko.maven.plugin</groupId>
 			<artifactId>gitflow-maven-plugin</artifactId>
-			<version>1.14.0</version>
-			<dependencies>
+			<version>1.14.1.hack23</version>
+<!-- 			<dependencies>
 				<dependency>
 		            <groupId>org.codehaus.plexus</groupId>
 		            <artifactId>plexus-interactivity-api</artifactId>
@@ -186,7 +186,7 @@
 		            <artifactId>plexus-utils</artifactId>
 		            <version>3.0.24</version>
 		        </dependency>
-			</dependencies>
+			</dependencies>-->
 		</plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
