@@ -176,10 +176,16 @@
 			<version>1.14.0</version>
 			<dependencies>
 				<dependency>
-					<groupId>org.codehaus.plexus</groupId>
-					<artifactId>plexus-utils</artifactId>
-					<version>1.5.15</version>
-				</dependency>
+		            <groupId>org.codehaus.plexus</groupId>
+		            <artifactId>plexus-interactivity-api</artifactId>
+		            <version>1.0</version>
+		            <scope>compile</scope>
+		        </dependency>
+		        <dependency>
+		            <groupId>org.codehaus.plexus</groupId>
+		            <artifactId>plexus-utils</artifactId>
+		            <version>3.0.24</version>
+		        </dependency>
 			</dependencies>
 		</plugin>
         <plugin>
