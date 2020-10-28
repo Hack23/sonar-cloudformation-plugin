@@ -85,10 +85,6 @@ pipeline {
            MAVEN_OPTS = '-server -Xmx6048m -Xms6048m -Duser.timezone=CET --illegal-access=warn --add-exports java.base/sun.nio.ch=ALL-UNNAMED --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.desktop/java.awt.font=ALL-UNNAMED'
          }
 
-	   	  tools {
-    	    jdk 'Java8'
-	    	}
-
             when {
                 expression { params.RELEASE }
             }
