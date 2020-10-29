@@ -93,8 +93,8 @@ pipeline {
                 sh "git checkout -f master"
                 sh "git reset --hard origin/master"
                 sh "mvn -B clean"
-                sh "mvn -B gitflow:release -e"
-            }
+                sh "mvn -B release:prepare"
+                sh "mvn -B release:perform"            }
        }
 
 	   stage('Results') {
