@@ -154,7 +154,7 @@ public final class CloudformationSensor implements Sensor {
 	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
 		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag","");
 
-		final InputFile templateInputFile = findTemplate(templateName);
+		final InputFile templateInputFile = findTemplate(templateName,report.replace(".nag",""));
 
 		final CfnNagReport cfnNagReport = cfnNagReportReader
 				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
@@ -185,7 +185,7 @@ public final class CloudformationSensor implements Sensor {
 			LOGGER.info("Reading cfn-nag report:{}",  filename);
 
 			final InputFile templateInputFile = findTemplate(
-					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()));
+					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()),filename);
 
 			final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
 			for (final CfnNagViolation cfnNagViolation : violations) {
@@ -200,14 +200,17 @@ public final class CloudformationSensor implements Sensor {
 	 * @param templateName the template name
 	 * @return the input file
 	 */
-	private InputFile findTemplate(final String templateName) {
+	private InputFile findTemplate(final String templateName, final String filename) {
 		final List<InputFile> potentialReportTargets = new ArrayList<>();
 		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);
-		LOGGER.info("Looking for cloudformation template matching:" + templateName);
+		LOGGER.info("Looking for cloudformation template matching:{}:{}",  templateName,filename.replaceAll(".",""));
 
 		for (final InputFile inputFile : potentialReportTargets) {
-			if (templateName.equals(inputFile.filename())) {
-				LOGGER.info("matching:" + templateName + " = " + inputFile.filename());
+
+			if (templateName.equals(inputFile.filename()) && inputFile.uri().toString().contains(filename.replaceAll(".",""))) {
+				LOGGER.info("matching path:" + inputFile.uri().toString());
+				LOGGER.info("matching filename:" + templateName + " = " + inputFile.filename());
+
 				return inputFile;
 			}
 		}
