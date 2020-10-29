@@ -94,7 +94,8 @@ pipeline {
                 sh "git reset --hard origin/master"
                 sh "mvn -B clean"
                 sh "mvn -B release:prepare"
-                sh "mvn -B release:perform"            }
+                sh "mvn -B release:perform -Dgoals=deploy"
+                }
        }
 
 	   stage('Results') {
