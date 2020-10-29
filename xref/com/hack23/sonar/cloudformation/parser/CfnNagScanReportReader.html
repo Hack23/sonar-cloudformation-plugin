@@ -58,7 +58,7 @@
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  		<strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>  			<strong class="jxr_keyword">return</strong> objectMapper.readValue(input, <strong class="jxr_keyword">new</strong> TypeReference&lt;List&lt;CfnNagScanReport&gt;&gt;() {});
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  		} <strong class="jxr_keyword">catch</strong> (<strong class="jxr_keyword">final</strong> IOException e) {
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>  			LOGGER.error(<span class="jxr_string">"Problem reading cfn nag report json"</span>, e);
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  			LOGGER.warn(<span class="jxr_string">"Problem reading cfn nag report json:{}"</span>, e.getMessage());
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  			<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;();
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>  		}
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>  	}
