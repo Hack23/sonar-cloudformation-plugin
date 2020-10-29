@@ -170,24 +170,6 @@
 				</dependency>
 			</dependencies>
 		</plugin>
-		<plugin>
-			<groupId>com.amashchenko.maven.plugin</groupId>
-			<artifactId>gitflow-maven-plugin</artifactId>
-			<version>1.14</version>
-<!-- 			<dependencies>
-				<dependency>
-		            <groupId>org.codehaus.plexus</groupId>
-		            <artifactId>plexus-interactivity-api</artifactId>
-		            <version>1.0</version>
-		            <scope>compile</scope>
-		        </dependency>
-		        <dependency>
-		            <groupId>org.codehaus.plexus</groupId>
-		            <artifactId>plexus-utils</artifactId>
-		            <version>3.0.24</version>
-		        </dependency>
-			</dependencies>-->
-		</plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -382,18 +364,6 @@
           <requirePlugins>yaml:1.4.3</requirePlugins>
         </configuration>
       </plugin>
-		<plugin>
-			<groupId>com.amashchenko.maven.plugin</groupId>
-			<artifactId>gitflow-maven-plugin</artifactId>
-			<configuration>
-				<gitFlowConfig>
-					<developmentBranch>master</developmentBranch>
-				</gitFlowConfig>
-				<installProject>true</installProject>
-				<postReleaseGoals>deploy</postReleaseGoals>
-				<argLine>-DperformRelease=true</argLine>
-			</configuration>
-		</plugin>
     </plugins>
   </build>
   <reporting>
