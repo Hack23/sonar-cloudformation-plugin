@@ -94,8 +94,9 @@ pipeline {
                 sh "git checkout -f master"
                 sh "git reset --hard origin/master"
                 sh "mvn -B clean"
-                sh "GPG_TTY=$(tty) ;export GPG_TTY; mvn -B release:prepare"
-                sh "GPG_TTY=$(tty) ;export GPG_TTY; mvn -B release:perform"            }
+                sh "echo $GPG_TTY"
+                sh "mvn -B release:prepare"
+                sh "mvn -B release:perform"            }
        }
 
 	   stage('Results') {
