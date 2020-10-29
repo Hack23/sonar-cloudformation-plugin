@@ -16,7 +16,6 @@ pipeline {
 
 	   stage('Build') {
 	      steps {
-	         sh "export GPG_TTY='tty'; echo $GPG_TTY"
 	         sh "mvn clean install site"
 	         sh "rm -rf target/site/jacoco-aggregate"
 	         sh "rm -rf target/site/jacoco-ut"
