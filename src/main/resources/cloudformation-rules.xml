@@ -661,9 +661,9 @@
      </rule>
 	<rule>
 		<key>F41</key>
-		<name>Amplify App AccessToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Amplify App AccessToken must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F41</internalKey>
-		<description>Amplify App AccessToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -678,9 +678,9 @@
      </rule>
      <rule>
 		<key>F42</key>
-		<name>Pinpoint APNSSandboxChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Pinpoint APNSSandboxChannel PrivateKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F42</internalKey>
-		<description>Pinpoint APNSSandboxChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -695,9 +695,9 @@
      </rule>
      <rule>
 		<key>F43</key>
-		<name>Pinpoint APNSSandboxChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Pinpoint APNSSandboxChannel TokenKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F43</internalKey>
-		<description>Pinpoint APNSSandboxChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -712,9 +712,9 @@
      </rule>
      <rule>
 		<key>F44</key>
-		<name>ElastiCache ReplicationGroup AuthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>ElastiCache ReplicationGroup AuthToken must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F44</internalKey>
-		<description>ElastiCache ReplicationGroup AuthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -729,9 +729,9 @@
      </rule>
      <rule>
 		<key>F45</key>
-		<name>Lambda Permission EventSourceToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Lambda Permission EventSourceToken must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F45</internalKey>
-		<description>Lambda Permission EventSourceToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -746,9 +746,9 @@
      </rule>
      <rule>
 		<key>F46</key>
-		<name>Pinpoint APNSVoipSandboxChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Pinpoint APNSVoipSandboxChannel PrivateKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F46</internalKey>
-		<description>Pinpoint APNSVoipSandboxChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -763,9 +763,9 @@
      </rule>
      <rule>
 		<key>F47</key>
-		<name>Pinpoint APNSVoipSandboxChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Pinpoint APNSVoipSandboxChannel TokenKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F47</internalKey>
-		<description>Pinpoint APNSVoipSandboxChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -780,9 +780,9 @@
      </rule>
      <rule>
 		<key>F48</key>
-		<name>Pinpoint APNSVoipChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Pinpoint APNSVoipChannel PrivateKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F48</internalKey>
-		<description>Pinpoint APNSVoipChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -797,9 +797,9 @@
      </rule>
      <rule>
 		<key>F49</key>
-		<name>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F49</internalKey>
-		<description>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -814,9 +814,9 @@
      </rule>
 	<rule>
 		<key>F50</key>
-		<name>Amplify App BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Amplify App BasicAuthConfig Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F50</internalKey>
-		<description>Amplify App BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -831,9 +831,9 @@
      </rule>
 	<rule>
 		<key>F51</key>
-		<name>If the IAM user LoginProile property exists, then its Password value should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</name>
+		<name>IAM User LoginProfile Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F51</internalKey>
-		<description>If the IAM user LoginProile property exists, then its Password value should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -848,9 +848,9 @@
      </rule>
 	<rule>
 		<key>F52</key>
-		<name>Amazon MQ Broker resource Users property should exist and its Password property value should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</name>
+		<name>AmazonMQ Broker Users Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F52</internalKey>
-		<description>Amazon MQ Broker resource Users property should exist and its Password property value should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -865,9 +865,9 @@
      </rule>
 	<rule>
 		<key>F53</key>
-		<name>AppStream DirectoryConfig ServiceAccountCredentials AccountPassword must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>AppStream DirectoryConfig ServiceAccountCredentials AccountPassword must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F53</internalKey>
-		<description>AppStream DirectoryConfig ServiceAccountCredentials AccountPassword must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -882,9 +882,9 @@
      </rule>
 	<rule>
 		<key>F54</key>
-		<name>OpsWorks Stack RDS DBInstance Password property should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</name>
+		<name>OpsWorks Stack RDS DbInstance DbPassword must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F54</internalKey>
-		<description>OpsWorks Stack RDS DBInstance Password property should not show password in plain text, resolve an unsecure ssm string, or have a default value for parameter.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -899,9 +899,9 @@
      </rule>
      <rule>
 		<key>F55</key>
-		<name>DMS Endpoint MongoDbSettings Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>DMS Endpoint MongoDbSettings Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F55</internalKey>
-		<description>DMS Endpoint MongoDbSettings Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -916,9 +916,9 @@
      </rule>
      <rule>
 		<key>F56</key>
-		<name>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F56</internalKey>
-		<description>Pinpoint APNSChannel TokenKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -933,9 +933,9 @@
      </rule>
      <rule>
 		<key>F57</key>
-		<name>Pinpoint APNSChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Pinpoint APNSChannel PrivateKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F57</internalKey>
-		<description>Pinpoint APNSChannel PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -950,9 +950,9 @@
      </rule>
      <rule>
 		<key>F58</key>
-		<name>Amplify App OauthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Amplify App OauthToken must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F58</internalKey>
-		<description>Amplify App OauthToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -967,9 +967,9 @@
      </rule>
      <rule>
 		<key>F60</key>
-		<name>Amplify Branch BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Amplify Branch BasicAuthConfig Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F60</internalKey>
-		<description>Amplify Branch BasicAuthConfig Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -984,9 +984,9 @@
      </rule>
      <rule>
 		<key>F61</key>
-		<name>OpsWorks App SslConfiguration PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>OpsWorks App SslConfiguration PrivateKey must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F61</internalKey>
-		<description>OpsWorks App SslConfiguration PrivateKey must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1001,9 +1001,9 @@
      </rule>
      <rule>
 		<key>F62</key>
-		<name>OpsWorks Stack CustomCookbooksSource Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>OpsWorks Stack CustomCookbooksSource Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F62</internalKey>
-		<description>OpsWorks Stack CustomCookbooksSource Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1018,9 +1018,9 @@
      </rule>
      <rule>
 		<key>F63</key>
-		<name>EMR Cluster KerberosAttributes AD Domain JoinPassword must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>EMR Cluster KerberosAttributes AD Domain JoinPassword must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F63</internalKey>
-		<description>EMR Cluster KerberosAttributes AD Domain JoinPassword must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1035,9 +1035,9 @@
      </rule>
      <rule>
 		<key>F64</key>
-		<name>EMR Cluster KerberosAttributes CrossRealmTrustPrincipal Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>EMR Cluster KerberosAttributes CrossRealmTrustPrincipal Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F64</internalKey>
-		<description>EMR Cluster KerberosAttributes CrossRealmTrustPrincipal Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1052,9 +1052,9 @@
      </rule>
      <rule>
 		<key>F65</key>
-		<name>EMR Cluster KerberosAttributes KdcAdmin Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>EMR Cluster KerberosAttributes KdcAdmin Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F65</internalKey>
-		<description>EMR Cluster KerberosAttributes KdcAdmin Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1069,9 +1069,9 @@
      </rule>
      <rule>
 		<key>F66</key>
-		<name>Kinesis Firehose DeliveryStream RedshiftDestinationConfiguration Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Kinesis Firehose DeliveryStream RedshiftDestinationConfiguration Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F66</internalKey>
-		<description>Kinesis Firehose DeliveryStream RedshiftDestinationConfiguration Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1086,9 +1086,9 @@
      </rule>
      <rule>
 		<key>F67</key>
-		<name>OpsWorks App AppSource Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>OpsWorks App AppSource Password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F67</internalKey>
-		<description>OpsWorks App AppSource Password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager/ssm-secure value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1103,9 +1103,9 @@
      </rule>
      <rule>
 		<key>F68</key>
-		<name>Kinesis Firehose DeliveryStream SplunkDestinationConfiguration HECToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>Kinesis Firehose DeliveryStream SplunkDestinationConfiguration HECToken must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F68</internalKey>
-		<description>Kinesis Firehose DeliveryStream SplunkDestinationConfiguration HECToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1120,9 +1120,9 @@
      </rule>
      <rule>
 		<key>F69</key>
-		<name>CodePipeline Webhook AuthenticationConfiguration SecretToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>CodePipeline Webhook AuthenticationConfiguration SecretToken must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F69</internalKey>
-		<description>CodePipeline Webhook AuthenticationConfiguration SecretToken must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1137,9 +1137,9 @@
      </rule>
      <rule>
 		<key>F70</key>
-		<name>DocDB DB Cluster master user password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</name>
+		<name>DocDB DB Cluster master user password must not be a plaintext string or a Ref to a Parameter with a Default value.</name>
 		<internalKey>F70</internalKey>
-		<description>DocDB DB Cluster master user password must not be a plaintext string or a Ref to a NoEcho Parameter with a Default value.</description>
+		<description>Can be Ref to a NoEcho Parameter without a Default, or a dynamic reference to a secretsmanager value.</description>
 		<severity>BLOCKER</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
