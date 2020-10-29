@@ -74,6 +74,23 @@ CWE-770: Allocation of Resources Without Limits or Throttling
 
 No CWE associated
 
+# Group the cfn-nag rules to NIST 800-53
+
+800-53-AC-4
+
+800-53-AC-6
+
+800-53-AU-12
+
+800-53-IA-5
+
+800-53-SC-12
+
+800-53-SC-13
+
+800-53-SC-8
+
+
 # Roadmap
 
 Support more cloudformation checkers and add more rules for cfn_nag.
