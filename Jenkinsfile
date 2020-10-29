@@ -83,7 +83,6 @@ pipeline {
 	   stage('Release') {
 	   	 environment {
            MAVEN_OPTS = '-server -Xmx6048m -Xms6048m -Duser.timezone=CET --illegal-access=warn --add-exports java.base/sun.nio.ch=ALL-UNNAMED --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.desktop/java.awt.font=ALL-UNNAMED'
-           GPG_TTY = $(tty)
          }
 
             when {
@@ -94,9 +93,9 @@ pipeline {
                 sh "git checkout -f master"
                 sh "git reset --hard origin/master"
                 sh "mvn -B clean"
-                sh "echo $GPG_TTY"
-                sh "mvn -B release:prepare"
-                sh "mvn -B release:perform"            }
+                sh "GPG_TTY='tty'; echo $GPG_TTY; export GPG_TTY"
+                sh "GPG_TTY='tty'; echo $GPG_TTY; export GPG_TTY;mvn -B release:prepare"
+                sh "GPG_TTY='tty'; echo $GPG_TTY; export GPG_TTY;mvn -B release:perform"            }
        }
 
 	   stage('Results') {
