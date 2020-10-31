@@ -200,14 +200,14 @@ public final class CloudformationSensor implements Sensor {
 	 * @param templateName the template name
 	 * @return the input file
 	 */
-	private InputFile findTemplate(final String templateName, final String filename) {
+	private InputFile findTemplate(final String templateName, final String filepath) {
 		final List<InputFile> potentialReportTargets = new ArrayList<>();
 		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);
-		LOGGER.info("Looking for cloudformation template matching:{}:{}",  templateName,filename.replaceAll(".",""));
+		final String filterPath = filterPath(filepath);
+		LOGGER.info("Looking for cloudformation template matching filename:{} , path: {}",  templateName,filterPath);
 
 		for (final InputFile inputFile : potentialReportTargets) {
-
-			if (templateName.equals(inputFile.filename()) && inputFile.uri().toString().contains(filename.replaceAll(".",""))) {
+			if (templateName.equals(inputFile.filename()) && inputFile.uri().toString().contains(filterPath(filterPath))) {
 				LOGGER.info("matching path:" + inputFile.uri().toString());
 				LOGGER.info("matching filename:" + templateName + " = " + inputFile.filename());
 
@@ -215,6 +215,10 @@ public final class CloudformationSensor implements Sensor {
 			}
 		}
 		return null;
+	}
+
+	private static String filterPath(final String filepath) {
+		return filepath.replace("." + File.separator,"").replace(".."+ File.separator,"");
 	}
 
 	/**
