@@ -102,6 +102,11 @@
       <artifactId>commons-lang3</artifactId>
       <version>3.11</version>
     </dependency>
+	<dependency>
+	  <groupId>commons-io</groupId>
+	  <artifactId>commons-io</artifactId>
+	  <version>2.8.0</version>
+	</dependency>
     <dependency>
       <groupId>com.fasterxml.staxmate</groupId>
       <artifactId>staxmate</artifactId>
@@ -167,6 +172,18 @@
 					<groupId>com.h2database</groupId>
 					<artifactId>h2</artifactId>
 					<version>1.4.200</version>
+				</dependency>
+			</dependencies>
+		</plugin>
+		<plugin>
+			<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.7.0.1746</version>
+			<dependencies>
+				<dependency>
+				    <groupId>org.sonarsource.scanner.api</groupId>
+				    <artifactId>sonar-scanner-api</artifactId>
+				    <version>2.15.0.2182</version>
 				</dependency>
 			</dependencies>
 		</plugin>
