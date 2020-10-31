@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
@@ -35,7 +36,6 @@ import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
-import org.sonar.api.internal.apachecommons.io.FileUtils;
 import org.sonar.api.rule.RuleKey;
 import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.api.utils.log.Logger;
@@ -200,21 +200,25 @@ public final class CloudformationSensor implements Sensor {
 	 * @param templateName the template name
 	 * @return the input file
 	 */
-	private InputFile findTemplate(final String templateName, final String filename) {
+	private InputFile findTemplate(final String templateName, final String filepath) {
 <span class="fc" id="L204">		final List&lt;InputFile&gt; potentialReportTargets = new ArrayList&lt;&gt;();</span>
 <span class="fc" id="L205">		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);</span>
-<span class="fc" id="L206">		LOGGER.info(&quot;Looking for cloudformation template matching:{}:{}&quot;,  templateName,filename.replaceAll(&quot;.&quot;,&quot;&quot;));</span>
+<span class="fc" id="L206">		final String filterPath = filterPath(filepath);</span>
+<span class="fc" id="L207">		LOGGER.info(&quot;Looking for cloudformation template matching filename:{} , path: {}&quot;,  templateName,filterPath);</span>
 
-<span class="fc bfc" id="L208" title="All 2 branches covered.">		for (final InputFile inputFile : potentialReportTargets) {</span>
-
-<span class="pc bpc" id="L210" title="1 of 4 branches missed.">			if (templateName.equals(inputFile.filename()) &amp;&amp; inputFile.uri().toString().contains(filename.replaceAll(&quot;.&quot;,&quot;&quot;))) {</span>
-<span class="fc" id="L211">				LOGGER.info(&quot;matching path:&quot; + inputFile.uri().toString());</span>
+<span class="fc bfc" id="L209" title="All 2 branches covered.">		for (final InputFile inputFile : potentialReportTargets) {</span>
+<span class="pc bpc" id="L210" title="1 of 4 branches missed.">			if (templateName.equals(inputFile.filename()) &amp;&amp; inputFile.uri().toString().contains(filterPath)) {</span>
+<span class="fc" id="L211">				LOGGER.info(&quot;matching path:{}&quot; + inputFile.uri());</span>
 <span class="fc" id="L212">				LOGGER.info(&quot;matching filename:&quot; + templateName + &quot; = &quot; + inputFile.filename());</span>
 
 <span class="fc" id="L214">				return inputFile;</span>
 			}
 <span class="fc" id="L216">		}</span>
 <span class="fc" id="L217">		return null;</span>
+	}
+
+	private static String filterPath(final String filepath) {
+<span class="fc" id="L221">		return filepath.replace(&quot;.&quot; + File.separator,&quot;&quot;).replace(&quot;..&quot;+ File.separator,&quot;&quot;);</span>
 	}
 
 	/**
@@ -226,36 +230,36 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
 			final InputFile templateInputFile) {
-<span class="pc bpc" id="L229" title="1 of 2 branches missed.">		if (CloudformationQualityProfile.hasRule(violation.getId())) {</span>
-<span class="fc bfc" id="L230" title="All 2 branches covered.">			if (templateInputFile != null) {</span>
+<span class="pc bpc" id="L233" title="1 of 2 branches missed.">		if (CloudformationQualityProfile.hasRule(violation.getId())) {</span>
+<span class="fc bfc" id="L234" title="All 2 branches covered.">			if (templateInputFile != null) {</span>
 
-<span class="pc bpc" id="L232" title="1 of 2 branches missed.">				if (violation.getLine_numbers().isEmpty()) {</span>
-<span class="nc" id="L233">					context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
-<span class="nc" id="L234">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
-<span class="nc" id="L235">							.save();</span>
+<span class="pc bpc" id="L236" title="1 of 2 branches missed.">				if (violation.getLine_numbers().isEmpty()) {</span>
+<span class="nc" id="L237">					context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
+<span class="nc" id="L238">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
+<span class="nc" id="L239">							.save();</span>
 				} else {
-<span class="fc" id="L237">					final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
-<span class="fc bfc" id="L238" title="All 2 branches covered.">					for (final Integer line : line_numbers) {</span>
-<span class="pc bpc" id="L239" title="2 of 4 branches missed.">						if (line != null &amp;&amp; line &gt;= 0) {</span>
-<span class="fc" id="L240">							context.newIssue()</span>
-<span class="fc" id="L241">									.forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
-<span class="fc" id="L242">									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
-<span class="fc" id="L243">											.at(templateInputFile.selectLine(line)))</span>
-<span class="fc" id="L244">									.save();</span>
+<span class="fc" id="L241">					final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
+<span class="fc bfc" id="L242" title="All 2 branches covered.">					for (final Integer line : line_numbers) {</span>
+<span class="pc bpc" id="L243" title="2 of 4 branches missed.">						if (line != null &amp;&amp; line &gt;= 0) {</span>
+<span class="fc" id="L244">							context.newIssue()</span>
+<span class="fc" id="L245">									.forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
+<span class="fc" id="L246">									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
+<span class="fc" id="L247">											.at(templateInputFile.selectLine(line)))</span>
+<span class="fc" id="L248">									.save();</span>
 						} else {
-<span class="nc" id="L246">							context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
-<span class="nc" id="L247">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
-<span class="nc" id="L248">							.save();</span>
+<span class="nc" id="L250">							context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
+<span class="nc" id="L251">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
+<span class="nc" id="L252">							.save();</span>
 						}
-<span class="fc" id="L250">					}</span>
-<span class="fc" id="L251">				}</span>
+<span class="fc" id="L254">					}</span>
+<span class="fc" id="L255">				}</span>
 			} else {
-<span class="fc" id="L253">				context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+&quot;yaml&quot;, violation.getId()))</span>
-<span class="fc" id="L254">						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
+<span class="fc" id="L257">				context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+&quot;yaml&quot;, violation.getId()))</span>
+<span class="fc" id="L258">						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
 			}
 		} else {
-<span class="nc" id="L257">			LOGGER.warn(&quot;Rule not supported {}:{}&quot;, violation.getId(), violation.getMessage());</span>
+<span class="nc" id="L261">			LOGGER.warn(&quot;Rule not supported {}:{}&quot;, violation.getId(), violation.getMessage());</span>
 		}
-<span class="fc" id="L259">	}</span>
+<span class="fc" id="L263">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
