@@ -207,8 +207,8 @@ public final class CloudformationSensor implements Sensor {
 		LOGGER.info("Looking for cloudformation template matching filename:{} , path: {}",  templateName,filterPath);
 
 		for (final InputFile inputFile : potentialReportTargets) {
-			if (templateName.equals(inputFile.filename()) && inputFile.uri().toString().contains(filterPath(filterPath))) {
-				LOGGER.info("matching path:" + inputFile.uri().toString());
+			if (templateName.equals(inputFile.filename()) && inputFile.uri().toString().contains(filterPath)) {
+				LOGGER.info("matching path:{}" + inputFile.uri());
 				LOGGER.info("matching filename:" + templateName + " = " + inputFile.filename());
 
 				return inputFile;
