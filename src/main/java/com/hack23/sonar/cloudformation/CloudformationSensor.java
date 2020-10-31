@@ -23,12 +23,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
@@ -123,7 +121,7 @@ public final class CloudformationSensor implements Sensor {
 
 				for (final String report : reportFiles) {
 					LOGGER.info("Processing:" + report);
-					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),StandardCharsets.UTF_8).contains("filename")) {
+					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) { // && !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),StandardCharsets.UTF_8).contains("filename")) {
 
 						handleCfnNagReports(context, report);
 					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()
