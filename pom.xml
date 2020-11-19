@@ -105,7 +105,7 @@
 	<dependency>
 	  <groupId>commons-io</groupId>
 	  <artifactId>commons-io</artifactId>
-	  <version>2.8.0</version>
+	  <version>20030203.000550</version>
 	</dependency>
     <dependency>
       <groupId>com.fasterxml.staxmate</groupId>
@@ -248,7 +248,7 @@
             <dependency>
               <groupId>commons-io</groupId>
               <artifactId>commons-io</artifactId>
-              <version>2.8.0</version>
+              <version>20030203.000550</version>
             </dependency>
             <dependency>
               <groupId>org.apache.commons</groupId>
