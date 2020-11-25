@@ -38,6 +38,11 @@ Requires Yaml plugin and optional Json plugin if json is used for cloudformation
 Yaml plugin https://github.com/sbaudoin/sonar-yaml
 Json plugin https://github.com/racodond/sonar-json-plugin
 
+# Configuration of Quality profiles
+
+The Cloudformation rules will be added as Quality profile for yaml https://www.hack23.com/sonar/profiles/show?language=yaml&name=Cloudformation+Rules and/or json https://www.hack23.com/sonar/profiles/show?language=json&name=Cloudformation+Rules .
+The rules need to be enabled on the Quality profile if another one is used.
+ 
 
 # Howto
 
@@ -52,6 +57,11 @@ sonar.cfn.nag.reportFiles=target/template.yml.nag,target/cfn-nag-scan.nagscan
 
 One or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
 
+
+# Custom cfn-nag rules or rules not yet defined 
+
+Will be mapped to "Custom cfn-nag failure rule or rule missing integration in this plugin." alt Custom cfn-nag warning rule or rule missing integration in this plugin.
+Assumes all failures start with uppercase F and all warnings with uppercase W.
 
 
 # Group the cfn-nag rules to CWE
