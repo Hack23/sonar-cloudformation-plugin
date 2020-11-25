@@ -2,23 +2,39 @@ sonar-cloudformation-plugin
 
  Cloudformation template rules (cfn-nag,...)
 
+Demo links
+
+ {{{https://www.hack23.com/sonar/profiles/show?language=yaml&name=Cloudformation+Rules}Demo Sonarqube quality profile}}
+ {{{https://www.hack23.com/sonar/coding_rules?languages=yaml&repositories=cfn-yaml}Demo Sonarqube quality rules}}
+ {{{https://www.hack23.com/sonar/project/issues?id=com.hack23.cia%3Acia-all&languages=yaml&resolutions=WONTFIX}Demo Sonarqube quality issues}}
 
 Support
 
- Sonarqube 7.7+ and currently only cfn_nag reports (https://github.com/stelligent/cfn_nag)
+ Sonarqube 7.7+ and currently only supports cfn_nag reports {{https://github.com/stelligent/cfn_nag}}
+
+ Requires Yaml plugin and optional Json plugin if json is used for cloudformation templates.
+ Yaml plugin https://github.com/sbaudoin/sonar-yaml
+ Json plugin https://github.com/racodond/sonar-json-plugin
 
 Howto
 
- Prepare cfn_nag reports running (cfn_nag src/main/config/template.yml > target/template.yml.nag)
- and set the property sonar.cfn.nag.reportFiles=target/template.yml.nag
+ Prepare cfn_nag reports running (cfn_nag --output-format=json src/main/config/template.yml > target/template.yml.nag)
+ and set the property sonar.cfn.nag.reportFiles=target/template.yml.nag (comma separated if multiple reports)
 
- Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFiles=target/cfn-nag-scan.nagscan 
+ Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFiles=target/cfn-nag-scan.nagscan
 
 Properties supported 
 
- sonar.cfn.nag.reportFiles=target/template.yml.nag,target/cfn-nag-scan.nagscan 
- 
- one or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
+ sonar.cfn.nag.reportFiles=target/template.yml.nag,target/cfn-nag-scan.nagscan
+
+ One or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
+
+Custom cfn-nag rules or rules not yet defined 
+
+ Will be mapped to "Custom cfn-nag failure rule or rule missing integration in this plugin." alt Custom cfn-nag warning rule or rule missing integration in this plugin.
+ Assumes all failures start with uppercase F and all warnings with uppercase W.
+
+
 
 Roadmap
 
