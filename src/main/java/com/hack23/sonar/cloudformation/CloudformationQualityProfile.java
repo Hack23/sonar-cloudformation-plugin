@@ -29,6 +29,11 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
  */
 public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
 
+	public static final String UNDEFINED_FAILURE = "FUNDEFINED";
+
+	public static final String UNDEFINED_WARNING = "WUNDEFINED";
+
+	
 	/** The Constant SUPPORTED_RULES. */
 	private static final Set<String> SUPPORTED_RULES = new HashSet<>();
 
@@ -189,8 +194,8 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W1200");
 		SUPPORTED_RULES.add("W1201");
 
-		SUPPORTED_RULES.add("WUNDEFINED");
-		SUPPORTED_RULES.add("FUNDEFINED");
+		SUPPORTED_RULES.add(UNDEFINED_FAILURE);
+		SUPPORTED_RULES.add(UNDEFINED_WARNING);
 	}
 
 	public static boolean hasRule(final String id) {

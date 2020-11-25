@@ -230,11 +230,10 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
 			final InputFile templateInputFile) {
-		if (CloudformationQualityProfile.hasRule(violation.getId())) {
 			if (templateInputFile != null) {
 
 				if (violation.getLine_numbers().isEmpty()) {
-					context.newIssue().forRule(RuleKey.of("cfn-"+templateInputFile.language(), violation.getId()))
+					context.newIssue().forRule(RuleKey.of("cfn-"+templateInputFile.language(), findRuleId(violation)))
 							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
 							.save();
 				} else {
@@ -242,23 +241,33 @@ public final class CloudformationSensor implements Sensor {
 					for (final Integer line : line_numbers) {
 						if (line != null && line >= 0) {
 							context.newIssue()
-									.forRule(RuleKey.of("cfn-"+templateInputFile.language(), violation.getId()))
+									.forRule(RuleKey.of("cfn-"+templateInputFile.language(), findRuleId(violation)))
 									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
 											.at(templateInputFile.selectLine(line)))
 									.save();
 						} else {
-							context.newIssue().forRule(RuleKey.of("cfn-"+templateInputFile.language(), violation.getId()))
+							context.newIssue().forRule(RuleKey.of("cfn-"+templateInputFile.language(), findRuleId(violation)))
 							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
 							.save();
 						}
 					}
 				}
 			} else {
-				context.newIssue().forRule(RuleKey.of("cfn-"+"yaml", violation.getId()))
+				context.newIssue().forRule(RuleKey.of("cfn-"+"yaml", findRuleId(violation)))
 						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
 			}
-		} else {
-			LOGGER.warn("Rule not supported {}:{}", violation.getId(), violation.getMessage());
 		}
+
+	private static String findRuleId(final CfnNagViolation violation) {
+		if (CloudformationQualityProfile.hasRule(violation.getId())) {
+			return violation.getId();		
+		} else {
+			if (violation.getId().startsWith("W")) {
+				return CloudformationQualityProfile.UNDEFINED_WARNING;
+			} else {
+				return CloudformationQualityProfile.UNDEFINED_FAILURE;
+			}
+	    } 
 	}
+	
 }

@@ -41,9 +41,9 @@
       ]
     },
     {
-      "id": "F3",
+      "id": "FCUSTOM",
       "type": "FAIL",
-      "message": "IAM role should not allow * action on its permissions policy",
+      "message": "Custom rule failure",
       "logical_resource_ids": [
         "RoleEventHandlerExecRole"
       ],
@@ -82,9 +82,9 @@
       ]
     },
     {
-      "id": "W35",
+      "id": "WCUSTOMRULES",
       "type": "WARN",
-      "message": "S3 Bucket should have access logging configured",
+      "message": "Custom rule warning",
       "logical_resource_ids": [
         "AccessLinkBucket",
         "CAMConfigBucket"

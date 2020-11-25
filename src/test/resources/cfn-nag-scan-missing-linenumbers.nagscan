@@ -10,9 +10,6 @@
           "message": "S3 Bucket should have access logging configured",
           "logical_resource_ids": [
             "TrailBucket"
-          ],
-          "line_numbers": [
-            85
           ]
         }
       ]
@@ -33,12 +30,7 @@
         "S3DynamoDBSNSPolicy",
         "IAMPolicy"
       ],
-      "line_numbers": [
-        252,
-        283,
-        318,
-        382
-      ]
+      "line_numbers": []
     },
     {
       "id": "F3",
@@ -75,10 +67,7 @@
         "RoleEventHandlerExecRole"
       ],
       "line_numbers": [
-        687,
-        711,
-        728,
-        119
+        -1000
       ]
     },
     {
