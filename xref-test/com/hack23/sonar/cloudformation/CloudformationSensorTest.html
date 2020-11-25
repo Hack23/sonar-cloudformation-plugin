@@ -275,8 +275,82 @@
 <a class="jxr_linenumber" name="L267" href="#L267">267</a> 		cloudformationSensor.execute(sensorContext);
 <a class="jxr_linenumber" name="L268" href="#L268">268</a> 	}
 <a class="jxr_linenumber" name="L269" href="#L269">269</a> 
-<a class="jxr_linenumber" name="L270" href="#L270">270</a> 	
-<a class="jxr_linenumber" name="L271" href="#L271">271</a> }
+<a class="jxr_linenumber" name="L270" href="#L270">270</a> 
+<a class="jxr_linenumber" name="L271" href="#L271">271</a> 	@Test
+<a class="jxr_linenumber" name="L272" href="#L272">272</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeFileReportWithCustomRulesTest() <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="L273" href="#L273">273</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L274" href="#L274">274</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L275" href="#L275">275</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/cfn-nag-scan-custom-rules.nagscan"</span>));
+<a class="jxr_linenumber" name="L276" href="#L276">276</a> 
+<a class="jxr_linenumber" name="L277" href="#L277">277</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
+<a class="jxr_linenumber" name="L278" href="#L278">278</a> 				configuration);
+<a class="jxr_linenumber" name="L279" href="#L279">279</a> 
+<a class="jxr_linenumber" name="L280" href="#L280">280</a> 		<strong class="jxr_keyword">final</strong> DefaultFileSystem fileSystem = <strong class="jxr_keyword">new</strong> DefaultFileSystem(
+<a class="jxr_linenumber" name="L281" href="#L281">281</a> 				FileSystems.getDefault().getPath(<span class="jxr_string">"."</span>).toAbsolutePath());
+<a class="jxr_linenumber" name="L282" href="#L282">282</a> 
+<a class="jxr_linenumber" name="L283" href="#L283">283</a> 		<strong class="jxr_keyword">final</strong> DefaultInputFile inputFile = <strong class="jxr_keyword">new</strong> TestInputFileBuilder(<span class="jxr_string">"key"</span>, <span class="jxr_string">"src/test/resources/CloudTrailAllAccounts.yml"</span>)
+<a class="jxr_linenumber" name="L284" href="#L284">284</a> 				.setLanguage(<span class="jxr_string">"java"</span>)
+<a class="jxr_linenumber" name="L285" href="#L285">285</a> 				.initMetadata(<strong class="jxr_keyword">new</strong> String(Files.readAllBytes(
+<a class="jxr_linenumber" name="L286" href="#L286">286</a> 						FileSystems.getDefault().getPath(<span class="jxr_string">"src/test/resources/CloudTrailAllAccounts.yml"</span>))))
+<a class="jxr_linenumber" name="L287" href="#L287">287</a> 				.setCharset(StandardCharsets.UTF_8).build();
+<a class="jxr_linenumber" name="L288" href="#L288">288</a> 		fileSystem.add(inputFile);
+<a class="jxr_linenumber" name="L289" href="#L289">289</a> 
+<a class="jxr_linenumber" name="L290" href="#L290">290</a> 		<strong class="jxr_keyword">final</strong> DefaultInputFile inputFile2 = <strong class="jxr_keyword">new</strong> TestInputFileBuilder(<span class="jxr_string">"key"</span>,
+<a class="jxr_linenumber" name="L291" href="#L291">291</a> 				<span class="jxr_string">"src/test/resources/aws-cross-account-manager-master.yml"</span>)
+<a class="jxr_linenumber" name="L292" href="#L292">292</a> 						.setLanguage(<span class="jxr_string">"java"</span>)
+<a class="jxr_linenumber" name="L293" href="#L293">293</a> 						.initMetadata(<strong class="jxr_keyword">new</strong> String(Files.readAllBytes(
+<a class="jxr_linenumber" name="L294" href="#L294">294</a> 								FileSystems.getDefault().getPath(<span class="jxr_string">"src/test/resources/aws-cross-account-manager-master.yml"</span>))))
+<a class="jxr_linenumber" name="L295" href="#L295">295</a> 						.setCharset(StandardCharsets.UTF_8).build();
+<a class="jxr_linenumber" name="L296" href="#L296">296</a> 		fileSystem.add(inputFile2);
+<a class="jxr_linenumber" name="L297" href="#L297">297</a> 		
+<a class="jxr_linenumber" name="L298" href="#L298">298</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensor cloudformationSensor = <strong class="jxr_keyword">new</strong> CloudformationSensor(cloudformationSensorConfiguration,
+<a class="jxr_linenumber" name="L299" href="#L299">299</a> 				fileSystem, <strong class="jxr_keyword">new</strong> PathResolver());
+<a class="jxr_linenumber" name="L300" href="#L300">300</a> 
+<a class="jxr_linenumber" name="L301" href="#L301">301</a> 		<strong class="jxr_keyword">final</strong> SensorContext sensorContext = SensorContextTester
+<a class="jxr_linenumber" name="L302" href="#L302">302</a> 				.create(FileSystems.getDefault().getPath(<span class="jxr_string">"."</span>).toAbsolutePath());
+<a class="jxr_linenumber" name="L303" href="#L303">303</a> 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
+<a class="jxr_linenumber" name="L304" href="#L304">304</a> 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile2);
+<a class="jxr_linenumber" name="L305" href="#L305">305</a> 		cloudformationSensor.execute(sensorContext);
+<a class="jxr_linenumber" name="L306" href="#L306">306</a> 	}
+<a class="jxr_linenumber" name="L307" href="#L307">307</a> 
+<a class="jxr_linenumber" name="L308" href="#L308">308</a> 	@Test
+<a class="jxr_linenumber" name="L309" href="#L309">309</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeFileReportWithMissingLineNumbersTest() <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="L310" href="#L310">310</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L311" href="#L311">311</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L312" href="#L312">312</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/cfn-nag-scan-missing-linenumbers.nagscan"</span>));
+<a class="jxr_linenumber" name="L313" href="#L313">313</a> 
+<a class="jxr_linenumber" name="L314" href="#L314">314</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
+<a class="jxr_linenumber" name="L315" href="#L315">315</a> 				configuration);
+<a class="jxr_linenumber" name="L316" href="#L316">316</a> 
+<a class="jxr_linenumber" name="L317" href="#L317">317</a> 		<strong class="jxr_keyword">final</strong> DefaultFileSystem fileSystem = <strong class="jxr_keyword">new</strong> DefaultFileSystem(
+<a class="jxr_linenumber" name="L318" href="#L318">318</a> 				FileSystems.getDefault().getPath(<span class="jxr_string">"."</span>).toAbsolutePath());
+<a class="jxr_linenumber" name="L319" href="#L319">319</a> 
+<a class="jxr_linenumber" name="L320" href="#L320">320</a> 		<strong class="jxr_keyword">final</strong> DefaultInputFile inputFile = <strong class="jxr_keyword">new</strong> TestInputFileBuilder(<span class="jxr_string">"key"</span>, <span class="jxr_string">"src/test/resources/CloudTrailAllAccounts.yml"</span>)
+<a class="jxr_linenumber" name="L321" href="#L321">321</a> 				.setLanguage(<span class="jxr_string">"java"</span>)
+<a class="jxr_linenumber" name="L322" href="#L322">322</a> 				.initMetadata(<strong class="jxr_keyword">new</strong> String(Files.readAllBytes(
+<a class="jxr_linenumber" name="L323" href="#L323">323</a> 						FileSystems.getDefault().getPath(<span class="jxr_string">"src/test/resources/CloudTrailAllAccounts.yml"</span>))))
+<a class="jxr_linenumber" name="L324" href="#L324">324</a> 				.setCharset(StandardCharsets.UTF_8).build();
+<a class="jxr_linenumber" name="L325" href="#L325">325</a> 		fileSystem.add(inputFile);
+<a class="jxr_linenumber" name="L326" href="#L326">326</a> 
+<a class="jxr_linenumber" name="L327" href="#L327">327</a> 		<strong class="jxr_keyword">final</strong> DefaultInputFile inputFile2 = <strong class="jxr_keyword">new</strong> TestInputFileBuilder(<span class="jxr_string">"key"</span>,
+<a class="jxr_linenumber" name="L328" href="#L328">328</a> 				<span class="jxr_string">"src/test/resources/aws-cross-account-manager-master.yml"</span>)
+<a class="jxr_linenumber" name="L329" href="#L329">329</a> 						.setLanguage(<span class="jxr_string">"java"</span>)
+<a class="jxr_linenumber" name="L330" href="#L330">330</a> 						.initMetadata(<strong class="jxr_keyword">new</strong> String(Files.readAllBytes(
+<a class="jxr_linenumber" name="L331" href="#L331">331</a> 								FileSystems.getDefault().getPath(<span class="jxr_string">"src/test/resources/aws-cross-account-manager-master.yml"</span>))))
+<a class="jxr_linenumber" name="L332" href="#L332">332</a> 						.setCharset(StandardCharsets.UTF_8).build();
+<a class="jxr_linenumber" name="L333" href="#L333">333</a> 		fileSystem.add(inputFile2);
+<a class="jxr_linenumber" name="L334" href="#L334">334</a> 		
+<a class="jxr_linenumber" name="L335" href="#L335">335</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensor cloudformationSensor = <strong class="jxr_keyword">new</strong> CloudformationSensor(cloudformationSensorConfiguration,
+<a class="jxr_linenumber" name="L336" href="#L336">336</a> 				fileSystem, <strong class="jxr_keyword">new</strong> PathResolver());
+<a class="jxr_linenumber" name="L337" href="#L337">337</a> 
+<a class="jxr_linenumber" name="L338" href="#L338">338</a> 		<strong class="jxr_keyword">final</strong> SensorContext sensorContext = SensorContextTester
+<a class="jxr_linenumber" name="L339" href="#L339">339</a> 				.create(FileSystems.getDefault().getPath(<span class="jxr_string">"."</span>).toAbsolutePath());
+<a class="jxr_linenumber" name="L340" href="#L340">340</a> 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
+<a class="jxr_linenumber" name="L341" href="#L341">341</a> 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile2);
+<a class="jxr_linenumber" name="L342" href="#L342">342</a> 		cloudformationSensor.execute(sensorContext);
+<a class="jxr_linenumber" name="L343" href="#L343">343</a> 	}
+<a class="jxr_linenumber" name="L344" href="#L344">344</a> 
+<a class="jxr_linenumber" name="L345" href="#L345">345</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2009&#x2013;2020. All rights reserved.</div>

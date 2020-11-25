@@ -230,36 +230,45 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
 			final InputFile templateInputFile) {
-<span class="pc bpc" id="L233" title="1 of 2 branches missed.">		if (CloudformationQualityProfile.hasRule(violation.getId())) {</span>
-<span class="fc bfc" id="L234" title="All 2 branches covered.">			if (templateInputFile != null) {</span>
+<span class="fc bfc" id="L233" title="All 2 branches covered.">			if (templateInputFile != null) {</span>
 
-<span class="pc bpc" id="L236" title="1 of 2 branches missed.">				if (violation.getLine_numbers().isEmpty()) {</span>
-<span class="nc" id="L237">					context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
-<span class="nc" id="L238">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
-<span class="nc" id="L239">							.save();</span>
+<span class="fc bfc" id="L235" title="All 2 branches covered.">				if (violation.getLine_numbers().isEmpty()) {</span>
+<span class="fc" id="L236">					context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), findRuleId(violation)))</span>
+<span class="fc" id="L237">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
+<span class="fc" id="L238">							.save();</span>
 				} else {
-<span class="fc" id="L241">					final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
-<span class="fc bfc" id="L242" title="All 2 branches covered.">					for (final Integer line : line_numbers) {</span>
-<span class="pc bpc" id="L243" title="2 of 4 branches missed.">						if (line != null &amp;&amp; line &gt;= 0) {</span>
-<span class="fc" id="L244">							context.newIssue()</span>
-<span class="fc" id="L245">									.forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
-<span class="fc" id="L246">									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
-<span class="fc" id="L247">											.at(templateInputFile.selectLine(line)))</span>
-<span class="fc" id="L248">									.save();</span>
+<span class="fc" id="L240">					final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
+<span class="fc bfc" id="L241" title="All 2 branches covered.">					for (final Integer line : line_numbers) {</span>
+<span class="pc bpc" id="L242" title="1 of 4 branches missed.">						if (line != null &amp;&amp; line &gt;= 0) {</span>
+<span class="fc" id="L243">							context.newIssue()</span>
+<span class="fc" id="L244">									.forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), findRuleId(violation)))</span>
+<span class="fc" id="L245">									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
+<span class="fc" id="L246">											.at(templateInputFile.selectLine(line)))</span>
+<span class="fc" id="L247">									.save();</span>
 						} else {
-<span class="nc" id="L250">							context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), violation.getId()))</span>
-<span class="nc" id="L251">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
-<span class="nc" id="L252">							.save();</span>
+<span class="fc" id="L249">							context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+templateInputFile.language(), findRuleId(violation)))</span>
+<span class="fc" id="L250">							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
+<span class="fc" id="L251">							.save();</span>
 						}
-<span class="fc" id="L254">					}</span>
-<span class="fc" id="L255">				}</span>
+<span class="fc" id="L253">					}</span>
+<span class="fc" id="L254">				}</span>
 			} else {
-<span class="fc" id="L257">				context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+&quot;yaml&quot;, violation.getId()))</span>
-<span class="fc" id="L258">						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
+<span class="fc" id="L256">				context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot;+&quot;yaml&quot;, findRuleId(violation)))</span>
+<span class="fc" id="L257">						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
 			}
+<span class="fc" id="L259">		}</span>
+
+	private static String findRuleId(final CfnNagViolation violation) {
+<span class="fc bfc" id="L262" title="All 2 branches covered.">		if (CloudformationQualityProfile.hasRule(violation.getId())) {</span>
+<span class="fc" id="L263">			return violation.getId();		</span>
 		} else {
-<span class="nc" id="L261">			LOGGER.warn(&quot;Rule not supported {}:{}&quot;, violation.getId(), violation.getMessage());</span>
-		}
-<span class="fc" id="L263">	}</span>
+<span class="fc bfc" id="L265" title="All 2 branches covered.">			if (violation.getId().startsWith(&quot;W&quot;)) {</span>
+<span class="fc" id="L266">				return CloudformationQualityProfile.UNDEFINED_WARNING;</span>
+			} else {
+<span class="fc" id="L268">				return CloudformationQualityProfile.UNDEFINED_FAILURE;</span>
+			}
+	    } 
+	}
+	
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
