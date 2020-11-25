@@ -56,39 +56,41 @@ One or multiple .nag or .nagscan files, note for .nag files the filename should 
 
 # Group the cfn-nag rules to CWE
 
-CWE-311 - Missing Encryption of Sensitive Data
+CWE-311 - Missing Encryption of Sensitive Data https://cwe.mitre.org/data/definitions/311
 
-CWE-326 - Inadequate Encryption Strength
+CWE-326 - Inadequate Encryption Strength https://cwe.mitre.org/data/definitions/326
 
-CWE-732 - Incorrect Permission Assignment for Critical Resource
+CWE-732 - Incorrect Permission Assignment for Critical Resource https://cwe.mitre.org/data/definitions/732
 
-CWE-257 - Storing Passwords in a Recoverable Format
+CWE-257 - Storing Passwords in a Recoverable Format https://cwe.mitre.org/data/definitions/257
 
-CWE-778 - Insufficient Logging
+CWE-778 - Insufficient Logging https://cwe.mitre.org/data/definitions/778
 
-CWE-272 - Least Privilege Violation
+CWE-272 - Least Privilege Violation https://cwe.mitre.org/data/definitions/272
 
-CWE-286 - Incorrect User Management
+CWE-286 - Incorrect User Management https://cwe.mitre.org/data/definitions/286
 
-CWE-770: Allocation of Resources Without Limits or Throttling
+CWE-770 - Allocation of Resources Without Limits or Throttling https://cwe.mitre.org/data/definitions/770
 
 No CWE associated
 
 # Group the cfn-nag rules to NIST 800-53
 
-800-53-AC-4
+800-53-AC-4 AC-4 INFORMATION FLOW ENFORCEMENT https://nvd.nist.gov/800-53/Rev4/control/AC-4
 
-800-53-AC-6
+800-53-AC-6 AC-6 LEAST PRIVILEGE https://nvd.nist.gov/800-53/Rev4/control/AC-6
 
-800-53-AU-12
+800-53-AU-12 AU-12 AUDIT GENERATION https://nvd.nist.gov/800-53/Rev4/control/AU-12
 
-800-53-IA-5
+800-53-IA-5 IA-5 AUTHENTICATOR MANAGEMENT https://nvd.nist.gov/800-53/Rev4/control/IA-5
 
-800-53-SC-12
+800-53-SC-8 SC-8 TRANSMISSION CONFIDENTIALITY AND INTEGRITY https://nvd.nist.gov/800-53/Rev4/control/SC-8
 
-800-53-SC-13
+800-53-SC-12 SC-12 CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT https://nvd.nist.gov/800-53/Rev4/control/SC-12
 
-800-53-SC-8
+800-53-SC-13 SC-13 CRYPTOGRAPHIC PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-13
+
+800-53-CP-9 CP-9 INFORMATION SYSTEM BACKUP https://nvd.nist.gov/800-53/Rev4/control/CP-9
 
 
 # Roadmap

@@ -2471,6 +2471,7 @@
 		<tag>cfn-nag</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-693</tag>
+		<tag>800-53-cp-9</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2505,6 +2506,23 @@
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
 		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+     <rule>
+		<key>W78</key>
+		<name>DynamoDB table should have backup enabled, should be set using PointInTimeRecoveryEnabled.</name>
+		<internalKey>W77</internalKey>
+		<description>DynamoDB table should have backup enabled, should be set using PointInTimeRecoveryEnabled.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-693</tag>
+		<tag>800-53-cp-9</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
