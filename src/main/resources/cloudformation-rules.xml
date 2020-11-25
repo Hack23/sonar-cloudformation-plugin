@@ -2560,4 +2560,33 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	 <rule>
+		<key>WUNDEFINED</key>
+		<name>Custom cfn-nag warning rule or rule missing integration in this plugin.</name>
+		<internalKey>WUNDEFINED</internalKey>
+		<description>Custom cfn-nag warning or rule missing integration in this plugin.</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+	<rule>
+		<key>FUNDEFINED</key>
+		<name>Custom cfn-nag failure rule or rule missing integration in this plugin.</name>
+		<internalKey>FUNDEFINED</internalKey>
+		<description>Custom cfn-nag failure or rule missing integration in this plugin.</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>     
+     
 </cloudformation-rules>
