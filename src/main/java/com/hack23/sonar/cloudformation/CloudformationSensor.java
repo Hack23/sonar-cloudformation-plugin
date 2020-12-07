@@ -126,8 +126,7 @@ public final class CloudformationSensor implements Sensor {
 					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),StandardCharsets.UTF_8).contains("filename")) {
 
 						handleCfnNagReports(context, report);
-					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()
-							&& report.endsWith(".nagscan")) {
+					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {
 
 						handleCfnNagScanReports(context, report);
 					} else {
