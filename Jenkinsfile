@@ -36,26 +36,6 @@ pipeline {
             }
 	   }
 
-	    stage('Record Coverage') {
-            when { branch 'master' }
-            steps {
-                script {
-                    currentBuild.result = 'SUCCESS'
-                 }
-                step([$class: 'MasterCoverageAction', scmVars: [GIT_URL: env.GIT_URL]])
-            }
-        }
-
-        stage('PR Coverage to Github') {
-            when { allOf {not { branch 'master' }; expression { return env.CHANGE_ID != null }} }
-            steps {
-                script {
-                    currentBuild.result = 'SUCCESS'
-                 }
-                step([$class: 'CompareCoverageAction', publishResultAs: 'statusCheck', scmVars: [GIT_URL: env.GIT_URL]])
-            }
-       }
-
 	   stage('Vulnerability Check') {
 	   	  tools {
     	    jdk 'Java8'
@@ -81,16 +61,21 @@ pipeline {
 	   }
 
 	   stage('Release') {
+	   	 environment {
+           MAVEN_OPTS = '-server -Xmx6048m -Xms6048m -Duser.timezone=CET --illegal-access=warn --add-exports java.base/sun.nio.ch=ALL-UNNAMED --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.desktop/java.awt.font=ALL-UNNAMED'
+         }
+
             when {
                 expression { params.RELEASE }
             }
             steps {
-                sh "git reset --hard origin/master"
-                sh "git checkout -f master"
-                sh "git reset --hard origin/master"
+                sh "git reset --hard origin/legacyv1"
+                sh "git checkout -f legacyv1"
+                sh "git reset --hard origin/legacyv1"
                 sh "mvn -B clean"
-                sh "mvn -B gitflow:release"
-            }
+                sh "mvn -B release:prepare"
+                sh "mvn -B release:perform -Dgoals=deploy -Darguments='-Dgoals=deploy'"
+                }
        }
 
 	   stage('Results') {
