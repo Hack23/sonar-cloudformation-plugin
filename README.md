@@ -12,6 +12,8 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag)
 [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/Hack23/sonar-cloudformation-plugin/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/Hack23/sonar-cloudformation-plugin/branches/master)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin?ref=badge_shield)
 [![SourceSpy Dashboard](https://sourcespy.com/shield.svg)](https://sourcespy.com/github/hack23sonarcloudformationplugin/)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4545/badge)](https://bestpractices.coreinfrastructure.org/projects/4545)
+
 
 # Runtime
 
