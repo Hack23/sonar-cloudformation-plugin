@@ -2526,6 +2526,22 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+     <rule>
+		<key>W79</key>
+		<name>ECR Repository should have scanOnPush enabled.</name>
+		<internalKey>W79</internalKey>
+		<description>ECR Repository should have scanOnPush enabled.</description>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a9</tag>
+		<tag>800-53-ra-5</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 	 <rule>
 		<key>W1200</key>
 		<name>SageMaker EndpointConfig should have a KmsKeyId property set.</name>

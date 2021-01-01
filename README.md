@@ -104,6 +104,8 @@ No CWE associated
 
 800-53-CP-9 CP-9 INFORMATION SYSTEM BACKUP https://nvd.nist.gov/800-53/Rev4/control/CP-9
 
+800-53-RA-5 RA-5 VULNERABILITY SCANNING https://nvd.nist.gov/800-53/Rev4/control/RA-5
+
 
 # Roadmap
 
