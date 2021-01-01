@@ -190,16 +190,17 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 <span class="fc" id="L190">		SUPPORTED_RULES.add(&quot;W76&quot;);</span>
 <span class="fc" id="L191">		SUPPORTED_RULES.add(&quot;W77&quot;);</span>
 <span class="fc" id="L192">		SUPPORTED_RULES.add(&quot;W78&quot;);		</span>
+<span class="fc" id="L193">		SUPPORTED_RULES.add(&quot;W79&quot;);		</span>
 
-<span class="fc" id="L194">		SUPPORTED_RULES.add(&quot;W1200&quot;);</span>
-<span class="fc" id="L195">		SUPPORTED_RULES.add(&quot;W1201&quot;);</span>
+<span class="fc" id="L195">		SUPPORTED_RULES.add(&quot;W1200&quot;);</span>
+<span class="fc" id="L196">		SUPPORTED_RULES.add(&quot;W1201&quot;);</span>
 
-<span class="fc" id="L197">		SUPPORTED_RULES.add(UNDEFINED_FAILURE);</span>
-<span class="fc" id="L198">		SUPPORTED_RULES.add(UNDEFINED_WARNING);</span>
-<span class="fc" id="L199">	}</span>
+<span class="fc" id="L198">		SUPPORTED_RULES.add(UNDEFINED_FAILURE);</span>
+<span class="fc" id="L199">		SUPPORTED_RULES.add(UNDEFINED_WARNING);</span>
+<span class="fc" id="L200">	}</span>
 
 	public static boolean hasRule(final String id) {
-<span class="fc" id="L202">		return SUPPORTED_RULES.contains(id);</span>
+<span class="fc" id="L203">		return SUPPORTED_RULES.contains(id);</span>
 	}
 
 	/**
@@ -209,18 +210,18 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L212">		extracted(context,&quot;yaml&quot;);</span>
-<span class="fc" id="L213">		extracted(context,&quot;json&quot;);</span>
-<span class="fc" id="L214">	}</span>
+<span class="fc" id="L213">		extracted(context,&quot;yaml&quot;);</span>
+<span class="fc" id="L214">		extracted(context,&quot;json&quot;);</span>
+<span class="fc" id="L215">	}</span>
 
 	private void extracted(final Context context,final String language) {
-<span class="fc" id="L217">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,language);</span>
+<span class="fc" id="L218">		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;,language);</span>
 
-<span class="fc bfc" id="L219" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
-<span class="fc" id="L220">			profile.activateRule(&quot;cfn-&quot;+ language, ruleKey);</span>
-<span class="fc" id="L221">		}</span>
+<span class="fc bfc" id="L220" title="All 2 branches covered.">		for (final String ruleKey : SUPPORTED_RULES) {</span>
+<span class="fc" id="L221">			profile.activateRule(&quot;cfn-&quot;+ language, ruleKey);</span>
+<span class="fc" id="L222">		}</span>
 
-<span class="fc" id="L223">		profile.done();</span>
-<span class="fc" id="L224">	}</span>
+<span class="fc" id="L224">		profile.done();</span>
+<span class="fc" id="L225">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
