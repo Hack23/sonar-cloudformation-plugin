@@ -2627,6 +2627,23 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	<rule>
+		<key>W85</key>
+		<name>ElasticsearchcDomain should have NodeToNodeEncryptionOptions enabled</name>
+		<internalKey>W85</internalKey>
+		<description>ElasticsearchcDomain should have NodeToNodeEncryptionOptions enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 	 <rule>
 		<key>W1200</key>
 		<name>SageMaker EndpointConfig should have a KmsKeyId property set.</name>
