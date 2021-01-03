@@ -69,9 +69,9 @@ pipeline {
                 expression { params.RELEASE }
             }
             steps {
-                sh "git reset --hard origin/legacyv1"
-                sh "git checkout -f legacyv1"
-                sh "git reset --hard origin/legacyv1"
+                sh "git reset --hard origin/legacy1v"
+                sh "git checkout -f legacy1v"
+                sh "git reset --hard origin/legacy1v"
                 sh "mvn -B clean"
                 sh "mvn -B release:prepare"
                 sh "mvn -B release:perform -Dgoals=deploy -Darguments='-Dgoals=deploy'"
