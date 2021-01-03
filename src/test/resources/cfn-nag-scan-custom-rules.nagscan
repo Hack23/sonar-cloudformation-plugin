@@ -1,0 +1,101 @@
+[
+  {
+    "filename": "./CloudTrailAllAccounts.yml",
+    "file_results": {
+      "failure_count": 0,
+      "violations": [
+        {
+          "id": "W35",
+          "type": "WARN",
+          "message": "S3 Bucket should have access logging configured",
+          "logical_resource_ids": [
+            "TrailBucket"
+          ],
+          "line_numbers": [
+            85
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "filename": "./aws-cross-account-manager-master.yml",
+    "file_results": {
+  "failure_count": 1,
+  "violations": [
+    {
+      "id": "W12",
+      "type": "WARN",
+      "message": "IAM policy should not allow * resource",
+      "logical_resource_ids": [
+        "CloudwatchLogsCloudformationPolicy",
+        "AccessLinksHandlerExecRolePolicy",
+        "S3DynamoDBSNSPolicy",
+        "IAMPolicy"
+      ],
+      "line_numbers": [
+        252,
+        283,
+        318,
+        382
+      ]
+    },
+    {
+      "id": "FCUSTOM",
+      "type": "FAIL",
+      "message": "Custom rule failure",
+      "logical_resource_ids": [
+        "RoleEventHandlerExecRole"
+      ],
+      "line_numbers": [
+        119
+      ]
+    },
+    {
+      "id": "W11",
+      "type": "WARN",
+      "message": "IAM role should not allow * resource on its permissions policy",
+      "logical_resource_ids": [
+        "RoleEventHandlerExecRole",
+        "SolutionHelperRole"
+      ],
+      "line_numbers": [
+        119,
+        157
+      ]
+    },
+    {
+      "id": "W28",
+      "type": "WARN",
+      "message": "Resource found with an explicit name, this disallows updates that require replacement of this resource",
+      "logical_resource_ids": [
+        "CreateAccountsDDBTable",
+        "CreateRolesDDBTable",
+        "CreateAccountRolesDDBTable",
+        "RoleEventHandlerExecRole"
+      ],
+      "line_numbers": [
+        687,
+        711,
+        728,
+        119
+      ]
+    },
+    {
+      "id": "WCUSTOMRULES",
+      "type": "WARN",
+      "message": "Custom rule warning",
+      "logical_resource_ids": [
+        "AccessLinkBucket",
+        "CAMConfigBucket"
+      ],
+      "line_numbers": [
+        482,
+        489
+      ]
+    }
+  ]
+    }
+  }
+
+]

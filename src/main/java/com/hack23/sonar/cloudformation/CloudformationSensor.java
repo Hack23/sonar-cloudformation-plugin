@@ -123,18 +123,18 @@ public final class CloudformationSensor implements Sensor {
 
 				for (final String report : reportFiles) {
 					LOGGER.info("Processing:" + report);
-					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),StandardCharsets.UTF_8).contains("filename")) {
-
+					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()
+							&& !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),
+									StandardCharsets.UTF_8).contains("filename")) {
 						handleCfnNagReports(context, report);
 					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {
-
 						handleCfnNagScanReports(context, report);
 					} else {
 						LOGGER.warn("Processing:" + report + " missing or do not end with .nag or .nagscan");
 					}
 				}
 			} else {
-				LOGGER.warn("Missing property:{}",CloudformationConstants.REPORT_FILES_PROPERTY);
+				LOGGER.warn("Missing property:{}", CloudformationConstants.REPORT_FILES_PROPERTY);
 			}
 		} catch (final IOException e) {
 			throw new RuntimeException("Can not process cfn-nag reports.", e);
@@ -151,7 +151,8 @@ public final class CloudformationSensor implements Sensor {
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
-		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag","");
+		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag",
+				"");
 
 		final InputFile templateInputFile = findTemplate(templateName);
 
@@ -174,14 +175,14 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
 			throws FileNotFoundException {
-		LOGGER.info("Reading cfn-nag reports:{}",  report);
+		LOGGER.info("Reading cfn-nag reports:{}", report);
 		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader
 				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 
 		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
 
 			final String filename = nagScanReport.getFilename();
-			LOGGER.info("Reading cfn-nag report:{}",  filename);
+			LOGGER.info("Reading cfn-nag report:{}", filename);
 
 			final InputFile templateInputFile = findTemplate(
 					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()));
@@ -222,35 +223,44 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
 			final InputFile templateInputFile) {
-		if (CloudformationQualityProfile.hasRule(violation.getId())) {
-			if (templateInputFile != null) {
+		if (templateInputFile != null) {
 
-				if (violation.getLine_numbers().isEmpty()) {
-					context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
-							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
-							.save();
-				} else {
-					final List<Integer> line_numbers = violation.getLine_numbers();
-					for (final Integer line : line_numbers) {
-						if (line != null && line >= 0) {
-							context.newIssue()
-									.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
-									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
-											.at(templateInputFile.selectLine(line)))
-									.save();
-						} else {
-							context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
-							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
-							.save();							
-						}
+			if (violation.getLine_numbers().isEmpty()) {
+				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, findRuleId(violation)))
+						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();
+			} else {
+				final List<Integer> line_numbers = violation.getLine_numbers();
+				for (final Integer line : line_numbers) {
+					if (line != null && line >= 0) {
+						context.newIssue()
+								.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, findRuleId(violation)))
+								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
+										.at(templateInputFile.selectLine(line)))
+								.save();
+					} else {
+						context.newIssue()
+								.forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, findRuleId(violation)))
+								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
+								.save();
 					}
 				}
-			} else {
-				context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, violation.getId()))
-						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
 			}
 		} else {
-			LOGGER.warn("Rule not supported {}:{}", violation.getId(), violation.getMessage());
+			context.newIssue().forRule(RuleKey.of(CloudformationRulesDefinition.REPO_KEY, findRuleId(violation)))
+					.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
 		}
 	}
+
+	private static String findRuleId(final CfnNagViolation violation) {
+		if (CloudformationQualityProfile.hasRule(violation.getId())) {
+			return violation.getId();
+		} else {
+			if (violation.getId().startsWith("W")) {
+				return CloudformationQualityProfile.UNDEFINED_WARNING;
+			} else {
+				return CloudformationQualityProfile.UNDEFINED_FAILURE;
+			}
+		}
+	}
+
 }

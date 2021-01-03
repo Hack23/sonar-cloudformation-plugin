@@ -132,7 +132,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>3.6.44</version>
+      <version>3.6.51</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -166,7 +166,7 @@
 		<plugin>
 			<groupId>org.owasp</groupId>
 			<artifactId>dependency-check-maven</artifactId>
-			<version>6.0.3</version>
+			<version>6.0.4</version>
 			<dependencies>
 				<dependency>
 					<groupId>com.h2database</groupId>
@@ -223,7 +223,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-publish-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.scm</groupId>
