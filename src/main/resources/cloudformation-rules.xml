@@ -2593,6 +2593,40 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	<rule>
+		<key>W83</key>
+		<name>DynamoDB Accelerator (DAX) Cluster should have encryption enabled</name>
+		<internalKey>W83</internalKey>
+		<description>DynamoDB Accelerator (DAX) Cluster should have encryption enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W84</key>
+		<name>CloudWatchLogs LogGroup should specify a KMS Key Id to encrypt the log data</name>
+		<internalKey>W84</internalKey>
+		<description>CloudWatchLogs LogGroup should specify a KMS Key Id to encrypt the log data</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 	 <rule>
 		<key>W1200</key>
 		<name>SageMaker EndpointConfig should have a KmsKeyId property set.</name>
