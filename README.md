@@ -84,6 +84,9 @@ CWE-286 - Incorrect User Management https://cwe.mitre.org/data/definitions/286
 
 CWE-770 - Allocation of Resources Without Limits or Throttling https://cwe.mitre.org/data/definitions/770
 
+CWE-779 - Logging of Excessive Data https://cwe.mitre.org/data/definitions/779.html
+ 
+
 No CWE associated
 
 # Group the cfn-nag rules to NIST 800-53
@@ -105,6 +108,8 @@ No CWE associated
 800-53-CP-9 CP-9 INFORMATION SYSTEM BACKUP https://nvd.nist.gov/800-53/Rev4/control/CP-9
 
 800-53-RA-5 RA-5 VULNERABILITY SCANNING https://nvd.nist.gov/800-53/Rev4/control/RA-5
+
+800-53-AU-11 AU-11 AUDIT RECORD RETENTION https://nvd.nist.gov/800-53/Rev4/control/AU-11
 
 
 # Roadmap

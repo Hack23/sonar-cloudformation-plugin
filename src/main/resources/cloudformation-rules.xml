@@ -2644,6 +2644,23 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	<rule>
+		<key>W86</key>
+		<name>CloudWatchLogs LogGroup should specify RetentionInDays to expire the log data</name>
+		<internalKey>W86</internalKey>
+		<description>CloudWatchLogs LogGroup should specify RetentionInDays to expire the log data</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-779</tag>
+		<tag>800-53-au-11</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 	 <rule>
 		<key>W1200</key>
 		<name>SageMaker EndpointConfig should have a KmsKeyId property set.</name>
