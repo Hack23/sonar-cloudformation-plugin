@@ -9,5 +9,5 @@ Cloudformation,com.hack23.sonar.cloudformation,CloudformationSensorConfiguration
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationSensor,7,516,3,35,2,90,3,26,0,10
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationRulesDefinition,5,116,1,9,2,24,1,9,0,5
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationProperties,0,17,0,0,0,4,0,1,0,1
-Cloudformation,com.hack23.sonar.cloudformation,CloudformationQualityProfile,0,672,0,2,0,168,0,6,0,5
+Cloudformation,com.hack23.sonar.cloudformation,CloudformationQualityProfile,0,700,0,2,0,175,0,6,0,5
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationPlugin,0,27,0,0,0,4,0,2,0,2
