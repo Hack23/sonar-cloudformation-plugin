@@ -2289,6 +2289,7 @@
 		<tag>security</tag>
 		<tag>cfn-nag</tag>
 		<tag>cweid-770</tag>
+		<tag>800-53-sc-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2743,6 +2744,22 @@
 		<tag>owasp-a6</tag>
 		<tag>cweid-200</tag>
 		<tag>800-53-sc-7</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W92</key>
+		<name>Lambda functions should define ReservedConcurrentExecutions to reserve simultaneous executions</name>
+		<internalKey>W92</internalKey>
+		<description>Lambda functions should define ReservedConcurrentExecutions to reserve simultaneous executions</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>cweid-770</tag>
+		<tag>800-53-sc-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>

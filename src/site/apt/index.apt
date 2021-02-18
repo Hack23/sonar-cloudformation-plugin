@@ -61,6 +61,7 @@ Group the cfn-nag rules to NIST 800-53
 800-53-AC-6 AC-6 LEAST PRIVILEGE https://nvd.nist.gov/800-53/Rev4/control/AC-6
 800-53-AU-12 AU-12 AUDIT GENERATION https://nvd.nist.gov/800-53/Rev4/control/AU-12
 800-53-IA-5 IA-5 AUTHENTICATOR MANAGEMENT https://nvd.nist.gov/800-53/Rev4/control/IA-5
+800-53-SC-5 SC-5 DENIAL OF SERVICE PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-5
 800-53-SC-7 SC-7 BOUNDARY PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-7
 800-53-SC-8 SC-8 TRANSMISSION CONFIDENTIALITY AND INTEGRITY https://nvd.nist.gov/800-53/Rev4/control/SC-8
 800-53-SC-12 SC-12 CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT https://nvd.nist.gov/800-53/Rev4/control/SC-12

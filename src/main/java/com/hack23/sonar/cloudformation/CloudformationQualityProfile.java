@@ -203,6 +203,7 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W89");
 		SUPPORTED_RULES.add("W90");
 		SUPPORTED_RULES.add("W91");
+		SUPPORTED_RULES.add("W92");
 
 		SUPPORTED_RULES.add("W1200");
 		SUPPORTED_RULES.add("W1201");

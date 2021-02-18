@@ -101,6 +101,8 @@ No CWE associated
 
 800-53-IA-5 IA-5 AUTHENTICATOR MANAGEMENT https://nvd.nist.gov/800-53/Rev4/control/IA-5
 
+800-53-SC-5 SC-5 DENIAL OF SERVICE PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-5
+
 800-53-SC-7 SC-7 BOUNDARY PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-7
 
 800-53-SC-8 SC-8 TRANSMISSION CONFIDENTIALITY AND INTEGRITY https://nvd.nist.gov/800-53/Rev4/control/SC-8
