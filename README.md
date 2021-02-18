@@ -85,6 +85,8 @@ CWE-286 - Incorrect User Management https://cwe.mitre.org/data/definitions/286
 CWE-770 - Allocation of Resources Without Limits or Throttling https://cwe.mitre.org/data/definitions/770
 
 CWE-779 - Logging of Excessive Data https://cwe.mitre.org/data/definitions/779.html
+
+CWE-200 - Exposure of Sensitive Information to an Unauthorized Actor https://cwe.mitre.org/data/definitions/779.htm
  
 
 No CWE associated
@@ -98,6 +100,8 @@ No CWE associated
 800-53-AU-12 AU-12 AUDIT GENERATION https://nvd.nist.gov/800-53/Rev4/control/AU-12
 
 800-53-IA-5 IA-5 AUTHENTICATOR MANAGEMENT https://nvd.nist.gov/800-53/Rev4/control/IA-5
+
+800-53-SC-7 SC-7 BOUNDARY PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-7
 
 800-53-SC-8 SC-8 TRANSMISSION CONFIDENTIALITY AND INTEGRITY https://nvd.nist.gov/800-53/Rev4/control/SC-8
 

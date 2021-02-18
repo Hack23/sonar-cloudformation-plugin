@@ -2695,6 +2695,40 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
+	<rule>
+		<key>W89</key>
+		<name>Lambda functions should be deployed inside a VPC, miss VpcConfig property</name>
+		<internalKey>W89</internalKey>
+		<description>Lambda functions should be deployed inside a VPC, miss VpcConfig property</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-200</tag>
+		<tag>800-53-sc-7</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W90</key>
+		<name>ElasticsearchcDomain should be inside vpc, should specify VPCOptions</name>
+		<internalKey>W90</internalKey>
+		<description>ElasticsearchcDomain should be inside vpc, should specify VPCOptions</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-200</tag>
+		<tag>800-53-sc-7</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
 	 <rule>
 		<key>W1200</key>
 		<name>SageMaker EndpointConfig should have a KmsKeyId property set.</name>
