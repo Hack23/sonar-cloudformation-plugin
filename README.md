@@ -86,8 +86,7 @@ CWE-770 - Allocation of Resources Without Limits or Throttling https://cwe.mitre
 
 CWE-779 - Logging of Excessive Data https://cwe.mitre.org/data/definitions/779.html
 
-CWE-200 - Exposure of Sensitive Information to an Unauthorized Actor https://cwe.mitre.org/data/definitions/779.htm
- 
+CWE-200 - Exposure of Sensitive Information to an Unauthorized Actor https://cwe.mitre.org/data/definitions/200.htm 
 
 No CWE associated
 
