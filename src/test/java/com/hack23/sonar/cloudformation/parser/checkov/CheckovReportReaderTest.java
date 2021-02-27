@@ -19,9 +19,31 @@
  */
 package com.hack23.sonar.cloudformation.parser.checkov;
 
+import java.io.ByteArrayInputStream;
+
 import org.junit.Assert;
+import org.junit.Test;
 
 public class CheckovReportReaderTest extends Assert {
 
+
+	
+	/**
+	 * Read report test.
+	 */
+	@Test
+	public void readReportTest() {
+		final CheckovReport cfnNagReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/aws-cross-account-manager-master.yml.nag"));
+		assertNotNull(cfnNagReport);
+	}
+
+	/**
+	 * Read report failure test.
+	 */
+	@Test
+	public void readReportFailureTest() {
+		final CheckovReport cfnNagReport = new CheckovReportReader().readReport(new ByteArrayInputStream("".getBytes()));
+		assertNotNull(cfnNagReport);
+	}
 
 }
