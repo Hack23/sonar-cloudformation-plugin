@@ -32,6 +32,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public final class CheckovResults {
 
 	private List<CheckovPassedCheck> passed_checks;
+	private List<CheckovPassedCheck> failed_checks;		
     private List<String> skipped_checks;
     private List<String> parsing_errors;
     
@@ -41,6 +42,14 @@ public final class CheckovResults {
 
 	public void setPassed_checks(List<CheckovPassedCheck> passed_checks) {
 		this.passed_checks = passed_checks;
+	}
+	
+	public List<CheckovPassedCheck> getFailed_checks() {
+		return failed_checks;
+	}
+
+	public void setFailed_checks(List<CheckovPassedCheck> failed_checks) {
+		this.failed_checks = failed_checks;
 	}
 
 	public List<String> getSkipped_checks() {

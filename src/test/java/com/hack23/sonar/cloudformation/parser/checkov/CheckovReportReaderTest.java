@@ -33,8 +33,11 @@ public class CheckovReportReaderTest extends Assert {
 	 */
 	@Test
 	public void readReportTest() {
-		final CheckovReport cfnNagReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/aws-cross-account-manager-master.yml.nag"));
-		assertNotNull(cfnNagReport);
+		final CheckovReport checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/cia-dist-cloudformation.checkov-report"));
+		assertNotNull(checkovReport);
+		assertEquals("cloudformation", checkovReport.getCheck_type());
+		assertNotNull(checkovReport.getSummary());
+		assertNotNull(checkovReport.getResults());
 	}
 
 	/**
@@ -42,8 +45,12 @@ public class CheckovReportReaderTest extends Assert {
 	 */
 	@Test
 	public void readReportFailureTest() {
-		final CheckovReport cfnNagReport = new CheckovReportReader().readReport(new ByteArrayInputStream("".getBytes()));
-		assertNotNull(cfnNagReport);
+		final CheckovReport checkovReport = new CheckovReportReader().readReport(new ByteArrayInputStream("".getBytes()));
+		assertNotNull(checkovReport);
+		assertNull(checkovReport.getCheck_type());
+		assertNull(checkovReport.getSummary());
+		assertNull(checkovReport.getResults());
+
 	}
 
 }

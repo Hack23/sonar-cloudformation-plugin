@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public final class CheckovReport {
 
 	/** The check type. */
-	private int check_type;
+	private String check_type;
 		
 	/** The summary. */
 	private CheckovSummary summary;
@@ -46,7 +46,7 @@ public final class CheckovReport {
 	 *
 	 * @return the check type
 	 */
-	public int getCheck_type() {
+	public String getCheck_type() {
 		return check_type;
 	}
 
@@ -55,7 +55,7 @@ public final class CheckovReport {
 	 *
 	 * @param check_type the new check type
 	 */
-	public void setCheck_type(int check_type) {
+	public void setCheck_type(String check_type) {
 		this.check_type = check_type;
 	}
 
