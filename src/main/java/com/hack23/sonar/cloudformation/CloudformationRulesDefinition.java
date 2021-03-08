@@ -39,6 +39,10 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 
 	/** The Constant PATH_TO_RULES_XML. */
 	private static final String PATH_TO_RULES_XML = "/cloudformation-rules.xml";
+	
+	/** The Constant PATH_TO_CHECKOV_RULES_XML. */
+	private static final String PATH_TO_CHECKOV_RULES_XML = "/cloudformation-checkov-rules.xml";
+
 
 	/** The Constant KEY. */
 	public static final String KEY = "repo";
@@ -58,7 +62,19 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 			final String languageKey) {
 		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
 
-		final InputStream rulesXml = this.getClass().getResourceAsStream(PATH_TO_RULES_XML);
+		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_RULES_XML));
+		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_RULES_XML));		
+		repository.done();
+
+	}
+
+	/**
+	 * Adds the rules.
+	 *
+	 * @param repository the repository
+	 * @param rulesXml the rules xml
+	 */
+	private void addRules(final NewRepository repository, final InputStream rulesXml) {
 		if (rulesXml != null) {
 			final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();
 			rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());
@@ -68,8 +84,6 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 				addNewRule(newRule);
 			}
 		}
-		repository.done();
-
 	}
 
 	/**

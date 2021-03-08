@@ -22,7 +22,9 @@ package com.hack23.sonar.cloudformation.parser.checkov;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -32,9 +34,9 @@ import org.junit.Test;
 public class CheckovSonarqubeRuleGeneratorTest {
 
 	private final static String XML_ENTRY ="    <rule>\n"
-			+ "		<key>{RULE_ID}</key>\n"
+			+ "		<key>{IaC}-{RULE_ID}</key>\n"
 			+ "		<name>{NAME}</name>\n"
-			+ "		<internalKey>{RULE_ID}</internalKey>\n"
+			+ "		<internalKey>{IaC}-{RULE_ID}</internalKey>\n"
 			+ "		<description>{NAME}</description>\n"
 			+ "		<severity>CRITICAL</severity>\n"
 			+ "		<cardinality>SINGLE</cardinality>\n"
@@ -43,7 +45,6 @@ public class CheckovSonarqubeRuleGeneratorTest {
 			+ "		<tag>security</tag>\n"
 			+ "		<tag>checkov</tag>\n"
 			+ "		<tag>{IaC}</tag>\n"
-			+ "		<tag>{Type}</tag>\n"
 			+ "		<remediationFunction>CONSTANT_ISSUE</remediationFunction>\n"
 			+ "		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>\n"
 			+ "    </rule>";
@@ -68,9 +69,11 @@ public class CheckovSonarqubeRuleGeneratorTest {
 		final CSVParser parser = CSVParser.parse(new InputStreamReader(this.getClass().getResourceAsStream("/checkov/rules.txt"),StandardCharsets.UTF_8), CSVFormat.EXCEL.withHeader().withDelimiter('|').withTrim());
 		final List<CSVRecord> records = parser.getRecords();
 		records.remove(0);
+		Map<String,String> map = new HashMap();
 		for (final CSVRecord csvRecord : records) {
-			if (csvRecord.isSet("Id")) {
-				System.out.println(XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("{Type}",csvRecord.get("Type").toLowerCase()));
+			if (csvRecord.isSet("Id") && "resource".equals(csvRecord.get("Type")) && !map.containsKey(csvRecord.get("IaC") +"-" + csvRecord.get("Id"))) {
+				System.out.println(XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("\"","&quot;"));
+				map.put(csvRecord.get("IaC") +"-" + csvRecord.get("Id"),"");
 			}
 		}
 
