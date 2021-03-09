@@ -50,6 +50,12 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	/** The Constant NAME. */
 	public static final String NAME = "repository";
 
+	private Context context;
+
+	public Context getContext() {
+		return context;
+	}
+
 	/**
 	 * Define rules for language.
 	 *
@@ -116,6 +122,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	 */
 	@Override
 	public void define(final Context context) {
+		this.context = context;
 		defineRulesForLanguage(context, "cfn-yaml" ,"Cloudformation Yaml Rules", "yaml");
 		defineRulesForLanguage(context, "cfn-json" ,"Cloudformation Json Rules", "json");
 	}

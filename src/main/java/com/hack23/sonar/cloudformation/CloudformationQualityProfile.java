@@ -23,6 +23,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
+import org.sonar.api.server.rule.RulesDefinition.Repository;
+import org.sonar.api.server.rule.RulesDefinition.Rule;
 
 /**
  * The Class CloudformationQualityProfile.
@@ -33,7 +35,13 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 
 	public static final String UNDEFINED_WARNING = "WUNDEFINED";
 
+	private final CloudformationRulesDefinition cloudformationRulesDefinition;
 	
+	public CloudformationQualityProfile(CloudformationRulesDefinition cloudformationRulesDefinition) {
+		super();
+		this.cloudformationRulesDefinition = cloudformationRulesDefinition;
+	}
+
 	/** The Constant SUPPORTED_RULES. */
 	private static final Set<String> SUPPORTED_RULES = new HashSet<>();
 
@@ -230,6 +238,18 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	private void extracted(final Context context,final String language) {
 		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Cloudformation Rules",language);
 
+		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
+			for (Rule rule : repository.rules()) {
+				
+				if (rule.tags().contains("cfn-nag")) {
+					System.out.println(rule);					
+				} else if (rule.tags().contains("checkov")) {
+					System.out.println(rule.tags());
+				}
+				
+			}
+		}
+		
 		for (final String ruleKey : SUPPORTED_RULES) {
 			profile.activateRule("cfn-"+ language, ruleKey);
 		}
