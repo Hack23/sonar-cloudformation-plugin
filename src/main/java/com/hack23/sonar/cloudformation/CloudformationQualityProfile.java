@@ -242,7 +242,7 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 			for (Rule rule : repository.rules()) {
 				
 				if (rule.tags().contains("cfn-nag")) {
-					System.out.println(rule);					
+					//System.out.println(rule);					
 				} else if (rule.tags().contains("checkov")) {
 					System.out.println(rule.tags());
 				}
@@ -255,5 +255,33 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		}
 
 		profile.done();
+		
+		
+		//terraform
+		//cloudformation
+		//arm
+		//serverless
+		//kubernetes
+		
+		
+//		final NewBuiltInQualityProfile profileIac = context.createBuiltInQualityProfile("IAC All Rules",language);
+//
+//		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
+//			for (Rule rule : repository.rules()) {
+//				
+//				if (rule.tags().contains("checkov")) {
+//					System.out.println(rule.tags());
+//				}
+//				
+//			}
+//		}
+//		
+//		for (final String ruleKey : SUPPORTED_RULES) {
+//			profileIac.activateRule("cfn-"+ language, ruleKey);
+//		}
+//
+//		profileIac.done();
+
+		
 	}
 }

@@ -57,7 +57,59 @@ public class CheckovSonarqubeRuleGeneratorTest {
 |   1 | CKV_AWS_1    | resource          | serverless_aws                                                               | Ensure IAM policies that allow full "*-*" administrative privileges are not created                                                                                                                      | serverless     |
 |   2 | CKV_AWS_2    | resource          | aws_alb_listener                                                             | Ensure ALB protocol is HTTPS                                                                                                                                                                             | Terraform      |
 |   3 | CKV_AWS_2    | resource          | aws_lb_listener                                                              | Ensure ALB protocol is HTTPS                                                                                                                                                                             | Terraform      |
+	
+	*
+	*
+	*
 	*/
+	
+	
+// encrypted at rest //HTTPS
+//	<tag>owasp-a6</tag>
+//	<tag>cweid-311</tag>
+//	<tag>800-53-sc-13</tag>
+	
+	
+// encryption transit
+//	<tag>owasp-a6</tag>
+//	<tag>cweid-311</tag>
+//	<tag>800-53-sc-8</tag>
+
+
+//IAM policies
+//	<tag>owasp-a6</tag>
+//	<tag>cweid-272</tag>
+//	<tag>800-53-ac-6</tag>
+	
+	
+//security group
+//	<tag>owasp-a6</tag>
+//	<tag>cweid-732</tag>
+//	<tag>800-53-ac-4</tag>
+
+
+//public 
+//	<tag>owasp-a6</tag>
+//	<tag>cweid-732</tag>
+//	<tag>800-53-ac-4</tag>
+
+
+// logging
+//	<tag>owasp-a10</tag>
+//	<tag>cweid-778</tag>
+//	<tag>800-53-au-12</tag>
+
+
+//retention backup
+//	<tag>owasp-a6</tag>
+//	<tag>cweid-693</tag>
+//	<tag>800-53-cp-9</tag>
+
+
+// retention log
+//	<tag>owasp-a6</tag>
+//	<tag>cweid-779</tag>
+//	<tag>800-53-au-11</tag>
 	
 	
 	/**
