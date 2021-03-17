@@ -36,7 +36,7 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	public static final String UNDEFINED_WARNING = "WUNDEFINED";
 
 	private final CloudformationRulesDefinition cloudformationRulesDefinition;
-	
+
 	public CloudformationQualityProfile(CloudformationRulesDefinition cloudformationRulesDefinition) {
 		super();
 		this.cloudformationRulesDefinition = cloudformationRulesDefinition;
@@ -197,10 +197,10 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W75");
 		SUPPORTED_RULES.add("W76");
 		SUPPORTED_RULES.add("W77");
-		SUPPORTED_RULES.add("W78");		
-		SUPPORTED_RULES.add("W79");		
-		SUPPORTED_RULES.add("W80");		
-		SUPPORTED_RULES.add("W81");		
+		SUPPORTED_RULES.add("W78");
+		SUPPORTED_RULES.add("W79");
+		SUPPORTED_RULES.add("W80");
+		SUPPORTED_RULES.add("W81");
 		SUPPORTED_RULES.add("W82");
 		SUPPORTED_RULES.add("W83");
 		SUPPORTED_RULES.add("W84");
@@ -231,57 +231,46 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	 */
 	@Override
 	public void define(final Context context) {
-		extracted(context,"yaml");
-		extracted(context,"json");
+		extracted(context, "yaml");
+		extracted(context, "json");
 	}
 
-	private void extracted(final Context context,final String language) {
-		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Cloudformation Rules",language);
-
+	private void extracted(final Context context, final String language) {
+		final NewBuiltInQualityProfile cloudFormationprofile = context
+				.createBuiltInQualityProfile("Cloudformation Rules", language);
 		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
-			for (Rule rule : repository.rules()) {
-				
-				if (rule.tags().contains("cfn-nag")) {
-					//System.out.println(rule);					
-				} else if (rule.tags().contains("checkov")) {
-					System.out.println(rule.tags());
+
+			if (repository.name().contains("cfn-" + language)) {
+
+				for (Rule rule : repository.rules()) {
+					System.out.println(rule);
+					if (rule.tags().contains("checkov") && rule.tags().contains("cloudformation")) {
+						cloudFormationprofile.activateRule("cfn-" + language, rule.key());
+					} else if (rule.tags().contains("checkov") && rule.tags().contains("serverless")) {
+						cloudFormationprofile.activateRule("cfn-" + language, rule.key());
+					}
 				}
-				
 			}
 		}
-		
 		for (final String ruleKey : SUPPORTED_RULES) {
-			profile.activateRule("cfn-"+ language, ruleKey);
+			cloudFormationprofile.activateRule("cfn-" + language, ruleKey);
 		}
+		cloudFormationprofile.done();
 
-		profile.done();
-		
-		
-		//terraform
-		//cloudformation
-		//arm
-		//serverless
-		//kubernetes
-		
-		
-//		final NewBuiltInQualityProfile profileIac = context.createBuiltInQualityProfile("IAC All Rules",language);
-//
-//		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
-//			for (Rule rule : repository.rules()) {
-//				
-//				if (rule.tags().contains("checkov")) {
-//					System.out.println(rule.tags());
-//				}
-//				
-//			}
-//		}
-//		
-//		for (final String ruleKey : SUPPORTED_RULES) {
-//			profileIac.activateRule("cfn-"+ language, ruleKey);
-//		}
-//
-//		profileIac.done();
+		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile("IAC Rules", language);
+		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
+			if (repository.name().contains("cfn-" + language)) {
+				for (Rule rule : repository.rules()) {
+					if (rule.tags().contains("checkov")) {
+						iacProfile.activateRule("iac-" + language, rule.key());
+					}
+				}
+			}
+		}
+		for (final String ruleKey : SUPPORTED_RULES) {
+			iacProfile.activateRule("iac-" + language, ruleKey);
+		}
+		iacProfile.done();
 
-		
 	}
 }
