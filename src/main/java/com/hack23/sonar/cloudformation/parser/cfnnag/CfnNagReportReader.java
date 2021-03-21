@@ -17,39 +17,38 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser;
+package com.hack23.sonar.cloudformation.parser.cfnnag;
 
-import java.io.ByteArrayInputStream;
-import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * The Class CfnNagScanReportReaderTest.
+ * The Class CfnNagReportReader.
  */
-public class CfnNagScanReportReaderTest extends Assert {
+public class CfnNagReportReader {
+
+	/** The Constant LOGGER. */
+	private static final Logger LOGGER = Loggers.get(CfnNagReportReader.class);
 
 	/**
-	 * Read report test.
+	 * Read report.
+	 *
+	 * @param input the input
+	 * @return the cfn nag report
 	 */
-	@Test
-	public void readReportTest() {
-		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(CfnNagScanReportReaderTest.class.getResourceAsStream("/cfn-nag-scan.nagscan"));
+	public CfnNagReport readReport(final InputStream input) {
+		final ObjectMapper objectMapper = new ObjectMapper();
 
-		assertNotNull(cfnNagReport);
-		assertFalse(cfnNagReport.isEmpty());
+		try {
+			return objectMapper.readValue(input, CfnNagReport.class);
+		} catch (final IOException e) {
+			LOGGER.warn("Problem reading cfn nag report json:{}", e.getMessage());
+			return new CfnNagReport();
+		}
 	}
-		
-	/**
-	 * Read report failue test.
-	 */
-	@Test
-	public void readReportFailueTest() {
-		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(new ByteArrayInputStream("".getBytes()));
-
-		assertNotNull(cfnNagReport);
-		assertTrue(cfnNagReport.isEmpty());
-	}
-
 }

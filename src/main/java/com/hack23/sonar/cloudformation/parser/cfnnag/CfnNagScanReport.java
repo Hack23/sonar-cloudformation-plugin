@@ -17,10 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.hack23.sonar.cloudformation.parser.cfnnag;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -28,53 +25,52 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * The Class CfnNagReport.
+ * The Class CfnNagScanReport.
  */
-public final class CfnNagReport {
+public final class CfnNagScanReport {
 
-	/** The failure count. */
-	private int failure_count;
+	/** The filename. */
+	private String filename;
 	
-	/** The violations. */
-	private List<CfnNagViolation> violations = new ArrayList<>();
+	/** The file results. */
+	private CfnNagReport file_results;
 
 	/**
-	 * Gets the failure count.
+	 * Gets the filename.
 	 *
-	 * @return the failure count
+	 * @return the filename
 	 */
-	public int getFailure_count() {
-		return failure_count;
+	public String getFilename() {
+		return filename;
 	}
-
+	
 	/**
-	 * Sets the failure count.
+	 * Sets the filename.
 	 *
-	 * @param failure_count the new failure count
+	 * @param filename the new filename
 	 */
-	public void setFailure_count(final int failure_count) {
-		this.failure_count = failure_count;
+	public void setFilename(final String filename) {
+		this.filename = filename;
 	}
-
+	
 	/**
-	 * Gets the violations.
+	 * Gets the file results.
 	 *
-	 * @return the violations
+	 * @return the file results
 	 */
-	public List<CfnNagViolation> getViolations() {
-		return new ArrayList<>(violations);
+	public CfnNagReport getFile_results() {
+		return file_results;
 	}
-
+	
 	/**
-	 * Sets the violations.
+	 * Sets the file results.
 	 *
-	 * @param violations the new violations
+	 * @param file_results the new file results
 	 */
-	public void setViolations(final List<CfnNagViolation> violations) {
-		this.violations = new ArrayList<>(violations);
+	public void setFile_results(final CfnNagReport file_results) {
+		this.file_results = file_results;
 	}
-
-
+	
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);

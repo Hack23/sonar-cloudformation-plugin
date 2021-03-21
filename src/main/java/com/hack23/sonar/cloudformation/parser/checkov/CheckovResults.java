@@ -17,7 +17,9 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser;
+package com.hack23.sonar.cloudformation.parser.checkov;
+
+import java.util.List;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -25,62 +27,73 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * The Class CfnNagScanReport.
+ * The Class CheckovResults.
  */
-public final class CfnNagScanReport {
+public final class CheckovResults {
 
-	/** The filename. */
-	private String filename;
+	private List<CheckovPassedCheck> passed_checks;
+	private List<CheckovPassedCheck> failed_checks;		
+    private List<String> skipped_checks;
+    private List<String> parsing_errors;
+    
+	public List<CheckovPassedCheck> getPassed_checks() {
+		return passed_checks;
+	}
+
+	public void setPassed_checks(List<CheckovPassedCheck> passed_checks) {
+		this.passed_checks = passed_checks;
+	}
 	
-	/** The file results. */
-	private CfnNagReport file_results;
+	public List<CheckovPassedCheck> getFailed_checks() {
+		return failed_checks;
+	}
+
+	public void setFailed_checks(List<CheckovPassedCheck> failed_checks) {
+		this.failed_checks = failed_checks;
+	}
+
+	public List<String> getSkipped_checks() {
+		return skipped_checks;
+	}
+
+	public void setSkipped_checks(List<String> skipped_checks) {
+		this.skipped_checks = skipped_checks;
+	}
+
+	public List<String> getParsing_errors() {
+		return parsing_errors;
+	}
+
+	public void setParsing_errors(List<String> parsing_errors) {
+		this.parsing_errors = parsing_errors;
+	}
 
 	/**
-	 * Gets the filename.
+	 * To string.
 	 *
-	 * @return the filename
+	 * @return the string
 	 */
-	public String getFilename() {
-		return filename;
-	}
-	
-	/**
-	 * Sets the filename.
-	 *
-	 * @param filename the new filename
-	 */
-	public void setFilename(final String filename) {
-		this.filename = filename;
-	}
-	
-	/**
-	 * Gets the file results.
-	 *
-	 * @return the file results
-	 */
-	public CfnNagReport getFile_results() {
-		return file_results;
-	}
-	
-	/**
-	 * Sets the file results.
-	 *
-	 * @param file_results the new file results
-	 */
-	public void setFile_results(final CfnNagReport file_results) {
-		this.file_results = file_results;
-	}
-	
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
+	/**
+	 * Equals.
+	 *
+	 * @param object the object
+	 * @return true, if successful
+	 */
 	@Override
     public boolean equals(final Object object) {
     	return EqualsBuilder.reflectionEquals(this,object);
     }
 
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
 	@Override
 	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this);

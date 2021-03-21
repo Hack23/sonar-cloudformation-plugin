@@ -23,6 +23,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
+import org.sonar.api.server.rule.RulesDefinition.Repository;
+import org.sonar.api.server.rule.RulesDefinition.Rule;
 
 /**
  * The Class CloudformationQualityProfile.
@@ -33,7 +35,13 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 
 	public static final String UNDEFINED_WARNING = "WUNDEFINED";
 
-	
+	private final CloudformationRulesDefinition cloudformationRulesDefinition;
+
+	public CloudformationQualityProfile(CloudformationRulesDefinition cloudformationRulesDefinition) {
+		super();
+		this.cloudformationRulesDefinition = cloudformationRulesDefinition;
+	}
+
 	/** The Constant SUPPORTED_RULES. */
 	private static final Set<String> SUPPORTED_RULES = new HashSet<>();
 
@@ -189,10 +197,10 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		SUPPORTED_RULES.add("W75");
 		SUPPORTED_RULES.add("W76");
 		SUPPORTED_RULES.add("W77");
-		SUPPORTED_RULES.add("W78");		
-		SUPPORTED_RULES.add("W79");		
-		SUPPORTED_RULES.add("W80");		
-		SUPPORTED_RULES.add("W81");		
+		SUPPORTED_RULES.add("W78");
+		SUPPORTED_RULES.add("W79");
+		SUPPORTED_RULES.add("W80");
+		SUPPORTED_RULES.add("W81");
 		SUPPORTED_RULES.add("W82");
 		SUPPORTED_RULES.add("W83");
 		SUPPORTED_RULES.add("W84");
@@ -223,17 +231,43 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	 */
 	@Override
 	public void define(final Context context) {
-		extracted(context,"yaml");
-		extracted(context,"json");
+		extracted(context, "yaml");
+		extracted(context, "json");
 	}
 
-	private void extracted(final Context context,final String language) {
-		final NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Cloudformation Rules",language);
-
-		for (final String ruleKey : SUPPORTED_RULES) {
-			profile.activateRule("cfn-"+ language, ruleKey);
+	private void extracted(final Context context, final String language) {
+		final NewBuiltInQualityProfile cloudFormationprofile = context
+				.createBuiltInQualityProfile("Cloudformation Rules", language);
+		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
+			if (repository.key().contains("cfn-" + language)) {
+				for (Rule rule : repository.rules()) {
+					if (rule.tags().contains("checkov") && rule.tags().contains("cloudformation")) {
+						cloudFormationprofile.activateRule("cfn-" + language, rule.key());
+					} else if (rule.tags().contains("checkov") && rule.tags().contains("serverless")) {
+						cloudFormationprofile.activateRule("cfn-" + language, rule.key());
+					}
+				}
+			}
 		}
+		for (final String ruleKey : SUPPORTED_RULES) {
+			cloudFormationprofile.activateRule("cfn-" + language, ruleKey);
+  	}
+		cloudFormationprofile.done();
 
-		profile.done();
+		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile("IAC Rules", language);
+		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
+			if (repository.key().contains("cfn-" + language)) {
+				for (Rule rule : repository.rules()) {
+					if (rule.tags().contains("checkov")) {
+						iacProfile.activateRule("iac-" + language, rule.key());
+					}
+				}
+			}
+		}
+		for (final String ruleKey : SUPPORTED_RULES) {
+			iacProfile.activateRule("iac-" + language, ruleKey);
+		}
+		iacProfile.done();
+
 	}
 }

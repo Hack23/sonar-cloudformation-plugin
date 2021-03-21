@@ -20,4 +20,4 @@
 /**
  * Provides cfn-nag report readers and model.
  */
-package com.hack23.sonar.cloudformation.parser;
+package com.hack23.sonar.cloudformation.parser.cfnnag;

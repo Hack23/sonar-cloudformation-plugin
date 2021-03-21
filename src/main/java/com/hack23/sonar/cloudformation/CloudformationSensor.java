@@ -42,11 +42,11 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.utils.log.Profiler;
 
-import com.hack23.sonar.cloudformation.parser.CfnNagReport;
-import com.hack23.sonar.cloudformation.parser.CfnNagReportReader;
-import com.hack23.sonar.cloudformation.parser.CfnNagScanReport;
-import com.hack23.sonar.cloudformation.parser.CfnNagScanReportReader;
-import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReport;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReportReader;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReport;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReportReader;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagViolation;
 
 /**
  * The Class CloudformationSensor.
@@ -113,12 +113,12 @@ public final class CloudformationSensor implements Sensor {
 		profiler.startInfo("Process cfn-nag reports");
 
 		try {
-			final Optional<String> reportFilesProperty = configuration.getReportFiles();
+			final Optional<String> reportFilesProperty = configuration.getCfnNagReportFiles();
 
 			if (reportFilesProperty.isPresent()) {
 
 				final String reports = reportFilesProperty.get();
-				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY + "=" + reports);
+				LOGGER.info(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY + "=" + reports);
 				final String[] reportFiles = StringUtils.split(reports, ",");
 
 				for (final String report : reportFiles) {
@@ -134,7 +134,7 @@ public final class CloudformationSensor implements Sensor {
 					}
 				}
 			} else {
-				LOGGER.warn("Missing property:{}",CloudformationConstants.REPORT_FILES_PROPERTY);
+				LOGGER.warn("Missing property:{}",CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);
 			}
 		} catch (final IOException e) {
 			throw new RuntimeException("Can not process cfn-nag reports.", e);

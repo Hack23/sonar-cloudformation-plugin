@@ -1,6 +1,6 @@
 sonar-cloudformation-plugin
 
- Cloudformation template rules (cfn-nag,...)
+ Cloudformation template rules (cfn-nag,checkov) but also infrastructure-as-code-languages Terraform, Terraform plan, Kubernetes, Serverless or ARM Templates 
 
 Demo links
 
@@ -10,13 +10,16 @@ Demo links
 
 Support
 
- Sonarqube 7.7+ and currently only supports cfn_nag reports {{https://github.com/stelligent/cfn_nag}}
+ Sonarqube 7.7+ and supports cfn_nag {{https://github.com/stelligent/cfn_nag}}  and checkov {{https://github.com/bridgecrewio/checkov}} reports 
 
  Requires Yaml plugin and optional Json plugin if json is used for cloudformation templates.
  Yaml plugin {{https://github.com/sbaudoin/sonar-yaml}}
  Json plugin {{https://github.com/racodond/sonar-json-plugin}}
 
 Howto
+
+
+Cfn-nag
 
  Prepare cfn_nag reports running (cfn_nag --output-format=json src/main/config/template.yml > target/template.yml.nag)
  and set the property sonar.cfn.nag.reportFiles=target/template.yml.nag (comma separated if multiple reports)
@@ -35,12 +38,29 @@ Custom cfn-nag rules or rules not yet defined
  Assumes all failures start with uppercase F and all warnings with uppercase W.
 
 
+Checkov reports 
+
+ Prepare checkov reports running (checkov -f template.yml -o json > template.checkov-report)
+ and set the property sonar.checkov.reportFiles=template.checkov-report (comma separated if multiple reports)
+
+
+Properties supported
+
+ sonar.checkov.reportFiles=template.checkov-report
+
+ One or multiple checkov report files, note for .checkov-report files the filename should be template filename appended with checkov-report.
+
+
+Custom checkov rules or rules not yet defined 
+
+ Will be mapped to "Custom checkov failure rule or rule missing integration in this plugin." alt Custom checkov warning rule or rule missing integration in this plugin.
+
 
 Roadmap
 
  Support more cloudformation checkers and add more rules for cfn_nag.  
   
-Group the cfn-nag rules to CWE
+Group the rules to CWE
 
  CWE-311 - Missing Encryption of Sensitive Data {{https://cwe.mitre.org/data/definitions/311}}
  
@@ -65,7 +85,7 @@ Group the cfn-nag rules to CWE
  No CWE associated
 
 
-Group the cfn-nag rules to NIST 800-53
+Group the rules to NIST 800-53
 
  800-53-AC-4 AC-4 INFORMATION FLOW ENFORCEMENT {{https://nvd.nist.gov/800-53/Rev4/control/AC-4}}
  

@@ -17,44 +17,39 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser;
+package com.hack23.sonar.cloudformation.parser.cfnnag;
 
 import java.io.ByteArrayInputStream;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * The Class CfnNagReportReaderTest.
+ * The Class CfnNagScanReportReaderTest.
  */
-public class CfnNagReportReaderTest extends Assert {
+public class CfnNagScanReportReaderTest extends Assert {
 
 	/**
 	 * Read report test.
 	 */
 	@Test
 	public void readReportTest() {
-		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(CfnNagReportReaderTest.class.getResourceAsStream("/aws-cross-account-manager-master.yml.nag"));
-		assertNotNull(cfnNagReport);
-		assertEquals(1,cfnNagReport.getFailure_count());
-		assertEquals(5,cfnNagReport.getViolations().size());
-		final CfnNagViolation nagViolation = cfnNagReport.getViolations().get(0);
-		assertEquals("W12",nagViolation.getId());
-		assertEquals("WARN",nagViolation.getType());
-		assertEquals("IAM policy should not allow * resource",nagViolation.getMessage());
-		assertEquals(4,nagViolation.getLogical_resource_ids().size());
-		assertEquals(4,nagViolation.getLine_numbers().size());
-	}
+		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(CfnNagScanReportReaderTest.class.getResourceAsStream("/cfn-nag-scan.nagscan"));
 
+		assertNotNull(cfnNagReport);
+		assertFalse(cfnNagReport.isEmpty());
+	}
+		
 	/**
-	 * Read report failure test.
+	 * Read report failue test.
 	 */
 	@Test
-	public void readReportFailureTest() {
-		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(new ByteArrayInputStream("".getBytes()));
+	public void readReportFailueTest() {
+		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(new ByteArrayInputStream("".getBytes()));
+
 		assertNotNull(cfnNagReport);
-		assertEquals(0,cfnNagReport.getFailure_count());
-		assertEquals(0,cfnNagReport.getViolations().size());
+		assertTrue(cfnNagReport.isEmpty());
 	}
 
 }

@@ -35,19 +35,39 @@ public class CloudformationQualityProfileTest extends Assert {
 	@Test
 	public void defineTest() {
 		final Context context = new Context();
-		new CloudformationQualityProfile().define(context);
+		CloudformationRulesDefinition cloudformationRulesDefinition = new CloudformationRulesDefinition();
+		org.sonar.api.server.rule.RulesDefinition.Context context2 = new org.sonar.api.server.rule.RulesDefinition.Context(); 
+		cloudformationRulesDefinition.define(context2);
+		new CloudformationQualityProfile(cloudformationRulesDefinition).define(context);
+		
+		
 		{
 		final BuiltInQualityProfile qualityProfile = context.profile("yaml","Cloudformation Rules");
 		assertNotNull(qualityProfile);
 		assertFalse(qualityProfile.isDefault());
-		assertEquals(168,qualityProfile.rules().size());
+		assertEquals(210,qualityProfile.rules().size());
 		}
+		{
+		final BuiltInQualityProfile qualityProfile = context.profile("yaml","IAC Rules");
+		assertNotNull(qualityProfile);
+		assertFalse(qualityProfile.isDefault());
+		assertEquals(441,qualityProfile.rules().size());
+		}
+				
+		
 		{
 		final BuiltInQualityProfile qualityProfile = context.profile("json","Cloudformation Rules");
 		assertNotNull(qualityProfile);
 		assertFalse(qualityProfile.isDefault());
-		assertEquals(168,qualityProfile.rules().size());
+		assertEquals(210,qualityProfile.rules().size());
 		}
+		{
+		final BuiltInQualityProfile qualityProfile = context.profile("json","IAC Rules");
+		assertNotNull(qualityProfile);
+		assertFalse(qualityProfile.isDefault());
+		assertEquals(441,qualityProfile.rules().size());
+		}
+
 	}
 
 }
