@@ -259,13 +259,13 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 			if (repository.key().contains("cfn-" + language)) {
 				for (Rule rule : repository.rules()) {
 					if (rule.tags().contains("checkov")) {
-						iacProfile.activateRule("iac-" + language, rule.key());
+						iacProfile.activateRule("cfn-" + language, rule.key());
 					}
 				}
 			}
 		}
 		for (final String ruleKey : SUPPORTED_RULES) {
-			iacProfile.activateRule("iac-" + language, ruleKey);
+			iacProfile.activateRule("cfn-" + language, ruleKey);
 		}
 		iacProfile.done();
 

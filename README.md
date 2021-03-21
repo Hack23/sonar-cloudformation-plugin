@@ -25,7 +25,9 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) a
 
 # Demo links
 
-Demo Sonarqube quality profile : https://www.hack23.com/sonar/profiles/show?language=yaml&name=Cloudformation+Rules
+Demo Sonarqube quality profile(Cloudformation) : https://www.hack23.com/sonar/profiles/show?language=yaml&name=Cloudformation+Rules
+
+Demo Sonarqube quality profile(IAC) : https://www.hack23.com/sonar/profiles/show?language=yaml&name=IAC+Rules
 
 Demo Sonarqube quality rules : https://www.hack23.com/sonar/coding_rules?languages=yaml&repositories=cfn-yaml
 
