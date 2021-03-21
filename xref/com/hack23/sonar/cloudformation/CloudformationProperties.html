@@ -27,7 +27,7 @@
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> */</em>
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  <strong class="jxr_keyword">package</strong> com.hack23.sonar.cloudformation;
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">import</strong> java.util.Collections;
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">import</strong> java.util.Arrays;
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>  <strong class="jxr_keyword">import</strong> java.util.List;
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>  
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  <strong class="jxr_keyword">import</strong> org.sonar.api.config.PropertyDefinition;
@@ -51,12 +51,15 @@
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>  <em class="jxr_javadoccomment">	 * @return the properties</em>
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> List&lt;PropertyDefinition&gt; getProperties() {
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>  		<strong class="jxr_keyword">return</strong> Collections.singletonList(PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY)
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>  				.subCategory(<span class="jxr_string">"Paths"</span>).name(CloudformationConstants.REPORT_FILES_PROPERTY)
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  		<strong class="jxr_keyword">return</strong> Arrays.asList(PropertyDefinition.builder(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  				.subCategory(<span class="jxr_string">"Paths"</span>).name(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>  				.description(<span class="jxr_string">"path to the '.nag or .nagscan' files"</span>).onQualifiers(Qualifiers.PROJECT).defaultValue(<span class="jxr_string">""</span>)
-<a class="jxr_linenumber" name="L49" href="#L49">49</a>  				.build());
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>  	}
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>  }
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  				.build(),PropertyDefinition.builder(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  				.subCategory(<span class="jxr_string">"Paths"</span>).name(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  				.description(<span class="jxr_string">"path to the '.nag or .nagscan' files"</span>).onQualifiers(Qualifiers.PROJECT).defaultValue(<span class="jxr_string">""</span>)
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  				.build());
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  	}
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2009&#x2013;2021. All rights reserved.</div>

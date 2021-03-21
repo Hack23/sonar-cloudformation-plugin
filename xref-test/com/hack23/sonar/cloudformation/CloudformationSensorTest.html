@@ -71,7 +71,7 @@
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>  	@Test
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeSimpleNagReportTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>  		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L66" href="#L66">66</a>  		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>  		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>  				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/aws-cross-account-manager-master.yml.nag"</span>));
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
@@ -105,7 +105,7 @@
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>  	@Test
 <a class="jxr_linenumber" name="L98" href="#L98">98</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeSimpleNagReportMissingTemplateTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L99" href="#L99">99</a>  		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L100" href="#L100">100</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L100" href="#L100">100</a> 		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L101" href="#L101">101</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/aws-cross-account-manager-master.yml.nag"</span>));
 <a class="jxr_linenumber" name="L102" href="#L102">102</a> 
 <a class="jxr_linenumber" name="L103" href="#L103">103</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
@@ -130,7 +130,7 @@
 <a class="jxr_linenumber" name="L122" href="#L122">122</a> 	@Test
 <a class="jxr_linenumber" name="L123" href="#L123">123</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeSimpleNagScanReportTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L124" href="#L124">124</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L125" href="#L125">125</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L125" href="#L125">125</a> 		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L126" href="#L126">126</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/cfn-nag-scan.nagscan"</span>));
 <a class="jxr_linenumber" name="L127" href="#L127">127</a> 
 <a class="jxr_linenumber" name="L128" href="#L128">128</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
@@ -163,7 +163,7 @@
 <a class="jxr_linenumber" name="L155" href="#L155">155</a> 	@Test
 <a class="jxr_linenumber" name="L156" href="#L156">156</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeSimpleNagScanReportTemplateMissingTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L157" href="#L157">157</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L158" href="#L158">158</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L158" href="#L158">158</a> 		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L159" href="#L159">159</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/cfn-nag-scan.nagscan"</span>));
 <a class="jxr_linenumber" name="L160" href="#L160">160</a> 
 <a class="jxr_linenumber" name="L161" href="#L161">161</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
@@ -188,7 +188,7 @@
 <a class="jxr_linenumber" name="L180" href="#L180">180</a> 	@Test
 <a class="jxr_linenumber" name="L181" href="#L181">181</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeNagScanReportBadPropertyTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L182" href="#L182">182</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L183" href="#L183">183</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L183" href="#L183">183</a> 		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L184" href="#L184">184</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/file-not-exist.nagscan"</span>));
 <a class="jxr_linenumber" name="L185" href="#L185">185</a> 
 <a class="jxr_linenumber" name="L186" href="#L186">186</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
@@ -215,7 +215,7 @@
 <a class="jxr_linenumber" name="L207" href="#L207">207</a> 	@Test
 <a class="jxr_linenumber" name="L208" href="#L208">208</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeMissingPropertyTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L209" href="#L209">209</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L210" href="#L210">210</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L210" href="#L210">210</a> 		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L211" href="#L211">211</a> 				.thenReturn(Optional.empty());
 <a class="jxr_linenumber" name="L212" href="#L212">212</a> 
 <a class="jxr_linenumber" name="L213" href="#L213">213</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
@@ -241,7 +241,7 @@
 <a class="jxr_linenumber" name="L233" href="#L233">233</a> 	@Test
 <a class="jxr_linenumber" name="L234" href="#L234">234</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeMixedFileReportTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L235" href="#L235">235</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L236" href="#L236">236</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L236" href="#L236">236</a> 		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L237" href="#L237">237</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/aws-cross-account-manager-master.yml.nag,src/test/resources/cfn-nag-scan.nagscan"</span>));
 <a class="jxr_linenumber" name="L238" href="#L238">238</a> 
 <a class="jxr_linenumber" name="L239" href="#L239">239</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
@@ -279,7 +279,7 @@
 <a class="jxr_linenumber" name="L271" href="#L271">271</a> 	@Test
 <a class="jxr_linenumber" name="L272" href="#L272">272</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeFileReportWithCustomRulesTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L273" href="#L273">273</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L274" href="#L274">274</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L274" href="#L274">274</a> 		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L275" href="#L275">275</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/cfn-nag-scan-custom-rules.nagscan"</span>));
 <a class="jxr_linenumber" name="L276" href="#L276">276</a> 
 <a class="jxr_linenumber" name="L277" href="#L277">277</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(
@@ -316,7 +316,7 @@
 <a class="jxr_linenumber" name="L308" href="#L308">308</a> 	@Test
 <a class="jxr_linenumber" name="L309" href="#L309">309</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> executeFileReportWithMissingLineNumbersTest() <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L310" href="#L310">310</a> 		<strong class="jxr_keyword">final</strong> Configuration configuration = mock(Configuration.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L311" href="#L311">311</a> 		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+<a class="jxr_linenumber" name="L311" href="#L311">311</a> 		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 <a class="jxr_linenumber" name="L312" href="#L312">312</a> 				.thenReturn(Optional.of(<span class="jxr_string">"src/test/resources/cfn-nag-scan-missing-linenumbers.nagscan"</span>));
 <a class="jxr_linenumber" name="L313" href="#L313">313</a> 
 <a class="jxr_linenumber" name="L314" href="#L314">314</a> 		<strong class="jxr_keyword">final</strong> CloudformationSensorConfiguration cloudformationSensorConfiguration = <strong class="jxr_keyword">new</strong> CloudformationSensorConfiguration(

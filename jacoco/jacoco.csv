@@ -1,13 +1,18 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-Cloudformation,com.hack23.sonar.cloudformation.parser,CfnNagReport,0,43,0,0,0,11,0,8,0,8
-Cloudformation,com.hack23.sonar.cloudformation.parser,CfnNagViolation,0,75,0,0,0,21,0,14,0,14
-Cloudformation,com.hack23.sonar.cloudformation.parser,CfnNagReportReader,0,27,0,0,0,7,0,3,0,3
-Cloudformation,com.hack23.sonar.cloudformation.parser,CfnNagScanReportReader,0,30,0,0,0,7,0,3,0,3
-Cloudformation,com.hack23.sonar.cloudformation.parser,CfnNagScanReport,0,32,0,0,0,10,0,8,0,8
-Cloudformation,com.hack23.sonar.cloudformation.parser,CfnNagScanReportReader.new TypeReference() {...},0,6,0,0,0,1,0,1,0,1
-Cloudformation,com.hack23.sonar.cloudformation,CloudformationSensorConfiguration,0,11,0,0,0,4,0,2,0,2
+Cloudformation,com.hack23.sonar.cloudformation.parser.cfnnag,CfnNagViolation,0,75,0,0,0,21,0,14,0,14
+Cloudformation,com.hack23.sonar.cloudformation.parser.cfnnag,CfnNagScanReport,0,32,0,0,0,10,0,8,0,8
+Cloudformation,com.hack23.sonar.cloudformation.parser.cfnnag,CfnNagReportReader,0,27,0,0,0,7,0,3,0,3
+Cloudformation,com.hack23.sonar.cloudformation.parser.cfnnag,CfnNagReport,0,43,0,0,0,11,0,8,0,8
+Cloudformation,com.hack23.sonar.cloudformation.parser.cfnnag,CfnNagScanReportReader,0,30,0,0,0,7,0,3,0,3
+Cloudformation,com.hack23.sonar.cloudformation.parser.cfnnag,CfnNagScanReportReader.new TypeReference() {...},0,6,0,0,0,1,0,1,0,1
+Cloudformation,com.hack23.sonar.cloudformation.parser.checkov,CheckovResults,0,46,0,0,0,16,0,12,0,12
+Cloudformation,com.hack23.sonar.cloudformation.parser.checkov,CheckovReportReader,0,27,0,0,0,7,0,3,0,3
+Cloudformation,com.hack23.sonar.cloudformation.parser.checkov,CheckovPassedCheck,0,88,0,0,0,34,0,24,0,24
+Cloudformation,com.hack23.sonar.cloudformation.parser.checkov,CheckovReport,0,39,0,0,0,13,0,10,0,10
+Cloudformation,com.hack23.sonar.cloudformation.parser.checkov,CheckovSummary,0,53,0,0,0,19,0,14,0,14
+Cloudformation,com.hack23.sonar.cloudformation,CloudformationSensorConfiguration,5,11,0,0,1,4,1,2,1,2
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationSensor,7,516,3,35,2,90,3,26,0,10
-Cloudformation,com.hack23.sonar.cloudformation,CloudformationRulesDefinition,5,116,1,9,2,24,1,9,0,5
-Cloudformation,com.hack23.sonar.cloudformation,CloudformationProperties,0,17,0,0,0,4,0,1,0,1
-Cloudformation,com.hack23.sonar.cloudformation,CloudformationQualityProfile,0,724,0,2,0,181,0,6,0,5
+Cloudformation,com.hack23.sonar.cloudformation,CloudformationRulesDefinition,5,132,1,9,2,28,1,11,0,7
+Cloudformation,com.hack23.sonar.cloudformation,CloudformationProperties,0,40,0,0,0,7,0,1,0,1
+Cloudformation,com.hack23.sonar.cloudformation,CloudformationQualityProfile,0,898,0,26,0,205,0,18,0,5
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationPlugin,0,27,0,0,0,4,0,2,0,2

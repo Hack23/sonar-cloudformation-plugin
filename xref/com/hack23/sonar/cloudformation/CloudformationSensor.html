@@ -50,11 +50,11 @@
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>  <strong class="jxr_keyword">import</strong> org.sonar.api.utils.log.Loggers;
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>  <strong class="jxr_keyword">import</strong> org.sonar.api.utils.log.Profiler;
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>  
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.CfnNagReport;
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.CfnNagReportReader;
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.CfnNagScanReport;
-<a class="jxr_linenumber" name="L48" href="#L48">48</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.CfnNagScanReportReader;
-<a class="jxr_linenumber" name="L49" href="#L49">49</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.CfnNagViolation;
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReport;
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReportReader;
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReport;
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReportReader;
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  <strong class="jxr_keyword">import</strong> com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagViolation;
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  <em class="jxr_javadoccomment"> * The Class CloudformationSensor.</em>
@@ -68,10 +68,10 @@
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger LOGGER = Loggers.get(CloudformationSensor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>  	<em class="jxr_javadoccomment">/** The cfn nag report reader. */</em>
-<a class="jxr_linenumber" name="L63" href="#L63">63</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a name="CfnNagReportReader" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagReportReader.html#CfnNagReportReader">CfnNagReportReader</a> cfnNagReportReader;
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a name="CfnNagReportReader" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagReportReader.html#CfnNagReportReader">CfnNagReportReader</a> cfnNagReportReader;
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>  
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>  	<em class="jxr_javadoccomment">/** The cfn nag scan report reader. */</em>
-<a class="jxr_linenumber" name="L66" href="#L66">66</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a name="CfnNagScanReportReader" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagScanReportReader.html#CfnNagScanReportReader">CfnNagScanReportReader</a> cfnNagScanReportReader;
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a name="CfnNagScanReportReader" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagScanReportReader.html#CfnNagScanReportReader">CfnNagScanReportReader</a> cfnNagScanReportReader;
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>  
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  	<em class="jxr_javadoccomment">/** The configuration. */</em>
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a name="CloudformationSensorConfiguration" href="../../../../com/hack23/sonar/cloudformation/CloudformationSensorConfiguration.html#CloudformationSensorConfiguration">CloudformationSensorConfiguration</a> configuration;
@@ -92,8 +92,8 @@
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>  	<strong class="jxr_keyword">public</strong> <a name="CloudformationSensor" href="../../../../com/hack23/sonar/cloudformation/CloudformationSensor.html#CloudformationSensor">CloudformationSensor</a>(<strong class="jxr_keyword">final</strong> <a name="CloudformationSensorConfiguration" href="../../../../com/hack23/sonar/cloudformation/CloudformationSensorConfiguration.html#CloudformationSensorConfiguration">CloudformationSensorConfiguration</a> configuration, <strong class="jxr_keyword">final</strong> FileSystem fileSystem,
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>  			<strong class="jxr_keyword">final</strong> PathResolver pathResolver) {
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>  		<strong class="jxr_keyword">super</strong>();
-<a class="jxr_linenumber" name="L87" href="#L87">87</a>  		<strong class="jxr_keyword">this</strong>.cfnNagReportReader = <strong class="jxr_keyword">new</strong> <a name="CfnNagReportReader" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagReportReader.html#CfnNagReportReader">CfnNagReportReader</a>();
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>  		<strong class="jxr_keyword">this</strong>.cfnNagScanReportReader = <strong class="jxr_keyword">new</strong> <a name="CfnNagScanReportReader" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagScanReportReader.html#CfnNagScanReportReader">CfnNagScanReportReader</a>();
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>  		<strong class="jxr_keyword">this</strong>.cfnNagReportReader = <strong class="jxr_keyword">new</strong> <a name="CfnNagReportReader" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagReportReader.html#CfnNagReportReader">CfnNagReportReader</a>();
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>  		<strong class="jxr_keyword">this</strong>.cfnNagScanReportReader = <strong class="jxr_keyword">new</strong> <a name="CfnNagScanReportReader" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagScanReportReader.html#CfnNagScanReportReader">CfnNagScanReportReader</a>();
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>  		<strong class="jxr_keyword">this</strong>.configuration = configuration;
 <a class="jxr_linenumber" name="L90" href="#L90">90</a>  		<strong class="jxr_keyword">this</strong>.fileSystem = fileSystem;
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>  		<strong class="jxr_keyword">this</strong>.pathResolver = pathResolver;
@@ -121,12 +121,12 @@
 <a class="jxr_linenumber" name="L113" href="#L113">113</a> 		profiler.startInfo(<span class="jxr_string">"Process cfn-nag reports"</span>);
 <a class="jxr_linenumber" name="L114" href="#L114">114</a> 
 <a class="jxr_linenumber" name="L115" href="#L115">115</a> 		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L116" href="#L116">116</a> 			<strong class="jxr_keyword">final</strong> Optional&lt;String&gt; reportFilesProperty = configuration.getReportFiles();
+<a class="jxr_linenumber" name="L116" href="#L116">116</a> 			<strong class="jxr_keyword">final</strong> Optional&lt;String&gt; reportFilesProperty = configuration.getCfnNagReportFiles();
 <a class="jxr_linenumber" name="L117" href="#L117">117</a> 
 <a class="jxr_linenumber" name="L118" href="#L118">118</a> 			<strong class="jxr_keyword">if</strong> (reportFilesProperty.isPresent()) {
 <a class="jxr_linenumber" name="L119" href="#L119">119</a> 
 <a class="jxr_linenumber" name="L120" href="#L120">120</a> 				<strong class="jxr_keyword">final</strong> String reports = reportFilesProperty.get();
-<a class="jxr_linenumber" name="L121" href="#L121">121</a> 				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY + <span class="jxr_string">"="</span> + reports);
+<a class="jxr_linenumber" name="L121" href="#L121">121</a> 				LOGGER.info(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY + <span class="jxr_string">"="</span> + reports);
 <a class="jxr_linenumber" name="L122" href="#L122">122</a> 				<strong class="jxr_keyword">final</strong> String[] reportFiles = StringUtils.split(reports, <span class="jxr_string">","</span>);
 <a class="jxr_linenumber" name="L123" href="#L123">123</a> 
 <a class="jxr_linenumber" name="L124" href="#L124">124</a> 				<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> String report : reportFiles) {
@@ -142,7 +142,7 @@
 <a class="jxr_linenumber" name="L134" href="#L134">134</a> 					}
 <a class="jxr_linenumber" name="L135" href="#L135">135</a> 				}
 <a class="jxr_linenumber" name="L136" href="#L136">136</a> 			} <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="L137" href="#L137">137</a> 				LOGGER.warn(<span class="jxr_string">"Missing property:{}"</span>,CloudformationConstants.REPORT_FILES_PROPERTY);
+<a class="jxr_linenumber" name="L137" href="#L137">137</a> 				LOGGER.warn(<span class="jxr_string">"Missing property:{}"</span>,CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);
 <a class="jxr_linenumber" name="L138" href="#L138">138</a> 			}
 <a class="jxr_linenumber" name="L139" href="#L139">139</a> 		} <strong class="jxr_keyword">catch</strong> (<strong class="jxr_keyword">final</strong> IOException e) {
 <a class="jxr_linenumber" name="L140" href="#L140">140</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Can not process cfn-nag reports."</span>, e);
@@ -163,11 +163,11 @@
 <a class="jxr_linenumber" name="L155" href="#L155">155</a> 
 <a class="jxr_linenumber" name="L156" href="#L156">156</a> 		<strong class="jxr_keyword">final</strong> InputFile templateInputFile = findTemplate(templateName,report.replace(<span class="jxr_string">".nag"</span>,<span class="jxr_string">""</span>));
 <a class="jxr_linenumber" name="L157" href="#L157">157</a> 
-<a class="jxr_linenumber" name="L158" href="#L158">158</a> 		<strong class="jxr_keyword">final</strong> <a name="CfnNagReport" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagReport.html#CfnNagReport">CfnNagReport</a> cfnNagReport = cfnNagReportReader
+<a class="jxr_linenumber" name="L158" href="#L158">158</a> 		<strong class="jxr_keyword">final</strong> <a name="CfnNagReport" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagReport.html#CfnNagReport">CfnNagReport</a> cfnNagReport = cfnNagReportReader
 <a class="jxr_linenumber" name="L159" href="#L159">159</a> 				.readReport(<strong class="jxr_keyword">new</strong> FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 <a class="jxr_linenumber" name="L160" href="#L160">160</a> 		<strong class="jxr_keyword">if</strong> (cfnNagReport != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L161" href="#L161">161</a> 			<strong class="jxr_keyword">final</strong> List&lt;CfnNagViolation&gt; violations = cfnNagReport.getViolations();
-<a class="jxr_linenumber" name="L162" href="#L162">162</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> <a name="CfnNagViolation" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagViolation.html#CfnNagViolation">CfnNagViolation</a> cfnNagViolation : violations) {
+<a class="jxr_linenumber" name="L162" href="#L162">162</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> <a name="CfnNagViolation" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagViolation.html#CfnNagViolation">CfnNagViolation</a> cfnNagViolation : violations) {
 <a class="jxr_linenumber" name="L163" href="#L163">163</a> 				addIssue(context, cfnNagViolation, templateInputFile);
 <a class="jxr_linenumber" name="L164" href="#L164">164</a> 			}
 <a class="jxr_linenumber" name="L165" href="#L165">165</a> 		}
@@ -186,7 +186,7 @@
 <a class="jxr_linenumber" name="L178" href="#L178">178</a> 		<strong class="jxr_keyword">final</strong> List&lt;CfnNagScanReport&gt; cfnNagscanReports = cfnNagScanReportReader
 <a class="jxr_linenumber" name="L179" href="#L179">179</a> 				.readReport(<strong class="jxr_keyword">new</strong> FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 <a class="jxr_linenumber" name="L180" href="#L180">180</a> 
-<a class="jxr_linenumber" name="L181" href="#L181">181</a> 		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> <a name="CfnNagScanReport" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagScanReport.html#CfnNagScanReport">CfnNagScanReport</a> nagScanReport : cfnNagscanReports) {
+<a class="jxr_linenumber" name="L181" href="#L181">181</a> 		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> <a name="CfnNagScanReport" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagScanReport.html#CfnNagScanReport">CfnNagScanReport</a> nagScanReport : cfnNagscanReports) {
 <a class="jxr_linenumber" name="L182" href="#L182">182</a> 
 <a class="jxr_linenumber" name="L183" href="#L183">183</a> 			<strong class="jxr_keyword">final</strong> String filename = nagScanReport.getFilename();
 <a class="jxr_linenumber" name="L184" href="#L184">184</a> 			LOGGER.info(<span class="jxr_string">"Reading cfn-nag report:{}"</span>,  filename);
@@ -195,7 +195,7 @@
 <a class="jxr_linenumber" name="L187" href="#L187">187</a> 					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()),filename);
 <a class="jxr_linenumber" name="L188" href="#L188">188</a> 
 <a class="jxr_linenumber" name="L189" href="#L189">189</a> 			<strong class="jxr_keyword">final</strong> List&lt;CfnNagViolation&gt; violations = nagScanReport.getFile_results().getViolations();
-<a class="jxr_linenumber" name="L190" href="#L190">190</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> <a name="CfnNagViolation" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagViolation.html#CfnNagViolation">CfnNagViolation</a> cfnNagViolation : violations) {
+<a class="jxr_linenumber" name="L190" href="#L190">190</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> <a name="CfnNagViolation" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagViolation.html#CfnNagViolation">CfnNagViolation</a> cfnNagViolation : violations) {
 <a class="jxr_linenumber" name="L191" href="#L191">191</a> 				addIssue(context, cfnNagViolation, templateInputFile);
 <a class="jxr_linenumber" name="L192" href="#L192">192</a> 			}
 <a class="jxr_linenumber" name="L193" href="#L193">193</a> 		}
@@ -235,7 +235,7 @@
 <a class="jxr_linenumber" name="L227" href="#L227">227</a> <em class="jxr_javadoccomment">	 * @param violation         the violation</em>
 <a class="jxr_linenumber" name="L228" href="#L228">228</a> <em class="jxr_javadoccomment">	 * @param templateInputFile the template input file</em>
 <a class="jxr_linenumber" name="L229" href="#L229">229</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L230" href="#L230">230</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> addIssue(<strong class="jxr_keyword">final</strong> SensorContext context, <strong class="jxr_keyword">final</strong> <a name="CfnNagViolation" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagViolation.html#CfnNagViolation">CfnNagViolation</a> violation,
+<a class="jxr_linenumber" name="L230" href="#L230">230</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> addIssue(<strong class="jxr_keyword">final</strong> SensorContext context, <strong class="jxr_keyword">final</strong> <a name="CfnNagViolation" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagViolation.html#CfnNagViolation">CfnNagViolation</a> violation,
 <a class="jxr_linenumber" name="L231" href="#L231">231</a> 			<strong class="jxr_keyword">final</strong> InputFile templateInputFile) {
 <a class="jxr_linenumber" name="L232" href="#L232">232</a> 			<strong class="jxr_keyword">if</strong> (templateInputFile != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L233" href="#L233">233</a> 
@@ -265,7 +265,7 @@
 <a class="jxr_linenumber" name="L257" href="#L257">257</a> 			}
 <a class="jxr_linenumber" name="L258" href="#L258">258</a> 		}
 <a class="jxr_linenumber" name="L259" href="#L259">259</a> 
-<a class="jxr_linenumber" name="L260" href="#L260">260</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String findRuleId(<strong class="jxr_keyword">final</strong> <a name="CfnNagViolation" href="../../../../com/hack23/sonar/cloudformation/parser/CfnNagViolation.html#CfnNagViolation">CfnNagViolation</a> violation) {
+<a class="jxr_linenumber" name="L260" href="#L260">260</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String findRuleId(<strong class="jxr_keyword">final</strong> <a name="CfnNagViolation" href="../../../../com/hack23/sonar/cloudformation/parser/cfnnag/CfnNagViolation.html#CfnNagViolation">CfnNagViolation</a> violation) {
 <a class="jxr_linenumber" name="L261" href="#L261">261</a> 		<strong class="jxr_keyword">if</strong> (CloudformationQualityProfile.hasRule(violation.getId())) {
 <a class="jxr_linenumber" name="L262" href="#L262">262</a> 			<strong class="jxr_keyword">return</strong> violation.getId();		
 <a class="jxr_linenumber" name="L263" href="#L263">263</a> 		} <strong class="jxr_keyword">else</strong> {

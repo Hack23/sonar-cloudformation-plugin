@@ -19,7 +19,7 @@
  */
 package com.hack23.sonar.cloudformation;
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 import org.sonar.api.config.PropertyDefinition;
@@ -43,10 +43,13 @@ public final class CloudformationProperties {
 	 * @return the properties
 	 */
 	public static List&lt;PropertyDefinition&gt; getProperties() {
-<span class="fc" id="L46">		return Collections.singletonList(PropertyDefinition.builder(CloudformationConstants.REPORT_FILES_PROPERTY)</span>
-<span class="fc" id="L47">				.subCategory(&quot;Paths&quot;).name(CloudformationConstants.REPORT_FILES_PROPERTY)</span>
+<span class="fc" id="L46">		return Arrays.asList(PropertyDefinition.builder(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)</span>
+<span class="fc" id="L47">				.subCategory(&quot;Paths&quot;).name(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)</span>
 <span class="fc" id="L48">				.description(&quot;path to the '.nag or .nagscan' files&quot;).onQualifiers(Qualifiers.PROJECT).defaultValue(&quot;&quot;)</span>
-<span class="fc" id="L49">				.build());</span>
+<span class="fc" id="L49">				.build(),PropertyDefinition.builder(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)</span>
+<span class="fc" id="L50">				.subCategory(&quot;Paths&quot;).name(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)</span>
+<span class="fc" id="L51">				.description(&quot;path to the '.nag or .nagscan' files&quot;).onQualifiers(Qualifiers.PROJECT).defaultValue(&quot;&quot;)</span>
+<span class="fc" id="L52">				.build());</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

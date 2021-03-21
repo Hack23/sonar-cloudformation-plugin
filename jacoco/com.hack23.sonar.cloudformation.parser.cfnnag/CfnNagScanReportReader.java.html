@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CfnNagScanReportReader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cloudformation</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.parser.cfnnag</a> &gt; <span class="el_source">CfnNagScanReportReader.java</span></div><h1>CfnNagScanReportReader.java</h1><pre class="source lang-java linenums">/*
+ * Cloudformation Plugin for SonarQube
+ * Copyright (C) 2019 James Pether Sörling
+ * james@hack23.com
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+package com.hack23.sonar.cloudformation.parser.cfnnag;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/**
+ * The Class CfnNagScanReportReader.
+ */
+<span class="fc" id="L36">public class CfnNagScanReportReader {</span>
+
+	/** The Constant LOGGER. */
+<span class="fc" id="L39">	private static final Logger LOGGER = Loggers.get(CfnNagScanReportReader.class);</span>
+
+	/**
+	 * Read report.
+	 *
+	 * @param input the input
+	 * @return the list
+	 */
+	public List&lt;CfnNagScanReport&gt; readReport(final InputStream input) {
+<span class="fc" id="L48">		final ObjectMapper objectMapper = new ObjectMapper();</span>
+
+		try {
+<span class="fc" id="L51">			return objectMapper.readValue(input, new TypeReference&lt;List&lt;CfnNagScanReport&gt;&gt;() {});</span>
+<span class="fc" id="L52">		} catch (final IOException e) {</span>
+<span class="fc" id="L53">			LOGGER.warn(&quot;Problem reading cfn nag report json:{}&quot;, e.getMessage());</span>
+<span class="fc" id="L54">			return new ArrayList&lt;&gt;();</span>
+		}
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

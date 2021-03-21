@@ -42,11 +42,11 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.utils.log.Profiler;
 
-import com.hack23.sonar.cloudformation.parser.CfnNagReport;
-import com.hack23.sonar.cloudformation.parser.CfnNagReportReader;
-import com.hack23.sonar.cloudformation.parser.CfnNagScanReport;
-import com.hack23.sonar.cloudformation.parser.CfnNagScanReportReader;
-import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReport;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReportReader;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReport;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReportReader;
+import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagViolation;
 
 /**
  * The Class CloudformationSensor.
@@ -113,12 +113,12 @@ public final class CloudformationSensor implements Sensor {
 <span class="fc" id="L113">		profiler.startInfo(&quot;Process cfn-nag reports&quot;);</span>
 
 		try {
-<span class="fc" id="L116">			final Optional&lt;String&gt; reportFilesProperty = configuration.getReportFiles();</span>
+<span class="fc" id="L116">			final Optional&lt;String&gt; reportFilesProperty = configuration.getCfnNagReportFiles();</span>
 
 <span class="fc bfc" id="L118" title="All 2 branches covered.">			if (reportFilesProperty.isPresent()) {</span>
 
 <span class="fc" id="L120">				final String reports = reportFilesProperty.get();</span>
-<span class="fc" id="L121">				LOGGER.info(CloudformationConstants.REPORT_FILES_PROPERTY + &quot;=&quot; + reports);</span>
+<span class="fc" id="L121">				LOGGER.info(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY + &quot;=&quot; + reports);</span>
 <span class="fc" id="L122">				final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
 
 <span class="fc bfc" id="L124" title="All 2 branches covered.">				for (final String report : reportFiles) {</span>
@@ -134,7 +134,7 @@ public final class CloudformationSensor implements Sensor {
 					}
 				}
 <span class="fc" id="L136">			} else {</span>
-<span class="fc" id="L137">				LOGGER.warn(&quot;Missing property:{}&quot;,CloudformationConstants.REPORT_FILES_PROPERTY);</span>
+<span class="fc" id="L137">				LOGGER.warn(&quot;Missing property:{}&quot;,CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);</span>
 			}
 <span class="nc" id="L139">		} catch (final IOException e) {</span>
 <span class="nc" id="L140">			throw new RuntimeException(&quot;Can not process cfn-nag reports.&quot;, e);</span>

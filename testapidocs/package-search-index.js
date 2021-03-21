@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.hack23.sonar.cloudformation"},{"l":"com.hack23.sonar.cloudformation.parser"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.hack23.sonar.cloudformation"},{"l":"com.hack23.sonar.cloudformation.parser.cfnnag"},{"l":"com.hack23.sonar.cloudformation.parser.checkov"}]
