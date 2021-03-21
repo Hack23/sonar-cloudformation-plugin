@@ -46,9 +46,9 @@ public final class CloudformationProperties {
 		return Arrays.asList(PropertyDefinition.builder(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)
 				.subCategory("Paths").name(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)
 				.description("path to the '.nag or .nagscan' files").onQualifiers(Qualifiers.PROJECT).defaultValue("")
-				.build(),PropertyDefinition.builder(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)
-				.subCategory("Paths").name(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)
-				.description("path to the '.nag or .nagscan' files").onQualifiers(Qualifiers.PROJECT).defaultValue("")
+				.build(),PropertyDefinition.builder(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY)
+				.subCategory("Paths").name(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY)
+				.description("path to the 'checkov-report' files").onQualifiers(Qualifiers.PROJECT).defaultValue("")
 				.build());
 	}
 }
