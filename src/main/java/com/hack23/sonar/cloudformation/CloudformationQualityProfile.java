@@ -239,11 +239,8 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		final NewBuiltInQualityProfile cloudFormationprofile = context
 				.createBuiltInQualityProfile("Cloudformation Rules", language);
 		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
-
-			if (repository.name().contains("cfn-" + language)) {
-
+			if (repository.key().contains("cfn-" + language)) {
 				for (Rule rule : repository.rules()) {
-					System.out.println(rule);
 					if (rule.tags().contains("checkov") && rule.tags().contains("cloudformation")) {
 						cloudFormationprofile.activateRule("cfn-" + language, rule.key());
 					} else if (rule.tags().contains("checkov") && rule.tags().contains("serverless")) {
@@ -254,12 +251,12 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		}
 		for (final String ruleKey : SUPPORTED_RULES) {
 			cloudFormationprofile.activateRule("cfn-" + language, ruleKey);
-		}
+  	}
 		cloudFormationprofile.done();
 
 		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile("IAC Rules", language);
 		for (Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
-			if (repository.name().contains("cfn-" + language)) {
+			if (repository.key().contains("cfn-" + language)) {
 				for (Rule rule : repository.rules()) {
 					if (rule.tags().contains("checkov")) {
 						iacProfile.activateRule("iac-" + language, rule.key());

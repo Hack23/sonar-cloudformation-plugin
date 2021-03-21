@@ -1,5 +1,5 @@
 # sonar-cloudformation-plugin
-Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag)
+Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) and checkov (https://github.com/bridgecrewio/checkov) add support for other infrastructure-as-code-languages Terraform, Terraform plan, Kubernetes, Serverless or ARM Templates.
 
 [![license](https://img.shields.io/github/license/Hack23/sonar-cloudformation-plugin.svg)](https://github.com/Hack23/sonar-cloudformation-plugin/raw/master/LICENSE.txt)
 [![Maven Central](https://img.shields.io/maven-central/v/com.hack23.sonar/sonar-cloudformation-plugin.svg)](http://mvnrepository.com/artifact/com.hack23.sonar/sonar-cloudformation-plugin)
@@ -34,7 +34,7 @@ Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=c
 
 # Support
 
-Sonarqube 7.7+ and currently only supports cfn_nag reports (https://github.com/stelligent/cfn_nag)
+Sonarqube 7.7+ and supports cfn_nag (https://github.com/stelligent/cfn_nag) and checkov (https://github.com/bridgecrewio/checkov) reports
 
 Requires Yaml plugin and optional Json plugin if json is used for cloudformation templates.
 Yaml plugin https://github.com/sbaudoin/sonar-yaml
@@ -47,6 +47,9 @@ The rules need to be enabled on the Quality profile if another one is used.
  
 
 # Howto
+
+
+# Cfn-nag reports 
 
 Prepare cfn_nag reports running (cfn_nag --output-format=json src/main/config/template.yml > target/template.yml.nag)
 and set the property sonar.cfn.nag.reportFiles=target/template.yml.nag (comma separated if multiple reports)
@@ -66,7 +69,25 @@ Will be mapped to "Custom cfn-nag failure rule or rule missing integration in th
 Assumes all failures start with uppercase F and all warnings with uppercase W.
 
 
-# Group the cfn-nag rules to CWE
+# Checkov reports 
+
+Prepare checkov reports running (checkov -f template.yml -o json > template.checkov-report)
+and set the property sonar.checkov.reportFiles=template.checkov-report (comma separated if multiple reports)
+
+
+# Properties supported
+
+sonar.checkov.reportFiles=template.checkov-report
+
+One or multiple checkov report files, note for .checkov-report files the filename should be template filename appended with checkov-report.
+
+
+# Custom checkov rules or rules not yet defined 
+
+Will be mapped to "Custom checkov failure rule or rule missing integration in this plugin." alt Custom checkov warning rule or rule missing integration in this plugin.
+
+
+# Group the rules to CWE
 
 CWE-311 - Missing Encryption of Sensitive Data https://cwe.mitre.org/data/definitions/311
 
@@ -90,7 +111,7 @@ CWE-200 - Exposure of Sensitive Information to an Unauthorized Actor https://cwe
 
 No CWE associated
 
-# Group the cfn-nag rules to NIST 800-53
+# Group the rules to NIST 800-53
 
 800-53-AC-4 AC-4 INFORMATION FLOW ENFORCEMENT https://nvd.nist.gov/800-53/Rev4/control/AC-4
 
@@ -119,7 +140,7 @@ No CWE associated
 
 # Roadmap
 
-Support more cloudformation checkers and add more rules for cfn_nag.
+Support more cloudformation checkers and add more rules for cfn_nag. 
 
 ## License
 [![FOSSA Details](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin?ref=badge_large)

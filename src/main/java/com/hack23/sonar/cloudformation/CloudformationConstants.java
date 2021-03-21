@@ -24,8 +24,11 @@ package com.hack23.sonar.cloudformation;
  */
 public final class CloudformationConstants {
 
-	/** The Constant REPORT_FILES_PROPERTY. */
-	public static final String REPORT_FILES_PROPERTY = "sonar.cfn.nag.reportFiles";
+	/** The Constant CFN_NAG_REPORT_FILES_PROPERTY. */
+	public static final String CFN_NAG_REPORT_FILES_PROPERTY = "sonar.cfn.nag.reportFiles";
+
+	/** The Constant CHECKOV_REPORT_FILES_PROPERTY. */
+	public static final String CHECKOV_REPORT_FILES_PROPERTY = "sonar.cfn.checkov.reportFiles";	
 	
 	/**
 	 * Instantiates a new cloudformation constants.

@@ -17,39 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser;
-
-import java.io.ByteArrayInputStream;
-import java.util.List;
-
-import org.junit.Assert;
-import org.junit.Test;
-
 /**
- * The Class CfnNagScanReportReaderTest.
+ * Provides cfn-nag report readers and model.
  */
-public class CfnNagScanReportReaderTest extends Assert {
-
-	/**
-	 * Read report test.
-	 */
-	@Test
-	public void readReportTest() {
-		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(CfnNagScanReportReaderTest.class.getResourceAsStream("/cfn-nag-scan.nagscan"));
-
-		assertNotNull(cfnNagReport);
-		assertFalse(cfnNagReport.isEmpty());
-	}
-		
-	/**
-	 * Read report failue test.
-	 */
-	@Test
-	public void readReportFailueTest() {
-		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(new ByteArrayInputStream("".getBytes()));
-
-		assertNotNull(cfnNagReport);
-		assertTrue(cfnNagReport.isEmpty());
-	}
-
-}
+package com.hack23.sonar.cloudformation.parser.cfnnag;

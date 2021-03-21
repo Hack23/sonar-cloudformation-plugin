@@ -63,7 +63,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeSimpleNagReportTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.of("src/test/resources/aws-cross-account-manager-master.yml.nag"));
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
@@ -97,7 +97,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeSimpleNagReportMissingTemplateTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.of("src/test/resources/aws-cross-account-manager-master.yml.nag"));
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
@@ -122,7 +122,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeSimpleNagScanReportTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.of("src/test/resources/cfn-nag-scan.nagscan"));
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
@@ -155,7 +155,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeSimpleNagScanReportTemplateMissingTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.of("src/test/resources/cfn-nag-scan.nagscan"));
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
@@ -180,7 +180,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeNagScanReportBadPropertyTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.of("src/test/resources/file-not-exist.nagscan"));
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
@@ -207,7 +207,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeMissingPropertyTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.empty());
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
@@ -233,7 +233,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeMixedFileReportTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.of("src/test/resources/aws-cross-account-manager-master.yml.nag,src/test/resources/cfn-nag-scan.nagscan"));
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
@@ -271,7 +271,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeFileReportWithCustomRulesTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.of("src/test/resources/cfn-nag-scan-custom-rules.nagscan"));
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
@@ -308,7 +308,7 @@ public class CloudformationSensorTest extends Assert {
 	@Test
 	public void executeFileReportWithMissingLineNumbersTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.REPORT_FILES_PROPERTY))
+		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
 				.thenReturn(Optional.of("src/test/resources/cfn-nag-scan-missing-linenumbers.nagscan"));
 
 		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
