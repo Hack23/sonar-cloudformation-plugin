@@ -110,36 +110,63 @@ public final class CloudformationSensor implements Sensor {
 	@Override
 	public void execute(final SensorContext context) {
 		final Profiler profiler = Profiler.create(LOGGER);
-		profiler.startInfo("Process cfn-nag reports");
+		profiler.startInfo("Process iac reports");
 
 		try {
-			final Optional<String> reportFilesProperty = configuration.getCfnNagReportFiles();
-
-			if (reportFilesProperty.isPresent()) {
-
-				final String reports = reportFilesProperty.get();
-				LOGGER.info(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY + "=" + reports);
-				final String[] reportFiles = StringUtils.split(reports, ",");
-
-				for (final String report : reportFiles) {
-					LOGGER.info("Processing:" + report);
-					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),StandardCharsets.UTF_8).contains("filename")) {
-
-						handleCfnNagReports(context, report);
-					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {
-
-						handleCfnNagScanReports(context, report);
-					} else {
-						LOGGER.warn("Processing:" + report + " missing or do not end with .nag or .nagscan");
-					}
-				}
-			} else {
-				LOGGER.warn("Missing property:{}",CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);
-			}
+			processCfnNagReport(context);									
+			processCheckovReport(context);												
 		} catch (final IOException e) {
-			throw new RuntimeException("Can not process cfn-nag reports.", e);
+			throw new RuntimeException("Can not process iac reports.", e);
 		} finally {
 			profiler.stopInfo();
+		}
+	}
+
+	private void processCheckovReport(final SensorContext context) throws IOException, FileNotFoundException {
+		final Optional<String> reportFilesProperty = configuration.getCheckovReportFiles();
+
+		if (reportFilesProperty.isPresent()) {
+
+			final String reports = reportFilesProperty.get();
+			LOGGER.info(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY + "=" + reports);
+			final String[] reportFiles = StringUtils.split(reports, ",");
+
+			for (final String report : reportFiles) {
+				LOGGER.info("Processing  checkov :" + report);
+				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {
+					handleCheckovReports(context, report);
+				} else {
+					LOGGER.warn("Processing checkov:" + report + " missing");
+				}
+			}
+		} else {
+			LOGGER.warn("Missing property:{}",CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);
+		}
+	}
+
+	private void processCfnNagReport(final SensorContext context) throws IOException, FileNotFoundException {
+		final Optional<String> reportFilesProperty = configuration.getCfnNagReportFiles();
+
+		if (reportFilesProperty.isPresent()) {
+
+			final String reports = reportFilesProperty.get();
+			LOGGER.info(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY + "=" + reports);
+			final String[] reportFiles = StringUtils.split(reports, ",");
+
+			for (final String report : reportFiles) {
+				LOGGER.info("Processing cfn-nag :" + report);
+				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),StandardCharsets.UTF_8).contains("filename")) {
+
+					handleCfnNagReports(context, report);
+				} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {
+
+					handleCfnNagScanReports(context, report);
+				} else {
+					LOGGER.warn("Processing cfn-nag:" + report + " missing");
+				}
+			}
+		} else {
+			LOGGER.warn("Missing property:{}",CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);
 		}
 	}
 
@@ -191,6 +218,29 @@ public final class CloudformationSensor implements Sensor {
 				addIssue(context, cfnNagViolation, templateInputFile);
 			}
 		}
+	}
+
+	private void handleCheckovReports(final SensorContext context, final String report)
+			throws FileNotFoundException {
+		LOGGER.info("Reading checkov reports:{}",  report);
+		
+		
+//		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader
+//				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+//
+//		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
+//
+//			final String filename = nagScanReport.getFilename();
+//			LOGGER.info("Reading cfn-nag report:{}",  filename);
+//
+//			final InputFile templateInputFile = findTemplate(
+//					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()),filename);
+//
+//			final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
+//			for (final CfnNagViolation cfnNagViolation : violations) {
+//				addIssue(context, cfnNagViolation, templateInputFile);
+//			}
+//		}
 	}
 
 	/**
