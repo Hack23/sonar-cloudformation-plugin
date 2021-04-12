@@ -26,7 +26,6 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class CheckovPassedCheck.
  */
@@ -53,7 +52,23 @@ public final class CheckovPassedCheck {
     /** The resource. */
     private String resource;
     
-    /** The evaluations. */
+    /** The repo file path. */
+    private String repo_file_path;
+    
+
+    /** The entity tags. */
+    private String entity_tags;
+    
+    /** The caller file path. */
+    private String caller_file_path;
+    
+    /** The caller file line range. */
+    private String caller_file_line_range;
+
+    /** The fixed definition. */
+    private String fixed_definition;
+    
+	/** The evaluations. */
     private Object evaluations;
     
     /** The check class. */
@@ -242,6 +257,98 @@ public final class CheckovPassedCheck {
 	 */
 	public void setGuideline(String guideline) {
 		this.guideline = guideline;
+	}
+
+    /**
+     * Gets the repo file path.
+     *
+     * @return the repo file path
+     */
+    public String getRepo_file_path() {
+		return repo_file_path;
+	}
+
+	/**
+	 * Sets the repo file path.
+	 *
+	 * @param repo_file_path the new repo file path
+	 */
+	public void setRepo_file_path(String repo_file_path) {
+		this.repo_file_path = repo_file_path;
+	}
+	
+	
+	
+	/**
+	 * Gets the entity tags.
+	 *
+	 * @return the entity tags
+	 */
+	public String getEntity_tags() {
+		return entity_tags;
+	}
+
+	/**
+	 * Sets the entity tags.
+	 *
+	 * @param entity_tags the new entity tags
+	 */
+	public void setEntity_tags(String entity_tags) {
+		this.entity_tags = entity_tags;
+	}
+
+	/**
+	 * Gets the caller file path.
+	 *
+	 * @return the caller file path
+	 */
+	public String getCaller_file_path() {
+		return caller_file_path;
+	}
+
+	/**
+	 * Sets the caller file path.
+	 *
+	 * @param caller_file_path the new caller file path
+	 */
+	public void setCaller_file_path(String caller_file_path) {
+		this.caller_file_path = caller_file_path;
+	}
+
+	/**
+	 * Gets the caller file line range.
+	 *
+	 * @return the caller file line range
+	 */
+	public String getCaller_file_line_range() {
+		return caller_file_line_range;
+	}
+
+	/**
+	 * Sets the caller file line range.
+	 *
+	 * @param caller_file_line_range the new caller file line range
+	 */
+	public void setCaller_file_line_range(String caller_file_line_range) {
+		this.caller_file_line_range = caller_file_line_range;
+	}
+
+	/**
+	 * Gets the fixed definition.
+	 *
+	 * @return the fixed definition
+	 */
+	public String getFixed_definition() {
+		return fixed_definition;
+	}
+
+	/**
+	 * Sets the fixed definition.
+	 *
+	 * @param fixed_definition the new fixed definition
+	 */
+	public void setFixed_definition(String fixed_definition) {
+		this.fixed_definition = fixed_definition;
 	}
 
 	/**

@@ -27,11 +27,20 @@ import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * The Class CheckovReportReader.
+ */
 public class CheckovReportReader {
 
 	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Loggers.get(CheckovReportReader.class);
 
+	/**
+	 * Read report.
+	 *
+	 * @param input the input
+	 * @return the checkov report
+	 */
 	public CheckovReport readReport(final InputStream input) {
 		final ObjectMapper objectMapper = new ObjectMapper();
 

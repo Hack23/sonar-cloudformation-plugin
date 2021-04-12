@@ -31,39 +31,86 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 public final class CheckovResults {
 
+	/** The passed checks. */
 	private List<CheckovPassedCheck> passed_checks;
+	
+	/** The failed checks. */
 	private List<CheckovPassedCheck> failed_checks;		
+    
+    /** The skipped checks. */
     private List<String> skipped_checks;
+    
+    /** The parsing errors. */
     private List<String> parsing_errors;
     
+	/**
+	 * Gets the passed checks.
+	 *
+	 * @return the passed checks
+	 */
 	public List<CheckovPassedCheck> getPassed_checks() {
 		return passed_checks;
 	}
 
+	/**
+	 * Sets the passed checks.
+	 *
+	 * @param passed_checks the new passed checks
+	 */
 	public void setPassed_checks(List<CheckovPassedCheck> passed_checks) {
 		this.passed_checks = passed_checks;
 	}
 	
+	/**
+	 * Gets the failed checks.
+	 *
+	 * @return the failed checks
+	 */
 	public List<CheckovPassedCheck> getFailed_checks() {
 		return failed_checks;
 	}
 
+	/**
+	 * Sets the failed checks.
+	 *
+	 * @param failed_checks the new failed checks
+	 */
 	public void setFailed_checks(List<CheckovPassedCheck> failed_checks) {
 		this.failed_checks = failed_checks;
 	}
 
+	/**
+	 * Gets the skipped checks.
+	 *
+	 * @return the skipped checks
+	 */
 	public List<String> getSkipped_checks() {
 		return skipped_checks;
 	}
 
+	/**
+	 * Sets the skipped checks.
+	 *
+	 * @param skipped_checks the new skipped checks
+	 */
 	public void setSkipped_checks(List<String> skipped_checks) {
 		this.skipped_checks = skipped_checks;
 	}
 
+	/**
+	 * Gets the parsing errors.
+	 *
+	 * @return the parsing errors
+	 */
 	public List<String> getParsing_errors() {
 		return parsing_errors;
 	}
 
+	/**
+	 * Sets the parsing errors.
+	 *
+	 * @param parsing_errors the new parsing errors
+	 */
 	public void setParsing_errors(List<String> parsing_errors) {
 		this.parsing_errors = parsing_errors;
 	}
