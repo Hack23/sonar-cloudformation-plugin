@@ -24,6 +24,8 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CheckovSummary.
  */
@@ -39,10 +41,12 @@ public final class CheckovSummary {
     private int skipped;
     
     /** The parsing errors. */
-    private int parsing_errors;
+    private int parsingErrors;
     
     /** The checkov version. */
-    private String checkov_version;
+    private String checkovVersion;
+    
+
     
 	/**
 	 * Gets the passed.
@@ -103,17 +107,18 @@ public final class CheckovSummary {
 	 *
 	 * @return the parsing errors
 	 */
-	public int getParsing_errors() {
-		return parsing_errors;
+	@JsonProperty("parsing_errors")
+	public int getParsingErrors() {
+		return parsingErrors;
 	}
 
 	/**
 	 * Sets the parsing errors.
 	 *
-	 * @param parsing_errors the new parsing errors
+	 * @param parsingErrors the new parsing errors
 	 */
-	public void setParsing_errors(int parsing_errors) {
-		this.parsing_errors = parsing_errors;
+	public void setParsingErrors(int parsingErrors) {
+		this.parsingErrors = parsingErrors;
 	}
 
 	/**
@@ -121,17 +126,18 @@ public final class CheckovSummary {
 	 *
 	 * @return the checkov version
 	 */
-	public String getCheckov_version() {
-		return checkov_version;
+	@JsonProperty("checkov_version")
+	public String getCheckovVersion() {
+		return checkovVersion;
 	}
 
 	/**
 	 * Sets the checkov version.
 	 *
-	 * @param checkov_version the new checkov version
+	 * @param checkovVersion the new checkov version
 	 */
-	public void setCheckov_version(String checkov_version) {
-		this.checkov_version = checkov_version;
+	public void setCheckovVersion(String checkovVersion) {
+		this.checkovVersion = checkovVersion;
 	}
 
 	/**

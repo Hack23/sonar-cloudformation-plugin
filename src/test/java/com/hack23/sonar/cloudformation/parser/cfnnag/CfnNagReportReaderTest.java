@@ -36,7 +36,7 @@ public class CfnNagReportReaderTest extends Assert {
 	public void readReportTest() {
 		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(CfnNagReportReaderTest.class.getResourceAsStream("/aws-cross-account-manager-master.yml.nag"));
 		assertNotNull(cfnNagReport);
-		assertEquals(1,cfnNagReport.getFailure_count());
+		assertEquals(1,cfnNagReport.getFailureCount());
 		assertEquals(5,cfnNagReport.getViolations().size());
 		final CfnNagViolation nagViolation = cfnNagReport.getViolations().get(0);
 		assertEquals("W12",nagViolation.getId());
@@ -53,7 +53,7 @@ public class CfnNagReportReaderTest extends Assert {
 	public void readReportFailureTest() {
 		final CfnNagReport cfnNagReport = new CfnNagReportReader().readReport(new ByteArrayInputStream("".getBytes()));
 		assertNotNull(cfnNagReport);
-		assertEquals(0,cfnNagReport.getFailure_count());
+		assertEquals(0,cfnNagReport.getFailureCount());
 		assertEquals(0,cfnNagReport.getViolations().size());
 	}
 

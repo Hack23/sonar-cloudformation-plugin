@@ -27,13 +27,15 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CfnNagReport.
  */
 public final class CfnNagReport {
 
 	/** The failure count. */
-	private int failure_count;
+	private int failureCount;
 	
 	/** The violations. */
 	private List<CfnNagViolation> violations = new ArrayList<>();
@@ -43,17 +45,18 @@ public final class CfnNagReport {
 	 *
 	 * @return the failure count
 	 */
-	public int getFailure_count() {
-		return failure_count;
+	@JsonProperty("failure_count")
+	public int getFailureCount() {
+		return failureCount;
 	}
 
 	/**
 	 * Sets the failure count.
 	 *
-	 * @param failure_count the new failure count
+	 * @param failureCount the new failure count
 	 */
-	public void setFailure_count(final int failure_count) {
-		this.failure_count = failure_count;
+	public void setFailureCount(final int failureCount) {
+		this.failureCount = failureCount;
 	}
 
 	/**
@@ -75,16 +78,32 @@ public final class CfnNagReport {
 	}
 
 
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
+	/**
+	 * Equals.
+	 *
+	 * @param object the object
+	 * @return true, if successful
+	 */
 	@Override
     public boolean equals(final Object object) {
     	return EqualsBuilder.reflectionEquals(this,object);
     }
 
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
 	@Override
 	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this);
