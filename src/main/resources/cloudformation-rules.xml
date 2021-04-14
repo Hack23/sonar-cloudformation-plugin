@@ -2289,6 +2289,7 @@
 		<tag>security</tag>
 		<tag>cfn-nag</tag>
 		<tag>cweid-770</tag>
+		<tag>800-53-sc-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
@@ -2590,6 +2591,175 @@
 		<tag>owasp-a6</tag>
 		<tag>cweid-311</tag>
 		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W83</key>
+		<name>DynamoDB Accelerator (DAX) Cluster should have encryption enabled</name>
+		<internalKey>W83</internalKey>
+		<description>DynamoDB Accelerator (DAX) Cluster should have encryption enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W84</key>
+		<name>CloudWatchLogs LogGroup should specify a KMS Key Id to encrypt the log data</name>
+		<internalKey>W84</internalKey>
+		<description>CloudWatchLogs LogGroup should specify a KMS Key Id to encrypt the log data</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W85</key>
+		<name>ElasticsearchcDomain should have NodeToNodeEncryptionOptions enabled</name>
+		<internalKey>W85</internalKey>
+		<description>ElasticsearchcDomain should have NodeToNodeEncryptionOptions enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W86</key>
+		<name>CloudWatchLogs LogGroup should specify RetentionInDays to expire the log data</name>
+		<internalKey>W86</internalKey>
+		<description>CloudWatchLogs LogGroup should specify RetentionInDays to expire the log data</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-779</tag>
+		<tag>800-53-au-11</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W87</key>
+		<name>ApiGateway Deployment should have cache data encryption enabled when caching is enabled</name>
+		<internalKey>W87</internalKey>
+		<description>ApiGateway Deployment should have cache data encryption enabled when caching is enabled</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W88</key>
+		<name>Kinesis Firehose DeliveryStream of type DirectPut should specify SSE</name>
+		<internalKey>W88</internalKey>
+		<description>Kinesis Firehose DeliveryStream of type DirectPut should specify SSE</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W89</key>
+		<name>Lambda functions should be deployed inside a VPC, miss VpcConfig property</name>
+		<internalKey>W89</internalKey>
+		<description>Lambda functions should be deployed inside a VPC, miss VpcConfig property</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-200</tag>
+		<tag>800-53-sc-7</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W90</key>
+		<name>ElasticsearchcDomain should be inside vpc, should specify VPCOptions</name>
+		<internalKey>W90</internalKey>
+		<description>ElasticsearchcDomain should be inside vpc, should specify VPCOptions</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-200</tag>
+		<tag>800-53-sc-7</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W91</key>
+		<name>Database Migration Service replication instances are public, property PubliclyAccessible should be set to false</name>
+		<internalKey>W91</internalKey>
+		<description>Database Migration Service replication instances are public, property PubliclyAccessible should be set to false</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-200</tag>
+		<tag>800-53-sc-7</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+     </rule>
+	<rule>
+		<key>W92</key>
+		<name>Lambda functions should define ReservedConcurrentExecutions to reserve simultaneous executions</name>
+		<internalKey>W92</internalKey>
+		<description>Lambda functions should define ReservedConcurrentExecutions to reserve simultaneous executions</description>
+		<severity>BLOCKER</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>cfn-nag</tag>
+		<tag>cweid-770</tag>
+		<tag>800-53-sc-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>
