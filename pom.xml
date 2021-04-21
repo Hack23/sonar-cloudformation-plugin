@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.sonarsource.parent</groupId>
     <artifactId>parent</artifactId>
-    <version>57.0.19</version>
+    <version>58.0.22</version>
   </parent>
   <groupId>com.hack23.sonar</groupId>
   <artifactId>sonar-cloudformation-plugin</artifactId>
