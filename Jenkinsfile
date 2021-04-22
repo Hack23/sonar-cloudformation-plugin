@@ -42,14 +42,14 @@ pipeline {
 	    	}
 
 	      steps {
-	         sh "mvn org.owasp:dependency-check-maven:check -Dformat=ALL -DsuppressionFile=src/config/suppressions.xml"
+	         sh "mvn org.owasp:dependency-check-maven:check -Dformat=ALL -DsuppressionFile=src/config/suppressions.xml  -DfailOnError=false"
 	      }
 	   }
 
 
 	   stage('Dependency Update Check') {
 	      steps {
-	         sh "mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:dependency-updates-report -DdependencyUpdatesReportFormats=html,xml -DfailOnError=false"
+	         sh "mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:dependency-updates-report -DdependencyUpdatesReportFormats=html,xml"
 	      }
 	   }
 
