@@ -49,7 +49,7 @@ pipeline {
 
 	   stage('Dependency Update Check') {
 	      steps {
-	         sh "mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:dependency-updates-report -DdependencyUpdatesReportFormats=html,xml"
+	         sh "mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:dependency-updates-report -DdependencyUpdatesReportFormats=html,xml -DfailOnError=false"
 	      }
 	   }
 
