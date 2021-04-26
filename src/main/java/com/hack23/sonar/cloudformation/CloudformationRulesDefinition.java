@@ -39,7 +39,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 
 	/** The Constant PATH_TO_RULES_XML. */
 	private static final String PATH_TO_RULES_XML = "/cloudformation-rules.xml";
-	
+
 	/** The Constant PATH_TO_CHECKOV_RULES_XML. */
 	private static final String PATH_TO_CHECKOV_RULES_XML = "/cloudformation-checkov-rules.xml";
 
@@ -50,8 +50,14 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	/** The Constant NAME. */
 	public static final String NAME = "repository";
 
+	/** The context. */
 	private Context context;
 
+	/**
+	 * Gets the context.
+	 *
+	 * @return the context
+	 */
 	public Context getContext() {
 		return context;
 	}
@@ -69,7 +75,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
 
 		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_RULES_XML));
-		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_RULES_XML));		
+		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_RULES_XML));
 		repository.done();
 
 	}

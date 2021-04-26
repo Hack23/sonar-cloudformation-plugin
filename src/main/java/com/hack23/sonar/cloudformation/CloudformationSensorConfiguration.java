@@ -42,12 +42,22 @@ public final class CloudformationSensorConfiguration {
 		this.configuration = configuration;
 	}
 
+	/**
+	 * Gets the cfn nag report files.
+	 *
+	 * @return the cfn nag report files
+	 */
 	public Optional<String> getCfnNagReportFiles() {
 		return this.configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);
 	}
 
+	/**
+	 * Gets the checkov report files.
+	 *
+	 * @return the checkov report files
+	 */
 	public Optional<String> getCheckovReportFiles() {
 		return this.configuration.get(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);
 	}
-	
+
 }

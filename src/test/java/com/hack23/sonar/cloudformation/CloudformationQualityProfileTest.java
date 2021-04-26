@@ -35,12 +35,12 @@ public class CloudformationQualityProfileTest extends Assert {
 	@Test
 	public void defineTest() {
 		final Context context = new Context();
-		CloudformationRulesDefinition cloudformationRulesDefinition = new CloudformationRulesDefinition();
-		org.sonar.api.server.rule.RulesDefinition.Context context2 = new org.sonar.api.server.rule.RulesDefinition.Context(); 
+		final CloudformationRulesDefinition cloudformationRulesDefinition = new CloudformationRulesDefinition();
+		final org.sonar.api.server.rule.RulesDefinition.Context context2 = new org.sonar.api.server.rule.RulesDefinition.Context();
 		cloudformationRulesDefinition.define(context2);
 		new CloudformationQualityProfile(cloudformationRulesDefinition).define(context);
-		
-		
+
+
 		{
 		final BuiltInQualityProfile qualityProfile = context.profile("yaml","Cloudformation Rules");
 		assertNotNull(qualityProfile);
@@ -53,8 +53,8 @@ public class CloudformationQualityProfileTest extends Assert {
 		assertFalse(qualityProfile.isDefault());
 		assertEquals(629,qualityProfile.rules().size());
 		}
-				
-		
+
+
 		{
 		final BuiltInQualityProfile qualityProfile = context.profile("json","Cloudformation Rules");
 		assertNotNull(qualityProfile);

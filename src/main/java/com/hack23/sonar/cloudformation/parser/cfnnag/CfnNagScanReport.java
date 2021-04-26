@@ -24,6 +24,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class CfnNagScanReport.
  */
@@ -31,7 +32,7 @@ public final class CfnNagScanReport {
 
 	/** The filename. */
 	private String filename;
-	
+
 	/** The file results. */
 	private CfnNagReport file_results;
 
@@ -43,7 +44,7 @@ public final class CfnNagScanReport {
 	public String getFilename() {
 		return filename;
 	}
-	
+
 	/**
 	 * Sets the filename.
 	 *
@@ -52,7 +53,7 @@ public final class CfnNagScanReport {
 	public void setFilename(final String filename) {
 		this.filename = filename;
 	}
-	
+
 	/**
 	 * Gets the file results.
 	 *
@@ -61,7 +62,7 @@ public final class CfnNagScanReport {
 	public CfnNagReport getFile_results() {
 		return file_results;
 	}
-	
+
 	/**
 	 * Sets the file results.
 	 *
@@ -70,17 +71,33 @@ public final class CfnNagScanReport {
 	public void setFile_results(final CfnNagReport file_results) {
 		this.file_results = file_results;
 	}
-	
+
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
+	/**
+	 * Equals.
+	 *
+	 * @param object the object
+	 * @return true, if successful
+	 */
 	@Override
     public boolean equals(final Object object) {
     	return EqualsBuilder.reflectionEquals(this,object);
     }
 
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
 	@Override
 	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this);

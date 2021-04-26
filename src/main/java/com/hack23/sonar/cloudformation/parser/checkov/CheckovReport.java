@@ -31,15 +31,15 @@ public final class CheckovReport {
 
 	/** The check type. */
 	private String check_type;
-		
+
 	/** The summary. */
 	private CheckovSummary summary;
-	
+
 	/** The results. */
 	private CheckovResults results;
 
-	
-	
+
+
 	/**
 	 * Gets the check type.
 	 *
@@ -54,7 +54,7 @@ public final class CheckovReport {
 	 *
 	 * @param check_type the new check type
 	 */
-	public void setCheck_type(String check_type) {
+	public void setCheck_type(final String check_type) {
 		this.check_type = check_type;
 	}
 
@@ -72,7 +72,7 @@ public final class CheckovReport {
 	 *
 	 * @param summary the new summary
 	 */
-	public void setSummary(CheckovSummary summary) {
+	public void setSummary(final CheckovSummary summary) {
 		this.summary = summary;
 	}
 
@@ -90,7 +90,7 @@ public final class CheckovReport {
 	 *
 	 * @param results the new results
 	 */
-	public void setResults(CheckovResults results) {
+	public void setResults(final CheckovResults results) {
 		this.results = results;
 	}
 

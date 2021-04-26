@@ -27,6 +27,7 @@ import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class CfnNagReportReader.
  */

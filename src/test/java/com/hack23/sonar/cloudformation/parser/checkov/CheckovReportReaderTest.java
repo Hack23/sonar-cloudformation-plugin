@@ -27,7 +27,7 @@ import org.junit.Test;
 public class CheckovReportReaderTest extends Assert {
 
 
-	
+
 	/**
 	 * Read report test.
 	 */

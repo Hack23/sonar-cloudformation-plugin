@@ -33,50 +33,50 @@ public final class CheckovPassedCheck {
 
     /** The check id. */
     private String check_id;
-    
+
     /** The check name. */
     private String check_name;
-    
+
     /** The check result. */
     private Object check_result;
-    
+
     /** The code block. */
     private List<Object>  code_block;
-    
+
     /** The file path. */
     private String file_path;
-    
+
     /** The file line range. */
     private List<Integer> file_line_range;
-    
+
     /** The resource. */
     private String resource;
-    
+
     /** The repo file path. */
     private String repo_file_path;
-    
+
 
     /** The entity tags. */
     private String entity_tags;
-    
+
     /** The caller file path. */
     private String caller_file_path;
-    
+
     /** The caller file line range. */
     private String caller_file_line_range;
 
     /** The fixed definition. */
     private String fixed_definition;
-    
+
 	/** The evaluations. */
     private Object evaluations;
-    
+
     /** The check class. */
     private String check_class;
-    
+
     /** The guideline. */
     private String guideline;
-    
+
 	/**
 	 * Gets the check id.
 	 *
@@ -91,7 +91,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param check_id the new check id
 	 */
-	public void setCheck_id(String check_id) {
+	public void setCheck_id(final String check_id) {
 		this.check_id = check_id;
 	}
 
@@ -109,7 +109,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param check_name the new check name
 	 */
-	public void setCheck_name(String check_name) {
+	public void setCheck_name(final String check_name) {
 		this.check_name = check_name;
 	}
 
@@ -127,7 +127,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param check_result the new check result
 	 */
-	public void setCheck_result(Object check_result) {
+	public void setCheck_result(final Object check_result) {
 		this.check_result = check_result;
 	}
 
@@ -145,12 +145,12 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param code_block the new code block
 	 */
-	public void setCode_block(List<Object> code_block) {
+	public void setCode_block(final List<Object> code_block) {
 		this.code_block = code_block;
 	}
 
-	
-	
+
+
 	/**
 	 * Gets the file path.
 	 *
@@ -165,7 +165,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param file_path the new file path
 	 */
-	public void setFile_path(String file_path) {
+	public void setFile_path(final String file_path) {
 		this.file_path = file_path;
 	}
 
@@ -183,7 +183,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param file_line_range the new file line range
 	 */
-	public void setFile_line_range(List<Integer> file_line_range) {
+	public void setFile_line_range(final List<Integer> file_line_range) {
 		this.file_line_range = file_line_range;
 	}
 
@@ -201,7 +201,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param resource the new resource
 	 */
-	public void setResource(String resource) {
+	public void setResource(final String resource) {
 		this.resource = resource;
 	}
 
@@ -219,7 +219,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param evaluations the new evaluations
 	 */
-	public void setEvaluations(Object evaluations) {
+	public void setEvaluations(final Object evaluations) {
 		this.evaluations = evaluations;
 	}
 
@@ -237,7 +237,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param check_class the new check class
 	 */
-	public void setCheck_class(String check_class) {
+	public void setCheck_class(final String check_class) {
 		this.check_class = check_class;
 	}
 
@@ -255,7 +255,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param guideline the new guideline
 	 */
-	public void setGuideline(String guideline) {
+	public void setGuideline(final String guideline) {
 		this.guideline = guideline;
 	}
 
@@ -273,12 +273,12 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param repo_file_path the new repo file path
 	 */
-	public void setRepo_file_path(String repo_file_path) {
+	public void setRepo_file_path(final String repo_file_path) {
 		this.repo_file_path = repo_file_path;
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Gets the entity tags.
 	 *
@@ -293,7 +293,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param entity_tags the new entity tags
 	 */
-	public void setEntity_tags(String entity_tags) {
+	public void setEntity_tags(final String entity_tags) {
 		this.entity_tags = entity_tags;
 	}
 
@@ -311,7 +311,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param caller_file_path the new caller file path
 	 */
-	public void setCaller_file_path(String caller_file_path) {
+	public void setCaller_file_path(final String caller_file_path) {
 		this.caller_file_path = caller_file_path;
 	}
 
@@ -329,7 +329,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param caller_file_line_range the new caller file line range
 	 */
-	public void setCaller_file_line_range(String caller_file_line_range) {
+	public void setCaller_file_line_range(final String caller_file_line_range) {
 		this.caller_file_line_range = caller_file_line_range;
 	}
 
@@ -347,7 +347,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param fixed_definition the new fixed definition
 	 */
-	public void setFixed_definition(String fixed_definition) {
+	public void setFixed_definition(final String fixed_definition) {
 		this.fixed_definition = fixed_definition;
 	}
 

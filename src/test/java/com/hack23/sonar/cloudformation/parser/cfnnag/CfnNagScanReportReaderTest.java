@@ -40,7 +40,7 @@ public class CfnNagScanReportReaderTest extends Assert {
 		assertNotNull(cfnNagReport);
 		assertFalse(cfnNagReport.isEmpty());
 	}
-		
+
 	/**
 	 * Read report failue test.
 	 */

@@ -28,8 +28,8 @@ public final class CloudformationConstants {
 	public static final String CFN_NAG_REPORT_FILES_PROPERTY = "sonar.cfn.nag.reportFiles";
 
 	/** The Constant CHECKOV_REPORT_FILES_PROPERTY. */
-	public static final String CHECKOV_REPORT_FILES_PROPERTY = "sonar.cfn.checkov.reportFiles";	
-	
+	public static final String CHECKOV_REPORT_FILES_PROPERTY = "sonar.cfn.checkov.reportFiles";
+
 	/**
 	 * Instantiates a new cloudformation constants.
 	 */

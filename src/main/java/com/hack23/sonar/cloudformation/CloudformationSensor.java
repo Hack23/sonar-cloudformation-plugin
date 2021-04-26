@@ -47,6 +47,9 @@ import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReportReader;
 import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReport;
 import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReportReader;
 import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagViolation;
+import com.hack23.sonar.cloudformation.parser.checkov.CheckovPassedCheck;
+import com.hack23.sonar.cloudformation.parser.checkov.CheckovReport;
+import com.hack23.sonar.cloudformation.parser.checkov.CheckovReportReader;
 
 /**
  * The Class CloudformationSensor.
@@ -64,6 +67,9 @@ public final class CloudformationSensor implements Sensor {
 
 	/** The cfn nag scan report reader. */
 	private final CfnNagScanReportReader cfnNagScanReportReader;
+
+	/** The checkov report reader. */
+	private final CheckovReportReader checkovReportReader;
 
 	/** The configuration. */
 	private final CloudformationSensorConfiguration configuration;
@@ -86,6 +92,7 @@ public final class CloudformationSensor implements Sensor {
 		super();
 		this.cfnNagReportReader = new CfnNagReportReader();
 		this.cfnNagScanReportReader = new CfnNagScanReportReader();
+		this.checkovReportReader = new CheckovReportReader();
 		this.configuration = configuration;
 		this.fileSystem = fileSystem;
 		this.pathResolver = pathResolver;
@@ -113,8 +120,8 @@ public final class CloudformationSensor implements Sensor {
 		profiler.startInfo("Process iac reports");
 
 		try {
-			processCfnNagReport(context);									
-			processCheckovReport(context);												
+			processCfnNagReport(context);
+			processCheckovReport(context);
 		} catch (final IOException e) {
 			throw new RuntimeException("Can not process iac reports.", e);
 		} finally {
@@ -122,6 +129,13 @@ public final class CloudformationSensor implements Sensor {
 		}
 	}
 
+	/**
+	 * Process checkov report.
+	 *
+	 * @param context the context
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws FileNotFoundException the file not found exception
+	 */
 	private void processCheckovReport(final SensorContext context) throws IOException, FileNotFoundException {
 		final Optional<String> reportFilesProperty = configuration.getCheckovReportFiles();
 
@@ -140,10 +154,17 @@ public final class CloudformationSensor implements Sensor {
 				}
 			}
 		} else {
-			LOGGER.warn("Missing property:{}",CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);
+			LOGGER.warn("Missing property:{}", CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);
 		}
 	}
 
+	/**
+	 * Process cfn nag report.
+	 *
+	 * @param context the context
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws FileNotFoundException the file not found exception
+	 */
 	private void processCfnNagReport(final SensorContext context) throws IOException, FileNotFoundException {
 		final Optional<String> reportFilesProperty = configuration.getCfnNagReportFiles();
 
@@ -155,7 +176,9 @@ public final class CloudformationSensor implements Sensor {
 
 			for (final String report : reportFiles) {
 				LOGGER.info("Processing cfn-nag :" + report);
-				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists() && !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),StandardCharsets.UTF_8).contains("filename")) {
+				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()
+						&& !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),
+								StandardCharsets.UTF_8).contains("filename")) {
 
 					handleCfnNagReports(context, report);
 				} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {
@@ -166,7 +189,7 @@ public final class CloudformationSensor implements Sensor {
 				}
 			}
 		} else {
-			LOGGER.warn("Missing property:{}",CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);
+			LOGGER.warn("Missing property:{}", CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);
 		}
 	}
 
@@ -178,9 +201,10 @@ public final class CloudformationSensor implements Sensor {
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
-		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag","");
+		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag",
+				"");
 
-		final InputFile templateInputFile = findTemplate(templateName,report.replace(".nag",""));
+		final InputFile templateInputFile = findTemplate(templateName, report.replace(".nag", ""));
 
 		final CfnNagReport cfnNagReport = cfnNagReportReader
 				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
@@ -201,17 +225,17 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
 			throws FileNotFoundException {
-		LOGGER.info("Reading cfn-nag reports:{}",  report);
+		LOGGER.info("Reading cfn-nag reports:{}", report);
 		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader
 				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 
 		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
 
 			final String filename = nagScanReport.getFilename();
-			LOGGER.info("Reading cfn-nag report:{}",  filename);
+			LOGGER.info("Reading cfn-nag report:{}", filename);
 
 			final InputFile templateInputFile = findTemplate(
-					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()),filename);
+					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
 
 			final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
 			for (final CfnNagViolation cfnNagViolation : violations) {
@@ -220,40 +244,71 @@ public final class CloudformationSensor implements Sensor {
 		}
 	}
 
-	private void handleCheckovReports(final SensorContext context, final String report)
-			throws FileNotFoundException {
-		LOGGER.info("Reading checkov reports:{}",  report);
-		
-		
-//		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader
-//				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
-//
-//		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
-//
-//			final String filename = nagScanReport.getFilename();
-//			LOGGER.info("Reading cfn-nag report:{}",  filename);
-//
-//			final InputFile templateInputFile = findTemplate(
-//					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()),filename);
-//
-//			final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
-//			for (final CfnNagViolation cfnNagViolation : violations) {
-//				addIssue(context, cfnNagViolation, templateInputFile);
-//			}
-//		}
+	/**
+	 * Handle checkov reports.
+	 *
+	 * @param context the context
+	 * @param report the report
+	 * @throws FileNotFoundException the file not found exception
+	 */
+	private void handleCheckovReports(final SensorContext context, final String report) throws FileNotFoundException {
+		LOGGER.info("Reading checkov reports:{}", report);
+
+		final CheckovReport checkovReport = checkovReportReader
+				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+
+		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailed_checks()) {
+
+			final String filename = failedChecks.getFile_path();
+
+			final InputFile templateInputFile = findTemplate(
+					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
+
+			addCheckovIssue(context, checkovReport, failedChecks, templateInputFile);
+		}
+	}
+
+	/**
+	 * Adds the checkov issue.
+	 *
+	 * @param context the context
+	 * @param checkovReport the checkov report
+	 * @param failedChecks the failed checks
+	 * @param templateInputFile the template input file
+	 */
+	private void addCheckovIssue(final SensorContext context, final CheckovReport checkovReport, final CheckovPassedCheck failedChecks,
+			final InputFile templateInputFile) {
+		if (templateInputFile != null) {
+
+			final List<Integer> line_numbers = failedChecks.getFile_line_range();
+			for (final Integer line : line_numbers) {
+				context.newIssue()
+						.forRule(RuleKey.of("cfn-" + templateInputFile.language(),
+								checkovReport.getCheck_type() + "-" + failedChecks.getCheck_id()))
+						.at(new DefaultIssueLocation().on(templateInputFile).message(failedChecks.getCheck_name())
+								.at(templateInputFile.selectLine(line)))
+						.save();
+			}
+		} else {
+			context.newIssue()
+					.forRule(RuleKey.of("cfn-" + "yaml",
+							checkovReport.getCheck_type() + "-" + failedChecks.getCheck_id()))
+					.at(new DefaultIssueLocation().on(context.project()).message(failedChecks.getCheck_name())).save();
+		}
 	}
 
 	/**
 	 * Find template.
 	 *
 	 * @param templateName the template name
+	 * @param filepath the filepath
 	 * @return the input file
 	 */
 	private InputFile findTemplate(final String templateName, final String filepath) {
 		final List<InputFile> potentialReportTargets = new ArrayList<>();
 		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);
 		final String filterPath = filterPath(filepath);
-		LOGGER.info("Looking for cloudformation template matching filename:{} , path: {}",  templateName,filterPath);
+		LOGGER.info("Looking for cloudformation template matching filename:{} , path: {}", templateName, filterPath);
 
 		for (final InputFile inputFile : potentialReportTargets) {
 			if (templateName.equals(inputFile.filename()) && inputFile.uri().toString().contains(filterPath)) {
@@ -266,8 +321,14 @@ public final class CloudformationSensor implements Sensor {
 		return null;
 	}
 
+	/**
+	 * Filter path.
+	 *
+	 * @param filepath the filepath
+	 * @return the string
+	 */
 	private static String filterPath(final String filepath) {
-		return filepath.replace("." + File.separator,"").replace(".."+ File.separator,"");
+		return filepath.replace("." + File.separator, "").replace(".." + File.separator, "");
 	}
 
 	/**
@@ -279,44 +340,50 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
 			final InputFile templateInputFile) {
-			if (templateInputFile != null) {
+		if (templateInputFile != null) {
 
-				if (violation.getLine_numbers().isEmpty()) {
-					context.newIssue().forRule(RuleKey.of("cfn-"+templateInputFile.language(), findRuleId(violation)))
-							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
-							.save();
-				} else {
-					final List<Integer> line_numbers = violation.getLine_numbers();
-					for (final Integer line : line_numbers) {
-						if (line != null && line >= 0) {
-							context.newIssue()
-									.forRule(RuleKey.of("cfn-"+templateInputFile.language(), findRuleId(violation)))
-									.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
-											.at(templateInputFile.selectLine(line)))
-									.save();
-						} else {
-							context.newIssue().forRule(RuleKey.of("cfn-"+templateInputFile.language(), findRuleId(violation)))
-							.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
-							.save();
-						}
+			if (violation.getLine_numbers().isEmpty()) {
+				context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(violation)))
+						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();
+			} else {
+				final List<Integer> line_numbers = violation.getLine_numbers();
+				for (final Integer line : line_numbers) {
+					if (line != null && line >= 0) {
+						context.newIssue()
+								.forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(violation)))
+								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
+										.at(templateInputFile.selectLine(line)))
+								.save();
+					} else {
+						context.newIssue()
+								.forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(violation)))
+								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
+								.save();
 					}
 				}
-			} else {
-				context.newIssue().forRule(RuleKey.of("cfn-"+"yaml", findRuleId(violation)))
-						.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
 			}
+		} else {
+			context.newIssue().forRule(RuleKey.of("cfn-" + "yaml", findRuleId(violation)))
+					.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
 		}
+	}
 
+	/**
+	 * Find rule id.
+	 *
+	 * @param violation the violation
+	 * @return the string
+	 */
 	private static String findRuleId(final CfnNagViolation violation) {
 		if (CloudformationQualityProfile.hasRule(violation.getId())) {
-			return violation.getId();		
+			return violation.getId();
 		} else {
 			if (violation.getId().startsWith("W")) {
 				return CloudformationQualityProfile.UNDEFINED_WARNING;
 			} else {
 				return CloudformationQualityProfile.UNDEFINED_FAILURE;
 			}
-	    } 
+		}
 	}
-	
+
 }

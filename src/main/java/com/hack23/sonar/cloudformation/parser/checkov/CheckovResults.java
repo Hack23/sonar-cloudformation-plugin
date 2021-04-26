@@ -33,16 +33,16 @@ public final class CheckovResults {
 
 	/** The passed checks. */
 	private List<CheckovPassedCheck> passed_checks;
-	
+
 	/** The failed checks. */
-	private List<CheckovPassedCheck> failed_checks;		
-    
+	private List<CheckovPassedCheck> failed_checks;
+
     /** The skipped checks. */
     private List<String> skipped_checks;
-    
+
     /** The parsing errors. */
     private List<String> parsing_errors;
-    
+
 	/**
 	 * Gets the passed checks.
 	 *
@@ -57,10 +57,10 @@ public final class CheckovResults {
 	 *
 	 * @param passed_checks the new passed checks
 	 */
-	public void setPassed_checks(List<CheckovPassedCheck> passed_checks) {
+	public void setPassed_checks(final List<CheckovPassedCheck> passed_checks) {
 		this.passed_checks = passed_checks;
 	}
-	
+
 	/**
 	 * Gets the failed checks.
 	 *
@@ -75,7 +75,7 @@ public final class CheckovResults {
 	 *
 	 * @param failed_checks the new failed checks
 	 */
-	public void setFailed_checks(List<CheckovPassedCheck> failed_checks) {
+	public void setFailed_checks(final List<CheckovPassedCheck> failed_checks) {
 		this.failed_checks = failed_checks;
 	}
 
@@ -93,7 +93,7 @@ public final class CheckovResults {
 	 *
 	 * @param skipped_checks the new skipped checks
 	 */
-	public void setSkipped_checks(List<String> skipped_checks) {
+	public void setSkipped_checks(final List<String> skipped_checks) {
 		this.skipped_checks = skipped_checks;
 	}
 
@@ -111,7 +111,7 @@ public final class CheckovResults {
 	 *
 	 * @param parsing_errors the new parsing errors
 	 */
-	public void setParsing_errors(List<String> parsing_errors) {
+	public void setParsing_errors(final List<String> parsing_errors) {
 		this.parsing_errors = parsing_errors;
 	}
 

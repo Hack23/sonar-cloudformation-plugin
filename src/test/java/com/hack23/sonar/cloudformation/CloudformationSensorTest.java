@@ -57,7 +57,7 @@ public class CloudformationSensorTest extends Assert {
 
 	/**
 	 * Execute simple nag report test.
-	 * 
+	 *
 	 * @throws IOException
 	 */
 	@Test
@@ -74,7 +74,7 @@ public class CloudformationSensorTest extends Assert {
 
 		final DefaultInputFile inputFile = new TestInputFileBuilder("key",
 				"src/test/resources/aws-cross-account-manager-master.yml")
-						.setLanguage("java")
+						.setLanguage("yaml")
 						.initMetadata(new String(Files.readAllBytes(
 								FileSystems.getDefault().getPath("src/test/resources/aws-cross-account-manager-master.yml"))))
 						.setCharset(StandardCharsets.UTF_8).build();
@@ -88,6 +88,56 @@ public class CloudformationSensorTest extends Assert {
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
 		cloudformationSensor.execute(sensorContext);
 	}
+
+	@Test
+	public void executeSimpleCheckovReportTest() throws IOException {
+		final Configuration configuration = mock(Configuration.class);
+		when(configuration.get(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY))
+				.thenReturn(Optional.of("src/test/resources/checkov/cia-dist-cloudformation.checkov-report"));
+
+		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
+				configuration);
+
+		final DefaultFileSystem fileSystem = new DefaultFileSystem(
+				FileSystems.getDefault().getPath(".").toAbsolutePath());
+
+		final DefaultInputFile inputFile = new TestInputFileBuilder("key",
+				"src/test/resources/checkov/cia-dist-cloudformation.json")
+						.setLanguage("json")
+						.initMetadata(new String(Files.readAllBytes(
+								FileSystems.getDefault().getPath("src/test/resources/checkov/cia-dist-cloudformation.json"))))
+						.setCharset(StandardCharsets.UTF_8).build();
+		fileSystem.add(inputFile);
+
+		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
+				fileSystem, new PathResolver());
+
+		final SensorContext sensorContext = SensorContextTester
+				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
+		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
+		cloudformationSensor.execute(sensorContext);
+	}
+
+	@Test
+	public void executeSimpleCheckovReportFoundNoTemplateTest() throws IOException {
+		final Configuration configuration = mock(Configuration.class);
+		when(configuration.get(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY))
+				.thenReturn(Optional.of("src/test/resources/checkov/cia-dist-cloudformation.checkov-report"));
+
+		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
+				configuration);
+
+		final DefaultFileSystem fileSystem = new DefaultFileSystem(
+				FileSystems.getDefault().getPath(".").toAbsolutePath());
+
+		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
+				fileSystem, new PathResolver());
+
+		final SensorContext sensorContext = SensorContextTester
+				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
+		cloudformationSensor.execute(sensorContext);
+	}
+
 
 	/**
 	 * Execute simple nag report missing template test.
@@ -116,7 +166,7 @@ public class CloudformationSensorTest extends Assert {
 
 	/**
 	 * Execute simple nag scan report test.
-	 * 
+	 *
 	 * @throws IOException
 	 */
 	@Test
@@ -132,7 +182,7 @@ public class CloudformationSensorTest extends Assert {
 				FileSystems.getDefault().getPath(".").toAbsolutePath());
 
 		final DefaultInputFile inputFile = new TestInputFileBuilder("key", "src/test/resources/CloudTrailAllAccounts.yml")
-				.setLanguage("java")
+				.setLanguage("yaml")
 				.initMetadata(new String(Files.readAllBytes(
 						FileSystems.getDefault().getPath("src/test/resources/CloudTrailAllAccounts.yml"))))
 				.setCharset(StandardCharsets.UTF_8).build();
@@ -197,8 +247,8 @@ public class CloudformationSensorTest extends Assert {
 		cloudformationSensor.execute(sensorContext);
 	}
 
-	
-	
+
+
 	/**
 	 * Execute missing property test.
 	 *
@@ -224,7 +274,7 @@ public class CloudformationSensorTest extends Assert {
 		cloudformationSensor.execute(sensorContext);
 	}
 
-	
+
 	/**
 	 * Execute mixed file report test.
 	 *
@@ -243,7 +293,7 @@ public class CloudformationSensorTest extends Assert {
 				FileSystems.getDefault().getPath(".").toAbsolutePath());
 
 		final DefaultInputFile inputFile = new TestInputFileBuilder("key", "src/test/resources/CloudTrailAllAccounts.yml")
-				.setLanguage("java")
+				.setLanguage("yaml")
 				.initMetadata(new String(Files.readAllBytes(
 						FileSystems.getDefault().getPath("src/test/resources/CloudTrailAllAccounts.yml"))))
 				.setCharset(StandardCharsets.UTF_8).build();
@@ -251,12 +301,12 @@ public class CloudformationSensorTest extends Assert {
 
 		final DefaultInputFile inputFile2 = new TestInputFileBuilder("key",
 				"src/test/resources/aws-cross-account-manager-master.yml")
-						.setLanguage("java")
+						.setLanguage("yaml")
 						.initMetadata(new String(Files.readAllBytes(
 								FileSystems.getDefault().getPath("src/test/resources/aws-cross-account-manager-master.yml"))))
 						.setCharset(StandardCharsets.UTF_8).build();
 		fileSystem.add(inputFile2);
-		
+
 		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
 				fileSystem, new PathResolver());
 
@@ -281,7 +331,7 @@ public class CloudformationSensorTest extends Assert {
 				FileSystems.getDefault().getPath(".").toAbsolutePath());
 
 		final DefaultInputFile inputFile = new TestInputFileBuilder("key", "src/test/resources/CloudTrailAllAccounts.yml")
-				.setLanguage("java")
+				.setLanguage("yaml")
 				.initMetadata(new String(Files.readAllBytes(
 						FileSystems.getDefault().getPath("src/test/resources/CloudTrailAllAccounts.yml"))))
 				.setCharset(StandardCharsets.UTF_8).build();
@@ -289,12 +339,12 @@ public class CloudformationSensorTest extends Assert {
 
 		final DefaultInputFile inputFile2 = new TestInputFileBuilder("key",
 				"src/test/resources/aws-cross-account-manager-master.yml")
-						.setLanguage("java")
+						.setLanguage("yaml")
 						.initMetadata(new String(Files.readAllBytes(
 								FileSystems.getDefault().getPath("src/test/resources/aws-cross-account-manager-master.yml"))))
 						.setCharset(StandardCharsets.UTF_8).build();
 		fileSystem.add(inputFile2);
-		
+
 		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
 				fileSystem, new PathResolver());
 
@@ -318,7 +368,7 @@ public class CloudformationSensorTest extends Assert {
 				FileSystems.getDefault().getPath(".").toAbsolutePath());
 
 		final DefaultInputFile inputFile = new TestInputFileBuilder("key", "src/test/resources/CloudTrailAllAccounts.yml")
-				.setLanguage("java")
+				.setLanguage("yaml")
 				.initMetadata(new String(Files.readAllBytes(
 						FileSystems.getDefault().getPath("src/test/resources/CloudTrailAllAccounts.yml"))))
 				.setCharset(StandardCharsets.UTF_8).build();
@@ -326,12 +376,12 @@ public class CloudformationSensorTest extends Assert {
 
 		final DefaultInputFile inputFile2 = new TestInputFileBuilder("key",
 				"src/test/resources/aws-cross-account-manager-master.yml")
-						.setLanguage("java")
+						.setLanguage("yaml")
 						.initMetadata(new String(Files.readAllBytes(
 								FileSystems.getDefault().getPath("src/test/resources/aws-cross-account-manager-master.yml"))))
 						.setCharset(StandardCharsets.UTF_8).build();
 		fileSystem.add(inputFile2);
-		
+
 		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
 				fileSystem, new PathResolver());
 

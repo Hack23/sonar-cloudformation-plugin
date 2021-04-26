@@ -29,6 +29,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class CfnNagReport.
  */
@@ -36,7 +37,7 @@ public final class CfnNagReport {
 
 	/** The failure count. */
 	private int failureCount;
-	
+
 	/** The violations. */
 	private List<CfnNagViolation> violations = new ArrayList<>();
 

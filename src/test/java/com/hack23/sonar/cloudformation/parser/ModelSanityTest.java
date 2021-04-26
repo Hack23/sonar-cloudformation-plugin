@@ -50,7 +50,7 @@ public final class ModelSanityTest extends Assert {
 	/** The Constant EXPECT_CLASSES_IN_PACKAGE. */
 	private static final String EXPECT_CLASSES_IN_PACKAGE = "Expect classes in package";
 
-	
+
 	@Test
 	public void modelTest() {
 
@@ -73,6 +73,7 @@ public final class ModelSanityTest extends Assert {
 	}
 
 	private static class FilterTestClasses implements PojoClassFilter {
+		@Override
 		public boolean include(final PojoClass pojoClass) {
 			return !(pojoClass.getSourcePath().contains("/test-classes/")
 					|| pojoClass.getClazz().getName().contains("_") || pojoClass.isEnum() || pojoClass.isAbstract())
@@ -81,6 +82,7 @@ public final class ModelSanityTest extends Assert {
 	}
 
 	private static class InvokeToStringTester implements Tester {
+		@Override
 		public void run(final PojoClass pojoClass) {
 			final Object instance = RandomFactory.getRandomValue(pojoClass.getClazz());
 			Affirm.affirmNotNull("toStringFailure", instance.toString());
@@ -91,6 +93,7 @@ public final class ModelSanityTest extends Assert {
 	 * The Class InvokeHashcodeTester.
 	 */
 	private static class InvokeHashcodeTester implements Tester {
+		@Override
 		public void run(final PojoClass pojoClass) {
 			final Object instance = RandomFactory.getRandomValue(pojoClass.getClazz());
 			Affirm.affirmFalse("hashCodeFailure", 0 == instance.hashCode());
@@ -101,13 +104,14 @@ public final class ModelSanityTest extends Assert {
 	 * The Class DummyEqualsTester.
 	 */
 	private static class DummyEqualsTester implements Tester {
+		@Override
 		public void run(final PojoClass pojoClass) {
 			final Object instance = randomValues(pojoClass);
 
 			Affirm.affirmFalse("EqualsCompareNullFailure", instance.equals(null));
 			Affirm.affirmFalse("EqualsCompareWrongClassFailure", instance.equals("WrongClass"));
-			Affirm.affirmTrue("EqualsCompareSelfFailure", instance.equals(instance));			
-			
+			Affirm.affirmTrue("EqualsCompareSelfFailure", instance.equals(instance));
+
 			final Object instance2 = randomValues(pojoClass);
 
 			instance.equals(instance2);

@@ -27,6 +27,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class CfnNagViolation.
  */
@@ -34,16 +35,16 @@ public final class CfnNagViolation {
 
 	/** The id. */
 	private String id;
-	
+
 	/** The type. */
 	private String type;
-	
+
 	/** The message. */
 	private String message;
-	
+
 	/** The logical resource ids. */
 	private List<String> logical_resource_ids = new ArrayList<>();
-	
+
 	/** The line numbers. */
 	private List<Integer> line_numbers = new ArrayList<>();
 
@@ -119,7 +120,7 @@ public final class CfnNagViolation {
 	public void setLogical_resource_ids(final List<String> logical_resource_ids) {
 		this.logical_resource_ids = new ArrayList<>(logical_resource_ids);
 	}
-	
+
 	/**
 	 * Gets the line numbers.
 	 *
@@ -138,16 +139,32 @@ public final class CfnNagViolation {
 		this.line_numbers = new ArrayList<>(line_numbers);
 	}
 
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
+	/**
+	 * Equals.
+	 *
+	 * @param object the object
+	 * @return true, if successful
+	 */
 	@Override
     public boolean equals(final Object object) {
     	return EqualsBuilder.reflectionEquals(this,object);
     }
 
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
 	@Override
 	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this);

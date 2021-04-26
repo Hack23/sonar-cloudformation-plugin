@@ -33,21 +33,21 @@ public final class CheckovSummary {
 
     /** The passed. */
     private int passed;
-    
+
     /** The failed. */
     private int failed;
-    
+
     /** The skipped. */
     private int skipped;
-    
+
     /** The parsing errors. */
     private int parsingErrors;
-    
+
     /** The checkov version. */
     private String checkovVersion;
-    
 
-    
+
+
 	/**
 	 * Gets the passed.
 	 *
@@ -62,7 +62,7 @@ public final class CheckovSummary {
 	 *
 	 * @param passed the new passed
 	 */
-	public void setPassed(int passed) {
+	public void setPassed(final int passed) {
 		this.passed = passed;
 	}
 
@@ -80,7 +80,7 @@ public final class CheckovSummary {
 	 *
 	 * @param failed the new failed
 	 */
-	public void setFailed(int failed) {
+	public void setFailed(final int failed) {
 		this.failed = failed;
 	}
 
@@ -98,7 +98,7 @@ public final class CheckovSummary {
 	 *
 	 * @param skipped the new skipped
 	 */
-	public void setSkipped(int skipped) {
+	public void setSkipped(final int skipped) {
 		this.skipped = skipped;
 	}
 
@@ -117,7 +117,7 @@ public final class CheckovSummary {
 	 *
 	 * @param parsingErrors the new parsing errors
 	 */
-	public void setParsingErrors(int parsingErrors) {
+	public void setParsingErrors(final int parsingErrors) {
 		this.parsingErrors = parsingErrors;
 	}
 
@@ -136,7 +136,7 @@ public final class CheckovSummary {
 	 *
 	 * @param checkovVersion the new checkov version
 	 */
-	public void setCheckovVersion(String checkovVersion) {
+	public void setCheckovVersion(final String checkovVersion) {
 		this.checkovVersion = checkovVersion;
 	}
 

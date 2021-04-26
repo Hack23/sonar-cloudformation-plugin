@@ -35,10 +35,10 @@ public class CloudformationRulesDefinitionTest {
 	 * Define context test.
 	 */
 	@Test
-	public void defineContextTest() {		
+	public void defineContextTest() {
 
 		final CloudformationRulesDefinition ruleDefinition = new CloudformationRulesDefinition();
-		
+
 		final Context context = new Context();
 		ruleDefinition.define(context);
 
