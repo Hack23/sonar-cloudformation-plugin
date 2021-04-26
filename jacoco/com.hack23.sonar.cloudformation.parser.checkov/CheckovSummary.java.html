@@ -24,33 +24,37 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CheckovSummary.
  */
-<span class="fc" id="L30">public final class CheckovSummary {</span>
+<span class="fc" id="L32">public final class CheckovSummary {</span>
 
     /** The passed. */
     private int passed;
-    
+
     /** The failed. */
     private int failed;
-    
+
     /** The skipped. */
     private int skipped;
-    
+
     /** The parsing errors. */
-    private int parsing_errors;
-    
+    private int parsingErrors;
+
     /** The checkov version. */
-    private String checkov_version;
-    
+    private String checkovVersion;
+
+
+
 	/**
 	 * Gets the passed.
 	 *
 	 * @return the passed
 	 */
 	public int getPassed() {
-<span class="fc" id="L53">		return passed;</span>
+<span class="fc" id="L57">		return passed;</span>
 	}
 
 	/**
@@ -58,9 +62,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param passed the new passed
 	 */
-	public void setPassed(int passed) {
-<span class="fc" id="L62">		this.passed = passed;</span>
-<span class="fc" id="L63">	}</span>
+	public void setPassed(final int passed) {
+<span class="fc" id="L66">		this.passed = passed;</span>
+<span class="fc" id="L67">	}</span>
 
 	/**
 	 * Gets the failed.
@@ -68,7 +72,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the failed
 	 */
 	public int getFailed() {
-<span class="fc" id="L71">		return failed;</span>
+<span class="fc" id="L75">		return failed;</span>
 	}
 
 	/**
@@ -76,9 +80,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param failed the new failed
 	 */
-	public void setFailed(int failed) {
-<span class="fc" id="L80">		this.failed = failed;</span>
-<span class="fc" id="L81">	}</span>
+	public void setFailed(final int failed) {
+<span class="fc" id="L84">		this.failed = failed;</span>
+<span class="fc" id="L85">	}</span>
 
 	/**
 	 * Gets the skipped.
@@ -86,7 +90,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the skipped
 	 */
 	public int getSkipped() {
-<span class="fc" id="L89">		return skipped;</span>
+<span class="fc" id="L93">		return skipped;</span>
 	}
 
 	/**
@@ -94,45 +98,47 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param skipped the new skipped
 	 */
-	public void setSkipped(int skipped) {
-<span class="fc" id="L98">		this.skipped = skipped;</span>
-<span class="fc" id="L99">	}</span>
+	public void setSkipped(final int skipped) {
+<span class="fc" id="L102">		this.skipped = skipped;</span>
+<span class="fc" id="L103">	}</span>
 
 	/**
 	 * Gets the parsing errors.
 	 *
 	 * @return the parsing errors
 	 */
-	public int getParsing_errors() {
-<span class="fc" id="L107">		return parsing_errors;</span>
+	@JsonProperty(&quot;parsing_errors&quot;)
+	public int getParsingErrors() {
+<span class="fc" id="L112">		return parsingErrors;</span>
 	}
 
 	/**
 	 * Sets the parsing errors.
 	 *
-	 * @param parsing_errors the new parsing errors
+	 * @param parsingErrors the new parsing errors
 	 */
-	public void setParsing_errors(int parsing_errors) {
-<span class="fc" id="L116">		this.parsing_errors = parsing_errors;</span>
-<span class="fc" id="L117">	}</span>
+	public void setParsingErrors(final int parsingErrors) {
+<span class="fc" id="L121">		this.parsingErrors = parsingErrors;</span>
+<span class="fc" id="L122">	}</span>
 
 	/**
 	 * Gets the checkov version.
 	 *
 	 * @return the checkov version
 	 */
-	public String getCheckov_version() {
-<span class="fc" id="L125">		return checkov_version;</span>
+	@JsonProperty(&quot;checkov_version&quot;)
+	public String getCheckovVersion() {
+<span class="fc" id="L131">		return checkovVersion;</span>
 	}
 
 	/**
 	 * Sets the checkov version.
 	 *
-	 * @param checkov_version the new checkov version
+	 * @param checkovVersion the new checkov version
 	 */
-	public void setCheckov_version(String checkov_version) {
-<span class="fc" id="L134">		this.checkov_version = checkov_version;</span>
-<span class="fc" id="L135">	}</span>
+	public void setCheckovVersion(final String checkovVersion) {
+<span class="fc" id="L140">		this.checkovVersion = checkovVersion;</span>
+<span class="fc" id="L141">	}</span>
 
 	/**
 	 * To string.
@@ -141,7 +147,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public String toString() {
-<span class="fc" id="L144">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+<span class="fc" id="L150">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
 	}
 
 	/**
@@ -152,7 +158,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
     public boolean equals(final Object object) {
-<span class="fc" id="L155">    	return EqualsBuilder.reflectionEquals(this,object);</span>
+<span class="fc" id="L161">    	return EqualsBuilder.reflectionEquals(this,object);</span>
     }
 
 	/**
@@ -162,7 +168,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public int hashCode() {
-<span class="fc" id="L165">		return HashCodeBuilder.reflectionHashCode(this);</span>
+<span class="fc" id="L171">		return HashCodeBuilder.reflectionHashCode(this);</span>
 	}
 
 }

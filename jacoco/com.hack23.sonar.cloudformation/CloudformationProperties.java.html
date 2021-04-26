@@ -46,9 +46,9 @@ public final class CloudformationProperties {
 <span class="fc" id="L46">		return Arrays.asList(PropertyDefinition.builder(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)</span>
 <span class="fc" id="L47">				.subCategory(&quot;Paths&quot;).name(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)</span>
 <span class="fc" id="L48">				.description(&quot;path to the '.nag or .nagscan' files&quot;).onQualifiers(Qualifiers.PROJECT).defaultValue(&quot;&quot;)</span>
-<span class="fc" id="L49">				.build(),PropertyDefinition.builder(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)</span>
-<span class="fc" id="L50">				.subCategory(&quot;Paths&quot;).name(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY)</span>
-<span class="fc" id="L51">				.description(&quot;path to the '.nag or .nagscan' files&quot;).onQualifiers(Qualifiers.PROJECT).defaultValue(&quot;&quot;)</span>
+<span class="fc" id="L49">				.build(),PropertyDefinition.builder(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY)</span>
+<span class="fc" id="L50">				.subCategory(&quot;Paths&quot;).name(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY)</span>
+<span class="fc" id="L51">				.description(&quot;path to the 'checkov-report' files&quot;).onQualifiers(Qualifiers.PROJECT).defaultValue(&quot;&quot;)</span>
 <span class="fc" id="L52">				.build());</span>
 	}
 }

@@ -26,49 +26,64 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class CheckovPassedCheck.
  */
-<span class="fc" id="L33">public final class CheckovPassedCheck {</span>
+<span class="fc" id="L32">public final class CheckovPassedCheck {</span>
 
     /** The check id. */
     private String check_id;
-    
+
     /** The check name. */
     private String check_name;
-    
+
     /** The check result. */
     private Object check_result;
-    
+
     /** The code block. */
     private List&lt;Object&gt;  code_block;
-    
+
     /** The file path. */
     private String file_path;
-    
+
     /** The file line range. */
     private List&lt;Integer&gt; file_line_range;
-    
+
     /** The resource. */
     private String resource;
-    
-    /** The evaluations. */
+
+    /** The repo file path. */
+    private String repo_file_path;
+
+
+    /** The entity tags. */
+    private String entity_tags;
+
+    /** The caller file path. */
+    private String caller_file_path;
+
+    /** The caller file line range. */
+    private String caller_file_line_range;
+
+    /** The fixed definition. */
+    private String fixed_definition;
+
+	/** The evaluations. */
     private Object evaluations;
-    
+
     /** The check class. */
     private String check_class;
-    
+
     /** The guideline. */
     private String guideline;
-    
+
 	/**
 	 * Gets the check id.
 	 *
 	 * @return the check id
 	 */
 	public String getCheck_id() {
-<span class="fc" id="L71">		return check_id;</span>
+<span class="fc" id="L86">		return check_id;</span>
 	}
 
 	/**
@@ -76,9 +91,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param check_id the new check id
 	 */
-	public void setCheck_id(String check_id) {
-<span class="fc" id="L80">		this.check_id = check_id;</span>
-<span class="fc" id="L81">	}</span>
+	public void setCheck_id(final String check_id) {
+<span class="fc" id="L95">		this.check_id = check_id;</span>
+<span class="fc" id="L96">	}</span>
 
 	/**
 	 * Gets the check name.
@@ -86,7 +101,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the check name
 	 */
 	public String getCheck_name() {
-<span class="fc" id="L89">		return check_name;</span>
+<span class="fc" id="L104">		return check_name;</span>
 	}
 
 	/**
@@ -94,9 +109,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param check_name the new check name
 	 */
-	public void setCheck_name(String check_name) {
-<span class="fc" id="L98">		this.check_name = check_name;</span>
-<span class="fc" id="L99">	}</span>
+	public void setCheck_name(final String check_name) {
+<span class="fc" id="L113">		this.check_name = check_name;</span>
+<span class="fc" id="L114">	}</span>
 
 	/**
 	 * Gets the check result.
@@ -104,7 +119,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the check result
 	 */
 	public Object getCheck_result() {
-<span class="fc" id="L107">		return check_result;</span>
+<span class="fc" id="L122">		return check_result;</span>
 	}
 
 	/**
@@ -112,9 +127,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param check_result the new check result
 	 */
-	public void setCheck_result(Object check_result) {
-<span class="fc" id="L116">		this.check_result = check_result;</span>
-<span class="fc" id="L117">	}</span>
+	public void setCheck_result(final Object check_result) {
+<span class="fc" id="L131">		this.check_result = check_result;</span>
+<span class="fc" id="L132">	}</span>
 
 	/**
 	 * Gets the code block.
@@ -122,7 +137,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the code block
 	 */
 	public List&lt;Object&gt; getCode_block() {
-<span class="fc" id="L125">		return code_block;</span>
+<span class="fc" id="L140">		return code_block;</span>
 	}
 
 	/**
@@ -130,19 +145,19 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param code_block the new code block
 	 */
-	public void setCode_block(List&lt;Object&gt; code_block) {
-<span class="fc" id="L134">		this.code_block = code_block;</span>
-<span class="fc" id="L135">	}</span>
+	public void setCode_block(final List&lt;Object&gt; code_block) {
+<span class="fc" id="L149">		this.code_block = code_block;</span>
+<span class="fc" id="L150">	}</span>
 
-	
-	
+
+
 	/**
 	 * Gets the file path.
 	 *
 	 * @return the file path
 	 */
 	public String getFile_path() {
-<span class="fc" id="L145">		return file_path;</span>
+<span class="fc" id="L160">		return file_path;</span>
 	}
 
 	/**
@@ -150,9 +165,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param file_path the new file path
 	 */
-	public void setFile_path(String file_path) {
-<span class="fc" id="L154">		this.file_path = file_path;</span>
-<span class="fc" id="L155">	}</span>
+	public void setFile_path(final String file_path) {
+<span class="fc" id="L169">		this.file_path = file_path;</span>
+<span class="fc" id="L170">	}</span>
 
 	/**
 	 * Gets the file line range.
@@ -160,7 +175,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the file line range
 	 */
 	public List&lt;Integer&gt; getFile_line_range() {
-<span class="fc" id="L163">		return file_line_range;</span>
+<span class="fc" id="L178">		return file_line_range;</span>
 	}
 
 	/**
@@ -168,9 +183,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param file_line_range the new file line range
 	 */
-	public void setFile_line_range(List&lt;Integer&gt; file_line_range) {
-<span class="fc" id="L172">		this.file_line_range = file_line_range;</span>
-<span class="fc" id="L173">	}</span>
+	public void setFile_line_range(final List&lt;Integer&gt; file_line_range) {
+<span class="fc" id="L187">		this.file_line_range = file_line_range;</span>
+<span class="fc" id="L188">	}</span>
 
 	/**
 	 * Gets the resource.
@@ -178,7 +193,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the resource
 	 */
 	public String getResource() {
-<span class="fc" id="L181">		return resource;</span>
+<span class="fc" id="L196">		return resource;</span>
 	}
 
 	/**
@@ -186,9 +201,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param resource the new resource
 	 */
-	public void setResource(String resource) {
-<span class="fc" id="L190">		this.resource = resource;</span>
-<span class="fc" id="L191">	}</span>
+	public void setResource(final String resource) {
+<span class="fc" id="L205">		this.resource = resource;</span>
+<span class="fc" id="L206">	}</span>
 
 	/**
 	 * Gets the evaluations.
@@ -196,7 +211,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the evaluations
 	 */
 	public Object getEvaluations() {
-<span class="fc" id="L199">		return evaluations;</span>
+<span class="fc" id="L214">		return evaluations;</span>
 	}
 
 	/**
@@ -204,9 +219,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param evaluations the new evaluations
 	 */
-	public void setEvaluations(Object evaluations) {
-<span class="fc" id="L208">		this.evaluations = evaluations;</span>
-<span class="fc" id="L209">	}</span>
+	public void setEvaluations(final Object evaluations) {
+<span class="fc" id="L223">		this.evaluations = evaluations;</span>
+<span class="fc" id="L224">	}</span>
 
 	/**
 	 * Gets the check class.
@@ -214,7 +229,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the check class
 	 */
 	public String getCheck_class() {
-<span class="fc" id="L217">		return check_class;</span>
+<span class="fc" id="L232">		return check_class;</span>
 	}
 
 	/**
@@ -222,9 +237,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param check_class the new check class
 	 */
-	public void setCheck_class(String check_class) {
-<span class="fc" id="L226">		this.check_class = check_class;</span>
-<span class="fc" id="L227">	}</span>
+	public void setCheck_class(final String check_class) {
+<span class="fc" id="L241">		this.check_class = check_class;</span>
+<span class="fc" id="L242">	}</span>
 
 	/**
 	 * Gets the guideline.
@@ -232,7 +247,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the guideline
 	 */
 	public String getGuideline() {
-<span class="fc" id="L235">		return guideline;</span>
+<span class="fc" id="L250">		return guideline;</span>
 	}
 
 	/**
@@ -240,9 +255,101 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @param guideline the new guideline
 	 */
-	public void setGuideline(String guideline) {
-<span class="fc" id="L244">		this.guideline = guideline;</span>
-<span class="fc" id="L245">	}</span>
+	public void setGuideline(final String guideline) {
+<span class="fc" id="L259">		this.guideline = guideline;</span>
+<span class="fc" id="L260">	}</span>
+
+    /**
+     * Gets the repo file path.
+     *
+     * @return the repo file path
+     */
+    public String getRepo_file_path() {
+<span class="fc" id="L268">		return repo_file_path;</span>
+	}
+
+	/**
+	 * Sets the repo file path.
+	 *
+	 * @param repo_file_path the new repo file path
+	 */
+	public void setRepo_file_path(final String repo_file_path) {
+<span class="fc" id="L277">		this.repo_file_path = repo_file_path;</span>
+<span class="fc" id="L278">	}</span>
+
+
+
+	/**
+	 * Gets the entity tags.
+	 *
+	 * @return the entity tags
+	 */
+	public String getEntity_tags() {
+<span class="fc" id="L288">		return entity_tags;</span>
+	}
+
+	/**
+	 * Sets the entity tags.
+	 *
+	 * @param entity_tags the new entity tags
+	 */
+	public void setEntity_tags(final String entity_tags) {
+<span class="fc" id="L297">		this.entity_tags = entity_tags;</span>
+<span class="fc" id="L298">	}</span>
+
+	/**
+	 * Gets the caller file path.
+	 *
+	 * @return the caller file path
+	 */
+	public String getCaller_file_path() {
+<span class="fc" id="L306">		return caller_file_path;</span>
+	}
+
+	/**
+	 * Sets the caller file path.
+	 *
+	 * @param caller_file_path the new caller file path
+	 */
+	public void setCaller_file_path(final String caller_file_path) {
+<span class="fc" id="L315">		this.caller_file_path = caller_file_path;</span>
+<span class="fc" id="L316">	}</span>
+
+	/**
+	 * Gets the caller file line range.
+	 *
+	 * @return the caller file line range
+	 */
+	public String getCaller_file_line_range() {
+<span class="fc" id="L324">		return caller_file_line_range;</span>
+	}
+
+	/**
+	 * Sets the caller file line range.
+	 *
+	 * @param caller_file_line_range the new caller file line range
+	 */
+	public void setCaller_file_line_range(final String caller_file_line_range) {
+<span class="fc" id="L333">		this.caller_file_line_range = caller_file_line_range;</span>
+<span class="fc" id="L334">	}</span>
+
+	/**
+	 * Gets the fixed definition.
+	 *
+	 * @return the fixed definition
+	 */
+	public String getFixed_definition() {
+<span class="fc" id="L342">		return fixed_definition;</span>
+	}
+
+	/**
+	 * Sets the fixed definition.
+	 *
+	 * @param fixed_definition the new fixed definition
+	 */
+	public void setFixed_definition(final String fixed_definition) {
+<span class="fc" id="L351">		this.fixed_definition = fixed_definition;</span>
+<span class="fc" id="L352">	}</span>
 
 	/**
 	 * To string.
@@ -251,7 +358,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public String toString() {
-<span class="fc" id="L254">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+<span class="fc" id="L361">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
 	}
 
 	/**
@@ -262,7 +369,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public boolean equals(final Object object) {
-<span class="fc" id="L265">		return EqualsBuilder.reflectionEquals(this, object);</span>
+<span class="fc" id="L372">		return EqualsBuilder.reflectionEquals(this, object);</span>
 	}
 
 	/**
@@ -272,7 +379,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public int hashCode() {
-<span class="fc" id="L275">		return HashCodeBuilder.reflectionHashCode(this);</span>
+<span class="fc" id="L382">		return HashCodeBuilder.reflectionHashCode(this);</span>
 	}
 
 }

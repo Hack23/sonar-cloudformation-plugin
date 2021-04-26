@@ -27,25 +27,26 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class CfnNagViolation.
  */
-<span class="fc" id="L33">public final class CfnNagViolation {</span>
+<span class="fc" id="L34">public final class CfnNagViolation {</span>
 
 	/** The id. */
 	private String id;
-	
+
 	/** The type. */
 	private String type;
-	
+
 	/** The message. */
 	private String message;
-	
+
 	/** The logical resource ids. */
-<span class="fc" id="L45">	private List&lt;String&gt; logical_resource_ids = new ArrayList&lt;&gt;();</span>
-	
+<span class="fc" id="L46">	private List&lt;String&gt; logical_resource_ids = new ArrayList&lt;&gt;();</span>
+
 	/** The line numbers. */
-<span class="fc" id="L48">	private List&lt;Integer&gt; line_numbers = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L49">	private List&lt;Integer&gt; line_numbers = new ArrayList&lt;&gt;();</span>
 
 
 	/**
@@ -54,7 +55,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the id
 	 */
 	public String getId() {
-<span class="fc" id="L57">		return id;</span>
+<span class="fc" id="L58">		return id;</span>
 	}
 
 	/**
@@ -63,8 +64,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @param id the new id
 	 */
 	public void setId(final String id) {
-<span class="fc" id="L66">		this.id = id;</span>
-<span class="fc" id="L67">	}</span>
+<span class="fc" id="L67">		this.id = id;</span>
+<span class="fc" id="L68">	}</span>
 
 	/**
 	 * Gets the type.
@@ -72,7 +73,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the type
 	 */
 	public String getType() {
-<span class="fc" id="L75">		return type;</span>
+<span class="fc" id="L76">		return type;</span>
 	}
 
 	/**
@@ -81,8 +82,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @param type the new type
 	 */
 	public void setType(final String type) {
-<span class="fc" id="L84">		this.type = type;</span>
-<span class="fc" id="L85">	}</span>
+<span class="fc" id="L85">		this.type = type;</span>
+<span class="fc" id="L86">	}</span>
 
 	/**
 	 * Gets the message.
@@ -90,7 +91,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the message
 	 */
 	public String getMessage() {
-<span class="fc" id="L93">		return message;</span>
+<span class="fc" id="L94">		return message;</span>
 	}
 
 	/**
@@ -99,8 +100,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @param message the new message
 	 */
 	public void setMessage(final String message) {
-<span class="fc" id="L102">		this.message = message;</span>
-<span class="fc" id="L103">	}</span>
+<span class="fc" id="L103">		this.message = message;</span>
+<span class="fc" id="L104">	}</span>
 
 	/**
 	 * Gets the logical resource ids.
@@ -108,7 +109,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the logical resource ids
 	 */
 	public List&lt;String&gt; getLogical_resource_ids() {
-<span class="fc" id="L111">		return new ArrayList&lt;&gt;(logical_resource_ids);</span>
+<span class="fc" id="L112">		return new ArrayList&lt;&gt;(logical_resource_ids);</span>
 	}
 
 	/**
@@ -117,16 +118,16 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @param logical_resource_ids the new logical resource ids
 	 */
 	public void setLogical_resource_ids(final List&lt;String&gt; logical_resource_ids) {
-<span class="fc" id="L120">		this.logical_resource_ids = new ArrayList&lt;&gt;(logical_resource_ids);</span>
-<span class="fc" id="L121">	}</span>
-	
+<span class="fc" id="L121">		this.logical_resource_ids = new ArrayList&lt;&gt;(logical_resource_ids);</span>
+<span class="fc" id="L122">	}</span>
+
 	/**
 	 * Gets the line numbers.
 	 *
 	 * @return the line numbers
 	 */
 	public List&lt;Integer&gt; getLine_numbers() {
-<span class="fc" id="L129">		return new ArrayList&lt;&gt;(line_numbers);</span>
+<span class="fc" id="L130">		return new ArrayList&lt;&gt;(line_numbers);</span>
 	}
 
 	/**
@@ -135,22 +136,38 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @param line_numbers the new line numbers
 	 */
 	public void setLine_numbers(final List&lt;Integer&gt; line_numbers) {
-<span class="fc" id="L138">		this.line_numbers = new ArrayList&lt;&gt;(line_numbers);</span>
-<span class="fc" id="L139">	}</span>
+<span class="fc" id="L139">		this.line_numbers = new ArrayList&lt;&gt;(line_numbers);</span>
+<span class="fc" id="L140">	}</span>
 
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
-<span class="fc" id="L143">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+<span class="fc" id="L149">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
 	}
 
+	/**
+	 * Equals.
+	 *
+	 * @param object the object
+	 * @return true, if successful
+	 */
 	@Override
     public boolean equals(final Object object) {
-<span class="fc" id="L148">    	return EqualsBuilder.reflectionEquals(this,object);</span>
+<span class="fc" id="L160">    	return EqualsBuilder.reflectionEquals(this,object);</span>
     }
 
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
 	@Override
 	public int hashCode() {
-<span class="fc" id="L153">		return HashCodeBuilder.reflectionHashCode(this);</span>
+<span class="fc" id="L170">		return HashCodeBuilder.reflectionHashCode(this);</span>
 	}
 
 }

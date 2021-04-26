@@ -30,13 +30,14 @@ import org.sonar.api.utils.log.Loggers;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class CfnNagScanReportReader.
  */
-<span class="fc" id="L36">public class CfnNagScanReportReader {</span>
+<span class="fc" id="L37">public class CfnNagScanReportReader {</span>
 
 	/** The Constant LOGGER. */
-<span class="fc" id="L39">	private static final Logger LOGGER = Loggers.get(CfnNagScanReportReader.class);</span>
+<span class="fc" id="L40">	private static final Logger LOGGER = Loggers.get(CfnNagScanReportReader.class);</span>
 
 	/**
 	 * Read report.
@@ -45,13 +46,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	 * @return the list
 	 */
 	public List&lt;CfnNagScanReport&gt; readReport(final InputStream input) {
-<span class="fc" id="L48">		final ObjectMapper objectMapper = new ObjectMapper();</span>
+<span class="fc" id="L49">		final ObjectMapper objectMapper = new ObjectMapper();</span>
 
 		try {
-<span class="fc" id="L51">			return objectMapper.readValue(input, new TypeReference&lt;List&lt;CfnNagScanReport&gt;&gt;() {});</span>
-<span class="fc" id="L52">		} catch (final IOException e) {</span>
-<span class="fc" id="L53">			LOGGER.warn(&quot;Problem reading cfn nag report json:{}&quot;, e.getMessage());</span>
-<span class="fc" id="L54">			return new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L52">			return objectMapper.readValue(input, new TypeReference&lt;List&lt;CfnNagScanReport&gt;&gt;() {});</span>
+<span class="fc" id="L53">		} catch (final IOException e) {</span>
+<span class="fc" id="L54">			LOGGER.warn(&quot;Problem reading cfn nag report json:{}&quot;, e.getMessage());</span>
+<span class="fc" id="L55">			return new ArrayList&lt;&gt;();</span>
 		}
 	}
 }

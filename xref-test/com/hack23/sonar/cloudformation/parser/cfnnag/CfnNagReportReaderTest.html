@@ -44,7 +44,7 @@
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> readReportTest() {
 <a class="jxr_linenumber" name="L37" href="#L37">37</a>  		<strong class="jxr_keyword">final</strong> CfnNagReport cfnNagReport = <strong class="jxr_keyword">new</strong> CfnNagReportReader().readReport(CfnNagReportReaderTest.<strong class="jxr_keyword">class</strong>.getResourceAsStream(<span class="jxr_string">"/aws-cross-account-manager-master.yml.nag"</span>));
 <a class="jxr_linenumber" name="L38" href="#L38">38</a>  		assertNotNull(cfnNagReport);
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>  		assertEquals(1,cfnNagReport.getFailure_count());
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  		assertEquals(1,cfnNagReport.getFailureCount());
 <a class="jxr_linenumber" name="L40" href="#L40">40</a>  		assertEquals(5,cfnNagReport.getViolations().size());
 <a class="jxr_linenumber" name="L41" href="#L41">41</a>  		<strong class="jxr_keyword">final</strong> CfnNagViolation nagViolation = cfnNagReport.getViolations().get(0);
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>  		assertEquals(<span class="jxr_string">"W12"</span>,nagViolation.getId());
@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> readReportFailureTest() {
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  		<strong class="jxr_keyword">final</strong> CfnNagReport cfnNagReport = <strong class="jxr_keyword">new</strong> CfnNagReportReader().readReport(<strong class="jxr_keyword">new</strong> ByteArrayInputStream(<span class="jxr_string">""</span>.getBytes()));
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>  		assertNotNull(cfnNagReport);
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>  		assertEquals(0,cfnNagReport.getFailure_count());
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  		assertEquals(0,cfnNagReport.getFailureCount());
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>  		assertEquals(0,cfnNagReport.getViolations().size());
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>  	}
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>  

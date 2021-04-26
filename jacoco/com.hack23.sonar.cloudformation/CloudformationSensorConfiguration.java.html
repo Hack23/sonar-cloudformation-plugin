@@ -42,13 +42,23 @@ public final class CloudformationSensorConfiguration {
 <span class="fc" id="L42">		this.configuration = configuration;</span>
 <span class="fc" id="L43">	}</span>
 
+	/**
+	 * Gets the cfn nag report files.
+	 *
+	 * @return the cfn nag report files
+	 */
 	public Optional&lt;String&gt; getCfnNagReportFiles() {
-<span class="fc" id="L46">		return this.configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);</span>
+<span class="fc" id="L51">		return this.configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);</span>
 	}
 
+	/**
+	 * Gets the checkov report files.
+	 *
+	 * @return the checkov report files
+	 */
 	public Optional&lt;String&gt; getCheckovReportFiles() {
-<span class="nc" id="L50">		return this.configuration.get(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);</span>
+<span class="fc" id="L60">		return this.configuration.get(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);</span>
 	}
-	
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

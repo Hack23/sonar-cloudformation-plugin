@@ -27,19 +27,28 @@ import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-<span class="fc" id="L30">public class CheckovReportReader {</span>
+/**
+ * The Class CheckovReportReader.
+ */
+<span class="fc" id="L33">public class CheckovReportReader {</span>
 
 	/** The Constant LOGGER. */
-<span class="fc" id="L33">	private static final Logger LOGGER = Loggers.get(CheckovReportReader.class);</span>
+<span class="fc" id="L36">	private static final Logger LOGGER = Loggers.get(CheckovReportReader.class);</span>
 
+	/**
+	 * Read report.
+	 *
+	 * @param input the input
+	 * @return the checkov report
+	 */
 	public CheckovReport readReport(final InputStream input) {
-<span class="fc" id="L36">		final ObjectMapper objectMapper = new ObjectMapper();</span>
+<span class="fc" id="L45">		final ObjectMapper objectMapper = new ObjectMapper();</span>
 
 		try {
-<span class="fc" id="L39">			return objectMapper.readValue(input, CheckovReport.class);</span>
-<span class="fc" id="L40">		} catch (final IOException e) {</span>
-<span class="fc" id="L41">			LOGGER.warn(&quot;Problem reading checkov report json:{}&quot;, e.getMessage());</span>
-<span class="fc" id="L42">			return new CheckovReport();</span>
+<span class="fc" id="L48">			return objectMapper.readValue(input, CheckovReport.class);</span>
+<span class="fc" id="L49">		} catch (final IOException e) {</span>
+<span class="fc" id="L50">			LOGGER.warn(&quot;Problem reading checkov report json:{}&quot;, e.getMessage());</span>
+<span class="fc" id="L51">			return new CheckovReport();</span>
 		}
 	}
 }
