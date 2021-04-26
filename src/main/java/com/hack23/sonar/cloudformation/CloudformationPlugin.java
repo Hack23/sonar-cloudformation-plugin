@@ -21,7 +21,6 @@ package com.hack23.sonar.cloudformation;
 
 import org.sonar.api.Plugin;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class CloudformationPlugin.
  */
