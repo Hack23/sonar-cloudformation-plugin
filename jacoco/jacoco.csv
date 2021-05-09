@@ -1,16 +1,15 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Cloudformation,com.hack23.sonar.cloudformation.reports.process,CfnNagScanReportReader.new TypeReference() {...},0,6,0,0,0,1,0,1,0,1
+Cloudformation,com.hack23.sonar.cloudformation.reports.process,CheckovReportReader,0,27,0,0,0,7,0,3,0,3
+Cloudformation,com.hack23.sonar.cloudformation.reports.process,CfnNagScanReportReader,0,30,0,0,0,7,0,3,0,3
 Cloudformation,com.hack23.sonar.cloudformation.reports.process,CheckovProcessReports,13,323,3,15,2,54,3,13,0,7
-Cloudformation,com.hack23.sonar.cloudformation.reports.process,CfnNagProcessReports,0,1164,3,35,0,255,3,26,0,10
+Cloudformation,com.hack23.sonar.cloudformation.reports.process,CfnNagProcessReports,0,1078,2,28,0,240,2,22,0,9
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationSensorConfiguration,0,16,0,0,0,5,0,3,0,3
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationSensor,7,54,0,0,2,14,0,4,0,4
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationRulesDefinition,5,132,1,9,2,28,1,11,0,7
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationProperties,0,40,0,0,0,7,0,1,0,1
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationQualityProfile,0,217,0,26,0,34,0,16,0,3
 Cloudformation,com.hack23.sonar.cloudformation,CloudformationPlugin,0,27,0,0,0,4,0,2,0,2
-Cloudformation,com.hack23.sonar.cloudformation.reports.read,CfnNagScanReportReader,0,30,0,0,0,7,0,3,0,3
-Cloudformation,com.hack23.sonar.cloudformation.reports.read,CheckovReportReader,0,27,0,0,0,7,0,3,0,3
-Cloudformation,com.hack23.sonar.cloudformation.reports.read,CfnNagScanReportReader.new TypeReference() {...},0,6,0,0,0,1,0,1,0,1
-Cloudformation,com.hack23.sonar.cloudformation.reports.read,CfnNagReportReader,0,27,0,0,0,7,0,3,0,3
 Cloudformation,com.hack23.sonar.cloudformation.reports.cfnnag,CfnNagScanReport,0,32,0,0,0,10,0,8,0,8
 Cloudformation,com.hack23.sonar.cloudformation.reports.cfnnag,CfnNagReport,0,43,0,0,0,11,0,8,0,8
 Cloudformation,com.hack23.sonar.cloudformation.reports.cfnnag,CfnNagViolation,0,75,0,0,0,21,0,14,0,14
