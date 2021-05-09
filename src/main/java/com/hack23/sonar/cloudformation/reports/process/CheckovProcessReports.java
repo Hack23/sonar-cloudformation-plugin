@@ -39,7 +39,6 @@ import org.sonar.api.utils.log.Loggers;
 
 import com.hack23.sonar.cloudformation.reports.checkov.CheckovPassedCheck;
 import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
-import com.hack23.sonar.cloudformation.reports.read.CheckovReportReader;
 
 /**
  * The Class CheckovProcessReports.

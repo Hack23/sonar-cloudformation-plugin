@@ -17,41 +17,42 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.reports.read;
+package com.hack23.sonar.cloudformation.reports.process;
 
-import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagScanReport;
 
 /**
- * The Class CfnNagScanReportReaderTest.
+ * The Class CfnNagScanReportReader.
  */
-public class CfnNagScanReportReaderTest extends Assert {
+public class CfnNagScanReportReader {
+
+	/** The Constant LOGGER. */
+	private static final Logger LOGGER = Loggers.get(CfnNagScanReportReader.class);
 
 	/**
-	 * Read report test.
+	 * Read report.
+	 *
+	 * @param input the input
+	 * @return the list
 	 */
-	@Test
-	public void readReportTest() {
-		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(CfnNagScanReportReaderTest.class.getResourceAsStream("/cfn-nag-scan.nagscan"));
+	public List<CfnNagScanReport> readReport(final InputStream input) {
+		final ObjectMapper objectMapper = new ObjectMapper();
 
-		assertNotNull(cfnNagReport);
-		assertFalse(cfnNagReport.isEmpty());
+		try {
+			return objectMapper.readValue(input, new TypeReference<List<CfnNagScanReport>>() {});
+		} catch (final IOException e) {
+			LOGGER.warn("Problem reading cfn nag report json:{}", e.getMessage());
+			return new ArrayList<>();
+		}
 	}
-
-	/**
-	 * Read report failue test.
-	 */
-	@Test
-	public void readReportFailueTest() {
-		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(new ByteArrayInputStream("".getBytes()));
-
-		assertNotNull(cfnNagReport);
-		assertTrue(cfnNagReport.isEmpty());
-	}
-
 }
