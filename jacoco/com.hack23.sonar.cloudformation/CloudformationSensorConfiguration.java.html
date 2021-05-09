@@ -24,6 +24,8 @@ import java.util.Optional;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.scanner.ScannerSide;
 
+import com.hack23.sonar.cloudformation.reports.process.CloudformationConstants;
+
 /**
  * The Class CloudformationSensorConfiguration.
  */
@@ -38,9 +40,9 @@ public final class CloudformationSensorConfiguration {
 	 *
 	 * @param configuration the configuration
 	 */
-<span class="fc" id="L41">	public CloudformationSensorConfiguration(final Configuration configuration) {</span>
-<span class="fc" id="L42">		this.configuration = configuration;</span>
-<span class="fc" id="L43">	}</span>
+<span class="fc" id="L43">	public CloudformationSensorConfiguration(final Configuration configuration) {</span>
+<span class="fc" id="L44">		this.configuration = configuration;</span>
+<span class="fc" id="L45">	}</span>
 
 	/**
 	 * Gets the cfn nag report files.
@@ -48,7 +50,7 @@ public final class CloudformationSensorConfiguration {
 	 * @return the cfn nag report files
 	 */
 	public Optional&lt;String&gt; getCfnNagReportFiles() {
-<span class="fc" id="L51">		return this.configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);</span>
+<span class="fc" id="L53">		return this.configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);</span>
 	}
 
 	/**
@@ -57,8 +59,8 @@ public final class CloudformationSensorConfiguration {
 	 * @return the checkov report files
 	 */
 	public Optional&lt;String&gt; getCheckovReportFiles() {
-<span class="fc" id="L60">		return this.configuration.get(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);</span>
+<span class="fc" id="L62">		return this.configuration.get(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);</span>
 	}
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

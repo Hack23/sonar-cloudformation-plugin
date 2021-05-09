@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CfnNagScanReport.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cloudformation</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.cfnnag</a> &gt; <span class="el_source">CfnNagScanReport.java</span></div><h1>CfnNagScanReport.java</h1><pre class="source lang-java linenums">/*
+ * Cloudformation Plugin for SonarQube
+ * Copyright (C) 2019 James Pether Sörling
+ * james@hack23.com
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+package com.hack23.sonar.cloudformation.reports.cfnnag;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+/**
+ * The Class CfnNagScanReport.
+ */
+<span class="fc" id="L30">public final class CfnNagScanReport {</span>
+
+	/** The filename. */
+	private String filename;
+
+	/** The file results. */
+	private CfnNagReport file_results;
+
+	/**
+	 * Gets the filename.
+	 *
+	 * @return the filename
+	 */
+	public String getFilename() {
+<span class="fc" id="L44">		return filename;</span>
+	}
+
+	/**
+	 * Sets the filename.
+	 *
+	 * @param filename the new filename
+	 */
+	public void setFilename(final String filename) {
+<span class="fc" id="L53">		this.filename = filename;</span>
+<span class="fc" id="L54">	}</span>
+
+	/**
+	 * Gets the file results.
+	 *
+	 * @return the file results
+	 */
+	public CfnNagReport getFile_results() {
+<span class="fc" id="L62">		return file_results;</span>
+	}
+
+	/**
+	 * Sets the file results.
+	 *
+	 * @param file_results the new file results
+	 */
+	public void setFile_results(final CfnNagReport file_results) {
+<span class="fc" id="L71">		this.file_results = file_results;</span>
+<span class="fc" id="L72">	}</span>
+
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
+	@Override
+	public String toString() {
+<span class="fc" id="L81">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+	}
+
+	/**
+	 * Equals.
+	 *
+	 * @param object the object
+	 * @return true, if successful
+	 */
+	@Override
+    public boolean equals(final Object object) {
+<span class="fc" id="L92">    	return EqualsBuilder.reflectionEquals(this,object);</span>
+    }
+
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
+	@Override
+	public int hashCode() {
+<span class="fc" id="L102">		return HashCodeBuilder.reflectionHashCode(this);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

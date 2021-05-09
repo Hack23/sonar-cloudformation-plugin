@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckovReport.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cloudformation</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.checkov</a> &gt; <span class="el_source">CheckovReport.java</span></div><h1>CheckovReport.java</h1><pre class="source lang-java linenums">/*
+ * Cloudformation Plugin for SonarQube
+ * Copyright (C) 2019 James Pether Sörling
+ * james@hack23.com
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+package com.hack23.sonar.cloudformation.reports.checkov;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+/**
+ * The Class CheckovReport.
+ */
+<span class="fc" id="L30">public final class CheckovReport {</span>
+
+	/** The check type. */
+	private String check_type;
+
+	/** The summary. */
+	private CheckovSummary summary;
+
+	/** The results. */
+	private CheckovResults results;
+
+
+
+	/**
+	 * Gets the check type.
+	 *
+	 * @return the check type
+	 */
+	public String getCheck_type() {
+<span class="fc" id="L49">		return check_type;</span>
+	}
+
+	/**
+	 * Sets the check type.
+	 *
+	 * @param check_type the new check type
+	 */
+	public void setCheck_type(final String check_type) {
+<span class="fc" id="L58">		this.check_type = check_type;</span>
+<span class="fc" id="L59">	}</span>
+
+	/**
+	 * Gets the summary.
+	 *
+	 * @return the summary
+	 */
+	public CheckovSummary getSummary() {
+<span class="fc" id="L67">		return summary;</span>
+	}
+
+	/**
+	 * Sets the summary.
+	 *
+	 * @param summary the new summary
+	 */
+	public void setSummary(final CheckovSummary summary) {
+<span class="fc" id="L76">		this.summary = summary;</span>
+<span class="fc" id="L77">	}</span>
+
+	/**
+	 * Gets the results.
+	 *
+	 * @return the results
+	 */
+	public CheckovResults getResults() {
+<span class="fc" id="L85">		return results;</span>
+	}
+
+	/**
+	 * Sets the results.
+	 *
+	 * @param results the new results
+	 */
+	public void setResults(final CheckovResults results) {
+<span class="fc" id="L94">		this.results = results;</span>
+<span class="fc" id="L95">	}</span>
+
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
+	@Override
+	public String toString() {
+<span class="fc" id="L104">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+	}
+
+	/**
+	 * Equals.
+	 *
+	 * @param object the object
+	 * @return true, if successful
+	 */
+	@Override
+    public boolean equals(final Object object) {
+<span class="fc" id="L115">    	return EqualsBuilder.reflectionEquals(this,object);</span>
+    }
+
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
+	@Override
+	public int hashCode() {
+<span class="fc" id="L125">		return HashCodeBuilder.reflectionHashCode(this);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

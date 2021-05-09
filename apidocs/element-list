@@ -1,3 +1,5 @@
 com.hack23.sonar.cloudformation
-com.hack23.sonar.cloudformation.parser.cfnnag
-com.hack23.sonar.cloudformation.parser.checkov
+com.hack23.sonar.cloudformation.reports.cfnnag
+com.hack23.sonar.cloudformation.reports.checkov
+com.hack23.sonar.cloudformation.reports.process
+com.hack23.sonar.cloudformation.reports.read

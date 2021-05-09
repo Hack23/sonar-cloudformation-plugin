@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckovSummary.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cloudformation</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.checkov</a> &gt; <span class="el_source">CheckovSummary.java</span></div><h1>CheckovSummary.java</h1><pre class="source lang-java linenums">/*
+ * Cloudformation Plugin for SonarQube
+ * Copyright (C) 2019 James Pether Sörling
+ * james@hack23.com
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+package com.hack23.sonar.cloudformation.reports.checkov;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * The Class CheckovSummary.
+ */
+<span class="fc" id="L32">public final class CheckovSummary {</span>
+
+    /** The passed. */
+    private int passed;
+
+    /** The failed. */
+    private int failed;
+
+    /** The skipped. */
+    private int skipped;
+
+    /** The parsing errors. */
+    private int parsingErrors;
+
+    /** The checkov version. */
+    private String checkovVersion;
+
+
+
+	/**
+	 * Gets the passed.
+	 *
+	 * @return the passed
+	 */
+	public int getPassed() {
+<span class="fc" id="L57">		return passed;</span>
+	}
+
+	/**
+	 * Sets the passed.
+	 *
+	 * @param passed the new passed
+	 */
+	public void setPassed(final int passed) {
+<span class="fc" id="L66">		this.passed = passed;</span>
+<span class="fc" id="L67">	}</span>
+
+	/**
+	 * Gets the failed.
+	 *
+	 * @return the failed
+	 */
+	public int getFailed() {
+<span class="fc" id="L75">		return failed;</span>
+	}
+
+	/**
+	 * Sets the failed.
+	 *
+	 * @param failed the new failed
+	 */
+	public void setFailed(final int failed) {
+<span class="fc" id="L84">		this.failed = failed;</span>
+<span class="fc" id="L85">	}</span>
+
+	/**
+	 * Gets the skipped.
+	 *
+	 * @return the skipped
+	 */
+	public int getSkipped() {
+<span class="fc" id="L93">		return skipped;</span>
+	}
+
+	/**
+	 * Sets the skipped.
+	 *
+	 * @param skipped the new skipped
+	 */
+	public void setSkipped(final int skipped) {
+<span class="fc" id="L102">		this.skipped = skipped;</span>
+<span class="fc" id="L103">	}</span>
+
+	/**
+	 * Gets the parsing errors.
+	 *
+	 * @return the parsing errors
+	 */
+	@JsonProperty(&quot;parsing_errors&quot;)
+	public int getParsingErrors() {
+<span class="fc" id="L112">		return parsingErrors;</span>
+	}
+
+	/**
+	 * Sets the parsing errors.
+	 *
+	 * @param parsingErrors the new parsing errors
+	 */
+	public void setParsingErrors(final int parsingErrors) {
+<span class="fc" id="L121">		this.parsingErrors = parsingErrors;</span>
+<span class="fc" id="L122">	}</span>
+
+	/**
+	 * Gets the checkov version.
+	 *
+	 * @return the checkov version
+	 */
+	@JsonProperty(&quot;checkov_version&quot;)
+	public String getCheckovVersion() {
+<span class="fc" id="L131">		return checkovVersion;</span>
+	}
+
+	/**
+	 * Sets the checkov version.
+	 *
+	 * @param checkovVersion the new checkov version
+	 */
+	public void setCheckovVersion(final String checkovVersion) {
+<span class="fc" id="L140">		this.checkovVersion = checkovVersion;</span>
+<span class="fc" id="L141">	}</span>
+
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
+	@Override
+	public String toString() {
+<span class="fc" id="L150">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+	}
+
+	/**
+	 * Equals.
+	 *
+	 * @param object the object
+	 * @return true, if successful
+	 */
+	@Override
+    public boolean equals(final Object object) {
+<span class="fc" id="L161">    	return EqualsBuilder.reflectionEquals(this,object);</span>
+    }
+
+	/**
+	 * Hash code.
+	 *
+	 * @return the int
+	 */
+	@Override
+	public int hashCode() {
+<span class="fc" id="L171">		return HashCodeBuilder.reflectionHashCode(this);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

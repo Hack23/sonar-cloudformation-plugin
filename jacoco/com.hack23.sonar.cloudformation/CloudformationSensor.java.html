@@ -19,37 +19,19 @@
  */
 package com.hack23.sonar.cloudformation;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
-import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
-import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
-import org.sonar.api.rule.RuleKey;
 import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.utils.log.Profiler;
 
-import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReport;
-import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagReportReader;
-import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReport;
-import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagScanReportReader;
-import com.hack23.sonar.cloudformation.parser.cfnnag.CfnNagViolation;
-import com.hack23.sonar.cloudformation.parser.checkov.CheckovPassedCheck;
-import com.hack23.sonar.cloudformation.parser.checkov.CheckovReport;
-import com.hack23.sonar.cloudformation.parser.checkov.CheckovReportReader;
+import com.hack23.sonar.cloudformation.reports.process.CfnNagProcessReports;
+import com.hack23.sonar.cloudformation.reports.process.CheckovProcessReports;
 
 /**
  * The Class CloudformationSensor.
@@ -60,43 +42,31 @@ public final class CloudformationSensor implements Sensor {
 	public static final String SENSOR_NAME = &quot;Cloudformation Check&quot;;
 
 	/** The Constant LOGGER. */
-<span class="fc" id="L63">	private static final Logger LOGGER = Loggers.get(CloudformationSensor.class);</span>
+<span class="fc" id="L45">	private static final Logger LOGGER = Loggers.get(CloudformationSensor.class);</span>
 
-	/** The cfn nag report reader. */
-	private final CfnNagReportReader cfnNagReportReader;
+	/** The cfn nag process reports. */
+	private final CfnNagProcessReports cfnNagProcessReports;
 
-	/** The cfn nag scan report reader. */
-	private final CfnNagScanReportReader cfnNagScanReportReader;
-
-	/** The checkov report reader. */
-	private final CheckovReportReader checkovReportReader;
+	/** The checkov process reports. */
+	private final CheckovProcessReports checkovProcessReports;
 
 	/** The configuration. */
 	private final CloudformationSensorConfiguration configuration;
-
-	/** The path resolver. */
-	private final PathResolver pathResolver;
-
-	/** The file system. */
-	private final FileSystem fileSystem;
 
 	/**
 	 * Instantiates a new cloudformation sensor.
 	 *
 	 * @param configuration the configuration
-	 * @param fileSystem    the file system
-	 * @param pathResolver  the path resolver
+	 * @param fileSystem the file system
+	 * @param pathResolver the path resolver
 	 */
 	public CloudformationSensor(final CloudformationSensorConfiguration configuration, final FileSystem fileSystem,
 			final PathResolver pathResolver) {
-<span class="fc" id="L92">		super();</span>
-<span class="fc" id="L93">		this.cfnNagReportReader = new CfnNagReportReader();</span>
-<span class="fc" id="L94">		this.cfnNagScanReportReader = new CfnNagScanReportReader();</span>
-<span class="fc" id="L95">		this.checkovReportReader = new CheckovReportReader();</span>
-<span class="fc" id="L96">		this.configuration = configuration;</span>
-<span class="fc" id="L97">		this.fileSystem = fileSystem;</span>
-<span class="fc" id="L98">		this.pathResolver = pathResolver;</span>
-<span class="fc" id="L99">	}</span>
+<span class="fc" id="L65">		super();</span>
+<span class="fc" id="L66">		this.configuration = configuration;</span>
+<span class="fc" id="L67">		this.cfnNagProcessReports = new CfnNagProcessReports(fileSystem, pathResolver);</span>
+<span class="fc" id="L68">		this.checkovProcessReports = new CheckovProcessReports(fileSystem, pathResolver);</span>
+<span class="fc" id="L69">	}</span>
 
 	/**
 	 * Describe.
@@ -105,9 +75,9 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	@Override
 	public void describe(final SensorDescriptor descriptor) {
-<span class="fc" id="L108">		descriptor.name(SENSOR_NAME);</span>
+<span class="fc" id="L78">		descriptor.name(SENSOR_NAME);</span>
 
-<span class="fc" id="L110">	}</span>
+<span class="fc" id="L80">	}</span>
 
 	/**
 	 * Execute.
@@ -116,275 +86,18 @@ public final class CloudformationSensor implements Sensor {
 	 */
 	@Override
 	public void execute(final SensorContext context) {
-<span class="fc" id="L119">		final Profiler profiler = Profiler.create(LOGGER);</span>
-<span class="fc" id="L120">		profiler.startInfo(&quot;Process iac reports&quot;);</span>
+<span class="fc" id="L89">		final Profiler profiler = Profiler.create(LOGGER);</span>
+<span class="fc" id="L90">		profiler.startInfo(&quot;Process iac reports&quot;);</span>
 
 		try {
-<span class="fc" id="L123">			processCfnNagReport(context);</span>
-<span class="fc" id="L124">			processCheckovReport(context);</span>
-<span class="nc" id="L125">		} catch (final IOException e) {</span>
-<span class="nc" id="L126">			throw new RuntimeException(&quot;Can not process iac reports.&quot;, e);</span>
+<span class="fc" id="L93">			cfnNagProcessReports.processCfnNagReport(context,configuration.getCfnNagReportFiles());</span>
+<span class="fc" id="L94">			checkovProcessReports.processCheckovReport(context,configuration.getCheckovReportFiles());</span>
+<span class="nc" id="L95">		} catch (final IOException e) {</span>
+<span class="nc" id="L96">			throw new RuntimeException(&quot;Can not process iac reports.&quot;, e);</span>
 		} finally {
-<span class="fc" id="L128">			profiler.stopInfo();</span>
+<span class="fc" id="L98">			profiler.stopInfo();</span>
 		}
-<span class="fc" id="L130">	}</span>
-
-	/**
-	 * Process checkov report.
-	 *
-	 * @param context the context
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws FileNotFoundException the file not found exception
-	 */
-	private void processCheckovReport(final SensorContext context) throws IOException, FileNotFoundException {
-<span class="fc" id="L140">		final Optional&lt;String&gt; reportFilesProperty = configuration.getCheckovReportFiles();</span>
-
-<span class="fc bfc" id="L142" title="All 2 branches covered.">		if (reportFilesProperty.isPresent()) {</span>
-
-<span class="fc" id="L144">			final String reports = reportFilesProperty.get();</span>
-<span class="fc" id="L145">			LOGGER.info(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY + &quot;=&quot; + reports);</span>
-<span class="fc" id="L146">			final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
-
-<span class="fc bfc" id="L148" title="All 2 branches covered.">			for (final String report : reportFiles) {</span>
-<span class="fc" id="L149">				LOGGER.info(&quot;Processing  checkov :&quot; + report);</span>
-<span class="pc bpc" id="L150" title="1 of 2 branches missed.">				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {</span>
-<span class="fc" id="L151">					handleCheckovReports(context, report);</span>
-				} else {
-<span class="nc" id="L153">					LOGGER.warn(&quot;Processing checkov:&quot; + report + &quot; missing&quot;);</span>
-				}
-			}
-<span class="fc" id="L156">		} else {</span>
-<span class="fc" id="L157">			LOGGER.warn(&quot;Missing property:{}&quot;, CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);</span>
-		}
-<span class="fc" id="L159">	}</span>
-
-	/**
-	 * Process cfn nag report.
-	 *
-	 * @param context the context
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws FileNotFoundException the file not found exception
-	 */
-	private void processCfnNagReport(final SensorContext context) throws IOException, FileNotFoundException {
-<span class="fc" id="L169">		final Optional&lt;String&gt; reportFilesProperty = configuration.getCfnNagReportFiles();</span>
-
-<span class="fc bfc" id="L171" title="All 2 branches covered.">		if (reportFilesProperty.isPresent()) {</span>
-
-<span class="fc" id="L173">			final String reports = reportFilesProperty.get();</span>
-<span class="fc" id="L174">			LOGGER.info(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY + &quot;=&quot; + reports);</span>
-<span class="fc" id="L175">			final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
-
-<span class="fc bfc" id="L177" title="All 2 branches covered.">			for (final String report : reportFiles) {</span>
-<span class="fc" id="L178">				LOGGER.info(&quot;Processing cfn-nag :&quot; + report);</span>
-<span class="fc bfc" id="L179" title="All 2 branches covered.">				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()</span>
-<span class="fc" id="L180">						&amp;&amp; !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),</span>
-<span class="fc bfc" id="L181" title="All 2 branches covered.">								StandardCharsets.UTF_8).contains(&quot;filename&quot;)) {</span>
-
-<span class="fc" id="L183">					handleCfnNagReports(context, report);</span>
-<span class="fc bfc" id="L184" title="All 2 branches covered.">				} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {</span>
-
-<span class="fc" id="L186">					handleCfnNagScanReports(context, report);</span>
-				} else {
-<span class="fc" id="L188">					LOGGER.warn(&quot;Processing cfn-nag:&quot; + report + &quot; missing&quot;);</span>
-				}
-			}
-<span class="fc" id="L191">		} else {</span>
-<span class="fc" id="L192">			LOGGER.warn(&quot;Missing property:{}&quot;, CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);</span>
-		}
-<span class="fc" id="L194">	}</span>
-
-	/**
-	 * Handle cfn nag reports.
-	 *
-	 * @param context the context
-	 * @param report  the report
-	 * @throws FileNotFoundException the file not found exception
-	 */
-	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
-<span class="fc" id="L204">		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(&quot;.nag&quot;,</span>
-				&quot;&quot;);
-
-<span class="fc" id="L207">		final InputFile templateInputFile = findTemplate(templateName, report.replace(&quot;.nag&quot;, &quot;&quot;));</span>
-
-<span class="fc" id="L209">		final CfnNagReport cfnNagReport = cfnNagReportReader</span>
-<span class="fc" id="L210">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
-<span class="pc bpc" id="L211" title="1 of 2 branches missed.">		if (cfnNagReport != null) {</span>
-<span class="fc" id="L212">			final List&lt;CfnNagViolation&gt; violations = cfnNagReport.getViolations();</span>
-<span class="fc bfc" id="L213" title="All 2 branches covered.">			for (final CfnNagViolation cfnNagViolation : violations) {</span>
-<span class="fc" id="L214">				addIssue(context, cfnNagViolation, templateInputFile);</span>
-<span class="fc" id="L215">			}</span>
-		}
-<span class="fc" id="L217">	}</span>
-
-	/**
-	 * Handle cfn nag scan reports.
-	 *
-	 * @param context the context
-	 * @param report  the report
-	 * @throws FileNotFoundException the file not found exception
-	 */
-	private void handleCfnNagScanReports(final SensorContext context, final String report)
-			throws FileNotFoundException {
-<span class="fc" id="L228">		LOGGER.info(&quot;Reading cfn-nag reports:{}&quot;, report);</span>
-<span class="fc" id="L229">		final List&lt;CfnNagScanReport&gt; cfnNagscanReports = cfnNagScanReportReader</span>
-<span class="fc" id="L230">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
-
-<span class="fc bfc" id="L232" title="All 2 branches covered.">		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {</span>
-
-<span class="fc" id="L234">			final String filename = nagScanReport.getFilename();</span>
-<span class="fc" id="L235">			LOGGER.info(&quot;Reading cfn-nag report:{}&quot;, filename);</span>
-
-<span class="fc" id="L237">			final InputFile templateInputFile = findTemplate(</span>
-<span class="fc" id="L238">					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);</span>
-
-<span class="fc" id="L240">			final List&lt;CfnNagViolation&gt; violations = nagScanReport.getFile_results().getViolations();</span>
-<span class="fc bfc" id="L241" title="All 2 branches covered.">			for (final CfnNagViolation cfnNagViolation : violations) {</span>
-<span class="fc" id="L242">				addIssue(context, cfnNagViolation, templateInputFile);</span>
-<span class="fc" id="L243">			}</span>
-<span class="fc" id="L244">		}</span>
-<span class="fc" id="L245">	}</span>
-
-	/**
-	 * Handle checkov reports.
-	 *
-	 * @param context the context
-	 * @param report the report
-	 * @throws FileNotFoundException the file not found exception
-	 */
-	private void handleCheckovReports(final SensorContext context, final String report) throws FileNotFoundException {
-<span class="fc" id="L255">		LOGGER.info(&quot;Reading checkov reports:{}&quot;, report);</span>
-
-<span class="fc" id="L257">		final CheckovReport checkovReport = checkovReportReader</span>
-<span class="fc" id="L258">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
-
-<span class="fc bfc" id="L260" title="All 2 branches covered.">		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailed_checks()) {</span>
-
-<span class="fc" id="L262">			final String filename = failedChecks.getFile_path();</span>
-
-<span class="fc" id="L264">			final InputFile templateInputFile = findTemplate(</span>
-<span class="fc" id="L265">					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);</span>
-
-<span class="fc" id="L267">			addCheckovIssue(context, checkovReport, failedChecks, templateInputFile);</span>
-<span class="fc" id="L268">		}</span>
-<span class="fc" id="L269">	}</span>
-
-	/**
-	 * Adds the checkov issue.
-	 *
-	 * @param context the context
-	 * @param checkovReport the checkov report
-	 * @param failedChecks the failed checks
-	 * @param templateInputFile the template input file
-	 */
-	private void addCheckovIssue(final SensorContext context, final CheckovReport checkovReport, final CheckovPassedCheck failedChecks,
-			final InputFile templateInputFile) {
-<span class="fc bfc" id="L281" title="All 2 branches covered.">		if (templateInputFile != null) {</span>
-
-<span class="fc" id="L283">			final List&lt;Integer&gt; line_numbers = failedChecks.getFile_line_range();</span>
-<span class="fc bfc" id="L284" title="All 2 branches covered.">			for (final Integer line : line_numbers) {</span>
-<span class="fc" id="L285">				context.newIssue()</span>
-<span class="fc" id="L286">						.forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(),</span>
-<span class="fc" id="L287">								checkovReport.getCheck_type() + &quot;-&quot; + failedChecks.getCheck_id()))</span>
-<span class="fc" id="L288">						.at(new DefaultIssueLocation().on(templateInputFile).message(failedChecks.getCheck_name())</span>
-<span class="fc" id="L289">								.at(templateInputFile.selectLine(line)))</span>
-<span class="fc" id="L290">						.save();</span>
-<span class="fc" id="L291">			}</span>
-<span class="fc" id="L292">		} else {</span>
-<span class="fc" id="L293">			context.newIssue()</span>
-<span class="fc" id="L294">					.forRule(RuleKey.of(&quot;cfn-&quot; + &quot;yaml&quot;,</span>
-<span class="fc" id="L295">							checkovReport.getCheck_type() + &quot;-&quot; + failedChecks.getCheck_id()))</span>
-<span class="fc" id="L296">					.at(new DefaultIssueLocation().on(context.project()).message(failedChecks.getCheck_name())).save();</span>
-		}
-<span class="fc" id="L298">	}</span>
-
-	/**
-	 * Find template.
-	 *
-	 * @param templateName the template name
-	 * @param filepath the filepath
-	 * @return the input file
-	 */
-	private InputFile findTemplate(final String templateName, final String filepath) {
-<span class="fc" id="L308">		final List&lt;InputFile&gt; potentialReportTargets = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L309">		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);</span>
-<span class="fc" id="L310">		final String filterPath = filterPath(filepath);</span>
-<span class="fc" id="L311">		LOGGER.info(&quot;Looking for cloudformation template matching filename:{} , path: {}&quot;, templateName, filterPath);</span>
-
-<span class="fc bfc" id="L313" title="All 2 branches covered.">		for (final InputFile inputFile : potentialReportTargets) {</span>
-<span class="pc bpc" id="L314" title="1 of 4 branches missed.">			if (templateName.equals(inputFile.filename()) &amp;&amp; inputFile.uri().toString().contains(filterPath)) {</span>
-<span class="fc" id="L315">				LOGGER.info(&quot;matching path:{}&quot; + inputFile.uri());</span>
-<span class="fc" id="L316">				LOGGER.info(&quot;matching filename:&quot; + templateName + &quot; = &quot; + inputFile.filename());</span>
-
-<span class="fc" id="L318">				return inputFile;</span>
-			}
-<span class="fc" id="L320">		}</span>
-<span class="fc" id="L321">		return null;</span>
-	}
-
-	/**
-	 * Filter path.
-	 *
-	 * @param filepath the filepath
-	 * @return the string
-	 */
-	private static String filterPath(final String filepath) {
-<span class="fc" id="L331">		return filepath.replace(&quot;.&quot; + File.separator, &quot;&quot;).replace(&quot;..&quot; + File.separator, &quot;&quot;);</span>
-	}
-
-	/**
-	 * Adds the issue.
-	 *
-	 * @param context           the context
-	 * @param violation         the violation
-	 * @param templateInputFile the template input file
-	 */
-	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
-			final InputFile templateInputFile) {
-<span class="fc bfc" id="L343" title="All 2 branches covered.">		if (templateInputFile != null) {</span>
-
-<span class="fc bfc" id="L345" title="All 2 branches covered.">			if (violation.getLine_numbers().isEmpty()) {</span>
-<span class="fc" id="L346">				context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
-<span class="fc" id="L347">						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();</span>
-			} else {
-<span class="fc" id="L349">				final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
-<span class="fc bfc" id="L350" title="All 2 branches covered.">				for (final Integer line : line_numbers) {</span>
-<span class="pc bpc" id="L351" title="1 of 4 branches missed.">					if (line != null &amp;&amp; line &gt;= 0) {</span>
-<span class="fc" id="L352">						context.newIssue()</span>
-<span class="fc" id="L353">								.forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
-<span class="fc" id="L354">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
-<span class="fc" id="L355">										.at(templateInputFile.selectLine(line)))</span>
-<span class="fc" id="L356">								.save();</span>
-					} else {
-<span class="fc" id="L358">						context.newIssue()</span>
-<span class="fc" id="L359">								.forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
-<span class="fc" id="L360">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
-<span class="fc" id="L361">								.save();</span>
-					}
-<span class="fc" id="L363">				}</span>
-<span class="fc" id="L364">			}</span>
-		} else {
-<span class="fc" id="L366">			context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot; + &quot;yaml&quot;, findRuleId(violation)))</span>
-<span class="fc" id="L367">					.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
-		}
-<span class="fc" id="L369">	}</span>
-
-	/**
-	 * Find rule id.
-	 *
-	 * @param violation the violation
-	 * @return the string
-	 */
-	private static String findRuleId(final CfnNagViolation violation) {
-<span class="fc bfc" id="L378" title="All 2 branches covered.">		if (CloudformationQualityProfile.hasRule(violation.getId())) {</span>
-<span class="fc" id="L379">			return violation.getId();</span>
-		} else {
-<span class="fc bfc" id="L381" title="All 2 branches covered.">			if (violation.getId().startsWith(&quot;W&quot;)) {</span>
-<span class="fc" id="L382">				return CloudformationQualityProfile.UNDEFINED_WARNING;</span>
-			} else {
-<span class="fc" id="L384">				return CloudformationQualityProfile.UNDEFINED_FAILURE;</span>
-			}
-		}
-	}
+<span class="fc" id="L100">	}</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
