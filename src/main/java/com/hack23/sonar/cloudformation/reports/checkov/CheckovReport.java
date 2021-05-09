@@ -17,66 +17,82 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser.cfnnag;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.hack23.sonar.cloudformation.reports.checkov;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
- * The Class CfnNagReport.
+ * The Class CheckovReport.
  */
-public final class CfnNagReport {
+public final class CheckovReport {
 
-	/** The failure count. */
-	private int failureCount;
+	/** The check type. */
+	private String check_type;
 
-	/** The violations. */
-	private List<CfnNagViolation> violations = new ArrayList<>();
+	/** The summary. */
+	private CheckovSummary summary;
+
+	/** The results. */
+	private CheckovResults results;
+
+
 
 	/**
-	 * Gets the failure count.
+	 * Gets the check type.
 	 *
-	 * @return the failure count
+	 * @return the check type
 	 */
-	@JsonProperty("failure_count")
-	public int getFailureCount() {
-		return failureCount;
+	public String getCheck_type() {
+		return check_type;
 	}
 
 	/**
-	 * Sets the failure count.
+	 * Sets the check type.
 	 *
-	 * @param failureCount the new failure count
+	 * @param check_type the new check type
 	 */
-	public void setFailureCount(final int failureCount) {
-		this.failureCount = failureCount;
+	public void setCheck_type(final String check_type) {
+		this.check_type = check_type;
 	}
 
 	/**
-	 * Gets the violations.
+	 * Gets the summary.
 	 *
-	 * @return the violations
+	 * @return the summary
 	 */
-	public List<CfnNagViolation> getViolations() {
-		return new ArrayList<>(violations);
+	public CheckovSummary getSummary() {
+		return summary;
 	}
 
 	/**
-	 * Sets the violations.
+	 * Sets the summary.
 	 *
-	 * @param violations the new violations
+	 * @param summary the new summary
 	 */
-	public void setViolations(final List<CfnNagViolation> violations) {
-		this.violations = new ArrayList<>(violations);
+	public void setSummary(final CheckovSummary summary) {
+		this.summary = summary;
 	}
 
+	/**
+	 * Gets the results.
+	 *
+	 * @return the results
+	 */
+	public CheckovResults getResults() {
+		return results;
+	}
+
+	/**
+	 * Sets the results.
+	 *
+	 * @param results the new results
+	 */
+	public void setResults(final CheckovResults results) {
+		this.results = results;
+	}
 
 	/**
 	 * To string.

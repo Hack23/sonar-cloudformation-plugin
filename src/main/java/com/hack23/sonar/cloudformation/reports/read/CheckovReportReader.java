@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser.cfnnag;
+package com.hack23.sonar.cloudformation.reports.read;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,29 +26,30 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
 
 /**
- * The Class CfnNagReportReader.
+ * The Class CheckovReportReader.
  */
-public class CfnNagReportReader {
+public class CheckovReportReader {
 
 	/** The Constant LOGGER. */
-	private static final Logger LOGGER = Loggers.get(CfnNagReportReader.class);
+	private static final Logger LOGGER = Loggers.get(CheckovReportReader.class);
 
 	/**
 	 * Read report.
 	 *
 	 * @param input the input
-	 * @return the cfn nag report
+	 * @return the checkov report
 	 */
-	public CfnNagReport readReport(final InputStream input) {
+	public CheckovReport readReport(final InputStream input) {
 		final ObjectMapper objectMapper = new ObjectMapper();
 
 		try {
-			return objectMapper.readValue(input, CfnNagReport.class);
+			return objectMapper.readValue(input, CheckovReport.class);
 		} catch (final IOException e) {
-			LOGGER.warn("Problem reading cfn nag report json:{}", e.getMessage());
-			return new CfnNagReport();
+			LOGGER.warn("Problem reading checkov report json:{}", e.getMessage());
+			return new CheckovReport();
 		}
 	}
 }

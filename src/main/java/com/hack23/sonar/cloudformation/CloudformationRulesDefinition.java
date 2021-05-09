@@ -65,10 +65,10 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	/**
 	 * Define rules for language.
 	 *
-	 * @param context        the context
-	 * @param repositoryKey  the repository key
+	 * @param context the context
+	 * @param repositoryKey the repository key
 	 * @param repositoryName the repository name
-	 * @param languageKey    the language key
+	 * @param languageKey the language key
 	 */
 	private void defineRulesForLanguage(final Context context, final String repositoryKey, final String repositoryName,
 			final String languageKey) {

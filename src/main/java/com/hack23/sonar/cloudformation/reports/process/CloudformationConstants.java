@@ -17,39 +17,23 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser.cfnnag;
-
-import java.io.ByteArrayInputStream;
-import java.util.List;
-
-import org.junit.Assert;
-import org.junit.Test;
+package com.hack23.sonar.cloudformation.reports.process;
 
 /**
- * The Class CfnNagScanReportReaderTest.
+ * The Class CloudformationConstants.
  */
-public class CfnNagScanReportReaderTest extends Assert {
+public final class CloudformationConstants {
+
+	/** The Constant CFN_NAG_REPORT_FILES_PROPERTY. */
+	public static final String CFN_NAG_REPORT_FILES_PROPERTY = "sonar.cfn.nag.reportFiles";
+
+	/** The Constant CHECKOV_REPORT_FILES_PROPERTY. */
+	public static final String CHECKOV_REPORT_FILES_PROPERTY = "sonar.cfn.checkov.reportFiles";
 
 	/**
-	 * Read report test.
+	 * Instantiates a new cloudformation constants.
 	 */
-	@Test
-	public void readReportTest() {
-		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(CfnNagScanReportReaderTest.class.getResourceAsStream("/cfn-nag-scan.nagscan"));
-
-		assertNotNull(cfnNagReport);
-		assertFalse(cfnNagReport.isEmpty());
-	}
-
-	/**
-	 * Read report failue test.
-	 */
-	@Test
-	public void readReportFailueTest() {
-		final List<CfnNagScanReport> cfnNagReport = new CfnNagScanReportReader().readReport(new ByteArrayInputStream("".getBytes()));
-
-		assertNotNull(cfnNagReport);
-		assertTrue(cfnNagReport.isEmpty());
+	private CloudformationConstants() {
 	}
 
 }

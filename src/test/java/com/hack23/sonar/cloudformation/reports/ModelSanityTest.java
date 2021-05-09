@@ -17,13 +17,15 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser;
+package com.hack23.sonar.cloudformation.reports;
 
 import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagScanReport;
+import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
 import com.openpojo.random.RandomFactory;
 import com.openpojo.reflection.PojoClass;
 import com.openpojo.reflection.PojoClassFilter;
@@ -45,20 +47,39 @@ import com.openpojo.validation.test.impl.SetterTester;
  */
 public final class ModelSanityTest extends Assert {
 
+	/** The Constant FilterPackageInfo. */
 	private static final FilterPackageInfo FilterPackageInfo = new FilterPackageInfo();
 
 	/** The Constant EXPECT_CLASSES_IN_PACKAGE. */
 	private static final String EXPECT_CLASSES_IN_PACKAGE = "Expect classes in package";
 
 
+	/**
+	 * Check cfn nag report package test.
+	 */
 	@Test
-	public void modelTest() {
-
+	public void checkCfnNagReportPackageTest() {
 		assertTrue(EXPECT_CLASSES_IN_PACKAGE,
-				checkAllClassesInPackage( ModelSanityTest.class.getPackage().getName()));
+				checkAllClassesInPackage(CfnNagScanReport.class.getPackage().getName()));
 
 	}
 
+	/**
+	 * Check checkov report package test.
+	 */
+	@Test
+	public void checkCheckovReportPackageTest() {
+		assertTrue(EXPECT_CLASSES_IN_PACKAGE,
+				checkAllClassesInPackage(CheckovReport.class.getPackage().getName()));
+
+	}
+
+	/**
+	 * Check all classes in package.
+	 *
+	 * @param string the string
+	 * @return true, if successful
+	 */
 	protected final boolean checkAllClassesInPackage(final String string) {
 		final List<PojoClass> pojoClassesRecursively = PojoClassFactory.getPojoClassesRecursively(string,
 				new FilterTestClasses());
@@ -72,7 +93,17 @@ public final class ModelSanityTest extends Assert {
 		return true;
 	}
 
+	/**
+	 * The Class FilterTestClasses.
+	 */
 	private static class FilterTestClasses implements PojoClassFilter {
+		
+		/**
+		 * Include.
+		 *
+		 * @param pojoClass the pojo class
+		 * @return true, if successful
+		 */
 		@Override
 		public boolean include(final PojoClass pojoClass) {
 			return !(pojoClass.getSourcePath().contains("/test-classes/")
@@ -81,7 +112,16 @@ public final class ModelSanityTest extends Assert {
 		}
 	}
 
+	/**
+	 * The Class InvokeToStringTester.
+	 */
 	private static class InvokeToStringTester implements Tester {
+		
+		/**
+		 * Run.
+		 *
+		 * @param pojoClass the pojo class
+		 */
 		@Override
 		public void run(final PojoClass pojoClass) {
 			final Object instance = RandomFactory.getRandomValue(pojoClass.getClazz());
@@ -93,6 +133,12 @@ public final class ModelSanityTest extends Assert {
 	 * The Class InvokeHashcodeTester.
 	 */
 	private static class InvokeHashcodeTester implements Tester {
+		
+		/**
+		 * Run.
+		 *
+		 * @param pojoClass the pojo class
+		 */
 		@Override
 		public void run(final PojoClass pojoClass) {
 			final Object instance = RandomFactory.getRandomValue(pojoClass.getClazz());
@@ -104,6 +150,12 @@ public final class ModelSanityTest extends Assert {
 	 * The Class DummyEqualsTester.
 	 */
 	private static class DummyEqualsTester implements Tester {
+		
+		/**
+		 * Run.
+		 *
+		 * @param pojoClass the pojo class
+		 */
 		@Override
 		public void run(final PojoClass pojoClass) {
 			final Object instance = randomValues(pojoClass);
@@ -117,6 +169,12 @@ public final class ModelSanityTest extends Assert {
 			instance.equals(instance2);
 		}
 
+		/**
+		 * Random values.
+		 *
+		 * @param pojoClass the pojo class
+		 * @return the object
+		 */
 		private Object randomValues(final PojoClass pojoClass) {
 			final Object instance = RandomFactory.getRandomValue(pojoClass.getClazz());
 			randomValues(instance, pojoClass);
@@ -124,6 +182,12 @@ public final class ModelSanityTest extends Assert {
 			return instance;
 		}
 
+		/**
+		 * Random values.
+		 *
+		 * @param instance the instance
+		 * @param pojoClass the pojo class
+		 */
 		private static void randomValues(final Object instance, final PojoClass pojoClass) {
 			if (pojoClass == null) {
 				return;

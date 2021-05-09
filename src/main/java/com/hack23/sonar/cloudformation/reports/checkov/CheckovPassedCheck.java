@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser.checkov;
+package com.hack23.sonar.cloudformation.reports.checkov;
 
 import java.util.List;
 

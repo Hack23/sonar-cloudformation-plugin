@@ -39,6 +39,8 @@ import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.scan.filesystem.PathResolver;
 
+import com.hack23.sonar.cloudformation.reports.process.CloudformationConstants;
+
 /**
  * The Class CloudformationSensorTest.
  */
@@ -58,7 +60,7 @@ public class CloudformationSensorTest extends Assert {
 	/**
 	 * Execute simple nag report test.
 	 *
-	 * @throws IOException
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	@Test
 	public void executeSimpleNagReportTest() throws IOException {
@@ -89,6 +91,11 @@ public class CloudformationSensorTest extends Assert {
 		cloudformationSensor.execute(sensorContext);
 	}
 
+	/**
+	 * Execute simple checkov report test.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	@Test
 	public void executeSimpleCheckovReportTest() throws IOException {
 		final Configuration configuration = mock(Configuration.class);
@@ -118,278 +125,5 @@ public class CloudformationSensorTest extends Assert {
 		cloudformationSensor.execute(sensorContext);
 	}
 
-	@Test
-	public void executeSimpleCheckovReportFoundNoTemplateTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.of("src/test/resources/checkov/cia-dist-cloudformation.checkov-report"));
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		cloudformationSensor.execute(sensorContext);
-	}
-
-
-	/**
-	 * Execute simple nag report missing template test.
-	 *
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	@Test
-	public void executeSimpleNagReportMissingTemplateTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.of("src/test/resources/aws-cross-account-manager-master.yml.nag"));
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		cloudformationSensor.execute(sensorContext);
-	}
-
-	/**
-	 * Execute simple nag scan report test.
-	 *
-	 * @throws IOException
-	 */
-	@Test
-	public void executeSimpleNagScanReportTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.of("src/test/resources/cfn-nag-scan.nagscan"));
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final DefaultInputFile inputFile = new TestInputFileBuilder("key", "src/test/resources/CloudTrailAllAccounts.yml")
-				.setLanguage("yaml")
-				.initMetadata(new String(Files.readAllBytes(
-						FileSystems.getDefault().getPath("src/test/resources/CloudTrailAllAccounts.yml"))))
-				.setCharset(StandardCharsets.UTF_8).build();
-		fileSystem.add(inputFile);
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
-		cloudformationSensor.execute(sensorContext);
-	}
-
-	/**
-	 * Execute simple nag scan report template missing test.
-	 *
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	@Test
-	public void executeSimpleNagScanReportTemplateMissingTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.of("src/test/resources/cfn-nag-scan.nagscan"));
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		cloudformationSensor.execute(sensorContext);
-	}
-
-	/**
-	 * Execute nag scan report bad property test.
-	 *
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	@Test
-	public void executeNagScanReportBadPropertyTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.of("src/test/resources/file-not-exist.nagscan"));
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		cloudformationSensor.execute(sensorContext);
-	}
-
-
-
-	/**
-	 * Execute missing property test.
-	 *
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	@Test
-	public void executeMissingPropertyTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.empty());
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		cloudformationSensor.execute(sensorContext);
-	}
-
-
-	/**
-	 * Execute mixed file report test.
-	 *
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	@Test
-	public void executeMixedFileReportTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.of("src/test/resources/aws-cross-account-manager-master.yml.nag,src/test/resources/cfn-nag-scan.nagscan"));
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final DefaultInputFile inputFile = new TestInputFileBuilder("key", "src/test/resources/CloudTrailAllAccounts.yml")
-				.setLanguage("yaml")
-				.initMetadata(new String(Files.readAllBytes(
-						FileSystems.getDefault().getPath("src/test/resources/CloudTrailAllAccounts.yml"))))
-				.setCharset(StandardCharsets.UTF_8).build();
-		fileSystem.add(inputFile);
-
-		final DefaultInputFile inputFile2 = new TestInputFileBuilder("key",
-				"src/test/resources/aws-cross-account-manager-master.yml")
-						.setLanguage("yaml")
-						.initMetadata(new String(Files.readAllBytes(
-								FileSystems.getDefault().getPath("src/test/resources/aws-cross-account-manager-master.yml"))))
-						.setCharset(StandardCharsets.UTF_8).build();
-		fileSystem.add(inputFile2);
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile2);
-		cloudformationSensor.execute(sensorContext);
-	}
-
-
-	@Test
-	public void executeFileReportWithCustomRulesTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.of("src/test/resources/cfn-nag-scan-custom-rules.nagscan"));
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final DefaultInputFile inputFile = new TestInputFileBuilder("key", "src/test/resources/CloudTrailAllAccounts.yml")
-				.setLanguage("yaml")
-				.initMetadata(new String(Files.readAllBytes(
-						FileSystems.getDefault().getPath("src/test/resources/CloudTrailAllAccounts.yml"))))
-				.setCharset(StandardCharsets.UTF_8).build();
-		fileSystem.add(inputFile);
-
-		final DefaultInputFile inputFile2 = new TestInputFileBuilder("key",
-				"src/test/resources/aws-cross-account-manager-master.yml")
-						.setLanguage("yaml")
-						.initMetadata(new String(Files.readAllBytes(
-								FileSystems.getDefault().getPath("src/test/resources/aws-cross-account-manager-master.yml"))))
-						.setCharset(StandardCharsets.UTF_8).build();
-		fileSystem.add(inputFile2);
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile2);
-		cloudformationSensor.execute(sensorContext);
-	}
-
-	@Test
-	public void executeFileReportWithMissingLineNumbersTest() throws IOException {
-		final Configuration configuration = mock(Configuration.class);
-		when(configuration.get(CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY))
-				.thenReturn(Optional.of("src/test/resources/cfn-nag-scan-missing-linenumbers.nagscan"));
-
-		final CloudformationSensorConfiguration cloudformationSensorConfiguration = new CloudformationSensorConfiguration(
-				configuration);
-
-		final DefaultFileSystem fileSystem = new DefaultFileSystem(
-				FileSystems.getDefault().getPath(".").toAbsolutePath());
-
-		final DefaultInputFile inputFile = new TestInputFileBuilder("key", "src/test/resources/CloudTrailAllAccounts.yml")
-				.setLanguage("yaml")
-				.initMetadata(new String(Files.readAllBytes(
-						FileSystems.getDefault().getPath("src/test/resources/CloudTrailAllAccounts.yml"))))
-				.setCharset(StandardCharsets.UTF_8).build();
-		fileSystem.add(inputFile);
-
-		final DefaultInputFile inputFile2 = new TestInputFileBuilder("key",
-				"src/test/resources/aws-cross-account-manager-master.yml")
-						.setLanguage("yaml")
-						.initMetadata(new String(Files.readAllBytes(
-								FileSystems.getDefault().getPath("src/test/resources/aws-cross-account-manager-master.yml"))))
-						.setCharset(StandardCharsets.UTF_8).build();
-		fileSystem.add(inputFile2);
-
-		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
-				fileSystem, new PathResolver());
-
-		final SensorContext sensorContext = SensorContextTester
-				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile2);
-		cloudformationSensor.execute(sensorContext);
-	}
 
 }

@@ -17,89 +17,84 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser.checkov;
+package com.hack23.sonar.cloudformation.reports.checkov;
+
+import java.util.List;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
- * The Class CheckovSummary.
+ * The Class CheckovResults.
  */
-public final class CheckovSummary {
+public final class CheckovResults {
 
-    /** The passed. */
-    private int passed;
+	/** The passed checks. */
+	private List<CheckovPassedCheck> passed_checks;
 
-    /** The failed. */
-    private int failed;
+	/** The failed checks. */
+	private List<CheckovPassedCheck> failed_checks;
 
-    /** The skipped. */
-    private int skipped;
+    /** The skipped checks. */
+    private List<String> skipped_checks;
 
     /** The parsing errors. */
-    private int parsingErrors;
-
-    /** The checkov version. */
-    private String checkovVersion;
-
-
+    private List<String> parsing_errors;
 
 	/**
-	 * Gets the passed.
+	 * Gets the passed checks.
 	 *
-	 * @return the passed
+	 * @return the passed checks
 	 */
-	public int getPassed() {
-		return passed;
+	public List<CheckovPassedCheck> getPassed_checks() {
+		return passed_checks;
 	}
 
 	/**
-	 * Sets the passed.
+	 * Sets the passed checks.
 	 *
-	 * @param passed the new passed
+	 * @param passed_checks the new passed checks
 	 */
-	public void setPassed(final int passed) {
-		this.passed = passed;
+	public void setPassed_checks(final List<CheckovPassedCheck> passed_checks) {
+		this.passed_checks = passed_checks;
 	}
 
 	/**
-	 * Gets the failed.
+	 * Gets the failed checks.
 	 *
-	 * @return the failed
+	 * @return the failed checks
 	 */
-	public int getFailed() {
-		return failed;
+	public List<CheckovPassedCheck> getFailed_checks() {
+		return failed_checks;
 	}
 
 	/**
-	 * Sets the failed.
+	 * Sets the failed checks.
 	 *
-	 * @param failed the new failed
+	 * @param failed_checks the new failed checks
 	 */
-	public void setFailed(final int failed) {
-		this.failed = failed;
+	public void setFailed_checks(final List<CheckovPassedCheck> failed_checks) {
+		this.failed_checks = failed_checks;
 	}
 
 	/**
-	 * Gets the skipped.
+	 * Gets the skipped checks.
 	 *
-	 * @return the skipped
+	 * @return the skipped checks
 	 */
-	public int getSkipped() {
-		return skipped;
+	public List<String> getSkipped_checks() {
+		return skipped_checks;
 	}
 
 	/**
-	 * Sets the skipped.
+	 * Sets the skipped checks.
 	 *
-	 * @param skipped the new skipped
+	 * @param skipped_checks the new skipped checks
 	 */
-	public void setSkipped(final int skipped) {
-		this.skipped = skipped;
+	public void setSkipped_checks(final List<String> skipped_checks) {
+		this.skipped_checks = skipped_checks;
 	}
 
 	/**
@@ -107,37 +102,17 @@ public final class CheckovSummary {
 	 *
 	 * @return the parsing errors
 	 */
-	@JsonProperty("parsing_errors")
-	public int getParsingErrors() {
-		return parsingErrors;
+	public List<String> getParsing_errors() {
+		return parsing_errors;
 	}
 
 	/**
 	 * Sets the parsing errors.
 	 *
-	 * @param parsingErrors the new parsing errors
+	 * @param parsing_errors the new parsing errors
 	 */
-	public void setParsingErrors(final int parsingErrors) {
-		this.parsingErrors = parsingErrors;
-	}
-
-	/**
-	 * Gets the checkov version.
-	 *
-	 * @return the checkov version
-	 */
-	@JsonProperty("checkov_version")
-	public String getCheckovVersion() {
-		return checkovVersion;
-	}
-
-	/**
-	 * Sets the checkov version.
-	 *
-	 * @param checkovVersion the new checkov version
-	 */
-	public void setCheckovVersion(final String checkovVersion) {
-		this.checkovVersion = checkovVersion;
+	public void setParsing_errors(final List<String> parsing_errors) {
+		this.parsing_errors = parsing_errors;
 	}
 
 	/**

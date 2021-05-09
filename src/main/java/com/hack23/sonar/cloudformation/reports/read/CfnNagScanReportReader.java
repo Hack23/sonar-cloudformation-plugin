@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser.cfnnag;
+package com.hack23.sonar.cloudformation.reports.read;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,6 +29,7 @@ import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagScanReport;
 
 /**
  * The Class CfnNagScanReportReader.

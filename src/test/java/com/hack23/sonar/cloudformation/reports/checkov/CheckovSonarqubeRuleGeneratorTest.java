@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser.checkov;
+package com.hack23.sonar.cloudformation.reports.checkov;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -31,8 +31,12 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.junit.Test;
 
+/**
+ * The Class CheckovSonarqubeRuleGeneratorTest.
+ */
 public class CheckovSonarqubeRuleGeneratorTest {
 
+	/** The Constant XML_ENTRY. */
 	private final static String XML_ENTRY ="    <rule>\n"
 			+ "		<key>{IaC}-{RULE_ID}</key>\n"
 			+ "		<name>{NAME}</name>\n"
@@ -60,35 +64,65 @@ public class CheckovSonarqubeRuleGeneratorTest {
 	*
 	*/
 
+	/** The nist policy string mapping. */
 	private static Map<String,String> NIST_POLICY_STRING_MAPPING = new HashMap<>();
 
+	/** The Constant DETECT_SC_13. */
 	private static final String DETECT_SC_13 ="encrypted at rest";
+	
+	/** The Constant DETECT2_SC_13. */
 	private static final String DETECT2_SC_13 ="securely encrypted";
+	
+	/** The Constant SC_13_TAGS. */
 	private static final String SC_13_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-311</tag>\n		<tag>800-53-sc-13</tag>";
 
+	/** The Constant DETECT_SC_8. */
 	private static final String DETECT_SC_8 ="encryption transit";
+	
+	/** The Constant DETECT2_SC_8. */
 	private static final String DETECT2_SC_8 ="https";
+	
+	/** The Constant SC_8_TAGS. */
 	private static final String SC_8_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-311</tag>\n		<tag>800-53-sc-8</tag>";
 
+	/** The Constant DETECT_AC_6. */
 	private static final String DETECT_AC_6 ="IAM policies";
+	
+	/** The Constant AC_6_TAGS. */
 	private static final String AC_6_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-272</tag>\n		<tag>800-53-ac-6</tag>";
 
+	/** The Constant DETECT_AC_4_GROUP. */
 	private static final String DETECT_AC_4_GROUP ="security group";
+	
+	/** The Constant AC_4_TAGS_GROUP. */
 	private static final String AC_4_TAGS_GROUP ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-732</tag>\n		<tag>800-53-ac-4</tag>";
 
+	/** The Constant DETECT_AC_4. */
 	private static final String DETECT_AC_4 ="public";
+	
+	/** The Constant AC_4_TAGS. */
 	private static final String AC_4_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-732</tag>\n		<tag>800-53-ac-4</tag>";
 
+	/** The Constant DETECT_AU_12. */
 	private static final String DETECT_AU_12 ="logging";
+	
+	/** The Constant AU_12_TAGS. */
 	private static final String AU_12_TAGS ="\n		<tag>owasp-a10</tag>\n		<tag>cweid-778</tag>\n		<tag>800-53-au-12</tag>";
 
+	/** The Constant DETECT_CP_9. */
 	private static final String DETECT_CP_9 ="retention backup";
+	
+	/** The Constant CP_9_TAGS. */
 	private static final String CP_9_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-693</tag>\n		<tag>800-53-cp-9</tag>";
 
+	/** The Constant DETECT_AU_11. */
 	private static final String DETECT_AU_11 ="retention log";
+	
+	/** The Constant AU_11_TAGS. */
 	private static final String AU_11_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-779</tag>\n		<tag>800-53-au-11</tag>";
 
 
+	/** The Constant keyrotation. */
 	private static final String keyrotation ="rotat";
 
 	static {
@@ -106,8 +140,9 @@ public class CheckovSonarqubeRuleGeneratorTest {
 
 
 	/**
-	 * Read report test.
-	 * @throws IOException
+	 * Generate sonarqube rule definitions for checkov test.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	@Test
 	public void generateSonarqubeRuleDefinitionsForCheckovTest() throws IOException {

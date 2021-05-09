@@ -17,125 +17,127 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package com.hack23.sonar.cloudformation.parser.cfnnag;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.hack23.sonar.cloudformation.reports.checkov;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
- * The Class CfnNagViolation.
+ * The Class CheckovSummary.
  */
-public final class CfnNagViolation {
+public final class CheckovSummary {
 
-	/** The id. */
-	private String id;
+    /** The passed. */
+    private int passed;
 
-	/** The type. */
-	private String type;
+    /** The failed. */
+    private int failed;
 
-	/** The message. */
-	private String message;
+    /** The skipped. */
+    private int skipped;
 
-	/** The logical resource ids. */
-	private List<String> logical_resource_ids = new ArrayList<>();
+    /** The parsing errors. */
+    private int parsingErrors;
 
-	/** The line numbers. */
-	private List<Integer> line_numbers = new ArrayList<>();
+    /** The checkov version. */
+    private String checkovVersion;
+
 
 
 	/**
-	 * Gets the id.
+	 * Gets the passed.
 	 *
-	 * @return the id
+	 * @return the passed
 	 */
-	public String getId() {
-		return id;
+	public int getPassed() {
+		return passed;
 	}
 
 	/**
-	 * Sets the id.
+	 * Sets the passed.
 	 *
-	 * @param id the new id
+	 * @param passed the new passed
 	 */
-	public void setId(final String id) {
-		this.id = id;
+	public void setPassed(final int passed) {
+		this.passed = passed;
 	}
 
 	/**
-	 * Gets the type.
+	 * Gets the failed.
 	 *
-	 * @return the type
+	 * @return the failed
 	 */
-	public String getType() {
-		return type;
+	public int getFailed() {
+		return failed;
 	}
 
 	/**
-	 * Sets the type.
+	 * Sets the failed.
 	 *
-	 * @param type the new type
+	 * @param failed the new failed
 	 */
-	public void setType(final String type) {
-		this.type = type;
+	public void setFailed(final int failed) {
+		this.failed = failed;
 	}
 
 	/**
-	 * Gets the message.
+	 * Gets the skipped.
 	 *
-	 * @return the message
+	 * @return the skipped
 	 */
-	public String getMessage() {
-		return message;
+	public int getSkipped() {
+		return skipped;
 	}
 
 	/**
-	 * Sets the message.
+	 * Sets the skipped.
 	 *
-	 * @param message the new message
+	 * @param skipped the new skipped
 	 */
-	public void setMessage(final String message) {
-		this.message = message;
+	public void setSkipped(final int skipped) {
+		this.skipped = skipped;
 	}
 
 	/**
-	 * Gets the logical resource ids.
+	 * Gets the parsing errors.
 	 *
-	 * @return the logical resource ids
+	 * @return the parsing errors
 	 */
-	public List<String> getLogical_resource_ids() {
-		return new ArrayList<>(logical_resource_ids);
+	@JsonProperty("parsing_errors")
+	public int getParsingErrors() {
+		return parsingErrors;
 	}
 
 	/**
-	 * Sets the logical resource ids.
+	 * Sets the parsing errors.
 	 *
-	 * @param logical_resource_ids the new logical resource ids
+	 * @param parsingErrors the new parsing errors
 	 */
-	public void setLogical_resource_ids(final List<String> logical_resource_ids) {
-		this.logical_resource_ids = new ArrayList<>(logical_resource_ids);
+	public void setParsingErrors(final int parsingErrors) {
+		this.parsingErrors = parsingErrors;
 	}
 
 	/**
-	 * Gets the line numbers.
+	 * Gets the checkov version.
 	 *
-	 * @return the line numbers
+	 * @return the checkov version
 	 */
-	public List<Integer> getLine_numbers() {
-		return new ArrayList<>(line_numbers);
+	@JsonProperty("checkov_version")
+	public String getCheckovVersion() {
+		return checkovVersion;
 	}
 
 	/**
-	 * Sets the line numbers.
+	 * Sets the checkov version.
 	 *
-	 * @param line_numbers the new line numbers
+	 * @param checkovVersion the new checkov version
 	 */
-	public void setLine_numbers(final List<Integer> line_numbers) {
-		this.line_numbers = new ArrayList<>(line_numbers);
+	public void setCheckovVersion(final String checkovVersion) {
+		this.checkovVersion = checkovVersion;
 	}
 
 	/**

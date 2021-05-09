@@ -25,6 +25,8 @@ import java.util.List;
 import org.sonar.api.config.PropertyDefinition;
 import org.sonar.api.resources.Qualifiers;
 
+import com.hack23.sonar.cloudformation.reports.process.CloudformationConstants;
+
 /**
  * The Class CloudformationProperties.
  */

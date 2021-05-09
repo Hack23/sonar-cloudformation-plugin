@@ -24,6 +24,8 @@ import java.util.Optional;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.scanner.ScannerSide;
 
+import com.hack23.sonar.cloudformation.reports.process.CloudformationConstants;
+
 /**
  * The Class CloudformationSensorConfiguration.
  */
