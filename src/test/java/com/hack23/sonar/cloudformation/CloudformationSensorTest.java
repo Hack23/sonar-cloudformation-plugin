@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.util.Arrays;
 import java.util.Optional;
 
 import org.junit.Assert;
@@ -33,10 +34,13 @@ import org.junit.Test;
 import org.sonar.api.batch.fs.internal.DefaultFileSystem;
 import org.sonar.api.batch.fs.internal.DefaultInputFile;
 import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
-import org.sonar.api.batch.sensor.SensorContext;
+import org.sonar.api.batch.rule.ActiveRules;
+import org.sonar.api.batch.rule.internal.DefaultActiveRules;
+import org.sonar.api.batch.rule.internal.NewActiveRule;
 import org.sonar.api.batch.sensor.internal.DefaultSensorDescriptor;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import org.sonar.api.config.Configuration;
+import org.sonar.api.rule.RuleKey;
 import org.sonar.api.scan.filesystem.PathResolver;
 
 import com.hack23.sonar.cloudformation.reports.process.CloudformationConstants;
@@ -85,10 +89,13 @@ public class CloudformationSensorTest extends Assert {
 		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
 				fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
+		sensorContext.setActiveRules(new DefaultActiveRules(Arrays.asList()));
 		cloudformationSensor.execute(sensorContext);
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(44,sensorContext.allIssues().size());
 	}
 
 	/**
@@ -119,10 +126,15 @@ public class CloudformationSensorTest extends Assert {
 		final CloudformationSensor cloudformationSensor = new CloudformationSensor(cloudformationSensorConfiguration,
 				fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
+		ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cfn-json","cloudformation-CKV_AWS_84")).build()));
+		sensorContext.setActiveRules(activeRules);		
 		cloudformationSensor.execute(sensorContext);
+		
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(2,sensorContext.allIssues().size());
 	}
 
 

@@ -1,49 +1,5 @@
 <cloudformation-rules>
 
-	 <rule>
-		<key>WCHECKOVUNDEFINED</key>
-		<name>Custom checkov warning rule or rule missing integration in this plugin.</name>
-		<internalKey>WCHECKOVUNDEFINED</internalKey>
-		<description>Custom checkov warning or rule missing integration in this plugin.</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-	<rule>
-		<key>FCHECKOVUNDEFINED</key>
-		<name>Custom checkov failure rule or rule missing integration in this plugin.</name>
-		<internalKey>FCHECKOVUNDEFINED</internalKey>
-		<description>Custom checkov failure or rule missing integration in this plugin.</description>
-		<severity>BLOCKER</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-        <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-     </rule> 
-
-    <rule>
-		<key>terraform-CKV2_AZURE_12</key>
-		<name>Ensure that 'Security contact emails' is set</name>
-		<internalKey>terraform-CKV2_AZURE_12</internalKey>
-		<description>Ensure that 'Security contact emails' is set</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>terraform</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
     <rule>
 		<key>serverless-CKV_AWS_1</key>
 		<name>Ensure IAM policies that allow full &quot;*-*&quot; administrative privileges are not created</name>
@@ -1713,6 +1669,21 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>cloudformation-CKV_AWS_60</key>
+		<name>Ensure IAM role allows only specific services or principals to assume it</name>
+		<internalKey>cloudformation-CKV_AWS_60</internalKey>
+		<description>Ensure IAM role allows only specific services or principals to assume it</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_AWS_61</key>
 		<name>Ensure IAM role allows only specific principals in account to assume it</name>
 		<internalKey>terraform-CKV_AWS_61</internalKey>
@@ -2171,6 +2142,21 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_79</key>
+		<name>Ensure Instance Metadata Service Version 1 is not enabled</name>
+		<internalKey>cloudformation-CKV_AWS_79</internalKey>
+		<description>Ensure Instance Metadata Service Version 1 is not enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2799,6 +2785,24 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>cloudformation-CKV_AWS_101</key>
+		<name>Ensure Neptune logging is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_101</internalKey>
+		<description>Ensure Neptune logging is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_AWS_102</key>
 		<name>Ensure Neptune Cluster instance is not publicly available</name>
 		<internalKey>terraform-CKV_AWS_102</internalKey>
@@ -2847,6 +2851,21 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>cloudformation-CKV_AWS_104</key>
+		<name>Ensure DocDB has audit logs enabled</name>
+		<internalKey>cloudformation-CKV_AWS_104</internalKey>
+		<description>Ensure DocDB has audit logs enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_AWS_105</key>
 		<name>Ensure Redshift uses SSL</name>
 		<internalKey>terraform-CKV_AWS_105</internalKey>
@@ -2873,21 +2892,6 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
-		<key>arm-CKV_AWS_106</key>
-		<name>Ensure Kubernetes Secrets are encrypted using Customer Master Keys (CMKs) managed in AWS KMS</name>
-		<internalKey>arm-CKV_AWS_106</internalKey>
-		<description>Ensure Kubernetes Secrets are encrypted using Customer Master Keys (CMKs) managed in AWS KMS</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>arm</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2997,21 +3001,6 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
-		<key>cloudformation-CKV_AWS_113</key>
-		<name>Ensure that Load Balancer has deletion protection enabled</name>
-		<internalKey>cloudformation-CKV_AWS_113</internalKey>
-		<description>Ensure that Load Balancer has deletion protection enabled</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>cloudformation</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
 		<key>terraform-CKV_AWS_114</key>
 		<name>Ensure that EMR clusters have Kerberos Enabled</name>
 		<internalKey>terraform-CKV_AWS_114</internalKey>
@@ -3088,9 +3077,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_AWS_119</key>
-		<name>Ensure DynamoDB Tables are encrypted</name>
+		<name>Ensure DynamoDB Tables are encrypted using KMS</name>
 		<internalKey>terraform-CKV_AWS_119</internalKey>
-		<description>Ensure DynamoDB Tables are encrypted</description>
+		<description>Ensure DynamoDB Tables are encrypted using KMS</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -3177,21 +3166,6 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
-		<key>terraform-CKV_AWS_125</key>
-		<name>Ensure that that point in time recovery is enabled for Amazon DynamoDB tables</name>
-		<internalKey>terraform-CKV_AWS_125</internalKey>
-		<description>Ensure that that point in time recovery is enabled for Amazon DynamoDB tables</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>terraform</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
 		<key>terraform-CKV_AWS_126</key>
 		<name>Ensure that detailed monitoring is enabled for EC2 instances</name>
 		<internalKey>terraform-CKV_AWS_126</internalKey>
@@ -3238,9 +3212,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_AWS_129</key>
-		<name>Ensure that that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled</name>
+		<name>Ensure that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled</name>
 		<internalKey>terraform-CKV_AWS_129</internalKey>
-		<description>Ensure that that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled</description>
+		<description>Ensure that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -3274,21 +3248,6 @@
 		<name>Ensure that ALB drops HTTP headers</name>
 		<internalKey>terraform-CKV_AWS_131</internalKey>
 		<description>Ensure that ALB drops HTTP headers</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>terraform</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
-		<key>terraform-CKV_AWS_132</key>
-		<name>Ensure KMS have rotation policy</name>
-		<internalKey>terraform-CKV_AWS_132</internalKey>
-		<description>Ensure KMS have rotation policy</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -3525,10 +3484,160 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
-		<key>cloudformation-CKV_AWS_152</key>
-		<name>Ensure that Secret Manager secret is encrypted using KMS</name>
-		<internalKey>cloudformation-CKV_AWS_152</internalKey>
-		<description>Ensure that Secret Manager secret is encrypted using KMS</description>
+		<key>terraform-CKV_AWS_148</key>
+		<name>Ensure no default VPC is planned to be provisioned</name>
+		<internalKey>terraform-CKV_AWS_148</internalKey>
+		<description>Ensure no default VPC is planned to be provisioned</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_149</key>
+		<name>Ensure that Secrets Manager secret is encrypted using KMS</name>
+		<internalKey>terraform-CKV_AWS_149</internalKey>
+		<description>Ensure that Secrets Manager secret is encrypted using KMS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_150</key>
+		<name>Ensure that Load Balancer has deletion protection enabled</name>
+		<internalKey>terraform-CKV_AWS_150</internalKey>
+		<description>Ensure that Load Balancer has deletion protection enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_151</key>
+		<name>Ensure Kubernetes Secrets are encrypted using Customer Master Keys (CMKs) managed in AWS KMS</name>
+		<internalKey>terraform-CKV_AWS_151</internalKey>
+		<description>Ensure Kubernetes Secrets are encrypted using Customer Master Keys (CMKs) managed in AWS KMS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_152</key>
+		<name>Ensure that Load Balancer (Network/Gateway) has cross-zone load balancing enabled</name>
+		<internalKey>terraform-CKV_AWS_152</internalKey>
+		<description>Ensure that Load Balancer (Network/Gateway) has cross-zone load balancing enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_153</key>
+		<name>Autoscaling groups should supply tags to launch configurations</name>
+		<internalKey>terraform-CKV_AWS_153</internalKey>
+		<description>Autoscaling groups should supply tags to launch configurations</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_154</key>
+		<name>Ensure Redshift is not deployed outside of a VPC</name>
+		<internalKey>terraform-CKV_AWS_154</internalKey>
+		<description>Ensure Redshift is not deployed outside of a VPC</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_155</key>
+		<name>Ensure that Workspace user volumes are encrypted</name>
+		<internalKey>terraform-CKV_AWS_155</internalKey>
+		<description>Ensure that Workspace user volumes are encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_156</key>
+		<name>Ensure that Workspace root volumes are encrypted</name>
+		<internalKey>terraform-CKV_AWS_156</internalKey>
+		<description>Ensure that Workspace root volumes are encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_157</key>
+		<name>Ensure that RDS instances have Multi-AZ enabled</name>
+		<internalKey>terraform-CKV_AWS_157</internalKey>
+		<description>Ensure that RDS instances have Multi-AZ enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_157</key>
+		<name>Ensure that RDS instances have Multi-AZ enabled</name>
+		<internalKey>cloudformation-CKV_AWS_157</internalKey>
+		<description>Ensure that RDS instances have Multi-AZ enabled</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -3536,6 +3645,387 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_158</key>
+		<name>Ensure that CloudWatch Group is encrypted by KMS</name>
+		<internalKey>terraform-CKV_AWS_158</internalKey>
+		<description>Ensure that CloudWatch Group is encrypted by KMS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_159</key>
+		<name>Ensure that Athena Workgroup is encrypted</name>
+		<internalKey>terraform-CKV_AWS_159</internalKey>
+		<description>Ensure that Athena Workgroup is encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_1</key>
+		<name>Ensure that all NACL are attached to subnets</name>
+		<internalKey>terraform-CKV2_AWS_1</internalKey>
+		<description>Ensure that all NACL are attached to subnets</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_2</key>
+		<name>Ensure that only encrypted EBS volumes are attached to EC2 instances</name>
+		<internalKey>terraform-CKV2_AWS_2</internalKey>
+		<description>Ensure that only encrypted EBS volumes are attached to EC2 instances</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_3</key>
+		<name>Ensure GuardDuty is enbaled to specific org/region</name>
+		<internalKey>terraform-CKV2_AWS_3</internalKey>
+		<description>Ensure GuardDuty is enbaled to specific org/region</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_4</key>
+		<name>Ensure API Gateway stage have logging level defined as appropiate</name>
+		<internalKey>terraform-CKV2_AWS_4</internalKey>
+		<description>Ensure API Gateway stage have logging level defined as appropiate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_5</key>
+		<name>Ensure that Security Groups are attached to an other resource</name>
+		<internalKey>terraform-CKV2_AWS_5</internalKey>
+		<description>Ensure that Security Groups are attached to an other resource</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_6</key>
+		<name>Ensure that S3 bucket has a Public Access block</name>
+		<internalKey>terraform-CKV2_AWS_6</internalKey>
+		<description>Ensure that S3 bucket has a Public Access block</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_7</key>
+		<name>Ensure that Amazon EMR clusters' security groups are not open to the world</name>
+		<internalKey>terraform-CKV2_AWS_7</internalKey>
+		<description>Ensure that Amazon EMR clusters' security groups are not open to the world</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_8</key>
+		<name>Ensure that RDS clusters has backup plan of AWS Backup</name>
+		<internalKey>terraform-CKV2_AWS_8</internalKey>
+		<description>Ensure that RDS clusters has backup plan of AWS Backup</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_9</key>
+		<name>Ensure that EBS are added in the backup plans of AWS Backup</name>
+		<internalKey>terraform-CKV2_AWS_9</internalKey>
+		<description>Ensure that EBS are added in the backup plans of AWS Backup</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_10</key>
+		<name>Ensure CloudTrail trails are integrated with CloudWatch Logs</name>
+		<internalKey>terraform-CKV2_AWS_10</internalKey>
+		<description>Ensure CloudTrail trails are integrated with CloudWatch Logs</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_11</key>
+		<name>Ensure VPC flow logging is enabled in all VPCs</name>
+		<internalKey>terraform-CKV2_AWS_11</internalKey>
+		<description>Ensure VPC flow logging is enabled in all VPCs</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_12</key>
+		<name>Ensure the default security group of every VPC restricts all traffic</name>
+		<internalKey>terraform-CKV2_AWS_12</internalKey>
+		<description>Ensure the default security group of every VPC restricts all traffic</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_13</key>
+		<name>Ensure that Redshift clusters has backup plan of AWS Backup</name>
+		<internalKey>terraform-CKV2_AWS_13</internalKey>
+		<description>Ensure that Redshift clusters has backup plan of AWS Backup</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_14</key>
+		<name>Ensure that IAM groups includes at least one IAM user</name>
+		<internalKey>terraform-CKV2_AWS_14</internalKey>
+		<description>Ensure that IAM groups includes at least one IAM user</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_15</key>
+		<name>Ensure that auto Scaling groups that are associated with a load balancer are using Elastic Load Balancing health checks.</name>
+		<internalKey>terraform-CKV2_AWS_15</internalKey>
+		<description>Ensure that auto Scaling groups that are associated with a load balancer are using Elastic Load Balancing health checks.</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_16</key>
+		<name>Ensure that Auto Scaling is enabled on your DynamoDB tables</name>
+		<internalKey>terraform-CKV2_AWS_16</internalKey>
+		<description>Ensure that Auto Scaling is enabled on your DynamoDB tables</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_17</key>
+		<name>Ensure that EC2 instances belong to a VPC</name>
+		<internalKey>terraform-CKV2_AWS_17</internalKey>
+		<description>Ensure that EC2 instances belong to a VPC</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_18</key>
+		<name>Ensure that Elastic File System (Amazon EFS) file systems are added in the backup plans of AWS Backup</name>
+		<internalKey>terraform-CKV2_AWS_18</internalKey>
+		<description>Ensure that Elastic File System (Amazon EFS) file systems are added in the backup plans of AWS Backup</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_19</key>
+		<name>Ensure that all EIP addresses allocated to a VPC are attached to EC2 instances</name>
+		<internalKey>terraform-CKV2_AWS_19</internalKey>
+		<description>Ensure that all EIP addresses allocated to a VPC are attached to EC2 instances</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_20</key>
+		<name>Ensure that ALB redirects HTTP requests into HTTPS ones</name>
+		<internalKey>terraform-CKV2_AWS_20</internalKey>
+		<description>Ensure that ALB redirects HTTP requests into HTTPS ones</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_21</key>
+		<name>Ensure that all IAM users are members of at least one IAM group.</name>
+		<internalKey>terraform-CKV2_AWS_21</internalKey>
+		<description>Ensure that all IAM users are members of at least one IAM group.</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_22</key>
+		<name>Ensure an IAM User does not have access to the console</name>
+		<internalKey>terraform-CKV2_AWS_22</internalKey>
+		<description>Ensure an IAM User does not have access to the console</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -6171,6 +6661,345 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AZURE_131</key>
+		<name>Ensure that 'Security contact emails' is set</name>
+		<internalKey>terraform-CKV_AZURE_131</internalKey>
+		<description>Ensure that 'Security contact emails' is set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_1</key>
+		<name>Ensure storage for critical data are encrypted with Customer Managed Key</name>
+		<internalKey>terraform-CKV2_AZURE_1</internalKey>
+		<description>Ensure storage for critical data are encrypted with Customer Managed Key</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_2</key>
+		<name>Ensure that Vulnerability Assessment (VA) is enabled on a SQL server by setting a Storage Account</name>
+		<internalKey>terraform-CKV2_AZURE_2</internalKey>
+		<description>Ensure that Vulnerability Assessment (VA) is enabled on a SQL server by setting a Storage Account</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_3</key>
+		<name>Ensure that VA setting Periodic Recurring Scans is enabled on a SQL server</name>
+		<internalKey>terraform-CKV2_AZURE_3</internalKey>
+		<description>Ensure that VA setting Periodic Recurring Scans is enabled on a SQL server</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_4</key>
+		<name>Ensure that VA setting Periodic Recurring Scans is enabled on a SQL server</name>
+		<internalKey>terraform-CKV2_AZURE_4</internalKey>
+		<description>Ensure that VA setting Periodic Recurring Scans is enabled on a SQL server</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_5</key>
+		<name>Ensure that VA setting 'Also send email notifications to admins and subscription owners' is set for a SQL server</name>
+		<internalKey>terraform-CKV2_AZURE_5</internalKey>
+		<description>Ensure that VA setting 'Also send email notifications to admins and subscription owners' is set for a SQL server</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_6</key>
+		<name>Ensure 'Allow access to Azure services' for PostgreSQL Database Server is disabled</name>
+		<internalKey>terraform-CKV2_AZURE_6</internalKey>
+		<description>Ensure 'Allow access to Azure services' for PostgreSQL Database Server is disabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_7</key>
+		<name>Ensure that Azure Active Directory Admin is configured</name>
+		<internalKey>terraform-CKV2_AZURE_7</internalKey>
+		<description>Ensure that Azure Active Directory Admin is configured</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_8</key>
+		<name>Ensure the storage container storing the activity logs is not publicly accessible</name>
+		<internalKey>terraform-CKV2_AZURE_8</internalKey>
+		<description>Ensure the storage container storing the activity logs is not publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_9</key>
+		<name>Ensure Virtual Machines are utilizing Managed Disks</name>
+		<internalKey>terraform-CKV2_AZURE_9</internalKey>
+		<description>Ensure Virtual Machines are utilizing Managed Disks</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_10</key>
+		<name>Ensure that Microsoft Antimalware is configured to automatically updates for Virtual Machines</name>
+		<internalKey>terraform-CKV2_AZURE_10</internalKey>
+		<description>Ensure that Microsoft Antimalware is configured to automatically updates for Virtual Machines</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_11</key>
+		<name>Ensure that Azure Data Explorer encryption at rest uses a customer-managed key</name>
+		<internalKey>terraform-CKV2_AZURE_11</internalKey>
+		<description>Ensure that Azure Data Explorer encryption at rest uses a customer-managed key</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_12</key>
+		<name>Ensure that virtual machines are backed up using Azure Backup</name>
+		<internalKey>terraform-CKV2_AZURE_12</internalKey>
+		<description>Ensure that virtual machines are backed up using Azure Backup</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_13</key>
+		<name>Ensure that sql servers enables data security policy</name>
+		<internalKey>terraform-CKV2_AZURE_13</internalKey>
+		<description>Ensure that sql servers enables data security policy</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_14</key>
+		<name>Ensure that Unattached disks are encrypted</name>
+		<internalKey>terraform-CKV2_AZURE_14</internalKey>
+		<description>Ensure that Unattached disks are encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_15</key>
+		<name>Ensure that Azure data factories are encrypted with a customer-managed key</name>
+		<internalKey>terraform-CKV2_AZURE_15</internalKey>
+		<description>Ensure that Azure data factories are encrypted with a customer-managed key</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_16</key>
+		<name>Ensure that MySQL server enables customer-managed key for encryption</name>
+		<internalKey>terraform-CKV2_AZURE_16</internalKey>
+		<description>Ensure that MySQL server enables customer-managed key for encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_17</key>
+		<name>Ensure that PostgreSQL server enables customer-managed key for encryption</name>
+		<internalKey>terraform-CKV2_AZURE_17</internalKey>
+		<description>Ensure that PostgreSQL server enables customer-managed key for encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_18</key>
+		<name>Ensure that Storage Accounts use customer-managed key for encryption</name>
+		<internalKey>terraform-CKV2_AZURE_18</internalKey>
+		<description>Ensure that Storage Accounts use customer-managed key for encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_19</key>
+		<name>Ensure that Azure Synapse workspaces have no IP firewall rules attached</name>
+		<internalKey>terraform-CKV2_AZURE_19</internalKey>
+		<description>Ensure that Azure Synapse workspaces have no IP firewall rules attached</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_20</key>
+		<name>Ensure Storage logging is enabled for Table service for read requests</name>
+		<internalKey>terraform-CKV2_AZURE_20</internalKey>
+		<description>Ensure Storage logging is enabled for Table service for read requests</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_21</key>
+		<name>Ensure Storage logging is enabled for Blob service for read requests</name>
+		<internalKey>terraform-CKV2_AZURE_21</internalKey>
+		<description>Ensure Storage logging is enabled for Blob service for read requests</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_GCP_1</key>
 		<name>Ensure Stackdriver Logging is set to Enabled on Kubernetes Engine Clusters</name>
 		<internalKey>terraform-CKV_GCP_1</internalKey>
@@ -7257,6 +8086,117 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV2_GCP_1</key>
+		<name>Ensure GKE clusters are not running using the Compute Engine default service account</name>
+		<internalKey>terraform-CKV2_GCP_1</internalKey>
+		<description>Ensure GKE clusters are not running using the Compute Engine default service account</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_GCP_2</key>
+		<name>Ensure legacy networks do not exist for a project</name>
+		<internalKey>terraform-CKV2_GCP_2</internalKey>
+		<description>Ensure legacy networks do not exist for a project</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_GCP_3</key>
+		<name>Ensure that there are only GCP-managed service account keys for each service account</name>
+		<internalKey>terraform-CKV2_GCP_3</internalKey>
+		<description>Ensure that there are only GCP-managed service account keys for each service account</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_GCP_4</key>
+		<name>Ensure that retention policies on log buckets are configured using Bucket Lock</name>
+		<internalKey>terraform-CKV2_GCP_4</internalKey>
+		<description>Ensure that retention policies on log buckets are configured using Bucket Lock</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_GCP_5</key>
+		<name>Ensure that Cloud Audit Logging is configured properly across all services and all users from a project</name>
+		<internalKey>terraform-CKV2_GCP_5</internalKey>
+		<description>Ensure that Cloud Audit Logging is configured properly across all services and all users from a project</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_GCP_6</key>
+		<name>Ensure that Cloud KMS cryptokeys are not anonymously or publicly accessible</name>
+		<internalKey>terraform-CKV2_GCP_6</internalKey>
+		<description>Ensure that Cloud KMS cryptokeys are not anonymously or publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_GCP_7</key>
+		<name>Ensure that a MySQL database instance does not allow anyone to connect with administrative privileges</name>
+		<internalKey>terraform-CKV2_GCP_7</internalKey>
+		<description>Ensure that a MySQL database instance does not allow anyone to connect with administrative privileges</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_GIT_1</key>
 		<name>Ensure Repository is Private</name>
 		<internalKey>terraform-CKV_GIT_1</internalKey>
@@ -7268,6 +8208,1599 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_1</key>
+		<name>Do not admit containers wishing to share the host process ID namespace</name>
+		<internalKey>kubernetes-CKV_K8S_1</internalKey>
+		<description>Do not admit containers wishing to share the host process ID namespace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_2</key>
+		<name>Do not admit privileged containers</name>
+		<internalKey>kubernetes-CKV_K8S_2</internalKey>
+		<description>Do not admit privileged containers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_3</key>
+		<name>Do not admit containers wishing to share the host IPC namespace</name>
+		<internalKey>kubernetes-CKV_K8S_3</internalKey>
+		<description>Do not admit containers wishing to share the host IPC namespace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_4</key>
+		<name>Do not admit containers wishing to share the host network namespace</name>
+		<internalKey>kubernetes-CKV_K8S_4</internalKey>
+		<description>Do not admit containers wishing to share the host network namespace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_5</key>
+		<name>Containers should not run with allowPrivilegeEscalation</name>
+		<internalKey>kubernetes-CKV_K8S_5</internalKey>
+		<description>Containers should not run with allowPrivilegeEscalation</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_6</key>
+		<name>Do not admit root containers</name>
+		<internalKey>kubernetes-CKV_K8S_6</internalKey>
+		<description>Do not admit root containers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_7</key>
+		<name>Do not admit containers with the NET_RAW capability</name>
+		<internalKey>kubernetes-CKV_K8S_7</internalKey>
+		<description>Do not admit containers with the NET_RAW capability</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_8</key>
+		<name>Liveness Probe Should be Configured</name>
+		<internalKey>kubernetes-CKV_K8S_8</internalKey>
+		<description>Liveness Probe Should be Configured</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_9</key>
+		<name>Readiness Probe Should be Configured</name>
+		<internalKey>kubernetes-CKV_K8S_9</internalKey>
+		<description>Readiness Probe Should be Configured</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_10</key>
+		<name>CPU requests should be set</name>
+		<internalKey>kubernetes-CKV_K8S_10</internalKey>
+		<description>CPU requests should be set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_11</key>
+		<name>CPU limits should be set</name>
+		<internalKey>kubernetes-CKV_K8S_11</internalKey>
+		<description>CPU limits should be set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_12</key>
+		<name>Memory requests should be set</name>
+		<internalKey>kubernetes-CKV_K8S_12</internalKey>
+		<description>Memory requests should be set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_13</key>
+		<name>Memory limits should be set</name>
+		<internalKey>kubernetes-CKV_K8S_13</internalKey>
+		<description>Memory limits should be set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_14</key>
+		<name>Image Tag should be fixed - not latest or blank</name>
+		<internalKey>kubernetes-CKV_K8S_14</internalKey>
+		<description>Image Tag should be fixed - not latest or blank</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_15</key>
+		<name>Image Pull Policy should be Always</name>
+		<internalKey>kubernetes-CKV_K8S_15</internalKey>
+		<description>Image Pull Policy should be Always</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_16</key>
+		<name>Container should not be privileged</name>
+		<internalKey>kubernetes-CKV_K8S_16</internalKey>
+		<description>Container should not be privileged</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_17</key>
+		<name>Containers should not share the host process ID namespace</name>
+		<internalKey>kubernetes-CKV_K8S_17</internalKey>
+		<description>Containers should not share the host process ID namespace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_18</key>
+		<name>Containers should not share the host IPC namespace</name>
+		<internalKey>kubernetes-CKV_K8S_18</internalKey>
+		<description>Containers should not share the host IPC namespace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_19</key>
+		<name>Containers should not share the host network namespace</name>
+		<internalKey>kubernetes-CKV_K8S_19</internalKey>
+		<description>Containers should not share the host network namespace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_20</key>
+		<name>Containers should not run with allowPrivilegeEscalation</name>
+		<internalKey>kubernetes-CKV_K8S_20</internalKey>
+		<description>Containers should not run with allowPrivilegeEscalation</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_21</key>
+		<name>The default namespace should not be used</name>
+		<internalKey>kubernetes-CKV_K8S_21</internalKey>
+		<description>The default namespace should not be used</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_22</key>
+		<name>Use read-only filesystem for containers where possible</name>
+		<internalKey>kubernetes-CKV_K8S_22</internalKey>
+		<description>Use read-only filesystem for containers where possible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_23</key>
+		<name>Minimize the admission of root containers</name>
+		<internalKey>kubernetes-CKV_K8S_23</internalKey>
+		<description>Minimize the admission of root containers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_24</key>
+		<name>Do not allow containers with added capability</name>
+		<internalKey>kubernetes-CKV_K8S_24</internalKey>
+		<description>Do not allow containers with added capability</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_25</key>
+		<name>Minimize the admission of containers with added capability</name>
+		<internalKey>kubernetes-CKV_K8S_25</internalKey>
+		<description>Minimize the admission of containers with added capability</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_26</key>
+		<name>Do not specify hostPort unless absolutely necessary</name>
+		<internalKey>kubernetes-CKV_K8S_26</internalKey>
+		<description>Do not specify hostPort unless absolutely necessary</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_27</key>
+		<name>Do not expose the docker daemon socket to containers</name>
+		<internalKey>kubernetes-CKV_K8S_27</internalKey>
+		<description>Do not expose the docker daemon socket to containers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_28</key>
+		<name>Minimize the admission of containers with the NET_RAW capability</name>
+		<internalKey>kubernetes-CKV_K8S_28</internalKey>
+		<description>Minimize the admission of containers with the NET_RAW capability</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_29</key>
+		<name>Apply security context to your pods and containers</name>
+		<internalKey>kubernetes-CKV_K8S_29</internalKey>
+		<description>Apply security context to your pods and containers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_30</key>
+		<name>Apply security context to your pods and containers</name>
+		<internalKey>kubernetes-CKV_K8S_30</internalKey>
+		<description>Apply security context to your pods and containers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_31</key>
+		<name>Ensure that the seccomp profile is set to docker/default or runtime/default</name>
+		<internalKey>kubernetes-CKV_K8S_31</internalKey>
+		<description>Ensure that the seccomp profile is set to docker/default or runtime/default</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_32</key>
+		<name>Ensure default seccomp profile set to docker/default or runtime/default</name>
+		<internalKey>kubernetes-CKV_K8S_32</internalKey>
+		<description>Ensure default seccomp profile set to docker/default or runtime/default</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_33</key>
+		<name>Ensure the Kubernetes dashboard is not deployed</name>
+		<internalKey>kubernetes-CKV_K8S_33</internalKey>
+		<description>Ensure the Kubernetes dashboard is not deployed</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_34</key>
+		<name>Ensure that Tiller (Helm v2) is not deployed</name>
+		<internalKey>kubernetes-CKV_K8S_34</internalKey>
+		<description>Ensure that Tiller (Helm v2) is not deployed</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_35</key>
+		<name>Prefer using secrets as files over secrets as environment variables</name>
+		<internalKey>kubernetes-CKV_K8S_35</internalKey>
+		<description>Prefer using secrets as files over secrets as environment variables</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_36</key>
+		<name>Minimize the admission of containers with capabilities assigned</name>
+		<internalKey>kubernetes-CKV_K8S_36</internalKey>
+		<description>Minimize the admission of containers with capabilities assigned</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_37</key>
+		<name>Minimize the admission of containers with capabilities assigned</name>
+		<internalKey>kubernetes-CKV_K8S_37</internalKey>
+		<description>Minimize the admission of containers with capabilities assigned</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_38</key>
+		<name>Ensure that Service Account Tokens are only mounted where necessary</name>
+		<internalKey>kubernetes-CKV_K8S_38</internalKey>
+		<description>Ensure that Service Account Tokens are only mounted where necessary</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_39</key>
+		<name>Do not use the CAP_SYS_ADMIN linux capability</name>
+		<internalKey>kubernetes-CKV_K8S_39</internalKey>
+		<description>Do not use the CAP_SYS_ADMIN linux capability</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_40</key>
+		<name>Containers should run as a high UID to avoid host conflict</name>
+		<internalKey>kubernetes-CKV_K8S_40</internalKey>
+		<description>Containers should run as a high UID to avoid host conflict</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_41</key>
+		<name>Ensure that default service accounts are not actively used</name>
+		<internalKey>kubernetes-CKV_K8S_41</internalKey>
+		<description>Ensure that default service accounts are not actively used</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_42</key>
+		<name>Ensure that default service accounts are not actively used</name>
+		<internalKey>kubernetes-CKV_K8S_42</internalKey>
+		<description>Ensure that default service accounts are not actively used</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_43</key>
+		<name>Image should use digest</name>
+		<internalKey>kubernetes-CKV_K8S_43</internalKey>
+		<description>Image should use digest</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_44</key>
+		<name>Ensure that the Tiller Service (Helm v2) is deleted</name>
+		<internalKey>kubernetes-CKV_K8S_44</internalKey>
+		<description>Ensure that the Tiller Service (Helm v2) is deleted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_45</key>
+		<name>Ensure the Tiller Deployment (Helm V2) is not accessible from within the cluster</name>
+		<internalKey>kubernetes-CKV_K8S_45</internalKey>
+		<description>Ensure the Tiller Deployment (Helm V2) is not accessible from within the cluster</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_49</key>
+		<name>Minimize wildcard use in Roles and ClusterRoles</name>
+		<internalKey>kubernetes-CKV_K8S_49</internalKey>
+		<description>Minimize wildcard use in Roles and ClusterRoles</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_68</key>
+		<name>Ensure that the --anonymous-auth argument is set to false</name>
+		<internalKey>kubernetes-CKV_K8S_68</internalKey>
+		<description>Ensure that the --anonymous-auth argument is set to false</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_69</key>
+		<name>Ensure that the --basic-auth-file argument is not set</name>
+		<internalKey>kubernetes-CKV_K8S_69</internalKey>
+		<description>Ensure that the --basic-auth-file argument is not set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_70</key>
+		<name>Ensure that the --token-auth-file argument is not set</name>
+		<internalKey>kubernetes-CKV_K8S_70</internalKey>
+		<description>Ensure that the --token-auth-file argument is not set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_71</key>
+		<name>Ensure that the --kubelet-https argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_71</internalKey>
+		<description>Ensure that the --kubelet-https argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_72</key>
+		<name>Ensure that the --kubelet-client-certificate and --kubelet-client-key arguments are set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_72</internalKey>
+		<description>Ensure that the --kubelet-client-certificate and --kubelet-client-key arguments are set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_73</key>
+		<name>Ensure that the --kubelet-certificate-authority argument is set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_73</internalKey>
+		<description>Ensure that the --kubelet-certificate-authority argument is set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_74</key>
+		<name>Ensure that the --authorization-mode argument is not set to AlwaysAllow</name>
+		<internalKey>kubernetes-CKV_K8S_74</internalKey>
+		<description>Ensure that the --authorization-mode argument is not set to AlwaysAllow</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_75</key>
+		<name>Ensure that the --authorization-mode argument includes Node</name>
+		<internalKey>kubernetes-CKV_K8S_75</internalKey>
+		<description>Ensure that the --authorization-mode argument includes Node</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_77</key>
+		<name>Ensure that the --authorization-mode argument includes RBAC</name>
+		<internalKey>kubernetes-CKV_K8S_77</internalKey>
+		<description>Ensure that the --authorization-mode argument includes RBAC</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_78</key>
+		<name>Ensure that the admission control plugin EventRateLimit is set</name>
+		<internalKey>kubernetes-CKV_K8S_78</internalKey>
+		<description>Ensure that the admission control plugin EventRateLimit is set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_79</key>
+		<name>Ensure that the admission control plugin AlwaysAdmit is not set</name>
+		<internalKey>kubernetes-CKV_K8S_79</internalKey>
+		<description>Ensure that the admission control plugin AlwaysAdmit is not set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_80</key>
+		<name>Ensure that the admission control plugin AlwaysPullImages is set</name>
+		<internalKey>kubernetes-CKV_K8S_80</internalKey>
+		<description>Ensure that the admission control plugin AlwaysPullImages is set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_81</key>
+		<name>Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used</name>
+		<internalKey>kubernetes-CKV_K8S_81</internalKey>
+		<description>Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_82</key>
+		<name>Ensure that the admission control plugin ServiceAccount is set</name>
+		<internalKey>kubernetes-CKV_K8S_82</internalKey>
+		<description>Ensure that the admission control plugin ServiceAccount is set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_83</key>
+		<name>Ensure that the admission control plugin NamespaceLifecycle is set</name>
+		<internalKey>kubernetes-CKV_K8S_83</internalKey>
+		<description>Ensure that the admission control plugin NamespaceLifecycle is set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_84</key>
+		<name>Ensure that the admission control plugin PodSecurityPolicy is set</name>
+		<internalKey>kubernetes-CKV_K8S_84</internalKey>
+		<description>Ensure that the admission control plugin PodSecurityPolicy is set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_85</key>
+		<name>Ensure that the admission control plugin NodeRestriction is set</name>
+		<internalKey>kubernetes-CKV_K8S_85</internalKey>
+		<description>Ensure that the admission control plugin NodeRestriction is set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_86</key>
+		<name>Ensure that the --insecure-bind-address argument is not set</name>
+		<internalKey>kubernetes-CKV_K8S_86</internalKey>
+		<description>Ensure that the --insecure-bind-address argument is not set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_88</key>
+		<name>Ensure that the --insecure-port argument is set to 0</name>
+		<internalKey>kubernetes-CKV_K8S_88</internalKey>
+		<description>Ensure that the --insecure-port argument is set to 0</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_89</key>
+		<name>Ensure that the --secure-port argument is not set to 0</name>
+		<internalKey>kubernetes-CKV_K8S_89</internalKey>
+		<description>Ensure that the --secure-port argument is not set to 0</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_90</key>
+		<name>Ensure that the --profiling argument is set to false</name>
+		<internalKey>kubernetes-CKV_K8S_90</internalKey>
+		<description>Ensure that the --profiling argument is set to false</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_91</key>
+		<name>Ensure that the --audit-log-path argument is set</name>
+		<internalKey>kubernetes-CKV_K8S_91</internalKey>
+		<description>Ensure that the --audit-log-path argument is set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_92</key>
+		<name>Ensure that the --audit-log-maxage argument is set to 30 or as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_92</internalKey>
+		<description>Ensure that the --audit-log-maxage argument is set to 30 or as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_93</key>
+		<name>Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_93</internalKey>
+		<description>Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_94</key>
+		<name>Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_94</internalKey>
+		<description>Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_95</key>
+		<name>Ensure that the --request-timeout argument is set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_95</internalKey>
+		<description>Ensure that the --request-timeout argument is set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_96</key>
+		<name>Ensure that the --service-account-lookup argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_96</internalKey>
+		<description>Ensure that the --service-account-lookup argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_97</key>
+		<name>Ensure that the --service-account-key-file argument is set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_97</internalKey>
+		<description>Ensure that the --service-account-key-file argument is set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_99</key>
+		<name>Ensure that the --etcd-certfile and --etcd-keyfile arguments are set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_99</internalKey>
+		<description>Ensure that the --etcd-certfile and --etcd-keyfile arguments are set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_100</key>
+		<name>Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_100</internalKey>
+		<description>Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_102</key>
+		<name>Ensure that the --etcd-ca-file argument is set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_102</internalKey>
+		<description>Ensure that the --etcd-ca-file argument is set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_104</key>
+		<name>Ensure that encryption providers are appropriately configured</name>
+		<internalKey>kubernetes-CKV_K8S_104</internalKey>
+		<description>Ensure that encryption providers are appropriately configured</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_105</key>
+		<name>Ensure that the API Server only makes use of Strong Cryptographic Ciphers</name>
+		<internalKey>kubernetes-CKV_K8S_105</internalKey>
+		<description>Ensure that the API Server only makes use of Strong Cryptographic Ciphers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_106</key>
+		<name>Ensure that the --terminated-pod-gc-threshold argument is set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_106</internalKey>
+		<description>Ensure that the --terminated-pod-gc-threshold argument is set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_107</key>
+		<name>Ensure that the --profiling argument is set to false</name>
+		<internalKey>kubernetes-CKV_K8S_107</internalKey>
+		<description>Ensure that the --profiling argument is set to false</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_108</key>
+		<name>Ensure that the --use-service-account-credentials argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_108</internalKey>
+		<description>Ensure that the --use-service-account-credentials argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_110</key>
+		<name>Ensure that the --service-account-private-key-file argument is set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_110</internalKey>
+		<description>Ensure that the --service-account-private-key-file argument is set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_111</key>
+		<name>Ensure that the --root-ca-file argument is set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_111</internalKey>
+		<description>Ensure that the --root-ca-file argument is set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_112</key>
+		<name>Ensure that the RotateKubeletServerCertificate argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_112</internalKey>
+		<description>Ensure that the RotateKubeletServerCertificate argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_113</key>
+		<name>Ensure that the --bind-address argument is set to 127.0.0.1</name>
+		<internalKey>kubernetes-CKV_K8S_113</internalKey>
+		<description>Ensure that the --bind-address argument is set to 127.0.0.1</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_114</key>
+		<name>Ensure that the --profiling argument is set to false</name>
+		<internalKey>kubernetes-CKV_K8S_114</internalKey>
+		<description>Ensure that the --profiling argument is set to false</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_115</key>
+		<name>Ensure that the --bind-address argument is set to 127.0.0.1</name>
+		<internalKey>kubernetes-CKV_K8S_115</internalKey>
+		<description>Ensure that the --bind-address argument is set to 127.0.0.1</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_116</key>
+		<name>Ensure that the --cert-file and --key-file arguments are set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_116</internalKey>
+		<description>Ensure that the --cert-file and --key-file arguments are set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_117</key>
+		<name>Ensure that the --client-cert-auth argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_117</internalKey>
+		<description>Ensure that the --client-cert-auth argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_118</key>
+		<name>Ensure that the --auto-tls argument is not set to true</name>
+		<internalKey>kubernetes-CKV_K8S_118</internalKey>
+		<description>Ensure that the --auto-tls argument is not set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_119</key>
+		<name>Ensure that the --peer-cert-file and --peer-key-file arguments are set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_119</internalKey>
+		<description>Ensure that the --peer-cert-file and --peer-key-file arguments are set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_121</key>
+		<name>Ensure that the --peer-client-cert-auth argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_121</internalKey>
+		<description>Ensure that the --peer-client-cert-auth argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_138</key>
+		<name>Ensure that the --anonymous-auth argument is set to false</name>
+		<internalKey>kubernetes-CKV_K8S_138</internalKey>
+		<description>Ensure that the --anonymous-auth argument is set to false</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_139</key>
+		<name>Ensure that the --authorization-mode argument is not set to AlwaysAllow</name>
+		<internalKey>kubernetes-CKV_K8S_139</internalKey>
+		<description>Ensure that the --authorization-mode argument is not set to AlwaysAllow</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_140</key>
+		<name>Ensure that the --client-ca-file argument is set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_140</internalKey>
+		<description>Ensure that the --client-ca-file argument is set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_141</key>
+		<name>Ensure that the --read-only-port argument is set to 0</name>
+		<internalKey>kubernetes-CKV_K8S_141</internalKey>
+		<description>Ensure that the --read-only-port argument is set to 0</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_143</key>
+		<name>Ensure that the --streaming-connection-idle-timeout argument is not set to 0</name>
+		<internalKey>kubernetes-CKV_K8S_143</internalKey>
+		<description>Ensure that the --streaming-connection-idle-timeout argument is not set to 0</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_144</key>
+		<name>Ensure that the --protect-kernel-defaults argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_144</internalKey>
+		<description>Ensure that the --protect-kernel-defaults argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_145</key>
+		<name>Ensure that the --make-iptables-util-chains argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_145</internalKey>
+		<description>Ensure that the --make-iptables-util-chains argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_146</key>
+		<name>Ensure that the --hostname-override argument is not set</name>
+		<internalKey>kubernetes-CKV_K8S_146</internalKey>
+		<description>Ensure that the --hostname-override argument is not set</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_147</key>
+		<name>Ensure that the --event-qps argument is set to 0 or a level which ensures appropriate event capture</name>
+		<internalKey>kubernetes-CKV_K8S_147</internalKey>
+		<description>Ensure that the --event-qps argument is set to 0 or a level which ensures appropriate event capture</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_148</key>
+		<name>Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate</name>
+		<internalKey>kubernetes-CKV_K8S_148</internalKey>
+		<description>Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_149</key>
+		<name>Ensure that the --rotate-certificates argument is not set to false</name>
+		<internalKey>kubernetes-CKV_K8S_149</internalKey>
+		<description>Ensure that the --rotate-certificates argument is not set to false</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_150</key>
+		<name>Ensure that the RotateKubeletServerCertificate argument is set to true</name>
+		<internalKey>kubernetes-CKV_K8S_150</internalKey>
+		<description>Ensure that the RotateKubeletServerCertificate argument is set to true</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>kubernetes-CKV_K8S_151</key>
+		<name>Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers</name>
+		<internalKey>kubernetes-CKV_K8S_151</internalKey>
+		<description>Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>kubernetes</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>

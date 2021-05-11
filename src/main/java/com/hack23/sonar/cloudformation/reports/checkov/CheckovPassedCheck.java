@@ -52,9 +52,8 @@ public final class CheckovPassedCheck {
     /** The resource. */
     private String resource;
 
-    /** The repo file path. */
-    private String repo_file_path;
-
+    /** The file abs path. */
+    private String file_abs_path;
 
     /** The entity tags. */
     private String entity_tags;
@@ -260,21 +259,21 @@ public final class CheckovPassedCheck {
 	}
 
     /**
-     * Gets the repo file path.
+     * Gets the file abs path.
      *
-     * @return the repo file path
+     * @return the file abs path
      */
-    public String getRepo_file_path() {
-		return repo_file_path;
+    public String getFile_abs_path() {
+		return file_abs_path;
 	}
 
 	/**
-	 * Sets the repo file path.
+	 * Sets the file abs path.
 	 *
-	 * @param repo_file_path the new repo file path
+	 * @param file_abs_path the new file abs path
 	 */
-	public void setRepo_file_path(final String repo_file_path) {
-		this.repo_file_path = repo_file_path;
+	public void setFile_abs_path(final String file_abs_path) {
+		this.file_abs_path = file_abs_path;
 	}
 
 

@@ -23,7 +23,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -45,7 +44,7 @@ import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagViolation;
 /**
  * The Class CfnNagProcessReports.
  */
-public final class CfnNagProcessReports {
+public final class CfnNagProcessReports extends AbstractProcessReports {
 
 	/** The Constant UNDEFINED_FAILURE. */
 	public static final String UNDEFINED_FAILURE = "FUNDEFINED";
@@ -314,50 +313,15 @@ public final class CfnNagProcessReports {
 		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
 
 			final String filename = nagScanReport.getFilename();
-			LOGGER.info("Reading cfn-nag report:{}", filename);
+			LOGGER.info("Cfn-nag scanned file :{}", filename);
 
-			final InputFile templateInputFile = findTemplate(
-					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
+			final InputFile templateInputFile = findTemplate(fileSystem,filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
 
 			final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
 			for (final CfnNagViolation cfnNagViolation : violations) {
 				addIssue(context, cfnNagViolation, templateInputFile);
 			}
 		}
-	}
-
-	/**
-	 * Find template.
-	 *
-	 * @param templateName the template name
-	 * @param filepath the filepath
-	 * @return the input file
-	 */
-	private InputFile findTemplate(final String templateName, final String filepath) {
-		final List<InputFile> potentialReportTargets = new ArrayList<>();
-		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);
-		final String filterPath = filterPath(filepath);
-		LOGGER.info("Looking for cloudformation template matching filename:{} , path: {}", templateName, filterPath);
-
-		for (final InputFile inputFile : potentialReportTargets) {
-			if (templateName.equals(inputFile.filename()) && inputFile.uri().toString().contains(filterPath)) {
-				LOGGER.info("matching path:{}" + inputFile.uri());
-				LOGGER.info("matching filename:" + templateName + " = " + inputFile.filename());
-
-				return inputFile;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Filter path.
-	 *
-	 * @param filepath the filepath
-	 * @return the string
-	 */
-	private static String filterPath(final String filepath) {
-		return filepath.replace("." + File.separator, "").replace(".." + File.separator, "");
 	}
 
 	/**

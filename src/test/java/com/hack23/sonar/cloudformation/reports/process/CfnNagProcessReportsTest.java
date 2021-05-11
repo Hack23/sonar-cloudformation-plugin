@@ -30,7 +30,6 @@ import org.junit.Test;
 import org.sonar.api.batch.fs.internal.DefaultFileSystem;
 import org.sonar.api.batch.fs.internal.DefaultInputFile;
 import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
-import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import org.sonar.api.scan.filesystem.PathResolver;
 
@@ -60,10 +59,13 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.of("src/test/resources/aws-cross-account-manager-master.yml.nag"));
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(44,sensorContext.allIssues().size());
+
 	}
 
 
@@ -79,9 +81,11 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.of("src/test/resources/aws-cross-account-manager-master.yml.nag"));
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(13,sensorContext.allIssues().size());
 	}
 
 	/**
@@ -103,10 +107,12 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.of("src/test/resources/cfn-nag-scan.nagscan"));
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(6,sensorContext.allIssues().size());
 	}
 
 	/**
@@ -121,9 +127,11 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.of("src/test/resources/cfn-nag-scan.nagscan"));
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(6,sensorContext.allIssues().size());
 	}
 
 	/**
@@ -138,9 +146,10 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.of("src/test/resources/file-not-exist.nagscan"));
+		assertTrue(sensorContext.allIssues().isEmpty());
 	}
 
 
@@ -157,9 +166,10 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.empty());
+		assertTrue(sensorContext.allIssues().isEmpty());
 	}
 
 
@@ -190,11 +200,13 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile2);
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.of("src/test/resources/aws-cross-account-manager-master.yml.nag,src/test/resources/cfn-nag-scan.nagscan"));
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(58,sensorContext.allIssues().size());
 	}
 
 
@@ -225,11 +237,13 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile2);
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.of("src/test/resources/cfn-nag-scan-custom-rules.nagscan"));
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(14,sensorContext.allIssues().size());
 	}
 
 	/**
@@ -259,11 +273,13 @@ public class CfnNagProcessReportsTest extends Assert {
 
 		final CfnNagProcessReports cloudformationSensor = new CfnNagProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile2);
 		cloudformationSensor.processCfnNagReport(sensorContext,Optional.of("src/test/resources/cfn-nag-scan-missing-linenumbers.nagscan"));
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(8,sensorContext.allIssues().size());
 	}
 
 }

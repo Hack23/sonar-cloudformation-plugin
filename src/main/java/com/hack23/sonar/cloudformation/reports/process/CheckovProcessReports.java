@@ -23,13 +23,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
+import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
 import org.sonar.api.rule.RuleKey;
@@ -43,7 +43,7 @@ import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
 /**
  * The Class CheckovProcessReports.
  */
-public final class CheckovProcessReports {
+public final class CheckovProcessReports extends AbstractProcessReports {
 
 	/** The Constant SENSOR_NAME. */
 	public static final String SENSOR_NAME = "Cloudformation Check";
@@ -116,14 +116,14 @@ public final class CheckovProcessReports {
 		final CheckovReport checkovReport = checkovReportReader
 				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 
-		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailed_checks()) {
-
+		final ActiveRules activeRules = context.activeRules();
+		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailed_checks()) {			
 			final String filename = failedChecks.getFile_path();
+			LOGGER.info("Checkov scanned file :{}", filename);
 
-			final InputFile templateInputFile = findTemplate(
-					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
+			final InputFile templateInputFile = findTemplate(fileSystem, filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
 
-			addCheckovIssue(context, checkovReport, failedChecks, templateInputFile);
+			addCheckovIssue(context, activeRules, checkovReport, failedChecks, templateInputFile);
 		}
 	}
 
@@ -131,63 +131,36 @@ public final class CheckovProcessReports {
 	 * Adds the checkov issue.
 	 *
 	 * @param context the context
+	 * @param activeRules 
 	 * @param checkovReport the checkov report
 	 * @param failedChecks the failed checks
 	 * @param templateInputFile the template input file
 	 */
-	private void addCheckovIssue(final SensorContext context, final CheckovReport checkovReport,
+	private void addCheckovIssue(final SensorContext context, final ActiveRules activeRules, final CheckovReport checkovReport,
 			final CheckovPassedCheck failedChecks, final InputFile templateInputFile) {
+
+		String repoName = "cfn-yaml";
 		if (templateInputFile != null) {
-
-			final List<Integer> line_numbers = failedChecks.getFile_line_range();
-			for (final Integer line : line_numbers) {
-				context.newIssue()
-						.forRule(RuleKey.of("cfn-" + templateInputFile.language(),
-								checkovReport.getCheck_type() + "-" + failedChecks.getCheck_id()))
-						.at(new DefaultIssueLocation().on(templateInputFile).message(failedChecks.getCheck_name())
-								.at(templateInputFile.selectLine(line)))
-						.save();
-			}
-		} else {
-			context.newIssue()
-					.forRule(RuleKey.of("cfn-" + "yaml",
-							checkovReport.getCheck_type() + "-" + failedChecks.getCheck_id()))
-					.at(new DefaultIssueLocation().on(context.project()).message(failedChecks.getCheck_name())).save();
+			repoName = "cfn-" + templateInputFile.language();
 		}
-	}
-
-	/**
-	 * Find template.
-	 *
-	 * @param templateName the template name
-	 * @param filepath the filepath
-	 * @return the input file
-	 */
-	private InputFile findTemplate(final String templateName, final String filepath) {
-		final List<InputFile> potentialReportTargets = new ArrayList<>();
-		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);
-		final String filterPath = filterPath(filepath);
-		LOGGER.info("Looking for cloudformation template matching filename:{} , path: {}", templateName, filterPath);
-
-		for (final InputFile inputFile : potentialReportTargets) {
-			if (templateName.equals(inputFile.filename()) && inputFile.uri().toString().contains(filterPath)) {
-				LOGGER.info("matching path:{}" + inputFile.uri());
-				LOGGER.info("matching filename:" + templateName + " = " + inputFile.filename());
-
-				return inputFile;
-			}
+		
+		final RuleKey ruleKey = RuleKey.of(repoName,checkovReport.getCheck_type() + "-" + failedChecks.getCheck_id());
+	
+		if (activeRules.find(ruleKey) == null) {
+			LOGGER.warn("No active checkov rule detected for:'{}' with key {} detected in {}",failedChecks.getCheck_name(), ruleKey,failedChecks.getFile_path());
+			return;
 		}
-		return null;
-	}
+		
+		if (templateInputFile == null) {
+			LOGGER.warn("File not found {} for rule {} issue not created", failedChecks.getFile_path(), ruleKey);
+			return;
+		}
 
-	/**
-	 * Filter path.
-	 *
-	 * @param filepath the filepath
-	 * @return the string
-	 */
-	private static String filterPath(final String filepath) {
-		return filepath.replace("." + File.separator, "").replace(".." + File.separator, "");
+		final List<Integer> line_numbers = failedChecks.getFile_line_range();
+		for (final Integer line : line_numbers) {
+			context.newIssue().forRule(ruleKey).at(new DefaultIssueLocation().on(templateInputFile)
+					.message(failedChecks.getCheck_name()).at(templateInputFile.selectLine(line))).save();
+		}
 	}
 
 

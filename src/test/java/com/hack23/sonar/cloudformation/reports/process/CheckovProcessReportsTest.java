@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.util.Arrays;
 import java.util.Optional;
 
 import org.junit.Assert;
@@ -30,8 +31,11 @@ import org.junit.Test;
 import org.sonar.api.batch.fs.internal.DefaultFileSystem;
 import org.sonar.api.batch.fs.internal.DefaultInputFile;
 import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
-import org.sonar.api.batch.sensor.SensorContext;
+import org.sonar.api.batch.rule.ActiveRules;
+import org.sonar.api.batch.rule.internal.DefaultActiveRules;
+import org.sonar.api.batch.rule.internal.NewActiveRule;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
+import org.sonar.api.rule.RuleKey;
 import org.sonar.api.scan.filesystem.PathResolver;
 
 /**
@@ -59,11 +63,17 @@ public class CheckovProcessReportsTest extends Assert {
 
 		final CheckovProcessReports cloudformationSensor = new CheckovProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
+		ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cfn-json","cloudformation-CKV_AWS_84")).build()));
+		sensorContext.setActiveRules(activeRules);		
+				
+		
 		cloudformationSensor.processCheckovReport(sensorContext,
 				Optional.of("src/test/resources/checkov/cia-dist-cloudformation.checkov-report"));
+		assertFalse(sensorContext.allIssues().isEmpty());
+		assertEquals(2,sensorContext.allIssues().size());
 	}
 
 	/**
@@ -78,10 +88,15 @@ public class CheckovProcessReportsTest extends Assert {
 
 		final CheckovProcessReports cloudformationSensor = new CheckovProcessReports(fileSystem, new PathResolver());
 
-		final SensorContext sensorContext = SensorContextTester
+		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
+
+		ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cfn-yaml","cloudformation-CKV_AWS_111")).build()));
+		sensorContext.setActiveRules(activeRules);		
+
 		cloudformationSensor.processCheckovReport(sensorContext,
 				Optional.of("src/test/resources/checkov/cia-dist-cloudformation.checkov-report"));
+		assertTrue(sensorContext.allIssues().isEmpty());
 	}
 
 }

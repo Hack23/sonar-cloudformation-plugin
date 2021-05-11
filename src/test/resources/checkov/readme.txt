@@ -1,5 +1,5 @@
 checkov -v
-2.0.35
+2.0.136
 
 ~/git/sonar-cloudformation-plugin$ checkov -f src/test/resources/checkov/cia-dist-cloudformation.json -o json > src/test/resources/checkov/cia-dist-cloudformation.checkov-report
 
