@@ -64,7 +64,6 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	/** The file system. */
 	private final FileSystem fileSystem;
 
-
 	/** The Constant SUPPORTED_RULES. */
 	public static final Set<String> SUPPORTED_RULES = new HashSet<>();
 
@@ -253,11 +252,10 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 		return SUPPORTED_RULES.contains(id);
 	}
 
-
 	/**
 	 * Instantiates a new cfn nag process reports.
 	 *
-	 * @param fileSystem the file system
+	 * @param fileSystem   the file system
 	 * @param pathResolver the path resolver
 	 */
 	public CfnNagProcessReports(final FileSystem fileSystem, final PathResolver pathResolver) {
@@ -270,13 +268,13 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	/**
 	 * Process cfn nag report.
 	 *
-	 * @param context the context
+	 * @param context             the context
 	 * @param reportFilesProperty the report files property
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws IOException           Signals that an I/O exception has occurred.
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	public void processCfnNagReport(final SensorContext context, final Optional<String> reportFilesProperty)
-			throws IOException, FileNotFoundException {
+			throws IOException {
 		if (reportFilesProperty.isPresent()) {
 
 			final String reports = reportFilesProperty.get();
@@ -296,12 +294,11 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 		}
 	}
 
-
 	/**
 	 * Handle cfn nag scan reports.
 	 *
 	 * @param context the context
-	 * @param report the report
+	 * @param report  the report
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
@@ -315,7 +312,8 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 			final String filename = nagScanReport.getFilename();
 			LOGGER.info("Cfn-nag scanned file :{}", filename);
 
-			final InputFile templateInputFile = findTemplate(fileSystem,filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
+			final InputFile templateInputFile = findTemplate(fileSystem,
+					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
 
 			final List<CfnNagViolation> violations = nagScanReport.getFileResults().getViolations();
 			for (final CfnNagViolation cfnNagViolation : violations) {
@@ -327,8 +325,8 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	/**
 	 * Adds the issue.
 	 *
-	 * @param context the context
-	 * @param violation the violation
+	 * @param context           the context
+	 * @param violation         the violation
 	 * @param templateInputFile the template input file
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,

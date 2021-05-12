@@ -103,7 +103,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	 *
 	 * @param newRule the new rule
 	 */
-	private void addNewRule(final NewRule newRule) {
+	private static void addNewRule(final NewRule newRule) {
 		try {
 			final Set<String> tags = (Set<String>) FieldUtils.readField(newRule, "tags", true);
 			for (final String tag : tags) {

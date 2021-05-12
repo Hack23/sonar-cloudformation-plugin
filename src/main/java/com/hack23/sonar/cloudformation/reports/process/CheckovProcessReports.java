@@ -82,7 +82,7 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 * @throws FileNotFoundException the file not found exception
 	 */
-	public void processCheckovReport(final SensorContext context,final Optional<String> reportFilesProperty) throws IOException, FileNotFoundException {
+	public void processCheckovReport(final SensorContext context,final Optional<String> reportFilesProperty) throws IOException {
 		if (reportFilesProperty.isPresent()) {
 
 			final String reports = reportFilesProperty.get();
@@ -136,7 +136,7 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 	 * @param failedChecks the failed checks
 	 * @param templateInputFile the template input file
 	 */
-	private void addCheckovIssue(final SensorContext context, final ActiveRules activeRules, final CheckovReport checkovReport,
+	private static void addCheckovIssue(final SensorContext context, final ActiveRules activeRules, final CheckovReport checkovReport,
 			final CheckovPassedCheck failedChecks, final InputFile templateInputFile) {
 
 		String repoName = "cfn-yaml";

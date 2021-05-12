@@ -68,10 +68,10 @@ public final class CfnNagScanReport {
 	/**
 	 * Sets the file results.
 	 *
-	 * @param file_results the new file results
+	 * @param fileResults the new file results
 	 */
-	public void setFileResults(final CfnNagReport file_results) {
-		this.fileResults = file_results;
+	public void setFileResults(final CfnNagReport fileResults) {
+		this.fileResults = fileResults;
 	}
 
 	/**
