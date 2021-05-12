@@ -317,7 +317,7 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 
 			final InputFile templateInputFile = findTemplate(fileSystem,filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
 
-			final List<CfnNagViolation> violations = nagScanReport.getFile_results().getViolations();
+			final List<CfnNagViolation> violations = nagScanReport.getFileResults().getViolations();
 			for (final CfnNagViolation cfnNagViolation : violations) {
 				addIssue(context, cfnNagViolation, templateInputFile);
 			}
@@ -335,11 +335,11 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 			final InputFile templateInputFile) {
 		if (templateInputFile != null) {
 
-			if (violation.getLine_numbers().isEmpty()) {
+			if (violation.getLineNumbers().isEmpty()) {
 				context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(violation)))
 						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();
 			} else {
-				final List<Integer> line_numbers = violation.getLine_numbers();
+				final List<Integer> line_numbers = violation.getLineNumbers();
 				for (final Integer line : line_numbers) {
 					if (line != null && line >= 0) {
 						context.newIssue()

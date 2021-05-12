@@ -24,6 +24,8 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CfnNagScanReport.
  */
@@ -33,7 +35,7 @@ public final class CfnNagScanReport {
 	private String filename;
 
 	/** The file results. */
-	private CfnNagReport file_results;
+	private CfnNagReport fileResults;
 
 	/**
 	 * Gets the filename.
@@ -58,8 +60,9 @@ public final class CfnNagScanReport {
 	 *
 	 * @return the file results
 	 */
-	public CfnNagReport getFile_results() {
-		return file_results;
+	@JsonProperty("file_results")
+	public CfnNagReport getFileResults() {
+		return fileResults;
 	}
 
 	/**
@@ -67,8 +70,8 @@ public final class CfnNagScanReport {
 	 *
 	 * @param file_results the new file results
 	 */
-	public void setFile_results(final CfnNagReport file_results) {
-		this.file_results = file_results;
+	public void setFileResults(final CfnNagReport file_results) {
+		this.fileResults = file_results;
 	}
 
 	/**

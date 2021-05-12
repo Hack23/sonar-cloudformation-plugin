@@ -144,7 +144,7 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 			repoName = "cfn-" + templateInputFile.language();
 		}
 		
-		final RuleKey ruleKey = RuleKey.of(repoName,checkovReport.getCheck_type() + "-" + failedChecks.getCheck_id());
+		final RuleKey ruleKey = RuleKey.of(repoName,checkovReport.getCheckType() + "-" + failedChecks.getCheck_id());
 	
 		if (activeRules.find(ruleKey) == null) {
 			LOGGER.warn("No active checkov rule detected for:'{}' with key {} detected in {}",failedChecks.getCheck_name(), ruleKey,failedChecks.getFile_path());

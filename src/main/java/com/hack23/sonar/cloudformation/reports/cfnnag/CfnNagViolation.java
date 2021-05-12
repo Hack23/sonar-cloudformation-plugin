@@ -27,6 +27,8 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CfnNagViolation.
  */
@@ -42,10 +44,10 @@ public final class CfnNagViolation {
 	private String message;
 
 	/** The logical resource ids. */
-	private List<String> logical_resource_ids = new ArrayList<>();
+	private List<String> logicalResourceIds = new ArrayList<>();
 
 	/** The line numbers. */
-	private List<Integer> line_numbers = new ArrayList<>();
+	private List<Integer> lineNumbers = new ArrayList<>();
 
 
 	/**
@@ -107,8 +109,9 @@ public final class CfnNagViolation {
 	 *
 	 * @return the logical resource ids
 	 */
-	public List<String> getLogical_resource_ids() {
-		return new ArrayList<>(logical_resource_ids);
+	@JsonProperty("logical_resource_ids")
+	public List<String> getLogicalResourceIds() {
+		return new ArrayList<>(logicalResourceIds);
 	}
 
 	/**
@@ -116,8 +119,8 @@ public final class CfnNagViolation {
 	 *
 	 * @param logical_resource_ids the new logical resource ids
 	 */
-	public void setLogical_resource_ids(final List<String> logical_resource_ids) {
-		this.logical_resource_ids = new ArrayList<>(logical_resource_ids);
+	public void setLogicalResourceIds(final List<String> logicalResourceIds) {
+		this.logicalResourceIds = new ArrayList<>(logicalResourceIds);
 	}
 
 	/**
@@ -125,8 +128,9 @@ public final class CfnNagViolation {
 	 *
 	 * @return the line numbers
 	 */
-	public List<Integer> getLine_numbers() {
-		return new ArrayList<>(line_numbers);
+	@JsonProperty("line_numbers")
+	public List<Integer> getLineNumbers() {
+		return new ArrayList<>(lineNumbers);
 	}
 
 	/**
@@ -134,8 +138,8 @@ public final class CfnNagViolation {
 	 *
 	 * @param line_numbers the new line numbers
 	 */
-	public void setLine_numbers(final List<Integer> line_numbers) {
-		this.line_numbers = new ArrayList<>(line_numbers);
+	public void setLineNumbers(final List<Integer> lineNumbers) {
+		this.lineNumbers = new ArrayList<>(lineNumbers);
 	}
 
 	/**

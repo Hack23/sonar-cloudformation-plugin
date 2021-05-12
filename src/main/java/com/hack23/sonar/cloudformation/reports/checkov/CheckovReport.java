@@ -24,13 +24,15 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CheckovReport.
  */
 public final class CheckovReport {
 
 	/** The check type. */
-	private String check_type;
+	private String checkType;
 
 	/** The summary. */
 	private CheckovSummary summary;
@@ -45,8 +47,9 @@ public final class CheckovReport {
 	 *
 	 * @return the check type
 	 */
-	public String getCheck_type() {
-		return check_type;
+	@JsonProperty("check_type")
+	public String getCheckType() {
+		return checkType;
 	}
 
 	/**
@@ -54,8 +57,8 @@ public final class CheckovReport {
 	 *
 	 * @param check_type the new check type
 	 */
-	public void setCheck_type(final String check_type) {
-		this.check_type = check_type;
+	public void setCheckType(final String checkType) {
+		this.checkType = checkType;
 	}
 
 	/**

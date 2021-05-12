@@ -40,7 +40,7 @@ public class CheckovReportReaderTest extends Assert {
 	public void readReportTest() {
 		final CheckovReport checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/cia-dist-cloudformation.checkov-report"));
 		assertNotNull(checkovReport);
-		assertEquals("cloudformation", checkovReport.getCheck_type());
+		assertEquals("cloudformation", checkovReport.getCheckType());
 		assertNotNull(checkovReport.getSummary());
 		assertNotNull(checkovReport.getResults());
 	}
@@ -52,7 +52,7 @@ public class CheckovReportReaderTest extends Assert {
 	public void readReportFailureTest() {
 		final CheckovReport checkovReport = new CheckovReportReader().readReport(new ByteArrayInputStream("".getBytes()));
 		assertNotNull(checkovReport);
-		assertNull(checkovReport.getCheck_type());
+		assertNull(checkovReport.getCheckType());
 		assertNull(checkovReport.getSummary());
 		assertNull(checkovReport.getResults());
 
