@@ -55,7 +55,7 @@ public final class CheckovReport {
 	/**
 	 * Sets the check type.
 	 *
-	 * @param check_type the new check type
+	 * @param checkType the new check type
 	 */
 	public void setCheckType(final String checkType) {
 		this.checkType = checkType;

@@ -80,7 +80,6 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 	 * @param context the context
 	 * @param reportFilesProperty the report files property
 	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws FileNotFoundException the file not found exception
 	 */
 	public void processCheckovReport(final SensorContext context,final Optional<String> reportFilesProperty) throws IOException {
 		if (reportFilesProperty.isPresent()) {
@@ -131,7 +130,7 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 	 * Adds the checkov issue.
 	 *
 	 * @param context the context
-	 * @param activeRules 
+	 * @param activeRules the active rules
 	 * @param checkovReport the checkov report
 	 * @param failedChecks the failed checks
 	 * @param templateInputFile the template input file

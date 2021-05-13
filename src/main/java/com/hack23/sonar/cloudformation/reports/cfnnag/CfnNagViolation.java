@@ -117,7 +117,7 @@ public final class CfnNagViolation {
 	/**
 	 * Sets the logical resource ids.
 	 *
-	 * @param logical_resource_ids the new logical resource ids
+	 * @param logicalResourceIds the new logical resource ids
 	 */
 	public void setLogicalResourceIds(final List<String> logicalResourceIds) {
 		this.logicalResourceIds = new ArrayList<>(logicalResourceIds);
@@ -136,7 +136,7 @@ public final class CfnNagViolation {
 	/**
 	 * Sets the line numbers.
 	 *
-	 * @param line_numbers the new line numbers
+	 * @param lineNumbers the new line numbers
 	 */
 	public void setLineNumbers(final List<Integer> lineNumbers) {
 		this.lineNumbers = new ArrayList<>(lineNumbers);

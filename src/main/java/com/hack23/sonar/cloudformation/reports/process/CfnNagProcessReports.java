@@ -46,6 +46,9 @@ import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagViolation;
  */
 public final class CfnNagProcessReports extends AbstractProcessReports {
 
+	/** The Constant SUPPORTED_RULES. */
+	public static final Set<String> SUPPORTED_RULES = new HashSet<>();
+
 	/** The Constant UNDEFINED_FAILURE. */
 	public static final String UNDEFINED_FAILURE = "FUNDEFINED";
 
@@ -63,9 +66,6 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 
 	/** The file system. */
 	private final FileSystem fileSystem;
-
-	/** The Constant SUPPORTED_RULES. */
-	public static final Set<String> SUPPORTED_RULES = new HashSet<>();
 
 	static {
 		SUPPORTED_RULES.add("F1");
@@ -243,19 +243,9 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	}
 
 	/**
-	 * Checks for rule.
-	 *
-	 * @param id the id
-	 * @return true, if successful
-	 */
-	public static boolean hasRule(final String id) {
-		return SUPPORTED_RULES.contains(id);
-	}
-
-	/**
 	 * Instantiates a new cfn nag process reports.
 	 *
-	 * @param fileSystem   the file system
+	 * @param fileSystem the file system
 	 * @param pathResolver the path resolver
 	 */
 	public CfnNagProcessReports(final FileSystem fileSystem, final PathResolver pathResolver) {
@@ -266,12 +256,21 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	}
 
 	/**
+	 * Checks for rule.
+	 *
+	 * @param id the id
+	 * @return true, if successful
+	 */
+	public static boolean hasRule(final String id) {
+		return SUPPORTED_RULES.contains(id);
+	}
+
+	/**
 	 * Process cfn nag report.
 	 *
-	 * @param context             the context
+	 * @param context the context
 	 * @param reportFilesProperty the report files property
-	 * @throws IOException           Signals that an I/O exception has occurred.
-	 * @throws FileNotFoundException the file not found exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public void processCfnNagReport(final SensorContext context, final Optional<String> reportFilesProperty)
 			throws IOException {
@@ -298,7 +297,7 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	 * Handle cfn nag scan reports.
 	 *
 	 * @param context the context
-	 * @param report  the report
+	 * @param report the report
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
@@ -325,8 +324,8 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	/**
 	 * Adds the issue.
 	 *
-	 * @param context           the context
-	 * @param violation         the violation
+	 * @param context the context
+	 * @param violation the violation
 	 * @param templateInputFile the template input file
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
