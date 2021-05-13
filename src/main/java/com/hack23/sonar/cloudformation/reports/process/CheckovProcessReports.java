@@ -117,7 +117,7 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 
 		final ActiveRules activeRules = context.activeRules();
 		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailedChecks()) {			
-			final String filename = failedChecks.getFile_path();
+			final String filename = failedChecks.getFilePath();
 			LOGGER.info("Checkov scanned file :{}", filename);
 
 			final InputFile templateInputFile = findTemplate(fileSystem, filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
@@ -143,22 +143,22 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 			repoName = "cfn-" + templateInputFile.language();
 		}
 		
-		final RuleKey ruleKey = RuleKey.of(repoName,checkovReport.getCheckType() + "-" + failedChecks.getCheck_id());
+		final RuleKey ruleKey = RuleKey.of(repoName,checkovReport.getCheckType() + "-" + failedChecks.getCheckId());
 	
 		if (activeRules.find(ruleKey) == null) {
-			LOGGER.warn("No active checkov rule detected for:'{}' with key {} detected in {}",failedChecks.getCheck_name(), ruleKey,failedChecks.getFile_path());
+			LOGGER.warn("No active checkov rule detected for:'{}' with key {} detected in {}",failedChecks.getCheckName(), ruleKey,failedChecks.getFilePath());
 			return;
 		}
 		
 		if (templateInputFile == null) {
-			LOGGER.warn("File not found {} for rule {} issue not created", failedChecks.getFile_path(), ruleKey);
+			LOGGER.warn("File not found {} for rule {} issue not created", failedChecks.getFilePath(), ruleKey);
 			return;
 		}
 
-		final List<Integer> line_numbers = failedChecks.getFile_line_range();
+		final List<Integer> line_numbers = failedChecks.getFileLineRange();
 		for (final Integer line : line_numbers) {
 			context.newIssue().forRule(ruleKey).at(new DefaultIssueLocation().on(templateInputFile)
-					.message(failedChecks.getCheck_name()).at(templateInputFile.selectLine(line))).save();
+					.message(failedChecks.getCheckName()).at(templateInputFile.selectLine(line))).save();
 		}
 	}
 
