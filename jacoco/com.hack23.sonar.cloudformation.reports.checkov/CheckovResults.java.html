@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckovResults.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cloudformation</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.checkov</a> &gt; <span class="el_source">CheckovResults.java</span></div><h1>CheckovResults.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckovResults.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sonar Cloudformation Plugin</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.checkov</a> &gt; <span class="el_source">CheckovResults.java</span></div><h1>CheckovResults.java</h1><pre class="source lang-java linenums">/*
  * Cloudformation Plugin for SonarQube
  * Copyright (C) 2019 James Pether Sörling
  * james@hack23.com
@@ -26,94 +26,100 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CheckovResults.
  */
-<span class="fc" id="L32">public final class CheckovResults {</span>
+<span class="fc" id="L34">public final class CheckovResults {</span>
 
 	/** The passed checks. */
-	private List&lt;CheckovPassedCheck&gt; passed_checks;
+	private List&lt;CheckovPassedCheck&gt; passedChecks;
 
 	/** The failed checks. */
-	private List&lt;CheckovPassedCheck&gt; failed_checks;
+	private List&lt;CheckovPassedCheck&gt; failedChecks;
 
     /** The skipped checks. */
-    private List&lt;String&gt; skipped_checks;
+    private List&lt;String&gt; skippedChecks;
 
     /** The parsing errors. */
-    private List&lt;String&gt; parsing_errors;
+    private List&lt;String&gt; parsingErrors;
 
 	/**
 	 * Gets the passed checks.
 	 *
 	 * @return the passed checks
 	 */
-	public List&lt;CheckovPassedCheck&gt; getPassed_checks() {
-<span class="fc" id="L52">		return passed_checks;</span>
+    @JsonProperty(&quot;passed_checks&quot;)
+	public List&lt;CheckovPassedCheck&gt; getPassedChecks() {
+<span class="fc" id="L55">		return passedChecks;</span>
 	}
 
 	/**
 	 * Sets the passed checks.
 	 *
-	 * @param passed_checks the new passed checks
+	 * @param passedChecks the new passed checks
 	 */
-	public void setPassed_checks(final List&lt;CheckovPassedCheck&gt; passed_checks) {
-<span class="fc" id="L61">		this.passed_checks = passed_checks;</span>
-<span class="fc" id="L62">	}</span>
+	public void setPassedChecks(final List&lt;CheckovPassedCheck&gt; passedChecks) {
+<span class="fc" id="L64">		this.passedChecks = passedChecks;</span>
+<span class="fc" id="L65">	}</span>
 
 	/**
 	 * Gets the failed checks.
 	 *
 	 * @return the failed checks
 	 */
-	public List&lt;CheckovPassedCheck&gt; getFailed_checks() {
-<span class="fc" id="L70">		return failed_checks;</span>
+    @JsonProperty(&quot;failed_checks&quot;)
+	public List&lt;CheckovPassedCheck&gt; getFailedChecks() {
+<span class="fc" id="L74">		return failedChecks;</span>
 	}
 
 	/**
 	 * Sets the failed checks.
 	 *
-	 * @param failed_checks the new failed checks
+	 * @param failedChecks the new failed checks
 	 */
-	public void setFailed_checks(final List&lt;CheckovPassedCheck&gt; failed_checks) {
-<span class="fc" id="L79">		this.failed_checks = failed_checks;</span>
-<span class="fc" id="L80">	}</span>
+	public void setFailedChecks(final List&lt;CheckovPassedCheck&gt; failedChecks) {
+<span class="fc" id="L83">		this.failedChecks = failedChecks;</span>
+<span class="fc" id="L84">	}</span>
 
 	/**
 	 * Gets the skipped checks.
 	 *
 	 * @return the skipped checks
 	 */
-	public List&lt;String&gt; getSkipped_checks() {
-<span class="fc" id="L88">		return skipped_checks;</span>
+    @JsonProperty(&quot;skipped_checks&quot;)
+	public List&lt;String&gt; getSkippedChecks() {
+<span class="fc" id="L93">		return skippedChecks;</span>
 	}
 
 	/**
 	 * Sets the skipped checks.
 	 *
-	 * @param skipped_checks the new skipped checks
+	 * @param skippedChecks the new skipped checks
 	 */
-	public void setSkipped_checks(final List&lt;String&gt; skipped_checks) {
-<span class="fc" id="L97">		this.skipped_checks = skipped_checks;</span>
-<span class="fc" id="L98">	}</span>
+	public void setSkippedChecks(final List&lt;String&gt; skippedChecks) {
+<span class="fc" id="L102">		this.skippedChecks = skippedChecks;</span>
+<span class="fc" id="L103">	}</span>
 
 	/**
 	 * Gets the parsing errors.
 	 *
 	 * @return the parsing errors
 	 */
-	public List&lt;String&gt; getParsing_errors() {
-<span class="fc" id="L106">		return parsing_errors;</span>
+    @JsonProperty(&quot;parsing_errors&quot;)
+	public List&lt;String&gt; getParsingErrors() {
+<span class="fc" id="L112">		return parsingErrors;</span>
 	}
 
 	/**
 	 * Sets the parsing errors.
 	 *
-	 * @param parsing_errors the new parsing errors
+	 * @param parsingErrors the new parsing errors
 	 */
-	public void setParsing_errors(final List&lt;String&gt; parsing_errors) {
-<span class="fc" id="L115">		this.parsing_errors = parsing_errors;</span>
-<span class="fc" id="L116">	}</span>
+	public void setParsingErrors(final List&lt;String&gt; parsingErrors) {
+<span class="fc" id="L121">		this.parsingErrors = parsingErrors;</span>
+<span class="fc" id="L122">	}</span>
 
 	/**
 	 * To string.
@@ -122,7 +128,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public String toString() {
-<span class="fc" id="L125">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+<span class="fc" id="L131">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
 	}
 
 	/**
@@ -133,7 +139,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
     public boolean equals(final Object object) {
-<span class="fc" id="L136">    	return EqualsBuilder.reflectionEquals(this,object);</span>
+<span class="fc" id="L142">    	return EqualsBuilder.reflectionEquals(this,object);</span>
     }
 
 	/**
@@ -143,7 +149,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public int hashCode() {
-<span class="fc" id="L146">		return HashCodeBuilder.reflectionHashCode(this);</span>
+<span class="fc" id="L152">		return HashCodeBuilder.reflectionHashCode(this);</span>
 	}
 
 }

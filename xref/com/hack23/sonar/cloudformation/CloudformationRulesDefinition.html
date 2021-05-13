@@ -111,7 +111,7 @@
 <a class="jxr_linenumber" name="L103" href="#L103">103</a> <em class="jxr_javadoccomment">	 *</em>
 <a class="jxr_linenumber" name="L104" href="#L104">104</a> <em class="jxr_javadoccomment">	 * @param newRule the new rule</em>
 <a class="jxr_linenumber" name="L105" href="#L105">105</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L106" href="#L106">106</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addNewRule(<strong class="jxr_keyword">final</strong> NewRule newRule) {
+<a class="jxr_linenumber" name="L106" href="#L106">106</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> addNewRule(<strong class="jxr_keyword">final</strong> NewRule newRule) {
 <a class="jxr_linenumber" name="L107" href="#L107">107</a> 		<strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L108" href="#L108">108</a> 			<strong class="jxr_keyword">final</strong> Set&lt;String&gt; tags = (Set&lt;String&gt;) FieldUtils.readField(newRule, <span class="jxr_string">"tags"</span>, <strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="L109" href="#L109">109</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> String tag : tags) {

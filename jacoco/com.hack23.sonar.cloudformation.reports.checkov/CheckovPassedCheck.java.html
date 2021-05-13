@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckovPassedCheck.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cloudformation</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.checkov</a> &gt; <span class="el_source">CheckovPassedCheck.java</span></div><h1>CheckovPassedCheck.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckovPassedCheck.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sonar Cloudformation Plugin</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.checkov</a> &gt; <span class="el_source">CheckovPassedCheck.java</span></div><h1>CheckovPassedCheck.java</h1><pre class="source lang-java linenums">/*
  * Cloudformation Plugin for SonarQube
  * Copyright (C) 2019 James Pether Sörling
  * james@hack23.com
@@ -26,53 +26,54 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CheckovPassedCheck.
  */
-<span class="fc" id="L32">public final class CheckovPassedCheck {</span>
+<span class="fc" id="L34">public final class CheckovPassedCheck {</span>
 
     /** The check id. */
-    private String check_id;
+    private String checkId;
 
     /** The check name. */
-    private String check_name;
+    private String checkName;
 
     /** The check result. */
-    private Object check_result;
+    private Object checkResult;
 
     /** The code block. */
-    private List&lt;Object&gt;  code_block;
+    private List&lt;Object&gt;  codeBlock;
 
     /** The file path. */
-    private String file_path;
+    private String filePath;
 
     /** The file line range. */
-    private List&lt;Integer&gt; file_line_range;
+    private List&lt;Integer&gt; fileLineRange;
 
     /** The resource. */
     private String resource;
 
-    /** The repo file path. */
-    private String repo_file_path;
-
+    /** The file abs path. */
+    private String fileAbsPath;
 
     /** The entity tags. */
-    private String entity_tags;
+    private String entityTags;
 
     /** The caller file path. */
-    private String caller_file_path;
+    private String callerFilePath;
 
     /** The caller file line range. */
-    private String caller_file_line_range;
+    private String callerFileLineRange;
 
     /** The fixed definition. */
-    private String fixed_definition;
+    private String fixedDefinition;
 
 	/** The evaluations. */
     private Object evaluations;
 
     /** The check class. */
-    private String check_class;
+    private String checkClass;
 
     /** The guideline. */
     private String guideline;
@@ -82,72 +83,76 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @return the check id
 	 */
-	public String getCheck_id() {
-<span class="fc" id="L86">		return check_id;</span>
+    @JsonProperty(&quot;check_id&quot;)
+	public String getCheckId() {
+<span class="fc" id="L88">		return checkId;</span>
 	}
 
 	/**
 	 * Sets the check id.
 	 *
-	 * @param check_id the new check id
+	 * @param checkId the new check id
 	 */
-	public void setCheck_id(final String check_id) {
-<span class="fc" id="L95">		this.check_id = check_id;</span>
-<span class="fc" id="L96">	}</span>
+	public void setCheckId(final String checkId) {
+<span class="fc" id="L97">		this.checkId = checkId;</span>
+<span class="fc" id="L98">	}</span>
 
 	/**
 	 * Gets the check name.
 	 *
 	 * @return the check name
 	 */
-	public String getCheck_name() {
-<span class="fc" id="L104">		return check_name;</span>
+    @JsonProperty(&quot;check_name&quot;)
+	public String getCheckName() {
+<span class="fc" id="L107">		return checkName;</span>
 	}
 
 	/**
 	 * Sets the check name.
 	 *
-	 * @param check_name the new check name
+	 * @param checkName the new check name
 	 */
-	public void setCheck_name(final String check_name) {
-<span class="fc" id="L113">		this.check_name = check_name;</span>
-<span class="fc" id="L114">	}</span>
+	public void setCheckName(final String checkName) {
+<span class="fc" id="L116">		this.checkName = checkName;</span>
+<span class="fc" id="L117">	}</span>
 
 	/**
 	 * Gets the check result.
 	 *
 	 * @return the check result
 	 */
-	public Object getCheck_result() {
-<span class="fc" id="L122">		return check_result;</span>
+    @JsonProperty(&quot;check_result&quot;)
+	public Object getCheckResult() {
+<span class="fc" id="L126">		return checkResult;</span>
 	}
 
 	/**
 	 * Sets the check result.
 	 *
-	 * @param check_result the new check result
+	 * @param checkResult the new check result
 	 */
-	public void setCheck_result(final Object check_result) {
-<span class="fc" id="L131">		this.check_result = check_result;</span>
-<span class="fc" id="L132">	}</span>
+	public void setCheckResult(final Object checkResult) {
+<span class="fc" id="L135">		this.checkResult = checkResult;</span>
+<span class="fc" id="L136">	}</span>
 
 	/**
 	 * Gets the code block.
 	 *
 	 * @return the code block
 	 */
-	public List&lt;Object&gt; getCode_block() {
-<span class="fc" id="L140">		return code_block;</span>
+    @JsonProperty(&quot;code_block&quot;)
+	public List&lt;Object&gt; getCodeBlock() {
+<span class="fc" id="L145">		return codeBlock;</span>
 	}
 
 	/**
 	 * Sets the code block.
 	 *
-	 * @param code_block the new code block
+	 * @param codeBlock the new code block
 	 */
-	public void setCode_block(final List&lt;Object&gt; code_block) {
-<span class="fc" id="L149">		this.code_block = code_block;</span>
-<span class="fc" id="L150">	}</span>
+	public void setCodeBlock(final List&lt;Object&gt; codeBlock) {
+<span class="fc" id="L154">		this.codeBlock = codeBlock;</span>
+<span class="fc" id="L155">	}</span>
 
 
 
@@ -156,36 +161,38 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @return the file path
 	 */
-	public String getFile_path() {
-<span class="fc" id="L160">		return file_path;</span>
+    @JsonProperty(&quot;file_path&quot;)
+	public String getFilePath() {
+<span class="fc" id="L166">		return filePath;</span>
 	}
 
 	/**
 	 * Sets the file path.
 	 *
-	 * @param file_path the new file path
+	 * @param filePath the new file path
 	 */
-	public void setFile_path(final String file_path) {
-<span class="fc" id="L169">		this.file_path = file_path;</span>
-<span class="fc" id="L170">	}</span>
+	public void setFilePath(final String filePath) {
+<span class="fc" id="L175">		this.filePath = filePath;</span>
+<span class="fc" id="L176">	}</span>
 
 	/**
 	 * Gets the file line range.
 	 *
 	 * @return the file line range
 	 */
-	public List&lt;Integer&gt; getFile_line_range() {
-<span class="fc" id="L178">		return file_line_range;</span>
+    @JsonProperty(&quot;file_line_range&quot;)
+	public List&lt;Integer&gt; getFileLineRange() {
+<span class="fc" id="L185">		return fileLineRange;</span>
 	}
 
 	/**
 	 * Sets the file line range.
 	 *
-	 * @param file_line_range the new file line range
+	 * @param fileLineRange the new file line range
 	 */
-	public void setFile_line_range(final List&lt;Integer&gt; file_line_range) {
-<span class="fc" id="L187">		this.file_line_range = file_line_range;</span>
-<span class="fc" id="L188">	}</span>
+	public void setFileLineRange(final List&lt;Integer&gt; fileLineRange) {
+<span class="fc" id="L194">		this.fileLineRange = fileLineRange;</span>
+<span class="fc" id="L195">	}</span>
 
 	/**
 	 * Gets the resource.
@@ -193,7 +200,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the resource
 	 */
 	public String getResource() {
-<span class="fc" id="L196">		return resource;</span>
+<span class="fc" id="L203">		return resource;</span>
 	}
 
 	/**
@@ -202,8 +209,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @param resource the new resource
 	 */
 	public void setResource(final String resource) {
-<span class="fc" id="L205">		this.resource = resource;</span>
-<span class="fc" id="L206">	}</span>
+<span class="fc" id="L212">		this.resource = resource;</span>
+<span class="fc" id="L213">	}</span>
 
 	/**
 	 * Gets the evaluations.
@@ -211,7 +218,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the evaluations
 	 */
 	public Object getEvaluations() {
-<span class="fc" id="L214">		return evaluations;</span>
+<span class="fc" id="L221">		return evaluations;</span>
 	}
 
 	/**
@@ -220,26 +227,27 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @param evaluations the new evaluations
 	 */
 	public void setEvaluations(final Object evaluations) {
-<span class="fc" id="L223">		this.evaluations = evaluations;</span>
-<span class="fc" id="L224">	}</span>
+<span class="fc" id="L230">		this.evaluations = evaluations;</span>
+<span class="fc" id="L231">	}</span>
 
 	/**
 	 * Gets the check class.
 	 *
 	 * @return the check class
 	 */
-	public String getCheck_class() {
-<span class="fc" id="L232">		return check_class;</span>
+    @JsonProperty(&quot;check_class&quot;)
+	public String getCheckClass() {
+<span class="fc" id="L240">		return checkClass;</span>
 	}
 
 	/**
 	 * Sets the check class.
 	 *
-	 * @param check_class the new check class
+	 * @param checkClass the new check class
 	 */
-	public void setCheck_class(final String check_class) {
-<span class="fc" id="L241">		this.check_class = check_class;</span>
-<span class="fc" id="L242">	}</span>
+	public void setCheckClass(final String checkClass) {
+<span class="fc" id="L249">		this.checkClass = checkClass;</span>
+<span class="fc" id="L250">	}</span>
 
 	/**
 	 * Gets the guideline.
@@ -247,7 +255,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @return the guideline
 	 */
 	public String getGuideline() {
-<span class="fc" id="L250">		return guideline;</span>
+<span class="fc" id="L258">		return guideline;</span>
 	}
 
 	/**
@@ -256,26 +264,27 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 * @param guideline the new guideline
 	 */
 	public void setGuideline(final String guideline) {
-<span class="fc" id="L259">		this.guideline = guideline;</span>
-<span class="fc" id="L260">	}</span>
+<span class="fc" id="L267">		this.guideline = guideline;</span>
+<span class="fc" id="L268">	}</span>
 
     /**
-     * Gets the repo file path.
+     * Gets the file abs path.
      *
-     * @return the repo file path
+     * @return the file abs path
      */
-    public String getRepo_file_path() {
-<span class="fc" id="L268">		return repo_file_path;</span>
+    @JsonProperty(&quot;file_abs_path&quot;)
+	public String getFileAbsPath() {
+<span class="fc" id="L277">		return fileAbsPath;</span>
 	}
 
 	/**
-	 * Sets the repo file path.
+	 * Sets the file abs path.
 	 *
-	 * @param repo_file_path the new repo file path
+	 * @param fileAbsPath the new file abs path
 	 */
-	public void setRepo_file_path(final String repo_file_path) {
-<span class="fc" id="L277">		this.repo_file_path = repo_file_path;</span>
-<span class="fc" id="L278">	}</span>
+	public void setFileAbsPath(final String fileAbsPath) {
+<span class="fc" id="L286">		this.fileAbsPath = fileAbsPath;</span>
+<span class="fc" id="L287">	}</span>
 
 
 
@@ -284,72 +293,76 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 *
 	 * @return the entity tags
 	 */
-	public String getEntity_tags() {
-<span class="fc" id="L288">		return entity_tags;</span>
+    @JsonProperty(&quot;entity_tags&quot;)
+	public String getEntityTags() {
+<span class="fc" id="L298">		return entityTags;</span>
 	}
 
 	/**
 	 * Sets the entity tags.
 	 *
-	 * @param entity_tags the new entity tags
+	 * @param entityTags the new entity tags
 	 */
-	public void setEntity_tags(final String entity_tags) {
-<span class="fc" id="L297">		this.entity_tags = entity_tags;</span>
-<span class="fc" id="L298">	}</span>
+	public void setEntityTags(final String entityTags) {
+<span class="fc" id="L307">		this.entityTags = entityTags;</span>
+<span class="fc" id="L308">	}</span>
 
 	/**
 	 * Gets the caller file path.
 	 *
 	 * @return the caller file path
 	 */
-	public String getCaller_file_path() {
-<span class="fc" id="L306">		return caller_file_path;</span>
+    @JsonProperty(&quot;caller_file_path&quot;)
+	public String getCallerFilePath() {
+<span class="fc" id="L317">		return callerFilePath;</span>
 	}
 
 	/**
 	 * Sets the caller file path.
 	 *
-	 * @param caller_file_path the new caller file path
+	 * @param callerFilePath the new caller file path
 	 */
-	public void setCaller_file_path(final String caller_file_path) {
-<span class="fc" id="L315">		this.caller_file_path = caller_file_path;</span>
-<span class="fc" id="L316">	}</span>
+	public void setCallerFilePath(final String callerFilePath) {
+<span class="fc" id="L326">		this.callerFilePath = callerFilePath;</span>
+<span class="fc" id="L327">	}</span>
 
 	/**
 	 * Gets the caller file line range.
 	 *
 	 * @return the caller file line range
 	 */
-	public String getCaller_file_line_range() {
-<span class="fc" id="L324">		return caller_file_line_range;</span>
+    @JsonProperty(&quot;caller_file_line_range&quot;)
+	public String getCallerFileLineRange() {
+<span class="fc" id="L336">		return callerFileLineRange;</span>
 	}
 
 	/**
 	 * Sets the caller file line range.
 	 *
-	 * @param caller_file_line_range the new caller file line range
+	 * @param callerFileLineRange the new caller file line range
 	 */
-	public void setCaller_file_line_range(final String caller_file_line_range) {
-<span class="fc" id="L333">		this.caller_file_line_range = caller_file_line_range;</span>
-<span class="fc" id="L334">	}</span>
+	public void setCallerFileLineRange(final String callerFileLineRange) {
+<span class="fc" id="L345">		this.callerFileLineRange = callerFileLineRange;</span>
+<span class="fc" id="L346">	}</span>
 
 	/**
 	 * Gets the fixed definition.
 	 *
 	 * @return the fixed definition
 	 */
-	public String getFixed_definition() {
-<span class="fc" id="L342">		return fixed_definition;</span>
+    @JsonProperty(&quot;fixed_definition&quot;)
+	public String getFixedDefinition() {
+<span class="fc" id="L355">		return fixedDefinition;</span>
 	}
 
 	/**
 	 * Sets the fixed definition.
 	 *
-	 * @param fixed_definition the new fixed definition
+	 * @param fixedDefinition the new fixed definition
 	 */
-	public void setFixed_definition(final String fixed_definition) {
-<span class="fc" id="L351">		this.fixed_definition = fixed_definition;</span>
-<span class="fc" id="L352">	}</span>
+	public void setFixedDefinition(final String fixedDefinition) {
+<span class="fc" id="L364">		this.fixedDefinition = fixedDefinition;</span>
+<span class="fc" id="L365">	}</span>
 
 	/**
 	 * To string.
@@ -358,7 +371,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public String toString() {
-<span class="fc" id="L361">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+<span class="fc" id="L374">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
 	}
 
 	/**
@@ -369,7 +382,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public boolean equals(final Object object) {
-<span class="fc" id="L372">		return EqualsBuilder.reflectionEquals(this, object);</span>
+<span class="fc" id="L385">		return EqualsBuilder.reflectionEquals(this, object);</span>
 	}
 
 	/**
@@ -379,7 +392,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 	 */
 	@Override
 	public int hashCode() {
-<span class="fc" id="L382">		return HashCodeBuilder.reflectionHashCode(this);</span>
+<span class="fc" id="L395">		return HashCodeBuilder.reflectionHashCode(this);</span>
 	}
 
 }

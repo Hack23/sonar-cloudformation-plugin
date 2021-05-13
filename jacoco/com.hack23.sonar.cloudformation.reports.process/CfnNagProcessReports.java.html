@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CfnNagProcessReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cloudformation</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.process</a> &gt; <span class="el_source">CfnNagProcessReports.java</span></div><h1>CfnNagProcessReports.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CfnNagProcessReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sonar Cloudformation Plugin</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.process</a> &gt; <span class="el_source">CfnNagProcessReports.java</span></div><h1>CfnNagProcessReports.java</h1><pre class="source lang-java linenums">/*
  * Cloudformation Plugin for SonarQube
  * Copyright (C) 2019 James Pether Sörling
  * james@hack23.com
@@ -23,7 +23,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -45,7 +44,10 @@ import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagViolation;
 /**
  * The Class CfnNagProcessReports.
  */
-public final class CfnNagProcessReports {
+public final class CfnNagProcessReports extends AbstractProcessReports {
+
+	/** The Constant SUPPORTED_RULES. */
+<span class="fc" id="L50">	public static final Set&lt;String&gt; SUPPORTED_RULES = new HashSet&lt;&gt;();</span>
 
 	/** The Constant UNDEFINED_FAILURE. */
 	public static final String UNDEFINED_FAILURE = &quot;FUNDEFINED&quot;;
@@ -54,7 +56,7 @@ public final class CfnNagProcessReports {
 	public static final String UNDEFINED_WARNING = &quot;WUNDEFINED&quot;;
 
 	/** The Constant LOGGER. */
-<span class="fc" id="L57">	private static final Logger LOGGER = Loggers.get(CfnNagProcessReports.class);</span>
+<span class="fc" id="L59">	private static final Logger LOGGER = Loggers.get(CfnNagProcessReports.class);</span>
 
 	/** The cfn nag scan report reader. */
 	private final CfnNagScanReportReader cfnNagScanReportReader;
@@ -65,195 +67,180 @@ public final class CfnNagProcessReports {
 	/** The file system. */
 	private final FileSystem fileSystem;
 
-
-	/** The Constant SUPPORTED_RULES. */
-<span class="fc" id="L70">	public static final Set&lt;String&gt; SUPPORTED_RULES = new HashSet&lt;&gt;();</span>
-
 	static {
-<span class="fc" id="L73">		SUPPORTED_RULES.add(&quot;F1&quot;);</span>
-<span class="fc" id="L74">		SUPPORTED_RULES.add(&quot;F2&quot;);</span>
-<span class="fc" id="L75">		SUPPORTED_RULES.add(&quot;F3&quot;);</span>
-<span class="fc" id="L76">		SUPPORTED_RULES.add(&quot;F4&quot;);</span>
-<span class="fc" id="L77">		SUPPORTED_RULES.add(&quot;F5&quot;);</span>
-<span class="fc" id="L78">		SUPPORTED_RULES.add(&quot;F6&quot;);</span>
-<span class="fc" id="L79">		SUPPORTED_RULES.add(&quot;F7&quot;);</span>
-<span class="fc" id="L80">		SUPPORTED_RULES.add(&quot;F8&quot;);</span>
-<span class="fc" id="L81">		SUPPORTED_RULES.add(&quot;F9&quot;);</span>
-<span class="fc" id="L82">		SUPPORTED_RULES.add(&quot;F10&quot;);</span>
-<span class="fc" id="L83">		SUPPORTED_RULES.add(&quot;F11&quot;);</span>
-<span class="fc" id="L84">		SUPPORTED_RULES.add(&quot;F12&quot;);</span>
-<span class="fc" id="L85">		SUPPORTED_RULES.add(&quot;F13&quot;);</span>
-<span class="fc" id="L86">		SUPPORTED_RULES.add(&quot;F14&quot;);</span>
-<span class="fc" id="L87">		SUPPORTED_RULES.add(&quot;F15&quot;);</span>
-<span class="fc" id="L88">		SUPPORTED_RULES.add(&quot;F16&quot;);</span>
-<span class="fc" id="L89">		SUPPORTED_RULES.add(&quot;F18&quot;);</span>
-<span class="fc" id="L90">		SUPPORTED_RULES.add(&quot;F19&quot;);</span>
-<span class="fc" id="L91">		SUPPORTED_RULES.add(&quot;F20&quot;);</span>
-<span class="fc" id="L92">		SUPPORTED_RULES.add(&quot;F21&quot;);</span>
-<span class="fc" id="L93">		SUPPORTED_RULES.add(&quot;F22&quot;);</span>
-<span class="fc" id="L94">		SUPPORTED_RULES.add(&quot;F23&quot;);</span>
-<span class="fc" id="L95">		SUPPORTED_RULES.add(&quot;F24&quot;);</span>
-<span class="fc" id="L96">		SUPPORTED_RULES.add(&quot;F25&quot;);</span>
-<span class="fc" id="L97">		SUPPORTED_RULES.add(&quot;F26&quot;);</span>
-<span class="fc" id="L98">		SUPPORTED_RULES.add(&quot;F27&quot;);</span>
-<span class="fc" id="L99">		SUPPORTED_RULES.add(&quot;F28&quot;);</span>
-<span class="fc" id="L100">		SUPPORTED_RULES.add(&quot;F29&quot;);</span>
-<span class="fc" id="L101">		SUPPORTED_RULES.add(&quot;F30&quot;);</span>
-<span class="fc" id="L102">		SUPPORTED_RULES.add(&quot;F31&quot;);</span>
-<span class="fc" id="L103">		SUPPORTED_RULES.add(&quot;F32&quot;);</span>
-<span class="fc" id="L104">		SUPPORTED_RULES.add(&quot;F33&quot;);</span>
-<span class="fc" id="L105">		SUPPORTED_RULES.add(&quot;F34&quot;);</span>
-<span class="fc" id="L106">		SUPPORTED_RULES.add(&quot;F35&quot;);</span>
-<span class="fc" id="L107">		SUPPORTED_RULES.add(&quot;F36&quot;);</span>
-<span class="fc" id="L108">		SUPPORTED_RULES.add(&quot;F37&quot;);</span>
-<span class="fc" id="L109">		SUPPORTED_RULES.add(&quot;F38&quot;);</span>
-<span class="fc" id="L110">		SUPPORTED_RULES.add(&quot;F39&quot;);</span>
-<span class="fc" id="L111">		SUPPORTED_RULES.add(&quot;F40&quot;);</span>
-<span class="fc" id="L112">		SUPPORTED_RULES.add(&quot;F41&quot;);</span>
-<span class="fc" id="L113">		SUPPORTED_RULES.add(&quot;F42&quot;);</span>
-<span class="fc" id="L114">		SUPPORTED_RULES.add(&quot;F43&quot;);</span>
-<span class="fc" id="L115">		SUPPORTED_RULES.add(&quot;F44&quot;);</span>
-<span class="fc" id="L116">		SUPPORTED_RULES.add(&quot;F45&quot;);</span>
-<span class="fc" id="L117">		SUPPORTED_RULES.add(&quot;F46&quot;);</span>
-<span class="fc" id="L118">		SUPPORTED_RULES.add(&quot;F47&quot;);</span>
-<span class="fc" id="L119">		SUPPORTED_RULES.add(&quot;F48&quot;);</span>
-<span class="fc" id="L120">		SUPPORTED_RULES.add(&quot;F49&quot;);</span>
-<span class="fc" id="L121">		SUPPORTED_RULES.add(&quot;F50&quot;);</span>
-<span class="fc" id="L122">		SUPPORTED_RULES.add(&quot;F51&quot;);</span>
-<span class="fc" id="L123">		SUPPORTED_RULES.add(&quot;F52&quot;);</span>
-<span class="fc" id="L124">		SUPPORTED_RULES.add(&quot;F53&quot;);</span>
-<span class="fc" id="L125">		SUPPORTED_RULES.add(&quot;F54&quot;);</span>
-<span class="fc" id="L126">		SUPPORTED_RULES.add(&quot;F55&quot;);</span>
-<span class="fc" id="L127">		SUPPORTED_RULES.add(&quot;F56&quot;);</span>
-<span class="fc" id="L128">		SUPPORTED_RULES.add(&quot;F57&quot;);</span>
-<span class="fc" id="L129">		SUPPORTED_RULES.add(&quot;F58&quot;);</span>
-<span class="fc" id="L130">		SUPPORTED_RULES.add(&quot;F60&quot;);</span>
-<span class="fc" id="L131">		SUPPORTED_RULES.add(&quot;F61&quot;);</span>
-<span class="fc" id="L132">		SUPPORTED_RULES.add(&quot;F62&quot;);</span>
-<span class="fc" id="L133">		SUPPORTED_RULES.add(&quot;F63&quot;);</span>
-<span class="fc" id="L134">		SUPPORTED_RULES.add(&quot;F64&quot;);</span>
-<span class="fc" id="L135">		SUPPORTED_RULES.add(&quot;F65&quot;);</span>
-<span class="fc" id="L136">		SUPPORTED_RULES.add(&quot;F66&quot;);</span>
-<span class="fc" id="L137">		SUPPORTED_RULES.add(&quot;F67&quot;);</span>
-<span class="fc" id="L138">		SUPPORTED_RULES.add(&quot;F68&quot;);</span>
-<span class="fc" id="L139">		SUPPORTED_RULES.add(&quot;F69&quot;);</span>
-<span class="fc" id="L140">		SUPPORTED_RULES.add(&quot;F70&quot;);</span>
-<span class="fc" id="L141">		SUPPORTED_RULES.add(&quot;F71&quot;);</span>
-<span class="fc" id="L142">		SUPPORTED_RULES.add(&quot;F74&quot;);</span>
-<span class="fc" id="L143">		SUPPORTED_RULES.add(&quot;F75&quot;);</span>
-<span class="fc" id="L144">		SUPPORTED_RULES.add(&quot;F76&quot;);</span>
-<span class="fc" id="L145">		SUPPORTED_RULES.add(&quot;F77&quot;);</span>
-<span class="fc" id="L146">		SUPPORTED_RULES.add(&quot;F78&quot;);</span>
-<span class="fc" id="L147">		SUPPORTED_RULES.add(&quot;F79&quot;);</span>
-<span class="fc" id="L148">		SUPPORTED_RULES.add(&quot;F80&quot;);</span>
+<span class="fc" id="L71">		SUPPORTED_RULES.add(&quot;F1&quot;);</span>
+<span class="fc" id="L72">		SUPPORTED_RULES.add(&quot;F2&quot;);</span>
+<span class="fc" id="L73">		SUPPORTED_RULES.add(&quot;F3&quot;);</span>
+<span class="fc" id="L74">		SUPPORTED_RULES.add(&quot;F4&quot;);</span>
+<span class="fc" id="L75">		SUPPORTED_RULES.add(&quot;F5&quot;);</span>
+<span class="fc" id="L76">		SUPPORTED_RULES.add(&quot;F6&quot;);</span>
+<span class="fc" id="L77">		SUPPORTED_RULES.add(&quot;F7&quot;);</span>
+<span class="fc" id="L78">		SUPPORTED_RULES.add(&quot;F8&quot;);</span>
+<span class="fc" id="L79">		SUPPORTED_RULES.add(&quot;F9&quot;);</span>
+<span class="fc" id="L80">		SUPPORTED_RULES.add(&quot;F10&quot;);</span>
+<span class="fc" id="L81">		SUPPORTED_RULES.add(&quot;F11&quot;);</span>
+<span class="fc" id="L82">		SUPPORTED_RULES.add(&quot;F12&quot;);</span>
+<span class="fc" id="L83">		SUPPORTED_RULES.add(&quot;F13&quot;);</span>
+<span class="fc" id="L84">		SUPPORTED_RULES.add(&quot;F14&quot;);</span>
+<span class="fc" id="L85">		SUPPORTED_RULES.add(&quot;F15&quot;);</span>
+<span class="fc" id="L86">		SUPPORTED_RULES.add(&quot;F16&quot;);</span>
+<span class="fc" id="L87">		SUPPORTED_RULES.add(&quot;F18&quot;);</span>
+<span class="fc" id="L88">		SUPPORTED_RULES.add(&quot;F19&quot;);</span>
+<span class="fc" id="L89">		SUPPORTED_RULES.add(&quot;F20&quot;);</span>
+<span class="fc" id="L90">		SUPPORTED_RULES.add(&quot;F21&quot;);</span>
+<span class="fc" id="L91">		SUPPORTED_RULES.add(&quot;F22&quot;);</span>
+<span class="fc" id="L92">		SUPPORTED_RULES.add(&quot;F23&quot;);</span>
+<span class="fc" id="L93">		SUPPORTED_RULES.add(&quot;F24&quot;);</span>
+<span class="fc" id="L94">		SUPPORTED_RULES.add(&quot;F25&quot;);</span>
+<span class="fc" id="L95">		SUPPORTED_RULES.add(&quot;F26&quot;);</span>
+<span class="fc" id="L96">		SUPPORTED_RULES.add(&quot;F27&quot;);</span>
+<span class="fc" id="L97">		SUPPORTED_RULES.add(&quot;F28&quot;);</span>
+<span class="fc" id="L98">		SUPPORTED_RULES.add(&quot;F29&quot;);</span>
+<span class="fc" id="L99">		SUPPORTED_RULES.add(&quot;F30&quot;);</span>
+<span class="fc" id="L100">		SUPPORTED_RULES.add(&quot;F31&quot;);</span>
+<span class="fc" id="L101">		SUPPORTED_RULES.add(&quot;F32&quot;);</span>
+<span class="fc" id="L102">		SUPPORTED_RULES.add(&quot;F33&quot;);</span>
+<span class="fc" id="L103">		SUPPORTED_RULES.add(&quot;F34&quot;);</span>
+<span class="fc" id="L104">		SUPPORTED_RULES.add(&quot;F35&quot;);</span>
+<span class="fc" id="L105">		SUPPORTED_RULES.add(&quot;F36&quot;);</span>
+<span class="fc" id="L106">		SUPPORTED_RULES.add(&quot;F37&quot;);</span>
+<span class="fc" id="L107">		SUPPORTED_RULES.add(&quot;F38&quot;);</span>
+<span class="fc" id="L108">		SUPPORTED_RULES.add(&quot;F39&quot;);</span>
+<span class="fc" id="L109">		SUPPORTED_RULES.add(&quot;F40&quot;);</span>
+<span class="fc" id="L110">		SUPPORTED_RULES.add(&quot;F41&quot;);</span>
+<span class="fc" id="L111">		SUPPORTED_RULES.add(&quot;F42&quot;);</span>
+<span class="fc" id="L112">		SUPPORTED_RULES.add(&quot;F43&quot;);</span>
+<span class="fc" id="L113">		SUPPORTED_RULES.add(&quot;F44&quot;);</span>
+<span class="fc" id="L114">		SUPPORTED_RULES.add(&quot;F45&quot;);</span>
+<span class="fc" id="L115">		SUPPORTED_RULES.add(&quot;F46&quot;);</span>
+<span class="fc" id="L116">		SUPPORTED_RULES.add(&quot;F47&quot;);</span>
+<span class="fc" id="L117">		SUPPORTED_RULES.add(&quot;F48&quot;);</span>
+<span class="fc" id="L118">		SUPPORTED_RULES.add(&quot;F49&quot;);</span>
+<span class="fc" id="L119">		SUPPORTED_RULES.add(&quot;F50&quot;);</span>
+<span class="fc" id="L120">		SUPPORTED_RULES.add(&quot;F51&quot;);</span>
+<span class="fc" id="L121">		SUPPORTED_RULES.add(&quot;F52&quot;);</span>
+<span class="fc" id="L122">		SUPPORTED_RULES.add(&quot;F53&quot;);</span>
+<span class="fc" id="L123">		SUPPORTED_RULES.add(&quot;F54&quot;);</span>
+<span class="fc" id="L124">		SUPPORTED_RULES.add(&quot;F55&quot;);</span>
+<span class="fc" id="L125">		SUPPORTED_RULES.add(&quot;F56&quot;);</span>
+<span class="fc" id="L126">		SUPPORTED_RULES.add(&quot;F57&quot;);</span>
+<span class="fc" id="L127">		SUPPORTED_RULES.add(&quot;F58&quot;);</span>
+<span class="fc" id="L128">		SUPPORTED_RULES.add(&quot;F60&quot;);</span>
+<span class="fc" id="L129">		SUPPORTED_RULES.add(&quot;F61&quot;);</span>
+<span class="fc" id="L130">		SUPPORTED_RULES.add(&quot;F62&quot;);</span>
+<span class="fc" id="L131">		SUPPORTED_RULES.add(&quot;F63&quot;);</span>
+<span class="fc" id="L132">		SUPPORTED_RULES.add(&quot;F64&quot;);</span>
+<span class="fc" id="L133">		SUPPORTED_RULES.add(&quot;F65&quot;);</span>
+<span class="fc" id="L134">		SUPPORTED_RULES.add(&quot;F66&quot;);</span>
+<span class="fc" id="L135">		SUPPORTED_RULES.add(&quot;F67&quot;);</span>
+<span class="fc" id="L136">		SUPPORTED_RULES.add(&quot;F68&quot;);</span>
+<span class="fc" id="L137">		SUPPORTED_RULES.add(&quot;F69&quot;);</span>
+<span class="fc" id="L138">		SUPPORTED_RULES.add(&quot;F70&quot;);</span>
+<span class="fc" id="L139">		SUPPORTED_RULES.add(&quot;F71&quot;);</span>
+<span class="fc" id="L140">		SUPPORTED_RULES.add(&quot;F74&quot;);</span>
+<span class="fc" id="L141">		SUPPORTED_RULES.add(&quot;F75&quot;);</span>
+<span class="fc" id="L142">		SUPPORTED_RULES.add(&quot;F76&quot;);</span>
+<span class="fc" id="L143">		SUPPORTED_RULES.add(&quot;F77&quot;);</span>
+<span class="fc" id="L144">		SUPPORTED_RULES.add(&quot;F78&quot;);</span>
+<span class="fc" id="L145">		SUPPORTED_RULES.add(&quot;F79&quot;);</span>
+<span class="fc" id="L146">		SUPPORTED_RULES.add(&quot;F80&quot;);</span>
 
-<span class="fc" id="L150">		SUPPORTED_RULES.add(&quot;F665&quot;);</span>
-<span class="fc" id="L151">		SUPPORTED_RULES.add(&quot;F1000&quot;);</span>
-<span class="fc" id="L152">		SUPPORTED_RULES.add(&quot;F2000&quot;);</span>
+<span class="fc" id="L148">		SUPPORTED_RULES.add(&quot;F665&quot;);</span>
+<span class="fc" id="L149">		SUPPORTED_RULES.add(&quot;F1000&quot;);</span>
+<span class="fc" id="L150">		SUPPORTED_RULES.add(&quot;F2000&quot;);</span>
 
-<span class="fc" id="L154">		SUPPORTED_RULES.add(&quot;W1&quot;);</span>
-<span class="fc" id="L155">		SUPPORTED_RULES.add(&quot;W2&quot;);</span>
-<span class="fc" id="L156">		SUPPORTED_RULES.add(&quot;W5&quot;);</span>
-<span class="fc" id="L157">		SUPPORTED_RULES.add(&quot;W9&quot;);</span>
-<span class="fc" id="L158">		SUPPORTED_RULES.add(&quot;W10&quot;);</span>
-<span class="fc" id="L159">		SUPPORTED_RULES.add(&quot;W11&quot;);</span>
-<span class="fc" id="L160">		SUPPORTED_RULES.add(&quot;W12&quot;);</span>
-<span class="fc" id="L161">		SUPPORTED_RULES.add(&quot;W13&quot;);</span>
-<span class="fc" id="L162">		SUPPORTED_RULES.add(&quot;W14&quot;);</span>
-<span class="fc" id="L163">		SUPPORTED_RULES.add(&quot;W15&quot;);</span>
-<span class="fc" id="L164">		SUPPORTED_RULES.add(&quot;W16&quot;);</span>
-<span class="fc" id="L165">		SUPPORTED_RULES.add(&quot;W17&quot;);</span>
-<span class="fc" id="L166">		SUPPORTED_RULES.add(&quot;W18&quot;);</span>
-<span class="fc" id="L167">		SUPPORTED_RULES.add(&quot;W19&quot;);</span>
-<span class="fc" id="L168">		SUPPORTED_RULES.add(&quot;W20&quot;);</span>
-<span class="fc" id="L169">		SUPPORTED_RULES.add(&quot;W21&quot;);</span>
-<span class="fc" id="L170">		SUPPORTED_RULES.add(&quot;W22&quot;);</span>
-<span class="fc" id="L171">		SUPPORTED_RULES.add(&quot;W23&quot;);</span>
-<span class="fc" id="L172">		SUPPORTED_RULES.add(&quot;W24&quot;);</span>
-<span class="fc" id="L173">		SUPPORTED_RULES.add(&quot;W26&quot;);</span>
-<span class="fc" id="L174">		SUPPORTED_RULES.add(&quot;W27&quot;);</span>
-<span class="fc" id="L175">		SUPPORTED_RULES.add(&quot;W28&quot;);</span>
-<span class="fc" id="L176">		SUPPORTED_RULES.add(&quot;W29&quot;);</span>
-<span class="fc" id="L177">		SUPPORTED_RULES.add(&quot;W31&quot;);</span>
-<span class="fc" id="L178">		SUPPORTED_RULES.add(&quot;W32&quot;);</span>
-<span class="fc" id="L179">		SUPPORTED_RULES.add(&quot;W33&quot;);</span>
-<span class="fc" id="L180">		SUPPORTED_RULES.add(&quot;W34&quot;);</span>
-<span class="fc" id="L181">		SUPPORTED_RULES.add(&quot;W35&quot;);</span>
-<span class="fc" id="L182">		SUPPORTED_RULES.add(&quot;W36&quot;);</span>
-<span class="fc" id="L183">		SUPPORTED_RULES.add(&quot;W37&quot;);</span>
-<span class="fc" id="L184">		SUPPORTED_RULES.add(&quot;W38&quot;);</span>
-<span class="fc" id="L185">		SUPPORTED_RULES.add(&quot;W39&quot;);</span>
-<span class="fc" id="L186">		SUPPORTED_RULES.add(&quot;W40&quot;);</span>
-<span class="fc" id="L187">		SUPPORTED_RULES.add(&quot;W41&quot;);</span>
-<span class="fc" id="L188">		SUPPORTED_RULES.add(&quot;W42&quot;);</span>
-<span class="fc" id="L189">		SUPPORTED_RULES.add(&quot;W43&quot;);</span>
-<span class="fc" id="L190">		SUPPORTED_RULES.add(&quot;W44&quot;);</span>
-<span class="fc" id="L191">		SUPPORTED_RULES.add(&quot;W45&quot;);</span>
-<span class="fc" id="L192">		SUPPORTED_RULES.add(&quot;W46&quot;);</span>
-<span class="fc" id="L193">		SUPPORTED_RULES.add(&quot;W47&quot;);</span>
-<span class="fc" id="L194">		SUPPORTED_RULES.add(&quot;W48&quot;);</span>
-<span class="fc" id="L195">		SUPPORTED_RULES.add(&quot;W49&quot;);</span>
-<span class="fc" id="L196">		SUPPORTED_RULES.add(&quot;W50&quot;);</span>
-<span class="fc" id="L197">		SUPPORTED_RULES.add(&quot;W51&quot;);</span>
-<span class="fc" id="L198">		SUPPORTED_RULES.add(&quot;W52&quot;);</span>
-<span class="fc" id="L199">		SUPPORTED_RULES.add(&quot;W53&quot;);</span>
-<span class="fc" id="L200">		SUPPORTED_RULES.add(&quot;W54&quot;);</span>
-<span class="fc" id="L201">		SUPPORTED_RULES.add(&quot;W55&quot;);</span>
-<span class="fc" id="L202">		SUPPORTED_RULES.add(&quot;W56&quot;);</span>
-<span class="fc" id="L203">		SUPPORTED_RULES.add(&quot;W57&quot;);</span>
-<span class="fc" id="L204">		SUPPORTED_RULES.add(&quot;W58&quot;);</span>
-<span class="fc" id="L205">		SUPPORTED_RULES.add(&quot;W59&quot;);</span>
-<span class="fc" id="L206">		SUPPORTED_RULES.add(&quot;W60&quot;);</span>
-<span class="fc" id="L207">		SUPPORTED_RULES.add(&quot;W61&quot;);</span>
-<span class="fc" id="L208">		SUPPORTED_RULES.add(&quot;W62&quot;);</span>
-<span class="fc" id="L209">		SUPPORTED_RULES.add(&quot;W63&quot;);</span>
-<span class="fc" id="L210">		SUPPORTED_RULES.add(&quot;W64&quot;);</span>
-<span class="fc" id="L211">		SUPPORTED_RULES.add(&quot;W65&quot;);</span>
-<span class="fc" id="L212">		SUPPORTED_RULES.add(&quot;W66&quot;);</span>
-<span class="fc" id="L213">		SUPPORTED_RULES.add(&quot;W67&quot;);</span>
-<span class="fc" id="L214">		SUPPORTED_RULES.add(&quot;W68&quot;);</span>
-<span class="fc" id="L215">		SUPPORTED_RULES.add(&quot;W69&quot;);</span>
-<span class="fc" id="L216">		SUPPORTED_RULES.add(&quot;W70&quot;);</span>
-<span class="fc" id="L217">		SUPPORTED_RULES.add(&quot;W71&quot;);</span>
-<span class="fc" id="L218">		SUPPORTED_RULES.add(&quot;W72&quot;);</span>
-<span class="fc" id="L219">		SUPPORTED_RULES.add(&quot;W73&quot;);</span>
-<span class="fc" id="L220">		SUPPORTED_RULES.add(&quot;W74&quot;);</span>
-<span class="fc" id="L221">		SUPPORTED_RULES.add(&quot;W75&quot;);</span>
-<span class="fc" id="L222">		SUPPORTED_RULES.add(&quot;W76&quot;);</span>
-<span class="fc" id="L223">		SUPPORTED_RULES.add(&quot;W77&quot;);</span>
-<span class="fc" id="L224">		SUPPORTED_RULES.add(&quot;W78&quot;);</span>
-<span class="fc" id="L225">		SUPPORTED_RULES.add(&quot;W79&quot;);</span>
-<span class="fc" id="L226">		SUPPORTED_RULES.add(&quot;W80&quot;);</span>
-<span class="fc" id="L227">		SUPPORTED_RULES.add(&quot;W81&quot;);</span>
-<span class="fc" id="L228">		SUPPORTED_RULES.add(&quot;W82&quot;);</span>
-<span class="fc" id="L229">		SUPPORTED_RULES.add(&quot;W83&quot;);</span>
-<span class="fc" id="L230">		SUPPORTED_RULES.add(&quot;W84&quot;);</span>
-<span class="fc" id="L231">		SUPPORTED_RULES.add(&quot;W85&quot;);</span>
-<span class="fc" id="L232">		SUPPORTED_RULES.add(&quot;W86&quot;);</span>
-<span class="fc" id="L233">		SUPPORTED_RULES.add(&quot;W87&quot;);</span>
-<span class="fc" id="L234">		SUPPORTED_RULES.add(&quot;W88&quot;);</span>
-<span class="fc" id="L235">		SUPPORTED_RULES.add(&quot;W89&quot;);</span>
-<span class="fc" id="L236">		SUPPORTED_RULES.add(&quot;W90&quot;);</span>
-<span class="fc" id="L237">		SUPPORTED_RULES.add(&quot;W91&quot;);</span>
-<span class="fc" id="L238">		SUPPORTED_RULES.add(&quot;W92&quot;);</span>
+<span class="fc" id="L152">		SUPPORTED_RULES.add(&quot;W1&quot;);</span>
+<span class="fc" id="L153">		SUPPORTED_RULES.add(&quot;W2&quot;);</span>
+<span class="fc" id="L154">		SUPPORTED_RULES.add(&quot;W5&quot;);</span>
+<span class="fc" id="L155">		SUPPORTED_RULES.add(&quot;W9&quot;);</span>
+<span class="fc" id="L156">		SUPPORTED_RULES.add(&quot;W10&quot;);</span>
+<span class="fc" id="L157">		SUPPORTED_RULES.add(&quot;W11&quot;);</span>
+<span class="fc" id="L158">		SUPPORTED_RULES.add(&quot;W12&quot;);</span>
+<span class="fc" id="L159">		SUPPORTED_RULES.add(&quot;W13&quot;);</span>
+<span class="fc" id="L160">		SUPPORTED_RULES.add(&quot;W14&quot;);</span>
+<span class="fc" id="L161">		SUPPORTED_RULES.add(&quot;W15&quot;);</span>
+<span class="fc" id="L162">		SUPPORTED_RULES.add(&quot;W16&quot;);</span>
+<span class="fc" id="L163">		SUPPORTED_RULES.add(&quot;W17&quot;);</span>
+<span class="fc" id="L164">		SUPPORTED_RULES.add(&quot;W18&quot;);</span>
+<span class="fc" id="L165">		SUPPORTED_RULES.add(&quot;W19&quot;);</span>
+<span class="fc" id="L166">		SUPPORTED_RULES.add(&quot;W20&quot;);</span>
+<span class="fc" id="L167">		SUPPORTED_RULES.add(&quot;W21&quot;);</span>
+<span class="fc" id="L168">		SUPPORTED_RULES.add(&quot;W22&quot;);</span>
+<span class="fc" id="L169">		SUPPORTED_RULES.add(&quot;W23&quot;);</span>
+<span class="fc" id="L170">		SUPPORTED_RULES.add(&quot;W24&quot;);</span>
+<span class="fc" id="L171">		SUPPORTED_RULES.add(&quot;W26&quot;);</span>
+<span class="fc" id="L172">		SUPPORTED_RULES.add(&quot;W27&quot;);</span>
+<span class="fc" id="L173">		SUPPORTED_RULES.add(&quot;W28&quot;);</span>
+<span class="fc" id="L174">		SUPPORTED_RULES.add(&quot;W29&quot;);</span>
+<span class="fc" id="L175">		SUPPORTED_RULES.add(&quot;W31&quot;);</span>
+<span class="fc" id="L176">		SUPPORTED_RULES.add(&quot;W32&quot;);</span>
+<span class="fc" id="L177">		SUPPORTED_RULES.add(&quot;W33&quot;);</span>
+<span class="fc" id="L178">		SUPPORTED_RULES.add(&quot;W34&quot;);</span>
+<span class="fc" id="L179">		SUPPORTED_RULES.add(&quot;W35&quot;);</span>
+<span class="fc" id="L180">		SUPPORTED_RULES.add(&quot;W36&quot;);</span>
+<span class="fc" id="L181">		SUPPORTED_RULES.add(&quot;W37&quot;);</span>
+<span class="fc" id="L182">		SUPPORTED_RULES.add(&quot;W38&quot;);</span>
+<span class="fc" id="L183">		SUPPORTED_RULES.add(&quot;W39&quot;);</span>
+<span class="fc" id="L184">		SUPPORTED_RULES.add(&quot;W40&quot;);</span>
+<span class="fc" id="L185">		SUPPORTED_RULES.add(&quot;W41&quot;);</span>
+<span class="fc" id="L186">		SUPPORTED_RULES.add(&quot;W42&quot;);</span>
+<span class="fc" id="L187">		SUPPORTED_RULES.add(&quot;W43&quot;);</span>
+<span class="fc" id="L188">		SUPPORTED_RULES.add(&quot;W44&quot;);</span>
+<span class="fc" id="L189">		SUPPORTED_RULES.add(&quot;W45&quot;);</span>
+<span class="fc" id="L190">		SUPPORTED_RULES.add(&quot;W46&quot;);</span>
+<span class="fc" id="L191">		SUPPORTED_RULES.add(&quot;W47&quot;);</span>
+<span class="fc" id="L192">		SUPPORTED_RULES.add(&quot;W48&quot;);</span>
+<span class="fc" id="L193">		SUPPORTED_RULES.add(&quot;W49&quot;);</span>
+<span class="fc" id="L194">		SUPPORTED_RULES.add(&quot;W50&quot;);</span>
+<span class="fc" id="L195">		SUPPORTED_RULES.add(&quot;W51&quot;);</span>
+<span class="fc" id="L196">		SUPPORTED_RULES.add(&quot;W52&quot;);</span>
+<span class="fc" id="L197">		SUPPORTED_RULES.add(&quot;W53&quot;);</span>
+<span class="fc" id="L198">		SUPPORTED_RULES.add(&quot;W54&quot;);</span>
+<span class="fc" id="L199">		SUPPORTED_RULES.add(&quot;W55&quot;);</span>
+<span class="fc" id="L200">		SUPPORTED_RULES.add(&quot;W56&quot;);</span>
+<span class="fc" id="L201">		SUPPORTED_RULES.add(&quot;W57&quot;);</span>
+<span class="fc" id="L202">		SUPPORTED_RULES.add(&quot;W58&quot;);</span>
+<span class="fc" id="L203">		SUPPORTED_RULES.add(&quot;W59&quot;);</span>
+<span class="fc" id="L204">		SUPPORTED_RULES.add(&quot;W60&quot;);</span>
+<span class="fc" id="L205">		SUPPORTED_RULES.add(&quot;W61&quot;);</span>
+<span class="fc" id="L206">		SUPPORTED_RULES.add(&quot;W62&quot;);</span>
+<span class="fc" id="L207">		SUPPORTED_RULES.add(&quot;W63&quot;);</span>
+<span class="fc" id="L208">		SUPPORTED_RULES.add(&quot;W64&quot;);</span>
+<span class="fc" id="L209">		SUPPORTED_RULES.add(&quot;W65&quot;);</span>
+<span class="fc" id="L210">		SUPPORTED_RULES.add(&quot;W66&quot;);</span>
+<span class="fc" id="L211">		SUPPORTED_RULES.add(&quot;W67&quot;);</span>
+<span class="fc" id="L212">		SUPPORTED_RULES.add(&quot;W68&quot;);</span>
+<span class="fc" id="L213">		SUPPORTED_RULES.add(&quot;W69&quot;);</span>
+<span class="fc" id="L214">		SUPPORTED_RULES.add(&quot;W70&quot;);</span>
+<span class="fc" id="L215">		SUPPORTED_RULES.add(&quot;W71&quot;);</span>
+<span class="fc" id="L216">		SUPPORTED_RULES.add(&quot;W72&quot;);</span>
+<span class="fc" id="L217">		SUPPORTED_RULES.add(&quot;W73&quot;);</span>
+<span class="fc" id="L218">		SUPPORTED_RULES.add(&quot;W74&quot;);</span>
+<span class="fc" id="L219">		SUPPORTED_RULES.add(&quot;W75&quot;);</span>
+<span class="fc" id="L220">		SUPPORTED_RULES.add(&quot;W76&quot;);</span>
+<span class="fc" id="L221">		SUPPORTED_RULES.add(&quot;W77&quot;);</span>
+<span class="fc" id="L222">		SUPPORTED_RULES.add(&quot;W78&quot;);</span>
+<span class="fc" id="L223">		SUPPORTED_RULES.add(&quot;W79&quot;);</span>
+<span class="fc" id="L224">		SUPPORTED_RULES.add(&quot;W80&quot;);</span>
+<span class="fc" id="L225">		SUPPORTED_RULES.add(&quot;W81&quot;);</span>
+<span class="fc" id="L226">		SUPPORTED_RULES.add(&quot;W82&quot;);</span>
+<span class="fc" id="L227">		SUPPORTED_RULES.add(&quot;W83&quot;);</span>
+<span class="fc" id="L228">		SUPPORTED_RULES.add(&quot;W84&quot;);</span>
+<span class="fc" id="L229">		SUPPORTED_RULES.add(&quot;W85&quot;);</span>
+<span class="fc" id="L230">		SUPPORTED_RULES.add(&quot;W86&quot;);</span>
+<span class="fc" id="L231">		SUPPORTED_RULES.add(&quot;W87&quot;);</span>
+<span class="fc" id="L232">		SUPPORTED_RULES.add(&quot;W88&quot;);</span>
+<span class="fc" id="L233">		SUPPORTED_RULES.add(&quot;W89&quot;);</span>
+<span class="fc" id="L234">		SUPPORTED_RULES.add(&quot;W90&quot;);</span>
+<span class="fc" id="L235">		SUPPORTED_RULES.add(&quot;W91&quot;);</span>
+<span class="fc" id="L236">		SUPPORTED_RULES.add(&quot;W92&quot;);</span>
 
-<span class="fc" id="L240">		SUPPORTED_RULES.add(&quot;W1200&quot;);</span>
-<span class="fc" id="L241">		SUPPORTED_RULES.add(&quot;W1201&quot;);</span>
+<span class="fc" id="L238">		SUPPORTED_RULES.add(&quot;W1200&quot;);</span>
+<span class="fc" id="L239">		SUPPORTED_RULES.add(&quot;W1201&quot;);</span>
 
-<span class="fc" id="L243">		SUPPORTED_RULES.add(UNDEFINED_FAILURE);</span>
-<span class="fc" id="L244">		SUPPORTED_RULES.add(UNDEFINED_WARNING);</span>
-<span class="fc" id="L245">	}</span>
-
-	/**
-	 * Checks for rule.
-	 *
-	 * @param id the id
-	 * @return true, if successful
-	 */
-	public static boolean hasRule(final String id) {
-<span class="fc" id="L254">		return SUPPORTED_RULES.contains(id);</span>
-	}
-
+<span class="fc" id="L241">		SUPPORTED_RULES.add(UNDEFINED_FAILURE);</span>
+<span class="fc" id="L242">		SUPPORTED_RULES.add(UNDEFINED_WARNING);</span>
+<span class="fc" id="L243">	}</span>
 
 	/**
 	 * Instantiates a new cfn nag process reports.
@@ -262,11 +249,21 @@ public final class CfnNagProcessReports {
 	 * @param pathResolver the path resolver
 	 */
 	public CfnNagProcessReports(final FileSystem fileSystem, final PathResolver pathResolver) {
-<span class="fc" id="L265">		super();</span>
-<span class="fc" id="L266">		this.cfnNagScanReportReader = new CfnNagScanReportReader();</span>
-<span class="fc" id="L267">		this.fileSystem = fileSystem;</span>
-<span class="fc" id="L268">		this.pathResolver = pathResolver;</span>
-<span class="fc" id="L269">	}</span>
+<span class="fc" id="L252">		super();</span>
+<span class="fc" id="L253">		this.cfnNagScanReportReader = new CfnNagScanReportReader();</span>
+<span class="fc" id="L254">		this.fileSystem = fileSystem;</span>
+<span class="fc" id="L255">		this.pathResolver = pathResolver;</span>
+<span class="fc" id="L256">	}</span>
+
+	/**
+	 * Checks for rule.
+	 *
+	 * @param id the id
+	 * @return true, if successful
+	 */
+	public static boolean hasRule(final String id) {
+<span class="fc" id="L265">		return SUPPORTED_RULES.contains(id);</span>
+	}
 
 	/**
 	 * Process cfn nag report.
@@ -274,29 +271,27 @@ public final class CfnNagProcessReports {
 	 * @param context the context
 	 * @param reportFilesProperty the report files property
 	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws FileNotFoundException the file not found exception
 	 */
 	public void processCfnNagReport(final SensorContext context, final Optional&lt;String&gt; reportFilesProperty)
-			throws IOException, FileNotFoundException {
-<span class="fc bfc" id="L281" title="All 2 branches covered.">		if (reportFilesProperty.isPresent()) {</span>
+			throws IOException {
+<span class="fc bfc" id="L277" title="All 2 branches covered.">		if (reportFilesProperty.isPresent()) {</span>
 
-<span class="fc" id="L283">			final String reports = reportFilesProperty.get();</span>
-<span class="fc" id="L284">			final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
+<span class="fc" id="L279">			final String reports = reportFilesProperty.get();</span>
+<span class="fc" id="L280">			final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
 
-<span class="fc bfc" id="L286" title="All 2 branches covered.">			for (final String report : reportFiles) {</span>
-<span class="fc" id="L287">				LOGGER.info(&quot;Processing cfn-nag :&quot; + report);</span>
-<span class="fc bfc" id="L288" title="All 2 branches covered.">				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {</span>
+<span class="fc bfc" id="L282" title="All 2 branches covered.">			for (final String report : reportFiles) {</span>
+<span class="fc" id="L283">				LOGGER.info(&quot;Processing cfn-nag :&quot; + report);</span>
+<span class="fc bfc" id="L284" title="All 2 branches covered.">				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {</span>
 
-<span class="fc" id="L290">					handleCfnNagScanReports(context, report);</span>
+<span class="fc" id="L286">					handleCfnNagScanReports(context, report);</span>
 				} else {
-<span class="fc" id="L292">					LOGGER.warn(&quot;Processing cfn-nag:&quot; + report + &quot; missing&quot;);</span>
+<span class="fc" id="L288">					LOGGER.warn(&quot;Processing cfn-nag:&quot; + report + &quot; missing&quot;);</span>
 				}
 			}
-<span class="fc" id="L295">		} else {</span>
-<span class="fc" id="L296">			LOGGER.warn(&quot;Missing property:{}&quot;, CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);</span>
+<span class="fc" id="L291">		} else {</span>
+<span class="fc" id="L292">			LOGGER.warn(&quot;Missing property:{}&quot;, CloudformationConstants.CFN_NAG_REPORT_FILES_PROPERTY);</span>
 		}
-<span class="fc" id="L298">	}</span>
-
+<span class="fc" id="L294">	}</span>
 
 	/**
 	 * Handle cfn nag scan reports.
@@ -307,58 +302,24 @@ public final class CfnNagProcessReports {
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
 			throws FileNotFoundException {
-<span class="fc" id="L310">		LOGGER.info(&quot;Reading cfn-nag reports:{}&quot;, report);</span>
-<span class="fc" id="L311">		final List&lt;CfnNagScanReport&gt; cfnNagscanReports = cfnNagScanReportReader</span>
-<span class="fc" id="L312">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
+<span class="fc" id="L305">		LOGGER.info(&quot;Reading cfn-nag reports:{}&quot;, report);</span>
+<span class="fc" id="L306">		final List&lt;CfnNagScanReport&gt; cfnNagscanReports = cfnNagScanReportReader</span>
+<span class="fc" id="L307">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
 
-<span class="fc bfc" id="L314" title="All 2 branches covered.">		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {</span>
+<span class="fc bfc" id="L309" title="All 2 branches covered.">		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {</span>
 
-<span class="fc" id="L316">			final String filename = nagScanReport.getFilename();</span>
-<span class="fc" id="L317">			LOGGER.info(&quot;Reading cfn-nag report:{}&quot;, filename);</span>
+<span class="fc" id="L311">			final String filename = nagScanReport.getFilename();</span>
+<span class="fc" id="L312">			LOGGER.info(&quot;Cfn-nag scanned file :{}&quot;, filename);</span>
 
-<span class="fc" id="L319">			final InputFile templateInputFile = findTemplate(</span>
-<span class="fc" id="L320">					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);</span>
+<span class="fc" id="L314">			final InputFile templateInputFile = findTemplate(fileSystem,</span>
+<span class="fc" id="L315">					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);</span>
 
-<span class="fc" id="L322">			final List&lt;CfnNagViolation&gt; violations = nagScanReport.getFile_results().getViolations();</span>
-<span class="fc bfc" id="L323" title="All 2 branches covered.">			for (final CfnNagViolation cfnNagViolation : violations) {</span>
-<span class="fc" id="L324">				addIssue(context, cfnNagViolation, templateInputFile);</span>
-<span class="fc" id="L325">			}</span>
-<span class="fc" id="L326">		}</span>
-<span class="fc" id="L327">	}</span>
-
-	/**
-	 * Find template.
-	 *
-	 * @param templateName the template name
-	 * @param filepath the filepath
-	 * @return the input file
-	 */
-	private InputFile findTemplate(final String templateName, final String filepath) {
-<span class="fc" id="L337">		final List&lt;InputFile&gt; potentialReportTargets = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L338">		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);</span>
-<span class="fc" id="L339">		final String filterPath = filterPath(filepath);</span>
-<span class="fc" id="L340">		LOGGER.info(&quot;Looking for cloudformation template matching filename:{} , path: {}&quot;, templateName, filterPath);</span>
-
-<span class="fc bfc" id="L342" title="All 2 branches covered.">		for (final InputFile inputFile : potentialReportTargets) {</span>
-<span class="pc bpc" id="L343" title="1 of 4 branches missed.">			if (templateName.equals(inputFile.filename()) &amp;&amp; inputFile.uri().toString().contains(filterPath)) {</span>
-<span class="fc" id="L344">				LOGGER.info(&quot;matching path:{}&quot; + inputFile.uri());</span>
-<span class="fc" id="L345">				LOGGER.info(&quot;matching filename:&quot; + templateName + &quot; = &quot; + inputFile.filename());</span>
-
-<span class="fc" id="L347">				return inputFile;</span>
-			}
-<span class="fc" id="L349">		}</span>
-<span class="fc" id="L350">		return null;</span>
-	}
-
-	/**
-	 * Filter path.
-	 *
-	 * @param filepath the filepath
-	 * @return the string
-	 */
-	private static String filterPath(final String filepath) {
-<span class="fc" id="L360">		return filepath.replace(&quot;.&quot; + File.separator, &quot;&quot;).replace(&quot;..&quot; + File.separator, &quot;&quot;);</span>
-	}
+<span class="fc" id="L317">			final List&lt;CfnNagViolation&gt; violations = nagScanReport.getFileResults().getViolations();</span>
+<span class="fc bfc" id="L318" title="All 2 branches covered.">			for (final CfnNagViolation cfnNagViolation : violations) {</span>
+<span class="fc" id="L319">				addIssue(context, cfnNagViolation, templateInputFile);</span>
+<span class="fc" id="L320">			}</span>
+<span class="fc" id="L321">		}</span>
+<span class="fc" id="L322">	}</span>
 
 	/**
 	 * Adds the issue.
@@ -369,33 +330,33 @@ public final class CfnNagProcessReports {
 	 */
 	private static void addIssue(final SensorContext context, final CfnNagViolation violation,
 			final InputFile templateInputFile) {
-<span class="fc bfc" id="L372" title="All 2 branches covered.">		if (templateInputFile != null) {</span>
+<span class="fc bfc" id="L333" title="All 2 branches covered.">		if (templateInputFile != null) {</span>
 
-<span class="fc bfc" id="L374" title="All 2 branches covered.">			if (violation.getLine_numbers().isEmpty()) {</span>
-<span class="fc" id="L375">				context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
-<span class="fc" id="L376">						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();</span>
+<span class="fc bfc" id="L335" title="All 2 branches covered.">			if (violation.getLineNumbers().isEmpty()) {</span>
+<span class="fc" id="L336">				context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
+<span class="fc" id="L337">						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();</span>
 			} else {
-<span class="fc" id="L378">				final List&lt;Integer&gt; line_numbers = violation.getLine_numbers();</span>
-<span class="fc bfc" id="L379" title="All 2 branches covered.">				for (final Integer line : line_numbers) {</span>
-<span class="pc bpc" id="L380" title="1 of 4 branches missed.">					if (line != null &amp;&amp; line &gt;= 0) {</span>
-<span class="fc" id="L381">						context.newIssue()</span>
-<span class="fc" id="L382">								.forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
-<span class="fc" id="L383">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
-<span class="fc" id="L384">										.at(templateInputFile.selectLine(line)))</span>
-<span class="fc" id="L385">								.save();</span>
+<span class="fc" id="L339">				final List&lt;Integer&gt; line_numbers = violation.getLineNumbers();</span>
+<span class="fc bfc" id="L340" title="All 2 branches covered.">				for (final Integer line : line_numbers) {</span>
+<span class="pc bpc" id="L341" title="1 of 4 branches missed.">					if (line != null &amp;&amp; line &gt;= 0) {</span>
+<span class="fc" id="L342">						context.newIssue()</span>
+<span class="fc" id="L343">								.forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
+<span class="fc" id="L344">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())</span>
+<span class="fc" id="L345">										.at(templateInputFile.selectLine(line)))</span>
+<span class="fc" id="L346">								.save();</span>
 					} else {
-<span class="fc" id="L387">						context.newIssue()</span>
-<span class="fc" id="L388">								.forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
-<span class="fc" id="L389">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
-<span class="fc" id="L390">								.save();</span>
+<span class="fc" id="L348">						context.newIssue()</span>
+<span class="fc" id="L349">								.forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(), findRuleId(violation)))</span>
+<span class="fc" id="L350">								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))</span>
+<span class="fc" id="L351">								.save();</span>
 					}
-<span class="fc" id="L392">				}</span>
-<span class="fc" id="L393">			}</span>
+<span class="fc" id="L353">				}</span>
+<span class="fc" id="L354">			}</span>
 		} else {
-<span class="fc" id="L395">			context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot; + &quot;yaml&quot;, findRuleId(violation)))</span>
-<span class="fc" id="L396">					.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
+<span class="fc" id="L356">			context.newIssue().forRule(RuleKey.of(&quot;cfn-&quot; + &quot;yaml&quot;, findRuleId(violation)))</span>
+<span class="fc" id="L357">					.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();</span>
 		}
-<span class="fc" id="L398">	}</span>
+<span class="fc" id="L359">	}</span>
 
 	/**
 	 * Find rule id.
@@ -404,13 +365,13 @@ public final class CfnNagProcessReports {
 	 * @return the string
 	 */
 	private static String findRuleId(final CfnNagViolation violation) {
-<span class="fc bfc" id="L407" title="All 2 branches covered.">		if (hasRule(violation.getId())) {</span>
-<span class="fc" id="L408">			return violation.getId();</span>
+<span class="fc bfc" id="L368" title="All 2 branches covered.">		if (hasRule(violation.getId())) {</span>
+<span class="fc" id="L369">			return violation.getId();</span>
 		} else {
-<span class="fc bfc" id="L410" title="All 2 branches covered.">			if (violation.getId().startsWith(&quot;W&quot;)) {</span>
-<span class="fc" id="L411">				return UNDEFINED_WARNING;</span>
+<span class="fc bfc" id="L371" title="All 2 branches covered.">			if (violation.getId().startsWith(&quot;W&quot;)) {</span>
+<span class="fc" id="L372">				return UNDEFINED_WARNING;</span>
 			} else {
-<span class="fc" id="L413">				return UNDEFINED_FAILURE;</span>
+<span class="fc" id="L374">				return UNDEFINED_FAILURE;</span>
 			}
 		}
 	}

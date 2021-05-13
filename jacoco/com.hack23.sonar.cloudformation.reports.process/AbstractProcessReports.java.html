@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AbstractProcessReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sonar Cloudformation Plugin</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.process</a> &gt; <span class="el_source">AbstractProcessReports.java</span></div><h1>AbstractProcessReports.java</h1><pre class="source lang-java linenums">/*
+ * Cloudformation Plugin for SonarQube
+ * Copyright (C) 2019 James Pether Sörling
+ * james@hack23.com
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+package com.hack23.sonar.cloudformation.reports.process;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.sonar.api.batch.fs.FileSystem;
+import org.sonar.api.batch.fs.InputFile;
+
+/**
+ * The Class AbstractProcessReports.
+ */
+<span class="fc" id="L32">abstract class AbstractProcessReports {</span>
+
+	
+	/**
+	 * Find template.
+	 *
+	 * @param fileSystem the file system
+	 * @param templateName the template name
+	 * @param filepath the filepath
+	 * @return the input file
+	 */
+	InputFile findTemplate(final FileSystem fileSystem, final String templateName, final String filepath) {
+<span class="fc" id="L44">		final List&lt;InputFile&gt; potentialReportTargets = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L45">		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);</span>
+<span class="fc" id="L46">		final String filterPath = filterPath(filepath);</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">		for (final InputFile inputFile : potentialReportTargets) {</span>
+<span class="pc bpc" id="L48" title="1 of 4 branches missed.">			if (templateName.equals(inputFile.filename()) &amp;&amp; inputFile.uri().toString().contains(filterPath)) {</span>
+<span class="fc" id="L49">				return inputFile;</span>
+			}
+<span class="fc" id="L51">		}</span>
+<span class="fc" id="L52">		return null;</span>
+	}
+
+	/**
+	 * Filter path.
+	 *
+	 * @param filepath the filepath
+	 * @return the string
+	 */
+	private static String filterPath(final String filepath) {
+<span class="fc" id="L62">		return filepath.replace(&quot;.&quot; + File.separator, &quot;&quot;).replace(&quot;..&quot; + File.separator, &quot;&quot;);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

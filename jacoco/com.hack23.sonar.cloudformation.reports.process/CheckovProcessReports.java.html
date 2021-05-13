@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckovProcessReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cloudformation</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.process</a> &gt; <span class="el_source">CheckovProcessReports.java</span></div><h1>CheckovProcessReports.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckovProcessReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sonar Cloudformation Plugin</a> &gt; <a href="index.source.html" class="el_package">com.hack23.sonar.cloudformation.reports.process</a> &gt; <span class="el_source">CheckovProcessReports.java</span></div><h1>CheckovProcessReports.java</h1><pre class="source lang-java linenums">/*
  * Cloudformation Plugin for SonarQube
  * Copyright (C) 2019 James Pether Sörling
  * james@hack23.com
@@ -23,13 +23,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
+import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
 import org.sonar.api.rule.RuleKey;
@@ -43,7 +43,7 @@ import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
 /**
  * The Class CheckovProcessReports.
  */
-public final class CheckovProcessReports {
+public final class CheckovProcessReports extends AbstractProcessReports {
 
 	/** The Constant SENSOR_NAME. */
 	public static final String SENSOR_NAME = &quot;Cloudformation Check&quot;;
@@ -80,27 +80,26 @@ public final class CheckovProcessReports {
 	 * @param context the context
 	 * @param reportFilesProperty the report files property
 	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws FileNotFoundException the file not found exception
 	 */
-	public void processCheckovReport(final SensorContext context,final Optional&lt;String&gt; reportFilesProperty) throws IOException, FileNotFoundException {
-<span class="fc bfc" id="L86" title="All 2 branches covered.">		if (reportFilesProperty.isPresent()) {</span>
+	public void processCheckovReport(final SensorContext context,final Optional&lt;String&gt; reportFilesProperty) throws IOException {
+<span class="fc bfc" id="L85" title="All 2 branches covered.">		if (reportFilesProperty.isPresent()) {</span>
 
-<span class="fc" id="L88">			final String reports = reportFilesProperty.get();</span>
-<span class="fc" id="L89">			LOGGER.info(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY + &quot;=&quot; + reports);</span>
-<span class="fc" id="L90">			final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
+<span class="fc" id="L87">			final String reports = reportFilesProperty.get();</span>
+<span class="fc" id="L88">			LOGGER.info(CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY + &quot;=&quot; + reports);</span>
+<span class="fc" id="L89">			final String[] reportFiles = StringUtils.split(reports, &quot;,&quot;);</span>
 
-<span class="fc bfc" id="L92" title="All 2 branches covered.">			for (final String report : reportFiles) {</span>
-<span class="fc" id="L93">				LOGGER.info(&quot;Processing  checkov :&quot; + report);</span>
-<span class="pc bpc" id="L94" title="1 of 2 branches missed.">				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {</span>
-<span class="fc" id="L95">					handleCheckovReports(context, report);</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">			for (final String report : reportFiles) {</span>
+<span class="fc" id="L92">				LOGGER.info(&quot;Processing  checkov :&quot; + report);</span>
+<span class="pc bpc" id="L93" title="1 of 2 branches missed.">				if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {</span>
+<span class="fc" id="L94">					handleCheckovReports(context, report);</span>
 				} else {
-<span class="nc" id="L97">					LOGGER.warn(&quot;Processing checkov:&quot; + report + &quot; missing&quot;);</span>
+<span class="nc" id="L96">					LOGGER.warn(&quot;Processing checkov:&quot; + report + &quot; missing&quot;);</span>
 				}
 			}
-<span class="fc" id="L100">		} else {</span>
-<span class="fc" id="L101">			LOGGER.warn(&quot;Missing property:{}&quot;, CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);</span>
+<span class="fc" id="L99">		} else {</span>
+<span class="fc" id="L100">			LOGGER.warn(&quot;Missing property:{}&quot;, CloudformationConstants.CHECKOV_REPORT_FILES_PROPERTY);</span>
 		}
-<span class="fc" id="L103">	}</span>
+<span class="fc" id="L102">	}</span>
 
 
 	/**
@@ -111,84 +110,57 @@ public final class CheckovProcessReports {
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	private void handleCheckovReports(final SensorContext context, final String report) throws FileNotFoundException {
-<span class="fc" id="L114">		LOGGER.info(&quot;Reading checkov reports:{}&quot;, report);</span>
+<span class="fc" id="L113">		LOGGER.info(&quot;Reading checkov reports:{}&quot;, report);</span>
 
-<span class="fc" id="L116">		final CheckovReport checkovReport = checkovReportReader</span>
-<span class="fc" id="L117">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
+<span class="fc" id="L115">		final CheckovReport checkovReport = checkovReportReader</span>
+<span class="fc" id="L116">				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));</span>
 
-<span class="fc bfc" id="L119" title="All 2 branches covered.">		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailed_checks()) {</span>
+<span class="fc" id="L118">		final ActiveRules activeRules = context.activeRules();</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailedChecks()) {			</span>
+<span class="fc" id="L120">			final String filename = failedChecks.getFilePath();</span>
+<span class="fc" id="L121">			LOGGER.info(&quot;Checkov scanned file :{}&quot;, filename);</span>
 
-<span class="fc" id="L121">			final String filename = failedChecks.getFile_path();</span>
+<span class="fc" id="L123">			final InputFile templateInputFile = findTemplate(fileSystem, filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);</span>
 
-<span class="fc" id="L123">			final InputFile templateInputFile = findTemplate(</span>
-<span class="fc" id="L124">					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);</span>
-
-<span class="fc" id="L126">			addCheckovIssue(context, checkovReport, failedChecks, templateInputFile);</span>
-<span class="fc" id="L127">		}</span>
-<span class="fc" id="L128">	}</span>
+<span class="fc" id="L125">			addCheckovIssue(context, activeRules, checkovReport, failedChecks, templateInputFile);</span>
+<span class="fc" id="L126">		}</span>
+<span class="fc" id="L127">	}</span>
 
 	/**
 	 * Adds the checkov issue.
 	 *
 	 * @param context the context
+	 * @param activeRules the active rules
 	 * @param checkovReport the checkov report
 	 * @param failedChecks the failed checks
 	 * @param templateInputFile the template input file
 	 */
-	private void addCheckovIssue(final SensorContext context, final CheckovReport checkovReport,
+	private static void addCheckovIssue(final SensorContext context, final ActiveRules activeRules, final CheckovReport checkovReport,
 			final CheckovPassedCheck failedChecks, final InputFile templateInputFile) {
-<span class="fc bfc" id="L140" title="All 2 branches covered.">		if (templateInputFile != null) {</span>
 
-<span class="fc" id="L142">			final List&lt;Integer&gt; line_numbers = failedChecks.getFile_line_range();</span>
-<span class="fc bfc" id="L143" title="All 2 branches covered.">			for (final Integer line : line_numbers) {</span>
-<span class="fc" id="L144">				context.newIssue()</span>
-<span class="fc" id="L145">						.forRule(RuleKey.of(&quot;cfn-&quot; + templateInputFile.language(),</span>
-<span class="fc" id="L146">								checkovReport.getCheck_type() + &quot;-&quot; + failedChecks.getCheck_id()))</span>
-<span class="fc" id="L147">						.at(new DefaultIssueLocation().on(templateInputFile).message(failedChecks.getCheck_name())</span>
-<span class="fc" id="L148">								.at(templateInputFile.selectLine(line)))</span>
-<span class="fc" id="L149">						.save();</span>
-<span class="fc" id="L150">			}</span>
-<span class="fc" id="L151">		} else {</span>
-<span class="fc" id="L152">			context.newIssue()</span>
-<span class="fc" id="L153">					.forRule(RuleKey.of(&quot;cfn-&quot; + &quot;yaml&quot;,</span>
-<span class="fc" id="L154">							checkovReport.getCheck_type() + &quot;-&quot; + failedChecks.getCheck_id()))</span>
-<span class="fc" id="L155">					.at(new DefaultIssueLocation().on(context.project()).message(failedChecks.getCheck_name())).save();</span>
+<span class="fc" id="L141">		String repoName = &quot;cfn-yaml&quot;;</span>
+<span class="fc bfc" id="L142" title="All 2 branches covered.">		if (templateInputFile != null) {</span>
+<span class="fc" id="L143">			repoName = &quot;cfn-&quot; + templateInputFile.language();</span>
 		}
-<span class="fc" id="L157">	}</span>
+		
+<span class="fc" id="L146">		final RuleKey ruleKey = RuleKey.of(repoName,checkovReport.getCheckType() + &quot;-&quot; + failedChecks.getCheckId());</span>
+	
+<span class="fc bfc" id="L148" title="All 2 branches covered.">		if (activeRules.find(ruleKey) == null) {</span>
+<span class="fc" id="L149">			LOGGER.warn(&quot;No active checkov rule detected for:'{}' with key {} detected in {}&quot;,failedChecks.getCheckName(), ruleKey,failedChecks.getFilePath());</span>
+<span class="fc" id="L150">			return;</span>
+		}
+		
+<span class="fc bfc" id="L153" title="All 2 branches covered.">		if (templateInputFile == null) {</span>
+<span class="fc" id="L154">			LOGGER.warn(&quot;File not found {} for rule {} issue not created&quot;, failedChecks.getFilePath(), ruleKey);</span>
+<span class="fc" id="L155">			return;</span>
+		}
 
-	/**
-	 * Find template.
-	 *
-	 * @param templateName the template name
-	 * @param filepath the filepath
-	 * @return the input file
-	 */
-	private InputFile findTemplate(final String templateName, final String filepath) {
-<span class="fc" id="L167">		final List&lt;InputFile&gt; potentialReportTargets = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L168">		fileSystem.inputFiles(fileSystem.predicates().all()).forEach(potentialReportTargets::add);</span>
-<span class="fc" id="L169">		final String filterPath = filterPath(filepath);</span>
-<span class="fc" id="L170">		LOGGER.info(&quot;Looking for cloudformation template matching filename:{} , path: {}&quot;, templateName, filterPath);</span>
-
-<span class="fc bfc" id="L172" title="All 2 branches covered.">		for (final InputFile inputFile : potentialReportTargets) {</span>
-<span class="pc bpc" id="L173" title="2 of 4 branches missed.">			if (templateName.equals(inputFile.filename()) &amp;&amp; inputFile.uri().toString().contains(filterPath)) {</span>
-<span class="fc" id="L174">				LOGGER.info(&quot;matching path:{}&quot; + inputFile.uri());</span>
-<span class="fc" id="L175">				LOGGER.info(&quot;matching filename:&quot; + templateName + &quot; = &quot; + inputFile.filename());</span>
-
-<span class="fc" id="L177">				return inputFile;</span>
-			}
-<span class="nc" id="L179">		}</span>
-<span class="fc" id="L180">		return null;</span>
-	}
-
-	/**
-	 * Filter path.
-	 *
-	 * @param filepath the filepath
-	 * @return the string
-	 */
-	private static String filterPath(final String filepath) {
-<span class="fc" id="L190">		return filepath.replace(&quot;.&quot; + File.separator, &quot;&quot;).replace(&quot;..&quot; + File.separator, &quot;&quot;);</span>
-	}
+<span class="fc" id="L158">		final List&lt;Integer&gt; line_numbers = failedChecks.getFileLineRange();</span>
+<span class="fc bfc" id="L159" title="All 2 branches covered.">		for (final Integer line : line_numbers) {</span>
+<span class="fc" id="L160">			context.newIssue().forRule(ruleKey).at(new DefaultIssueLocation().on(templateInputFile)</span>
+<span class="fc" id="L161">					.message(failedChecks.getCheckName()).at(templateInputFile.selectLine(line))).save();</span>
+<span class="fc" id="L162">		}</span>
+<span class="fc" id="L163">	}</span>
 
 
 }
