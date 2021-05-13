@@ -117,7 +117,7 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
 
 		final ActiveRules activeRules = context.activeRules();
-		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailed_checks()) {			
+		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailedChecks()) {			
 			final String filename = failedChecks.getFile_path();
 			LOGGER.info("Checkov scanned file :{}", filename);
 

@@ -26,39 +26,42 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * The Class CheckovResults.
  */
 public final class CheckovResults {
 
 	/** The passed checks. */
-	private List<CheckovPassedCheck> passed_checks;
+	private List<CheckovPassedCheck> passedChecks;
 
 	/** The failed checks. */
-	private List<CheckovPassedCheck> failed_checks;
+	private List<CheckovPassedCheck> failedChecks;
 
     /** The skipped checks. */
-    private List<String> skipped_checks;
+    private List<String> skippedChecks;
 
     /** The parsing errors. */
-    private List<String> parsing_errors;
+    private List<String> parsingErrors;
 
 	/**
 	 * Gets the passed checks.
 	 *
 	 * @return the passed checks
 	 */
-	public List<CheckovPassedCheck> getPassed_checks() {
-		return passed_checks;
+    @JsonProperty("passed_checks")
+	public List<CheckovPassedCheck> getPassedChecks() {
+		return passedChecks;
 	}
 
 	/**
 	 * Sets the passed checks.
 	 *
-	 * @param passed_checks the new passed checks
+	 * @param passedChecks the new passed checks
 	 */
-	public void setPassed_checks(final List<CheckovPassedCheck> passed_checks) {
-		this.passed_checks = passed_checks;
+	public void setPassedChecks(final List<CheckovPassedCheck> passedChecks) {
+		this.passedChecks = passedChecks;
 	}
 
 	/**
@@ -66,17 +69,18 @@ public final class CheckovResults {
 	 *
 	 * @return the failed checks
 	 */
-	public List<CheckovPassedCheck> getFailed_checks() {
-		return failed_checks;
+    @JsonProperty("failed_checks")
+	public List<CheckovPassedCheck> getFailedChecks() {
+		return failedChecks;
 	}
 
 	/**
 	 * Sets the failed checks.
 	 *
-	 * @param failed_checks the new failed checks
+	 * @param failedChecks the new failed checks
 	 */
-	public void setFailed_checks(final List<CheckovPassedCheck> failed_checks) {
-		this.failed_checks = failed_checks;
+	public void setFailedChecks(final List<CheckovPassedCheck> failedChecks) {
+		this.failedChecks = failedChecks;
 	}
 
 	/**
@@ -84,17 +88,18 @@ public final class CheckovResults {
 	 *
 	 * @return the skipped checks
 	 */
-	public List<String> getSkipped_checks() {
-		return skipped_checks;
+    @JsonProperty("skipped_checks")
+	public List<String> getSkippedChecks() {
+		return skippedChecks;
 	}
 
 	/**
 	 * Sets the skipped checks.
 	 *
-	 * @param skipped_checks the new skipped checks
+	 * @param skippedChecks the new skipped checks
 	 */
-	public void setSkipped_checks(final List<String> skipped_checks) {
-		this.skipped_checks = skipped_checks;
+	public void setSkippedChecks(final List<String> skippedChecks) {
+		this.skippedChecks = skippedChecks;
 	}
 
 	/**
@@ -102,17 +107,18 @@ public final class CheckovResults {
 	 *
 	 * @return the parsing errors
 	 */
-	public List<String> getParsing_errors() {
-		return parsing_errors;
+    @JsonProperty("parsing_errors")
+	public List<String> getParsingErrors() {
+		return parsingErrors;
 	}
 
 	/**
 	 * Sets the parsing errors.
 	 *
-	 * @param parsing_errors the new parsing errors
+	 * @param parsingErrors the new parsing errors
 	 */
-	public void setParsing_errors(final List<String> parsing_errors) {
-		this.parsing_errors = parsing_errors;
+	public void setParsingErrors(final List<String> parsingErrors) {
+		this.parsingErrors = parsingErrors;
 	}
 
 	/**
