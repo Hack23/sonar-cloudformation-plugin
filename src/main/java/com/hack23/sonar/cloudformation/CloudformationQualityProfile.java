@@ -30,6 +30,23 @@ import com.hack23.sonar.cloudformation.reports.process.CfnNagProcessReports;
  */
 public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
 
+	/** The Constant CLOUDFORMATION_RULES. */
+	private static final String CLOUDFORMATION_RULES = "Cloudformation Rules";
+
+	/** The Constant IAC_RULES. */
+	private static final String IAC_RULES = "IAC Rules";
+
+	/** The Constant SERVERLESS. */
+	private static final String SERVERLESS = "serverless";
+
+	/** The Constant CLOUDFORMATION. */
+	private static final String CLOUDFORMATION = "cloudformation";
+
+	/** The Constant CHECKOV. */
+	private static final String CHECKOV = "checkov";
+
+	/** The Constant CFN_RULE_PREFIX. */
+	private static final String CFN_RULE_PREFIX = "cfn-";
 
 	/** The cloudformation rules definition. */
 	private final CloudformationRulesDefinition cloudformationRulesDefinition;
@@ -43,7 +60,6 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		super();
 		this.cloudformationRulesDefinition = cloudformationRulesDefinition;
 	}
-
 
 	/**
 	 * Define.
@@ -59,42 +75,58 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	/**
 	 * Extracted.
 	 *
-	 * @param context the context
+	 * @param context  the context
 	 * @param language the language
 	 */
 	private void extracted(final Context context, final String language) {
-		final NewBuiltInQualityProfile cloudFormationprofile = context
-				.createBuiltInQualityProfile("Cloudformation Rules", language);
-		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
-			if (repository.key().contains("cfn-" + language)) {
-				for (final Rule rule : repository.rules()) {
-					if (rule.tags().contains("checkov") && rule.tags().contains("cloudformation")) {
-						cloudFormationprofile.activateRule("cfn-" + language, rule.key());
-					} else if (rule.tags().contains("checkov") && rule.tags().contains("serverless")) {
-						cloudFormationprofile.activateRule("cfn-" + language, rule.key());
-					}
-				}
-			}
-		}
-		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {
-			cloudFormationprofile.activateRule("cfn-" + language, ruleKey);
-  	}
-		cloudFormationprofile.done();
+		createCloudformationQualityProfile(context, language);
+		createIacQualityProfile(context, language);
+	}
 
-		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile("IAC Rules", language);
+	/**
+	 * Creates the iac quality profile.
+	 *
+	 * @param context the context
+	 * @param language the language
+	 */
+	private void createIacQualityProfile(final Context context, final String language) {
+		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile(IAC_RULES, language);
 		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
-			if (repository.key().contains("cfn-" + language)) {
+			if (repository.key().contains(CFN_RULE_PREFIX + language)) {
 				for (final Rule rule : repository.rules()) {
-					if (rule.tags().contains("checkov")) {
-						iacProfile.activateRule("cfn-" + language, rule.key());
+					if (rule.tags().contains(CHECKOV)) {
+						iacProfile.activateRule(CFN_RULE_PREFIX + language, rule.key());
 					}
 				}
 			}
 		}
 		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {
-			iacProfile.activateRule("cfn-" + language, ruleKey);
+			iacProfile.activateRule(CFN_RULE_PREFIX + language, ruleKey);
 		}
 		iacProfile.done();
+	}
 
+	/**
+	 * Creates the cloudformation quality profile.
+	 *
+	 * @param context the context
+	 * @param language the language
+	 */
+	private void createCloudformationQualityProfile(final Context context, final String language) {
+		final NewBuiltInQualityProfile cloudFormationprofile = context
+				.createBuiltInQualityProfile(CLOUDFORMATION_RULES, language);
+		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
+			if (repository.key().contains(CFN_RULE_PREFIX + language)) {
+				for (final Rule rule : repository.rules()) {
+					if (rule.tags().contains(CHECKOV) && (rule.tags().contains(CLOUDFORMATION) || rule.tags().contains(SERVERLESS))) {
+						cloudFormationprofile.activateRule(CFN_RULE_PREFIX + language, rule.key());
+					} 
+				}
+			}
+		}
+		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {
+			cloudFormationprofile.activateRule(CFN_RULE_PREFIX + language, ruleKey);
+		}
+		cloudFormationprofile.done();
 	}
 }
