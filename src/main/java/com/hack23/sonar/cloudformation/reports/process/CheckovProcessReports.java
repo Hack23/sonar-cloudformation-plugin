@@ -20,9 +20,8 @@
 package com.hack23.sonar.cloudformation.reports.process;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 import java.util.Optional;
 
@@ -107,13 +106,13 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 	 *
 	 * @param context the context
 	 * @param report the report
-	 * @throws FileNotFoundException the file not found exception
+	 * @throws IOException 
 	 */
-	private void handleCheckovReports(final SensorContext context, final String report) throws FileNotFoundException {
+	private void handleCheckovReports(final SensorContext context, final String report) throws IOException {
 		LOGGER.info("Reading checkov reports:{}", report);
 
 		final CheckovReport checkovReport = checkovReportReader
-				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+				.readReport(Files.newInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report).toPath()));
 
 		final ActiveRules activeRules = context.activeRules();
 		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailedChecks()) {			

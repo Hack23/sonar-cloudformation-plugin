@@ -20,9 +20,8 @@
 package com.hack23.sonar.cloudformation.reports.process;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -298,13 +297,13 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	 *
 	 * @param context the context
 	 * @param report the report
-	 * @throws FileNotFoundException the file not found exception
+	 * @throws IOException 
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
-			throws FileNotFoundException {
+			throws IOException {
 		LOGGER.info("Reading cfn-nag reports:{}", report);
 		final List<CfnNagScanReport> cfnNagscanReports = cfnNagScanReportReader
-				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
+				.readReport(Files.newInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report).toPath()));
 
 		for (final CfnNagScanReport nagScanReport : cfnNagscanReports) {
 
