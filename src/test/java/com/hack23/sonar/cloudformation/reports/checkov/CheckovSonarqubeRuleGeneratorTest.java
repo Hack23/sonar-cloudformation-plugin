@@ -19,6 +19,8 @@
  */
 package com.hack23.sonar.cloudformation.reports.checkov;
 
+import static org.junit.Assert.assertFalse;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -148,6 +150,7 @@ public class CheckovSonarqubeRuleGeneratorTest {
 	public void generateSonarqubeRuleDefinitionsForCheckovTest() throws IOException {
 		final CSVParser parser = CSVParser.parse(new InputStreamReader(this.getClass().getResourceAsStream("/checkov/rules.txt"),StandardCharsets.UTF_8), CSVFormat.EXCEL.withHeader().withDelimiter('|').withTrim());
 		final List<CSVRecord> records = parser.getRecords();
+		assertFalse(records.isEmpty());
 		records.remove(0);
 		final Map<String,String> map = new HashMap<>();
 		for (final CSVRecord csvRecord : records) {

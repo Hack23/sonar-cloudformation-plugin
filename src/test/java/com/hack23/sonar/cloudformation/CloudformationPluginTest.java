@@ -19,10 +19,17 @@
  */
 package com.hack23.sonar.cloudformation;
 
-import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
-import org.sonar.api.Plugin;
+import org.sonar.api.Plugin.Context;
+import org.sonar.api.SonarEdition;
+import org.sonar.api.SonarQubeSide;
+import org.sonar.api.SonarRuntime;
+import org.sonar.api.config.internal.MapSettings;
+import org.sonar.api.internal.PluginContextImpl;
+import org.sonar.api.internal.SonarRuntimeImpl;
+import org.sonar.api.utils.Version;
 
 /**
  * The Class CloudformationPluginTest.
@@ -34,7 +41,12 @@ public class CloudformationPluginTest {
 	 */
 	@Test
 	public void extensionsTest() {
-		final Plugin.Context context = mock(Plugin.Context.class);
+		final SonarRuntime runtime = SonarRuntimeImpl.forSonarQube(Version.create(7, 9), SonarQubeSide.SCANNER,
+				SonarEdition.COMMUNITY);
+		final Context context = new PluginContextImpl.Builder().setSonarRuntime(runtime)
+				.setBootConfiguration(new MapSettings().asConfig()).build();
+
 		new CloudformationPlugin().define(context);
+		assertFalse(context.getExtensions().isEmpty());
 	}
 }
