@@ -335,8 +335,8 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 				context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(violation)))
 						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();
 			} else {
-				final List<Integer> line_numbers = violation.getLineNumbers();
-				for (final Integer line : line_numbers) {
+				final List<Integer> lineNumbers = violation.getLineNumbers();
+				for (final Integer line : lineNumbers) {
 					if (line != null && line >= 0) {
 						context.newIssue()
 								.forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(violation)))
@@ -352,7 +352,7 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 				}
 			}
 		} else {
-			context.newIssue().forRule(RuleKey.of("cfn-" + "yaml", findRuleId(violation)))
+			context.newIssue().forRule(RuleKey.of("cfn-yaml", findRuleId(violation)))
 					.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
 		}
 	}

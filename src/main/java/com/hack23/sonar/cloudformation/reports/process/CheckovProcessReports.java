@@ -154,8 +154,8 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 			return;
 		}
 
-		final List<Integer> line_numbers = failedChecks.getFileLineRange();
-		for (final Integer line : line_numbers) {
+		final List<Integer> lineNumbers = failedChecks.getFileLineRange();
+		for (final Integer line : lineNumbers) {
 			context.newIssue().forRule(ruleKey).at(new DefaultIssueLocation().on(templateInputFile)
 					.message(failedChecks.getCheckName()).at(templateInputFile.selectLine(line))).save();
 		}
