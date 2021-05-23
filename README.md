@@ -141,6 +141,40 @@ No CWE associated
 800-53-AU-11 AU-11 AUDIT RECORD RETENTION https://nvd.nist.gov/800-53/Rev4/control/AU-11
 
 
+# Group the rules to ISO 270001
+
+https://www.isms.online/iso-27001/annex-a-9-access-control/
+
+A.9 Access Control A.9.2 User Access Management
+
+A.9 Access Control A.9.3 User Responsibilities
+
+A.9 Access Control A.9.4 System and Application
+
+https://www.isms.online/iso-27001/annex-a-10-cryptography/
+
+A.10 Cryptography A.10.1 Cryptographic Controls
+
+https://www.isms.online/iso-27001/annex-a-12-operations-security/
+
+A.12 Operations Security A.12.3 Information Backup
+
+A.12 Operations Security A.12.4 Logging and Monitoring
+
+A.12 Operations Security A.12.6 Technical Vulnerability Management
+
+https://www.isms.online/iso-27001/annex-a-13-communications-security/
+
+A.13 Communications Security A.13.1 Network Security Management
+
+https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/
+
+A.14 System acquisition, dev & maintenance A.14.2 Security in Dev & Support
+
+https://www.isms.online/iso-27001/annex-a-18-compliance/
+
+A.18 Compliance A.18.1 Compliance with Legal and Regulatory Reqs
+
 # Roadmap
 
 Support more cloudformation checkers and add more rules for cfn_nag. 
