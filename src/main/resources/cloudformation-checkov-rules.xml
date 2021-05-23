@@ -1,6 +1,6 @@
 <cloudformation-rules>
 
-    <rule>
+<rule>
 		<key>serverless-CKV_AWS_1</key>
 		<name>Ensure IAM policies that allow full &quot;*-*&quot; administrative privileges are not created</name>
 		<internalKey>serverless-CKV_AWS_1</internalKey>
@@ -12,6 +12,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>serverless</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -135,6 +138,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -150,6 +156,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -165,6 +174,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-320</tag>
+		<tag>800-53-sc-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -180,6 +192,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-320</tag>
+		<tag>800-53-sc-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -231,6 +246,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -246,6 +264,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -261,6 +282,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -276,6 +300,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -291,6 +318,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -306,6 +336,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -321,6 +354,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a3</tag>
+		<tag>cweid-257</tag>
+		<tag>800-53-ia-5</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -1086,6 +1122,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -1101,6 +1140,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -1353,6 +1395,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>serverless</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -1725,6 +1770,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -1740,6 +1788,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2877,6 +2928,27 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_105</key>
+		<name>Ensure Redshift uses SSL</name>
+		<internalKey>cloudformation-CKV_AWS_105</internalKey>
+		<description>Ensure Redshift uses SSL</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2907,6 +2979,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2922,6 +2997,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2937,6 +3015,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2952,6 +3033,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -2967,6 +3051,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -3192,6 +3279,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -3679,6 +3769,36 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AWS_160</key>
+		<name>Ensure that Timestream database is encrypted with KMS CMK</name>
+		<internalKey>terraform-CKV_AWS_160</internalKey>
+		<description>Ensure that Timestream database is encrypted with KMS CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_160</key>
+		<name>Ensure that Timestream database is encrypted with KMS CMK</name>
+		<internalKey>cloudformation-CKV_AWS_160</internalKey>
+		<description>Ensure that Timestream database is encrypted with KMS CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AWS_1</key>
 		<name>Ensure that all NACL are attached to subnets</name>
 		<internalKey>terraform-CKV2_AWS_1</internalKey>
@@ -3710,9 +3830,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV2_AWS_3</key>
-		<name>Ensure GuardDuty is enbaled to specific org/region</name>
+		<name>Ensure GuardDuty is enabled to specific org/region</name>
 		<internalKey>terraform-CKV2_AWS_3</internalKey>
-		<description>Ensure GuardDuty is enbaled to specific org/region</description>
+		<description>Ensure GuardDuty is enabled to specific org/region</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>

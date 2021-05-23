@@ -55,6 +55,32 @@ public class CheckovSonarqubeRuleGeneratorTest {
 			+ "		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>\n"
 			+ "    </rule>";
 
+//	Group the rules to NIST 800-53
+//	800-53-AC-4 AC-4 INFORMATION FLOW ENFORCEMENT https://nvd.nist.gov/800-53/Rev4/control/AC-4
+//
+//	800-53-AC-6 AC-6 LEAST PRIVILEGE https://nvd.nist.gov/800-53/Rev4/control/AC-6
+//
+//	800-53-AU-12 AU-12 AUDIT GENERATION https://nvd.nist.gov/800-53/Rev4/control/AU-12
+//
+//	800-53-IA-5 IA-5 AUTHENTICATOR MANAGEMENT https://nvd.nist.gov/800-53/Rev4/control/IA-5
+//
+//	800-53-SC-5 SC-5 DENIAL OF SERVICE PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-5
+//
+//	800-53-SC-7 SC-7 BOUNDARY PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-7
+//
+//	800-53-SC-8 SC-8 TRANSMISSION CONFIDENTIALITY AND INTEGRITY https://nvd.nist.gov/800-53/Rev4/control/SC-8
+//
+//	800-53-SC-12 SC-12 CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT https://nvd.nist.gov/800-53/Rev4/control/SC-12
+//
+//	800-53-SC-13 SC-13 CRYPTOGRAPHIC PROTECTION https://nvd.nist.gov/800-53/Rev4/control/SC-13
+//
+//	800-53-CP-9 CP-9 INFORMATION SYSTEM BACKUP https://nvd.nist.gov/800-53/Rev4/control/CP-9
+//
+//	800-53-RA-5 RA-5 VULNERABILITY SCANNING https://nvd.nist.gov/800-53/Rev4/control/RA-5
+//
+//	800-53-AU-11 AU-11 AUDIT RECORD RETENTION https://nvd.nist.gov/800-53/Rev4/control/AU-11
+
+
 
 	/*
     | Id           | Type              | Entity                                                                       | Policy                                                                                                                                                                                                   | IaC            |
@@ -78,17 +104,30 @@ public class CheckovSonarqubeRuleGeneratorTest {
 	/** The Constant SC_13_TAGS. */
 	private static final String SC_13_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-311</tag>\n		<tag>800-53-sc-13</tag>";
 
+	private static final String DETECT_SC_12 ="Ensure rotation";
+	
+	private static final String SC_12_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-320</tag>\n		<tag>800-53-sc-12</tag>";
+	
 	/** The Constant DETECT_SC_8. */
 	private static final String DETECT_SC_8 ="encryption transit";
 	
 	/** The Constant DETECT2_SC_8. */
 	private static final String DETECT2_SC_8 ="https";
 	
+	/** The Constant DETECT3_SC_8. */
+	private static final String DETECT3_SC_8 ="uses SSL";
+
+	private static final String DETECT4_SC_8 ="node-to-node encryption";
+	
 	/** The Constant SC_8_TAGS. */
 	private static final String SC_8_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-311</tag>\n		<tag>800-53-sc-8</tag>";
 
 	/** The Constant DETECT_AC_6. */
 	private static final String DETECT_AC_6 ="IAM policies";
+
+	private static final String DETECT_IA_5 ="IAM password policy";
+	
+	private static final String IA_5_TAGS ="\n		<tag>owasp-a3</tag>\n		<tag>cweid-257</tag>\n		<tag>800-53-ia-5</tag>";
 	
 	/** The Constant AC_6_TAGS. */
 	private static final String AC_6_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-272</tag>\n		<tag>800-53-ac-6</tag>";
@@ -104,7 +143,7 @@ public class CheckovSonarqubeRuleGeneratorTest {
 	
 	/** The Constant AC_4_TAGS. */
 	private static final String AC_4_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-732</tag>\n		<tag>800-53-ac-4</tag>";
-
+	
 	/** The Constant DETECT_AU_12. */
 	private static final String DETECT_AU_12 ="logging";
 	
@@ -123,16 +162,16 @@ public class CheckovSonarqubeRuleGeneratorTest {
 	/** The Constant AU_11_TAGS. */
 	private static final String AU_11_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-779</tag>\n		<tag>800-53-au-11</tag>";
 
-
-	/** The Constant keyrotation. */
-	private static final String keyrotation ="rotat";
-
 	static {
 		NIST_POLICY_STRING_MAPPING.put(DETECT_SC_13,SC_13_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT2_SC_13,SC_13_TAGS);
+		NIST_POLICY_STRING_MAPPING.put(DETECT_SC_12,SC_12_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT_SC_8,SC_8_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT2_SC_8,SC_8_TAGS);
-		NIST_POLICY_STRING_MAPPING.put(DETECT_AC_6,AC_6_TAGS);
+		NIST_POLICY_STRING_MAPPING.put(DETECT3_SC_8,SC_8_TAGS);
+		NIST_POLICY_STRING_MAPPING.put(DETECT4_SC_8,SC_8_TAGS);		
+		NIST_POLICY_STRING_MAPPING.put(DETECT_IA_5,IA_5_TAGS);
+		NIST_POLICY_STRING_MAPPING.put(DETECT_AC_6,AC_6_TAGS);		
 		NIST_POLICY_STRING_MAPPING.put(DETECT_AC_4,AC_4_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT_AC_4_GROUP,AC_4_TAGS_GROUP);
 		NIST_POLICY_STRING_MAPPING.put(DETECT_AU_12,AU_12_TAGS);
@@ -158,7 +197,7 @@ public class CheckovSonarqubeRuleGeneratorTest {
 				String ruleEntryUntagged = XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("\"","&quot;");
 
 				for (final String key : NIST_POLICY_STRING_MAPPING.keySet()) {
-					if (ruleEntryUntagged.toLowerCase().contains(key)) {
+					if (ruleEntryUntagged.toLowerCase().contains(key.toLowerCase())) {
 						ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}",NIST_POLICY_STRING_MAPPING.get(key));
 					}
 				}

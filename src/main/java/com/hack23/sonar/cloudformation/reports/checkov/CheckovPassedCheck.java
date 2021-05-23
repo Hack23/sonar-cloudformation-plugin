@@ -48,6 +48,9 @@ public final class CheckovPassedCheck {
     /** The file path. */
     private String filePath;
 
+    /** The repo file path. */
+    private String repoFilePath;
+    
     /** The file line range. */
     private List<Integer> fileLineRange;
 
@@ -173,6 +176,27 @@ public final class CheckovPassedCheck {
 	 */
 	public void setFilePath(final String filePath) {
 		this.filePath = filePath;
+	}
+
+	
+	
+	/**
+	 * Gets the repo file path.
+	 *
+	 * @return the repo file path
+	 */
+    @JsonProperty("repo_file_path")
+	public String getRepoFilePath() {
+		return repoFilePath;
+	}
+
+	/**
+	 * Sets the repo file path.
+	 *
+	 * @param repoFilePath the new repo file path
+	 */
+	public void setRepoFilePath(final String repoFilePath) {
+		this.repoFilePath = repoFilePath;
 	}
 
 	/**
