@@ -30,6 +30,23 @@ import com.hack23.sonar.cloudformation.reports.process.CfnNagProcessReports;
  */
 public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
 
+	/** The Constant CLOUDFORMATION_RULES. */
+	private static final String CLOUDFORMATION_RULES = &quot;Cloudformation Rules&quot;;
+
+	/** The Constant IAC_RULES. */
+	private static final String IAC_RULES = &quot;IAC Rules&quot;;
+
+	/** The Constant SERVERLESS. */
+	private static final String SERVERLESS = &quot;serverless&quot;;
+
+	/** The Constant CLOUDFORMATION. */
+	private static final String CLOUDFORMATION = &quot;cloudformation&quot;;
+
+	/** The Constant CHECKOV. */
+	private static final String CHECKOV = &quot;checkov&quot;;
+
+	/** The Constant CFN_RULE_PREFIX. */
+	private static final String CFN_RULE_PREFIX = &quot;cfn-&quot;;
 
 	/** The cloudformation rules definition. */
 	private final CloudformationRulesDefinition cloudformationRulesDefinition;
@@ -40,10 +57,9 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	 * @param cloudformationRulesDefinition the cloudformation rules definition
 	 */
 	public CloudformationQualityProfile(final CloudformationRulesDefinition cloudformationRulesDefinition) {
-<span class="fc" id="L43">		super();</span>
-<span class="fc" id="L44">		this.cloudformationRulesDefinition = cloudformationRulesDefinition;</span>
-<span class="fc" id="L45">	}</span>
-
+<span class="fc" id="L60">		super();</span>
+<span class="fc" id="L61">		this.cloudformationRulesDefinition = cloudformationRulesDefinition;</span>
+<span class="fc" id="L62">	}</span>
 
 	/**
 	 * Define.
@@ -52,50 +68,66 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L55">		extracted(context, &quot;yaml&quot;);</span>
-<span class="fc" id="L56">		extracted(context, &quot;json&quot;);</span>
-<span class="fc" id="L57">	}</span>
+<span class="fc" id="L71">		extracted(context, &quot;yaml&quot;);</span>
+<span class="fc" id="L72">		extracted(context, &quot;json&quot;);</span>
+<span class="fc" id="L73">	}</span>
 
 	/**
 	 * Extracted.
 	 *
-	 * @param context the context
+	 * @param context  the context
 	 * @param language the language
 	 */
 	private void extracted(final Context context, final String language) {
-<span class="fc" id="L66">		final NewBuiltInQualityProfile cloudFormationprofile = context</span>
-<span class="fc" id="L67">				.createBuiltInQualityProfile(&quot;Cloudformation Rules&quot;, language);</span>
-<span class="fc bfc" id="L68" title="All 2 branches covered.">		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {</span>
-<span class="fc bfc" id="L69" title="All 2 branches covered.">			if (repository.key().contains(&quot;cfn-&quot; + language)) {</span>
-<span class="fc bfc" id="L70" title="All 2 branches covered.">				for (final Rule rule : repository.rules()) {</span>
-<span class="fc bfc" id="L71" title="All 4 branches covered.">					if (rule.tags().contains(&quot;checkov&quot;) &amp;&amp; rule.tags().contains(&quot;cloudformation&quot;)) {</span>
-<span class="fc" id="L72">						cloudFormationprofile.activateRule(&quot;cfn-&quot; + language, rule.key());</span>
-<span class="fc bfc" id="L73" title="All 4 branches covered.">					} else if (rule.tags().contains(&quot;checkov&quot;) &amp;&amp; rule.tags().contains(&quot;serverless&quot;)) {</span>
-<span class="fc" id="L74">						cloudFormationprofile.activateRule(&quot;cfn-&quot; + language, rule.key());</span>
-					}
-<span class="fc" id="L76">				}</span>
-			}
-<span class="fc" id="L78">		}</span>
-<span class="fc bfc" id="L79" title="All 2 branches covered.">		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {</span>
-<span class="fc" id="L80">			cloudFormationprofile.activateRule(&quot;cfn-&quot; + language, ruleKey);</span>
-<span class="fc" id="L81">  	}</span>
-<span class="fc" id="L82">		cloudFormationprofile.done();</span>
+<span class="fc" id="L82">		createCloudformationQualityProfile(context, language);</span>
+<span class="fc" id="L83">		createIacQualityProfile(context, language);</span>
+<span class="fc" id="L84">	}</span>
 
-<span class="fc" id="L84">		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile(&quot;IAC Rules&quot;, language);</span>
-<span class="fc bfc" id="L85" title="All 2 branches covered.">		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {</span>
-<span class="fc bfc" id="L86" title="All 2 branches covered.">			if (repository.key().contains(&quot;cfn-&quot; + language)) {</span>
-<span class="fc bfc" id="L87" title="All 2 branches covered.">				for (final Rule rule : repository.rules()) {</span>
-<span class="fc bfc" id="L88" title="All 2 branches covered.">					if (rule.tags().contains(&quot;checkov&quot;)) {</span>
-<span class="fc" id="L89">						iacProfile.activateRule(&quot;cfn-&quot; + language, rule.key());</span>
+	/**
+	 * Creates the iac quality profile.
+	 *
+	 * @param context the context
+	 * @param language the language
+	 */
+	private void createIacQualityProfile(final Context context, final String language) {
+<span class="fc" id="L93">		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile(IAC_RULES, language);</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">			if (repository.key().contains(CFN_RULE_PREFIX + language)) {</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">				for (final Rule rule : repository.rules()) {</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">					if (rule.tags().contains(CHECKOV)) {</span>
+<span class="fc" id="L98">						iacProfile.activateRule(CFN_RULE_PREFIX + language, rule.key());</span>
 					}
-<span class="fc" id="L91">				}</span>
+<span class="fc" id="L100">				}</span>
 			}
-<span class="fc" id="L93">		}</span>
-<span class="fc bfc" id="L94" title="All 2 branches covered.">		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {</span>
-<span class="fc" id="L95">			iacProfile.activateRule(&quot;cfn-&quot; + language, ruleKey);</span>
-<span class="fc" id="L96">		}</span>
-<span class="fc" id="L97">		iacProfile.done();</span>
+<span class="fc" id="L102">		}</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {</span>
+<span class="fc" id="L104">			iacProfile.activateRule(CFN_RULE_PREFIX + language, ruleKey);</span>
+<span class="fc" id="L105">		}</span>
+<span class="fc" id="L106">		iacProfile.done();</span>
+<span class="fc" id="L107">	}</span>
 
-<span class="fc" id="L99">	}</span>
+	/**
+	 * Creates the cloudformation quality profile.
+	 *
+	 * @param context the context
+	 * @param language the language
+	 */
+	private void createCloudformationQualityProfile(final Context context, final String language) {
+<span class="fc" id="L116">		final NewBuiltInQualityProfile cloudFormationprofile = context</span>
+<span class="fc" id="L117">				.createBuiltInQualityProfile(CLOUDFORMATION_RULES, language);</span>
+<span class="fc bfc" id="L118" title="All 2 branches covered.">		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">			if (repository.key().contains(CFN_RULE_PREFIX + language)) {</span>
+<span class="fc bfc" id="L120" title="All 2 branches covered.">				for (final Rule rule : repository.rules()) {</span>
+<span class="fc bfc" id="L121" title="All 6 branches covered.">					if (rule.tags().contains(CHECKOV) &amp;&amp; (rule.tags().contains(CLOUDFORMATION) || rule.tags().contains(SERVERLESS))) {</span>
+<span class="fc" id="L122">						cloudFormationprofile.activateRule(CFN_RULE_PREFIX + language, rule.key());</span>
+					} 
+<span class="fc" id="L124">				}</span>
+			}
+<span class="fc" id="L126">		}</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {</span>
+<span class="fc" id="L128">			cloudFormationprofile.activateRule(CFN_RULE_PREFIX + language, ruleKey);</span>
+<span class="fc" id="L129">		}</span>
+<span class="fc" id="L130">		cloudFormationprofile.done();</span>
+<span class="fc" id="L131">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
