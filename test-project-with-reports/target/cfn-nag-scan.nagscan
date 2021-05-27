@@ -41,6 +41,25 @@
     }
   },
   {
+    "filename": "src/main/config/azuredeploy.json",
+    "file_results": {
+      "failure_count": 1,
+      "violations": [
+        {
+          "id": "FATAL",
+          "type": "FAIL",
+          "message": "Illegal cfn - no Resources",
+          "logical_resource_ids": [
+
+          ],
+          "line_numbers": [
+
+          ]
+        }
+      ]
+    }
+  },
+  {
     "filename": "src/main/config/aws-cross-account-manager-master.yml",
     "file_results": {
       "failure_count": 1,
