@@ -158,10 +158,8 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 
 		final List<Integer> lineNumbers = failedChecks.getFileLineRange();
 		if(!lineNumbers.isEmpty()) {
-			final TextPointer startLine = templateInputFile.selectLine(lineNumbers.get(0)).start();
-			final TextPointer endLine = templateInputFile.selectLine(lineNumbers.get(lineNumbers.size()-1)).end();
 			context.newIssue().forRule(ruleKey).at(new DefaultIssueLocation().on(templateInputFile)
-					.message(failedChecks.getCheckName()).at(templateInputFile.newRange(startLine, endLine))).save();
+					.message(failedChecks.getCheckName()).at(templateInputFile.selectLine(lineNumbers.get(0)))).save();
 		}
 	}
 
