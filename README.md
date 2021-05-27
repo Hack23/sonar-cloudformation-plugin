@@ -32,7 +32,7 @@ Demo Sonarqube quality profile(IAC) : https://www.hack23.com/sonar/profiles/show
 
 Demo Sonarqube quality rules : https://www.hack23.com/sonar/coding_rules?languages=yaml&repositories=cfn-yaml
 
-Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=com.hack23.cia%3Acia-all&languages=yaml&resolutions=WONTFIX
+Demo Sonarqube quality issues : https://www.hack23.com/sonar/code?id=com.hack23.sonar%3Atest-project-with-reports&selected=com.hack23.sonar%3Atest-project-with-reports%3Asrc%2Fmain%2Fconfig
 
 
 # Support
