@@ -28,6 +28,8 @@ import java.util.Optional;
 import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
+import org.sonar.api.batch.fs.TextPointer;
+import org.sonar.api.batch.fs.TextRange;
 import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
@@ -155,9 +157,11 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 		}
 
 		final List<Integer> lineNumbers = failedChecks.getFileLineRange();
-		for (final Integer line : lineNumbers) {
+		if(!lineNumbers.isEmpty()) {
+			final TextPointer startLine = templateInputFile.selectLine(lineNumbers.get(0)).start();
+			final TextPointer endLine = templateInputFile.selectLine(lineNumbers.get(lineNumbers.size()-1)).end();
 			context.newIssue().forRule(ruleKey).at(new DefaultIssueLocation().on(templateInputFile)
-					.message(failedChecks.getCheckName()).at(templateInputFile.selectLine(line))).save();
+					.message(failedChecks.getCheckName()).at(templateInputFile.newRange(startLine, endLine))).save();
 		}
 	}
 

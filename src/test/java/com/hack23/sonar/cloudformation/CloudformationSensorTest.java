@@ -134,7 +134,7 @@ public class CloudformationSensorTest extends Assert {
 		cloudformationSensor.execute(sensorContext);
 		
 		assertFalse(sensorContext.allIssues().isEmpty());
-		assertEquals(2,sensorContext.allIssues().size());
+		assertEquals(1,sensorContext.allIssues().size());
 	}
 
 

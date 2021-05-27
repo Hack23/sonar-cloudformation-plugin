@@ -73,7 +73,7 @@ public class CheckovProcessReportsTest extends Assert {
 		cloudformationSensor.processCheckovReport(sensorContext,
 				Optional.of("src/test/resources/checkov/cia-dist-cloudformation.checkov-report"));
 		assertFalse(sensorContext.allIssues().isEmpty());
-		assertEquals(2,sensorContext.allIssues().size());
+		assertEquals(1,sensorContext.allIssues().size());
 	}
 
 	/**
