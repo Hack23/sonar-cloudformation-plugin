@@ -1,0 +1,513 @@
+[
+  {
+    "filename": "src/main/config/CloudTrailAllAccounts.yml",
+    "file_results": {
+      "failure_count": 0,
+      "violations": [
+        {
+          "id": "W35",
+          "type": "WARN",
+          "message": "S3 Bucket should have access logging configured",
+          "logical_resource_ids": [
+            "TrailBucket"
+          ],
+          "line_numbers": [
+            85
+          ]
+        },
+        {
+          "id": "W41",
+          "type": "WARN",
+          "message": "S3 Bucket should have encryption option set",
+          "logical_resource_ids": [
+            "TrailBucket"
+          ],
+          "line_numbers": [
+            85
+          ]
+        },
+        {
+          "id": "W47",
+          "type": "WARN",
+          "message": "SNS Topic should specify KmsMasterKeyId property",
+          "logical_resource_ids": [
+            "TrailTopic"
+          ],
+          "line_numbers": [
+            112
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "filename": "src/main/config/aws-cross-account-manager-master.yml",
+    "file_results": {
+      "failure_count": 1,
+      "violations": [
+        {
+          "id": "W78",
+          "type": "WARN",
+          "message": "DynamoDB table should have backup enabled, should be set using PointInTimeRecoveryEnabled",
+          "logical_resource_ids": [
+            "CreateAccountsDDBTable",
+            "CreateRolesDDBTable",
+            "CreateAccountRolesDDBTable"
+          ],
+          "line_numbers": [
+            687,
+            711,
+            728
+          ]
+        },
+        {
+          "id": "W73",
+          "type": "WARN",
+          "message": "DynamoDB table should have billing mode set to either PAY_PER_REQUEST or PROVISIONED",
+          "logical_resource_ids": [
+            "CreateAccountsDDBTable",
+            "CreateRolesDDBTable",
+            "CreateAccountRolesDDBTable"
+          ],
+          "line_numbers": [
+            687,
+            711,
+            728
+          ]
+        },
+        {
+          "id": "W74",
+          "type": "WARN",
+          "message": "DynamoDB table should have encryption enabled using a CMK stored in KMS",
+          "logical_resource_ids": [
+            "CreateAccountsDDBTable",
+            "CreateRolesDDBTable",
+            "CreateAccountRolesDDBTable"
+          ],
+          "line_numbers": [
+            687,
+            711,
+            728
+          ]
+        },
+        {
+          "id": "W12",
+          "type": "WARN",
+          "message": "IAM policy should not allow * resource",
+          "logical_resource_ids": [
+            "CloudwatchLogsCloudformationPolicy"
+          ],
+          "line_numbers": [
+            252
+          ]
+        },
+        {
+          "id": "F3",
+          "type": "FAIL",
+          "message": "IAM role should not allow * action on its permissions policy",
+          "logical_resource_ids": [
+            "RoleEventHandlerExecRole"
+          ],
+          "line_numbers": [
+            119
+          ]
+        },
+        {
+          "id": "W58",
+          "type": "WARN",
+          "message": "Lambda functions require permission to write CloudWatch Logs",
+          "logical_resource_ids": [
+            "AccountFileHandler",
+            "AccountEventHandler",
+            "RoleFileHandler",
+            "RoleEventHandler",
+            "SolutionHelper",
+            "InitMasterAccount",
+            "AccessLinksHandler"
+          ],
+          "line_numbers": [
+            50,
+            77,
+            104,
+            142,
+            181,
+            210,
+            237
+          ]
+        },
+        {
+          "id": "W89",
+          "type": "WARN",
+          "message": "Lambda functions should be deployed inside a VPC",
+          "logical_resource_ids": [
+            "AccountFileHandler",
+            "AccountEventHandler",
+            "RoleFileHandler",
+            "RoleEventHandler",
+            "SolutionHelper",
+            "InitMasterAccount",
+            "AccessLinksHandler"
+          ],
+          "line_numbers": [
+            50,
+            77,
+            104,
+            142,
+            181,
+            210,
+            237
+          ]
+        },
+        {
+          "id": "W92",
+          "type": "WARN",
+          "message": "Lambda functions should define ReservedConcurrentExecutions to reserve simultaneous executions",
+          "logical_resource_ids": [
+            "AccountFileHandler",
+            "AccountEventHandler",
+            "RoleFileHandler",
+            "RoleEventHandler",
+            "SolutionHelper",
+            "InitMasterAccount",
+            "AccessLinksHandler"
+          ],
+          "line_numbers": [
+            50,
+            77,
+            104,
+            142,
+            181,
+            210,
+            237
+          ]
+        },
+        {
+          "id": "W51",
+          "type": "WARN",
+          "message": "S3 bucket should likely have a bucket policy",
+          "logical_resource_ids": [
+            "AccessLinkBucket"
+          ],
+          "line_numbers": [
+            482
+          ]
+        },
+        {
+          "id": "W28",
+          "type": "WARN",
+          "message": "Resource found with an explicit name, this disallows updates that require replacement of this resource",
+          "logical_resource_ids": [
+            "CreateAccountsDDBTable",
+            "CreateRolesDDBTable",
+            "CreateAccountRolesDDBTable",
+            "RoleEventHandlerExecRole"
+          ],
+          "line_numbers": [
+            687,
+            711,
+            728,
+            119
+          ]
+        },
+        {
+          "id": "W35",
+          "type": "WARN",
+          "message": "S3 Bucket should have access logging configured",
+          "logical_resource_ids": [
+            "AccessLinkBucket",
+            "CAMConfigBucket"
+          ],
+          "line_numbers": [
+            482,
+            489
+          ]
+        },
+        {
+          "id": "W41",
+          "type": "WARN",
+          "message": "S3 Bucket should have encryption option set",
+          "logical_resource_ids": [
+            "AccessLinkBucket",
+            "CAMConfigBucket"
+          ],
+          "line_numbers": [
+            482,
+            489
+          ]
+        },
+        {
+          "id": "W47",
+          "type": "WARN",
+          "message": "SNS Topic should specify KmsMasterKeyId property",
+          "logical_resource_ids": [
+            "AccountTopic",
+            "RoleTopic",
+            "AccessLinksTopic"
+          ],
+          "line_numbers": [
+            417,
+            425,
+            433
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "filename": "src/main/config/cia-dist-cloudformation.json",
+    "file_results": {
+      "failure_count": 2,
+      "violations": [
+        {
+          "id": "W72",
+          "type": "WARN",
+          "message": "NetworkACL Entries are reusing or overlapping ports which may create ineffective rules.",
+          "logical_resource_ids": [
+            "OutboundPostgresqlPrivateNetworkAclEntry",
+            "OutboundPostgresqlPrivate2NetworkAclEntry",
+            "OutboundPostgresqlPrivate3NetworkAclEntry",
+            "InboundPostgresqlPrivateNetworkAclEntry",
+            "InboundPostgresqlPrivate2NetworkAclEntry",
+            "InboundPostgresqlPrivate3NetworkAclEntry"
+          ],
+          "line_numbers": [
+            2484,
+            2507,
+            2530,
+            2415,
+            2438,
+            2461
+          ]
+        },
+        {
+          "id": "W90",
+          "type": "WARN",
+          "message": "ElasticsearchcDomain should be inside vpc, should specify VPCOptions",
+          "logical_resource_ids": [
+            "ElasticsearchDomain"
+          ],
+          "line_numbers": [
+            4248
+          ]
+        },
+        {
+          "id": "W12",
+          "type": "WARN",
+          "message": "IAM policy should not allow * resource",
+          "logical_resource_ids": [
+            "FlowLogsPolicy"
+          ],
+          "line_numbers": [
+            452
+          ]
+        },
+        {
+          "id": "F38",
+          "type": "FAIL",
+          "message": "IAM role should not allow * resource with PassRole action on its permissions policy",
+          "logical_resource_ids": [
+            "MaintenanceWindowServiceRole"
+          ],
+          "line_numbers": [
+            1094
+          ]
+        },
+        {
+          "id": "W11",
+          "type": "WARN",
+          "message": "IAM role should not allow * resource on its permissions policy",
+          "logical_resource_ids": [
+            "MaintenanceWindowServiceRole",
+            "EC2SSMRole"
+          ],
+          "line_numbers": [
+            1094,
+            3605
+          ]
+        },
+        {
+          "id": "W89",
+          "type": "WARN",
+          "message": "Lambda functions should be deployed inside a VPC",
+          "logical_resource_ids": [
+            "StartContinuousAssessmentLambdaFunction",
+            "AnalyzeInspectorFindingsLambdaFunction"
+          ],
+          "line_numbers": [
+            616,
+            800
+          ]
+        },
+        {
+          "id": "W92",
+          "type": "WARN",
+          "message": "Lambda functions should define ReservedConcurrentExecutions to reserve simultaneous executions",
+          "logical_resource_ids": [
+            "StartContinuousAssessmentLambdaFunction",
+            "AnalyzeInspectorFindingsLambdaFunction"
+          ],
+          "line_numbers": [
+            616,
+            800
+          ]
+        },
+        {
+          "id": "F80",
+          "type": "FAIL",
+          "message": "RDS instance should have deletion protection enabled",
+          "logical_resource_ids": [
+            "Database"
+          ],
+          "line_numbers": [
+            2978
+          ]
+        },
+        {
+          "id": "W28",
+          "type": "WARN",
+          "message": "Resource found with an explicit name, this disallows updates that require replacement of this resource",
+          "logical_resource_ids": [
+            "ElasticsearchDomain",
+            "EC2SSMRole",
+            "Database"
+          ],
+          "line_numbers": [
+            4248,
+            3605,
+            2978
+          ]
+        },
+        {
+          "id": "W77",
+          "type": "WARN",
+          "message": "Secrets Manager Secret should explicitly specify KmsKeyId. Besides control of the key this will allow the secret to be shared cross-account",
+          "logical_resource_ids": [
+            "RDSInstanceRotationSecret"
+          ],
+          "line_numbers": [
+            2912
+          ]
+        },
+        {
+          "id": "W40",
+          "type": "WARN",
+          "message": "Security Groups egress with an IpProtocol of -1 found",
+          "logical_resource_ids": [
+            "SgFormonitoringVPCEndpoint",
+            "SgForlogsVPCEndpoint",
+            "SgForssmVPCEndpoint",
+            "SgForssmmessagesVPCEndpoint",
+            "SgForecmessagesVPCEndpoint"
+          ],
+          "line_numbers": [
+            1537,
+            1606,
+            1675,
+            1744,
+            1813
+          ]
+        },
+        {
+          "id": "W5",
+          "type": "WARN",
+          "message": "Security Groups found with cidr open to world on egress",
+          "logical_resource_ids": [
+            "SgFormonitoringVPCEndpoint",
+            "SgForlogsVPCEndpoint",
+            "SgForssmVPCEndpoint",
+            "SgForssmmessagesVPCEndpoint",
+            "SgForecmessagesVPCEndpoint",
+            "QuickSightVpnConnectionSecurityGroup",
+            "WebServerSecurityGroup"
+          ],
+          "line_numbers": [
+            1537,
+            1606,
+            1675,
+            1744,
+            1813,
+            2799,
+            4168
+          ]
+        },
+        {
+          "id": "W29",
+          "type": "WARN",
+          "message": "Security Groups found egress with port range instead of just a single port",
+          "logical_resource_ids": [
+            "QuickSightVpnConnectionSecurityGroup"
+          ],
+          "line_numbers": [
+            2799
+          ]
+        },
+        {
+          "id": "W9",
+          "type": "WARN",
+          "message": "Security Groups found with ingress cidr that is not /32",
+          "logical_resource_ids": [
+            "SgFormonitoringVPCEndpoint",
+            "SgForlogsVPCEndpoint",
+            "SgForssmVPCEndpoint",
+            "SgForssmmessagesVPCEndpoint",
+            "SgForecmessagesVPCEndpoint",
+            "QuickSightVpnConnectionSecurityGroup",
+            "PublicLoadBalancerSecurityGroup"
+          ],
+          "line_numbers": [
+            1537,
+            1606,
+            1675,
+            1744,
+            1813,
+            2799,
+            3380
+          ]
+        },
+        {
+          "id": "W2",
+          "type": "WARN",
+          "message": "Security Groups found with cidr open to world on ingress.  This should never be true on instance.  Permissible on ELB",
+          "logical_resource_ids": [
+            "QuickSightVpnConnectionSecurityGroup",
+            "PublicLoadBalancerSecurityGroup"
+          ],
+          "line_numbers": [
+            2799,
+            3380
+          ]
+        },
+        {
+          "id": "W27",
+          "type": "WARN",
+          "message": "Security Groups found ingress with port range instead of just a single port",
+          "logical_resource_ids": [
+            "QuickSightVpnConnectionSecurityGroup"
+          ],
+          "line_numbers": [
+            2799
+          ]
+        },
+        {
+          "id": "W47",
+          "type": "WARN",
+          "message": "SNS Topic should specify KmsMasterKeyId property",
+          "logical_resource_ids": [
+            "ContinuousAssessmentResultsTopic",
+            "ContinuousAssessmentCompleteTopic",
+            "NotificationTopic",
+            "InspectorScheduleTopic",
+            "InspectorResultActionTopic"
+          ],
+          "line_numbers": [
+            678,
+            696,
+            959,
+            963,
+            967
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.hack23.sonar</groupId>
+  <artifactId>test-project-with-reports</artifactId>
+  <version>1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Sonar Cloudformation Plugin test project with reports</name>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <sonar.sources>pom.xml,src/main/config</sonar.sources>
+    <sonar.cfn.nag.reportFiles>target/cfn-nag-scan.nagscan</sonar.cfn.nag.reportFiles>
+    <sonar.checkov.reportFiles>target/template.checkov-report</sonar.checkov.reportFiles>
+  </properties>
+</project>

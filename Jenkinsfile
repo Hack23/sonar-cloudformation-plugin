@@ -36,6 +36,14 @@ pipeline {
             }
 	   }
 
+	   stage('Test Project') {
+	      steps {
+	      	 dir('test-project-with-reports') {
+     		   sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/"
+             }
+	      }
+	   }
+
 	   stage('Vulnerability Check') {
 	   	  tools {
     	    jdk 'Java8'
@@ -56,7 +64,7 @@ pipeline {
 
 	   stage('Verify Sonarqube Quality Gate') {
 	      steps {
-	         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/ -Dsonar.cfn.nag.reportFiles=src/main/resources/cfn-nag-scan.nagscan -Dsonar.cfn.checkov.reportFiles=src/test/resources/checkov/cia-dist-cloudformation.checkov-report -Dsonar.sources=. -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
+	         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/ -Dsonar.cfn.nag.reportFiles=src/main/resources/cfn-nag-scan.nagscan -Dsonar.cfn.checkov.reportFiles=src/test/resources/checkov/cia-dist-cloudformation.checkov-report -Dsonar.sources=. -Dsonar.dependencyCheck.xmlReportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html"
 	      }
 	   }
 
