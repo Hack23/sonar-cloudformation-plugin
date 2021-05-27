@@ -1,0 +1,675 @@
+{
+    "check_type": "cloudformation",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_AWS_20",
+                "check_name": "Ensure the S3 bucket does not allow READ permissions to everyone",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3PublicACLRead",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone"
+            },
+            {
+                "check_id": "CKV_AWS_57",
+                "check_name": "Ensure the S3 bucket does not allow WRITE permissions to everyone",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3PublicACLWrite",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone"
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_AWS_54",
+                "check_name": "Ensure S3 bucket has block public policy enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3BlockPublicPolicy",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_20"
+            },
+            {
+                "check_id": "CKV_AWS_55",
+                "check_name": "Ensure S3 bucket has ignore public ACLs enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3IgnorePublicACLs",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_21"
+            },
+            {
+                "check_id": "CKV_AWS_19",
+                "check_name": "Ensure the S3 bucket has server-side-encryption enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3Encryption",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest"
+            },
+            {
+                "check_id": "CKV_AWS_56",
+                "check_name": "Ensure S3 bucket has 'restrict_public_bucket' enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3RestrictPublicBuckets",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_22"
+            },
+            {
+                "check_id": "CKV_AWS_53",
+                "check_name": "Ensure S3 bucket has block public ACLS enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3BlockPublicACLs",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_19"
+            },
+            {
+                "check_id": "CKV_AWS_21",
+                "check_name": "Ensure the S3 bucket has versioning enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3Versioning",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/s3_16-enable-versioning"
+            },
+            {
+                "check_id": "CKV_AWS_18",
+                "check_name": "Ensure the S3 bucket has access logging enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        83,
+                        "  TrailBucket:\n"
+                    ],
+                    [
+                        84,
+                        "    DeletionPolicy: Retain\n"
+                    ],
+                    [
+                        85,
+                        "    Type: AWS::S3::Bucket\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    83,
+                    85
+                ],
+                "resource": "AWS::S3::Bucket.TrailBucket",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.S3AccessLogs",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/s3_13-enable-logging"
+            },
+            {
+                "check_id": "CKV_AWS_26",
+                "check_name": "Ensure all data stored in the SNS topic is encrypted",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        110,
+                        "  TrailTopic:\n"
+                    ],
+                    [
+                        111,
+                        "    Condition: Publish\n"
+                    ],
+                    [
+                        112,
+                        "    Type: AWS::SNS::Topic\n"
+                    ],
+                    [
+                        113,
+                        "    Properties:\n"
+                    ],
+                    [
+                        114,
+                        "      DisplayName: AWS CloudTrail Notification Topic\n"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    110,
+                    114
+                ],
+                "resource": "AWS::SNS::Topic.TrailTopic",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.SNSTopicEncryption",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/general_15"
+            },
+            {
+                "check_id": "CKV_AWS_36",
+                "check_name": "Ensure CloudTrail log file validation is enabled",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        141,
+                        "  Trail:\n"
+                    ],
+                    [
+                        142,
+                        "    DependsOn:\n"
+                    ],
+                    [
+                        143,
+                        "      - TrailBucketPolicy\n"
+                    ],
+                    [
+                        144,
+                        "    Type: AWS::CloudTrail::Trail\n"
+                    ],
+                    [
+                        145,
+                        "    Properties:\n"
+                    ],
+                    [
+                        146,
+                        "      S3BucketName: !Ref TrailBucket\n"
+                    ],
+                    [
+                        147,
+                        "      SnsTopicName: !If\n"
+                    ],
+                    [
+                        148,
+                        "        - Publish\n"
+                    ],
+                    [
+                        149,
+                        "        - !GetAtt TrailTopic.TopicName\n"
+                    ],
+                    [
+                        150,
+                        "        - !Ref AWS::NoValue\n"
+                    ],
+                    [
+                        151,
+                        "      IsLogging: true\n"
+                    ],
+                    [
+                        152,
+                        "      EnableLogFileValidation: !Ref EnableLogFileValidation\n"
+                    ],
+                    [
+                        153,
+                        "      IncludeGlobalServiceEvents: !If\n"
+                    ],
+                    [
+                        154,
+                        "        - IsMultiRegion\n"
+                    ],
+                    [
+                        155,
+                        "        - true\n"
+                    ],
+                    [
+                        156,
+                        "        - !Ref IncludeGlobalEvents\n"
+                    ],
+                    [
+                        157,
+                        "      IsMultiRegionTrail: !Ref MultiRegion"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    141,
+                    157
+                ],
+                "resource": "AWS::CloudTrail::Trail.Trail",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.CloudtrailLogValidation",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/logging_2"
+            },
+            {
+                "check_id": "CKV_AWS_35",
+                "check_name": "Ensure CloudTrail logs are encrypted at rest using KMS CMKs",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        141,
+                        "  Trail:\n"
+                    ],
+                    [
+                        142,
+                        "    DependsOn:\n"
+                    ],
+                    [
+                        143,
+                        "      - TrailBucketPolicy\n"
+                    ],
+                    [
+                        144,
+                        "    Type: AWS::CloudTrail::Trail\n"
+                    ],
+                    [
+                        145,
+                        "    Properties:\n"
+                    ],
+                    [
+                        146,
+                        "      S3BucketName: !Ref TrailBucket\n"
+                    ],
+                    [
+                        147,
+                        "      SnsTopicName: !If\n"
+                    ],
+                    [
+                        148,
+                        "        - Publish\n"
+                    ],
+                    [
+                        149,
+                        "        - !GetAtt TrailTopic.TopicName\n"
+                    ],
+                    [
+                        150,
+                        "        - !Ref AWS::NoValue\n"
+                    ],
+                    [
+                        151,
+                        "      IsLogging: true\n"
+                    ],
+                    [
+                        152,
+                        "      EnableLogFileValidation: !Ref EnableLogFileValidation\n"
+                    ],
+                    [
+                        153,
+                        "      IncludeGlobalServiceEvents: !If\n"
+                    ],
+                    [
+                        154,
+                        "        - IsMultiRegion\n"
+                    ],
+                    [
+                        155,
+                        "        - true\n"
+                    ],
+                    [
+                        156,
+                        "        - !Ref IncludeGlobalEvents\n"
+                    ],
+                    [
+                        157,
+                        "      IsMultiRegionTrail: !Ref MultiRegion"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    141,
+                    157
+                ],
+                "resource": "AWS::CloudTrail::Trail.Trail",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.CloudtrailEncryption",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/logging_7"
+            },
+            {
+                "check_id": "CKV_AWS_67",
+                "check_name": "Ensure CloudTrail is enabled in all Regions",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        141,
+                        "  Trail:\n"
+                    ],
+                    [
+                        142,
+                        "    DependsOn:\n"
+                    ],
+                    [
+                        143,
+                        "      - TrailBucketPolicy\n"
+                    ],
+                    [
+                        144,
+                        "    Type: AWS::CloudTrail::Trail\n"
+                    ],
+                    [
+                        145,
+                        "    Properties:\n"
+                    ],
+                    [
+                        146,
+                        "      S3BucketName: !Ref TrailBucket\n"
+                    ],
+                    [
+                        147,
+                        "      SnsTopicName: !If\n"
+                    ],
+                    [
+                        148,
+                        "        - Publish\n"
+                    ],
+                    [
+                        149,
+                        "        - !GetAtt TrailTopic.TopicName\n"
+                    ],
+                    [
+                        150,
+                        "        - !Ref AWS::NoValue\n"
+                    ],
+                    [
+                        151,
+                        "      IsLogging: true\n"
+                    ],
+                    [
+                        152,
+                        "      EnableLogFileValidation: !Ref EnableLogFileValidation\n"
+                    ],
+                    [
+                        153,
+                        "      IncludeGlobalServiceEvents: !If\n"
+                    ],
+                    [
+                        154,
+                        "        - IsMultiRegion\n"
+                    ],
+                    [
+                        155,
+                        "        - true\n"
+                    ],
+                    [
+                        156,
+                        "        - !Ref IncludeGlobalEvents\n"
+                    ],
+                    [
+                        157,
+                        "      IsMultiRegionTrail: !Ref MultiRegion"
+                    ]
+                ],
+                "file_path": "src/main/config/CloudTrailAllAccounts.yml",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/CloudTrailAllAccounts.yml",
+                "repo_file_path": "/src/main/config/CloudTrailAllAccounts.yml",
+                "file_line_range": [
+                    141,
+                    157
+                ],
+                "resource": "AWS::CloudTrail::Trail.Trail",
+                "evaluations": {},
+                "check_class": "checkov.cloudformation.checks.resource.aws.CloudtrailMultiRegion",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "guideline": "https://docs.bridgecrew.io/docs/logging_1"
+            }
+        ],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 2,
+        "failed": 11,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "checkov_version": "2.0.156"
+    }
+}

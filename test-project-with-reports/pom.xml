@@ -11,6 +11,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sonar.sources>pom.xml,src/main/config</sonar.sources>
     <sonar.cfn.nag.reportFiles>target/cfn-nag-scan.nagscan</sonar.cfn.nag.reportFiles>
-    <sonar.checkov.reportFiles>target/template.checkov-report</sonar.checkov.reportFiles>
+    <sonar.checkov.reportFiles>target/aws-cross-account-manager-master.checkov-report,target/azuredeploy.checkov-report,target/azuredeploy.checkov-report,target/cia-dist-cloudformation.checkov-report,target/main.checkov-report</sonar.checkov.reportFiles>
   </properties>
 </project>
