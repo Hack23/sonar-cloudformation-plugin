@@ -1,6 +1,6 @@
 <cloudformation-rules>
 
-<rule>
+    <rule>
 		<key>serverless-CKV_AWS_1</key>
 		<name>Ensure IAM policies that allow full &quot;*-*&quot; administrative privileges are not created</name>
 		<internalKey>serverless-CKV_AWS_1</internalKey>
@@ -9939,6 +9939,7 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+
 
 
 </cloudformation-rules>
