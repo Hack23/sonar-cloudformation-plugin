@@ -37,7 +37,7 @@ public class CheckovReportReaderTest extends Assert {
 	 * Read report test.
 	 */
 	@Test
-	public void readReportTest() {
+	public void readCloudformatationReportTest() {
 		final CheckovReport checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/cia-dist-cloudformation.checkov-report"));
 		assertNotNull(checkovReport);
 		assertEquals("cloudformation", checkovReport.getCheckType());
@@ -45,6 +45,32 @@ public class CheckovReportReaderTest extends Assert {
 		assertNotNull(checkovReport.getResults());
 	}
 
+	/**
+	 * Read terraform report test.
+	 */
+	@Test
+	public void readTerraformReportTest() {
+		final CheckovReport checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/main.checkov-report"));
+		assertNotNull(checkovReport);
+		assertEquals("terraform", checkovReport.getCheckType());
+		assertNotNull(checkovReport.getSummary());
+		assertNotNull(checkovReport.getResults());
+	}
+	
+	/**
+	 * Read arm report test.
+	 */
+	@Test
+	public void readArmReportTest() {
+		final CheckovReport checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/azuredeploy.checkov-report"));
+		assertNotNull(checkovReport);
+		assertEquals("arm", checkovReport.getCheckType());
+		assertNotNull(checkovReport.getSummary());
+		assertNotNull(checkovReport.getResults());
+	}
+	
+
+	
 	/**
 	 * Read report failure test.
 	 */

@@ -61,7 +61,7 @@ public final class CheckovPassedCheck {
     private String fileAbsPath;
 
     /** The entity tags. */
-    private String entityTags;
+    private EntityTags entityTags;
 
     /** The caller file path. */
     private String callerFilePath;
@@ -318,7 +318,7 @@ public final class CheckovPassedCheck {
 	 * @return the entity tags
 	 */
     @JsonProperty("entity_tags")
-	public String getEntityTags() {
+	public EntityTags getEntityTags() {
 		return entityTags;
 	}
 
@@ -327,7 +327,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param entityTags the new entity tags
 	 */
-	public void setEntityTags(final String entityTags) {
+	public void setEntityTags(final EntityTags entityTags) {
 		this.entityTags = entityTags;
 	}
 
