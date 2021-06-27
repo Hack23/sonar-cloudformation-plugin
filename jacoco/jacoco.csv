@@ -15,7 +15,7 @@ Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.cfnnag,CfnNa
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.cfnnag,CfnNagReport,0,43,0,0,0,11,0,8,0,8
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.cfnnag,CfnNagViolation,0,75,0,0,0,21,0,14,0,14
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovReport,0,39,0,0,0,13,0,10,0,10
-Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovSummary,0,53,0,0,0,19,0,14,0,14
+Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovSummary,0,60,0,0,0,22,0,16,0,16
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovResults,0,46,0,0,0,16,0,12,0,12
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,EntityTags,0,10,0,0,0,4,0,3,0,3
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovPassedCheck,0,130,0,0,0,52,0,36,0,36
