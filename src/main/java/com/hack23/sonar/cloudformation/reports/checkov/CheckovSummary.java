@@ -39,8 +39,11 @@ public final class CheckovSummary {
 
     /** The skipped. */
     private int skipped;
+    
+    /** The resource count. */
+    private int resourceCount;
 
-    /** The parsing errors. */
+	/** The parsing errors. */
     private int parsingErrors;
 
     /** The checkov version. */
@@ -119,6 +122,25 @@ public final class CheckovSummary {
 	 */
 	public void setParsingErrors(final int parsingErrors) {
 		this.parsingErrors = parsingErrors;
+	}
+
+    /**
+     * Gets the resource count.
+     *
+     * @return the resource count
+     */
+	@JsonProperty("resource_count")
+	public int getResourceCount() {
+		return resourceCount;
+	}
+
+	/**
+	 * Sets the resource count.
+	 *
+	 * @param resourceCount the new resource count
+	 */
+	public void setResourceCount(int resourceCount) {
+		this.resourceCount = resourceCount;
 	}
 
 	/**
