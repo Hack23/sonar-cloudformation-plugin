@@ -1,8 +1,9 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CfnNagScanReportReader.new TypeReference() {...},0,6,0,0,0,1,0,1,0,1
-Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CheckovReportReader,0,27,0,0,0,7,0,3,0,3
+Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CheckovReportReader,0,55,0,0,0,14,0,3,0,3
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CfnNagScanReportReader,0,30,0,0,0,7,0,3,0,3
-Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CheckovProcessReports,12,258,2,14,1,45,2,11,0,5
+Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CheckovReportReader.new TypeReference() {...},0,6,0,0,0,1,0,1,0,1
+Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CheckovProcessReports,12,269,2,16,1,48,2,12,0,5
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CfnNagProcessReports,0,982,1,23,0,228,1,18,0,7
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,AbstractProcessReports,0,69,1,5,0,10,1,5,0,3
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation,CloudformationSensorConfiguration,0,16,0,0,0,5,0,3,0,3

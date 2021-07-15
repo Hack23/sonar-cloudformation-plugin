@@ -21,20 +21,24 @@ package com.hack23.sonar.cloudformation.reports.process;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.commons.io.IOUtils;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
 
 /**
  * The Class CheckovReportReader.
  */
-<span class="fc" id="L34">public class CheckovReportReader {</span>
+<span class="fc" id="L38">public class CheckovReportReader {</span>
 
 	/** The Constant LOGGER. */
-<span class="fc" id="L37">	private static final Logger LOGGER = Loggers.get(CheckovReportReader.class);</span>
+<span class="fc" id="L41">	private static final Logger LOGGER = Loggers.get(CheckovReportReader.class);</span>
 
 	/**
 	 * Read report.
@@ -42,14 +46,24 @@ import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
 	 * @param input the input
 	 * @return the checkov report
 	 */
-	public CheckovReport readReport(final InputStream input) {
-<span class="fc" id="L46">		final ObjectMapper objectMapper = new ObjectMapper();</span>
-
+	public List&lt;CheckovReport&gt; readReport(final InputStream input) {
+<span class="fc" id="L50">		final ObjectMapper objectMapper = new ObjectMapper();</span>
+<span class="fc" id="L51">		String report = null;</span>
 		try {
-<span class="fc" id="L49">			return objectMapper.readValue(input, CheckovReport.class);</span>
-<span class="fc" id="L50">		} catch (final IOException e) {</span>
-<span class="fc" id="L51">			LOGGER.warn(&quot;Problem reading checkov report json:{}&quot;, e.getMessage());</span>
-<span class="fc" id="L52">			return new CheckovReport();</span>
+<span class="fc" id="L53">		    report = new String(IOUtils.toByteArray(input));</span>
+
+<span class="fc" id="L55">			return objectMapper.readValue(report,  new TypeReference&lt;List&lt;CheckovReport&gt;&gt;() { });</span>
+<span class="fc" id="L56">		} catch (final IOException e) {</span>
+
+			try {
+<span class="fc" id="L59">				CheckovReport checkovReport = objectMapper.readValue(report, CheckovReport.class);</span>
+<span class="fc" id="L60">				final List&lt;CheckovReport&gt; reportList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L61">				reportList.add(checkovReport);</span>
+<span class="fc" id="L62">				return reportList;</span>
+<span class="fc" id="L63">			} catch (final IOException e2) {</span>
+<span class="fc" id="L64">				LOGGER.warn(&quot;Problem reading checkov report json:{}&quot;, e2.getMessage());</span>
+<span class="fc" id="L65">				return new ArrayList&lt;&gt;();</span>
+			}			
 		}
 	}
 }
