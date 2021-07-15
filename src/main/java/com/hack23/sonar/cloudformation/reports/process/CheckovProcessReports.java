@@ -29,7 +29,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.TextPointer;
-import org.sonar.api.batch.fs.TextRange;
 import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
@@ -113,17 +112,22 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 	private void handleCheckovReports(final SensorContext context, final String report) throws IOException {
 		LOGGER.info("Reading checkov reports:{}", report);
 
-		final CheckovReport checkovReport = checkovReportReader
+		final List<CheckovReport> checkovReportList = checkovReportReader
 				.readReport(Files.newInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report).toPath()));
+		
 
-		final ActiveRules activeRules = context.activeRules();
-		for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailedChecks()) {			
-			final String filename = failedChecks.getFilePath();
-			LOGGER.info("Checkov scanned file :{}", filename);
+		for (CheckovReport checkovReport : checkovReportList) {
 
-			final InputFile templateInputFile = findTemplate(fileSystem, filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
+			final ActiveRules activeRules = context.activeRules();
+			for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailedChecks()) {
+				final String filename = failedChecks.getFilePath();
+				LOGGER.info("Checkov scanned file :{}", filename);
 
-			addCheckovIssue(context, activeRules, checkovReport, failedChecks, templateInputFile);
+				final InputFile templateInputFile = findTemplate(fileSystem,
+						filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
+
+				addCheckovIssue(context, activeRules, checkovReport, failedChecks, templateInputFile);
+			}
 		}
 	}
 

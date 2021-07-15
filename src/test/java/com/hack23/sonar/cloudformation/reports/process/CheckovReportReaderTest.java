@@ -20,6 +20,7 @@
 package com.hack23.sonar.cloudformation.reports.process;
 
 import java.io.ByteArrayInputStream;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -38,11 +39,12 @@ public class CheckovReportReaderTest extends Assert {
 	 */
 	@Test
 	public void readCloudformatationReportTest() {
-		final CheckovReport checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/cia-dist-cloudformation.checkov-report"));
+		final List<CheckovReport> checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/cia-dist-cloudformation.checkov-report"));
 		assertNotNull(checkovReport);
-		assertEquals("cloudformation", checkovReport.getCheckType());
-		assertNotNull(checkovReport.getSummary());
-		assertNotNull(checkovReport.getResults());
+		assertFalse(checkovReport.isEmpty());
+		assertEquals("cloudformation", checkovReport.get(0).getCheckType());
+		assertNotNull(checkovReport.get(0).getSummary());
+		assertNotNull(checkovReport.get(0).getResults());
 	}
 
 	/**
@@ -50,11 +52,12 @@ public class CheckovReportReaderTest extends Assert {
 	 */
 	@Test
 	public void readTerraformReportTest() {
-		final CheckovReport checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/main.checkov-report"));
+		final List<CheckovReport> checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/main.checkov-report"));
 		assertNotNull(checkovReport);
-		assertEquals("terraform", checkovReport.getCheckType());
-		assertNotNull(checkovReport.getSummary());
-		assertNotNull(checkovReport.getResults());
+		assertFalse(checkovReport.isEmpty());
+		assertEquals("terraform", checkovReport.get(0).getCheckType());
+		assertNotNull(checkovReport.get(0).getSummary());
+		assertNotNull(checkovReport.get(0).getResults());
 	}
 	
 	/**
@@ -62,11 +65,12 @@ public class CheckovReportReaderTest extends Assert {
 	 */
 	@Test
 	public void readArmReportTest() {
-		final CheckovReport checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/azuredeploy.checkov-report"));
+		final List<CheckovReport> checkovReport = new CheckovReportReader().readReport(CheckovReportReaderTest.class.getResourceAsStream("/checkov/azuredeploy.checkov-report"));
 		assertNotNull(checkovReport);
-		assertEquals("arm", checkovReport.getCheckType());
-		assertNotNull(checkovReport.getSummary());
-		assertNotNull(checkovReport.getResults());
+		assertFalse(checkovReport.isEmpty());
+		assertEquals("arm", checkovReport.get(0).getCheckType());
+		assertNotNull(checkovReport.get(0).getSummary());
+		assertNotNull(checkovReport.get(0).getResults());
 	}
 	
 
@@ -76,12 +80,9 @@ public class CheckovReportReaderTest extends Assert {
 	 */
 	@Test
 	public void readReportFailureTest() {
-		final CheckovReport checkovReport = new CheckovReportReader().readReport(new ByteArrayInputStream("".getBytes()));
+		final List<CheckovReport> checkovReport = new CheckovReportReader().readReport(new ByteArrayInputStream("".getBytes()));
 		assertNotNull(checkovReport);
-		assertNull(checkovReport.getCheckType());
-		assertNull(checkovReport.getSummary());
-		assertNull(checkovReport.getResults());
-
+		assertTrue(checkovReport.isEmpty());
 	}
 
 }

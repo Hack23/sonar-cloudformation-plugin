@@ -566,9 +566,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_AWS_22</key>
-		<name>Ensure all data stored in the Sagemaker Notebook is securely encrypted at rest</name>
+		<name>Ensure SageMaker Notebook is encrypted at rest using KMS CMK</name>
 		<internalKey>terraform-CKV_AWS_22</internalKey>
-		<description>Ensure all data stored in the Sagemaker Notebook is securely encrypted at rest</description>
+		<description>Ensure SageMaker Notebook is encrypted at rest using KMS CMK</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1847,9 +1847,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_AWS_66</key>
-		<name>Ensure cloudwatch log groups specify retention days</name>
+		<name>Ensure that CloudWatch Log Group specifies retention days</name>
 		<internalKey>terraform-CKV_AWS_66</internalKey>
-		<description>Ensure cloudwatch log groups specify retention days</description>
+		<description>Ensure that CloudWatch Log Group specifies retention days</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1862,9 +1862,9 @@
     </rule>
     <rule>
 		<key>cloudformation-CKV_AWS_66</key>
-		<name>Ensure cloudwatch log groups specify retention days</name>
+		<name>Ensure that CloudWatch Log Group specifies retention days</name>
 		<internalKey>cloudformation-CKV_AWS_66</internalKey>
-		<description>Ensure cloudwatch log groups specify retention days</description>
+		<description>Ensure that CloudWatch Log Group specifies retention days</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1998,6 +1998,24 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_71</key>
+		<name>Ensure Redshift Cluster logging is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_71</internalKey>
+		<description>Ensure Redshift Cluster logging is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
 		<tag>800-53-au-12</tag>
@@ -2433,6 +2451,24 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_87</key>
+		<name>Redshift cluster should not be publicly accessible</name>
+		<internalKey>cloudformation-CKV_AWS_87</internalKey>
+		<description>Redshift cluster should not be publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
 		<tag>800-53-ac-4</tag>
@@ -3727,6 +3763,21 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>cloudformation-CKV_AWS_154</key>
+		<name>Ensure Redshift is not deployed outside of a VPC</name>
+		<internalKey>cloudformation-CKV_AWS_154</internalKey>
+		<description>Ensure Redshift is not deployed outside of a VPC</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_AWS_155</key>
 		<name>Ensure that Workspace user volumes are encrypted</name>
 		<internalKey>terraform-CKV_AWS_155</internalKey>
@@ -3788,9 +3839,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_AWS_158</key>
-		<name>Ensure that CloudWatch Group is encrypted by KMS</name>
+		<name>Ensure that CloudWatch Log Group is encrypted by KMS</name>
 		<internalKey>terraform-CKV_AWS_158</internalKey>
-		<description>Ensure that CloudWatch Group is encrypted by KMS</description>
+		<description>Ensure that CloudWatch Log Group is encrypted by KMS</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -3798,6 +3849,21 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_158</key>
+		<name>Ensure that CloudWatch Log Group is encrypted by KMS</name>
+		<internalKey>cloudformation-CKV_AWS_158</internalKey>
+		<description>Ensure that CloudWatch Log Group is encrypted by KMS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -4021,6 +4087,60 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AWS_167</key>
+		<name>Ensure Glacier Vault access policy is not public by only allowing specific services or principals to access it</name>
+		<internalKey>terraform-CKV_AWS_167</internalKey>
+		<description>Ensure Glacier Vault access policy is not public by only allowing specific services or principals to access it</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_168</key>
+		<name>Ensure SQS queue policy is not public by only allowing specific services or principals to access it</name>
+		<internalKey>terraform-CKV_AWS_168</internalKey>
+		<description>Ensure SQS queue policy is not public by only allowing specific services or principals to access it</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_169</key>
+		<name>Ensure SNS topic policy is not public by only allowing specific services or principals to access it</name>
+		<internalKey>terraform-CKV_AWS_169</internalKey>
+		<description>Ensure SNS topic policy is not public by only allowing specific services or principals to access it</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AWS_1</key>
 		<name>Ensure that all NACL are attached to subnets</name>
 		<internalKey>terraform-CKV2_AWS_1</internalKey>
@@ -4067,9 +4187,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV2_AWS_4</key>
-		<name>Ensure API Gateway stage have logging level defined as appropiate</name>
+		<name>Ensure API Gateway stage have logging level defined as appropriate</name>
 		<internalKey>terraform-CKV2_AWS_4</internalKey>
-		<description>Ensure API Gateway stage have logging level defined as appropiate</description>
+		<description>Ensure API Gateway stage have logging level defined as appropriate</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -4250,9 +4370,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV2_AWS_15</key>
-		<name>Ensure that auto Scaling groups that are associated with a load balancer are using Elastic Load Balancing health checks.</name>
+		<name>Ensure that auto Scaling groups that are associated with a load balancer, are using Elastic Load Balancing health checks.</name>
 		<internalKey>terraform-CKV2_AWS_15</internalKey>
-		<description>Ensure that auto Scaling groups that are associated with a load balancer are using Elastic Load Balancing health checks.</description>
+		<description>Ensure that auto Scaling groups that are associated with a load balancer, are using Elastic Load Balancing health checks.</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -4268,21 +4388,6 @@
 		<name>Ensure that Auto Scaling is enabled on your DynamoDB tables</name>
 		<internalKey>terraform-CKV2_AWS_16</internalKey>
 		<description>Ensure that Auto Scaling is enabled on your DynamoDB tables</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>terraform</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
-		<key>terraform-CKV2_AWS_17</key>
-		<name>Ensure that EC2 instances belong to a VPC</name>
-		<internalKey>terraform-CKV2_AWS_17</internalKey>
-		<description>Ensure that EC2 instances belong to a VPC</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -4361,6 +4466,21 @@
 		<name>Ensure an IAM User does not have access to the console</name>
 		<internalKey>terraform-CKV2_AWS_22</internalKey>
 		<description>Ensure an IAM User does not have access to the console</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_23</key>
+		<name>Route53 A Record has Attached Resource</name>
+		<internalKey>terraform-CKV2_AWS_23</internalKey>
+		<description>Route53 A Record has Attached Resource</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -10161,6 +10281,7 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+
 
 
 

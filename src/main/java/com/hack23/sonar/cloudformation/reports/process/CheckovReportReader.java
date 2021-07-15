@@ -21,10 +21,14 @@ package com.hack23.sonar.cloudformation.reports.process;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.commons.io.IOUtils;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
 
@@ -42,14 +46,24 @@ public class CheckovReportReader {
 	 * @param input the input
 	 * @return the checkov report
 	 */
-	public CheckovReport readReport(final InputStream input) {
+	public List<CheckovReport> readReport(final InputStream input) {
 		final ObjectMapper objectMapper = new ObjectMapper();
-
+		String report = null;
 		try {
-			return objectMapper.readValue(input, CheckovReport.class);
+		    report = new String(IOUtils.toByteArray(input));
+
+			return objectMapper.readValue(report,  new TypeReference<List<CheckovReport>>() { });
 		} catch (final IOException e) {
-			LOGGER.warn("Problem reading checkov report json:{}", e.getMessage());
-			return new CheckovReport();
+
+			try {
+				CheckovReport checkovReport = objectMapper.readValue(report, CheckovReport.class);
+				final List<CheckovReport> reportList = new ArrayList<>();
+				reportList.add(checkovReport);
+				return reportList;
+			} catch (final IOException e2) {
+				LOGGER.warn("Problem reading checkov report json:{}", e2.getMessage());
+				return new ArrayList<>();
+			}			
 		}
 	}
 }
