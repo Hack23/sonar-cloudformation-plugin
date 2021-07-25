@@ -372,7 +372,6 @@
         <configuration>
           <pluginClass>com.hack23.sonar.cloudformation.CloudformationPlugin</pluginClass>
           <pluginDescription>Integrates cfn-nag reports into SonarQube</pluginDescription>
-          <requirePlugins>yaml:1.4.3</requirePlugins>
         </configuration>
       </plugin>
     </plugins>

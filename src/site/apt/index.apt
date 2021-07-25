@@ -15,6 +15,9 @@ Support
  Requires Yaml plugin and optional Json plugin if json is used for cloudformation templates.
  Yaml plugin {{https://github.com/sbaudoin/sonar-yaml}}
  Json plugin {{https://github.com/racodond/sonar-json-plugin}}
+ 
+ or {{https://mvnrepository.com/artifact/org.sonarsource.config/sonar-config-plugin}} that add support for json/yaml languages
+ 
 
 Howto
 

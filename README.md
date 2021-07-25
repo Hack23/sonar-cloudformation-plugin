@@ -43,6 +43,8 @@ Requires Yaml plugin and optional Json plugin if json is used for cloudformation
 Yaml plugin https://github.com/sbaudoin/sonar-yaml
 Json plugin https://github.com/racodond/sonar-json-plugin
 
+or https://mvnrepository.com/artifact/org.sonarsource.config/sonar-config-plugin that add support for json/yaml languages.
+
 # Configuration of Quality profiles
 
 The Cloudformation rules will be added as Quality profile for yaml https://www.hack23.com/sonar/profiles/show?language=yaml&name=Cloudformation+Rules and/or json https://www.hack23.com/sonar/profiles/show?language=json&name=Cloudformation+Rules .
