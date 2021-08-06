@@ -19,4 +19,4 @@ Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,Chec
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovSummary,0,60,0,0,0,22,0,16,0,16
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovResults,0,46,0,0,0,16,0,12,0,12
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,EntityTags,0,10,0,0,0,4,0,3,0,3
-Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovPassedCheck,0,130,0,0,0,52,0,36,0,36
+Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.checkov,CheckovPassedCheck,0,137,0,0,0,55,0,38,0,38
