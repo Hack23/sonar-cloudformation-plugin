@@ -41,6 +41,8 @@ public final class CheckovPassedCheck {
 
     /** The check result. */
     private Object checkResult;
+    
+    private String bcCheckId;
 
     /** The code block. */
     private List<Object>  codeBlock;
@@ -98,6 +100,28 @@ public final class CheckovPassedCheck {
 	 */
 	public void setCheckId(final String checkId) {
 		this.checkId = checkId;
+	}
+
+	
+	
+	
+	/**
+	 * Gets the bc check id.
+	 *
+	 * @return the bc check id
+	 */
+    @JsonProperty("bc_check_id")
+	public String getBcCheckId() {
+		return bcCheckId;
+	}
+
+	/**
+	 * Sets the bc check id.
+	 *
+	 * @param bcCheckId the new bc check id
+	 */
+	public void setBcCheckId(String bcCheckId) {
+		this.bcCheckId = bcCheckId;
 	}
 
 	/**

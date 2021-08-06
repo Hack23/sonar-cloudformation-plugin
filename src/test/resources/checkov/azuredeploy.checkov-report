@@ -4,6 +4,7 @@
         "passed_checks": [
             {
                 "check_id": "CKV_AZURE_11",
+                "bc_check_id": "BC_AZR_NETWORKING_4",
                 "check_name": "Ensure no SQL Databases allow ingress from 0.0.0.0/0 (ANY IP)",
                 "check_result": {
                     "result": "PASSED",
@@ -309,6 +310,7 @@
             },
             {
                 "check_id": "CKV_AZURE_3",
+                "bc_check_id": "BC_AZR_STORAGE_1",
                 "check_name": "Ensure that 'supportsHttpsTrafficOnly' is set to 'true'",
                 "check_result": {
                     "result": "PASSED",
@@ -400,6 +402,7 @@
         "failed_checks": [
             {
                 "check_id": "CKV_AZURE_24",
+                "bc_check_id": "BC_AZR_LOGGING_3",
                 "check_name": "Ensure that 'Auditing' Retention is 'greater than 90 days' for SQL servers",
                 "check_result": {
                     "result": "FAILED",
@@ -705,6 +708,7 @@
             },
             {
                 "check_id": "CKV_AZURE_23",
+                "bc_check_id": "BC_AZR_LOGGING_2",
                 "check_name": "Ensure that 'Auditing' is set to 'Enabled' for SQL servers",
                 "check_result": {
                     "result": "FAILED",
@@ -1010,6 +1014,7 @@
             },
             {
                 "check_id": "CKV_AZURE_35",
+                "bc_check_id": "BC_AZR_NETWORKING_15",
                 "check_name": "Ensure default network access rule for Storage Accounts is set to deny",
                 "check_result": {
                     "result": "FAILED",
@@ -1099,6 +1104,7 @@
             },
             {
                 "check_id": "CKV_AZURE_36",
+                "bc_check_id": "BC_AZR_NETWORKING_16",
                 "check_name": "Ensure 'Trusted Microsoft Services' is enabled for Storage Account access",
                 "check_result": {
                     "result": "FAILED",
@@ -1196,6 +1202,6 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 2,
-        "checkov_version": "2.0.270"
+        "checkov_version": "2.0.337"
     }
 }
