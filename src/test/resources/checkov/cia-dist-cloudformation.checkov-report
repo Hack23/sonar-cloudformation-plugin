@@ -461,7 +461,7 @@
                 },
                 {
                     "check_id": "CKV_AWS_110",
-                    "bc_check_id": null,
+                    "bc_check_id": "BC_AWS_IAM_64",
                     "check_name": "Ensure IAM policies does not allow privilege escalation",
                     "check_result": {
                         "result": "PASSED",
@@ -570,7 +570,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
                     "check_id": "CKV_AWS_60",
@@ -1386,7 +1387,7 @@
                 },
                 {
                     "check_id": "CKV_AWS_110",
-                    "bc_check_id": null,
+                    "bc_check_id": "BC_AWS_IAM_64",
                     "check_name": "Ensure IAM policies does not allow privilege escalation",
                     "check_result": {
                         "result": "PASSED",
@@ -1527,7 +1528,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
                     "check_id": "CKV_AWS_61",
@@ -2499,7 +2501,7 @@
                 },
                 {
                     "check_id": "CKV_AWS_110",
-                    "bc_check_id": null,
+                    "bc_check_id": "BC_AWS_IAM_64",
                     "check_name": "Ensure IAM policies does not allow privilege escalation",
                     "check_result": {
                         "result": "PASSED",
@@ -2736,7 +2738,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
                     "check_id": "CKV_AWS_60",
@@ -4530,7 +4533,7 @@
                 },
                 {
                     "check_id": "CKV_AWS_110",
-                    "bc_check_id": null,
+                    "bc_check_id": "BC_AWS_IAM_64",
                     "check_name": "Ensure IAM policies does not allow privilege escalation",
                     "check_result": {
                         "result": "PASSED",
@@ -4783,7 +4786,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
                     "check_id": "CKV_AWS_60",
@@ -5829,7 +5833,9 @@
                     "check_name": "Ensure S3 bucket has block public policy enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PublicAccessBlockConfiguration/BlockPublicPolicy"
+                        ]
                     },
                     "code_block": [
                         [
@@ -5987,7 +5993,9 @@
                     "check_name": "Ensure S3 bucket has ignore public ACLs enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PublicAccessBlockConfiguration/IgnorePublicAcls"
+                        ]
                     },
                     "code_block": [
                         [
@@ -6145,7 +6153,9 @@
                     "check_name": "Ensure the S3 bucket has server-side-encryption enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/BucketEncryption/ServerSideEncryptionConfiguration/[0]/ServerSideEncryptionByDefault/SSEAlgorithm"
+                        ]
                     },
                     "code_block": [
                         [
@@ -6303,7 +6313,9 @@
                     "check_name": "Ensure S3 bucket has 'restrict_public_bucket' enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PublicAccessBlockConfiguration/RestrictPublicBuckets"
+                        ]
                     },
                     "code_block": [
                         [
@@ -6461,7 +6473,9 @@
                     "check_name": "Ensure S3 bucket has block public ACLS enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PublicAccessBlockConfiguration/BlockPublicAcls"
+                        ]
                     },
                     "code_block": [
                         [
@@ -6777,7 +6791,9 @@
                     "check_name": "Ensure the S3 bucket has versioning enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/VersioningConfiguration/Status"
+                        ]
                     },
                     "code_block": [
                         [
@@ -7251,7 +7267,9 @@
                     "check_name": "Ensure rotation for customer created CMKs is enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/EnableKeyRotation"
+                        ]
                     },
                     "code_block": [
                         [
@@ -7417,11 +7435,13 @@
                 },
                 {
                     "check_id": "CKV_AWS_33",
-                    "bc_check_id": null,
+                    "bc_check_id": "BC_AWS_IAM_63",
                     "check_name": "Ensure KMS key policy does not contain wildcard (*) principal",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/KeyPolicy/Statement/Principal"
+                        ]
                     },
                     "code_block": [
                         [
@@ -7582,7 +7602,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-kms-key-policy-does-not-contain-wildcard-principal"
                 },
                 {
                     "check_id": "CKV_AWS_61",
@@ -8192,7 +8213,7 @@
                 },
                 {
                     "check_id": "CKV_AWS_110",
-                    "bc_check_id": null,
+                    "bc_check_id": "BC_AWS_IAM_64",
                     "check_name": "Ensure IAM policies does not allow privilege escalation",
                     "check_result": {
                         "result": "PASSED",
@@ -8389,7 +8410,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
                     "check_id": "CKV_AWS_60",
@@ -12131,7 +12153,9 @@
                     "check_name": "Ensure S3 bucket has block public policy enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PublicAccessBlockConfiguration/BlockPublicPolicy"
+                        ]
                     },
                     "code_block": [
                         [
@@ -12269,7 +12293,9 @@
                     "check_name": "Ensure S3 bucket has ignore public ACLs enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PublicAccessBlockConfiguration/IgnorePublicAcls"
+                        ]
                     },
                     "code_block": [
                         [
@@ -12407,7 +12433,9 @@
                     "check_name": "Ensure the S3 bucket has server-side-encryption enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/BucketEncryption/ServerSideEncryptionConfiguration/[0]/ServerSideEncryptionByDefault/SSEAlgorithm"
+                        ]
                     },
                     "code_block": [
                         [
@@ -12545,7 +12573,9 @@
                     "check_name": "Ensure S3 bucket has 'restrict_public_bucket' enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PublicAccessBlockConfiguration/RestrictPublicBuckets"
+                        ]
                     },
                     "code_block": [
                         [
@@ -12683,7 +12713,9 @@
                     "check_name": "Ensure S3 bucket has block public ACLS enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PublicAccessBlockConfiguration/BlockPublicAcls"
+                        ]
                     },
                     "code_block": [
                         [
@@ -12959,7 +12991,9 @@
                     "check_name": "Ensure the S3 bucket has versioning enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/VersioningConfiguration/Status"
+                        ]
                     },
                     "code_block": [
                         [
@@ -16563,7 +16597,7 @@
                 },
                 {
                     "check_id": "CKV_AWS_110",
-                    "bc_check_id": null,
+                    "bc_check_id": "BC_AWS_IAM_64",
                     "check_name": "Ensure IAM policies does not allow privilege escalation",
                     "check_result": {
                         "result": "PASSED",
@@ -17156,7 +17190,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
                     "check_id": "CKV_AWS_60",
@@ -18800,7 +18835,9 @@
                     "check_name": "Ensure all data stored in the Elasticsearch is securely encrypted at rest",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/EncryptionAtRestOptions/Enabled"
+                        ]
                     },
                     "code_block": [
                         [
@@ -19010,7 +19047,9 @@
                     "check_name": "Ensure all Elasticsearch has node-to-node encryption enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/NodeToNodeEncryptionOptions/Enabled"
+                        ]
                     },
                     "code_block": [
                         [
@@ -19220,7 +19259,9 @@
                     "check_name": "Ensure Elasticsearch Domain enforces HTTPS",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/DomainEndpointOptions/EnforceHTTPS"
+                        ]
                     },
                     "code_block": [
                         [
@@ -19578,7 +19619,9 @@
                     "check_name": "Ensure all data stored in the SNS topic is encrypted",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/KmsMasterKeyId"
+                        ]
                     },
                     "code_block": [
                         [
@@ -19616,7 +19659,9 @@
                     "check_name": "Ensure all data stored in the SNS topic is encrypted",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/KmsMasterKeyId"
+                        ]
                     },
                     "code_block": [
                         [
@@ -19654,7 +19699,9 @@
                     "check_name": "Ensure all data stored in the SNS topic is encrypted",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/KmsMasterKeyId"
+                        ]
                     },
                     "code_block": [
                         [
@@ -19696,7 +19743,9 @@
                     "check_name": "Ensure all data stored in the SNS topic is encrypted",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/KmsMasterKeyId"
+                        ]
                     },
                     "code_block": [
                         [
@@ -19738,7 +19787,9 @@
                     "check_name": "Ensure all data stored in the SNS topic is encrypted",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/KmsMasterKeyId"
+                        ]
                     },
                     "code_block": [
                         [
@@ -19982,7 +20033,9 @@
                     "check_name": "Ensure that RDS instances have Multi-AZ enabled",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/MultiAZ"
+                        ]
                     },
                     "code_block": [
                         [
@@ -20488,11 +20541,13 @@
                 },
                 {
                     "check_id": "CKV_AWS_161",
-                    "bc_check_id": null,
+                    "bc_check_id": "BC_AWS_IAM_65",
                     "check_name": "Ensure RDS database has IAM authentication enabled",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/EnableIAMDatabaseAuthentication"
+                        ]
                     },
                     "code_block": [
                         [
@@ -20993,7 +21048,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-rds-database-has-iam-authentication-enabled"
                 },
                 {
                     "check_id": "CKV_AWS_16",
@@ -21001,7 +21057,9 @@
                     "check_name": "Ensure all data stored in the RDS is securely encrypted at rest",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/StorageEncrypted"
+                        ]
                     },
                     "code_block": [
                         [
@@ -21511,7 +21569,9 @@
                     "check_name": "Ensure all data stored in RDS is not publicly accessible",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/PubliclyAccessible"
+                        ]
                     },
                     "code_block": [
                         [
@@ -24519,7 +24579,9 @@
                     "check_name": "Ensure Elasticsearch Domain Logging is enabled",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/LogPublishingOptions/AUDIT_LOGS/Enabled"
+                        ]
                     },
                     "code_block": [
                         [
@@ -24733,7 +24795,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 30,
-            "checkov_version": "2.0.337"
+            "checkov_version": "2.0.359"
         }
     },
     {
@@ -24780,7 +24842,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 1,
-            "checkov_version": "2.0.337"
+            "checkov_version": "2.0.359"
         }
     }
 ]
