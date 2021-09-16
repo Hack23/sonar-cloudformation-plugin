@@ -3172,6 +3172,21 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>cloudformation-CKV_AWS_116</key>
+		<name>Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)</name>
+		<internalKey>cloudformation-CKV_AWS_116</internalKey>
+		<description>Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_AWS_117</key>
 		<name>Ensure that AWS Lambda function is configured inside a VPC</name>
 		<internalKey>terraform-CKV_AWS_117</internalKey>
@@ -3203,9 +3218,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_AWS_119</key>
-		<name>Ensure DynamoDB Tables are encrypted using KMS</name>
+		<name>Ensure DynamoDB Tables are encrypted using a KMS Customer Managed CMK</name>
 		<internalKey>terraform-CKV_AWS_119</internalKey>
-		<description>Ensure DynamoDB Tables are encrypted using KMS</description>
+		<description>Ensure DynamoDB Tables are encrypted using a KMS Customer Managed CMK</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -3213,6 +3228,21 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_119</key>
+		<name>Ensure DynamoDB Tables are encrypted using a KMS Customer Managed CMK</name>
+		<internalKey>cloudformation-CKV_AWS_119</internalKey>
+		<description>Ensure DynamoDB Tables are encrypted using a KMS Customer Managed CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -4275,6 +4305,21 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_173</key>
+		<name>Check encryption settings for Lambda environmental variable</name>
+		<internalKey>terraform-CKV_AWS_173</internalKey>
+		<description>Check encryption settings for Lambda environmental variable</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -7330,6 +7375,36 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AZURE_132</key>
+		<name>Ensure cosmosdb does not allow privileged escalation by restricting management plane changes</name>
+		<internalKey>terraform-CKV_AZURE_132</internalKey>
+		<description>Ensure cosmosdb does not allow privileged escalation by restricting management plane changes</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>arm-CKV_AZURE_132</key>
+		<name>Ensure cosmosdb does not allow privileged escalation by restricting management plane changes</name>
+		<internalKey>arm-CKV_AZURE_132</internalKey>
+		<description>Ensure cosmosdb does not allow privileged escalation by restricting management plane changes</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>arm</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AZURE_1</key>
 		<name>Ensure storage for critical data are encrypted with Customer Managed Key</name>
 		<internalKey>terraform-CKV2_AZURE_1</internalKey>
@@ -7376,9 +7451,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV2_AZURE_4</key>
-		<name>Ensure that VA setting Periodic Recurring Scans is enabled on a SQL server</name>
+		<name>Ensure Azure SQL server ADS VA Send scan reports to is configured</name>
 		<internalKey>terraform-CKV2_AZURE_4</internalKey>
-		<description>Ensure that VA setting Periodic Recurring Scans is enabled on a SQL server</description>
+		<description>Ensure Azure SQL server ADS VA Send scan reports to is configured</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -10473,6 +10548,7 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+
 
 
 

@@ -29,7 +29,9 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.hack23.sonar.cloudformation.reports.checkov.CheckovReport;
 
 /**
@@ -47,7 +49,7 @@ public class CheckovReportReader {
 	 * @return the checkov report
 	 */
 	public List<CheckovReport> readReport(final InputStream input) {
-		final ObjectMapper objectMapper = new ObjectMapper();
+		final ObjectMapper objectMapper = JsonMapper.builder().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).build();
 		String report = null;
 		try {
 		    report = new String(IOUtils.toByteArray(input));

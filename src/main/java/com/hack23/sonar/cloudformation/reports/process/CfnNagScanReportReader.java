@@ -28,7 +28,9 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagScanReport;
 
 /**
@@ -46,7 +48,7 @@ public class CfnNagScanReportReader {
 	 * @return the list
 	 */
 	public List<CfnNagScanReport> readReport(final InputStream input) {
-		final ObjectMapper objectMapper = new ObjectMapper();
+		final ObjectMapper objectMapper = JsonMapper.builder().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).build();
 
 		try {
 			return objectMapper.readValue(input, new TypeReference<List<CfnNagScanReport>>() {});
