@@ -28,16 +28,18 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagScanReport;
 
 /**
  * The Class CfnNagScanReportReader.
  */
-<span class="fc" id="L37">public class CfnNagScanReportReader {</span>
+<span class="fc" id="L39">public class CfnNagScanReportReader {</span>
 
 	/** The Constant LOGGER. */
-<span class="fc" id="L40">	private static final Logger LOGGER = Loggers.get(CfnNagScanReportReader.class);</span>
+<span class="fc" id="L42">	private static final Logger LOGGER = Loggers.get(CfnNagScanReportReader.class);</span>
 
 	/**
 	 * Read report.
@@ -46,13 +48,13 @@ import com.hack23.sonar.cloudformation.reports.cfnnag.CfnNagScanReport;
 	 * @return the list
 	 */
 	public List&lt;CfnNagScanReport&gt; readReport(final InputStream input) {
-<span class="fc" id="L49">		final ObjectMapper objectMapper = new ObjectMapper();</span>
+<span class="fc" id="L51">		final ObjectMapper objectMapper = JsonMapper.builder().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).build();</span>
 
 		try {
-<span class="fc" id="L52">			return objectMapper.readValue(input, new TypeReference&lt;List&lt;CfnNagScanReport&gt;&gt;() {});</span>
-<span class="fc" id="L53">		} catch (final IOException e) {</span>
-<span class="fc" id="L54">			LOGGER.warn(&quot;Problem reading cfn nag report json:{}&quot;, e.getMessage());</span>
-<span class="fc" id="L55">			return new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L54">			return objectMapper.readValue(input, new TypeReference&lt;List&lt;CfnNagScanReport&gt;&gt;() {});</span>
+<span class="fc" id="L55">		} catch (final IOException e) {</span>
+<span class="fc" id="L56">			LOGGER.warn(&quot;Problem reading cfn nag report json:{}&quot;, e.getMessage());</span>
+<span class="fc" id="L57">			return new ArrayList&lt;&gt;();</span>
 		}
 	}
 }
