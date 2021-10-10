@@ -1201,7 +1201,7 @@
         "failed": 4,
         "skipped": 0,
         "parsing_errors": 0,
-        "resource_count": 2,
-        "checkov_version": "2.0.417"
+        "resource_count": 7,
+        "checkov_version": "2.0.481"
     }
 }
