@@ -51,7 +51,7 @@ public class CloudformationQualityProfileTest extends Assert {
 		final BuiltInQualityProfile qualityProfile = context.profile("yaml","IAC Rules");
 		assertNotNull(qualityProfile);
 		assertFalse(qualityProfile.isDefault());
-		assertEquals(845,qualityProfile.rules().size());
+		assertEquals(847,qualityProfile.rules().size());
 		}
 
 
@@ -65,7 +65,7 @@ public class CloudformationQualityProfileTest extends Assert {
 		final BuiltInQualityProfile qualityProfile = context.profile("json","IAC Rules");
 		assertNotNull(qualityProfile);
 		assertFalse(qualityProfile.isDefault());
-		assertEquals(845,qualityProfile.rules().size());
+		assertEquals(847,qualityProfile.rules().size());
 		}
 
 	}

@@ -4546,7 +4546,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": null
                 },
                 {
                     "check_id": "CKV_AWS_61",
@@ -7911,7 +7912,8 @@
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
-                    "caller_file_line_range": null
+                    "caller_file_line_range": null,
+                    "guideline": null
                 },
                 {
                     "check_id": "CKV_AWS_54",
@@ -28879,8 +28881,9 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 130,
-            "checkov_version": "2.0.481"
-        }
+            "checkov_version": "2.0.506"
+        },
+        "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     },
     {
         "check_type": "secrets",
@@ -28926,7 +28929,8 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 1,
-            "checkov_version": "2.0.481"
-        }
+            "checkov_version": "2.0.506"
+        },
+        "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     }
 ]

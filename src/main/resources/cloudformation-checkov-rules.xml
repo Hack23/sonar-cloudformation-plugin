@@ -7783,24 +7783,6 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
-		<key>terraform-CKV2_AZURE_22</key>
-		<name>Ensure that Network Interfaces don't use public IPs</name>
-		<internalKey>terraform-CKV2_AZURE_22</internalKey>
-		<description>Ensure that Network Interfaces don't use public IPs</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>terraform</tag>
-		<tag>owasp-a6</tag>
-		<tag>cweid-732</tag>
-		<tag>800-53-ac-4</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
 		<key>terraform-CKV_GCP_1</key>
 		<name>Ensure Stackdriver Logging is set to Enabled on Kubernetes Engine Clusters</name>
 		<internalKey>terraform-CKV_GCP_1</internalKey>
@@ -10695,5 +10677,51 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+    <rule>
+		<key>terraform-CKV_OCI_2</key>
+		<name>Ensure OCI Block Storage Block Volume has backup enabled</name>
+		<internalKey>terraform-CKV_OCI_2</internalKey>
+		<description>Ensure OCI Block Storage Block Volume has backup enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_OCI_3</key>
+		<name>OCI Block Storage Block Volumes are not encrypted with a Customer Managed Key (CMK)</name>
+		<internalKey>terraform-CKV_OCI_3</internalKey>
+		<description>OCI Block Storage Block Volumes are not encrypted with a Customer Managed Key (CMK)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_OCI_4</key>
+		<name>Ensure OCI Compute Instance boot volume has in-transit data encryption enabled</name>
+		<internalKey>terraform-CKV_OCI_4</internalKey>
+		<description>Ensure OCI Compute Instance boot volume has in-transit data encryption enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+
 
 </cloudformation-rules>
