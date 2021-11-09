@@ -23,8 +23,6 @@ import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 import org.sonar.api.server.rule.RulesDefinition.Repository;
 import org.sonar.api.server.rule.RulesDefinition.Rule;
 
-import com.hack23.sonar.cloudformation.reports.process.CfnNagProcessReports;
-
 /**
  * The Class CloudformationQualityProfile.
  */
@@ -94,14 +92,9 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
 			if (repository.key().contains(CFN_RULE_PREFIX + language)) {
 				for (final Rule rule : repository.rules()) {
-					if (rule.tags().contains(CHECKOV)) {
 						iacProfile.activateRule(CFN_RULE_PREFIX + language, rule.key());
-					}
 				}
 			}
-		}
-		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {
-			iacProfile.activateRule(CFN_RULE_PREFIX + language, ruleKey);
 		}
 		iacProfile.done();
 	}
@@ -118,14 +111,11 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
 			if (repository.key().contains(CFN_RULE_PREFIX + language)) {
 				for (final Rule rule : repository.rules()) {
-					if (rule.tags().contains(CHECKOV) && (rule.tags().contains(CLOUDFORMATION) || rule.tags().contains(SERVERLESS))) {
+					if (rule.tags().contains(CLOUDFORMATION) || rule.tags().contains(SERVERLESS) || rule.tags().contains("cfn-nag")) {
 						cloudFormationprofile.activateRule(CFN_RULE_PREFIX + language, rule.key());
 					} 
 				}
 			}
-		}
-		for (final String ruleKey : CfnNagProcessReports.SUPPORTED_RULES) {
-			cloudFormationprofile.activateRule(CFN_RULE_PREFIX + language, ruleKey);
 		}
 		cloudFormationprofile.done();
 	}
