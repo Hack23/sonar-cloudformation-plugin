@@ -4,13 +4,13 @@ Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,Chec
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CfnNagScanReportReader,0,33,0,0,0,7,0,3,0,3
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CheckovReportReader.new TypeReference() {...},0,6,0,0,0,1,0,1,0,1
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CheckovProcessReports,12,269,2,16,1,48,2,12,0,5
-Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CfnNagProcessReports,0,982,1,23,0,228,1,18,0,7
+Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,CfnNagProcessReports,3,320,3,23,1,59,3,16,0,6
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.process,AbstractProcessReports,0,69,1,5,0,10,1,5,0,3
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation,CloudformationSensorConfiguration,0,16,0,0,0,5,0,3,0,3
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation,CloudformationSensor,7,54,0,0,2,14,0,4,0,4
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation,CloudformationRulesDefinition,5,131,1,9,2,28,1,11,0,7
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation,CloudformationProperties,0,40,0,0,0,7,0,1,0,1
-Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation,CloudformationQualityProfile,0,208,0,24,0,36,0,17,0,5
+Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation,CloudformationQualityProfile,0,157,0,18,0,29,0,14,0,5
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation,CloudformationPlugin,0,27,0,0,0,4,0,2,0,2
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.cfnnag,CfnNagScanReport,0,32,0,0,0,10,0,8,0,8
 Sonar Cloudformation Plugin,com.hack23.sonar.cloudformation.reports.cfnnag,CfnNagReport,0,43,0,0,0,11,0,8,0,8
