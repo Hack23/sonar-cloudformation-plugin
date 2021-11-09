@@ -39,7 +39,7 @@ pipeline {
 	   stage('Test Project') {
 	      steps {
 	      	 dir('test-project-with-reports') {
-     		   sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/"
+     		   sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar -Dsonar.host.url=http://192.168.1.15:9000/sonar/"
              }
 	      }
 	   }
