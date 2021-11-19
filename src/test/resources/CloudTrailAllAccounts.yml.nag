@@ -1,16 +1,55 @@
-{
-  "failure_count": 0,
-  "violations": [
-    {
-      "id": "W35",
-      "type": "WARN",
-      "message": "S3 Bucket should have access logging configured",
-      "logical_resource_ids": [
-        "TrailBucket"
-      ],
-      "line_numbers": [
-        85
+[
+  {
+    "filename": "CloudTrailAllAccounts.yml",
+    "file_results": {
+      "failure_count": 0,
+      "violations": [
+        {
+          "id": "W35",
+          "name": "S3BucketAccessLoggingRule",
+          "type": "WARN",
+          "message": "S3 Bucket should have access logging configured",
+          "logical_resource_ids": [
+            "TrailBucket"
+          ],
+          "line_numbers": [
+            85
+          ],
+          "element_types": [
+            "resource"
+          ]
+        },
+        {
+          "id": "W41",
+          "name": "S3BucketEncryptionSetRule",
+          "type": "WARN",
+          "message": "S3 Bucket should have encryption option set",
+          "logical_resource_ids": [
+            "TrailBucket"
+          ],
+          "line_numbers": [
+            85
+          ],
+          "element_types": [
+            "resource"
+          ]
+        },
+        {
+          "id": "W47",
+          "name": "SnsTopicKmsMasterKeyIdRule",
+          "type": "WARN",
+          "message": "SNS Topic should specify KmsMasterKeyId property",
+          "logical_resource_ids": [
+            "TrailTopic"
+          ],
+          "line_numbers": [
+            112
+          ],
+          "element_types": [
+            "resource"
+          ]
+        }
       ]
     }
-  ]
-}
+  }
+]

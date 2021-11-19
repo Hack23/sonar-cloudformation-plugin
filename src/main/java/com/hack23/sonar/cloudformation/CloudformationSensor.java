@@ -23,12 +23,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
@@ -42,8 +40,6 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.utils.log.Profiler;
 
-import com.hack23.sonar.cloudformation.parser.CfnNagReport;
-import com.hack23.sonar.cloudformation.parser.CfnNagReportReader;
 import com.hack23.sonar.cloudformation.parser.CfnNagScanReport;
 import com.hack23.sonar.cloudformation.parser.CfnNagScanReportReader;
 import com.hack23.sonar.cloudformation.parser.CfnNagViolation;
@@ -58,9 +54,6 @@ public final class CloudformationSensor implements Sensor {
 
 	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Loggers.get(CloudformationSensor.class);
-
-	/** The cfn nag report reader. */
-	private final CfnNagReportReader cfnNagReportReader;
 
 	/** The cfn nag scan report reader. */
 	private final CfnNagScanReportReader cfnNagScanReportReader;
@@ -84,7 +77,6 @@ public final class CloudformationSensor implements Sensor {
 	public CloudformationSensor(final CloudformationSensorConfiguration configuration, final FileSystem fileSystem,
 			final PathResolver pathResolver) {
 		super();
-		this.cfnNagReportReader = new CfnNagReportReader();
 		this.cfnNagScanReportReader = new CfnNagScanReportReader();
 		this.configuration = configuration;
 		this.fileSystem = fileSystem;
@@ -123,11 +115,7 @@ public final class CloudformationSensor implements Sensor {
 
 				for (final String report : reportFiles) {
 					LOGGER.info("Processing:" + report);
-					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()
-							&& !FileUtils.readFileToString(pathResolver.relativeFile(fileSystem.baseDir(), report),
-									StandardCharsets.UTF_8).contains("filename")) {
-						handleCfnNagReports(context, report);
-					} else if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {
+					if (pathResolver.relativeFile(fileSystem.baseDir(), report).exists()) {
 						handleCfnNagScanReports(context, report);
 					} else {
 						LOGGER.warn("Processing:" + report + " missing or do not end with .nag or .nagscan");
@@ -140,29 +128,6 @@ public final class CloudformationSensor implements Sensor {
 			throw new RuntimeException("Can not process cfn-nag reports.", e);
 		} finally {
 			profiler.stopInfo();
-		}
-	}
-
-	/**
-	 * Handle cfn nag reports.
-	 *
-	 * @param context the context
-	 * @param report  the report
-	 * @throws FileNotFoundException the file not found exception
-	 */
-	private void handleCfnNagReports(final SensorContext context, final String report) throws FileNotFoundException {
-		final String templateName = pathResolver.relativeFile(fileSystem.baseDir(), report).getName().replace(".nag",
-				"");
-
-		final InputFile templateInputFile = findTemplate(templateName);
-
-		final CfnNagReport cfnNagReport = cfnNagReportReader
-				.readReport(new FileInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report)));
-		if (cfnNagReport != null) {
-			final List<CfnNagViolation> violations = cfnNagReport.getViolations();
-			for (final CfnNagViolation cfnNagViolation : violations) {
-				addIssue(context, cfnNagViolation, templateInputFile);
-			}
 		}
 	}
 

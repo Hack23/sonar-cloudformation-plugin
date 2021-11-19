@@ -1,76 +1,298 @@
-{
-  "failure_count": 1,
-  "violations": [
-    {
-      "id": "W12",
-      "type": "WARN",
-      "message": "IAM policy should not allow * resource",
-      "logical_resource_ids": [
-        "CloudwatchLogsCloudformationPolicy",
-        "AccessLinksHandlerExecRolePolicy",
-        "S3DynamoDBSNSPolicy",
-        "IAMPolicy"
-      ],
-      "line_numbers": [
-        252,
-        283,
-        318,
-        382
-      ]
-    },
-    {
-      "id": "F3",
-      "type": "FAIL",
-      "message": "IAM role should not allow * action on its permissions policy",
-      "logical_resource_ids": [
-        "RoleEventHandlerExecRole"
-      ],
-      "line_numbers": [
-        119
-      ]
-    },
-    {
-      "id": "W11",
-      "type": "WARN",
-      "message": "IAM role should not allow * resource on its permissions policy",
-      "logical_resource_ids": [
-        "RoleEventHandlerExecRole",
-        "SolutionHelperRole"
-      ],
-      "line_numbers": [
-        119,
-        157
-      ]
-    },
-    {
-      "id": "W28",
-      "type": "WARN",
-      "message": "Resource found with an explicit name, this disallows updates that require replacement of this resource",
-      "logical_resource_ids": [
-        "CreateAccountsDDBTable",
-        "CreateRolesDDBTable",
-        "CreateAccountRolesDDBTable",
-        "RoleEventHandlerExecRole"
-      ],
-      "line_numbers": [
-        687,
-        711,
-        728,
-        119
-      ]
-    },
-    {
-      "id": "W35",
-      "type": "WARN",
-      "message": "S3 Bucket should have access logging configured",
-      "logical_resource_ids": [
-        "AccessLinkBucket",
-        "CAMConfigBucket"
-      ],
-      "line_numbers": [
-        482,
-        489
+[
+  {
+    "filename": "aws-cross-account-manager-master.yml",
+    "file_results": {
+      "failure_count": 1,
+      "violations": [
+        {
+          "id": "W78",
+          "name": "DynamoDBBackupRule",
+          "type": "WARN",
+          "message": "DynamoDB table should have backup enabled, should be set using PointInTimeRecoveryEnabled",
+          "logical_resource_ids": [
+            "CreateAccountsDDBTable",
+            "CreateRolesDDBTable",
+            "CreateAccountRolesDDBTable"
+          ],
+          "line_numbers": [
+            687,
+            711,
+            728
+          ],
+          "element_types": [
+            "resource",
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W73",
+          "name": "DynamoDBBillingModeRule",
+          "type": "WARN",
+          "message": "DynamoDB table should have billing mode set to either PAY_PER_REQUEST or PROVISIONED",
+          "logical_resource_ids": [
+            "CreateAccountsDDBTable",
+            "CreateRolesDDBTable",
+            "CreateAccountRolesDDBTable"
+          ],
+          "line_numbers": [
+            687,
+            711,
+            728
+          ],
+          "element_types": [
+            "resource",
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W74",
+          "name": "DynamoDBEncryptionRule",
+          "type": "WARN",
+          "message": "DynamoDB table should have encryption enabled using a CMK stored in KMS",
+          "logical_resource_ids": [
+            "CreateAccountsDDBTable",
+            "CreateRolesDDBTable",
+            "CreateAccountRolesDDBTable"
+          ],
+          "line_numbers": [
+            687,
+            711,
+            728
+          ],
+          "element_types": [
+            "resource",
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W12",
+          "name": "IamPolicyWildcardResourceRule",
+          "type": "WARN",
+          "message": "IAM policy should not allow * resource",
+          "logical_resource_ids": [
+            "CloudwatchLogsCloudformationPolicy"
+          ],
+          "line_numbers": [
+            252
+          ],
+          "element_types": [
+            "resource"
+          ]
+        },
+        {
+          "id": "F3",
+          "name": "IamRoleWildcardActionOnPermissionsPolicyRule",
+          "type": "FAIL",
+          "message": "IAM role should not allow * action on its permissions policy",
+          "logical_resource_ids": [
+            "RoleEventHandlerExecRole"
+          ],
+          "line_numbers": [
+            119
+          ],
+          "element_types": [
+            "resource"
+          ]
+        },
+        {
+          "id": "W58",
+          "name": "LambdaFunctionCloudWatchLogsRule",
+          "type": "WARN",
+          "message": "Lambda functions require permission to write CloudWatch Logs",
+          "logical_resource_ids": [
+            "AccountFileHandler",
+            "AccountEventHandler",
+            "RoleFileHandler",
+            "RoleEventHandler",
+            "SolutionHelper",
+            "InitMasterAccount",
+            "AccessLinksHandler"
+          ],
+          "line_numbers": [
+            50,
+            77,
+            104,
+            142,
+            181,
+            210,
+            237
+          ],
+          "element_types": [
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W89",
+          "name": "LambdaFunctionInsideVPCRule",
+          "type": "WARN",
+          "message": "Lambda functions should be deployed inside a VPC",
+          "logical_resource_ids": [
+            "AccountFileHandler",
+            "AccountEventHandler",
+            "RoleFileHandler",
+            "RoleEventHandler",
+            "SolutionHelper",
+            "InitMasterAccount",
+            "AccessLinksHandler"
+          ],
+          "line_numbers": [
+            50,
+            77,
+            104,
+            142,
+            181,
+            210,
+            237
+          ],
+          "element_types": [
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W92",
+          "name": "LambdaFunctionReservedConcurrentExecutionsRule",
+          "type": "WARN",
+          "message": "Lambda functions should define ReservedConcurrentExecutions to reserve simultaneous executions",
+          "logical_resource_ids": [
+            "AccountFileHandler",
+            "AccountEventHandler",
+            "RoleFileHandler",
+            "RoleEventHandler",
+            "SolutionHelper",
+            "InitMasterAccount",
+            "AccessLinksHandler"
+          ],
+          "line_numbers": [
+            50,
+            77,
+            104,
+            142,
+            181,
+            210,
+            237
+          ],
+          "element_types": [
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W51",
+          "name": "MissingBucketPolicyRule",
+          "type": "WARN",
+          "message": "S3 bucket should likely have a bucket policy",
+          "logical_resource_ids": [
+            "AccessLinkBucket"
+          ],
+          "line_numbers": [
+            482
+          ],
+          "element_types": [
+            "resource"
+          ]
+        },
+        {
+          "id": "W28",
+          "name": "ResourceWithExplicitNameRule",
+          "type": "WARN",
+          "message": "Resource found with an explicit name, this disallows updates that require replacement of this resource",
+          "logical_resource_ids": [
+            "CreateAccountsDDBTable",
+            "CreateRolesDDBTable",
+            "CreateAccountRolesDDBTable",
+            "RoleEventHandlerExecRole"
+          ],
+          "line_numbers": [
+            687,
+            711,
+            728,
+            119
+          ],
+          "element_types": [
+            "resource",
+            "resource",
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W35",
+          "name": "S3BucketAccessLoggingRule",
+          "type": "WARN",
+          "message": "S3 Bucket should have access logging configured",
+          "logical_resource_ids": [
+            "AccessLinkBucket",
+            "CAMConfigBucket"
+          ],
+          "line_numbers": [
+            482,
+            489
+          ],
+          "element_types": [
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W41",
+          "name": "S3BucketEncryptionSetRule",
+          "type": "WARN",
+          "message": "S3 Bucket should have encryption option set",
+          "logical_resource_ids": [
+            "AccessLinkBucket",
+            "CAMConfigBucket"
+          ],
+          "line_numbers": [
+            482,
+            489
+          ],
+          "element_types": [
+            "resource",
+            "resource"
+          ]
+        },
+        {
+          "id": "W47",
+          "name": "SnsTopicKmsMasterKeyIdRule",
+          "type": "WARN",
+          "message": "SNS Topic should specify KmsMasterKeyId property",
+          "logical_resource_ids": [
+            "AccountTopic",
+            "RoleTopic",
+            "AccessLinksTopic"
+          ],
+          "line_numbers": [
+            417,
+            425,
+            433
+          ],
+          "element_types": [
+            "resource",
+            "resource",
+            "resource"
+          ]
+        }
       ]
     }
-  ]
-}
+  }
+]
