@@ -14,7 +14,7 @@
         "skipped": 0,
         "parsing_errors": 1,
         "resource_count": 0,
-        "checkov_version": "2.0.560"
+        "checkov_version": "2.0.653"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }

@@ -115,6 +115,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -229,6 +230,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -343,6 +345,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -457,6 +460,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -571,6 +575,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -579,7 +584,9 @@
                     "check_name": "Ensure IAM role allows only specific services or principals to assume it",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AssumeRolePolicyDocument/Statement"
+                        ]
                     },
                     "code_block": [
                         [
@@ -685,6 +692,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -799,6 +807,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -807,7 +816,9 @@
                     "check_name": "Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/Users"
+                        ]
                     },
                     "code_block": [
                         [
@@ -945,6 +956,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_16-iam-policy-privileges-1"
                 },
                 {
@@ -1091,6 +1103,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -1237,6 +1250,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -1383,6 +1397,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -1529,6 +1544,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -1675,6 +1691,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -1821,6 +1838,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -2063,6 +2081,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -2305,6 +2324,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -2547,6 +2567,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -2789,6 +2810,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -3031,6 +3053,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -3273,6 +3296,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -3281,7 +3305,9 @@
                     "check_name": "Ensure IAM role allows only specific services or principals to assume it",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AssumeRolePolicyDocument/Statement"
+                        ]
                     },
                     "code_block": [
                         [
@@ -3515,6 +3541,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -3757,6 +3784,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -3999,6 +4027,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -4007,7 +4036,9 @@
                     "check_name": "Ensure no hard-coded secrets exist in lambda environment",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/Environment/Variables"
+                        ]
                     },
                     "code_block": [
                         [
@@ -4273,6 +4304,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_3"
                 },
                 {
@@ -4281,7 +4313,10 @@
                     "check_name": "Check encryption settings for Lambda environmental variable",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/Environment/Variables",
+                            "Properties/KmsKeyArn"
+                        ]
                     },
                     "code_block": [
                         [
@@ -4547,6 +4582,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": null
                 },
                 {
@@ -4805,6 +4841,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -5063,6 +5100,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -5321,6 +5359,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -5579,6 +5618,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -5837,6 +5877,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -6095,6 +6136,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -6103,7 +6145,9 @@
                     "check_name": "Ensure IAM role allows only specific services or principals to assume it",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AssumeRolePolicyDocument/Statement"
+                        ]
                     },
                     "code_block": [
                         [
@@ -6353,6 +6397,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -6611,6 +6656,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -6869,6 +6915,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -6877,7 +6924,9 @@
                     "check_name": "Ensure no hard-coded secrets exist in lambda environment",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/Environment/Variables"
+                        ]
                     },
                     "code_block": [
                         [
@@ -7391,6 +7440,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_3"
                 },
                 {
@@ -7399,7 +7449,10 @@
                     "check_name": "Check encryption settings for Lambda environmental variable",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/Environment/Variables",
+                            "Properties/KmsKeyArn"
+                        ]
                     },
                     "code_block": [
                         [
@@ -7913,6 +7966,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": null
                 },
                 {
@@ -8073,6 +8127,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_20"
                 },
                 {
@@ -8233,6 +8288,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_21"
                 },
                 {
@@ -8393,6 +8449,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest"
                 },
                 {
@@ -8553,6 +8610,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_22"
                 },
                 {
@@ -8713,6 +8771,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_19"
                 },
                 {
@@ -8721,7 +8780,9 @@
                     "check_name": "Ensure the S3 bucket does not allow READ permissions to everyone",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AccessControl"
+                        ]
                     },
                     "code_block": [
                         [
@@ -8871,6 +8932,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone"
                 },
                 {
@@ -9031,6 +9093,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_16-enable-versioning"
                 },
                 {
@@ -9039,7 +9102,9 @@
                     "check_name": "Ensure the S3 bucket does not allow WRITE permissions to everyone",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AccessControl"
+                        ]
                     },
                     "code_block": [
                         [
@@ -9189,6 +9254,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone"
                 },
                 {
@@ -9197,7 +9263,9 @@
                     "check_name": "Ensure the S3 bucket has access logging enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/LoggingConfiguration"
+                        ]
                     },
                     "code_block": [
                         [
@@ -9347,6 +9415,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_13-enable-logging"
                 },
                 {
@@ -9519,6 +9588,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/logging_8"
                 },
                 {
@@ -9691,6 +9761,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-kms-key-policy-does-not-contain-wildcard-principal"
                 },
                 {
@@ -9893,6 +9964,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -10095,6 +10167,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -10297,6 +10370,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -10499,6 +10573,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -10701,6 +10776,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -10709,7 +10785,9 @@
                     "check_name": "Ensure IAM role allows only specific services or principals to assume it",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AssumeRolePolicyDocument/Statement"
+                        ]
                     },
                     "code_block": [
                         [
@@ -10903,6 +10981,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -11105,6 +11184,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -11307,6 +11387,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -11457,8 +11538,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -11617,8 +11707,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -11777,8 +11876,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -11937,8 +12045,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -12097,8 +12214,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -12257,8 +12383,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -12417,8 +12552,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -12577,8 +12721,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -12737,8 +12890,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -12897,8 +13059,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -13057,8 +13228,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -13217,8 +13397,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -13377,8 +13566,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -13537,8 +13735,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -13697,8 +13904,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupIngress.CidrIp": [
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -13841,6 +14057,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_31"
                 },
                 {
@@ -13975,6 +14192,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2"
                 },
                 {
@@ -14109,6 +14327,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
                 },
                 {
@@ -14335,6 +14554,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_31"
                 },
                 {
@@ -14561,6 +14781,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2"
                 },
                 {
@@ -14787,6 +15008,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
                 },
                 {
@@ -14927,6 +15149,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_20"
                 },
                 {
@@ -15067,6 +15290,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_21"
                 },
                 {
@@ -15207,6 +15431,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest"
                 },
                 {
@@ -15347,6 +15572,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_22"
                 },
                 {
@@ -15487,6 +15713,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_19"
                 },
                 {
@@ -15495,7 +15722,9 @@
                     "check_name": "Ensure the S3 bucket does not allow READ permissions to everyone",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AccessControl"
+                        ]
                     },
                     "code_block": [
                         [
@@ -15625,6 +15854,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone"
                 },
                 {
@@ -15765,6 +15995,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_16-enable-versioning"
                 },
                 {
@@ -15773,7 +16004,9 @@
                     "check_name": "Ensure the S3 bucket does not allow WRITE permissions to everyone",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AccessControl"
+                        ]
                     },
                     "code_block": [
                         [
@@ -15903,6 +16136,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone"
                 },
                 {
@@ -15911,7 +16145,9 @@
                     "check_name": "Ensure the S3 bucket has access logging enabled",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/LoggingConfiguration"
+                        ]
                     },
                     "code_block": [
                         [
@@ -16041,6 +16277,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_13-enable-logging"
                 },
                 {
@@ -16235,6 +16472,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_logging_22"
                 },
                 {
@@ -16369,8 +16607,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "Certificates.CertificateArn": [
+                        "Certificates.0.CertificateArn": [
+                            {
+                                "type": "parameters",
+                                "name": "CertificateArn",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ],
+                        "Certificates.0": [
                             {
                                 "type": "parameters",
                                 "name": "CertificateArn",
@@ -16513,8 +16760,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "Certificates.CertificateArn": [
+                        "Certificates.0.CertificateArn": [
+                            {
+                                "type": "parameters",
+                                "name": "CertificateArn",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ],
+                        "Certificates.0": [
                             {
                                 "type": "parameters",
                                 "name": "CertificateArn",
@@ -16681,8 +16937,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupEgress.CidrIp": [
+                        "SecurityGroupEgress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupEgress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -16849,8 +17114,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupEgress.CidrIp": [
+                        "SecurityGroupEgress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupEgress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -17017,8 +17291,17 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
-                        "SecurityGroupEgress.CidrIp": [
+                        "SecurityGroupEgress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupEgress.0": [
                             {
                                 "type": "mappings",
                                 "name": "SubnetConfig",
@@ -17625,6 +17908,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -18223,6 +18507,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -18821,6 +19106,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -19419,6 +19705,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -20017,6 +20304,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -20615,6 +20903,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -20623,7 +20912,9 @@
                     "check_name": "Ensure IAM role allows only specific services or principals to assume it",
                     "check_result": {
                         "result": "PASSED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/AssumeRolePolicyDocument/Statement"
+                        ]
                     },
                     "code_block": [
                         [
@@ -21213,6 +21504,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -21811,6 +22103,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -22157,6 +22450,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -22521,6 +22815,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -22885,6 +23180,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -23051,6 +23347,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -23327,6 +23624,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq"
                 },
                 {
@@ -23367,6 +23665,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -23407,6 +23706,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -23931,6 +24231,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq"
                 },
                 {
@@ -23975,6 +24276,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24019,6 +24321,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24063,6 +24366,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24265,6 +24569,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -24273,7 +24578,9 @@
                     "check_name": "Ensure that Secrets Manager secret is encrypted using KMS CMK",
                     "check_result": {
                         "result": "FAILED",
-                        "evaluated_keys": []
+                        "evaluated_keys": [
+                            "Properties/KmsKeyId"
+                        ]
                     },
                     "code_block": [
                         [
@@ -24405,6 +24712,7 @@
                     },
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "SecretString.Fn::Join.1.1": [
                             {
@@ -24951,6 +25259,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -25497,6 +25806,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -26043,6 +26353,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -26589,6 +26900,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -26817,6 +27129,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-alb-drops-http-headers"
                 },
                 {
@@ -27415,6 +27728,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -29121,6 +29435,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "breadcrumbs": {
                         "InstanceType": [
                             {
@@ -29199,7 +29514,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 130,
-            "checkov_version": "2.0.560"
+            "checkov_version": "2.0.653"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     },
@@ -29235,6 +29550,7 @@
                     "entity_tags": null,
                     "caller_file_path": null,
                     "caller_file_line_range": null,
+                    "resource_address": null,
                     "guideline": "https://docs.bridgecrew.io/docs/git_secrets_7"
                 }
             ],
@@ -29247,7 +29563,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 1,
-            "checkov_version": "2.0.560"
+            "checkov_version": "2.0.653"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     }
