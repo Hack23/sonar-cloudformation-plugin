@@ -31,7 +31,8 @@ import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.TextPointer;
 import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.sensor.SensorContext;
-import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
+import org.sonar.api.batch.sensor.issue.NewIssue;
+import org.sonar.api.batch.sensor.issue.NewIssueLocation;
 import org.sonar.api.rule.RuleKey;
 import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.api.utils.log.Logger;
@@ -164,8 +165,12 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 		if(!lineNumbers.isEmpty()) {
 			final TextPointer startLine = templateInputFile.selectLine(lineNumbers.get(0)).start();
 			final TextPointer endLine = templateInputFile.selectLine(lineNumbers.get(lineNumbers.size()-1)).end();
-			context.newIssue().forRule(ruleKey).at(new DefaultIssueLocation().on(templateInputFile)
-					.message(failedChecks.getCheckName()).at(templateInputFile.newRange(startLine, endLine))).save();
+			NewIssue newIssue = context.newIssue().forRule(ruleKey);
+			
+			NewIssueLocation location = newIssue.newLocation()
+		            .on(templateInputFile).at(templateInputFile.newRange(startLine, endLine))
+		            .message(failedChecks.getCheckName());
+		    newIssue.at(location).save(); 
 		}
 	}
 

@@ -30,7 +30,8 @@ import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.sensor.SensorContext;
-import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
+import org.sonar.api.batch.sensor.issue.NewIssue;
+import org.sonar.api.batch.sensor.issue.NewIssueLocation;
 import org.sonar.api.rule.RuleKey;
 import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.api.utils.log.Logger;
@@ -146,28 +147,37 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 		if (templateInputFile != null) {
 
 			if (violation.getLineNumbers().isEmpty()) {
-				context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)))
-						.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())).save();
+				NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)));				
+				NewIssueLocation location = newIssue.newLocation()
+			            .on(templateInputFile)
+			            .message(violation.getMessage());
+			    newIssue.at(location).save(); 
+						
 			} else {
 				final List<Integer> lineNumbers = violation.getLineNumbers();
 				for (final Integer line : lineNumbers) {
 					if (line != null && line >= 0) {
-						context.newIssue()
-								.forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)))
-								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage())
-										.at(templateInputFile.selectLine(line)))
-								.save();
+						NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)));				
+						NewIssueLocation location = newIssue.newLocation()
+					            .on(templateInputFile).at(templateInputFile.selectLine(line))
+					            .message(violation.getMessage());
+					    newIssue.at(location).save(); 
+						
 					} else {
-						context.newIssue()
-								.forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)))
-								.at(new DefaultIssueLocation().on(templateInputFile).message(violation.getMessage()))
-								.save();
+						NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)));				
+						NewIssueLocation location = newIssue.newLocation()
+					            .on(templateInputFile)
+					            .message(violation.getMessage());
+					    newIssue.at(location).save(); 
 					}
 				}
 			}
 		} else {
-			context.newIssue().forRule(RuleKey.of("cfn-yaml", findRuleId(activeRules, violation)))
-					.at(new DefaultIssueLocation().on(context.project()).message(violation.getMessage())).save();
+			NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cfn-yaml", findRuleId(activeRules, violation)));				
+			NewIssueLocation location = newIssue.newLocation()
+		            .on(context.project())
+		            .message(violation.getMessage());
+		    newIssue.at(location).save(); 
 		}
 	}
 
