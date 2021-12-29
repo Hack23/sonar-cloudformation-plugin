@@ -24,6 +24,7 @@ import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 import org.sonar.api.server.rule.RulesDefinition.Context;
 import org.sonar.api.server.rule.RulesDefinition.Rule;
+import org.sonar.api.server.rule.RulesDefinitionXmlLoader;
 
 /**
  * The Class CloudformationRulesDefinitionTest.
@@ -37,9 +38,9 @@ public class CloudformationRulesDefinitionTest {
 	@Test
 	public void defineContextTest() {
 
-		final CloudformationRulesDefinition ruleDefinition = new CloudformationRulesDefinition();
-
 		final Context context = new Context();
+		final CloudformationRulesDefinition ruleDefinition = new CloudformationRulesDefinition(context, new RulesDefinitionXmlLoader());
+
 		ruleDefinition.define(context);
 
 		for (final Rule rule : context.repositories().get(0).rules()) {

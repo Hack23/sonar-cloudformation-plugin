@@ -52,6 +52,17 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 
 	/** The context. */
 	private Context context;
+	
+	private final RulesDefinitionXmlLoader xmlLoader;
+
+
+	
+	
+	public CloudformationRulesDefinition(Context context, RulesDefinitionXmlLoader xmlLoader) {
+		super();
+		this.context = context;
+		this.xmlLoader = xmlLoader;
+	}
 
 	/**
 	 * Gets the context.
@@ -88,8 +99,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	 */
 	private void addRules(final NewRepository repository, final InputStream rulesXml) {
 		if (rulesXml != null) {
-			final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();
-			rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());
+			xmlLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());
 
 			for (final NewRule newRule : repository.rules()) {
 
