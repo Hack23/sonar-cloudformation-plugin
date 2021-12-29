@@ -58,9 +58,8 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 
 	
 	
-	public CloudformationRulesDefinition(Context context, RulesDefinitionXmlLoader xmlLoader) {
+	public CloudformationRulesDefinition(RulesDefinitionXmlLoader xmlLoader) {
 		super();
-		this.context = context;
 		this.xmlLoader = xmlLoader;
 	}
 

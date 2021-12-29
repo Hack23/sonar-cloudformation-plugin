@@ -37,7 +37,7 @@ public class CloudformationQualityProfileTest extends Assert {
 	public void defineTest() {
 		final Context context = new Context();
 		final org.sonar.api.server.rule.RulesDefinition.Context context2 = new org.sonar.api.server.rule.RulesDefinition.Context();
-		final CloudformationRulesDefinition cloudformationRulesDefinition = new CloudformationRulesDefinition(context2, new RulesDefinitionXmlLoader());
+		final CloudformationRulesDefinition cloudformationRulesDefinition = new CloudformationRulesDefinition( new RulesDefinitionXmlLoader());
 		cloudformationRulesDefinition.define(context2);
 		new CloudformationQualityProfile(cloudformationRulesDefinition).define(context);
 

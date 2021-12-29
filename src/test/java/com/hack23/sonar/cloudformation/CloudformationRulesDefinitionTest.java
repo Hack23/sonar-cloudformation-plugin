@@ -39,7 +39,7 @@ public class CloudformationRulesDefinitionTest {
 	public void defineContextTest() {
 
 		final Context context = new Context();
-		final CloudformationRulesDefinition ruleDefinition = new CloudformationRulesDefinition(context, new RulesDefinitionXmlLoader());
+		final CloudformationRulesDefinition ruleDefinition = new CloudformationRulesDefinition(new RulesDefinitionXmlLoader());
 
 		ruleDefinition.define(context);
 
