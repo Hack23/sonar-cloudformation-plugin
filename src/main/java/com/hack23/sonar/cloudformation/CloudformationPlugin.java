@@ -19,6 +19,8 @@
  */
 package com.hack23.sonar.cloudformation;
 
+import java.util.Arrays;
+
 import org.sonar.api.Plugin;
 
 /**
@@ -33,12 +35,9 @@ public final class CloudformationPlugin implements Plugin {
 	 */
 	@Override
 	public void define(final Context context) {
-		context.addExtensions(CloudformationRulesDefinition.class,
-				CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
-				CloudformationSensorConfiguration.class);
 		context.addExtensions(CloudformationProperties.getProperties());
-
-
+		context.addExtensions(Arrays.asList(CloudformationProperties.class, CloudformationQualityProfile.class, CloudformationSensor.class,
+				CloudformationSensorConfiguration.class,CloudformationRulesDefinition.class));
 	}
 
 }

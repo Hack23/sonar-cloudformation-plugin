@@ -1,4 +1,4 @@
-<cloudformation-rules>
+<rules>
 
    <rule>
 		<key>serverless-CKV_AWS_1</key>
@@ -11485,6 +11485,4 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
 
-
-
-</cloudformation-rules>
+</rules>

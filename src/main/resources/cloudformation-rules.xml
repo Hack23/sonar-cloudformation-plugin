@@ -1,4 +1,4 @@
-<cloudformation-rules>
+<rules>
 	<rule>
 		<key>F1</key>
 		<name>EBS volumes should be encrypted</name>
@@ -2826,4 +2826,4 @@
         <remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
      </rule>     
      
-</cloudformation-rules>
+</rules>

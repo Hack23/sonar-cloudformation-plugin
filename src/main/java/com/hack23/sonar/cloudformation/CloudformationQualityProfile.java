@@ -28,6 +28,7 @@ import org.sonar.api.server.rule.RulesDefinition.Rule;
  */
 public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
 
+	
 	/** The Constant CLOUDFORMATION_RULES. */
 	private static final String CLOUDFORMATION_RULES = "Cloudformation Rules";
 
@@ -68,6 +69,7 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	public void define(final Context context) {
 		extracted(context, "yaml");
 		extracted(context, "json");
+		
 	}
 
 	/**

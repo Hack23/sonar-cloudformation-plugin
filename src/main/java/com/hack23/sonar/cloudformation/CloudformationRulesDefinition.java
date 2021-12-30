@@ -20,6 +20,7 @@
 package com.hack23.sonar.cloudformation;
 
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
@@ -55,9 +56,6 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	
 	private final RulesDefinitionXmlLoader xmlLoader;
 
-
-	
-	
 	public CloudformationRulesDefinition(RulesDefinitionXmlLoader xmlLoader) {
 		super();
 		this.xmlLoader = xmlLoader;
@@ -87,7 +85,6 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_RULES_XML));
 		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_RULES_XML));
 		repository.done();
-
 	}
 
 	/**
@@ -98,10 +95,8 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	 */
 	private void addRules(final NewRepository repository, final InputStream rulesXml) {
 		if (rulesXml != null) {
-			xmlLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());
-
+			xmlLoader.load(repository, new InputStreamReader(rulesXml,StandardCharsets.UTF_8));
 			for (final NewRule newRule : repository.rules()) {
-
 				addNewRule(newRule);
 			}
 		}
