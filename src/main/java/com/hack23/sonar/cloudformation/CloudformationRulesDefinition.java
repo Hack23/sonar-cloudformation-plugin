@@ -41,9 +41,12 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	/** The Constant PATH_TO_RULES_XML. */
 	private static final String PATH_TO_RULES_XML = "/cloudformation-rules.xml";
 
-	/** The Constant PATH_TO_CHECKOV_RULES_XML. */
-	private static final String PATH_TO_CHECKOV_RULES_XML = "/cloudformation-checkov-rules.xml";
+	/** The Constant PATH_TO_CHECKOV_CLOUDFORMATION_RULES_XML. */
+	private static final String PATH_TO_CHECKOV_CLOUDFORMATION_RULES_XML = "/cloudformation-checkov-cloudformation-rules.xml";
 
+	/** The Constant PATH_TO_CHECKOV_TERRAFOM_RULES_XML. */
+	private static final String PATH_TO_CHECKOV_TERRAFOM_RULES_XML = "/cloudformation-checkov-terraform-rules.xml";
+	
 
 	/** The Constant KEY. */
 	public static final String KEY = "repo";
@@ -54,8 +57,14 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	/** The context. */
 	private Context context;
 	
+	/** The xml loader. */
 	private final RulesDefinitionXmlLoader xmlLoader;
 
+	/**
+	 * Instantiates a new cloudformation rules definition.
+	 *
+	 * @param xmlLoader the xml loader
+	 */
 	public CloudformationRulesDefinition(RulesDefinitionXmlLoader xmlLoader) {
 		super();
 		this.xmlLoader = xmlLoader;
@@ -71,22 +80,39 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	}
 
 	/**
-	 * Define rules for language.
+	 * Define rules for cloudformation.
 	 *
 	 * @param context the context
 	 * @param repositoryKey the repository key
 	 * @param repositoryName the repository name
 	 * @param languageKey the language key
 	 */
-	private void defineRulesForLanguage(final Context context, final String repositoryKey, final String repositoryName,
+	private void defineRulesForCloudformation(final Context context, final String repositoryKey, final String repositoryName,
 			final String languageKey) {
 		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
 
 		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_RULES_XML));
-		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_RULES_XML));
+		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_CLOUDFORMATION_RULES_XML));
 		repository.done();
 	}
 
+	
+	/**
+	 * Define rules for terraform.
+	 *
+	 * @param context the context
+	 * @param repositoryKey the repository key
+	 * @param repositoryName the repository name
+	 * @param languageKey the language key
+	 */
+	private void defineRulesForTerraform(final Context context, final String repositoryKey, final String repositoryName,
+			final String languageKey) {
+		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
+		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_TERRAFOM_RULES_XML));
+		repository.done();
+	}
+
+	
 	/**
 	 * Adds the rules.
 	 *
@@ -133,8 +159,8 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	@Override
 	public void define(final Context context) {
 		this.context = context;
-		defineRulesForLanguage(context, "cfn-yaml" ,"Cloudformation Yaml Rules", "yaml");
-		defineRulesForLanguage(context, "cfn-json" ,"Cloudformation Json Rules", "json");
+		defineRulesForCloudformation(context, "cloudformation-plugin-cfn" ,"Cloudformation plugin(cfn) rules", "cloudformation");
+		defineRulesForTerraform(context, "cloudformation-plugin-terraform" ,"Cloudformation plugin(terrraform) Rules", "terraform");
 	}
 
 }

@@ -35,7 +35,7 @@ public class CheckovReportReaderTest extends Assert {
 
 
 	/**
-	 * Read report test.
+	 * Read cloudformatation report test.
 	 */
 	@Test
 	public void readCloudformatationReportTest() {

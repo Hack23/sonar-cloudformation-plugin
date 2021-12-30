@@ -66,7 +66,7 @@ public class CheckovProcessReportsTest extends Assert {
 		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
-		ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cfn-json","cloudformation-CKV_AWS_8")).build()));
+		ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cloudformation-plugin-cfn","cloudformation-CKV_AWS_8")).build()));
 		sensorContext.setActiveRules(activeRules);		
 				
 		

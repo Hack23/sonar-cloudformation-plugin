@@ -30,22 +30,16 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 
 	
 	/** The Constant CLOUDFORMATION_RULES. */
-	private static final String CLOUDFORMATION_RULES = "Cloudformation Rules";
+	private static final String CLOUDFORMATION_RULES = "Cloudformation(cfn-nag,checkov) Rules";
 
-	/** The Constant IAC_RULES. */
-	private static final String IAC_RULES = "IAC Rules";
+	/** The Constant TERRAFORM_RULES. */
+	private static final String TERRAFORM_RULES = "Terraform(checkov) Rules";
 
 	/** The Constant SERVERLESS. */
 	private static final String SERVERLESS = "serverless";
 
 	/** The Constant CLOUDFORMATION. */
 	private static final String CLOUDFORMATION = "cloudformation";
-
-	/** The Constant CHECKOV. */
-	private static final String CHECKOV = "checkov";
-
-	/** The Constant CFN_RULE_PREFIX. */
-	private static final String CFN_RULE_PREFIX = "cfn-";
 
 	/** The cloudformation rules definition. */
 	private final CloudformationRulesDefinition cloudformationRulesDefinition;
@@ -67,34 +61,26 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 	 */
 	@Override
 	public void define(final Context context) {
-		extracted(context, "yaml");
-		extracted(context, "json");
-		
+
+		createCloudformationQualityProfile(context, "cloudformation");
+		createTerraformQualityProfile(context, "terraform");
 	}
+	
 
 	/**
-	 * Extracted.
-	 *
-	 * @param context  the context
-	 * @param language the language
-	 */
-	private void extracted(final Context context, final String language) {
-		createCloudformationQualityProfile(context, language);
-		createIacQualityProfile(context, language);
-	}
-
-	/**
-	 * Creates the iac quality profile.
+	 * Creates the terraform quality profile.
 	 *
 	 * @param context the context
 	 * @param language the language
 	 */
-	private void createIacQualityProfile(final Context context, final String language) {
-		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile(IAC_RULES, language);
+	private void createTerraformQualityProfile(final Context context, final String language) {
+		final NewBuiltInQualityProfile iacProfile = context.createBuiltInQualityProfile(TERRAFORM_RULES, language);
 		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
-			if (repository.key().contains(CFN_RULE_PREFIX + language)) {
+			if (repository.key().contains("cloudformation-plugin-terraform")) {
 				for (final Rule rule : repository.rules()) {
-						iacProfile.activateRule(CFN_RULE_PREFIX + language, rule.key());
+					if (rule.tags().contains(CLOUDFORMATION) || rule.tags().contains(SERVERLESS) || rule.tags().contains("terraform")) {
+						iacProfile.activateRule(repository.key(), rule.key());
+					}
 				}
 			}
 		}
@@ -111,10 +97,10 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		final NewBuiltInQualityProfile cloudFormationprofile = context
 				.createBuiltInQualityProfile(CLOUDFORMATION_RULES, language);
 		for (final Repository repository : cloudformationRulesDefinition.getContext().repositories()) {
-			if (repository.key().contains(CFN_RULE_PREFIX + language)) {
+			if (repository.key().contains("cloudformation-plugin-cfn")) {
 				for (final Rule rule : repository.rules()) {
 					if (rule.tags().contains(CLOUDFORMATION) || rule.tags().contains(SERVERLESS) || rule.tags().contains("cfn-nag")) {
-						cloudFormationprofile.activateRule(CFN_RULE_PREFIX + language, rule.key());
+						cloudFormationprofile.activateRule(repository.key(), rule.key());
 					} 
 				}
 			}

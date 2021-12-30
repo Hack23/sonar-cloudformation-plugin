@@ -108,7 +108,7 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 	 *
 	 * @param context the context
 	 * @param report the report
-	 * @throws IOException 
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private void handleCheckovReports(final SensorContext context, final String report) throws IOException {
 		LOGGER.info("Reading checkov reports:{}", report);
@@ -144,9 +144,9 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 	private static void addCheckovIssue(final SensorContext context, final ActiveRules activeRules, final CheckovReport checkovReport,
 			final CheckovPassedCheck failedChecks, final InputFile templateInputFile) {
 
-		String repoName = "cfn-yaml";
-		if (templateInputFile != null) {
-			repoName = "cfn-" + templateInputFile.language();
+		String repoName = "cloudformation-plugin-cfn";
+		if (templateInputFile != null && templateInputFile.language().equalsIgnoreCase("terraform")) {
+			repoName = "cloudformation-plugin-terraform";
 		}
 		
 		final RuleKey ruleKey = RuleKey.of(repoName,checkovReport.getCheckType() + "-" + failedChecks.getCheckId());

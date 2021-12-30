@@ -43,30 +43,16 @@ public class CloudformationQualityProfileTest extends Assert {
 
 
 		{
-		final BuiltInQualityProfile qualityProfile = context.profile("yaml","Cloudformation Rules");
+		final BuiltInQualityProfile qualityProfile = context.profile("cloudformation","Cloudformation(cfn-nag,checkov) Rules");
 		assertNotNull(qualityProfile);
 		assertFalse(qualityProfile.isDefault());
-		assertEquals(278,qualityProfile.rules().size());
+		assertEquals(275,qualityProfile.rules().size());
 		}
 		{
-		final BuiltInQualityProfile qualityProfile = context.profile("yaml","IAC Rules");
+		final BuiltInQualityProfile qualityProfile = context.profile("terraform","Terraform(checkov) Rules");
 		assertNotNull(qualityProfile);
 		assertFalse(qualityProfile.isDefault());
-		assertEquals(896,qualityProfile.rules().size());
-		}
-
-
-		{
-		final BuiltInQualityProfile qualityProfile = context.profile("json","Cloudformation Rules");
-		assertNotNull(qualityProfile);
-		assertFalse(qualityProfile.isDefault());
-		assertEquals(278,qualityProfile.rules().size());
-		}
-		{
-		final BuiltInQualityProfile qualityProfile = context.profile("json","IAC Rules");
-		assertNotNull(qualityProfile);
-		assertFalse(qualityProfile.isDefault());
-		assertEquals(896,qualityProfile.rules().size());
+		assertEquals(467,qualityProfile.rules().size());
 		}
 
 	}

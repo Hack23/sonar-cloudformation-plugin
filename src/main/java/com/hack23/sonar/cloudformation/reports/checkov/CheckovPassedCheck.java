@@ -42,6 +42,7 @@ public final class CheckovPassedCheck {
     /** The check result. */
     private Object checkResult;
     
+    /** The bc check id. */
     private String bcCheckId;
 
     /** The code block. */

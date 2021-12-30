@@ -46,7 +46,7 @@ public class CheckovReportReader {
 	 * Read report.
 	 *
 	 * @param input the input
-	 * @return the checkov report
+	 * @return the list
 	 */
 	public List<CheckovReport> readReport(final InputStream input) {
 		final ObjectMapper objectMapper = JsonMapper.builder().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).build();

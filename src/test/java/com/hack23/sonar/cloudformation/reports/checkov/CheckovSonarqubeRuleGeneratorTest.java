@@ -104,8 +104,10 @@ public class CheckovSonarqubeRuleGeneratorTest {
 	/** The Constant SC_13_TAGS. */
 	private static final String SC_13_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-311</tag>\n		<tag>800-53-sc-13</tag>";
 
+	/** The Constant DETECT_SC_12. */
 	private static final String DETECT_SC_12 ="Ensure rotation";
 	
+	/** The Constant SC_12_TAGS. */
 	private static final String SC_12_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-320</tag>\n		<tag>800-53-sc-12</tag>";
 	
 	/** The Constant DETECT_SC_8. */
@@ -117,6 +119,7 @@ public class CheckovSonarqubeRuleGeneratorTest {
 	/** The Constant DETECT3_SC_8. */
 	private static final String DETECT3_SC_8 ="uses SSL";
 
+	/** The Constant DETECT4_SC_8. */
 	private static final String DETECT4_SC_8 ="node-to-node encryption";
 	
 	/** The Constant SC_8_TAGS. */
@@ -125,8 +128,10 @@ public class CheckovSonarqubeRuleGeneratorTest {
 	/** The Constant DETECT_AC_6. */
 	private static final String DETECT_AC_6 ="IAM policies";
 
+	/** The Constant DETECT_IA_5. */
 	private static final String DETECT_IA_5 ="IAM password policy";
 	
+	/** The Constant IA_5_TAGS. */
 	private static final String IA_5_TAGS ="\n		<tag>owasp-a3</tag>\n		<tag>cweid-257</tag>\n		<tag>800-53-ia-5</tag>";
 	
 	/** The Constant AC_6_TAGS. */
@@ -181,12 +186,12 @@ public class CheckovSonarqubeRuleGeneratorTest {
 
 
 	/**
-	 * Generate sonarqube rule definitions for checkov test.
+	 * Generate sonarqube rule definitions for checkov cloudformation test.
 	 *
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	@Test
-	public void generateSonarqubeRuleDefinitionsForCheckovTest() throws IOException {
+	public void generateSonarqubeRuleDefinitionsForCheckovCloudformationTest() throws IOException {
 		final CSVParser parser = CSVParser.parse(new InputStreamReader(this.getClass().getResourceAsStream("/checkov/rules.txt"),StandardCharsets.UTF_8), CSVFormat.EXCEL.withHeader().withDelimiter('|').withTrim());
 		final List<CSVRecord> records = parser.getRecords();
 		assertFalse(records.isEmpty());
@@ -194,6 +199,8 @@ public class CheckovSonarqubeRuleGeneratorTest {
 		final Map<String,String> map = new HashMap<>();
 		for (final CSVRecord csvRecord : records) {
 			if (csvRecord.isSet("Id") && "resource".equals(csvRecord.get("Type")) && !map.containsKey(csvRecord.get("IaC") +"-" + csvRecord.get("Id"))) {
+				
+				if (csvRecord.get("IaC").equalsIgnoreCase("cloudformation") ) {
 				String ruleEntryUntagged = XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("\"","&quot;");
 
 				for (final String key : NIST_POLICY_STRING_MAPPING.keySet()) {
@@ -205,6 +212,40 @@ public class CheckovSonarqubeRuleGeneratorTest {
 				System.out.println(ruleEntryUntagged);
 
 				map.put(csvRecord.get("IaC") +"-" + csvRecord.get("Id"),"");
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * Generate sonarqube rule definitions for checkov terraform test.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	@Test
+	public void generateSonarqubeRuleDefinitionsForCheckovTerraformTest() throws IOException {
+		final CSVParser parser = CSVParser.parse(new InputStreamReader(this.getClass().getResourceAsStream("/checkov/rules.txt"),StandardCharsets.UTF_8), CSVFormat.EXCEL.withHeader().withDelimiter('|').withTrim());
+		final List<CSVRecord> records = parser.getRecords();
+		assertFalse(records.isEmpty());
+		records.remove(0);
+		final Map<String,String> map = new HashMap<>();
+		for (final CSVRecord csvRecord : records) {
+			if (csvRecord.isSet("Id") && "resource".equals(csvRecord.get("Type")) && !map.containsKey(csvRecord.get("IaC") +"-" + csvRecord.get("Id"))) {
+				
+				if (csvRecord.get("IaC").equalsIgnoreCase("terraform")) {
+				String ruleEntryUntagged = XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("\"","&quot;");
+
+				for (final String key : NIST_POLICY_STRING_MAPPING.keySet()) {
+					if (ruleEntryUntagged.toLowerCase().contains(key.toLowerCase())) {
+						ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}",NIST_POLICY_STRING_MAPPING.get(key));
+					}
+				}
+				ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}","");
+				System.out.println(ruleEntryUntagged);
+
+				map.put(csvRecord.get("IaC") +"-" + csvRecord.get("Id"),"");
+				}
 			}
 		}
 

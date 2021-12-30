@@ -110,7 +110,7 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	 *
 	 * @param context the context
 	 * @param report the report
-	 * @throws IOException 
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private void handleCfnNagScanReports(final SensorContext context, final String report)
 			throws IOException {
@@ -147,7 +147,7 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 		if (templateInputFile != null) {
 
 			if (violation.getLineNumbers().isEmpty()) {
-				NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)));				
+				NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));				
 				NewIssueLocation location = newIssue.newLocation()
 			            .on(templateInputFile)
 			            .message(violation.getMessage());
@@ -157,14 +157,14 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 				final List<Integer> lineNumbers = violation.getLineNumbers();
 				for (final Integer line : lineNumbers) {
 					if (line != null && line >= 0) {
-						NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)));				
+						NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));				
 						NewIssueLocation location = newIssue.newLocation()
 					            .on(templateInputFile).at(templateInputFile.selectLine(line))
 					            .message(violation.getMessage());
 					    newIssue.at(location).save(); 
 						
 					} else {
-						NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cfn-" + templateInputFile.language(), findRuleId(activeRules, violation)));				
+						NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));				
 						NewIssueLocation location = newIssue.newLocation()
 					            .on(templateInputFile)
 					            .message(violation.getMessage());
@@ -173,7 +173,7 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 				}
 			}
 		} else {
-			NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cfn-yaml", findRuleId(activeRules, violation)));				
+			NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));				
 			NewIssueLocation location = newIssue.newLocation()
 		            .on(context.project())
 		            .message(violation.getMessage());
@@ -184,14 +184,14 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	/**
 	 * Find rule id.
 	 *
+	 * @param activeRules the active rules
 	 * @param violation the violation
 	 * @return the string
 	 */
 	private static String findRuleId(final ActiveRules activeRules, final CfnNagViolation violation) {
-		RuleKey ruleKeyYaml = RuleKey.of("cfn-yaml", violation.getId());
-		RuleKey ruleKeyJson = RuleKey.of("cfn-json", violation.getId());
+		RuleKey ruleKey = RuleKey.of("cloudformation-plugin-cfn", violation.getId());
 		
-		if (activeRules.find(ruleKeyYaml) != null || activeRules.find(ruleKeyJson) != null) {
+		if (activeRules.find(ruleKey) != null) {
 			return violation.getId();
 		} else {
 			if (violation.getId().startsWith("W")) {
