@@ -29514,7 +29514,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 130,
-            "checkov_version": "2.0.653"
+            "checkov_version": "2.0.707"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     },
@@ -29563,7 +29563,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 1,
-            "checkov_version": "2.0.653"
+            "checkov_version": "2.0.707"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     }

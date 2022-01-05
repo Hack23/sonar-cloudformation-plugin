@@ -1,6 +1,6 @@
 <rules>
 
-  <rule>
+    <rule>
 		<key>terraform-CKV_AWS_2</key>
 		<name>Ensure ALB protocol is HTTPS</name>
 		<internalKey>terraform-CKV_AWS_2</internalKey>
@@ -2890,6 +2890,39 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AWS_193</key>
+		<name>Ensure AppSync has Logging enabled</name>
+		<internalKey>terraform-CKV_AWS_193</internalKey>
+		<description>Ensure AppSync has Logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_194</key>
+		<name>Ensure AppSync has Field-Level logs enabled</name>
+		<internalKey>terraform-CKV_AWS_194</internalKey>
+		<description>Ensure AppSync has Field-Level logs enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AWS_1</key>
 		<name>Ensure that all NACL are attached to subnets</name>
 		<internalKey>terraform-CKV2_AWS_1</internalKey>
@@ -3084,21 +3117,6 @@
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
 		<tag>800-53-ac-4</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
-		<key>terraform-CKV2_AWS_13</key>
-		<name>Ensure that Redshift clusters has backup plan of AWS Backup</name>
-		<internalKey>terraform-CKV2_AWS_13</internalKey>
-		<description>Ensure that Redshift clusters has backup plan of AWS Backup</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>terraform</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -3335,6 +3353,21 @@
 		<name>Ensure CloudFront distribution has a strict security headers policy attached</name>
 		<internalKey>terraform-CKV2_AWS_32</internalKey>
 		<description>Ensure CloudFront distribution has a strict security headers policy attached</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_33</key>
+		<name>Ensure AppSync is protected by WAF</name>
+		<internalKey>terraform-CKV2_AWS_33</internalKey>
+		<description>Ensure AppSync is protected by WAF</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -4025,21 +4058,6 @@
 		<name>Ensure that no sensitive credentials are exposed in VM custom_data</name>
 		<internalKey>terraform-CKV_AZURE_45</internalKey>
 		<description>Ensure that no sensitive credentials are exposed in VM custom_data</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>terraform</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
-		<key>terraform-CKV_AZURE_46</key>
-		<name>Specifies a retention period of less than 90 days.</name>
-		<internalKey>terraform-CKV_AZURE_46</internalKey>
-		<description>Specifies a retention period of less than 90 days.</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -5356,6 +5374,54 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AZURE_133</key>
+		<name>Ensure Front Door WAF prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell</name>
+		<internalKey>terraform-CKV_AZURE_133</internalKey>
+		<description>Ensure Front Door WAF prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_134</key>
+		<name>Ensure that Cognitive Services accounts disable public network access</name>
+		<internalKey>terraform-CKV_AZURE_134</internalKey>
+		<description>Ensure that Cognitive Services accounts disable public network access</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_135</key>
+		<name>Ensure Application Gateway WAF prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell</name>
+		<internalKey>terraform-CKV_AZURE_135</internalKey>
+		<description>Ensure Application Gateway WAF prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AZURE_1</key>
 		<name>Ensure storage for critical data are encrypted with Customer Managed Key</name>
 		<internalKey>terraform-CKV2_AZURE_1</internalKey>
@@ -5676,6 +5742,21 @@
 		<tag>owasp-a10</tag>
 		<tag>cweid-778</tag>
 		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AZURE_22</key>
+		<name>Ensure that Cognitive Services enables customer-managed key for encryption</name>
+		<internalKey>terraform-CKV2_AZURE_22</internalKey>
+		<description>Ensure that Cognitive Services enables customer-managed key for encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -6826,6 +6907,21 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_GCP_73</key>
+		<name>Ensure Cloud Armor prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell</name>
+		<internalKey>terraform-CKV_GCP_73</internalKey>
+		<description>Ensure Cloud Armor prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_GCP_1</key>
 		<name>Ensure GKE clusters are not running using the Compute Engine default service account</name>
 		<internalKey>terraform-CKV2_GCP_1</internalKey>
@@ -6998,9 +7094,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_LIN_4</key>
-		<name>Ensure email is set</name>
+		<name>Ensure username is set</name>
 		<internalKey>terraform-CKV_LIN_4</internalKey>
-		<description>Ensure email is set</description>
+		<description>Ensure username is set</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>

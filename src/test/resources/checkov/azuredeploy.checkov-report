@@ -408,7 +408,11 @@
                 "check_name": "Ensure that 'Auditing' Retention is 'greater than 90 days' for SQL servers",
                 "check_result": {
                     "result": "FAILED",
-                    "evaluated_keys": []
+                    "evaluated_keys": [
+                        "resources/[3]/type",
+                        "resources/[3]/properties/state",
+                        "resources/[3]/properties/retentionDays"
+                    ]
                 },
                 "code_block": [
                     [
@@ -1208,7 +1212,7 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 7,
-        "checkov_version": "2.0.653"
+        "checkov_version": "2.0.707"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }

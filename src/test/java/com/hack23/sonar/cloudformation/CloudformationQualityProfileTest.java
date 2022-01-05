@@ -46,13 +46,13 @@ public class CloudformationQualityProfileTest extends Assert {
 		final BuiltInQualityProfile qualityProfile = context.profile("cloudformation","Cloudformation(cfn-nag,checkov) Rules");
 		assertNotNull(qualityProfile);
 		assertFalse(qualityProfile.isDefault());
-		assertEquals(275,qualityProfile.rules().size());
+		assertEquals(277,qualityProfile.rules().size());
 		}
 		{
 		final BuiltInQualityProfile qualityProfile = context.profile("terraform","Terraform(checkov) Rules");
 		assertNotNull(qualityProfile);
 		assertFalse(qualityProfile.isDefault());
-		assertEquals(467,qualityProfile.rules().size());
+		assertEquals(473,qualityProfile.rules().size());
 		}
 
 	}

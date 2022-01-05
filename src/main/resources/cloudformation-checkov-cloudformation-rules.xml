@@ -1,6 +1,6 @@
 <rules>
 
-   <rule>
+    <rule>
 		<key>cloudformation-CKV_AWS_2</key>
 		<name>Ensure ALB protocol is HTTPS</name>
 		<internalKey>cloudformation-CKV_AWS_2</internalKey>
@@ -1767,6 +1767,40 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_193</key>
+		<name>Ensure AppSync has Logging enabled</name>
+		<internalKey>cloudformation-CKV_AWS_193</internalKey>
+		<description>Ensure AppSync has Logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_194</key>
+		<name>Ensure AppSync has Field-Level logs enabled</name>
+		<internalKey>cloudformation-CKV_AWS_194</internalKey>
+		<description>Ensure AppSync has Field-Level logs enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+
 
 
 </rules>
