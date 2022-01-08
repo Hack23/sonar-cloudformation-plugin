@@ -41,7 +41,7 @@ public final class CheckovPassedCheck {
 
     /** The check result. */
     private Object checkResult;
-    
+
     /** The bc check id. */
     private String bcCheckId;
 
@@ -53,7 +53,7 @@ public final class CheckovPassedCheck {
 
     /** The repo file path. */
     private String repoFilePath;
-    
+
     /** The file line range. */
     private List<Integer> fileLineRange;
 
@@ -103,9 +103,9 @@ public final class CheckovPassedCheck {
 		this.checkId = checkId;
 	}
 
-	
-	
-	
+
+
+
 	/**
 	 * Gets the bc check id.
 	 *
@@ -121,7 +121,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param bcCheckId the new bc check id
 	 */
-	public void setBcCheckId(String bcCheckId) {
+	public void setBcCheckId(final String bcCheckId) {
 		this.bcCheckId = bcCheckId;
 	}
 
@@ -203,8 +203,8 @@ public final class CheckovPassedCheck {
 		this.filePath = filePath;
 	}
 
-	
-	
+
+
 	/**
 	 * Gets the repo file path.
 	 *

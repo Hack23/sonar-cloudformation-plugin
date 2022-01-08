@@ -46,7 +46,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 
 	/** The Constant PATH_TO_CHECKOV_TERRAFOM_RULES_XML. */
 	private static final String PATH_TO_CHECKOV_TERRAFOM_RULES_XML = "/cloudformation-checkov-terraform-rules.xml";
-	
+
 
 	/** The Constant KEY. */
 	public static final String KEY = "repo";
@@ -56,7 +56,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 
 	/** The context. */
 	private Context context;
-	
+
 	/** The xml loader. */
 	private final RulesDefinitionXmlLoader xmlLoader;
 
@@ -65,7 +65,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 	 *
 	 * @param xmlLoader the xml loader
 	 */
-	public CloudformationRulesDefinition(RulesDefinitionXmlLoader xmlLoader) {
+	public CloudformationRulesDefinition(final RulesDefinitionXmlLoader xmlLoader) {
 		super();
 		this.xmlLoader = xmlLoader;
 	}
@@ -96,7 +96,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 		repository.done();
 	}
 
-	
+
 	/**
 	 * Define rules for terraform.
 	 *
@@ -112,7 +112,7 @@ public final class CloudformationRulesDefinition implements RulesDefinition {
 		repository.done();
 	}
 
-	
+
 	/**
 	 * Adds the rules.
 	 *

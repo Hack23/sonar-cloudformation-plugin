@@ -80,7 +80,7 @@ public final class ModelSanityTest extends Assert {
 	 * @param string the string
 	 * @return true, if successful
 	 */
-	protected final boolean checkAllClassesInPackage(final String string) {
+	protected boolean checkAllClassesInPackage(final String string) {
 		final List<PojoClass> pojoClassesRecursively = PojoClassFactory.getPojoClassesRecursively(string,
 				new FilterTestClasses());
 
@@ -97,7 +97,7 @@ public final class ModelSanityTest extends Assert {
 	 * The Class FilterTestClasses.
 	 */
 	private static class FilterTestClasses implements PojoClassFilter {
-		
+
 		/**
 		 * Include.
 		 *
@@ -106,8 +106,7 @@ public final class ModelSanityTest extends Assert {
 		 */
 		@Override
 		public boolean include(final PojoClass pojoClass) {
-			return !(pojoClass.getSourcePath().contains("/test-classes/")
-					|| pojoClass.getClazz().getName().contains("_") || pojoClass.isEnum() || pojoClass.isAbstract())
+			return (!pojoClass.getSourcePath().contains("/test-classes/") && !pojoClass.getClazz().getName().contains("_") && !pojoClass.isEnum() && !pojoClass.isAbstract())
 					&& FilterPackageInfo.include(pojoClass);
 		}
 	}
@@ -116,7 +115,7 @@ public final class ModelSanityTest extends Assert {
 	 * The Class InvokeToStringTester.
 	 */
 	private static class InvokeToStringTester implements Tester {
-		
+
 		/**
 		 * Run.
 		 *
@@ -133,7 +132,7 @@ public final class ModelSanityTest extends Assert {
 	 * The Class InvokeHashcodeTester.
 	 */
 	private static class InvokeHashcodeTester implements Tester {
-		
+
 		/**
 		 * Run.
 		 *
@@ -150,7 +149,7 @@ public final class ModelSanityTest extends Assert {
 	 * The Class DummyEqualsTester.
 	 */
 	private static class DummyEqualsTester implements Tester {
-		
+
 		/**
 		 * Run.
 		 *
@@ -161,7 +160,7 @@ public final class ModelSanityTest extends Assert {
 			final Object instance = randomValues(pojoClass);
 
 			Affirm.affirmFalse("EqualsCompareNullFailure", instance.equals(null));
-			Affirm.affirmFalse("EqualsCompareWrongClassFailure", instance.equals("WrongClass"));
+			Affirm.affirmFalse("EqualsCompareWrongClassFailure", "WrongClass".equals(instance));
 			Affirm.affirmTrue("EqualsCompareSelfFailure", instance.equals(instance));
 
 			final Object instance2 = randomValues(pojoClass);

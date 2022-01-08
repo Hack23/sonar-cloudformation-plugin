@@ -115,9 +115,9 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 
 		final List<CheckovReport> checkovReportList = checkovReportReader
 				.readReport(Files.newInputStream(pathResolver.relativeFile(fileSystem.baseDir(), report).toPath()));
-		
 
-		for (CheckovReport checkovReport : checkovReportList) {
+
+		for (final CheckovReport checkovReport : checkovReportList) {
 
 			final ActiveRules activeRules = context.activeRules();
 			for (final CheckovPassedCheck failedChecks : checkovReport.getResults().getFailedChecks()) {
@@ -125,7 +125,7 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 				LOGGER.info("Checkov scanned file :{}", filename);
 
 				final InputFile templateInputFile = findTemplate(fileSystem,
-						filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
+						filename.substring(filename.lastIndexOf(File.separator) + 1), filename);
 
 				addCheckovIssue(context, activeRules, checkovReport, failedChecks, templateInputFile);
 			}
@@ -145,17 +145,17 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 			final CheckovPassedCheck failedChecks, final InputFile templateInputFile) {
 
 		String repoName = "cloudformation-plugin-cfn";
-		if (templateInputFile != null && templateInputFile.language().equalsIgnoreCase("terraform")) {
+		if (templateInputFile != null && "terraform".equalsIgnoreCase(templateInputFile.language())) {
 			repoName = "cloudformation-plugin-terraform";
 		}
-		
+
 		final RuleKey ruleKey = RuleKey.of(repoName,checkovReport.getCheckType() + "-" + failedChecks.getCheckId());
-	
+
 		if (activeRules.find(ruleKey) == null) {
 			LOGGER.warn("No active checkov rule detected for:'{}' with key {} detected in {}",failedChecks.getCheckName(), ruleKey,failedChecks.getFilePath());
 			return;
 		}
-		
+
 		if (templateInputFile == null) {
 			LOGGER.warn("File not found {} for rule {} issue not created", failedChecks.getFilePath(), ruleKey);
 			return;
@@ -165,12 +165,12 @@ public final class CheckovProcessReports extends AbstractProcessReports {
 		if(!lineNumbers.isEmpty()) {
 			final TextPointer startLine = templateInputFile.selectLine(lineNumbers.get(0)).start();
 			final TextPointer endLine = templateInputFile.selectLine(lineNumbers.get(lineNumbers.size()-1)).end();
-			NewIssue newIssue = context.newIssue().forRule(ruleKey);
-			
-			NewIssueLocation location = newIssue.newLocation()
+			final NewIssue newIssue = context.newIssue().forRule(ruleKey);
+
+			final NewIssueLocation location = newIssue.newLocation()
 		            .on(templateInputFile).at(templateInputFile.newRange(startLine, endLine))
 		            .message(failedChecks.getCheckName());
-		    newIssue.at(location).save(); 
+		    newIssue.at(location).save();
 		}
 	}
 

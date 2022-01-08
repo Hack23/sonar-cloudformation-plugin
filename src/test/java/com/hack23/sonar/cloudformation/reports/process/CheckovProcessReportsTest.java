@@ -65,11 +65,11 @@ public class CheckovProcessReportsTest extends Assert {
 
 		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
-		ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cloudformation-plugin-cfn","cloudformation-CKV_AWS_8")).build()));
-		sensorContext.setActiveRules(activeRules);		
-				
-		
+		sensorContext.fileSystem().add(inputFile);
+		final ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cloudformation-plugin-cfn","cloudformation-CKV_AWS_8")).build()));
+		sensorContext.setActiveRules(activeRules);
+
+
 		cloudformationSensor.processCheckovReport(sensorContext,
 				Optional.of("src/test/resources/checkov/cia-dist-cloudformation.checkov-report"));
 		assertFalse(sensorContext.allIssues().isEmpty());
@@ -91,8 +91,8 @@ public class CheckovProcessReportsTest extends Assert {
 		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
 
-		ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cfn-yaml","cloudformation-CKV_AWS_111")).build()));
-		sensorContext.setActiveRules(activeRules);		
+		final ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cfn-yaml","cloudformation-CKV_AWS_111")).build()));
+		sensorContext.setActiveRules(activeRules);
 
 		cloudformationSensor.processCheckovReport(sensorContext,
 				Optional.of("src/test/resources/checkov/cia-dist-cloudformation.checkov-report"));

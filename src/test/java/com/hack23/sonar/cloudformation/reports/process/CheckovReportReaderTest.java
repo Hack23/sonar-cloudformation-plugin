@@ -59,7 +59,7 @@ public class CheckovReportReaderTest extends Assert {
 		assertNotNull(checkovReport.get(0).getSummary());
 		assertNotNull(checkovReport.get(0).getResults());
 	}
-	
+
 	/**
 	 * Read arm report test.
 	 */
@@ -72,9 +72,9 @@ public class CheckovReportReaderTest extends Assert {
 		assertNotNull(checkovReport.get(0).getSummary());
 		assertNotNull(checkovReport.get(0).getResults());
 	}
-	
 
-	
+
+
 	/**
 	 * Read report failure test.
 	 */

@@ -97,31 +97,31 @@ public class CheckovSonarqubeRuleGeneratorTest {
 
 	/** The Constant DETECT_SC_13. */
 	private static final String DETECT_SC_13 ="encrypted at rest";
-	
+
 	/** The Constant DETECT2_SC_13. */
 	private static final String DETECT2_SC_13 ="securely encrypted";
-	
+
 	/** The Constant SC_13_TAGS. */
 	private static final String SC_13_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-311</tag>\n		<tag>800-53-sc-13</tag>";
 
 	/** The Constant DETECT_SC_12. */
 	private static final String DETECT_SC_12 ="Ensure rotation";
-	
+
 	/** The Constant SC_12_TAGS. */
 	private static final String SC_12_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-320</tag>\n		<tag>800-53-sc-12</tag>";
-	
+
 	/** The Constant DETECT_SC_8. */
 	private static final String DETECT_SC_8 ="encryption transit";
-	
+
 	/** The Constant DETECT2_SC_8. */
 	private static final String DETECT2_SC_8 ="https";
-	
+
 	/** The Constant DETECT3_SC_8. */
 	private static final String DETECT3_SC_8 ="uses SSL";
 
 	/** The Constant DETECT4_SC_8. */
 	private static final String DETECT4_SC_8 ="node-to-node encryption";
-	
+
 	/** The Constant SC_8_TAGS. */
 	private static final String SC_8_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-311</tag>\n		<tag>800-53-sc-8</tag>";
 
@@ -130,40 +130,40 @@ public class CheckovSonarqubeRuleGeneratorTest {
 
 	/** The Constant DETECT_IA_5. */
 	private static final String DETECT_IA_5 ="IAM password policy";
-	
+
 	/** The Constant IA_5_TAGS. */
 	private static final String IA_5_TAGS ="\n		<tag>owasp-a3</tag>\n		<tag>cweid-257</tag>\n		<tag>800-53-ia-5</tag>";
-	
+
 	/** The Constant AC_6_TAGS. */
 	private static final String AC_6_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-272</tag>\n		<tag>800-53-ac-6</tag>";
 
 	/** The Constant DETECT_AC_4_GROUP. */
 	private static final String DETECT_AC_4_GROUP ="security group";
-	
+
 	/** The Constant AC_4_TAGS_GROUP. */
 	private static final String AC_4_TAGS_GROUP ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-732</tag>\n		<tag>800-53-ac-4</tag>";
 
 	/** The Constant DETECT_AC_4. */
 	private static final String DETECT_AC_4 ="public";
-	
+
 	/** The Constant AC_4_TAGS. */
 	private static final String AC_4_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-732</tag>\n		<tag>800-53-ac-4</tag>";
-	
+
 	/** The Constant DETECT_AU_12. */
 	private static final String DETECT_AU_12 ="logging";
-	
+
 	/** The Constant AU_12_TAGS. */
 	private static final String AU_12_TAGS ="\n		<tag>owasp-a10</tag>\n		<tag>cweid-778</tag>\n		<tag>800-53-au-12</tag>";
 
 	/** The Constant DETECT_CP_9. */
 	private static final String DETECT_CP_9 ="retention backup";
-	
+
 	/** The Constant CP_9_TAGS. */
 	private static final String CP_9_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-693</tag>\n		<tag>800-53-cp-9</tag>";
 
 	/** The Constant DETECT_AU_11. */
 	private static final String DETECT_AU_11 ="retention log";
-	
+
 	/** The Constant AU_11_TAGS. */
 	private static final String AU_11_TAGS ="\n		<tag>owasp-a6</tag>\n		<tag>cweid-779</tag>\n		<tag>800-53-au-11</tag>";
 
@@ -174,9 +174,9 @@ public class CheckovSonarqubeRuleGeneratorTest {
 		NIST_POLICY_STRING_MAPPING.put(DETECT_SC_8,SC_8_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT2_SC_8,SC_8_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT3_SC_8,SC_8_TAGS);
-		NIST_POLICY_STRING_MAPPING.put(DETECT4_SC_8,SC_8_TAGS);		
+		NIST_POLICY_STRING_MAPPING.put(DETECT4_SC_8,SC_8_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT_IA_5,IA_5_TAGS);
-		NIST_POLICY_STRING_MAPPING.put(DETECT_AC_6,AC_6_TAGS);		
+		NIST_POLICY_STRING_MAPPING.put(DETECT_AC_6,AC_6_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT_AC_4,AC_4_TAGS);
 		NIST_POLICY_STRING_MAPPING.put(DETECT_AC_4_GROUP,AC_4_TAGS_GROUP);
 		NIST_POLICY_STRING_MAPPING.put(DETECT_AU_12,AU_12_TAGS);
@@ -198,21 +198,18 @@ public class CheckovSonarqubeRuleGeneratorTest {
 		records.remove(0);
 		final Map<String,String> map = new HashMap<>();
 		for (final CSVRecord csvRecord : records) {
-			if (csvRecord.isSet("Id") && "resource".equals(csvRecord.get("Type")) && !map.containsKey(csvRecord.get("IaC") +"-" + csvRecord.get("Id"))) {
-				
-				if (csvRecord.get("IaC").equalsIgnoreCase("cloudformation") ) {
-				String ruleEntryUntagged = XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("\"","&quot;");
+			if ((csvRecord.isSet("Id") && "resource".equals(csvRecord.get("Type")) && !map.containsKey(csvRecord.get("IaC") +"-" + csvRecord.get("Id"))) && "cloudformation".equalsIgnoreCase(csvRecord.get("IaC")) ) {
+			String ruleEntryUntagged = XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("\"","&quot;");
 
-				for (final String key : NIST_POLICY_STRING_MAPPING.keySet()) {
-					if (ruleEntryUntagged.toLowerCase().contains(key.toLowerCase())) {
-						ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}",NIST_POLICY_STRING_MAPPING.get(key));
-					}
+			for (final String key : NIST_POLICY_STRING_MAPPING.keySet()) {
+				if (ruleEntryUntagged.toLowerCase().contains(key.toLowerCase())) {
+					ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}",NIST_POLICY_STRING_MAPPING.get(key));
 				}
-				ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}","");
-				System.out.println(ruleEntryUntagged);
+			}
+			ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}","");
+			System.out.println(ruleEntryUntagged);
 
-				map.put(csvRecord.get("IaC") +"-" + csvRecord.get("Id"),"");
-				}
+			map.put(csvRecord.get("IaC") +"-" + csvRecord.get("Id"),"");
 			}
 		}
 
@@ -231,21 +228,18 @@ public class CheckovSonarqubeRuleGeneratorTest {
 		records.remove(0);
 		final Map<String,String> map = new HashMap<>();
 		for (final CSVRecord csvRecord : records) {
-			if (csvRecord.isSet("Id") && "resource".equals(csvRecord.get("Type")) && !map.containsKey(csvRecord.get("IaC") +"-" + csvRecord.get("Id"))) {
-				
-				if (csvRecord.get("IaC").equalsIgnoreCase("terraform")) {
-				String ruleEntryUntagged = XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("\"","&quot;");
+			if ((csvRecord.isSet("Id") && "resource".equals(csvRecord.get("Type")) && !map.containsKey(csvRecord.get("IaC") +"-" + csvRecord.get("Id"))) && "terraform".equalsIgnoreCase(csvRecord.get("IaC"))) {
+			String ruleEntryUntagged = XML_ENTRY.replace("{RULE_ID}",csvRecord.get("Id")).replace("{NAME}",csvRecord.get("Policy")).replace("{IaC}",csvRecord.get("IaC").toLowerCase()).replace("\"","&quot;");
 
-				for (final String key : NIST_POLICY_STRING_MAPPING.keySet()) {
-					if (ruleEntryUntagged.toLowerCase().contains(key.toLowerCase())) {
-						ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}",NIST_POLICY_STRING_MAPPING.get(key));
-					}
+			for (final String key : NIST_POLICY_STRING_MAPPING.keySet()) {
+				if (ruleEntryUntagged.toLowerCase().contains(key.toLowerCase())) {
+					ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}",NIST_POLICY_STRING_MAPPING.get(key));
 				}
-				ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}","");
-				System.out.println(ruleEntryUntagged);
+			}
+			ruleEntryUntagged = ruleEntryUntagged.replace("{EXTRA_TAGS}","");
+			System.out.println(ruleEntryUntagged);
 
-				map.put(csvRecord.get("IaC") +"-" + csvRecord.get("Id"),"");
-				}
+			map.put(csvRecord.get("IaC") +"-" + csvRecord.get("Id"),"");
 			}
 		}
 

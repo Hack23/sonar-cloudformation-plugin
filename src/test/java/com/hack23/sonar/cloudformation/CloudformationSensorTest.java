@@ -91,7 +91,7 @@ public class CloudformationSensorTest extends Assert {
 
 		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
+		sensorContext.fileSystem().add(inputFile);
 		sensorContext.setActiveRules(new DefaultActiveRules(Arrays.asList()));
 		cloudformationSensor.execute(sensorContext);
 		assertFalse(sensorContext.allIssues().isEmpty());
@@ -128,11 +128,11 @@ public class CloudformationSensorTest extends Assert {
 
 		final SensorContextTester sensorContext = SensorContextTester
 				.create(FileSystems.getDefault().getPath(".").toAbsolutePath());
-		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
-		ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cloudformation-plugin-cfn","cloudformation-CKV_AWS_8")).build()));
-		sensorContext.setActiveRules(activeRules);		
+		sensorContext.fileSystem().add(inputFile);
+		final ActiveRules activeRules = new DefaultActiveRules(Arrays.asList(new NewActiveRule.Builder().setRuleKey(RuleKey.of("cloudformation-plugin-cfn","cloudformation-CKV_AWS_8")).build()));
+		sensorContext.setActiveRules(activeRules);
 		cloudformationSensor.execute(sensorContext);
-		
+
 		assertFalse(sensorContext.allIssues().isEmpty());
 		assertEquals(1,sensorContext.allIssues().size());
 	}

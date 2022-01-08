@@ -58,14 +58,14 @@ public class CheckovReportReader {
 		} catch (final IOException e) {
 
 			try {
-				CheckovReport checkovReport = objectMapper.readValue(report, CheckovReport.class);
+				final CheckovReport checkovReport = objectMapper.readValue(report, CheckovReport.class);
 				final List<CheckovReport> reportList = new ArrayList<>();
 				reportList.add(checkovReport);
 				return reportList;
 			} catch (final IOException e2) {
 				LOGGER.warn("Problem reading checkov report json:{}", e2.getMessage());
 				return new ArrayList<>();
-			}			
+			}
 		}
 	}
 }

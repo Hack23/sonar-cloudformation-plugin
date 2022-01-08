@@ -28,7 +28,7 @@ import org.sonar.api.server.rule.RulesDefinition.Rule;
  */
 public final class CloudformationQualityProfile implements BuiltInQualityProfilesDefinition {
 
-	
+
 	/** The Constant CLOUDFORMATION_RULES. */
 	private static final String CLOUDFORMATION_RULES = "Cloudformation(cfn-nag,checkov) Rules";
 
@@ -65,7 +65,7 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 		createCloudformationQualityProfile(context, "cloudformation");
 		createTerraformQualityProfile(context, "terraform");
 	}
-	
+
 
 	/**
 	 * Creates the terraform quality profile.
@@ -101,7 +101,7 @@ public final class CloudformationQualityProfile implements BuiltInQualityProfile
 				for (final Rule rule : repository.rules()) {
 					if (rule.tags().contains(CLOUDFORMATION) || rule.tags().contains(SERVERLESS) || rule.tags().contains("cfn-nag")) {
 						cloudFormationprofile.activateRule(repository.key(), rule.key());
-					} 
+					}
 				}
 			}
 		}

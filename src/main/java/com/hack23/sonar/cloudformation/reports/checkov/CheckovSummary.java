@@ -39,7 +39,7 @@ public final class CheckovSummary {
 
     /** The skipped. */
     private int skipped;
-    
+
     /** The resource count. */
     private int resourceCount;
 
@@ -139,7 +139,7 @@ public final class CheckovSummary {
 	 *
 	 * @param resourceCount the new resource count
 	 */
-	public void setResourceCount(int resourceCount) {
+	public void setResourceCount(final int resourceCount) {
 		this.resourceCount = resourceCount;
 	}
 

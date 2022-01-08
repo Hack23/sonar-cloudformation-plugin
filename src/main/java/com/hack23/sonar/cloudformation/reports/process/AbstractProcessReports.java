@@ -31,7 +31,7 @@ import org.sonar.api.batch.fs.InputFile;
  */
 abstract class AbstractProcessReports {
 
-	
+
 	/**
 	 * Find template.
 	 *

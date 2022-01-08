@@ -124,7 +124,7 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 			LOGGER.info("Cfn-nag scanned file :{}", filename);
 
 			final InputFile templateInputFile = findTemplate(fileSystem,
-					filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length()), filename);
+					filename.substring(filename.lastIndexOf(File.separator) + 1), filename);
 
 			final List<CfnNagViolation> violations = nagScanReport.getFileResults().getViolations();
 			for (final CfnNagViolation cfnNagViolation : violations) {
@@ -147,37 +147,37 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 		if (templateInputFile != null) {
 
 			if (violation.getLineNumbers().isEmpty()) {
-				NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));				
-				NewIssueLocation location = newIssue.newLocation()
+				final NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));
+				final NewIssueLocation location = newIssue.newLocation()
 			            .on(templateInputFile)
 			            .message(violation.getMessage());
-			    newIssue.at(location).save(); 
-						
+			    newIssue.at(location).save();
+
 			} else {
 				final List<Integer> lineNumbers = violation.getLineNumbers();
 				for (final Integer line : lineNumbers) {
 					if (line != null && line >= 0) {
-						NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));				
-						NewIssueLocation location = newIssue.newLocation()
+						final NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));
+						final NewIssueLocation location = newIssue.newLocation()
 					            .on(templateInputFile).at(templateInputFile.selectLine(line))
 					            .message(violation.getMessage());
-					    newIssue.at(location).save(); 
-						
+					    newIssue.at(location).save();
+
 					} else {
-						NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));				
-						NewIssueLocation location = newIssue.newLocation()
+						final NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));
+						final NewIssueLocation location = newIssue.newLocation()
 					            .on(templateInputFile)
 					            .message(violation.getMessage());
-					    newIssue.at(location).save(); 
+					    newIssue.at(location).save();
 					}
 				}
 			}
 		} else {
-			NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));				
-			NewIssueLocation location = newIssue.newLocation()
+			final NewIssue newIssue = context.newIssue().forRule(RuleKey.of("cloudformation-plugin-cfn", findRuleId(activeRules, violation)));
+			final NewIssueLocation location = newIssue.newLocation()
 		            .on(context.project())
 		            .message(violation.getMessage());
-		    newIssue.at(location).save(); 
+		    newIssue.at(location).save();
 		}
 	}
 
@@ -189,8 +189,8 @@ public final class CfnNagProcessReports extends AbstractProcessReports {
 	 * @return the string
 	 */
 	private static String findRuleId(final ActiveRules activeRules, final CfnNagViolation violation) {
-		RuleKey ruleKey = RuleKey.of("cloudformation-plugin-cfn", violation.getId());
-		
+		final RuleKey ruleKey = RuleKey.of("cloudformation-plugin-cfn", violation.getId());
+
 		if (activeRules.find(ruleKey) != null) {
 			return violation.getId();
 		} else {
