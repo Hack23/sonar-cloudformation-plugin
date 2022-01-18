@@ -1,5 +1,5 @@
 # sonar-cloudformation-plugin
-Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) and checkov (https://github.com/bridgecrewio/checkov) add support for other infrastructure-as-code-languages Terraform, Terraform plan, Kubernetes, Serverless or ARM Templates.
+Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) and checkov (https://github.com/bridgecrewio/checkov) add support Cloudformation and Terraform.
 
 [![license](https://img.shields.io/github/license/Hack23/sonar-cloudformation-plugin.svg)](https://github.com/Hack23/sonar-cloudformation-plugin/raw/master/LICENSE.txt)
 [![Maven Central](https://img.shields.io/maven-central/v/com.hack23.sonar/sonar-cloudformation-plugin.svg)](http://mvnrepository.com/artifact/com.hack23.sonar/sonar-cloudformation-plugin)
@@ -19,9 +19,8 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) a
 # Runtime
 
 [![JDK-8](https://img.shields.io/badge/jdk-8-green.svg)]
-[![JDK-11 or higher](https://img.shields.io/badge/jdk-11-green.svg)]
-[![JDK-12](https://img.shields.io/badge/jdk-12-orange.svg)]
-[![JDK-13](https://img.shields.io/badge/jdk-13-orange.svg)]
+[![JDK-11](https://img.shields.io/badge/jdk-11-green.svg)]
+[![JDK-17 or higher](https://img.shields.io/badge/jdk-17-green.svg)]
 
 
 ## Compatibility
@@ -29,7 +28,7 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) a
 This plugin is compatible:
 
  * 1.7.3(EOL) versions with SonarQube >= 7.6 and <= 8.9.x. (Defines cloudformation language only supports cfn-nag)
- * 2.1.8 versions with SonarQube >= 7.9 and <= 8.9.x. (Requires json or/and yaml plugin supports cfn-nag/checkov)
+ * 2.1.8(EOL) versions with SonarQube >= 7.9 and <= 8.9.x. (Requires json or/and yaml plugin supports cfn-nag/checkov)
  * 3.x version with SonarQube >= 9.2 (Uses built in support for terraform/cloudformation supports cfn-nag/checkov)
 
 
