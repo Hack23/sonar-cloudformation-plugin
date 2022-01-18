@@ -24,31 +24,29 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) a
 [![JDK-13](https://img.shields.io/badge/jdk-13-orange.svg)]
 
 
+## Compatibility
+
+This plugin is compatible:
+
+ * 1.7.3(EOL) versions with SonarQube >= 7.6 and <= 8.9.x. (Defines cloudformation language only supports cfn-nag)
+ * 2.1.8 versions with SonarQube >= 7.9 and <= 8.9.x. (Requires json or/and yaml plugin supports cfn-nag/checkov)
+ * 3.x version with SonarQube >= 9.2 (Uses built in support for terraform/cloudformation supports cfn-nag/checkov)
+
+
 # Demo links
 
-Demo Sonarqube quality profile(Cloudformation) : https://www.hack23.com/sonar/profiles/show?language=yaml&name=Cloudformation+Rules
+Demo Sonarqube quality profile(Cloudformation) : https://www.hack23.com/sonar/profiles/show?language=cloudformation&name=Cloudformation%28cfn-nag%2Ccheckov%29+Rules
 
-Demo Sonarqube quality profile(IAC) : https://www.hack23.com/sonar/profiles/show?language=yaml&name=IAC+Rules
+Demo Sonarqube quality profile(Terraform) : https://www.hack23.com/sonar/profiles/show?language=terraform&name=Terraform%28checkov%29+Rules
 
-Demo Sonarqube quality rules : https://www.hack23.com/sonar/coding_rules?languages=yaml&repositories=cfn-yaml
+Demo Sonarqube quality rules : https://www.hack23.com/sonar/coding_rules?repositories=cloudformation-plugin-cfn%2Ccloudformation-plugin-terraform
 
-Demo Sonarqube quality issues : https://www.hack23.com/sonar/code?id=com.hack23.sonar%3Atest-project-with-reports&selected=com.hack23.sonar%3Atest-project-with-reports%3Asrc%2Fmain%2Fconfig
+Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=com.hack23.sonar%3Atest-project-with-reports&resolved=false&sinceLeakPeriod=false&types=VULNERABILITY
 
-
-# Support
-
-Sonarqube 7.7+ and supports cfn_nag (https://github.com/stelligent/cfn_nag) and checkov (https://github.com/bridgecrewio/checkov) reports
-
-Requires Yaml plugin and optional Json plugin if json is used for cloudformation templates.
-Yaml plugin https://github.com/sbaudoin/sonar-yaml
-Json plugin https://github.com/racodond/sonar-json-plugin
-
-or https://mvnrepository.com/artifact/org.sonarsource.config/sonar-config-plugin that add support for json/yaml languages.
 
 # Configuration of Quality profiles
 
-The Cloudformation rules will be added as Quality profile for yaml https://www.hack23.com/sonar/profiles/show?language=yaml&name=Cloudformation+Rules and/or json https://www.hack23.com/sonar/profiles/show?language=json&name=Cloudformation+Rules .
-The rules need to be enabled on the Quality profile if another one is used.
+The Cloudformation/Terraform rules can added as Quality profile you decided to use.
  
 
 # Howto
@@ -176,10 +174,6 @@ A.14 System acquisition, dev & maintenance A.14.2 Security in Dev & Support
 https://www.isms.online/iso-27001/annex-a-18-compliance/
 
 A.18 Compliance A.18.1 Compliance with Legal and Regulatory Reqs
-
-# Roadmap
-
-Support more cloudformation checkers and add more rules for cfn_nag. 
 
 ## License
 [![FOSSA Details](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin?ref=badge_large)
