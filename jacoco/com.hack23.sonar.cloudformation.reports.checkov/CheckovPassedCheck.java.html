@@ -41,7 +41,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
     /** The check result. */
     private Object checkResult;
-    
+
+    /** The bc check id. */
     private String bcCheckId;
 
     /** The code block. */
@@ -52,7 +53,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
     /** The repo file path. */
     private String repoFilePath;
-    
+
     /** The file line range. */
     private List&lt;Integer&gt; fileLineRange;
 
@@ -90,7 +91,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;check_id&quot;)
 	public String getCheckId() {
-<span class="fc" id="L93">		return checkId;</span>
+<span class="fc" id="L94">		return checkId;</span>
 	}
 
 	/**
@@ -99,12 +100,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param checkId the new check id
 	 */
 	public void setCheckId(final String checkId) {
-<span class="fc" id="L102">		this.checkId = checkId;</span>
-<span class="fc" id="L103">	}</span>
+<span class="fc" id="L103">		this.checkId = checkId;</span>
+<span class="fc" id="L104">	}</span>
 
-	
-	
-	
+
+
+
 	/**
 	 * Gets the bc check id.
 	 *
@@ -112,7 +113,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;bc_check_id&quot;)
 	public String getBcCheckId() {
-<span class="fc" id="L115">		return bcCheckId;</span>
+<span class="fc" id="L116">		return bcCheckId;</span>
 	}
 
 	/**
@@ -120,9 +121,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 *
 	 * @param bcCheckId the new bc check id
 	 */
-	public void setBcCheckId(String bcCheckId) {
-<span class="fc" id="L124">		this.bcCheckId = bcCheckId;</span>
-<span class="fc" id="L125">	}</span>
+	public void setBcCheckId(final String bcCheckId) {
+<span class="fc" id="L125">		this.bcCheckId = bcCheckId;</span>
+<span class="fc" id="L126">	}</span>
 
 	/**
 	 * Gets the check name.
@@ -131,7 +132,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;check_name&quot;)
 	public String getCheckName() {
-<span class="fc" id="L134">		return checkName;</span>
+<span class="fc" id="L135">		return checkName;</span>
 	}
 
 	/**
@@ -140,8 +141,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param checkName the new check name
 	 */
 	public void setCheckName(final String checkName) {
-<span class="fc" id="L143">		this.checkName = checkName;</span>
-<span class="fc" id="L144">	}</span>
+<span class="fc" id="L144">		this.checkName = checkName;</span>
+<span class="fc" id="L145">	}</span>
 
 	/**
 	 * Gets the check result.
@@ -150,7 +151,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;check_result&quot;)
 	public Object getCheckResult() {
-<span class="fc" id="L153">		return checkResult;</span>
+<span class="fc" id="L154">		return checkResult;</span>
 	}
 
 	/**
@@ -159,8 +160,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param checkResult the new check result
 	 */
 	public void setCheckResult(final Object checkResult) {
-<span class="fc" id="L162">		this.checkResult = checkResult;</span>
-<span class="fc" id="L163">	}</span>
+<span class="fc" id="L163">		this.checkResult = checkResult;</span>
+<span class="fc" id="L164">	}</span>
 
 	/**
 	 * Gets the code block.
@@ -169,7 +170,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;code_block&quot;)
 	public List&lt;Object&gt; getCodeBlock() {
-<span class="fc" id="L172">		return codeBlock;</span>
+<span class="fc" id="L173">		return codeBlock;</span>
 	}
 
 	/**
@@ -178,8 +179,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param codeBlock the new code block
 	 */
 	public void setCodeBlock(final List&lt;Object&gt; codeBlock) {
-<span class="fc" id="L181">		this.codeBlock = codeBlock;</span>
-<span class="fc" id="L182">	}</span>
+<span class="fc" id="L182">		this.codeBlock = codeBlock;</span>
+<span class="fc" id="L183">	}</span>
 
 
 
@@ -190,7 +191,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;file_path&quot;)
 	public String getFilePath() {
-<span class="fc" id="L193">		return filePath;</span>
+<span class="fc" id="L194">		return filePath;</span>
 	}
 
 	/**
@@ -199,11 +200,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param filePath the new file path
 	 */
 	public void setFilePath(final String filePath) {
-<span class="fc" id="L202">		this.filePath = filePath;</span>
-<span class="fc" id="L203">	}</span>
+<span class="fc" id="L203">		this.filePath = filePath;</span>
+<span class="fc" id="L204">	}</span>
 
-	
-	
+
+
 	/**
 	 * Gets the repo file path.
 	 *
@@ -211,7 +212,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;repo_file_path&quot;)
 	public String getRepoFilePath() {
-<span class="fc" id="L214">		return repoFilePath;</span>
+<span class="fc" id="L215">		return repoFilePath;</span>
 	}
 
 	/**
@@ -220,8 +221,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param repoFilePath the new repo file path
 	 */
 	public void setRepoFilePath(final String repoFilePath) {
-<span class="fc" id="L223">		this.repoFilePath = repoFilePath;</span>
-<span class="fc" id="L224">	}</span>
+<span class="fc" id="L224">		this.repoFilePath = repoFilePath;</span>
+<span class="fc" id="L225">	}</span>
 
 	/**
 	 * Gets the file line range.
@@ -230,7 +231,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;file_line_range&quot;)
 	public List&lt;Integer&gt; getFileLineRange() {
-<span class="fc" id="L233">		return fileLineRange;</span>
+<span class="fc" id="L234">		return fileLineRange;</span>
 	}
 
 	/**
@@ -239,8 +240,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param fileLineRange the new file line range
 	 */
 	public void setFileLineRange(final List&lt;Integer&gt; fileLineRange) {
-<span class="fc" id="L242">		this.fileLineRange = fileLineRange;</span>
-<span class="fc" id="L243">	}</span>
+<span class="fc" id="L243">		this.fileLineRange = fileLineRange;</span>
+<span class="fc" id="L244">	}</span>
 
 	/**
 	 * Gets the resource.
@@ -248,7 +249,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @return the resource
 	 */
 	public String getResource() {
-<span class="fc" id="L251">		return resource;</span>
+<span class="fc" id="L252">		return resource;</span>
 	}
 
 	/**
@@ -257,8 +258,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param resource the new resource
 	 */
 	public void setResource(final String resource) {
-<span class="fc" id="L260">		this.resource = resource;</span>
-<span class="fc" id="L261">	}</span>
+<span class="fc" id="L261">		this.resource = resource;</span>
+<span class="fc" id="L262">	}</span>
 
 	/**
 	 * Gets the evaluations.
@@ -266,7 +267,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @return the evaluations
 	 */
 	public Object getEvaluations() {
-<span class="fc" id="L269">		return evaluations;</span>
+<span class="fc" id="L270">		return evaluations;</span>
 	}
 
 	/**
@@ -275,8 +276,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param evaluations the new evaluations
 	 */
 	public void setEvaluations(final Object evaluations) {
-<span class="fc" id="L278">		this.evaluations = evaluations;</span>
-<span class="fc" id="L279">	}</span>
+<span class="fc" id="L279">		this.evaluations = evaluations;</span>
+<span class="fc" id="L280">	}</span>
 
 	/**
 	 * Gets the check class.
@@ -285,7 +286,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;check_class&quot;)
 	public String getCheckClass() {
-<span class="fc" id="L288">		return checkClass;</span>
+<span class="fc" id="L289">		return checkClass;</span>
 	}
 
 	/**
@@ -294,8 +295,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param checkClass the new check class
 	 */
 	public void setCheckClass(final String checkClass) {
-<span class="fc" id="L297">		this.checkClass = checkClass;</span>
-<span class="fc" id="L298">	}</span>
+<span class="fc" id="L298">		this.checkClass = checkClass;</span>
+<span class="fc" id="L299">	}</span>
 
 	/**
 	 * Gets the guideline.
@@ -303,7 +304,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @return the guideline
 	 */
 	public String getGuideline() {
-<span class="fc" id="L306">		return guideline;</span>
+<span class="fc" id="L307">		return guideline;</span>
 	}
 
 	/**
@@ -312,8 +313,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param guideline the new guideline
 	 */
 	public void setGuideline(final String guideline) {
-<span class="fc" id="L315">		this.guideline = guideline;</span>
-<span class="fc" id="L316">	}</span>
+<span class="fc" id="L316">		this.guideline = guideline;</span>
+<span class="fc" id="L317">	}</span>
 
     /**
      * Gets the file abs path.
@@ -322,7 +323,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
      */
     @JsonProperty(&quot;file_abs_path&quot;)
 	public String getFileAbsPath() {
-<span class="fc" id="L325">		return fileAbsPath;</span>
+<span class="fc" id="L326">		return fileAbsPath;</span>
 	}
 
 	/**
@@ -331,8 +332,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param fileAbsPath the new file abs path
 	 */
 	public void setFileAbsPath(final String fileAbsPath) {
-<span class="fc" id="L334">		this.fileAbsPath = fileAbsPath;</span>
-<span class="fc" id="L335">	}</span>
+<span class="fc" id="L335">		this.fileAbsPath = fileAbsPath;</span>
+<span class="fc" id="L336">	}</span>
 
 
 
@@ -343,7 +344,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;entity_tags&quot;)
 	public EntityTags getEntityTags() {
-<span class="fc" id="L346">		return entityTags;</span>
+<span class="fc" id="L347">		return entityTags;</span>
 	}
 
 	/**
@@ -352,8 +353,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param entityTags the new entity tags
 	 */
 	public void setEntityTags(final EntityTags entityTags) {
-<span class="fc" id="L355">		this.entityTags = entityTags;</span>
-<span class="fc" id="L356">	}</span>
+<span class="fc" id="L356">		this.entityTags = entityTags;</span>
+<span class="fc" id="L357">	}</span>
 
 	/**
 	 * Gets the caller file path.
@@ -362,7 +363,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;caller_file_path&quot;)
 	public String getCallerFilePath() {
-<span class="fc" id="L365">		return callerFilePath;</span>
+<span class="fc" id="L366">		return callerFilePath;</span>
 	}
 
 	/**
@@ -371,8 +372,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param callerFilePath the new caller file path
 	 */
 	public void setCallerFilePath(final String callerFilePath) {
-<span class="fc" id="L374">		this.callerFilePath = callerFilePath;</span>
-<span class="fc" id="L375">	}</span>
+<span class="fc" id="L375">		this.callerFilePath = callerFilePath;</span>
+<span class="fc" id="L376">	}</span>
 
 	/**
 	 * Gets the caller file line range.
@@ -381,7 +382,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;caller_file_line_range&quot;)
 	public String getCallerFileLineRange() {
-<span class="fc" id="L384">		return callerFileLineRange;</span>
+<span class="fc" id="L385">		return callerFileLineRange;</span>
 	}
 
 	/**
@@ -390,8 +391,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param callerFileLineRange the new caller file line range
 	 */
 	public void setCallerFileLineRange(final String callerFileLineRange) {
-<span class="fc" id="L393">		this.callerFileLineRange = callerFileLineRange;</span>
-<span class="fc" id="L394">	}</span>
+<span class="fc" id="L394">		this.callerFileLineRange = callerFileLineRange;</span>
+<span class="fc" id="L395">	}</span>
 
 	/**
 	 * Gets the fixed definition.
@@ -400,7 +401,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
     @JsonProperty(&quot;fixed_definition&quot;)
 	public String getFixedDefinition() {
-<span class="fc" id="L403">		return fixedDefinition;</span>
+<span class="fc" id="L404">		return fixedDefinition;</span>
 	}
 
 	/**
@@ -409,8 +410,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @param fixedDefinition the new fixed definition
 	 */
 	public void setFixedDefinition(final String fixedDefinition) {
-<span class="fc" id="L412">		this.fixedDefinition = fixedDefinition;</span>
-<span class="fc" id="L413">	}</span>
+<span class="fc" id="L413">		this.fixedDefinition = fixedDefinition;</span>
+<span class="fc" id="L414">	}</span>
 
 	/**
 	 * To string.
@@ -419,7 +420,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
 	@Override
 	public String toString() {
-<span class="fc" id="L422">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
+<span class="fc" id="L423">		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);</span>
 	}
 
 	/**
@@ -430,7 +431,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
 	@Override
 	public boolean equals(final Object object) {
-<span class="fc" id="L433">		return EqualsBuilder.reflectionEquals(this, object);</span>
+<span class="fc" id="L434">		return EqualsBuilder.reflectionEquals(this, object);</span>
 	}
 
 	/**
@@ -440,7 +441,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 */
 	@Override
 	public int hashCode() {
-<span class="fc" id="L443">		return HashCodeBuilder.reflectionHashCode(this);</span>
+<span class="fc" id="L444">		return HashCodeBuilder.reflectionHashCode(this);</span>
 	}
 
 }

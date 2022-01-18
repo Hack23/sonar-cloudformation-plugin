@@ -20,6 +20,7 @@
 package com.hack23.sonar.cloudformation;
 
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
@@ -32,16 +33,19 @@ import org.sonar.api.utils.log.Loggers;
 /**
  * The Class CloudformationRulesDefinition.
  */
-<span class="fc" id="L35">public final class CloudformationRulesDefinition implements RulesDefinition {</span>
+public final class CloudformationRulesDefinition implements RulesDefinition {
 
 	/** The Constant LOGGER. */
-<span class="fc" id="L38">	private static final Logger LOGGER = Loggers.get(CloudformationRulesDefinition.class);</span>
+<span class="fc" id="L39">	private static final Logger LOGGER = Loggers.get(CloudformationRulesDefinition.class);</span>
 
 	/** The Constant PATH_TO_RULES_XML. */
 	private static final String PATH_TO_RULES_XML = &quot;/cloudformation-rules.xml&quot;;
 
-	/** The Constant PATH_TO_CHECKOV_RULES_XML. */
-	private static final String PATH_TO_CHECKOV_RULES_XML = &quot;/cloudformation-checkov-rules.xml&quot;;
+	/** The Constant PATH_TO_CHECKOV_CLOUDFORMATION_RULES_XML. */
+	private static final String PATH_TO_CHECKOV_CLOUDFORMATION_RULES_XML = &quot;/cloudformation-checkov-cloudformation-rules.xml&quot;;
+
+	/** The Constant PATH_TO_CHECKOV_TERRAFOM_RULES_XML. */
+	private static final String PATH_TO_CHECKOV_TERRAFOM_RULES_XML = &quot;/cloudformation-checkov-terraform-rules.xml&quot;;
 
 
 	/** The Constant KEY. */
@@ -53,32 +57,61 @@ import org.sonar.api.utils.log.Loggers;
 	/** The context. */
 	private Context context;
 
+	/** The xml loader. */
+	private final RulesDefinitionXmlLoader xmlLoader;
+
+	/**
+	 * Instantiates a new cloudformation rules definition.
+	 *
+	 * @param xmlLoader the xml loader
+	 */
+	public CloudformationRulesDefinition(final RulesDefinitionXmlLoader xmlLoader) {
+<span class="fc" id="L69">		super();</span>
+<span class="fc" id="L70">		this.xmlLoader = xmlLoader;</span>
+<span class="fc" id="L71">	}</span>
+
 	/**
 	 * Gets the context.
 	 *
 	 * @return the context
 	 */
 	public Context getContext() {
-<span class="fc" id="L62">		return context;</span>
+<span class="fc" id="L79">		return context;</span>
 	}
 
 	/**
-	 * Define rules for language.
+	 * Define rules for cloudformation.
 	 *
 	 * @param context the context
 	 * @param repositoryKey the repository key
 	 * @param repositoryName the repository name
 	 * @param languageKey the language key
 	 */
-	private void defineRulesForLanguage(final Context context, final String repositoryKey, final String repositoryName,
+	private void defineRulesForCloudformation(final Context context, final String repositoryKey, final String repositoryName,
 			final String languageKey) {
-<span class="fc" id="L75">		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);</span>
+<span class="fc" id="L92">		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);</span>
 
-<span class="fc" id="L77">		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_RULES_XML));</span>
-<span class="fc" id="L78">		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_RULES_XML));</span>
-<span class="fc" id="L79">		repository.done();</span>
+<span class="fc" id="L94">		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_RULES_XML));</span>
+<span class="fc" id="L95">		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_CLOUDFORMATION_RULES_XML));</span>
+<span class="fc" id="L96">		repository.done();</span>
+<span class="fc" id="L97">	}</span>
 
-<span class="fc" id="L81">	}</span>
+
+	/**
+	 * Define rules for terraform.
+	 *
+	 * @param context the context
+	 * @param repositoryKey the repository key
+	 * @param repositoryName the repository name
+	 * @param languageKey the language key
+	 */
+	private void defineRulesForTerraform(final Context context, final String repositoryKey, final String repositoryName,
+			final String languageKey) {
+<span class="fc" id="L110">		final NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);</span>
+<span class="fc" id="L111">		addRules(repository, this.getClass().getResourceAsStream(PATH_TO_CHECKOV_TERRAFOM_RULES_XML));</span>
+<span class="fc" id="L112">		repository.done();</span>
+<span class="fc" id="L113">	}</span>
+
 
 	/**
 	 * Adds the rules.
@@ -87,16 +120,13 @@ import org.sonar.api.utils.log.Loggers;
 	 * @param rulesXml the rules xml
 	 */
 	private void addRules(final NewRepository repository, final InputStream rulesXml) {
-<span class="pc bpc" id="L90" title="1 of 2 branches missed.">		if (rulesXml != null) {</span>
-<span class="fc" id="L91">			final RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();</span>
-<span class="fc" id="L92">			rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());</span>
-
-<span class="fc bfc" id="L94" title="All 2 branches covered.">			for (final NewRule newRule : repository.rules()) {</span>
-
-<span class="fc" id="L96">				addNewRule(newRule);</span>
-<span class="fc" id="L97">			}</span>
+<span class="pc bpc" id="L123" title="1 of 2 branches missed.">		if (rulesXml != null) {</span>
+<span class="fc" id="L124">			xmlLoader.load(repository, new InputStreamReader(rulesXml,StandardCharsets.UTF_8));</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">			for (final NewRule newRule : repository.rules()) {</span>
+<span class="fc" id="L126">				addNewRule(newRule);</span>
+<span class="fc" id="L127">			}</span>
 		}
-<span class="fc" id="L99">	}</span>
+<span class="fc" id="L129">	}</span>
 
 	/**
 	 * Adds the new rule.
@@ -105,21 +135,21 @@ import org.sonar.api.utils.log.Loggers;
 	 */
 	private static void addNewRule(final NewRule newRule) {
 		try {
-<span class="fc" id="L108">			final Set&lt;String&gt; tags = (Set&lt;String&gt;) FieldUtils.readField(newRule, &quot;tags&quot;, true);</span>
-<span class="fc bfc" id="L109" title="All 2 branches covered.">			for (final String tag : tags) {</span>
+<span class="fc" id="L138">			final Set&lt;String&gt; tags = (Set&lt;String&gt;) FieldUtils.readField(newRule, &quot;tags&quot;, true);</span>
+<span class="fc bfc" id="L139" title="All 2 branches covered.">			for (final String tag : tags) {</span>
 
-<span class="fc bfc" id="L111" title="All 2 branches covered.">				if (tag.contains(&quot;cweid-&quot;)) {</span>
-<span class="fc" id="L112">					newRule.addCwe(Integer.parseInt(tag.replace(&quot;cweid-&quot;, &quot;&quot;)));</span>
+<span class="fc bfc" id="L141" title="All 2 branches covered.">				if (tag.contains(&quot;cweid-&quot;)) {</span>
+<span class="fc" id="L142">					newRule.addCwe(Integer.parseInt(tag.replace(&quot;cweid-&quot;, &quot;&quot;)));</span>
 				}
 
-<span class="fc bfc" id="L115" title="All 2 branches covered.">				if (tag.contains(&quot;owasp-&quot;)) {</span>
-<span class="fc" id="L116">					newRule.addOwaspTop10(OwaspTop10.valueOf(tag.replace(&quot;owasp-&quot;, &quot;&quot;).toUpperCase()));</span>
+<span class="fc bfc" id="L145" title="All 2 branches covered.">				if (tag.contains(&quot;owasp-&quot;)) {</span>
+<span class="fc" id="L146">					newRule.addOwaspTop10(OwaspTop10.valueOf(tag.replace(&quot;owasp-&quot;, &quot;&quot;).toUpperCase()));</span>
 				}
-<span class="fc" id="L118">			}</span>
-<span class="nc" id="L119">		} catch (final IllegalAccessException e) {</span>
-<span class="nc" id="L120">			LOGGER.warn(&quot;Problem parsing security tags&quot;, e);</span>
-<span class="fc" id="L121">		}</span>
-<span class="fc" id="L122">	}</span>
+<span class="fc" id="L148">			}</span>
+<span class="nc" id="L149">		} catch (final IllegalAccessException e) {</span>
+<span class="nc" id="L150">			LOGGER.warn(&quot;Problem parsing security tags&quot;, e);</span>
+<span class="fc" id="L151">		}</span>
+<span class="fc" id="L152">	}</span>
 
 	/**
 	 * Define.
@@ -128,10 +158,10 @@ import org.sonar.api.utils.log.Loggers;
 	 */
 	@Override
 	public void define(final Context context) {
-<span class="fc" id="L131">		this.context = context;</span>
-<span class="fc" id="L132">		defineRulesForLanguage(context, &quot;cfn-yaml&quot; ,&quot;Cloudformation Yaml Rules&quot;, &quot;yaml&quot;);</span>
-<span class="fc" id="L133">		defineRulesForLanguage(context, &quot;cfn-json&quot; ,&quot;Cloudformation Json Rules&quot;, &quot;json&quot;);</span>
-<span class="fc" id="L134">	}</span>
+<span class="fc" id="L161">		this.context = context;</span>
+<span class="fc" id="L162">		defineRulesForCloudformation(context, &quot;cloudformation-plugin-cfn&quot; ,&quot;Cloudformation plugin(cfn) rules&quot;, &quot;cloudformation&quot;);</span>
+<span class="fc" id="L163">		defineRulesForTerraform(context, &quot;cloudformation-plugin-terraform&quot; ,&quot;Cloudformation plugin(terrraform) Rules&quot;, &quot;terraform&quot;);</span>
+<span class="fc" id="L164">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -99,7 +99,7 @@
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>  
 <a class="jxr_linenumber" name="L92" href="#L92">92</a>  		<strong class="jxr_keyword">final</strong> SensorContextTester sensorContext = SensorContextTester
 <a class="jxr_linenumber" name="L93" href="#L93">93</a>  				.create(FileSystems.getDefault().getPath(<span class="jxr_string">"."</span>).toAbsolutePath());
-<a class="jxr_linenumber" name="L94" href="#L94">94</a>  		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>  		sensorContext.fileSystem().add(inputFile);
 <a class="jxr_linenumber" name="L95" href="#L95">95</a>  		sensorContext.setActiveRules(<strong class="jxr_keyword">new</strong> DefaultActiveRules(Arrays.asList()));
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>  		cloudformationSensor.execute(sensorContext);
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>  		assertFalse(sensorContext.allIssues().isEmpty());
@@ -136,11 +136,11 @@
 <a class="jxr_linenumber" name="L128" href="#L128">128</a> 
 <a class="jxr_linenumber" name="L129" href="#L129">129</a> 		<strong class="jxr_keyword">final</strong> SensorContextTester sensorContext = SensorContextTester
 <a class="jxr_linenumber" name="L130" href="#L130">130</a> 				.create(FileSystems.getDefault().getPath(<span class="jxr_string">"."</span>).toAbsolutePath());
-<a class="jxr_linenumber" name="L131" href="#L131">131</a> 		((DefaultFileSystem) sensorContext.fileSystem()).add(inputFile);
-<a class="jxr_linenumber" name="L132" href="#L132">132</a> 		ActiveRules activeRules = <strong class="jxr_keyword">new</strong> DefaultActiveRules(Arrays.asList(<strong class="jxr_keyword">new</strong> NewActiveRule.Builder().setRuleKey(RuleKey.of(<span class="jxr_string">"cfn-json"</span>,<span class="jxr_string">"cloudformation-CKV_AWS_8"</span>)).build()));
-<a class="jxr_linenumber" name="L133" href="#L133">133</a> 		sensorContext.setActiveRules(activeRules);		
+<a class="jxr_linenumber" name="L131" href="#L131">131</a> 		sensorContext.fileSystem().add(inputFile);
+<a class="jxr_linenumber" name="L132" href="#L132">132</a> 		<strong class="jxr_keyword">final</strong> ActiveRules activeRules = <strong class="jxr_keyword">new</strong> DefaultActiveRules(Arrays.asList(<strong class="jxr_keyword">new</strong> NewActiveRule.Builder().setRuleKey(RuleKey.of(<span class="jxr_string">"cloudformation-plugin-cfn"</span>,<span class="jxr_string">"cloudformation-CKV_AWS_8"</span>)).build()));
+<a class="jxr_linenumber" name="L133" href="#L133">133</a> 		sensorContext.setActiveRules(activeRules);
 <a class="jxr_linenumber" name="L134" href="#L134">134</a> 		cloudformationSensor.execute(sensorContext);
-<a class="jxr_linenumber" name="L135" href="#L135">135</a> 		
+<a class="jxr_linenumber" name="L135" href="#L135">135</a> 
 <a class="jxr_linenumber" name="L136" href="#L136">136</a> 		assertFalse(sensorContext.allIssues().isEmpty());
 <a class="jxr_linenumber" name="L137" href="#L137">137</a> 		assertEquals(1,sensorContext.allIssues().size());
 <a class="jxr_linenumber" name="L138" href="#L138">138</a> 	}
@@ -149,6 +149,6 @@
 <a class="jxr_linenumber" name="L141" href="#L141">141</a> }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2009&#x2013;2021. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2009&#x2013;2022. All rights reserved.</div>
 </body>
 </html>
