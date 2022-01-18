@@ -2923,6 +2923,36 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AWS_195</key>
+		<name>Ensure Glue component has a security configuration associated</name>
+		<internalKey>terraform-CKV_AWS_195</internalKey>
+		<description>Ensure Glue component has a security configuration associated</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_196</key>
+		<name>Ensure no aws_elasticache_security_group resources exist</name>
+		<internalKey>terraform-CKV_AWS_196</internalKey>
+		<description>Ensure no aws_elasticache_security_group resources exist</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AWS_1</key>
 		<name>Ensure that all NACL are attached to subnets</name>
 		<internalKey>terraform-CKV2_AWS_1</internalKey>

@@ -1212,7 +1212,7 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 7,
-        "checkov_version": "2.0.707"
+        "checkov_version": "2.0.732"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }

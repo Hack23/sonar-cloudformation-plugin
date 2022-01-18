@@ -1800,6 +1800,21 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_195</key>
+		<name>Ensure Glue component has a security configuration associated</name>
+		<internalKey>cloudformation-CKV_AWS_195</internalKey>
+		<description>Ensure Glue component has a security configuration associated</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
 
 
 

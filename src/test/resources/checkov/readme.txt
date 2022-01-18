@@ -3,7 +3,7 @@ sudo gem install cfn-nag
 
 
 checkov -v
-2.0.707
+
 
 ~/git/sonar-cloudformation-plugin$ checkov -f src/test/resources/checkov/cia-dist-cloudformation.json -o json > src/test/resources/checkov/cia-dist-cloudformation.checkov-report
 ~/git/sonar-cloudformation-plugin$ checkov -f src/test/resources/checkov/azuredeploy.json -o json > src/test/resources/checkov/azuredeploy.checkov-report
