@@ -116,6 +116,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -231,6 +235,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -346,6 +354,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -461,6 +473,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -576,6 +592,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -693,6 +713,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -808,6 +832,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -957,6 +985,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_16-iam-policy-privileges-1"
                 },
                 {
@@ -1104,6 +1136,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -1251,6 +1287,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -1398,6 +1438,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -1545,6 +1589,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -1692,6 +1740,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -1839,6 +1891,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -2082,6 +2138,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -2325,6 +2385,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -2568,6 +2632,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -2811,6 +2879,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -3054,6 +3126,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -3297,6 +3373,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -3542,6 +3622,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -3785,6 +3869,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -4028,6 +4116,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -4305,6 +4397,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_3"
                 },
                 {
@@ -4583,6 +4679,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_serverless_5"
                 },
                 {
@@ -4842,6 +4942,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -5101,6 +5205,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -5360,6 +5468,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -5619,6 +5731,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -5878,6 +5994,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -6137,6 +6257,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -6398,6 +6522,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -6657,6 +6785,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -6916,6 +7048,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -7441,6 +7577,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_3"
                 },
                 {
@@ -7967,6 +8107,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_serverless_5"
                 },
                 {
@@ -8128,6 +8272,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_20"
                 },
                 {
@@ -8289,6 +8437,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_21"
                 },
                 {
@@ -8450,6 +8602,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest"
                 },
                 {
@@ -8611,6 +8767,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_22"
                 },
                 {
@@ -8772,6 +8932,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_19"
                 },
                 {
@@ -8933,6 +9097,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone"
                 },
                 {
@@ -9094,6 +9262,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_16-enable-versioning"
                 },
                 {
@@ -9255,6 +9427,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone"
                 },
                 {
@@ -9416,6 +9592,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_13-enable-logging"
                 },
                 {
@@ -9589,6 +9769,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/logging_8"
                 },
                 {
@@ -9762,6 +9946,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-kms-key-policy-does-not-contain-wildcard-principal"
                 },
                 {
@@ -9965,6 +10153,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -10168,6 +10360,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -10371,6 +10567,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -10574,6 +10774,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -10777,6 +10981,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -10982,6 +11190,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -11185,6 +11397,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -11388,6 +11604,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -11539,6 +11759,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -11708,6 +11932,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -11877,6 +12105,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12046,6 +12278,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12215,6 +12451,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12384,6 +12624,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12553,6 +12797,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12722,6 +12970,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12891,6 +13143,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13060,6 +13316,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13229,6 +13489,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13398,6 +13662,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13567,6 +13835,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13736,6 +14008,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13905,6 +14181,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -14058,6 +14338,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_31"
                 },
                 {
@@ -14193,6 +14477,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2"
                 },
                 {
@@ -14328,6 +14616,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
                 },
                 {
@@ -14555,6 +14847,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_31"
                 },
                 {
@@ -14782,6 +15078,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2"
                 },
                 {
@@ -15009,6 +15309,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
                 },
                 {
@@ -15150,6 +15454,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_20"
                 },
                 {
@@ -15291,6 +15599,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_21"
                 },
                 {
@@ -15432,6 +15744,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest"
                 },
                 {
@@ -15573,6 +15889,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_22"
                 },
                 {
@@ -15714,6 +16034,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_19"
                 },
                 {
@@ -15855,6 +16179,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone"
                 },
                 {
@@ -15996,6 +16324,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_16-enable-versioning"
                 },
                 {
@@ -16137,6 +16469,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone"
                 },
                 {
@@ -16278,6 +16614,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_13-enable-logging"
                 },
                 {
@@ -16473,6 +16813,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_logging_22"
                 },
                 {
@@ -16608,6 +16952,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "Certificates.0.CertificateArn": [
                             {
@@ -16761,6 +17109,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "Certificates.0.CertificateArn": [
                             {
@@ -16938,6 +17290,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.0.CidrIp": [
                             {
@@ -17115,6 +17471,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.0.CidrIp": [
                             {
@@ -17292,6 +17652,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.0.CidrIp": [
                             {
@@ -17909,6 +18273,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -18508,6 +18876,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -19107,6 +19479,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -19706,6 +20082,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -20305,6 +20685,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -20904,6 +21288,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -21505,6 +21893,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -22104,6 +22496,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -22451,6 +22847,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -22816,6 +23216,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -23181,6 +23585,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -23348,6 +23756,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -23625,6 +24037,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq"
                 },
                 {
@@ -23666,6 +24082,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -23707,6 +24127,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24232,6 +24656,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq"
                 },
                 {
@@ -24277,6 +24705,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24322,6 +24754,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24367,6 +24803,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24570,6 +25010,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -24713,6 +25157,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "SecretString.Fn::Join.1.1": [
                             {
@@ -25260,6 +25708,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -25807,6 +26259,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -26354,6 +26810,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -26901,6 +27361,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -27130,6 +27594,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-alb-drops-http-headers"
                 },
                 {
@@ -27729,6 +28197,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -29436,6 +29908,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "breadcrumbs": {
                         "InstanceType": [
                             {
@@ -29514,7 +29990,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 130,
-            "checkov_version": "2.0.732"
+            "checkov_version": "2.0.858"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     },
@@ -29551,6 +30027,10 @@
                     "caller_file_path": null,
                     "caller_file_line_range": null,
                     "resource_address": null,
+                    "severity": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
                     "guideline": "https://docs.bridgecrew.io/docs/git_secrets_7"
                 }
             ],
@@ -29563,7 +30043,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 1,
-            "checkov_version": "2.0.732"
+            "checkov_version": "2.0.858"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     }

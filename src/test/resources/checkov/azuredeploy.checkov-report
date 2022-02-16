@@ -307,6 +307,10 @@
                 "caller_file_path": null,
                 "caller_file_line_range": null,
                 "resource_address": null,
+                "severity": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_4"
             },
             {
@@ -398,6 +402,10 @@
                 "caller_file_path": null,
                 "caller_file_line_range": null,
                 "resource_address": null,
+                "severity": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
                 "guideline": "https://docs.bridgecrew.io/docs/ensure-secure-transfer-required-is-enabled"
             }
         ],
@@ -711,6 +719,10 @@
                 "caller_file_path": null,
                 "caller_file_line_range": null,
                 "resource_address": null,
+                "severity": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_3"
             },
             {
@@ -1018,6 +1030,10 @@
                 "caller_file_path": null,
                 "caller_file_line_range": null,
                 "resource_address": null,
+                "severity": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_2"
             },
             {
@@ -1109,6 +1125,10 @@
                 "caller_file_path": null,
                 "caller_file_line_range": null,
                 "resource_address": null,
+                "severity": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
                 "guideline": "https://docs.bridgecrew.io/docs/set-default-network-access-rule-for-storage-accounts-to-deny"
             },
             {
@@ -1200,6 +1220,10 @@
                 "caller_file_path": null,
                 "caller_file_line_range": null,
                 "resource_address": null,
+                "severity": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
                 "guideline": "https://docs.bridgecrew.io/docs/enable-trusted-microsoft-services-for-storage-account-access"
             }
         ],
@@ -1212,7 +1236,7 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 7,
-        "checkov_version": "2.0.732"
+        "checkov_version": "2.0.858"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }
