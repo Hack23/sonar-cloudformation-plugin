@@ -1,6 +1,60 @@
 <rules>
 
     <rule>
+		<key>terraform-CKV_ALI_1</key>
+		<name>Alibaba Cloud OSS bucket accessible to public</name>
+		<internalKey>terraform-CKV_ALI_1</internalKey>
+		<description>Alibaba Cloud OSS bucket accessible to public</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_2</key>
+		<name>Ensure no security groups allow ingress from 0.0.0.0:0 to port 22</name>
+		<internalKey>terraform-CKV_ALI_2</internalKey>
+		<description>Ensure no security groups allow ingress from 0.0.0.0:0 to port 22</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_3</key>
+		<name>Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389</name>
+		<internalKey>terraform-CKV_ALI_3</internalKey>
+		<description>Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_AWS_2</key>
 		<name>Ensure ALB protocol is HTTPS</name>
 		<internalKey>terraform-CKV_AWS_2</internalKey>
@@ -3214,6 +3268,411 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AWS_214</key>
+		<name>Ensure Appsync API Cache is encrypted at rest</name>
+		<internalKey>terraform-CKV_AWS_214</internalKey>
+		<description>Ensure Appsync API Cache is encrypted at rest</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_215</key>
+		<name>Ensure Appsync API Cache is encrypted in transit</name>
+		<internalKey>terraform-CKV_AWS_215</internalKey>
+		<description>Ensure Appsync API Cache is encrypted in transit</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_216</key>
+		<name>Ensure Cloudfront distribution is enabled</name>
+		<internalKey>terraform-CKV_AWS_216</internalKey>
+		<description>Ensure Cloudfront distribution is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_217</key>
+		<name>Ensure Create before destroy for API deployments</name>
+		<internalKey>terraform-CKV_AWS_217</internalKey>
+		<description>Ensure Create before destroy for API deployments</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_218</key>
+		<name>Ensure that Cloudsearch is using latest TLS</name>
+		<internalKey>terraform-CKV_AWS_218</internalKey>
+		<description>Ensure that Cloudsearch is using latest TLS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_219</key>
+		<name>Ensure Code Pipeline Artifact store is using a KMS CMK</name>
+		<internalKey>terraform-CKV_AWS_219</internalKey>
+		<description>Ensure Code Pipeline Artifact store is using a KMS CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_220</key>
+		<name>Ensure that Cloudsearch is using https</name>
+		<internalKey>terraform-CKV_AWS_220</internalKey>
+		<description>Ensure that Cloudsearch is using https</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_221</key>
+		<name>Ensure Code artifact Domain is encrypted by KMS using a customer managed Key (CMK)</name>
+		<internalKey>terraform-CKV_AWS_221</internalKey>
+		<description>Ensure Code artifact Domain is encrypted by KMS using a customer managed Key (CMK)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_222</key>
+		<name>Ensure DMS instance gets all minor upgrade automatically</name>
+		<internalKey>terraform-CKV_AWS_222</internalKey>
+		<description>Ensure DMS instance gets all minor upgrade automatically</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_223</key>
+		<name>Ensure ECS Cluster enables logging of ECS Exec</name>
+		<internalKey>terraform-CKV_AWS_223</internalKey>
+		<description>Ensure ECS Cluster enables logging of ECS Exec</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_224</key>
+		<name>Ensure Cluster logging with CMK</name>
+		<internalKey>terraform-CKV_AWS_224</internalKey>
+		<description>Ensure Cluster logging with CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_225</key>
+		<name>Ensure API Gateway method setting caching is enabled</name>
+		<internalKey>terraform-CKV_AWS_225</internalKey>
+		<description>Ensure API Gateway method setting caching is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_226</key>
+		<name>Ensure DB instance gets all minor upgrades automatically</name>
+		<internalKey>terraform-CKV_AWS_226</internalKey>
+		<description>Ensure DB instance gets all minor upgrades automatically</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_227</key>
+		<name>Ensure KMS key is enabled</name>
+		<internalKey>terraform-CKV_AWS_227</internalKey>
+		<description>Ensure KMS key is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_228</key>
+		<name>Verify Elasticsearch domain is using an up to date TLS policy</name>
+		<internalKey>terraform-CKV_AWS_228</internalKey>
+		<description>Verify Elasticsearch domain is using an up to date TLS policy</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_229</key>
+		<name>Ensure no NACL allow ingress from 0.0.0.0:0 to port 21</name>
+		<internalKey>terraform-CKV_AWS_229</internalKey>
+		<description>Ensure no NACL allow ingress from 0.0.0.0:0 to port 21</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_230</key>
+		<name>Ensure no NACL allow ingress from 0.0.0.0:0 to port 20</name>
+		<internalKey>terraform-CKV_AWS_230</internalKey>
+		<description>Ensure no NACL allow ingress from 0.0.0.0:0 to port 20</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_231</key>
+		<name>Ensure no NACL allow ingress from 0.0.0.0:0 to port 3389</name>
+		<internalKey>terraform-CKV_AWS_231</internalKey>
+		<description>Ensure no NACL allow ingress from 0.0.0.0:0 to port 3389</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_232</key>
+		<name>Ensure no NACL allow ingress from 0.0.0.0:0 to port 22</name>
+		<internalKey>terraform-CKV_AWS_232</internalKey>
+		<description>Ensure no NACL allow ingress from 0.0.0.0:0 to port 22</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_233</key>
+		<name>Ensure Create before destroy for ACM certificates</name>
+		<internalKey>terraform-CKV_AWS_233</internalKey>
+		<description>Ensure Create before destroy for ACM certificates</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_234</key>
+		<name>Verify logging preference for ACM certificates</name>
+		<internalKey>terraform-CKV_AWS_234</internalKey>
+		<description>Verify logging preference for ACM certificates</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_235</key>
+		<name>Ensure that copied AMIs are encrypted</name>
+		<internalKey>terraform-CKV_AWS_235</internalKey>
+		<description>Ensure that copied AMIs are encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_236</key>
+		<name>Ensure AMI copying uses a CMK</name>
+		<internalKey>terraform-CKV_AWS_236</internalKey>
+		<description>Ensure AMI copying uses a CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_237</key>
+		<name>Ensure Create before destroy for API GATEWAY</name>
+		<internalKey>terraform-CKV_AWS_237</internalKey>
+		<description>Ensure Create before destroy for API GATEWAY</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_238</key>
+		<name>Ensure that Guard Duty detector is enabled</name>
+		<internalKey>terraform-CKV_AWS_238</internalKey>
+		<description>Ensure that Guard Duty detector is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_239</key>
+		<name>Ensure DAX cluster endpoint is using TLS</name>
+		<internalKey>terraform-CKV_AWS_239</internalKey>
+		<description>Ensure DAX cluster endpoint is using TLS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AWS_1</key>
 		<name>Ensure that all NACL are attached to subnets</name>
 		<internalKey>terraform-CKV2_AWS_1</internalKey>
@@ -5851,6 +6310,162 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AZURE_142</key>
+		<name>Ensure Machine Learning Compute Cluster Local Authentication is disabled</name>
+		<internalKey>terraform-CKV_AZURE_142</internalKey>
+		<description>Ensure Machine Learning Compute Cluster Local Authentication is disabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_143</key>
+		<name>Ensure AKS cluster nodes do not have public IP addresses</name>
+		<internalKey>terraform-CKV_AZURE_143</internalKey>
+		<description>Ensure AKS cluster nodes do not have public IP addresses</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_144</key>
+		<name>Ensure that Public Access is disabled for Machine Learning Workspace</name>
+		<internalKey>terraform-CKV_AZURE_144</internalKey>
+		<description>Ensure that Public Access is disabled for Machine Learning Workspace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_145</key>
+		<name>Ensure Function app is using the latest version of TLS encryption</name>
+		<internalKey>terraform-CKV_AZURE_145</internalKey>
+		<description>Ensure Function app is using the latest version of TLS encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_146</key>
+		<name>Ensure server parameter 'log_retention' is set to 'ON' for PostgreSQL Database Server</name>
+		<internalKey>terraform-CKV_AZURE_146</internalKey>
+		<description>Ensure server parameter 'log_retention' is set to 'ON' for PostgreSQL Database Server</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_147</key>
+		<name>Ensure PostgreSQL is using the latest version of TLS encryption</name>
+		<internalKey>terraform-CKV_AZURE_147</internalKey>
+		<description>Ensure PostgreSQL is using the latest version of TLS encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_148</key>
+		<name>Ensure Redis Cache is using the latest version of TLS encryption</name>
+		<internalKey>terraform-CKV_AZURE_148</internalKey>
+		<description>Ensure Redis Cache is using the latest version of TLS encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_149</key>
+		<name>Ensure that Virtual machine does not enable password authentication</name>
+		<internalKey>terraform-CKV_AZURE_149</internalKey>
+		<description>Ensure that Virtual machine does not enable password authentication</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_150</key>
+		<name>Ensure Machine Learning Compute Cluster Minimum Nodes Set To 0</name>
+		<internalKey>terraform-CKV_AZURE_150</internalKey>
+		<description>Ensure Machine Learning Compute Cluster Minimum Nodes Set To 0</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_151</key>
+		<name>Ensure Windows VM enables encryption</name>
+		<internalKey>terraform-CKV_AZURE_151</internalKey>
+		<description>Ensure Windows VM enables encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AZURE_1</key>
 		<name>Ensure storage for critical data are encrypted with Customer Managed Key</name>
 		<internalKey>terraform-CKV2_AZURE_1</internalKey>
@@ -6974,9 +7589,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GCP_49</key>
-		<name>Ensure no roles that enable to impersonate and manage all service accounts are used at a project level</name>
+		<name>Ensure roles do not impersonate or manage Service Accounts used at project level</name>
 		<internalKey>terraform-CKV_GCP_49</internalKey>
-		<description>Ensure no roles that enable to impersonate and manage all service accounts are used at a project level</description>
+		<description>Ensure roles do not impersonate or manage Service Accounts used at project level</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -7711,6 +8326,132 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_GCP_98</key>
+		<name>Ensure that Dataproc clusters are not anonymously or publicly accessible</name>
+		<internalKey>terraform-CKV_GCP_98</internalKey>
+		<description>Ensure that Dataproc clusters are not anonymously or publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_99</key>
+		<name>Ensure that Pub/Sub Topics are not anonymously or publicly accessible</name>
+		<internalKey>terraform-CKV_GCP_99</internalKey>
+		<description>Ensure that Pub/Sub Topics are not anonymously or publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_100</key>
+		<name>Ensure that BigQuery Tables are not anonymously or publicly accessible</name>
+		<internalKey>terraform-CKV_GCP_100</internalKey>
+		<description>Ensure that BigQuery Tables are not anonymously or publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_101</key>
+		<name>Ensure that Artifact Registry repositories are not anonymously or publicly accessible</name>
+		<internalKey>terraform-CKV_GCP_101</internalKey>
+		<description>Ensure that Artifact Registry repositories are not anonymously or publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_102</key>
+		<name>Ensure that GCP Cloud Run services are not anonymously or publicly accessible</name>
+		<internalKey>terraform-CKV_GCP_102</internalKey>
+		<description>Ensure that GCP Cloud Run services are not anonymously or publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_103</key>
+		<name>Ensure Dataproc Clusters do not have public IPs</name>
+		<internalKey>terraform-CKV_GCP_103</internalKey>
+		<description>Ensure Dataproc Clusters do not have public IPs</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_104</key>
+		<name>Ensure Datafusion has stack driver logging enabled</name>
+		<internalKey>terraform-CKV_GCP_104</internalKey>
+		<description>Ensure Datafusion has stack driver logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_GCP_1</key>
 		<name>Ensure GKE clusters are not running using the Compute Engine default service account</name>
 		<internalKey>terraform-CKV2_GCP_1</internalKey>
@@ -7840,6 +8581,24 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV2_GCP_9</key>
+		<name>Ensure that Container Registry repositories are not anonymously or publicly accessible</name>
+		<internalKey>terraform-CKV2_GCP_9</internalKey>
+		<description>Ensure that Container Registry repositories are not anonymously or publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_GIT_1</key>
 		<name>Ensure Repository is Private</name>
 		<internalKey>terraform-CKV_GIT_1</internalKey>
@@ -7889,6 +8648,81 @@
 		<name>Ensure Secrets are encrypted</name>
 		<internalKey>terraform-CKV_GIT_4</internalKey>
 		<description>Ensure Secrets are encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_K8S_1</key>
+		<name>Do not admit containers wishing to share the host process ID namespace</name>
+		<internalKey>terraform-CKV_K8S_1</internalKey>
+		<description>Do not admit containers wishing to share the host process ID namespace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_K8S_2</key>
+		<name>Do not admit privileged containers</name>
+		<internalKey>terraform-CKV_K8S_2</internalKey>
+		<description>Do not admit privileged containers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_K8S_4</key>
+		<name>Do not admit containers wishing to share the host network namespace</name>
+		<internalKey>terraform-CKV_K8S_4</internalKey>
+		<description>Do not admit containers wishing to share the host network namespace</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_K8S_5</key>
+		<name>Containers should not run with allowPrivilegeEscalation</name>
+		<internalKey>terraform-CKV_K8S_5</internalKey>
+		<description>Containers should not run with allowPrivilegeEscalation</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_K8S_19</key>
+		<name>Do not admit containers wishing to share the host network namespace</name>
+		<internalKey>terraform-CKV_K8S_19</internalKey>
+		<description>Do not admit containers wishing to share the host network namespace</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -8333,6 +9167,189 @@
 		<name>Ensure plain-text management Telnet is not enabled for an Interface Management Profile</name>
 		<internalKey>terraform-CKV_PAN_3</internalKey>
 		<description>Ensure plain-text management Telnet is not enabled for an Interface Management Profile</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_4</key>
+		<name>Ensure DSRI is not enabled within security policies</name>
+		<internalKey>terraform-CKV_PAN_4</internalKey>
+		<description>Ensure DSRI is not enabled within security policies</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_5</key>
+		<name>Ensure security rules do not have 'applications' set to 'any'</name>
+		<internalKey>terraform-CKV_PAN_5</internalKey>
+		<description>Ensure security rules do not have 'applications' set to 'any'</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_6</key>
+		<name>Ensure security rules do not have 'services' set to 'any'</name>
+		<internalKey>terraform-CKV_PAN_6</internalKey>
+		<description>Ensure security rules do not have 'services' set to 'any'</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_7</key>
+		<name>Ensure security rules do not have 'source_addresses' and 'destination_addresses' both containing values of 'any'</name>
+		<internalKey>terraform-CKV_PAN_7</internalKey>
+		<description>Ensure security rules do not have 'source_addresses' and 'destination_addresses' both containing values of 'any'</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_8</key>
+		<name>Ensure description is populated within security policies</name>
+		<internalKey>terraform-CKV_PAN_8</internalKey>
+		<description>Ensure description is populated within security policies</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_9</key>
+		<name>Ensure a Log Forwarding Profile is selected for each security policy rule</name>
+		<internalKey>terraform-CKV_PAN_9</internalKey>
+		<description>Ensure a Log Forwarding Profile is selected for each security policy rule</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_10</key>
+		<name>Ensure logging at session end is enabled within security policies</name>
+		<internalKey>terraform-CKV_PAN_10</internalKey>
+		<description>Ensure logging at session end is enabled within security policies</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_11</key>
+		<name>Ensure IPsec profiles do not specify use of insecure encryption algorithms</name>
+		<internalKey>terraform-CKV_PAN_11</internalKey>
+		<description>Ensure IPsec profiles do not specify use of insecure encryption algorithms</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_12</key>
+		<name>Ensure IPsec profiles do not specify use of insecure authentication algorithms</name>
+		<internalKey>terraform-CKV_PAN_12</internalKey>
+		<description>Ensure IPsec profiles do not specify use of insecure authentication algorithms</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_13</key>
+		<name>Ensure IPsec profiles do not specify use of insecure protocols</name>
+		<internalKey>terraform-CKV_PAN_13</internalKey>
+		<description>Ensure IPsec profiles do not specify use of insecure protocols</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_14</key>
+		<name>Ensure a Zone Protection Profile is defined within Security Zones</name>
+		<internalKey>terraform-CKV_PAN_14</internalKey>
+		<description>Ensure a Zone Protection Profile is defined within Security Zones</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_PAN_15</key>
+		<name>Ensure an Include ACL is defined for a Zone when User-ID is enabled</name>
+		<internalKey>terraform-CKV_PAN_15</internalKey>
+		<description>Ensure an Include ACL is defined for a Zone when User-ID is enabled</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
