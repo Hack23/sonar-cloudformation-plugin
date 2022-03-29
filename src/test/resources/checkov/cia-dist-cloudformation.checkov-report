@@ -122,6 +122,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -243,6 +244,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -364,6 +366,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -485,6 +488,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -606,6 +610,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -729,6 +734,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -850,6 +856,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -1005,6 +1012,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_16-iam-policy-privileges-1"
                 },
                 {
@@ -1158,6 +1166,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -1311,6 +1320,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -1464,6 +1474,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -1617,6 +1628,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -1770,6 +1782,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -1923,6 +1936,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -2172,6 +2186,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -2421,6 +2436,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -2670,6 +2686,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -2919,6 +2936,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -3168,6 +3186,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -3417,6 +3436,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -3668,6 +3688,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -3917,6 +3938,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -4166,6 +4188,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -4449,6 +4472,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_3"
                 },
                 {
@@ -4733,6 +4757,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_serverless_5"
                 },
                 {
@@ -4998,6 +5023,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -5263,6 +5289,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -5528,6 +5555,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -5793,6 +5821,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -6058,6 +6087,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -6323,6 +6353,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -6590,6 +6621,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -6855,6 +6887,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -7120,6 +7153,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -7651,6 +7685,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_3"
                 },
                 {
@@ -8183,6 +8218,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_serverless_5"
                 },
                 {
@@ -8350,6 +8386,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_20"
                 },
                 {
@@ -8517,6 +8554,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_21"
                 },
                 {
@@ -8684,6 +8722,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest"
                 },
                 {
@@ -8851,6 +8890,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_22"
                 },
                 {
@@ -9018,6 +9058,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_19"
                 },
                 {
@@ -9185,6 +9226,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone"
                 },
                 {
@@ -9352,6 +9394,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_16-enable-versioning"
                 },
                 {
@@ -9519,6 +9562,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone"
                 },
                 {
@@ -9686,6 +9730,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_13-enable-logging"
                 },
                 {
@@ -9865,6 +9910,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/logging_8"
                 },
                 {
@@ -10044,6 +10090,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-kms-key-policy-does-not-contain-wildcard-principal"
                 },
                 {
@@ -10253,6 +10300,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -10462,6 +10510,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -10671,6 +10720,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -10880,6 +10930,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -11089,6 +11140,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -11300,6 +11352,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -11509,6 +11562,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -11718,6 +11772,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -11875,6 +11930,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12050,6 +12106,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12225,6 +12282,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12400,6 +12458,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12575,6 +12634,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12750,6 +12810,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12925,6 +12986,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13100,6 +13162,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13275,6 +13338,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13450,6 +13514,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13625,6 +13690,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13800,6 +13866,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13975,6 +14042,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -14150,6 +14218,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -14325,6 +14394,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -14484,6 +14554,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_31"
                 },
                 {
@@ -14625,6 +14696,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2"
                 },
                 {
@@ -14766,6 +14838,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
                 },
                 {
@@ -14999,6 +15072,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_31"
                 },
                 {
@@ -15232,6 +15306,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2"
                 },
                 {
@@ -15465,6 +15540,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
                 },
                 {
@@ -15612,6 +15688,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_20"
                 },
                 {
@@ -15759,6 +15836,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_21"
                 },
                 {
@@ -15906,6 +15984,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_14-data-encrypted-at-rest"
                 },
                 {
@@ -16053,6 +16132,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_22"
                 },
                 {
@@ -16200,6 +16280,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_s3_19"
                 },
                 {
@@ -16347,6 +16428,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_1-acl-read-permissions-everyone"
                 },
                 {
@@ -16494,6 +16576,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_16-enable-versioning"
                 },
                 {
@@ -16641,6 +16724,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_2-acl-write-permissions-everyone"
                 },
                 {
@@ -16788,6 +16872,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/s3_13-enable-logging"
                 },
                 {
@@ -16989,6 +17074,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_logging_22"
                 },
                 {
@@ -17130,6 +17216,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "Certificates.0.CertificateArn": [
                             {
@@ -17289,6 +17376,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "Certificates.0.CertificateArn": [
                             {
@@ -17472,6 +17560,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.0.CidrIp": [
                             {
@@ -17655,6 +17744,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.0.CidrIp": [
                             {
@@ -17838,6 +17928,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.0.CidrIp": [
                             {
@@ -18461,6 +18552,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_45"
                 },
                 {
@@ -19066,6 +19158,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-data-exfiltration"
                 },
                 {
@@ -19671,6 +19764,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_48"
                 },
                 {
@@ -20276,6 +20370,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-credentials-exposure"
                 },
                 {
@@ -20881,6 +20976,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -21486,6 +21582,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-does-not-allow-privilege-escalation"
                 },
                 {
@@ -22093,6 +22190,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/bc_aws_iam_44"
                 },
                 {
@@ -22698,6 +22796,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/iam_47"
                 },
                 {
@@ -23051,6 +23150,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -23422,6 +23522,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -23793,6 +23894,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.3.CidrIp": [
                             {
@@ -23966,6 +24068,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -24249,6 +24352,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq"
                 },
                 {
@@ -24296,6 +24400,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24343,6 +24448,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24874,6 +24980,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq"
                 },
                 {
@@ -24925,6 +25032,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -24976,6 +25084,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -25027,6 +25136,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
                 },
                 {
@@ -25236,6 +25346,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint"
                 },
                 {
@@ -25385,6 +25496,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "SecretString.Fn::Join.1.1": [
                             {
@@ -25938,6 +26050,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -26491,6 +26604,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -27044,6 +27158,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -27597,6 +27712,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "DBName.Fn::If.2": [
                             {
@@ -27832,6 +27948,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-alb-drops-http-headers"
                 },
                 {
@@ -28437,6 +28554,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
@@ -30150,6 +30268,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "breadcrumbs": {
                         "InstanceType": [
                             {
@@ -30228,7 +30347,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 130,
-            "checkov_version": "2.0.938"
+            "checkov_version": "2.0.1007"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     },
@@ -30271,6 +30390,7 @@
                     "description": null,
                     "short_description": null,
                     "vulnerability_details": null,
+                    "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/git_secrets_7"
                 }
             ],
@@ -30283,7 +30403,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 1,
-            "checkov_version": "2.0.938"
+            "checkov_version": "2.0.1007"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     }

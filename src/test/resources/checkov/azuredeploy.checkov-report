@@ -313,6 +313,7 @@
                 "description": null,
                 "short_description": null,
                 "vulnerability_details": null,
+                "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_4"
             },
             {
@@ -410,6 +411,7 @@
                 "description": null,
                 "short_description": null,
                 "vulnerability_details": null,
+                "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/ensure-secure-transfer-required-is-enabled"
             }
         ],
@@ -729,6 +731,7 @@
                 "description": null,
                 "short_description": null,
                 "vulnerability_details": null,
+                "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_3"
             },
             {
@@ -1042,6 +1045,7 @@
                 "description": null,
                 "short_description": null,
                 "vulnerability_details": null,
+                "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_2"
             },
             {
@@ -1139,6 +1143,7 @@
                 "description": null,
                 "short_description": null,
                 "vulnerability_details": null,
+                "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/set-default-network-access-rule-for-storage-accounts-to-deny"
             },
             {
@@ -1236,6 +1241,7 @@
                 "description": null,
                 "short_description": null,
                 "vulnerability_details": null,
+                "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/enable-trusted-microsoft-services-for-storage-account-access"
             }
         ],
@@ -1248,7 +1254,7 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 7,
-        "checkov_version": "2.0.938"
+        "checkov_version": "2.0.1007"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }
