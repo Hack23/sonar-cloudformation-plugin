@@ -307,6 +307,15 @@
       </plugins>
     </pluginManagement>
     <plugins>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <configuration>
+		          <source>11</source>
+		          <target>11</target>
+		          <release>11</release>
+		    </configuration>
+		</plugin>
       <plugin>
         <groupId>org.cyclonedx</groupId>
         <artifactId>cyclonedx-maven-plugin</artifactId>
@@ -383,8 +392,8 @@
         <version>3.4.0</version>
         <inherited>true</inherited>
         <configuration>
-          <source>8</source>
-          <release>8</release>
+          <source>11</source>
+          <release>11</release>
           <includeDependencySources>true</includeDependencySources>
           <detectOfflineLinks>false</detectOfflineLinks>
           <dependencySourceIncludes>
@@ -500,8 +509,8 @@
             </executions>
             <inherited>true</inherited>
             <configuration>
-              <source>8</source>
-              <release>8</release>
+              <source>11</source>
+              <release>11</release>
               <debug>true</debug>
               <detectJavaApiLink>true</detectJavaApiLink>
               <linksource>true</linksource>

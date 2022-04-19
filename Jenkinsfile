@@ -46,7 +46,7 @@ pipeline {
 
 	   stage('Vulnerability Check') {
 	   	  tools {
-    	    jdk 'Java8'
+    	    jdk 'Java11'
 	    	}
 
 	      steps {
