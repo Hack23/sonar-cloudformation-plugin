@@ -15544,6 +15544,560 @@
                     "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
                 },
                 {
+                    "check_id": "CKV_AWS_17",
+                    "bc_check_id": "BC_AWS_PUBLIC_2",
+                    "check_name": "Ensure all data stored in RDS is not publicly accessible",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": [
+                            "Properties/PubliclyAccessible"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            2977,
+                            "        \"Database\": {\n"
+                        ],
+                        [
+                            2978,
+                            "            \"Type\": \"AWS::RDS::DBInstance\",\n"
+                        ],
+                        [
+                            2979,
+                            "            \"DependsOn\": [\n"
+                        ],
+                        [
+                            2980,
+                            "                \"PrivateRoute\",\n"
+                        ],
+                        [
+                            2981,
+                            "                \"DatabaseSecurityGroup\"\n"
+                        ],
+                        [
+                            2982,
+                            "            ],\n"
+                        ],
+                        [
+                            2983,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            2984,
+                            "                \"DBName\": {\n"
+                        ],
+                        [
+                            2985,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            2986,
+                            "                        \"useDBSnapshot\",\n"
+                        ],
+                        [
+                            2987,
+                            "                        {\n"
+                        ],
+                        [
+                            2988,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            2989,
+                            "                        },\n"
+                        ],
+                        [
+                            2990,
+                            "                        {\n"
+                        ],
+                        [
+                            2991,
+                            "                            \"Ref\": \"DBName\"\n"
+                        ],
+                        [
+                            2992,
+                            "                        }\n"
+                        ],
+                        [
+                            2993,
+                            "                    ]\n"
+                        ],
+                        [
+                            2994,
+                            "                },\n"
+                        ],
+                        [
+                            2995,
+                            "                \"StorageEncrypted\": {\n"
+                        ],
+                        [
+                            2996,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            2997,
+                            "                        \"useDBEncryptionKmsAlias\",\n"
+                        ],
+                        [
+                            2998,
+                            "                        \"true\",\n"
+                        ],
+                        [
+                            2999,
+                            "                        \"false\"\n"
+                        ],
+                        [
+                            3000,
+                            "                    ]\n"
+                        ],
+                        [
+                            3001,
+                            "                },\n"
+                        ],
+                        [
+                            3002,
+                            "                \"KmsKeyId\": {\n"
+                        ],
+                        [
+                            3003,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            3004,
+                            "                        \"useDBEncryptionKmsAlias\",\n"
+                        ],
+                        [
+                            3005,
+                            "                        {\n"
+                        ],
+                        [
+                            3006,
+                            "                            \"Ref\": \"DBEncryptionKmsAlias\"\n"
+                        ],
+                        [
+                            3007,
+                            "                        },\n"
+                        ],
+                        [
+                            3008,
+                            "                        {\n"
+                        ],
+                        [
+                            3009,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            3010,
+                            "                        }\n"
+                        ],
+                        [
+                            3011,
+                            "                    ]\n"
+                        ],
+                        [
+                            3012,
+                            "                },\n"
+                        ],
+                        [
+                            3013,
+                            "                \"AllocatedStorage\": {\n"
+                        ],
+                        [
+                            3014,
+                            "                    \"Ref\": \"DBAllocatedStorage\"\n"
+                        ],
+                        [
+                            3015,
+                            "                },\n"
+                        ],
+                        [
+                            3016,
+                            "                \"DBInstanceClass\": {\n"
+                        ],
+                        [
+                            3017,
+                            "                    \"Ref\": \"DBClass\"\n"
+                        ],
+                        [
+                            3018,
+                            "                },\n"
+                        ],
+                        [
+                            3019,
+                            "                \"Engine\": \"postgres\",\n"
+                        ],
+                        [
+                            3020,
+                            "                \"EngineVersion\": \"13.1\",\n"
+                        ],
+                        [
+                            3021,
+                            "                \"MultiAZ\": \"false\",\n"
+                        ],
+                        [
+                            3022,
+                            "                \"PubliclyAccessible\": \"false\",\n"
+                        ],
+                        [
+                            3023,
+                            "                \"BackupRetentionPeriod\": \"7\",\n"
+                        ],
+                        [
+                            3024,
+                            "                \"EnablePerformanceInsights\": \"true\",\n"
+                        ],
+                        [
+                            3025,
+                            "                \"EnableCloudwatchLogsExports\": [\n"
+                        ],
+                        [
+                            3026,
+                            "                    \"postgresql\",\n"
+                        ],
+                        [
+                            3027,
+                            "                    \"upgrade\"\n"
+                        ],
+                        [
+                            3028,
+                            "                ],\n"
+                        ],
+                        [
+                            3029,
+                            "                \"StorageType\": \"gp2\",\n"
+                        ],
+                        [
+                            3030,
+                            "                \"DBInstanceIdentifier\": \"rotation-instance\",\n"
+                        ],
+                        [
+                            3031,
+                            "                \"MasterUsername\": {\n"
+                        ],
+                        [
+                            3032,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            3033,
+                            "                        \"useDBSnapshot\",\n"
+                        ],
+                        [
+                            3034,
+                            "                        {\n"
+                        ],
+                        [
+                            3035,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            3036,
+                            "                        },\n"
+                        ],
+                        [
+                            3037,
+                            "                        {\n"
+                        ],
+                        [
+                            3038,
+                            "                            \"Fn::Join\": [\n"
+                        ],
+                        [
+                            3039,
+                            "                                \"\",\n"
+                        ],
+                        [
+                            3040,
+                            "                                [\n"
+                        ],
+                        [
+                            3041,
+                            "                                    \"{{resolve:secretsmanager:\",\n"
+                        ],
+                        [
+                            3042,
+                            "                                    {\n"
+                        ],
+                        [
+                            3043,
+                            "                                        \"Ref\": \"RDSInstanceRotationSecret\"\n"
+                        ],
+                        [
+                            3044,
+                            "                                    },\n"
+                        ],
+                        [
+                            3045,
+                            "                                    \":SecretString:username}}\"\n"
+                        ],
+                        [
+                            3046,
+                            "                                ]\n"
+                        ],
+                        [
+                            3047,
+                            "                            ]\n"
+                        ],
+                        [
+                            3048,
+                            "                        }\n"
+                        ],
+                        [
+                            3049,
+                            "                    ]\n"
+                        ],
+                        [
+                            3050,
+                            "                },\n"
+                        ],
+                        [
+                            3051,
+                            "                \"MasterUserPassword\": {\n"
+                        ],
+                        [
+                            3052,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            3053,
+                            "                        \"useDBSnapshot\",\n"
+                        ],
+                        [
+                            3054,
+                            "                        {\n"
+                        ],
+                        [
+                            3055,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            3056,
+                            "                        },\n"
+                        ],
+                        [
+                            3057,
+                            "                        {\n"
+                        ],
+                        [
+                            3058,
+                            "                            \"Fn::Join\": [\n"
+                        ],
+                        [
+                            3059,
+                            "                                \"\",\n"
+                        ],
+                        [
+                            3060,
+                            "                                [\n"
+                        ],
+                        [
+                            3061,
+                            "                                    \"{{resolve:secretsmanager:\",\n"
+                        ],
+                        [
+                            3062,
+                            "                                    {\n"
+                        ],
+                        [
+                            3063,
+                            "                                        \"Ref\": \"RDSInstanceRotationSecret\"\n"
+                        ],
+                        [
+                            3064,
+                            "                                    },\n"
+                        ],
+                        [
+                            3065,
+                            "                                    \":SecretString:password}}\"\n"
+                        ],
+                        [
+                            3066,
+                            "                                ]\n"
+                        ],
+                        [
+                            3067,
+                            "                            ]\n"
+                        ],
+                        [
+                            3068,
+                            "                        }\n"
+                        ],
+                        [
+                            3069,
+                            "                    ]\n"
+                        ],
+                        [
+                            3070,
+                            "                },\n"
+                        ],
+                        [
+                            3071,
+                            "                \"DBSnapshotIdentifier\": {\n"
+                        ],
+                        [
+                            3072,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            3073,
+                            "                        \"useDBSnapshot\",\n"
+                        ],
+                        [
+                            3074,
+                            "                        {\n"
+                        ],
+                        [
+                            3075,
+                            "                            \"Ref\": \"DBSnapshotName\"\n"
+                        ],
+                        [
+                            3076,
+                            "                        },\n"
+                        ],
+                        [
+                            3077,
+                            "                        {\n"
+                        ],
+                        [
+                            3078,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            3079,
+                            "                        }\n"
+                        ],
+                        [
+                            3080,
+                            "                    ]\n"
+                        ],
+                        [
+                            3081,
+                            "                },\n"
+                        ],
+                        [
+                            3082,
+                            "                \"DBSubnetGroupName\": {\n"
+                        ],
+                        [
+                            3083,
+                            "                    \"Ref\": \"myDBSubnetGroup\"\n"
+                        ],
+                        [
+                            3084,
+                            "                },\n"
+                        ],
+                        [
+                            3085,
+                            "                \"DBParameterGroupName\": {\n"
+                        ],
+                        [
+                            3086,
+                            "                    \"Ref\": \"DatabaseParamGroup\"\n"
+                        ],
+                        [
+                            3087,
+                            "                },\n"
+                        ],
+                        [
+                            3088,
+                            "                \"VPCSecurityGroups\": [\n"
+                        ],
+                        [
+                            3089,
+                            "                    {\n"
+                        ],
+                        [
+                            3090,
+                            "                        \"Fn::GetAtt\": [\n"
+                        ],
+                        [
+                            3091,
+                            "                            \"DatabaseSecurityGroup\",\n"
+                        ],
+                        [
+                            3092,
+                            "                            \"GroupId\"\n"
+                        ],
+                        [
+                            3093,
+                            "                        ]\n"
+                        ],
+                        [
+                            3094,
+                            "                    }\n"
+                        ],
+                        [
+                            3095,
+                            "                ]\n"
+                        ],
+                        [
+                            3096,
+                            "            }\n"
+                        ],
+                        [
+                            3097,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        2977,
+                        3097
+                    ],
+                    "resource": "AWS::RDS::DBInstance.Database",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.RDSPubliclyAccessible",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "breadcrumbs": {
+                        "DBName.Fn::If.2": [
+                            {
+                                "type": "parameters",
+                                "name": "DBName",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ],
+                        "DBName.Fn::If": [
+                            {
+                                "type": "parameters",
+                                "name": "DBName",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ],
+                        "DBInstanceClass": [
+                            {
+                                "type": "parameters",
+                                "name": "DBClass",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ],
+                        "AllocatedStorage": [
+                            {
+                                "type": "parameters",
+                                "name": "DBAllocatedStorage",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ]
+                    },
+                    "guideline": "https://docs.bridgecrew.io/docs/public_2"
+                },
+                {
                     "check_id": "CKV_AWS_54",
                     "bc_check_id": "BC_AWS_S3_20",
                     "check_name": "Ensure S3 bucket has block public policy enabled",
@@ -27196,560 +27750,6 @@
                     "guideline": "https://docs.bridgecrew.io/docs/general_4"
                 },
                 {
-                    "check_id": "CKV_AWS_17",
-                    "bc_check_id": "BC_AWS_PUBLIC_2",
-                    "check_name": "Ensure all data stored in RDS is not publicly accessible",
-                    "check_result": {
-                        "result": "FAILED",
-                        "evaluated_keys": [
-                            "Properties/PubliclyAccessible"
-                        ]
-                    },
-                    "code_block": [
-                        [
-                            2977,
-                            "        \"Database\": {\n"
-                        ],
-                        [
-                            2978,
-                            "            \"Type\": \"AWS::RDS::DBInstance\",\n"
-                        ],
-                        [
-                            2979,
-                            "            \"DependsOn\": [\n"
-                        ],
-                        [
-                            2980,
-                            "                \"PrivateRoute\",\n"
-                        ],
-                        [
-                            2981,
-                            "                \"DatabaseSecurityGroup\"\n"
-                        ],
-                        [
-                            2982,
-                            "            ],\n"
-                        ],
-                        [
-                            2983,
-                            "            \"Properties\": {\n"
-                        ],
-                        [
-                            2984,
-                            "                \"DBName\": {\n"
-                        ],
-                        [
-                            2985,
-                            "                    \"Fn::If\": [\n"
-                        ],
-                        [
-                            2986,
-                            "                        \"useDBSnapshot\",\n"
-                        ],
-                        [
-                            2987,
-                            "                        {\n"
-                        ],
-                        [
-                            2988,
-                            "                            \"Ref\": \"AWS::NoValue\"\n"
-                        ],
-                        [
-                            2989,
-                            "                        },\n"
-                        ],
-                        [
-                            2990,
-                            "                        {\n"
-                        ],
-                        [
-                            2991,
-                            "                            \"Ref\": \"DBName\"\n"
-                        ],
-                        [
-                            2992,
-                            "                        }\n"
-                        ],
-                        [
-                            2993,
-                            "                    ]\n"
-                        ],
-                        [
-                            2994,
-                            "                },\n"
-                        ],
-                        [
-                            2995,
-                            "                \"StorageEncrypted\": {\n"
-                        ],
-                        [
-                            2996,
-                            "                    \"Fn::If\": [\n"
-                        ],
-                        [
-                            2997,
-                            "                        \"useDBEncryptionKmsAlias\",\n"
-                        ],
-                        [
-                            2998,
-                            "                        \"true\",\n"
-                        ],
-                        [
-                            2999,
-                            "                        \"false\"\n"
-                        ],
-                        [
-                            3000,
-                            "                    ]\n"
-                        ],
-                        [
-                            3001,
-                            "                },\n"
-                        ],
-                        [
-                            3002,
-                            "                \"KmsKeyId\": {\n"
-                        ],
-                        [
-                            3003,
-                            "                    \"Fn::If\": [\n"
-                        ],
-                        [
-                            3004,
-                            "                        \"useDBEncryptionKmsAlias\",\n"
-                        ],
-                        [
-                            3005,
-                            "                        {\n"
-                        ],
-                        [
-                            3006,
-                            "                            \"Ref\": \"DBEncryptionKmsAlias\"\n"
-                        ],
-                        [
-                            3007,
-                            "                        },\n"
-                        ],
-                        [
-                            3008,
-                            "                        {\n"
-                        ],
-                        [
-                            3009,
-                            "                            \"Ref\": \"AWS::NoValue\"\n"
-                        ],
-                        [
-                            3010,
-                            "                        }\n"
-                        ],
-                        [
-                            3011,
-                            "                    ]\n"
-                        ],
-                        [
-                            3012,
-                            "                },\n"
-                        ],
-                        [
-                            3013,
-                            "                \"AllocatedStorage\": {\n"
-                        ],
-                        [
-                            3014,
-                            "                    \"Ref\": \"DBAllocatedStorage\"\n"
-                        ],
-                        [
-                            3015,
-                            "                },\n"
-                        ],
-                        [
-                            3016,
-                            "                \"DBInstanceClass\": {\n"
-                        ],
-                        [
-                            3017,
-                            "                    \"Ref\": \"DBClass\"\n"
-                        ],
-                        [
-                            3018,
-                            "                },\n"
-                        ],
-                        [
-                            3019,
-                            "                \"Engine\": \"postgres\",\n"
-                        ],
-                        [
-                            3020,
-                            "                \"EngineVersion\": \"13.1\",\n"
-                        ],
-                        [
-                            3021,
-                            "                \"MultiAZ\": \"false\",\n"
-                        ],
-                        [
-                            3022,
-                            "                \"PubliclyAccessible\": \"false\",\n"
-                        ],
-                        [
-                            3023,
-                            "                \"BackupRetentionPeriod\": \"7\",\n"
-                        ],
-                        [
-                            3024,
-                            "                \"EnablePerformanceInsights\": \"true\",\n"
-                        ],
-                        [
-                            3025,
-                            "                \"EnableCloudwatchLogsExports\": [\n"
-                        ],
-                        [
-                            3026,
-                            "                    \"postgresql\",\n"
-                        ],
-                        [
-                            3027,
-                            "                    \"upgrade\"\n"
-                        ],
-                        [
-                            3028,
-                            "                ],\n"
-                        ],
-                        [
-                            3029,
-                            "                \"StorageType\": \"gp2\",\n"
-                        ],
-                        [
-                            3030,
-                            "                \"DBInstanceIdentifier\": \"rotation-instance\",\n"
-                        ],
-                        [
-                            3031,
-                            "                \"MasterUsername\": {\n"
-                        ],
-                        [
-                            3032,
-                            "                    \"Fn::If\": [\n"
-                        ],
-                        [
-                            3033,
-                            "                        \"useDBSnapshot\",\n"
-                        ],
-                        [
-                            3034,
-                            "                        {\n"
-                        ],
-                        [
-                            3035,
-                            "                            \"Ref\": \"AWS::NoValue\"\n"
-                        ],
-                        [
-                            3036,
-                            "                        },\n"
-                        ],
-                        [
-                            3037,
-                            "                        {\n"
-                        ],
-                        [
-                            3038,
-                            "                            \"Fn::Join\": [\n"
-                        ],
-                        [
-                            3039,
-                            "                                \"\",\n"
-                        ],
-                        [
-                            3040,
-                            "                                [\n"
-                        ],
-                        [
-                            3041,
-                            "                                    \"{{resolve:secretsmanager:\",\n"
-                        ],
-                        [
-                            3042,
-                            "                                    {\n"
-                        ],
-                        [
-                            3043,
-                            "                                        \"Ref\": \"RDSInstanceRotationSecret\"\n"
-                        ],
-                        [
-                            3044,
-                            "                                    },\n"
-                        ],
-                        [
-                            3045,
-                            "                                    \":SecretString:username}}\"\n"
-                        ],
-                        [
-                            3046,
-                            "                                ]\n"
-                        ],
-                        [
-                            3047,
-                            "                            ]\n"
-                        ],
-                        [
-                            3048,
-                            "                        }\n"
-                        ],
-                        [
-                            3049,
-                            "                    ]\n"
-                        ],
-                        [
-                            3050,
-                            "                },\n"
-                        ],
-                        [
-                            3051,
-                            "                \"MasterUserPassword\": {\n"
-                        ],
-                        [
-                            3052,
-                            "                    \"Fn::If\": [\n"
-                        ],
-                        [
-                            3053,
-                            "                        \"useDBSnapshot\",\n"
-                        ],
-                        [
-                            3054,
-                            "                        {\n"
-                        ],
-                        [
-                            3055,
-                            "                            \"Ref\": \"AWS::NoValue\"\n"
-                        ],
-                        [
-                            3056,
-                            "                        },\n"
-                        ],
-                        [
-                            3057,
-                            "                        {\n"
-                        ],
-                        [
-                            3058,
-                            "                            \"Fn::Join\": [\n"
-                        ],
-                        [
-                            3059,
-                            "                                \"\",\n"
-                        ],
-                        [
-                            3060,
-                            "                                [\n"
-                        ],
-                        [
-                            3061,
-                            "                                    \"{{resolve:secretsmanager:\",\n"
-                        ],
-                        [
-                            3062,
-                            "                                    {\n"
-                        ],
-                        [
-                            3063,
-                            "                                        \"Ref\": \"RDSInstanceRotationSecret\"\n"
-                        ],
-                        [
-                            3064,
-                            "                                    },\n"
-                        ],
-                        [
-                            3065,
-                            "                                    \":SecretString:password}}\"\n"
-                        ],
-                        [
-                            3066,
-                            "                                ]\n"
-                        ],
-                        [
-                            3067,
-                            "                            ]\n"
-                        ],
-                        [
-                            3068,
-                            "                        }\n"
-                        ],
-                        [
-                            3069,
-                            "                    ]\n"
-                        ],
-                        [
-                            3070,
-                            "                },\n"
-                        ],
-                        [
-                            3071,
-                            "                \"DBSnapshotIdentifier\": {\n"
-                        ],
-                        [
-                            3072,
-                            "                    \"Fn::If\": [\n"
-                        ],
-                        [
-                            3073,
-                            "                        \"useDBSnapshot\",\n"
-                        ],
-                        [
-                            3074,
-                            "                        {\n"
-                        ],
-                        [
-                            3075,
-                            "                            \"Ref\": \"DBSnapshotName\"\n"
-                        ],
-                        [
-                            3076,
-                            "                        },\n"
-                        ],
-                        [
-                            3077,
-                            "                        {\n"
-                        ],
-                        [
-                            3078,
-                            "                            \"Ref\": \"AWS::NoValue\"\n"
-                        ],
-                        [
-                            3079,
-                            "                        }\n"
-                        ],
-                        [
-                            3080,
-                            "                    ]\n"
-                        ],
-                        [
-                            3081,
-                            "                },\n"
-                        ],
-                        [
-                            3082,
-                            "                \"DBSubnetGroupName\": {\n"
-                        ],
-                        [
-                            3083,
-                            "                    \"Ref\": \"myDBSubnetGroup\"\n"
-                        ],
-                        [
-                            3084,
-                            "                },\n"
-                        ],
-                        [
-                            3085,
-                            "                \"DBParameterGroupName\": {\n"
-                        ],
-                        [
-                            3086,
-                            "                    \"Ref\": \"DatabaseParamGroup\"\n"
-                        ],
-                        [
-                            3087,
-                            "                },\n"
-                        ],
-                        [
-                            3088,
-                            "                \"VPCSecurityGroups\": [\n"
-                        ],
-                        [
-                            3089,
-                            "                    {\n"
-                        ],
-                        [
-                            3090,
-                            "                        \"Fn::GetAtt\": [\n"
-                        ],
-                        [
-                            3091,
-                            "                            \"DatabaseSecurityGroup\",\n"
-                        ],
-                        [
-                            3092,
-                            "                            \"GroupId\"\n"
-                        ],
-                        [
-                            3093,
-                            "                        ]\n"
-                        ],
-                        [
-                            3094,
-                            "                    }\n"
-                        ],
-                        [
-                            3095,
-                            "                ]\n"
-                        ],
-                        [
-                            3096,
-                            "            }\n"
-                        ],
-                        [
-                            3097,
-                            "        },\n"
-                        ]
-                    ],
-                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
-                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
-                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
-                    "file_line_range": [
-                        2977,
-                        3097
-                    ],
-                    "resource": "AWS::RDS::DBInstance.Database",
-                    "evaluations": {},
-                    "check_class": "checkov.cloudformation.checks.resource.aws.RDSPubliclyAccessible",
-                    "fixed_definition": null,
-                    "entity_tags": null,
-                    "caller_file_path": null,
-                    "caller_file_line_range": null,
-                    "resource_address": null,
-                    "severity": null,
-                    "bc_category": null,
-                    "benchmarks": null,
-                    "description": null,
-                    "short_description": null,
-                    "vulnerability_details": null,
-                    "connected_node": null,
-                    "breadcrumbs": {
-                        "DBName.Fn::If.2": [
-                            {
-                                "type": "parameters",
-                                "name": "DBName",
-                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
-                                "attribute_key": "Default"
-                            }
-                        ],
-                        "DBName.Fn::If": [
-                            {
-                                "type": "parameters",
-                                "name": "DBName",
-                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
-                                "attribute_key": "Default"
-                            }
-                        ],
-                        "DBInstanceClass": [
-                            {
-                                "type": "parameters",
-                                "name": "DBClass",
-                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
-                                "attribute_key": "Default"
-                            }
-                        ],
-                        "AllocatedStorage": [
-                            {
-                                "type": "parameters",
-                                "name": "DBAllocatedStorage",
-                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
-                                "attribute_key": "Default"
-                            }
-                        ]
-                    },
-                    "guideline": "https://docs.bridgecrew.io/docs/public_2"
-                },
-                {
                     "check_id": "CKV_AWS_131",
                     "bc_check_id": "BC_AWS_NETWORKING_41",
                     "check_name": "Ensure that ALB drops HTTP headers",
@@ -30342,12 +30342,12 @@
             "parsing_errors": []
         },
         "summary": {
-            "passed": 102,
-            "failed": 17,
+            "passed": 103,
+            "failed": 16,
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 130,
-            "checkov_version": "2.0.1007"
+            "checkov_version": "2.0.1076"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     },
@@ -30403,7 +30403,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 1,
-            "checkov_version": "2.0.1007"
+            "checkov_version": "2.0.1076"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     }

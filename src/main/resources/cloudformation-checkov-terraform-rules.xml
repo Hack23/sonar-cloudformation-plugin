@@ -1,6 +1,1821 @@
 <rules>
 
     <rule>
+		<key>cloudformation-CKV_AWS_2</key>
+		<name>Ensure ALB protocol is HTTPS</name>
+		<internalKey>cloudformation-CKV_AWS_2</internalKey>
+		<description>Ensure ALB protocol is HTTPS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_3</key>
+		<name>Ensure all data stored in the EBS is securely encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_3</internalKey>
+		<description>Ensure all data stored in the EBS is securely encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_5</key>
+		<name>Ensure all data stored in the Elasticsearch is securely encrypted at rest</name>
+		<internalKey>cloudformation-CKV_AWS_5</internalKey>
+		<description>Ensure all data stored in the Elasticsearch is securely encrypted at rest</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_6</key>
+		<name>Ensure all Elasticsearch has node-to-node encryption enabled</name>
+		<internalKey>cloudformation-CKV_AWS_6</internalKey>
+		<description>Ensure all Elasticsearch has node-to-node encryption enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_7</key>
+		<name>Ensure rotation for customer created CMKs is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_7</internalKey>
+		<description>Ensure rotation for customer created CMKs is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-320</tag>
+		<tag>800-53-sc-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_8</key>
+		<name>Ensure all data stored in the Launch configuration EBS is securely encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_8</internalKey>
+		<description>Ensure all data stored in the Launch configuration EBS is securely encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_16</key>
+		<name>Ensure all data stored in the RDS is securely encrypted at rest</name>
+		<internalKey>cloudformation-CKV_AWS_16</internalKey>
+		<description>Ensure all data stored in the RDS is securely encrypted at rest</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_17</key>
+		<name>Ensure all data stored in RDS is not publicly accessible</name>
+		<internalKey>cloudformation-CKV_AWS_17</internalKey>
+		<description>Ensure all data stored in RDS is not publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_18</key>
+		<name>Ensure the S3 bucket has access logging enabled</name>
+		<internalKey>cloudformation-CKV_AWS_18</internalKey>
+		<description>Ensure the S3 bucket has access logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_19</key>
+		<name>Ensure the S3 bucket has server-side-encryption enabled</name>
+		<internalKey>cloudformation-CKV_AWS_19</internalKey>
+		<description>Ensure the S3 bucket has server-side-encryption enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_20</key>
+		<name>Ensure the S3 bucket does not allow READ permissions to everyone</name>
+		<internalKey>cloudformation-CKV_AWS_20</internalKey>
+		<description>Ensure the S3 bucket does not allow READ permissions to everyone</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_21</key>
+		<name>Ensure the S3 bucket has versioning enabled</name>
+		<internalKey>cloudformation-CKV_AWS_21</internalKey>
+		<description>Ensure the S3 bucket has versioning enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_23</key>
+		<name>Ensure every security groups rule has a description</name>
+		<internalKey>cloudformation-CKV_AWS_23</internalKey>
+		<description>Ensure every security groups rule has a description</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_24</key>
+		<name>Ensure no security groups allow ingress from 0.0.0.0:0 to port 22</name>
+		<internalKey>cloudformation-CKV_AWS_24</internalKey>
+		<description>Ensure no security groups allow ingress from 0.0.0.0:0 to port 22</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_25</key>
+		<name>Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389</name>
+		<internalKey>cloudformation-CKV_AWS_25</internalKey>
+		<description>Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_26</key>
+		<name>Ensure all data stored in the SNS topic is encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_26</internalKey>
+		<description>Ensure all data stored in the SNS topic is encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_27</key>
+		<name>Ensure all data stored in the SQS queue is encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_27</internalKey>
+		<description>Ensure all data stored in the SQS queue is encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_28</key>
+		<name>Ensure Dynamodb point in time recovery (backup) is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_28</internalKey>
+		<description>Ensure Dynamodb point in time recovery (backup) is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_29</key>
+		<name>Ensure all data stored in the Elasticache Replication Group is securely encrypted at rest</name>
+		<internalKey>cloudformation-CKV_AWS_29</internalKey>
+		<description>Ensure all data stored in the Elasticache Replication Group is securely encrypted at rest</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_30</key>
+		<name>Ensure all data stored in the Elasticache Replication Group is securely encrypted at transit</name>
+		<internalKey>cloudformation-CKV_AWS_30</internalKey>
+		<description>Ensure all data stored in the Elasticache Replication Group is securely encrypted at transit</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_31</key>
+		<name>Ensure all data stored in the Elasticache Replication Group is securely encrypted at transit and has auth token</name>
+		<internalKey>cloudformation-CKV_AWS_31</internalKey>
+		<description>Ensure all data stored in the Elasticache Replication Group is securely encrypted at transit and has auth token</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_32</key>
+		<name>Ensure ECR policy is not set to public</name>
+		<internalKey>cloudformation-CKV_AWS_32</internalKey>
+		<description>Ensure ECR policy is not set to public</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_33</key>
+		<name>Ensure KMS key policy does not contain wildcard (*) principal</name>
+		<internalKey>cloudformation-CKV_AWS_33</internalKey>
+		<description>Ensure KMS key policy does not contain wildcard (*) principal</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_34</key>
+		<name>Ensure cloudfront distribution ViewerProtocolPolicy is set to HTTPS</name>
+		<internalKey>cloudformation-CKV_AWS_34</internalKey>
+		<description>Ensure cloudfront distribution ViewerProtocolPolicy is set to HTTPS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_35</key>
+		<name>Ensure CloudTrail logs are encrypted at rest using KMS CMKs</name>
+		<internalKey>cloudformation-CKV_AWS_35</internalKey>
+		<description>Ensure CloudTrail logs are encrypted at rest using KMS CMKs</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_36</key>
+		<name>Ensure CloudTrail log file validation is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_36</internalKey>
+		<description>Ensure CloudTrail log file validation is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_40</key>
+		<name>Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)</name>
+		<internalKey>cloudformation-CKV_AWS_40</internalKey>
+		<description>Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_42</key>
+		<name>Ensure EFS is securely encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_42</internalKey>
+		<description>Ensure EFS is securely encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_43</key>
+		<name>Ensure Kinesis Stream is securely encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_43</internalKey>
+		<description>Ensure Kinesis Stream is securely encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_44</key>
+		<name>Ensure Neptune storage is securely encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_44</internalKey>
+		<description>Ensure Neptune storage is securely encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_45</key>
+		<name>Ensure no hard-coded secrets exist in lambda environment</name>
+		<internalKey>cloudformation-CKV_AWS_45</internalKey>
+		<description>Ensure no hard-coded secrets exist in lambda environment</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_46</key>
+		<name>Ensure no hard-coded secrets exist in EC2 user data</name>
+		<internalKey>cloudformation-CKV_AWS_46</internalKey>
+		<description>Ensure no hard-coded secrets exist in EC2 user data</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_47</key>
+		<name>Ensure DAX is encrypted at rest (default is unencrypted)</name>
+		<internalKey>cloudformation-CKV_AWS_47</internalKey>
+		<description>Ensure DAX is encrypted at rest (default is unencrypted)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_51</key>
+		<name>Ensure ECR Image Tags are immutable</name>
+		<internalKey>cloudformation-CKV_AWS_51</internalKey>
+		<description>Ensure ECR Image Tags are immutable</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_53</key>
+		<name>Ensure S3 bucket has block public ACLS enabled</name>
+		<internalKey>cloudformation-CKV_AWS_53</internalKey>
+		<description>Ensure S3 bucket has block public ACLS enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_54</key>
+		<name>Ensure S3 bucket has block public policy enabled</name>
+		<internalKey>cloudformation-CKV_AWS_54</internalKey>
+		<description>Ensure S3 bucket has block public policy enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_55</key>
+		<name>Ensure S3 bucket has ignore public ACLs enabled</name>
+		<internalKey>cloudformation-CKV_AWS_55</internalKey>
+		<description>Ensure S3 bucket has ignore public ACLs enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_56</key>
+		<name>Ensure S3 bucket has 'restrict_public_bucket' enabled</name>
+		<internalKey>cloudformation-CKV_AWS_56</internalKey>
+		<description>Ensure S3 bucket has 'restrict_public_bucket' enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_57</key>
+		<name>Ensure the S3 bucket does not allow WRITE permissions to everyone</name>
+		<internalKey>cloudformation-CKV_AWS_57</internalKey>
+		<description>Ensure the S3 bucket does not allow WRITE permissions to everyone</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_58</key>
+		<name>Ensure EKS Cluster has Secrets Encryption Enabled</name>
+		<internalKey>cloudformation-CKV_AWS_58</internalKey>
+		<description>Ensure EKS Cluster has Secrets Encryption Enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_59</key>
+		<name>Ensure there is no open access to back-end resources through API</name>
+		<internalKey>cloudformation-CKV_AWS_59</internalKey>
+		<description>Ensure there is no open access to back-end resources through API</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_60</key>
+		<name>Ensure IAM role allows only specific services or principals to assume it</name>
+		<internalKey>cloudformation-CKV_AWS_60</internalKey>
+		<description>Ensure IAM role allows only specific services or principals to assume it</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_61</key>
+		<name>Ensure IAM role allows only specific principals in account to assume it</name>
+		<internalKey>cloudformation-CKV_AWS_61</internalKey>
+		<description>Ensure IAM role allows only specific principals in account to assume it</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_62</key>
+		<name>Ensure no IAM policies that allow full &quot;*-*&quot; administrative privileges are not created</name>
+		<internalKey>cloudformation-CKV_AWS_62</internalKey>
+		<description>Ensure no IAM policies that allow full &quot;*-*&quot; administrative privileges are not created</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_63</key>
+		<name>Ensure no IAM policies documents allow &quot;*&quot; as a statement's actions</name>
+		<internalKey>cloudformation-CKV_AWS_63</internalKey>
+		<description>Ensure no IAM policies documents allow &quot;*&quot; as a statement's actions</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_64</key>
+		<name>Ensure all data stored in the Redshift cluster is securely encrypted at rest</name>
+		<internalKey>cloudformation-CKV_AWS_64</internalKey>
+		<description>Ensure all data stored in the Redshift cluster is securely encrypted at rest</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_65</key>
+		<name>Ensure container insights are enabled on ECS cluster</name>
+		<internalKey>cloudformation-CKV_AWS_65</internalKey>
+		<description>Ensure container insights are enabled on ECS cluster</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_66</key>
+		<name>Ensure that CloudWatch Log Group specifies retention days</name>
+		<internalKey>cloudformation-CKV_AWS_66</internalKey>
+		<description>Ensure that CloudWatch Log Group specifies retention days</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_67</key>
+		<name>Ensure CloudTrail is enabled in all Regions</name>
+		<internalKey>cloudformation-CKV_AWS_67</internalKey>
+		<description>Ensure CloudTrail is enabled in all Regions</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_68</key>
+		<name>CloudFront Distribution should have WAF enabled</name>
+		<internalKey>cloudformation-CKV_AWS_68</internalKey>
+		<description>CloudFront Distribution should have WAF enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_69</key>
+		<name>Ensure Amazon MQ Broker should not have public access</name>
+		<internalKey>cloudformation-CKV_AWS_69</internalKey>
+		<description>Ensure Amazon MQ Broker should not have public access</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_71</key>
+		<name>Ensure Redshift Cluster logging is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_71</internalKey>
+		<description>Ensure Redshift Cluster logging is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_73</key>
+		<name>Ensure API Gateway has X-Ray Tracing enabled</name>
+		<internalKey>cloudformation-CKV_AWS_73</internalKey>
+		<description>Ensure API Gateway has X-Ray Tracing enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_74</key>
+		<name>Ensure DocDB is encrypted at rest (default is unencrypted)</name>
+		<internalKey>cloudformation-CKV_AWS_74</internalKey>
+		<description>Ensure DocDB is encrypted at rest (default is unencrypted)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_76</key>
+		<name>Ensure API Gateway has Access Logging enabled</name>
+		<internalKey>cloudformation-CKV_AWS_76</internalKey>
+		<description>Ensure API Gateway has Access Logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_78</key>
+		<name>Ensure that CodeBuild Project encryption is not disabled</name>
+		<internalKey>cloudformation-CKV_AWS_78</internalKey>
+		<description>Ensure that CodeBuild Project encryption is not disabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_79</key>
+		<name>Ensure Instance Metadata Service Version 1 is not enabled</name>
+		<internalKey>cloudformation-CKV_AWS_79</internalKey>
+		<description>Ensure Instance Metadata Service Version 1 is not enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_82</key>
+		<name>Ensure Athena Workgroup should enforce configuration to prevent client disabling encryption</name>
+		<internalKey>cloudformation-CKV_AWS_82</internalKey>
+		<description>Ensure Athena Workgroup should enforce configuration to prevent client disabling encryption</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_83</key>
+		<name>Ensure Elasticsearch Domain enforces HTTPS</name>
+		<internalKey>cloudformation-CKV_AWS_83</internalKey>
+		<description>Ensure Elasticsearch Domain enforces HTTPS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_84</key>
+		<name>Ensure Elasticsearch Domain Logging is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_84</internalKey>
+		<description>Ensure Elasticsearch Domain Logging is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_85</key>
+		<name>Ensure DocDB Logging is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_85</internalKey>
+		<description>Ensure DocDB Logging is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_86</key>
+		<name>Ensure Cloudfront distribution has Access Logging enabled</name>
+		<internalKey>cloudformation-CKV_AWS_86</internalKey>
+		<description>Ensure Cloudfront distribution has Access Logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_87</key>
+		<name>Redshift cluster should not be publicly accessible</name>
+		<internalKey>cloudformation-CKV_AWS_87</internalKey>
+		<description>Redshift cluster should not be publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_88</key>
+		<name>EC2 instance should not have public IP.</name>
+		<internalKey>cloudformation-CKV_AWS_88</internalKey>
+		<description>EC2 instance should not have public IP.</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_89</key>
+		<name>DMS replication instance should not be publicly accessible</name>
+		<internalKey>cloudformation-CKV_AWS_89</internalKey>
+		<description>DMS replication instance should not be publicly accessible</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_90</key>
+		<name>Ensure DocDB TLS is not disabled</name>
+		<internalKey>cloudformation-CKV_AWS_90</internalKey>
+		<description>Ensure DocDB TLS is not disabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_91</key>
+		<name>Ensure the ELBv2 (Application/Network) has access logging enabled</name>
+		<internalKey>cloudformation-CKV_AWS_91</internalKey>
+		<description>Ensure the ELBv2 (Application/Network) has access logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_92</key>
+		<name>Ensure the ELB has access logging enabled</name>
+		<internalKey>cloudformation-CKV_AWS_92</internalKey>
+		<description>Ensure the ELB has access logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_94</key>
+		<name>Ensure Glue Data Catalog Encryption is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_94</internalKey>
+		<description>Ensure Glue Data Catalog Encryption is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_95</key>
+		<name>Ensure API Gateway V2 has Access Logging enabled</name>
+		<internalKey>cloudformation-CKV_AWS_95</internalKey>
+		<description>Ensure API Gateway V2 has Access Logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_96</key>
+		<name>Ensure all data stored in Aurora is securely encrypted at rest</name>
+		<internalKey>cloudformation-CKV_AWS_96</internalKey>
+		<description>Ensure all data stored in Aurora is securely encrypted at rest</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_97</key>
+		<name>Ensure Encryption in transit is enabled for EFS volumes in ECS Task definitions</name>
+		<internalKey>cloudformation-CKV_AWS_97</internalKey>
+		<description>Ensure Encryption in transit is enabled for EFS volumes in ECS Task definitions</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_99</key>
+		<name>Ensure Glue Security Configuration Encryption is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_99</internalKey>
+		<description>Ensure Glue Security Configuration Encryption is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_100</key>
+		<name>Ensure Amazon EKS Node group has implicit SSH access from 0.0.0.0/0</name>
+		<internalKey>cloudformation-CKV_AWS_100</internalKey>
+		<description>Ensure Amazon EKS Node group has implicit SSH access from 0.0.0.0/0</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_101</key>
+		<name>Ensure Neptune logging is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_101</internalKey>
+		<description>Ensure Neptune logging is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_103</key>
+		<name>Ensure that Application Load Balancer Listener is using TLS v1.2</name>
+		<internalKey>cloudformation-CKV_AWS_103</internalKey>
+		<description>Ensure that Application Load Balancer Listener is using TLS v1.2</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_104</key>
+		<name>Ensure DocDB has audit logs enabled</name>
+		<internalKey>cloudformation-CKV_AWS_104</internalKey>
+		<description>Ensure DocDB has audit logs enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_105</key>
+		<name>Ensure Redshift uses SSL</name>
+		<internalKey>cloudformation-CKV_AWS_105</internalKey>
+		<description>Ensure Redshift uses SSL</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_107</key>
+		<name>Ensure IAM policies does not allow credentials exposure</name>
+		<internalKey>cloudformation-CKV_AWS_107</internalKey>
+		<description>Ensure IAM policies does not allow credentials exposure</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_108</key>
+		<name>Ensure IAM policies does not allow data exfiltration</name>
+		<internalKey>cloudformation-CKV_AWS_108</internalKey>
+		<description>Ensure IAM policies does not allow data exfiltration</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_109</key>
+		<name>Ensure IAM policies does not allow permissions management without constraints</name>
+		<internalKey>cloudformation-CKV_AWS_109</internalKey>
+		<description>Ensure IAM policies does not allow permissions management without constraints</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_110</key>
+		<name>Ensure IAM policies does not allow privilege escalation</name>
+		<internalKey>cloudformation-CKV_AWS_110</internalKey>
+		<description>Ensure IAM policies does not allow privilege escalation</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_111</key>
+		<name>Ensure IAM policies does not allow write access without constraints</name>
+		<internalKey>cloudformation-CKV_AWS_111</internalKey>
+		<description>Ensure IAM policies does not allow write access without constraints</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-272</tag>
+		<tag>800-53-ac-6</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_116</key>
+		<name>Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)</name>
+		<internalKey>cloudformation-CKV_AWS_116</internalKey>
+		<description>Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_119</key>
+		<name>Ensure DynamoDB Tables are encrypted using a KMS Customer Managed CMK</name>
+		<internalKey>cloudformation-CKV_AWS_119</internalKey>
+		<description>Ensure DynamoDB Tables are encrypted using a KMS Customer Managed CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_120</key>
+		<name>Ensure API Gateway caching is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_120</internalKey>
+		<description>Ensure API Gateway caching is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_123</key>
+		<name>Ensure that VPC Endpoint Service is configured for Manual Acceptance</name>
+		<internalKey>cloudformation-CKV_AWS_123</internalKey>
+		<description>Ensure that VPC Endpoint Service is configured for Manual Acceptance</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_131</key>
+		<name>Ensure that ALB drops HTTP headers</name>
+		<internalKey>cloudformation-CKV_AWS_131</internalKey>
+		<description>Ensure that ALB drops HTTP headers</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_136</key>
+		<name>Ensure that ECR repositories are encrypted using KMS</name>
+		<internalKey>cloudformation-CKV_AWS_136</internalKey>
+		<description>Ensure that ECR repositories are encrypted using KMS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_149</key>
+		<name>Ensure that Secrets Manager secret is encrypted using KMS CMK</name>
+		<internalKey>cloudformation-CKV_AWS_149</internalKey>
+		<description>Ensure that Secrets Manager secret is encrypted using KMS CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_154</key>
+		<name>Ensure Redshift is not deployed outside of a VPC</name>
+		<internalKey>cloudformation-CKV_AWS_154</internalKey>
+		<description>Ensure Redshift is not deployed outside of a VPC</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_155</key>
+		<name>Ensure that Workspace user volumes are encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_155</internalKey>
+		<description>Ensure that Workspace user volumes are encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_156</key>
+		<name>Ensure that Workspace root volumes are encrypted</name>
+		<internalKey>cloudformation-CKV_AWS_156</internalKey>
+		<description>Ensure that Workspace root volumes are encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_157</key>
+		<name>Ensure that RDS instances have Multi-AZ enabled</name>
+		<internalKey>cloudformation-CKV_AWS_157</internalKey>
+		<description>Ensure that RDS instances have Multi-AZ enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_158</key>
+		<name>Ensure that CloudWatch Log Group is encrypted by KMS</name>
+		<internalKey>cloudformation-CKV_AWS_158</internalKey>
+		<description>Ensure that CloudWatch Log Group is encrypted by KMS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_160</key>
+		<name>Ensure that Timestream database is encrypted with KMS CMK</name>
+		<internalKey>cloudformation-CKV_AWS_160</internalKey>
+		<description>Ensure that Timestream database is encrypted with KMS CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_161</key>
+		<name>Ensure RDS database has IAM authentication enabled</name>
+		<internalKey>cloudformation-CKV_AWS_161</internalKey>
+		<description>Ensure RDS database has IAM authentication enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_162</key>
+		<name>Ensure RDS cluster has IAM authentication enabled</name>
+		<internalKey>cloudformation-CKV_AWS_162</internalKey>
+		<description>Ensure RDS cluster has IAM authentication enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_163</key>
+		<name>Ensure ECR image scanning on push is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_163</internalKey>
+		<description>Ensure ECR image scanning on push is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_164</key>
+		<name>Ensure Transfer Server is not exposed publicly.</name>
+		<internalKey>cloudformation-CKV_AWS_164</internalKey>
+		<description>Ensure Transfer Server is not exposed publicly.</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_165</key>
+		<name>Ensure Dynamodb global table point in time recovery (backup) is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_165</internalKey>
+		<description>Ensure Dynamodb global table point in time recovery (backup) is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_166</key>
+		<name>Ensure Backup Vault is encrypted at rest using KMS CMK</name>
+		<internalKey>cloudformation-CKV_AWS_166</internalKey>
+		<description>Ensure Backup Vault is encrypted at rest using KMS CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_170</key>
+		<name>Ensure QLDB ledger permissions mode is set to STANDARD</name>
+		<internalKey>cloudformation-CKV_AWS_170</internalKey>
+		<description>Ensure QLDB ledger permissions mode is set to STANDARD</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_172</key>
+		<name>Ensure QLDB ledger has deletion protection enabled</name>
+		<internalKey>cloudformation-CKV_AWS_172</internalKey>
+		<description>Ensure QLDB ledger has deletion protection enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_173</key>
+		<name>Check encryption settings for Lambda environmental variable</name>
+		<internalKey>cloudformation-CKV_AWS_173</internalKey>
+		<description>Check encryption settings for Lambda environmental variable</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_174</key>
+		<name>Verify CloudFront Distribution Viewer Certificate is using TLS v1.2</name>
+		<internalKey>cloudformation-CKV_AWS_174</internalKey>
+		<description>Verify CloudFront Distribution Viewer Certificate is using TLS v1.2</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_192</key>
+		<name>Ensure WAF prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell</name>
+		<internalKey>cloudformation-CKV_AWS_192</internalKey>
+		<description>Ensure WAF prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_193</key>
+		<name>Ensure AppSync has Logging enabled</name>
+		<internalKey>cloudformation-CKV_AWS_193</internalKey>
+		<description>Ensure AppSync has Logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_194</key>
+		<name>Ensure AppSync has Field-Level logs enabled</name>
+		<internalKey>cloudformation-CKV_AWS_194</internalKey>
+		<description>Ensure AppSync has Field-Level logs enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_195</key>
+		<name>Ensure Glue component has a security configuration associated</name>
+		<internalKey>cloudformation-CKV_AWS_195</internalKey>
+		<description>Ensure Glue component has a security configuration associated</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_ALI_1</key>
 		<name>Alibaba Cloud OSS bucket accessible to public</name>
 		<internalKey>terraform-CKV_ALI_1</internalKey>
@@ -51,6 +1866,369 @@
 		<tag>owasp-a6</tag>
 		<tag>cweid-732</tag>
 		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_4</key>
+		<name>Ensure Action Trail Logging for all regions</name>
+		<internalKey>terraform-CKV_ALI_4</internalKey>
+		<description>Ensure Action Trail Logging for all regions</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_5</key>
+		<name>Ensure Action Trail Logging for all events</name>
+		<internalKey>terraform-CKV_ALI_5</internalKey>
+		<description>Ensure Action Trail Logging for all events</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_6</key>
+		<name>Ensure OSS bucket is encrypted with Customer Master Key</name>
+		<internalKey>terraform-CKV_ALI_6</internalKey>
+		<description>Ensure OSS bucket is encrypted with Customer Master Key</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_7</key>
+		<name>Ensure disk is encrypted</name>
+		<internalKey>terraform-CKV_ALI_7</internalKey>
+		<description>Ensure disk is encrypted</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_8</key>
+		<name>Ensure Disk is encrypted with Customer Master Key</name>
+		<internalKey>terraform-CKV_ALI_8</internalKey>
+		<description>Ensure Disk is encrypted with Customer Master Key</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_9</key>
+		<name>Ensure database instance is not public</name>
+		<internalKey>terraform-CKV_ALI_9</internalKey>
+		<description>Ensure database instance is not public</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_10</key>
+		<name>Ensure OSS bucket has versioning enabled</name>
+		<internalKey>terraform-CKV_ALI_10</internalKey>
+		<description>Ensure OSS bucket has versioning enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_11</key>
+		<name>Ensure OSS bucket has transfer Acceleration enabled</name>
+		<internalKey>terraform-CKV_ALI_11</internalKey>
+		<description>Ensure OSS bucket has transfer Acceleration enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_12</key>
+		<name>Ensure the OSS bucket has access logging enabled</name>
+		<internalKey>terraform-CKV_ALI_12</internalKey>
+		<description>Ensure the OSS bucket has access logging enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_13</key>
+		<name>Ensure RAM password policy requires minimum length of 14 or greater</name>
+		<internalKey>terraform-CKV_ALI_13</internalKey>
+		<description>Ensure RAM password policy requires minimum length of 14 or greater</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_14</key>
+		<name>Ensure RAM password policy requires at least one number</name>
+		<internalKey>terraform-CKV_ALI_14</internalKey>
+		<description>Ensure RAM password policy requires at least one number</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_15</key>
+		<name>Ensure RAM password policy requires at least one symbol</name>
+		<internalKey>terraform-CKV_ALI_15</internalKey>
+		<description>Ensure RAM password policy requires at least one symbol</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_16</key>
+		<name>Ensure RAM password policy expires passwords within 90 days or less</name>
+		<internalKey>terraform-CKV_ALI_16</internalKey>
+		<description>Ensure RAM password policy expires passwords within 90 days or less</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_17</key>
+		<name>Ensure RAM password policy requires at least one lowercase letter</name>
+		<internalKey>terraform-CKV_ALI_17</internalKey>
+		<description>Ensure RAM password policy requires at least one lowercase letter</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_18</key>
+		<name>Ensure RAM password policy prevents password reuse</name>
+		<internalKey>terraform-CKV_ALI_18</internalKey>
+		<description>Ensure RAM password policy prevents password reuse</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_19</key>
+		<name>Ensure RAM password policy requires at least one uppercase letter</name>
+		<internalKey>terraform-CKV_ALI_19</internalKey>
+		<description>Ensure RAM password policy requires at least one uppercase letter</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_20</key>
+		<name>Ensure RDS instance uses SSL</name>
+		<internalKey>terraform-CKV_ALI_20</internalKey>
+		<description>Ensure RDS instance uses SSL</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_21</key>
+		<name>Ensure API Gateway API Protocol HTTPS</name>
+		<internalKey>terraform-CKV_ALI_21</internalKey>
+		<description>Ensure API Gateway API Protocol HTTPS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_22</key>
+		<name>Ensure Transparent Data Encryption is Enabled on instance</name>
+		<internalKey>terraform-CKV_ALI_22</internalKey>
+		<description>Ensure Transparent Data Encryption is Enabled on instance</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_23</key>
+		<name>Ensure Ram Account Password Policy Max Login Attempts not > 5</name>
+		<internalKey>terraform-CKV_ALI_23</internalKey>
+		<description>Ensure Ram Account Password Policy Max Login Attempts not > 5</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_24</key>
+		<name>Ensure Ram Account Password Policy Max Age less than/equal to 90 days</name>
+		<internalKey>terraform-CKV_ALI_24</internalKey>
+		<description>Ensure Ram Account Password Policy Max Age less than/equal to 90 days</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_25</key>
+		<name>Ensure RDS Instance SQL Collector Retention Period should be greater than 180</name>
+		<internalKey>terraform-CKV_ALI_25</internalKey>
+		<description>Ensure RDS Instance SQL Collector Retention Period should be greater than 180</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_26</key>
+		<name>Ensure Kubernetes installs plugin Terway or Flannel to support standard policies</name>
+		<internalKey>terraform-CKV_ALI_26</internalKey>
+		<description>Ensure Kubernetes installs plugin Terway or Flannel to support standard policies</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -3748,6 +5926,105 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AWS_245</key>
+		<name>Ensure replicated backups are encrypted at rest using KMS CMKs</name>
+		<internalKey>terraform-CKV_AWS_245</internalKey>
+		<description>Ensure replicated backups are encrypted at rest using KMS CMKs</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-13</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_246</key>
+		<name>Ensure RDS Cluster activity streams are encrypted using KMS CMKs</name>
+		<internalKey>terraform-CKV_AWS_246</internalKey>
+		<description>Ensure RDS Cluster activity streams are encrypted using KMS CMKs</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_247</key>
+		<name>Ensure all data stored in the Elasticsearch is encrypted with a CMK</name>
+		<internalKey>terraform-CKV_AWS_247</internalKey>
+		<description>Ensure all data stored in the Elasticsearch is encrypted with a CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_248</key>
+		<name>Ensure that Elasticsearch is not using the default Security Group</name>
+		<internalKey>terraform-CKV_AWS_248</internalKey>
+		<description>Ensure that Elasticsearch is not using the default Security Group</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_249</key>
+		<name>Ensure that the Execution Role ARN and the Task Role ARN are different in ECS Task definitions</name>
+		<internalKey>terraform-CKV_AWS_249</internalKey>
+		<description>Ensure that the Execution Role ARN and the Task Role ARN are different in ECS Task definitions</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_250</key>
+		<name>Ensure that RDS PostgreSQL instances use a non vulnerable version with the log_fdw extension (https://aws.amazon.com/security/security-bulletins/AWS-2022-004/)</name>
+		<internalKey>terraform-CKV_AWS_250</internalKey>
+		<description>Ensure that RDS PostgreSQL instances use a non vulnerable version with the log_fdw extension (https://aws.amazon.com/security/security-bulletins/AWS-2022-004/)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AWS_1</key>
 		<name>Ensure that all NACL are attached to subnets</name>
 		<internalKey>terraform-CKV2_AWS_1</internalKey>
@@ -7241,9 +9518,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GCP_13</key>
-		<name>Ensure a client certificate is used by clients to authenticate to Kubernetes Engine Clusters</name>
+		<name>Ensure client certificate authentication to Kubernetes Engine Clusters is disabled</name>
 		<internalKey>terraform-CKV_GCP_13</internalKey>
-		<description>Ensure a client certificate is used by clients to authenticate to Kubernetes Engine Clusters</description>
+		<description>Ensure client certificate authentication to Kubernetes Engine Clusters is disabled</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9313,6 +11590,21 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_K8S_34</key>
+		<name>Ensure that Tiller (Helm v2) is not deployed</name>
+		<internalKey>terraform-CKV_K8S_34</internalKey>
+		<description>Ensure that Tiller (Helm v2) is not deployed</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_K8S_35</key>
 		<name>Prefer using secrets as files over secrets as environment variables</name>
 		<internalKey>terraform-CKV_K8S_35</internalKey>
@@ -9826,6 +12118,42 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_OCI_21</key>
+		<name>Ensure security group has stateless ingress security rules</name>
+		<internalKey>terraform-CKV_OCI_21</internalKey>
+		<description>Ensure security group has stateless ingress security rules</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_OCI_22</key>
+		<name>Ensure no security groups rules allow ingress from 0.0.0.0/0 to port 22</name>
+		<internalKey>terraform-CKV_OCI_22</internalKey>
+		<description>Ensure no security groups rules allow ingress from 0.0.0.0/0 to port 22</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV_OPENSTACK_2</key>
 		<name>Ensure no security groups allow ingress from 0.0.0.0:0 to port 22 (tcp / udp)</name>
 		<internalKey>terraform-CKV_OPENSTACK_2</internalKey>
@@ -10104,5 +12432,4 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
-
 </rules>
