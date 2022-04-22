@@ -8,7 +8,7 @@
   </parent>
   <groupId>com.hack23.sonar</groupId>
   <artifactId>sonar-cloudformation-plugin</artifactId>
-  <version>3.0.4-SNAPSHOT</version>
+  <version>3.0.4</version>
   <packaging>sonar-plugin</packaging>
   <name>Sonar Cloudformation Plugin</name>
   <url>https://hack23.github.io/sonar-cloudformation-plugin/</url>
@@ -30,7 +30,7 @@
   <scm>
     <connection>scm:git:https://github.com/Hack23/sonar-cloudformation-plugin.git</connection>
     <developerConnection>scm:git:https://github.com/Hack23/sonar-cloudformation-plugin.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>sonar-cloudformation-plugin-3.0.4</tag>
     <url>https://github.com/Hack23/sonar-cloudformation-plugin</url>
   </scm>
   <issueManagement>
