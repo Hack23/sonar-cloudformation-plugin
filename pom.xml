@@ -329,6 +329,21 @@
           </execution>
         </executions>
       </plugin>
+	<plugin>
+		<groupId>org.spdx</groupId>
+		<artifactId>spdx-maven-plugin</artifactId>
+		<version>0.5.5</version>
+		<executions>
+			<execution>
+				<id>build-spdx</id>
+				<phase>verify</phase>
+				<goals>
+					<goal>createSPDX</goal>
+				</goals>
+			</execution>
+		</executions>
+		<configuration></configuration>
+	</plugin>      
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
