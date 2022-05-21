@@ -57,8 +57,17 @@ jobs:
         java-version: '11'
 
     - name: Install buildtools
-      run: sudo apt-get install -y maven
+      run: sudo apt-get install -y wget
 
+    - name: Download Maven
+      run: wget https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
+
+    - name: Unpack Maven
+      run: tar xzvf apache-maven-3.8.5-bin.tar.gz
+
+    - name: Download Maven
+      run: export PATH=`pwd`/apache-maven-3.8.5/bin:$PATH
+      
     - name: Build with Maven
       run: mvn -B package --file pom.xml -DskipTests
 
