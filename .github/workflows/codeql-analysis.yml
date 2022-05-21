@@ -65,7 +65,7 @@ jobs:
     - name: Unpack Maven
       run: tar xzvf apache-maven-3.8.5-bin.tar.gz
 
-    - name: Download Maven
+    - name: Set Maven
       run: export PATH=`pwd`/apache-maven-3.8.5/bin:$PATH
       
     - name: Build with Maven
