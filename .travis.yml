@@ -36,9 +36,9 @@ before_script:
   - sudo npm install cloudformation-graph -g
 
 script:
-  - wget https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
-  - tar xzvf apache-maven-3.8.5-bin.tar.gz
-  - export PATH=`pwd`/apache-maven-3.8.5/bin:$PATH
+  - wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+  - tar xzvf apache-maven-3.8.6-bin.tar.gz
+  - export PATH=`pwd`/apache-maven-3.8.6/bin:$PATH
   - mvn -v
   - mvn clean install site -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dhttps.protocols=TLSv1.2
   - mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dhttps.protocols=TLSv1.2
