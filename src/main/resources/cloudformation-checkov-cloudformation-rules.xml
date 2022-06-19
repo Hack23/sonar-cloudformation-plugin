@@ -713,9 +713,9 @@
     </rule>
     <rule>
 		<key>cloudformation-CKV_AWS_61</key>
-		<name>Ensure IAM role allows only specific principals in account to assume it</name>
+		<name>Ensure AWS IAM policy does not allow assume role permission across all services</name>
 		<internalKey>cloudformation-CKV_AWS_61</internalKey>
-		<description>Ensure IAM role allows only specific principals in account to assume it</description>
+		<description>Ensure AWS IAM policy does not allow assume role permission across all services</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1232,9 +1232,9 @@
     </rule>
     <rule>
 		<key>cloudformation-CKV_AWS_100</key>
-		<name>Ensure Amazon EKS Node group has implicit SSH access from 0.0.0.0/0</name>
+		<name>Ensure AWS EKS node group does not have implicit SSH access from 0.0.0.0/0</name>
 		<internalKey>cloudformation-CKV_AWS_100</internalKey>
-		<description>Ensure Amazon EKS Node group has implicit SSH access from 0.0.0.0/0</description>
+		<description>Ensure AWS EKS node group does not have implicit SSH access from 0.0.0.0/0</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1265,9 +1265,9 @@
     </rule>
     <rule>
 		<key>cloudformation-CKV_AWS_103</key>
-		<name>Ensure that Application Load Balancer Listener is using TLS v1.2</name>
+		<name>Ensure that Load Balancer Listener is using at least TLS v1.2</name>
 		<internalKey>cloudformation-CKV_AWS_103</internalKey>
-		<description>Ensure that Application Load Balancer Listener is using TLS v1.2</description>
+		<description>Ensure that Load Balancer Listener is using at least TLS v1.2</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1815,6 +1815,20 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
-
+    <rule>
+		<key>cloudformation-CKV_AWS_258</key>
+		<name>Ensure that Lambda function URLs AuthType is not None</name>
+		<internalKey>cloudformation-CKV_AWS_258</internalKey>
+		<description>Ensure that Lambda function URLs AuthType is not None</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
 
 </rules>

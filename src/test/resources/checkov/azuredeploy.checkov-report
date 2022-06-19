@@ -318,7 +318,7 @@
             },
             {
                 "check_id": "CKV_AZURE_3",
-                "bc_check_id": "BC_AZR_STORAGE_1",
+                "bc_check_id": null,
                 "check_name": "Ensure that 'supportsHttpsTrafficOnly' is set to 'true'",
                 "check_result": {
                     "result": "PASSED",
@@ -412,7 +412,7 @@
                 "short_description": null,
                 "vulnerability_details": null,
                 "connected_node": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-secure-transfer-required-is-enabled"
+                "guideline": null
             }
         ],
         "failed_checks": [
@@ -1049,104 +1049,6 @@
                 "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_2"
             },
             {
-                "check_id": "CKV_AZURE_35",
-                "bc_check_id": "BC_AZR_NETWORKING_15",
-                "check_name": "Ensure default network access rule for Storage Accounts is set to deny",
-                "check_result": {
-                    "result": "FAILED",
-                    "evaluated_keys": []
-                },
-                "code_block": [
-                    [
-                        133,
-                        "        {\n"
-                    ],
-                    [
-                        134,
-                        "            \"condition\": \"[parameters('enableADS')]\",\n"
-                    ],
-                    [
-                        135,
-                        "            \"type\": \"Microsoft.Storage/storageAccounts\",\n"
-                    ],
-                    [
-                        136,
-                        "            \"apiVersion\": \"2019-06-01\",\n"
-                    ],
-                    [
-                        137,
-                        "            \"name\": \"[variables('storageName')]\",\n"
-                    ],
-                    [
-                        138,
-                        "            \"location\": \"[parameters('location')]\",\n"
-                    ],
-                    [
-                        139,
-                        "            \"sku\": {\n"
-                    ],
-                    [
-                        140,
-                        "                \"name\": \"Standard_LRS\"\n"
-                    ],
-                    [
-                        141,
-                        "            },\n"
-                    ],
-                    [
-                        142,
-                        "            \"kind\": \"StorageV2\",\n"
-                    ],
-                    [
-                        143,
-                        "            \"properties\": {\n"
-                    ],
-                    [
-                        144,
-                        "                \"minimumTlsVersion\": \"TLS1_2\",\n"
-                    ],
-                    [
-                        145,
-                        "                \"supportsHttpsTrafficOnly\": \"true\",\n"
-                    ],
-                    [
-                        146,
-                        "                \"allowBlobPublicAccess\": \"false\"\n"
-                    ],
-                    [
-                        147,
-                        "            }\n"
-                    ],
-                    [
-                        148,
-                        "        },\n"
-                    ]
-                ],
-                "file_path": "src/test/resources/checkov/azuredeploy.json",
-                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/azuredeploy.json",
-                "repo_file_path": "/src/test/resources/checkov/azuredeploy.json",
-                "file_line_range": [
-                    133,
-                    148
-                ],
-                "resource": "Microsoft.Storage/storageAccounts.[tolower(concat('sqlva', variables('uniqueStorage')))]",
-                "evaluations": {},
-                "check_class": "checkov.arm.checks.resource.StorageAccountDefaultNetworkAccessDeny",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "resource_address": null,
-                "severity": null,
-                "bc_category": null,
-                "benchmarks": null,
-                "description": null,
-                "short_description": null,
-                "vulnerability_details": null,
-                "connected_node": null,
-                "guideline": "https://docs.bridgecrew.io/docs/set-default-network-access-rule-for-storage-accounts-to-deny"
-            },
-            {
                 "check_id": "CKV_AZURE_36",
                 "bc_check_id": "BC_AZR_NETWORKING_16",
                 "check_name": "Ensure 'Trusted Microsoft Services' is enabled for Storage Account access",
@@ -1243,6 +1145,104 @@
                 "vulnerability_details": null,
                 "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/enable-trusted-microsoft-services-for-storage-account-access"
+            },
+            {
+                "check_id": "CKV_AZURE_35",
+                "bc_check_id": "BC_AZR_NETWORKING_15",
+                "check_name": "Ensure default network access rule for Storage Accounts is set to deny",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        133,
+                        "        {\n"
+                    ],
+                    [
+                        134,
+                        "            \"condition\": \"[parameters('enableADS')]\",\n"
+                    ],
+                    [
+                        135,
+                        "            \"type\": \"Microsoft.Storage/storageAccounts\",\n"
+                    ],
+                    [
+                        136,
+                        "            \"apiVersion\": \"2019-06-01\",\n"
+                    ],
+                    [
+                        137,
+                        "            \"name\": \"[variables('storageName')]\",\n"
+                    ],
+                    [
+                        138,
+                        "            \"location\": \"[parameters('location')]\",\n"
+                    ],
+                    [
+                        139,
+                        "            \"sku\": {\n"
+                    ],
+                    [
+                        140,
+                        "                \"name\": \"Standard_LRS\"\n"
+                    ],
+                    [
+                        141,
+                        "            },\n"
+                    ],
+                    [
+                        142,
+                        "            \"kind\": \"StorageV2\",\n"
+                    ],
+                    [
+                        143,
+                        "            \"properties\": {\n"
+                    ],
+                    [
+                        144,
+                        "                \"minimumTlsVersion\": \"TLS1_2\",\n"
+                    ],
+                    [
+                        145,
+                        "                \"supportsHttpsTrafficOnly\": \"true\",\n"
+                    ],
+                    [
+                        146,
+                        "                \"allowBlobPublicAccess\": \"false\"\n"
+                    ],
+                    [
+                        147,
+                        "            }\n"
+                    ],
+                    [
+                        148,
+                        "        },\n"
+                    ]
+                ],
+                "file_path": "src/test/resources/checkov/azuredeploy.json",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/azuredeploy.json",
+                "repo_file_path": "/src/test/resources/checkov/azuredeploy.json",
+                "file_line_range": [
+                    133,
+                    148
+                ],
+                "resource": "Microsoft.Storage/storageAccounts.[tolower(concat('sqlva', variables('uniqueStorage')))]",
+                "evaluations": {},
+                "check_class": "checkov.arm.checks.resource.StorageAccountDefaultNetworkAccessDeny",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/set-default-network-access-rule-for-storage-accounts-to-deny"
             }
         ],
         "skipped_checks": [],
@@ -1254,7 +1254,7 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 7,
-        "checkov_version": "2.0.1119"
+        "checkov_version": "2.0.1220"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }
