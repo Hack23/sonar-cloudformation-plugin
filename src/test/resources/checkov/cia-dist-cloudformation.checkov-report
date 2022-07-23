@@ -11952,6 +11952,182 @@
                     }
                 },
                 {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            1536,
+                            "        \"SgFormonitoringVPCEndpoint\": {\n"
+                        ],
+                        [
+                            1537,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            1538,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            1539,
+                            "                \"GroupDescription\": \"Security group to allow access to monitoring VPC Endpoint\",\n"
+                        ],
+                        [
+                            1540,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            1541,
+                            "                    {\n"
+                        ],
+                        [
+                            1542,
+                            "                        \"Description\": \"vpc endpoint inbound access\",\n"
+                        ],
+                        [
+                            1543,
+                            "                        \"CidrIp\": {\n"
+                        ],
+                        [
+                            1544,
+                            "                    \"Fn::FindInMap\": [\n"
+                        ],
+                        [
+                            1545,
+                            "                        \"SubnetConfig\",\n"
+                        ],
+                        [
+                            1546,
+                            "                        \"VPC\",\n"
+                        ],
+                        [
+                            1547,
+                            "                        \"CIDR\"\n"
+                        ],
+                        [
+                            1548,
+                            "                    ]\n"
+                        ],
+                        [
+                            1549,
+                            "                \t},\n"
+                        ],
+                        [
+                            1550,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            1551,
+                            "                        \"FromPort\": \"443\",\n"
+                        ],
+                        [
+                            1552,
+                            "                        \"ToPort\": \"443\"\n"
+                        ],
+                        [
+                            1553,
+                            "                    }\n"
+                        ],
+                        [
+                            1554,
+                            "                ],\n"
+                        ],
+                        [
+                            1555,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            1556,
+                            "                    {\n"
+                        ],
+                        [
+                            1557,
+                            "                        \"Description\": \"vpc endpoint outbound access\",\n"
+                        ],
+                        [
+                            1558,
+                            "                        \"CidrIp\": \"0.0.0.0/0\",\n"
+                        ],
+                        [
+                            1559,
+                            "                        \"IpProtocol\": \"-1\"\n"
+                        ],
+                        [
+                            1560,
+                            "                    }\n"
+                        ],
+                        [
+                            1561,
+                            "                ],\n"
+                        ],
+                        [
+                            1562,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            1563,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            1564,
+                            "                }\n"
+                        ],
+                        [
+                            1565,
+                            "            }\n"
+                        ],
+                        [
+                            1566,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        1536,
+                        1566
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.SgFormonitoringVPCEndpoint",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null,
+                    "breadcrumbs": {
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ]
+                    }
+                },
+                {
                     "check_id": "CKV_AWS_23",
                     "bc_check_id": "BC_AWS_NETWORKING_31",
                     "check_name": "Ensure every security groups rule has a description",
@@ -12460,6 +12636,182 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2",
+                    "breadcrumbs": {
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            1605,
+                            "        \"SgForlogsVPCEndpoint\": {\n"
+                        ],
+                        [
+                            1606,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            1607,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            1608,
+                            "                \"GroupDescription\": \"Security group to allow access to logs VPC Endpoint\",\n"
+                        ],
+                        [
+                            1609,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            1610,
+                            "                    {\n"
+                        ],
+                        [
+                            1611,
+                            "                        \"Description\": \"vpc endpoint inbound access\",\n"
+                        ],
+                        [
+                            1612,
+                            "                        \"CidrIp\": {\n"
+                        ],
+                        [
+                            1613,
+                            "                    \"Fn::FindInMap\": [\n"
+                        ],
+                        [
+                            1614,
+                            "                        \"SubnetConfig\",\n"
+                        ],
+                        [
+                            1615,
+                            "                        \"VPC\",\n"
+                        ],
+                        [
+                            1616,
+                            "                        \"CIDR\"\n"
+                        ],
+                        [
+                            1617,
+                            "                    ]\n"
+                        ],
+                        [
+                            1618,
+                            "                },\n"
+                        ],
+                        [
+                            1619,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            1620,
+                            "                        \"FromPort\": \"443\",\n"
+                        ],
+                        [
+                            1621,
+                            "                        \"ToPort\": \"443\"\n"
+                        ],
+                        [
+                            1622,
+                            "                    }\n"
+                        ],
+                        [
+                            1623,
+                            "                ],\n"
+                        ],
+                        [
+                            1624,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            1625,
+                            "                    {\n"
+                        ],
+                        [
+                            1626,
+                            "                        \"Description\": \"vpc endpoint outbound access\",\n"
+                        ],
+                        [
+                            1627,
+                            "                        \"CidrIp\": \"0.0.0.0/0\",\n"
+                        ],
+                        [
+                            1628,
+                            "                        \"IpProtocol\": \"-1\"\n"
+                        ],
+                        [
+                            1629,
+                            "                    }\n"
+                        ],
+                        [
+                            1630,
+                            "                ],\n"
+                        ],
+                        [
+                            1631,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            1632,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            1633,
+                            "                }\n"
+                        ],
+                        [
+                            1634,
+                            "            }\n"
+                        ],
+                        [
+                            1635,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        1605,
+                        1635
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.SgForlogsVPCEndpoint",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -12988,6 +13340,182 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2",
+                    "breadcrumbs": {
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            1674,
+                            "        \"SgForssmVPCEndpoint\": {\n"
+                        ],
+                        [
+                            1675,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            1676,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            1677,
+                            "                \"GroupDescription\": \"Security group to allow access to ssm VPC Endpoint\",\n"
+                        ],
+                        [
+                            1678,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            1679,
+                            "                    {\n"
+                        ],
+                        [
+                            1680,
+                            "                        \"Description\": \"vpc endpoint inbound access\",\n"
+                        ],
+                        [
+                            1681,
+                            "                        \"CidrIp\": {\n"
+                        ],
+                        [
+                            1682,
+                            "                    \"Fn::FindInMap\": [\n"
+                        ],
+                        [
+                            1683,
+                            "                        \"SubnetConfig\",\n"
+                        ],
+                        [
+                            1684,
+                            "                        \"VPC\",\n"
+                        ],
+                        [
+                            1685,
+                            "                        \"CIDR\"\n"
+                        ],
+                        [
+                            1686,
+                            "                    ]\n"
+                        ],
+                        [
+                            1687,
+                            "                },\n"
+                        ],
+                        [
+                            1688,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            1689,
+                            "                        \"FromPort\": \"443\",\n"
+                        ],
+                        [
+                            1690,
+                            "                        \"ToPort\": \"443\"\n"
+                        ],
+                        [
+                            1691,
+                            "                    }\n"
+                        ],
+                        [
+                            1692,
+                            "                ],\n"
+                        ],
+                        [
+                            1693,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            1694,
+                            "                    {\n"
+                        ],
+                        [
+                            1695,
+                            "                        \"Description\": \"vpc endpoint outbound access\",\n"
+                        ],
+                        [
+                            1696,
+                            "                        \"CidrIp\": \"0.0.0.0/0\",\n"
+                        ],
+                        [
+                            1697,
+                            "                        \"IpProtocol\": \"-1\"\n"
+                        ],
+                        [
+                            1698,
+                            "                    }\n"
+                        ],
+                        [
+                            1699,
+                            "                ],\n"
+                        ],
+                        [
+                            1700,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            1701,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            1702,
+                            "                 }\n"
+                        ],
+                        [
+                            1703,
+                            "            }\n"
+                        ],
+                        [
+                            1704,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        1674,
+                        1704
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.SgForssmVPCEndpoint",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -13516,6 +14044,182 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2",
+                    "breadcrumbs": {
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            1743,
+                            "        \"SgForssmmessagesVPCEndpoint\": {\n"
+                        ],
+                        [
+                            1744,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            1745,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            1746,
+                            "                \"GroupDescription\": \"Security group to allow access to ssmmessages VPC Endpoint\",\n"
+                        ],
+                        [
+                            1747,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            1748,
+                            "                    {\n"
+                        ],
+                        [
+                            1749,
+                            "                        \"Description\": \"vpc endpoint inbound access\",\n"
+                        ],
+                        [
+                            1750,
+                            "                        \"CidrIp\": {\n"
+                        ],
+                        [
+                            1751,
+                            "                    \"Fn::FindInMap\": [\n"
+                        ],
+                        [
+                            1752,
+                            "                        \"SubnetConfig\",\n"
+                        ],
+                        [
+                            1753,
+                            "                        \"VPC\",\n"
+                        ],
+                        [
+                            1754,
+                            "                        \"CIDR\"\n"
+                        ],
+                        [
+                            1755,
+                            "                    ]\n"
+                        ],
+                        [
+                            1756,
+                            "                   },\n"
+                        ],
+                        [
+                            1757,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            1758,
+                            "                        \"FromPort\": \"443\",\n"
+                        ],
+                        [
+                            1759,
+                            "                        \"ToPort\": \"443\"\n"
+                        ],
+                        [
+                            1760,
+                            "                    }\n"
+                        ],
+                        [
+                            1761,
+                            "                ],\n"
+                        ],
+                        [
+                            1762,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            1763,
+                            "                    {\n"
+                        ],
+                        [
+                            1764,
+                            "                        \"Description\": \"vpc endpoint outbound access\",\n"
+                        ],
+                        [
+                            1765,
+                            "                        \"CidrIp\": \"0.0.0.0/0\",\n"
+                        ],
+                        [
+                            1766,
+                            "                        \"IpProtocol\": \"-1\"\n"
+                        ],
+                        [
+                            1767,
+                            "                    }\n"
+                        ],
+                        [
+                            1768,
+                            "                ],\n"
+                        ],
+                        [
+                            1769,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            1770,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            1771,
+                            "                }\n"
+                        ],
+                        [
+                            1772,
+                            "            }\n"
+                        ],
+                        [
+                            1773,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        1743,
+                        1773
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.SgForssmmessagesVPCEndpoint",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -14044,6 +14748,182 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2",
+                    "breadcrumbs": {
+                        "SecurityGroupIngress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupIngress.0": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            1812,
+                            "        \"SgForecmessagesVPCEndpoint\": {\n"
+                        ],
+                        [
+                            1813,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            1814,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            1815,
+                            "                \"GroupDescription\": \"Security group to allow access to ec2messages VPC Endpoint\",\n"
+                        ],
+                        [
+                            1816,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            1817,
+                            "                    {\n"
+                        ],
+                        [
+                            1818,
+                            "                        \"Description\": \"vpc endpoint inbound access\",\n"
+                        ],
+                        [
+                            1819,
+                            "                        \"CidrIp\": {\n"
+                        ],
+                        [
+                            1820,
+                            "                    \"Fn::FindInMap\": [\n"
+                        ],
+                        [
+                            1821,
+                            "                        \"SubnetConfig\",\n"
+                        ],
+                        [
+                            1822,
+                            "                        \"VPC\",\n"
+                        ],
+                        [
+                            1823,
+                            "                        \"CIDR\"\n"
+                        ],
+                        [
+                            1824,
+                            "                    ]\n"
+                        ],
+                        [
+                            1825,
+                            "                },\n"
+                        ],
+                        [
+                            1826,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            1827,
+                            "                        \"FromPort\": \"443\",\n"
+                        ],
+                        [
+                            1828,
+                            "                        \"ToPort\": \"443\"\n"
+                        ],
+                        [
+                            1829,
+                            "                    }\n"
+                        ],
+                        [
+                            1830,
+                            "                ],\n"
+                        ],
+                        [
+                            1831,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            1832,
+                            "                    {\n"
+                        ],
+                        [
+                            1833,
+                            "                        \"Description\": \"vpc endpoint outbound access\",\n"
+                        ],
+                        [
+                            1834,
+                            "                        \"CidrIp\": \"0.0.0.0/0\",\n"
+                        ],
+                        [
+                            1835,
+                            "                        \"IpProtocol\": \"-1\"\n"
+                        ],
+                        [
+                            1836,
+                            "                    }\n"
+                        ],
+                        [
+                            1837,
+                            "                ],\n"
+                        ],
+                        [
+                            1838,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            1839,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            1840,
+                            "                }\n"
+                        ],
+                        [
+                            1841,
+                            "            }\n"
+                        ],
+                        [
+                            1842,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        1812,
+                        1842
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.SgForecmessagesVPCEndpoint",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null,
                     "breadcrumbs": {
                         "SecurityGroupIngress.0.CidrIp": [
                             {
@@ -14556,6 +15436,148 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2"
+                },
+                {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            2798,
+                            "        \"QuickSightVpnConnectionSecurityGroup\": {\n"
+                        ],
+                        [
+                            2799,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            2800,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            2801,
+                            "                \"GroupDescription\": \"Quicksight Access from vpn connection\",\n"
+                        ],
+                        [
+                            2802,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            2803,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            2804,
+                            "                },\n"
+                        ],
+                        [
+                            2805,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            2806,
+                            "                    {\n"
+                        ],
+                        [
+                            2807,
+                            "                        \"Description\": \"QuickSight port not known\",\n"
+                        ],
+                        [
+                            2808,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            2809,
+                            "                        \"FromPort\": \"1\",\n"
+                        ],
+                        [
+                            2810,
+                            "                        \"ToPort\": \"65535\",\n"
+                        ],
+                        [
+                            2811,
+                            "                        \"CidrIp\": \"0.0.0.0/0\"\n"
+                        ],
+                        [
+                            2812,
+                            "                    }\n"
+                        ],
+                        [
+                            2813,
+                            "                ],\n"
+                        ],
+                        [
+                            2814,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            2815,
+                            "                    {\n"
+                        ],
+                        [
+                            2816,
+                            "                        \"Description\": \"QuickSight port not known\",\n"
+                        ],
+                        [
+                            2817,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            2818,
+                            "                        \"FromPort\": \"1\",\n"
+                        ],
+                        [
+                            2819,
+                            "                        \"ToPort\": \"65535\",\n"
+                        ],
+                        [
+                            2820,
+                            "                        \"CidrIp\": \"0.0.0.0/0\"\n"
+                        ],
+                        [
+                            2821,
+                            "                   }\n"
+                        ],
+                        [
+                            2822,
+                            "                ]\n"
+                        ],
+                        [
+                            2823,
+                            "            }\n"
+                        ],
+                        [
+                            2824,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        2798,
+                        2824
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.QuickSightVpnConnectionSecurityGroup",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null
                 },
                 {
                     "check_id": "CKV_AWS_23",
@@ -15074,6 +16096,240 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2"
+                },
+                {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            2825,
+                            "        \"DatabaseSecurityGroup\": {\n"
+                        ],
+                        [
+                            2826,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            2827,
+                            "            \"DependsOn\": [ \"WebServerSecurityGroup\",\"QuickSightVpnConnectionSecurityGroup\"],\n"
+                        ],
+                        [
+                            2828,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            2829,
+                            "                \"GroupDescription\": \"Database Access\",\n"
+                        ],
+                        [
+                            2830,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            2831,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            2832,
+                            "                },\n"
+                        ],
+                        [
+                            2833,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            2834,
+                            "                    {\n"
+                        ],
+                        [
+                            2835,
+                            "                        \"Description\": \"Postgres inbound access from server\",\n"
+                        ],
+                        [
+                            2836,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            2837,
+                            "                        \"FromPort\": \"5432\",\n"
+                        ],
+                        [
+                            2838,
+                            "                        \"ToPort\": \"5432\",\n"
+                        ],
+                        [
+                            2839,
+                            "                        \"SourceSecurityGroupId\": {\n"
+                        ],
+                        [
+                            2840,
+                            "                            \"Ref\": \"WebServerSecurityGroup\"\n"
+                        ],
+                        [
+                            2841,
+                            "                        }\n"
+                        ],
+                        [
+                            2842,
+                            "                    },\n"
+                        ],
+                        [
+                            2843,
+                            "                    {\n"
+                        ],
+                        [
+                            2844,
+                            "                        \"Description\": \"Postgres inbound access from quicksight enterprise vpc endpoint\",\n"
+                        ],
+                        [
+                            2845,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            2846,
+                            "                        \"FromPort\": \"5432\",\n"
+                        ],
+                        [
+                            2847,
+                            "                        \"ToPort\": \"5432\",\n"
+                        ],
+                        [
+                            2848,
+                            "                        \"SourceSecurityGroupId\": {\n"
+                        ],
+                        [
+                            2849,
+                            "                            \"Ref\": \"QuickSightVpnConnectionSecurityGroup\"\n"
+                        ],
+                        [
+                            2850,
+                            "                        }\n"
+                        ],
+                        [
+                            2851,
+                            "                    }\n"
+                        ],
+                        [
+                            2852,
+                            "                ],\n"
+                        ],
+                        [
+                            2853,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            2854,
+                            "                    {\n"
+                        ],
+                        [
+                            2855,
+                            "                        \"Description\": \"Postgres outbound access to server\",\n"
+                        ],
+                        [
+                            2856,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            2857,
+                            "                        \"FromPort\": \"5432\",\n"
+                        ],
+                        [
+                            2858,
+                            "                        \"ToPort\": \"5432\",\n"
+                        ],
+                        [
+                            2859,
+                            "                        \"SourceSecurityGroupId\": {\n"
+                        ],
+                        [
+                            2860,
+                            "                            \"Ref\": \"WebServerSecurityGroup\"\n"
+                        ],
+                        [
+                            2861,
+                            "                        }\n"
+                        ],
+                        [
+                            2862,
+                            "                    },\n"
+                        ],
+                        [
+                            2863,
+                            "                    {\n"
+                        ],
+                        [
+                            2864,
+                            "                    \t\"Description\": \"Postgres outbound access to quicksight enterprise vpc endpoint\",\n"
+                        ],
+                        [
+                            2865,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            2866,
+                            "                        \"FromPort\": \"5432\",\n"
+                        ],
+                        [
+                            2867,
+                            "                        \"ToPort\": \"5432\",\n"
+                        ],
+                        [
+                            2868,
+                            "                        \"SourceSecurityGroupId\": {\n"
+                        ],
+                        [
+                            2869,
+                            "                            \"Ref\": \"QuickSightVpnConnectionSecurityGroup\"\n"
+                        ],
+                        [
+                            2870,
+                            "                        }\n"
+                        ],
+                        [
+                            2871,
+                            "                    }\n"
+                        ],
+                        [
+                            2872,
+                            "                ]\n"
+                        ],
+                        [
+                            2873,
+                            "            }\n"
+                        ],
+                        [
+                            2874,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        2825,
+                        2874
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.DatabaseSecurityGroup",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null
                 },
                 {
                     "check_id": "CKV_AWS_23",
@@ -18116,6 +19372,190 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/networking_2",
+                    "breadcrumbs": {
+                        "SecurityGroupEgress.0.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupEgress.0": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            3379,
+                            "        \"PublicLoadBalancerSecurityGroup\": {\n"
+                        ],
+                        [
+                            3380,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            3381,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            3382,
+                            "                \"GroupDescription\": \"Public ELB Security Group with HTTPS access on port 443 from the internet\",\n"
+                        ],
+                        [
+                            3383,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            3384,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            3385,
+                            "                },\n"
+                        ],
+                        [
+                            3386,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            3387,
+                            "                    {\n"
+                        ],
+                        [
+                            3388,
+                            "                        \"Description\" : \"Inbound https from public\",\n"
+                        ],
+                        [
+                            3389,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            3390,
+                            "                        \"FromPort\": \"443\",\n"
+                        ],
+                        [
+                            3391,
+                            "                        \"ToPort\": \"443\",\n"
+                        ],
+                        [
+                            3392,
+                            "                        \"CidrIp\": \"0.0.0.0/0\"\n"
+                        ],
+                        [
+                            3393,
+                            "                    }\n"
+                        ],
+                        [
+                            3394,
+                            "                ],\n"
+                        ],
+                        [
+                            3395,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            3396,
+                            "                    {\n"
+                        ],
+                        [
+                            3397,
+                            "                        \"Description\" : \"Outbound https from loadbalancer to server\",\n"
+                        ],
+                        [
+                            3398,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            3399,
+                            "                        \"FromPort\": \"8443\",\n"
+                        ],
+                        [
+                            3400,
+                            "                        \"ToPort\": \"8443\",\n"
+                        ],
+                        [
+                            3401,
+                            "                        \"CidrIp\": {\n"
+                        ],
+                        [
+                            3402,
+                            "                            \"Fn::FindInMap\": [\n"
+                        ],
+                        [
+                            3403,
+                            "                                \"SubnetConfig\",\n"
+                        ],
+                        [
+                            3404,
+                            "                                \"VPC\",\n"
+                        ],
+                        [
+                            3405,
+                            "                                \"CIDR\"\n"
+                        ],
+                        [
+                            3406,
+                            "                            ]\n"
+                        ],
+                        [
+                            3407,
+                            "                        }\n"
+                        ],
+                        [
+                            3408,
+                            "                    }\n"
+                        ],
+                        [
+                            3409,
+                            "                ]\n"
+                        ],
+                        [
+                            3410,
+                            "            }\n"
+                        ],
+                        [
+                            3411,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        3379,
+                        3411
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.PublicLoadBalancerSecurityGroup",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null,
                     "breadcrumbs": {
                         "SecurityGroupEgress.0.CidrIp": [
                             {
@@ -25506,6 +26946,378 @@
                     }
                 },
                 {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": null,
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            4167,
+                            "        \"WebServerSecurityGroup\": {\n"
+                        ],
+                        [
+                            4168,
+                            "            \"Type\": \"AWS::EC2::SecurityGroup\",\n"
+                        ],
+                        [
+                            4169,
+                            "            \"DependsOn\": \"PublicLoadBalancerSecurityGroup\",\n"
+                        ],
+                        [
+                            4170,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            4171,
+                            "                \"GroupDescription\": \"Allow access from load balancer and bastion as well as outbound HTTP and HTTPS traffic\",\n"
+                        ],
+                        [
+                            4172,
+                            "                \"VpcId\": {\n"
+                        ],
+                        [
+                            4173,
+                            "                    \"Ref\": \"VPC\"\n"
+                        ],
+                        [
+                            4174,
+                            "                },\n"
+                        ],
+                        [
+                            4175,
+                            "                \"SecurityGroupIngress\": [\n"
+                        ],
+                        [
+                            4176,
+                            "                    {\n"
+                        ],
+                        [
+                            4177,
+                            "                        \"Description\": \"Loadbalancer inbound access\",\n"
+                        ],
+                        [
+                            4178,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            4179,
+                            "                        \"FromPort\": \"8443\",\n"
+                        ],
+                        [
+                            4180,
+                            "                        \"ToPort\": \"8443\",\n"
+                        ],
+                        [
+                            4181,
+                            "                        \"SourceSecurityGroupId\": {\n"
+                        ],
+                        [
+                            4182,
+                            "                            \"Ref\": \"PublicLoadBalancerSecurityGroup\"\n"
+                        ],
+                        [
+                            4183,
+                            "                        }\n"
+                        ],
+                        [
+                            4184,
+                            "                    }\n"
+                        ],
+                        [
+                            4185,
+                            "                ],\n"
+                        ],
+                        [
+                            4186,
+                            "                \"SecurityGroupEgress\": [\n"
+                        ],
+                        [
+                            4187,
+                            "                    {\n"
+                        ],
+                        [
+                            4188,
+                            "                        \"Description\": \"Loadbalancer outbound access\",\n"
+                        ],
+                        [
+                            4189,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            4190,
+                            "                        \"FromPort\": \"8443\",\n"
+                        ],
+                        [
+                            4191,
+                            "                        \"ToPort\": \"8443\",\n"
+                        ],
+                        [
+                            4192,
+                            "                        \"SourceSecurityGroupId\": {\n"
+                        ],
+                        [
+                            4193,
+                            "                            \"Ref\": \"PublicLoadBalancerSecurityGroup\"\n"
+                        ],
+                        [
+                            4194,
+                            "                        }\n"
+                        ],
+                        [
+                            4195,
+                            "                    },\n"
+                        ],
+                        [
+                            4196,
+                            "                    {\n"
+                        ],
+                        [
+                            4197,
+                            "                        \"Description\": \"Server outbound http access\",\n"
+                        ],
+                        [
+                            4198,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            4199,
+                            "                        \"FromPort\": \"80\",\n"
+                        ],
+                        [
+                            4200,
+                            "                        \"ToPort\": \"80\",\n"
+                        ],
+                        [
+                            4201,
+                            "                        \"CidrIp\": \"0.0.0.0/0\"\n"
+                        ],
+                        [
+                            4202,
+                            "                    },\n"
+                        ],
+                        [
+                            4203,
+                            "                    {\n"
+                        ],
+                        [
+                            4204,
+                            "                        \"Description\": \"Server outbound https access\",\n"
+                        ],
+                        [
+                            4205,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            4206,
+                            "                        \"FromPort\": \"443\",\n"
+                        ],
+                        [
+                            4207,
+                            "                        \"ToPort\": \"443\",\n"
+                        ],
+                        [
+                            4208,
+                            "                        \"CidrIp\": \"0.0.0.0/0\"\n"
+                        ],
+                        [
+                            4209,
+                            "                    },\n"
+                        ],
+                        [
+                            4210,
+                            "                    {\n"
+                        ],
+                        [
+                            4211,
+                            "                        \"Description\": \"Server outbound postgres access\",\n"
+                        ],
+                        [
+                            4212,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            4213,
+                            "                        \"FromPort\": \"5432\",\n"
+                        ],
+                        [
+                            4214,
+                            "                        \"ToPort\": \"5432\",\n"
+                        ],
+                        [
+                            4215,
+                            "                        \"CidrIp\": {\n"
+                        ],
+                        [
+                            4216,
+                            "                            \"Fn::FindInMap\": [\n"
+                        ],
+                        [
+                            4217,
+                            "                                \"SubnetConfig\",\n"
+                        ],
+                        [
+                            4218,
+                            "                                \"VPC\",\n"
+                        ],
+                        [
+                            4219,
+                            "                                \"CIDR\"\n"
+                        ],
+                        [
+                            4220,
+                            "                            ]\n"
+                        ],
+                        [
+                            4221,
+                            "                        }\n"
+                        ],
+                        [
+                            4222,
+                            "                    },\n"
+                        ],
+                        [
+                            4223,
+                            "                    {\n"
+                        ],
+                        [
+                            4224,
+                            "                        \"Description\": \"Server outbound ntp access\",\n"
+                        ],
+                        [
+                            4225,
+                            "                        \"IpProtocol\": \"udp\",\n"
+                        ],
+                        [
+                            4226,
+                            "                        \"FromPort\": \"123\",\n"
+                        ],
+                        [
+                            4227,
+                            "                        \"ToPort\": \"123\",\n"
+                        ],
+                        [
+                            4228,
+                            "                        \"CidrIp\": \"0.0.0.0/0\"\n"
+                        ],
+                        [
+                            4229,
+                            "                    },\n"
+                        ],
+                        [
+                            4230,
+                            "                    {\n"
+                        ],
+                        [
+                            4231,
+                            "                        \"Description\": \"Server outbound udp dns access\",\n"
+                        ],
+                        [
+                            4232,
+                            "                        \"IpProtocol\": \"udp\",\n"
+                        ],
+                        [
+                            4233,
+                            "                        \"FromPort\": \"53\",\n"
+                        ],
+                        [
+                            4234,
+                            "                        \"ToPort\": \"53\",\n"
+                        ],
+                        [
+                            4235,
+                            "                        \"CidrIp\": \"0.0.0.0/0\"\n"
+                        ],
+                        [
+                            4236,
+                            "                    },\n"
+                        ],
+                        [
+                            4237,
+                            "                    {\n"
+                        ],
+                        [
+                            4238,
+                            "                        \"Description\": \"Server outbound tcp dns access\",\n"
+                        ],
+                        [
+                            4239,
+                            "                        \"IpProtocol\": \"tcp\",\n"
+                        ],
+                        [
+                            4240,
+                            "                        \"FromPort\": \"53\",\n"
+                        ],
+                        [
+                            4241,
+                            "                        \"ToPort\": \"53\",\n"
+                        ],
+                        [
+                            4242,
+                            "                        \"CidrIp\": \"0.0.0.0/0\"\n"
+                        ],
+                        [
+                            4243,
+                            "                    }\n"
+                        ],
+                        [
+                            4244,
+                            "                ]\n"
+                        ],
+                        [
+                            4245,
+                            "            }\n"
+                        ],
+                        [
+                            4246,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        4167,
+                        4246
+                    ],
+                    "resource": "AWS::EC2::SecurityGroup.WebServerSecurityGroup",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": null,
+                    "breadcrumbs": {
+                        "SecurityGroupEgress.3.CidrIp": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ],
+                        "SecurityGroupEgress.3": [
+                            {
+                                "type": "mappings",
+                                "name": "SubnetConfig",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "VPC.CIDR"
+                            }
+                        ]
+                    }
+                },
+                {
                     "check_id": "CKV_AWS_23",
                     "bc_check_id": "BC_AWS_NETWORKING_31",
                     "check_name": "Ensure every security groups rule has a description",
@@ -26406,6 +28218,290 @@
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-iam-policies-do-not-allow-write-access-without-constraint"
                 },
                 {
+                    "check_id": "CKV_AWS_115",
+                    "bc_check_id": "BC_AWS_GENERAL_63",
+                    "check_name": "Ensure that AWS Lambda function is configured for function-level concurrent execution limit",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "Properties/ReservedConcurrentExecutions"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            615,
+                            "        \"StartContinuousAssessmentLambdaFunction\": {\n"
+                        ],
+                        [
+                            616,
+                            "            \"Type\": \"AWS::Lambda::Function\",\n"
+                        ],
+                        [
+                            617,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            618,
+                            "                \"Role\": {\n"
+                        ],
+                        [
+                            619,
+                            "                    \"Fn::GetAtt\": [\n"
+                        ],
+                        [
+                            620,
+                            "                        \"StartContinuousAssessmentLambdaRole\",\n"
+                        ],
+                        [
+                            621,
+                            "                        \"Arn\"\n"
+                        ],
+                        [
+                            622,
+                            "                    ]\n"
+                        ],
+                        [
+                            623,
+                            "                },\n"
+                        ],
+                        [
+                            624,
+                            "                \"Code\": {\n"
+                        ],
+                        [
+                            625,
+                            "                    \"ZipFile\": {\n"
+                        ],
+                        [
+                            626,
+                            "                        \"Fn::Join\": [\n"
+                        ],
+                        [
+                            627,
+                            "                            \"\",\n"
+                        ],
+                        [
+                            628,
+                            "                            [\n"
+                        ],
+                        [
+                            629,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            630,
+                            "                                \"import json\",\n"
+                        ],
+                        [
+                            631,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            632,
+                            "                                \"import urllib.parse\",\n"
+                        ],
+                        [
+                            633,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            634,
+                            "                                \"import boto3\",\n"
+                        ],
+                        [
+                            635,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            636,
+                            "                                \"import time\",\n"
+                        ],
+                        [
+                            637,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            638,
+                            "                                \"import os\",\n"
+                        ],
+                        [
+                            639,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            640,
+                            "                                \"def lambda_handler(event, context):\",\n"
+                        ],
+                        [
+                            641,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            642,
+                            "                                \"    region=os.environ['AWS_DEFAULT_REGION']\",\n"
+                        ],
+                        [
+                            643,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            644,
+                            "                                \"    inspector = boto3.client('inspector',region)\",\n"
+                        ],
+                        [
+                            645,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            646,
+                            "                                \"    existingTemplates = inspector.list_assessment_templates(filter={'namePattern': 'SecurityBaseLineAssesmentTemplate'})\",\n"
+                        ],
+                        [
+                            647,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            648,
+                            "                                \"    print('Total templates found:'+str(len(existingTemplates['assessmentTemplateArns'])))\",\n"
+                        ],
+                        [
+                            649,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            650,
+                            "                                \"    if len(existingTemplates['assessmentTemplateArns'])==0:\",\n"
+                        ],
+                        [
+                            651,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            652,
+                            "                                \"        return 'Failure'\",\n"
+                        ],
+                        [
+                            653,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            654,
+                            "                                \"    assessmentTemplateArn=existingTemplates.get('assessmentTemplateArns')[0]\",\n"
+                        ],
+                        [
+                            655,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            656,
+                            "                                \"    millis = int(round(time.time() * 1000))\",\n"
+                        ],
+                        [
+                            657,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            658,
+                            "                                \"    response = inspector.subscribe_to_event(event='ASSESSMENT_RUN_COMPLETED',resourceArn=assessmentTemplateArn,topicArn='\",\n"
+                        ],
+                        [
+                            659,
+                            "                                {\n"
+                        ],
+                        [
+                            660,
+                            "                                    \"Ref\": \"ContinuousAssessmentCompleteTopic\"\n"
+                        ],
+                        [
+                            661,
+                            "                                },\n"
+                        ],
+                        [
+                            662,
+                            "                                \"') \",\n"
+                        ],
+                        [
+                            663,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            664,
+                            "                                \"    run = inspector.start_assessment_run(assessmentTemplateArn=assessmentTemplateArn,assessmentRunName='ContinuousAssessment'+'-'+str(millis))\",\n"
+                        ],
+                        [
+                            665,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            666,
+                            "                                \"    return 'Done'\"\n"
+                        ],
+                        [
+                            667,
+                            "                            ]\n"
+                        ],
+                        [
+                            668,
+                            "                        ]\n"
+                        ],
+                        [
+                            669,
+                            "                    }\n"
+                        ],
+                        [
+                            670,
+                            "                },\n"
+                        ],
+                        [
+                            671,
+                            "                \"Runtime\": \"python3.6\",\n"
+                        ],
+                        [
+                            672,
+                            "                \"Timeout\": 300,\n"
+                        ],
+                        [
+                            673,
+                            "                \"Handler\": \"index.lambda_handler\",\n"
+                        ],
+                        [
+                            674,
+                            "                \"MemorySize\": 512\n"
+                        ],
+                        [
+                            675,
+                            "            }\n"
+                        ],
+                        [
+                            676,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        615,
+                        676
+                    ],
+                    "resource": "AWS::Lambda::Function.StartContinuousAssessmentLambdaFunction",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.LambdaFunctionLevelConcurrentExecutionLimit",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-function-level-concurrent-execution-limit"
+                },
+                {
                     "check_id": "CKV_AWS_116",
                     "bc_check_id": "BC_AWS_GENERAL_64",
                     "check_name": "Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)",
@@ -26690,6 +28786,290 @@
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq"
                 },
                 {
+                    "check_id": "CKV_AWS_117",
+                    "bc_check_id": "BC_AWS_GENERAL_65",
+                    "check_name": "Ensure that AWS Lambda function is configured inside a VPC",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "Properties/VpcConfig"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            615,
+                            "        \"StartContinuousAssessmentLambdaFunction\": {\n"
+                        ],
+                        [
+                            616,
+                            "            \"Type\": \"AWS::Lambda::Function\",\n"
+                        ],
+                        [
+                            617,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            618,
+                            "                \"Role\": {\n"
+                        ],
+                        [
+                            619,
+                            "                    \"Fn::GetAtt\": [\n"
+                        ],
+                        [
+                            620,
+                            "                        \"StartContinuousAssessmentLambdaRole\",\n"
+                        ],
+                        [
+                            621,
+                            "                        \"Arn\"\n"
+                        ],
+                        [
+                            622,
+                            "                    ]\n"
+                        ],
+                        [
+                            623,
+                            "                },\n"
+                        ],
+                        [
+                            624,
+                            "                \"Code\": {\n"
+                        ],
+                        [
+                            625,
+                            "                    \"ZipFile\": {\n"
+                        ],
+                        [
+                            626,
+                            "                        \"Fn::Join\": [\n"
+                        ],
+                        [
+                            627,
+                            "                            \"\",\n"
+                        ],
+                        [
+                            628,
+                            "                            [\n"
+                        ],
+                        [
+                            629,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            630,
+                            "                                \"import json\",\n"
+                        ],
+                        [
+                            631,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            632,
+                            "                                \"import urllib.parse\",\n"
+                        ],
+                        [
+                            633,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            634,
+                            "                                \"import boto3\",\n"
+                        ],
+                        [
+                            635,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            636,
+                            "                                \"import time\",\n"
+                        ],
+                        [
+                            637,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            638,
+                            "                                \"import os\",\n"
+                        ],
+                        [
+                            639,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            640,
+                            "                                \"def lambda_handler(event, context):\",\n"
+                        ],
+                        [
+                            641,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            642,
+                            "                                \"    region=os.environ['AWS_DEFAULT_REGION']\",\n"
+                        ],
+                        [
+                            643,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            644,
+                            "                                \"    inspector = boto3.client('inspector',region)\",\n"
+                        ],
+                        [
+                            645,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            646,
+                            "                                \"    existingTemplates = inspector.list_assessment_templates(filter={'namePattern': 'SecurityBaseLineAssesmentTemplate'})\",\n"
+                        ],
+                        [
+                            647,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            648,
+                            "                                \"    print('Total templates found:'+str(len(existingTemplates['assessmentTemplateArns'])))\",\n"
+                        ],
+                        [
+                            649,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            650,
+                            "                                \"    if len(existingTemplates['assessmentTemplateArns'])==0:\",\n"
+                        ],
+                        [
+                            651,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            652,
+                            "                                \"        return 'Failure'\",\n"
+                        ],
+                        [
+                            653,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            654,
+                            "                                \"    assessmentTemplateArn=existingTemplates.get('assessmentTemplateArns')[0]\",\n"
+                        ],
+                        [
+                            655,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            656,
+                            "                                \"    millis = int(round(time.time() * 1000))\",\n"
+                        ],
+                        [
+                            657,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            658,
+                            "                                \"    response = inspector.subscribe_to_event(event='ASSESSMENT_RUN_COMPLETED',resourceArn=assessmentTemplateArn,topicArn='\",\n"
+                        ],
+                        [
+                            659,
+                            "                                {\n"
+                        ],
+                        [
+                            660,
+                            "                                    \"Ref\": \"ContinuousAssessmentCompleteTopic\"\n"
+                        ],
+                        [
+                            661,
+                            "                                },\n"
+                        ],
+                        [
+                            662,
+                            "                                \"') \",\n"
+                        ],
+                        [
+                            663,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            664,
+                            "                                \"    run = inspector.start_assessment_run(assessmentTemplateArn=assessmentTemplateArn,assessmentRunName='ContinuousAssessment'+'-'+str(millis))\",\n"
+                        ],
+                        [
+                            665,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            666,
+                            "                                \"    return 'Done'\"\n"
+                        ],
+                        [
+                            667,
+                            "                            ]\n"
+                        ],
+                        [
+                            668,
+                            "                        ]\n"
+                        ],
+                        [
+                            669,
+                            "                    }\n"
+                        ],
+                        [
+                            670,
+                            "                },\n"
+                        ],
+                        [
+                            671,
+                            "                \"Runtime\": \"python3.6\",\n"
+                        ],
+                        [
+                            672,
+                            "                \"Timeout\": 300,\n"
+                        ],
+                        [
+                            673,
+                            "                \"Handler\": \"index.lambda_handler\",\n"
+                        ],
+                        [
+                            674,
+                            "                \"MemorySize\": 512\n"
+                        ],
+                        [
+                            675,
+                            "            }\n"
+                        ],
+                        [
+                            676,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        615,
+                        676
+                    ],
+                    "resource": "AWS::Lambda::Function.StartContinuousAssessmentLambdaFunction",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.LambdaInVPC",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-inside-a-vpc-1"
+                },
+                {
                     "check_id": "CKV_AWS_26",
                     "bc_check_id": "BC_AWS_GENERAL_15",
                     "check_name": "Ensure all data stored in the SNS topic is encrypted",
@@ -26784,6 +29164,538 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/general_15"
+                },
+                {
+                    "check_id": "CKV_AWS_115",
+                    "bc_check_id": "BC_AWS_GENERAL_63",
+                    "check_name": "Ensure that AWS Lambda function is configured for function-level concurrent execution limit",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "Properties/ReservedConcurrentExecutions"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            799,
+                            "        \"AnalyzeInspectorFindingsLambdaFunction\": {\n"
+                        ],
+                        [
+                            800,
+                            "            \"Type\": \"AWS::Lambda::Function\",\n"
+                        ],
+                        [
+                            801,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            802,
+                            "                \"Role\": {\n"
+                        ],
+                        [
+                            803,
+                            "                    \"Fn::GetAtt\": [\n"
+                        ],
+                        [
+                            804,
+                            "                        \"AnalyzeInspectorFindingsLambdaRole\",\n"
+                        ],
+                        [
+                            805,
+                            "                        \"Arn\"\n"
+                        ],
+                        [
+                            806,
+                            "                    ]\n"
+                        ],
+                        [
+                            807,
+                            "                },\n"
+                        ],
+                        [
+                            808,
+                            "                \"Code\": {\n"
+                        ],
+                        [
+                            809,
+                            "                    \"ZipFile\": {\n"
+                        ],
+                        [
+                            810,
+                            "                        \"Fn::Join\": [\n"
+                        ],
+                        [
+                            811,
+                            "                            \"\",\n"
+                        ],
+                        [
+                            812,
+                            "                            [\n"
+                        ],
+                        [
+                            813,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            814,
+                            "                                \"import json \",\n"
+                        ],
+                        [
+                            815,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            816,
+                            "                                \"import os\",\n"
+                        ],
+                        [
+                            817,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            818,
+                            "                                \"import boto3\",\n"
+                        ],
+                        [
+                            819,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            820,
+                            "                                \"import collections\",\n"
+                        ],
+                        [
+                            821,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            822,
+                            "                                \"import ast\",\n"
+                        ],
+                        [
+                            823,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            824,
+                            "                                \"def lambda_handler(event, context): \",\n"
+                        ],
+                        [
+                            825,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            826,
+                            "                                \"    message = event['Records'][0]['Sns']['Message'] \",\n"
+                        ],
+                        [
+                            827,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            828,
+                            "                                \"    jsonVal = json.loads(message);\",\n"
+                        ],
+                        [
+                            829,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            830,
+                            "                                \"    assessmentArn =jsonVal['run']  \",\n"
+                        ],
+                        [
+                            831,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            832,
+                            "                                \"    region=os.environ['AWS_DEFAULT_REGION']\",\n"
+                        ],
+                        [
+                            833,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            834,
+                            "                                \"    ec2 = boto3.client('ec2',region) \",\n"
+                        ],
+                        [
+                            835,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            836,
+                            "                                \"    sns = boto3.client('sns',region) \",\n"
+                        ],
+                        [
+                            837,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            838,
+                            "                                \"    inspector = boto3.client('inspector',region) \",\n"
+                        ],
+                        [
+                            839,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            840,
+                            "                                \"    findingArns = inspector.list_findings(assessmentRunArns=[jsonVal['run']],maxResults=5000)\",\n"
+                        ],
+                        [
+                            841,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            842,
+                            "                                \"    aggregateData={}\",\n"
+                        ],
+                        [
+                            843,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            844,
+                            "                                \"    for findingArn in findingArns['findingArns']:\",\n"
+                        ],
+                        [
+                            845,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            846,
+                            "                                \"        finding = inspector.describe_findings(findingArns=[findingArn]) \",\n"
+                        ],
+                        [
+                            847,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            848,
+                            "                                \"        for result in finding['findings']: \",\n"
+                        ],
+                        [
+                            849,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            850,
+                            "                                \"            instanceId =result['assetAttributes']['agentId']\",\n"
+                        ],
+                        [
+                            851,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            852,
+                            "                                \"            severity =result['severity']\",\n"
+                        ],
+                        [
+                            853,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            854,
+                            "                                \"            cveName=result['id']\",\n"
+                        ],
+                        [
+                            855,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            856,
+                            "                                \"            if not (instanceId) in aggregateData:\",\n"
+                        ],
+                        [
+                            857,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            858,
+                            "                                \"                aggregateData[instanceId]={}\",\n"
+                        ],
+                        [
+                            859,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            860,
+                            "                                \"                aggregateData[instanceId]['findings']={}\",\n"
+                        ],
+                        [
+                            861,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            862,
+                            "                                \"                aggregateData[instanceId]['findings'][severity]=0\",\n"
+                        ],
+                        [
+                            863,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            864,
+                            "                                \"                instance=ec2.describe_instances(InstanceIds=[instanceId]);\",\n"
+                        ],
+                        [
+                            865,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            866,
+                            "                                \"                tagsStr=str(instance['Reservations'][0]['Instances'][0]['Tags']) \",\n"
+                        ],
+                        [
+                            867,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            868,
+                            "                                \"                tagsStr =tagsStr.replace('Key','key').replace('Value','value')  \",\n"
+                        ],
+                        [
+                            869,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            870,
+                            "                                \"                aggregateData[instanceId]['tags']= ast.literal_eval(tagsStr)\",\n"
+                        ],
+                        [
+                            871,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            872,
+                            "                                \"            elif not (severity) in aggregateData[instanceId]['findings']:\",\n"
+                        ],
+                        [
+                            873,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            874,
+                            "                                \"                aggregateData[instanceId]['findings'][severity]=0\",\n"
+                        ],
+                        [
+                            875,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            876,
+                            "                                \"            aggregateData[instanceId]['findings'][severity]=aggregateData[instanceId]['findings'][severity]+1; \",\n"
+                        ],
+                        [
+                            877,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            878,
+                            "                                \"            inspector.add_attributes_to_findings(findingArns=[result['arn']],attributes=aggregateData[instanceId]['tags'])\",\n"
+                        ],
+                        [
+                            879,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            880,
+                            "                                \"    tagsList=[]\",\n"
+                        ],
+                        [
+                            881,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            882,
+                            "                                \"    for key  in aggregateData: \",\n"
+                        ],
+                        [
+                            883,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            884,
+                            "                                \"        outputJson=[] \",\n"
+                        ],
+                        [
+                            885,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            886,
+                            "                                \"        for tag in aggregateData[key]['tags']:\",\n"
+                        ],
+                        [
+                            887,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            888,
+                            "                                \"            if tag['key'] != 'continuous-assessment-instance':\",\n"
+                        ],
+                        [
+                            889,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            890,
+                            "                                \"                outputJson.append(\\\"\\\\\\\"\\\"+tag['key']+\\\"\\\\\\\"\\\"+\\\":\\\"+\\\"\\\\\\\"\\\"+tag['value']+\\\"\\\\\\\"\\\")\",\n"
+                        ],
+                        [
+                            891,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            892,
+                            "                                \"        for sev in aggregateData[key]['findings']:\",\n"
+                        ],
+                        [
+                            893,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            894,
+                            "                                \"            outputJson.append(\\\"\\\\\\\"Finding-Severity-\\\"+sev+\\\"-Count\\\\\\\"\\\"+\\\":\\\"+\\\"\\\\\\\"\\\"+str(aggregateData[key]['findings'][sev])+\\\"\\\\\\\"\\\")\",\n"
+                        ],
+                        [
+                            895,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            896,
+                            "                                \"        outputJson.sort()\",\n"
+                        ],
+                        [
+                            897,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            898,
+                            "                                \"        print(outputJson)\",\n"
+                        ],
+                        [
+                            899,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            900,
+                            "                                \"        tagsList.append('{'+', '.join(outputJson)+'}')\",\n"
+                        ],
+                        [
+                            901,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            902,
+                            "                                \"        print('Terminating:'+key)\",\n"
+                        ],
+                        [
+                            903,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            904,
+                            "                                \"        ec2.terminate_instances(InstanceIds=[key],DryRun=False)\",\n"
+                        ],
+                        [
+                            905,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            906,
+                            "                                \"    sns.publish(TopicArn='\",\n"
+                        ],
+                        [
+                            907,
+                            "                                {\n"
+                        ],
+                        [
+                            908,
+                            "                                    \"Ref\": \"ContinuousAssessmentResultsTopic\"\n"
+                        ],
+                        [
+                            909,
+                            "                                },\n"
+                        ],
+                        [
+                            910,
+                            "                                \"',Message='['+', '.join(tagsList)+']')\",\n"
+                        ],
+                        [
+                            911,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            912,
+                            "                                \"    return jsonVal['run']\"\n"
+                        ],
+                        [
+                            913,
+                            "                            ]\n"
+                        ],
+                        [
+                            914,
+                            "                        ]\n"
+                        ],
+                        [
+                            915,
+                            "                    }\n"
+                        ],
+                        [
+                            916,
+                            "                },\n"
+                        ],
+                        [
+                            917,
+                            "                \"Runtime\": \"python3.6\",\n"
+                        ],
+                        [
+                            918,
+                            "                \"Timeout\": 300,\n"
+                        ],
+                        [
+                            919,
+                            "                \"Handler\": \"index.lambda_handler\",\n"
+                        ],
+                        [
+                            920,
+                            "                \"MemorySize\": 512\n"
+                        ],
+                        [
+                            921,
+                            "            }\n"
+                        ],
+                        [
+                            922,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        799,
+                        922
+                    ],
+                    "resource": "AWS::Lambda::Function.AnalyzeInspectorFindingsLambdaFunction",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.LambdaFunctionLevelConcurrentExecutionLimit",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-function-level-concurrent-execution-limit"
                 },
                 {
                     "check_id": "CKV_AWS_116",
@@ -27316,6 +30228,538 @@
                     "vulnerability_details": null,
                     "connected_node": null,
                     "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq"
+                },
+                {
+                    "check_id": "CKV_AWS_117",
+                    "bc_check_id": "BC_AWS_GENERAL_65",
+                    "check_name": "Ensure that AWS Lambda function is configured inside a VPC",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "Properties/VpcConfig"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            799,
+                            "        \"AnalyzeInspectorFindingsLambdaFunction\": {\n"
+                        ],
+                        [
+                            800,
+                            "            \"Type\": \"AWS::Lambda::Function\",\n"
+                        ],
+                        [
+                            801,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            802,
+                            "                \"Role\": {\n"
+                        ],
+                        [
+                            803,
+                            "                    \"Fn::GetAtt\": [\n"
+                        ],
+                        [
+                            804,
+                            "                        \"AnalyzeInspectorFindingsLambdaRole\",\n"
+                        ],
+                        [
+                            805,
+                            "                        \"Arn\"\n"
+                        ],
+                        [
+                            806,
+                            "                    ]\n"
+                        ],
+                        [
+                            807,
+                            "                },\n"
+                        ],
+                        [
+                            808,
+                            "                \"Code\": {\n"
+                        ],
+                        [
+                            809,
+                            "                    \"ZipFile\": {\n"
+                        ],
+                        [
+                            810,
+                            "                        \"Fn::Join\": [\n"
+                        ],
+                        [
+                            811,
+                            "                            \"\",\n"
+                        ],
+                        [
+                            812,
+                            "                            [\n"
+                        ],
+                        [
+                            813,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            814,
+                            "                                \"import json \",\n"
+                        ],
+                        [
+                            815,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            816,
+                            "                                \"import os\",\n"
+                        ],
+                        [
+                            817,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            818,
+                            "                                \"import boto3\",\n"
+                        ],
+                        [
+                            819,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            820,
+                            "                                \"import collections\",\n"
+                        ],
+                        [
+                            821,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            822,
+                            "                                \"import ast\",\n"
+                        ],
+                        [
+                            823,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            824,
+                            "                                \"def lambda_handler(event, context): \",\n"
+                        ],
+                        [
+                            825,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            826,
+                            "                                \"    message = event['Records'][0]['Sns']['Message'] \",\n"
+                        ],
+                        [
+                            827,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            828,
+                            "                                \"    jsonVal = json.loads(message);\",\n"
+                        ],
+                        [
+                            829,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            830,
+                            "                                \"    assessmentArn =jsonVal['run']  \",\n"
+                        ],
+                        [
+                            831,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            832,
+                            "                                \"    region=os.environ['AWS_DEFAULT_REGION']\",\n"
+                        ],
+                        [
+                            833,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            834,
+                            "                                \"    ec2 = boto3.client('ec2',region) \",\n"
+                        ],
+                        [
+                            835,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            836,
+                            "                                \"    sns = boto3.client('sns',region) \",\n"
+                        ],
+                        [
+                            837,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            838,
+                            "                                \"    inspector = boto3.client('inspector',region) \",\n"
+                        ],
+                        [
+                            839,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            840,
+                            "                                \"    findingArns = inspector.list_findings(assessmentRunArns=[jsonVal['run']],maxResults=5000)\",\n"
+                        ],
+                        [
+                            841,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            842,
+                            "                                \"    aggregateData={}\",\n"
+                        ],
+                        [
+                            843,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            844,
+                            "                                \"    for findingArn in findingArns['findingArns']:\",\n"
+                        ],
+                        [
+                            845,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            846,
+                            "                                \"        finding = inspector.describe_findings(findingArns=[findingArn]) \",\n"
+                        ],
+                        [
+                            847,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            848,
+                            "                                \"        for result in finding['findings']: \",\n"
+                        ],
+                        [
+                            849,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            850,
+                            "                                \"            instanceId =result['assetAttributes']['agentId']\",\n"
+                        ],
+                        [
+                            851,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            852,
+                            "                                \"            severity =result['severity']\",\n"
+                        ],
+                        [
+                            853,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            854,
+                            "                                \"            cveName=result['id']\",\n"
+                        ],
+                        [
+                            855,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            856,
+                            "                                \"            if not (instanceId) in aggregateData:\",\n"
+                        ],
+                        [
+                            857,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            858,
+                            "                                \"                aggregateData[instanceId]={}\",\n"
+                        ],
+                        [
+                            859,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            860,
+                            "                                \"                aggregateData[instanceId]['findings']={}\",\n"
+                        ],
+                        [
+                            861,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            862,
+                            "                                \"                aggregateData[instanceId]['findings'][severity]=0\",\n"
+                        ],
+                        [
+                            863,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            864,
+                            "                                \"                instance=ec2.describe_instances(InstanceIds=[instanceId]);\",\n"
+                        ],
+                        [
+                            865,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            866,
+                            "                                \"                tagsStr=str(instance['Reservations'][0]['Instances'][0]['Tags']) \",\n"
+                        ],
+                        [
+                            867,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            868,
+                            "                                \"                tagsStr =tagsStr.replace('Key','key').replace('Value','value')  \",\n"
+                        ],
+                        [
+                            869,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            870,
+                            "                                \"                aggregateData[instanceId]['tags']= ast.literal_eval(tagsStr)\",\n"
+                        ],
+                        [
+                            871,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            872,
+                            "                                \"            elif not (severity) in aggregateData[instanceId]['findings']:\",\n"
+                        ],
+                        [
+                            873,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            874,
+                            "                                \"                aggregateData[instanceId]['findings'][severity]=0\",\n"
+                        ],
+                        [
+                            875,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            876,
+                            "                                \"            aggregateData[instanceId]['findings'][severity]=aggregateData[instanceId]['findings'][severity]+1; \",\n"
+                        ],
+                        [
+                            877,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            878,
+                            "                                \"            inspector.add_attributes_to_findings(findingArns=[result['arn']],attributes=aggregateData[instanceId]['tags'])\",\n"
+                        ],
+                        [
+                            879,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            880,
+                            "                                \"    tagsList=[]\",\n"
+                        ],
+                        [
+                            881,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            882,
+                            "                                \"    for key  in aggregateData: \",\n"
+                        ],
+                        [
+                            883,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            884,
+                            "                                \"        outputJson=[] \",\n"
+                        ],
+                        [
+                            885,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            886,
+                            "                                \"        for tag in aggregateData[key]['tags']:\",\n"
+                        ],
+                        [
+                            887,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            888,
+                            "                                \"            if tag['key'] != 'continuous-assessment-instance':\",\n"
+                        ],
+                        [
+                            889,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            890,
+                            "                                \"                outputJson.append(\\\"\\\\\\\"\\\"+tag['key']+\\\"\\\\\\\"\\\"+\\\":\\\"+\\\"\\\\\\\"\\\"+tag['value']+\\\"\\\\\\\"\\\")\",\n"
+                        ],
+                        [
+                            891,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            892,
+                            "                                \"        for sev in aggregateData[key]['findings']:\",\n"
+                        ],
+                        [
+                            893,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            894,
+                            "                                \"            outputJson.append(\\\"\\\\\\\"Finding-Severity-\\\"+sev+\\\"-Count\\\\\\\"\\\"+\\\":\\\"+\\\"\\\\\\\"\\\"+str(aggregateData[key]['findings'][sev])+\\\"\\\\\\\"\\\")\",\n"
+                        ],
+                        [
+                            895,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            896,
+                            "                                \"        outputJson.sort()\",\n"
+                        ],
+                        [
+                            897,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            898,
+                            "                                \"        print(outputJson)\",\n"
+                        ],
+                        [
+                            899,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            900,
+                            "                                \"        tagsList.append('{'+', '.join(outputJson)+'}')\",\n"
+                        ],
+                        [
+                            901,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            902,
+                            "                                \"        print('Terminating:'+key)\",\n"
+                        ],
+                        [
+                            903,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            904,
+                            "                                \"        ec2.terminate_instances(InstanceIds=[key],DryRun=False)\",\n"
+                        ],
+                        [
+                            905,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            906,
+                            "                                \"    sns.publish(TopicArn='\",\n"
+                        ],
+                        [
+                            907,
+                            "                                {\n"
+                        ],
+                        [
+                            908,
+                            "                                    \"Ref\": \"ContinuousAssessmentResultsTopic\"\n"
+                        ],
+                        [
+                            909,
+                            "                                },\n"
+                        ],
+                        [
+                            910,
+                            "                                \"',Message='['+', '.join(tagsList)+']')\",\n"
+                        ],
+                        [
+                            911,
+                            "                                \"\\n\",\n"
+                        ],
+                        [
+                            912,
+                            "                                \"    return jsonVal['run']\"\n"
+                        ],
+                        [
+                            913,
+                            "                            ]\n"
+                        ],
+                        [
+                            914,
+                            "                        ]\n"
+                        ],
+                        [
+                            915,
+                            "                    }\n"
+                        ],
+                        [
+                            916,
+                            "                },\n"
+                        ],
+                        [
+                            917,
+                            "                \"Runtime\": \"python3.6\",\n"
+                        ],
+                        [
+                            918,
+                            "                \"Timeout\": 300,\n"
+                        ],
+                        [
+                            919,
+                            "                \"Handler\": \"index.lambda_handler\",\n"
+                        ],
+                        [
+                            920,
+                            "                \"MemorySize\": 512\n"
+                        ],
+                        [
+                            921,
+                            "            }\n"
+                        ],
+                        [
+                            922,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        799,
+                        922
+                    ],
+                    "resource": "AWS::Lambda::Function.AnalyzeInspectorFindingsLambdaFunction",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.LambdaInVPC",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-inside-a-vpc-1"
                 },
                 {
                     "check_id": "CKV_AWS_26",
@@ -27861,6 +31305,560 @@
                             {
                                 "type": "parameters",
                                 "name": "DBPassword",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV_AWS_118",
+                    "bc_check_id": "BC_AWS_LOGGING_28",
+                    "check_name": "Ensure that enhanced monitoring is enabled for Amazon RDS instances",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "Properties/MonitoringInterval"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            2977,
+                            "        \"Database\": {\n"
+                        ],
+                        [
+                            2978,
+                            "            \"Type\": \"AWS::RDS::DBInstance\",\n"
+                        ],
+                        [
+                            2979,
+                            "            \"DependsOn\": [\n"
+                        ],
+                        [
+                            2980,
+                            "                \"PrivateRoute\",\n"
+                        ],
+                        [
+                            2981,
+                            "                \"DatabaseSecurityGroup\"\n"
+                        ],
+                        [
+                            2982,
+                            "            ],\n"
+                        ],
+                        [
+                            2983,
+                            "            \"Properties\": {\n"
+                        ],
+                        [
+                            2984,
+                            "                \"DBName\": {\n"
+                        ],
+                        [
+                            2985,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            2986,
+                            "                        \"useDBSnapshot\",\n"
+                        ],
+                        [
+                            2987,
+                            "                        {\n"
+                        ],
+                        [
+                            2988,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            2989,
+                            "                        },\n"
+                        ],
+                        [
+                            2990,
+                            "                        {\n"
+                        ],
+                        [
+                            2991,
+                            "                            \"Ref\": \"DBName\"\n"
+                        ],
+                        [
+                            2992,
+                            "                        }\n"
+                        ],
+                        [
+                            2993,
+                            "                    ]\n"
+                        ],
+                        [
+                            2994,
+                            "                },\n"
+                        ],
+                        [
+                            2995,
+                            "                \"StorageEncrypted\": {\n"
+                        ],
+                        [
+                            2996,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            2997,
+                            "                        \"useDBEncryptionKmsAlias\",\n"
+                        ],
+                        [
+                            2998,
+                            "                        \"true\",\n"
+                        ],
+                        [
+                            2999,
+                            "                        \"false\"\n"
+                        ],
+                        [
+                            3000,
+                            "                    ]\n"
+                        ],
+                        [
+                            3001,
+                            "                },\n"
+                        ],
+                        [
+                            3002,
+                            "                \"KmsKeyId\": {\n"
+                        ],
+                        [
+                            3003,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            3004,
+                            "                        \"useDBEncryptionKmsAlias\",\n"
+                        ],
+                        [
+                            3005,
+                            "                        {\n"
+                        ],
+                        [
+                            3006,
+                            "                            \"Ref\": \"DBEncryptionKmsAlias\"\n"
+                        ],
+                        [
+                            3007,
+                            "                        },\n"
+                        ],
+                        [
+                            3008,
+                            "                        {\n"
+                        ],
+                        [
+                            3009,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            3010,
+                            "                        }\n"
+                        ],
+                        [
+                            3011,
+                            "                    ]\n"
+                        ],
+                        [
+                            3012,
+                            "                },\n"
+                        ],
+                        [
+                            3013,
+                            "                \"AllocatedStorage\": {\n"
+                        ],
+                        [
+                            3014,
+                            "                    \"Ref\": \"DBAllocatedStorage\"\n"
+                        ],
+                        [
+                            3015,
+                            "                },\n"
+                        ],
+                        [
+                            3016,
+                            "                \"DBInstanceClass\": {\n"
+                        ],
+                        [
+                            3017,
+                            "                    \"Ref\": \"DBClass\"\n"
+                        ],
+                        [
+                            3018,
+                            "                },\n"
+                        ],
+                        [
+                            3019,
+                            "                \"Engine\": \"postgres\",\n"
+                        ],
+                        [
+                            3020,
+                            "                \"EngineVersion\": \"13.1\",\n"
+                        ],
+                        [
+                            3021,
+                            "                \"MultiAZ\": \"false\",\n"
+                        ],
+                        [
+                            3022,
+                            "                \"PubliclyAccessible\": \"false\",\n"
+                        ],
+                        [
+                            3023,
+                            "                \"BackupRetentionPeriod\": \"7\",\n"
+                        ],
+                        [
+                            3024,
+                            "                \"EnablePerformanceInsights\": \"true\",\n"
+                        ],
+                        [
+                            3025,
+                            "                \"EnableCloudwatchLogsExports\": [\n"
+                        ],
+                        [
+                            3026,
+                            "                    \"postgresql\",\n"
+                        ],
+                        [
+                            3027,
+                            "                    \"upgrade\"\n"
+                        ],
+                        [
+                            3028,
+                            "                ],\n"
+                        ],
+                        [
+                            3029,
+                            "                \"StorageType\": \"gp2\",\n"
+                        ],
+                        [
+                            3030,
+                            "                \"DBInstanceIdentifier\": \"rotation-instance\",\n"
+                        ],
+                        [
+                            3031,
+                            "                \"MasterUsername\": {\n"
+                        ],
+                        [
+                            3032,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            3033,
+                            "                        \"useDBSnapshot\",\n"
+                        ],
+                        [
+                            3034,
+                            "                        {\n"
+                        ],
+                        [
+                            3035,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            3036,
+                            "                        },\n"
+                        ],
+                        [
+                            3037,
+                            "                        {\n"
+                        ],
+                        [
+                            3038,
+                            "                            \"Fn::Join\": [\n"
+                        ],
+                        [
+                            3039,
+                            "                                \"\",\n"
+                        ],
+                        [
+                            3040,
+                            "                                [\n"
+                        ],
+                        [
+                            3041,
+                            "                                    \"{{resolve:secretsmanager:\",\n"
+                        ],
+                        [
+                            3042,
+                            "                                    {\n"
+                        ],
+                        [
+                            3043,
+                            "                                        \"Ref\": \"RDSInstanceRotationSecret\"\n"
+                        ],
+                        [
+                            3044,
+                            "                                    },\n"
+                        ],
+                        [
+                            3045,
+                            "                                    \":SecretString:username}}\"\n"
+                        ],
+                        [
+                            3046,
+                            "                                ]\n"
+                        ],
+                        [
+                            3047,
+                            "                            ]\n"
+                        ],
+                        [
+                            3048,
+                            "                        }\n"
+                        ],
+                        [
+                            3049,
+                            "                    ]\n"
+                        ],
+                        [
+                            3050,
+                            "                },\n"
+                        ],
+                        [
+                            3051,
+                            "                \"MasterUserPassword\": {\n"
+                        ],
+                        [
+                            3052,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            3053,
+                            "                        \"useDBSnapshot\",\n"
+                        ],
+                        [
+                            3054,
+                            "                        {\n"
+                        ],
+                        [
+                            3055,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            3056,
+                            "                        },\n"
+                        ],
+                        [
+                            3057,
+                            "                        {\n"
+                        ],
+                        [
+                            3058,
+                            "                            \"Fn::Join\": [\n"
+                        ],
+                        [
+                            3059,
+                            "                                \"\",\n"
+                        ],
+                        [
+                            3060,
+                            "                                [\n"
+                        ],
+                        [
+                            3061,
+                            "                                    \"{{resolve:secretsmanager:\",\n"
+                        ],
+                        [
+                            3062,
+                            "                                    {\n"
+                        ],
+                        [
+                            3063,
+                            "                                        \"Ref\": \"RDSInstanceRotationSecret\"\n"
+                        ],
+                        [
+                            3064,
+                            "                                    },\n"
+                        ],
+                        [
+                            3065,
+                            "                                    \":SecretString:password}}\"\n"
+                        ],
+                        [
+                            3066,
+                            "                                ]\n"
+                        ],
+                        [
+                            3067,
+                            "                            ]\n"
+                        ],
+                        [
+                            3068,
+                            "                        }\n"
+                        ],
+                        [
+                            3069,
+                            "                    ]\n"
+                        ],
+                        [
+                            3070,
+                            "                },\n"
+                        ],
+                        [
+                            3071,
+                            "                \"DBSnapshotIdentifier\": {\n"
+                        ],
+                        [
+                            3072,
+                            "                    \"Fn::If\": [\n"
+                        ],
+                        [
+                            3073,
+                            "                        \"useDBSnapshot\",\n"
+                        ],
+                        [
+                            3074,
+                            "                        {\n"
+                        ],
+                        [
+                            3075,
+                            "                            \"Ref\": \"DBSnapshotName\"\n"
+                        ],
+                        [
+                            3076,
+                            "                        },\n"
+                        ],
+                        [
+                            3077,
+                            "                        {\n"
+                        ],
+                        [
+                            3078,
+                            "                            \"Ref\": \"AWS::NoValue\"\n"
+                        ],
+                        [
+                            3079,
+                            "                        }\n"
+                        ],
+                        [
+                            3080,
+                            "                    ]\n"
+                        ],
+                        [
+                            3081,
+                            "                },\n"
+                        ],
+                        [
+                            3082,
+                            "                \"DBSubnetGroupName\": {\n"
+                        ],
+                        [
+                            3083,
+                            "                    \"Ref\": \"myDBSubnetGroup\"\n"
+                        ],
+                        [
+                            3084,
+                            "                },\n"
+                        ],
+                        [
+                            3085,
+                            "                \"DBParameterGroupName\": {\n"
+                        ],
+                        [
+                            3086,
+                            "                    \"Ref\": \"DatabaseParamGroup\"\n"
+                        ],
+                        [
+                            3087,
+                            "                },\n"
+                        ],
+                        [
+                            3088,
+                            "                \"VPCSecurityGroups\": [\n"
+                        ],
+                        [
+                            3089,
+                            "                    {\n"
+                        ],
+                        [
+                            3090,
+                            "                        \"Fn::GetAtt\": [\n"
+                        ],
+                        [
+                            3091,
+                            "                            \"DatabaseSecurityGroup\",\n"
+                        ],
+                        [
+                            3092,
+                            "                            \"GroupId\"\n"
+                        ],
+                        [
+                            3093,
+                            "                        ]\n"
+                        ],
+                        [
+                            3094,
+                            "                    }\n"
+                        ],
+                        [
+                            3095,
+                            "                ]\n"
+                        ],
+                        [
+                            3096,
+                            "            }\n"
+                        ],
+                        [
+                            3097,
+                            "        },\n"
+                        ]
+                    ],
+                    "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_abs_path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "repo_file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
+                    "file_line_range": [
+                        2977,
+                        3097
+                    ],
+                    "resource": "AWS::RDS::DBInstance.Database",
+                    "evaluations": {},
+                    "check_class": "checkov.cloudformation.checks.resource.aws.RDSEnhancedMonitorEnabled",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.bridgecrew.io/docs/ensure-that-enhanced-monitoring-is-enabled-for-amazon-rds-instances",
+                    "breadcrumbs": {
+                        "DBName.Fn::If.2": [
+                            {
+                                "type": "parameters",
+                                "name": "DBName",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ],
+                        "DBName.Fn::If": [
+                            {
+                                "type": "parameters",
+                                "name": "DBName",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ],
+                        "DBInstanceClass": [
+                            {
+                                "type": "parameters",
+                                "name": "DBClass",
+                                "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
+                                "attribute_key": "Default"
+                            }
+                        ],
+                        "AllocatedStorage": [
+                            {
+                                "type": "parameters",
+                                "name": "DBAllocatedStorage",
                                 "path": "src/test/resources/checkov/cia-dist-cloudformation.json",
                                 "attribute_key": "Default"
                             }
@@ -30342,12 +34340,12 @@
             "parsing_errors": []
         },
         "summary": {
-            "passed": 104,
-            "failed": 15,
+            "passed": 113,
+            "failed": 20,
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 130,
-            "checkov_version": "2.0.1220"
+            "checkov_version": "2.1.68"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     },
@@ -30366,7 +34364,7 @@
                     "code_block": [
                         [
                             3485,
-                            "                        \"Key\": \"SystemPatchComplianceMaintenanceWindowActive\",\n"
+                            "                        \"Key\": \"SystemPatch*********************************\",\n"
                         ]
                     ],
                     "file_path": "/src/test/resources/checkov/cia-dist-cloudformation.json",
@@ -30378,7 +34376,7 @@
                     ],
                     "resource": "355cd082082d59173a4e2ac5c5646de1a0e16ac7",
                     "evaluations": null,
-                    "check_class": null,
+                    "check_class": "",
                     "fixed_definition": null,
                     "entity_tags": null,
                     "caller_file_path": null,
@@ -30403,7 +34401,7 @@
             "skipped": 0,
             "parsing_errors": 0,
             "resource_count": 1,
-            "checkov_version": "2.0.1220"
+            "checkov_version": "2.1.68"
         },
         "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
     }

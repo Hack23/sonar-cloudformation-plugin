@@ -1402,10 +1402,55 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>cloudformation-CKV_AWS_115</key>
+		<name>Ensure that AWS Lambda function is configured for function-level concurrent execution limit</name>
+		<internalKey>cloudformation-CKV_AWS_115</internalKey>
+		<description>Ensure that AWS Lambda function is configured for function-level concurrent execution limit</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>cloudformation-CKV_AWS_116</key>
 		<name>Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)</name>
 		<internalKey>cloudformation-CKV_AWS_116</internalKey>
 		<description>Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_117</key>
+		<name>Ensure that AWS Lambda function is configured inside a VPC</name>
+		<internalKey>cloudformation-CKV_AWS_117</internalKey>
+		<description>Ensure that AWS Lambda function is configured inside a VPC</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_118</key>
+		<name>Ensure that enhanced monitoring is enabled for Amazon RDS instances</name>
+		<internalKey>cloudformation-CKV_AWS_118</internalKey>
+		<description>Ensure that enhanced monitoring is enabled for Amazon RDS instances</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -1830,5 +1875,24 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+    <rule>
+		<key>cloudformation-CKV_AWS_260</key>
+		<name>Ensure no security groups allow ingress from 0.0.0.0:0 to port 80</name>
+		<internalKey>cloudformation-CKV_AWS_260</internalKey>
+		<description>Ensure no security groups allow ingress from 0.0.0.0:0 to port 80</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+
 
 </rules>
