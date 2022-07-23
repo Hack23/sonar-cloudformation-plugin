@@ -89,7 +89,7 @@
     <dependency>
       <groupId>org.sonarsource.analyzer-commons</groupId>
       <artifactId>sonar-analyzer-commons</artifactId>
-      <version>1.25.0.1003</version>
+      <version>1.26.0.1029</version>
       <exclusions>
         <exclusion>
           <artifactId>sonar-plugin-api</artifactId>
