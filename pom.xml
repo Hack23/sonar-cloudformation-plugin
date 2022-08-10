@@ -404,7 +404,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.4.1</version>
         <inherited>true</inherited>
         <configuration>
           <source>11</source>
@@ -511,7 +511,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.4.0</version>
+            <version>3.4.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
