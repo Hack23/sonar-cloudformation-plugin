@@ -314,7 +314,8 @@
                 "short_description": null,
                 "vulnerability_details": null,
                 "connected_node": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_4"
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_4",
+                "details": []
             },
             {
                 "check_id": "CKV_AZURE_3",
@@ -412,7 +413,8 @@
                 "short_description": null,
                 "vulnerability_details": null,
                 "connected_node": null,
-                "guideline": null
+                "guideline": null,
+                "details": []
             }
         ],
         "failed_checks": [
@@ -732,7 +734,8 @@
                 "short_description": null,
                 "vulnerability_details": null,
                 "connected_node": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_3"
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_3",
+                "details": []
             },
             {
                 "check_id": "CKV_AZURE_23",
@@ -1046,7 +1049,8 @@
                 "short_description": null,
                 "vulnerability_details": null,
                 "connected_node": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_2"
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_logging_2",
+                "details": []
             },
             {
                 "check_id": "CKV_AZURE_36",
@@ -1144,7 +1148,8 @@
                 "short_description": null,
                 "vulnerability_details": null,
                 "connected_node": null,
-                "guideline": "https://docs.bridgecrew.io/docs/enable-trusted-microsoft-services-for-storage-account-access"
+                "guideline": "https://docs.bridgecrew.io/docs/enable-trusted-microsoft-services-for-storage-account-access",
+                "details": []
             },
             {
                 "check_id": "CKV_AZURE_35",
@@ -1242,7 +1247,8 @@
                 "short_description": null,
                 "vulnerability_details": null,
                 "connected_node": null,
-                "guideline": "https://docs.bridgecrew.io/docs/set-default-network-access-rule-for-storage-accounts-to-deny"
+                "guideline": "https://docs.bridgecrew.io/docs/set-default-network-access-rule-for-storage-accounts-to-deny",
+                "details": []
             }
         ],
         "skipped_checks": [],
@@ -1254,7 +1260,7 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 7,
-        "checkov_version": "2.1.68"
+        "checkov_version": "2.1.160"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }

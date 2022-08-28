@@ -374,9 +374,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_ALI_24</key>
-		<name>Ensure Ram Account Password Policy Max Age less than/equal to 90 days</name>
+		<name>Ensure RAM enforces MFA</name>
 		<internalKey>terraform-CKV_ALI_24</internalKey>
-		<description>Ensure Ram Account Password Policy Max Age less than/equal to 90 days</description>
+		<description>Ensure RAM enforces MFA</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -512,6 +512,66 @@
 		<name>Alibaba Cloud Cypher Policy are secure</name>
 		<internalKey>terraform-CKV_ALI_33</internalKey>
 		<description>Alibaba Cloud Cypher Policy are secure</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_34</key>
+		<name>Ensure RDS instance is set to auto upgrade minor versions</name>
+		<internalKey>terraform-CKV_ALI_34</internalKey>
+		<description>Ensure RDS instance is set to auto upgrade minor versions</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_35</key>
+		<name>Ensure RDS instance has log_duration enabled</name>
+		<internalKey>terraform-CKV_ALI_35</internalKey>
+		<description>Ensure RDS instance has log_duration enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_36</key>
+		<name>Ensure RDS instance has log_disconnections enabled</name>
+		<internalKey>terraform-CKV_ALI_36</internalKey>
+		<description>Ensure RDS instance has log_disconnections enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_ALI_37</key>
+		<name>Ensure RDS instance has log_connections enabled</name>
+		<internalKey>terraform-CKV_ALI_37</internalKey>
+		<description>Ensure RDS instance has log_connections enabled</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -4570,6 +4630,81 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AWS_262</key>
+		<name>Ensure Kendra index Server side encryption uses CMK</name>
+		<internalKey>terraform-CKV_AWS_262</internalKey>
+		<description>Ensure Kendra index Server side encryption uses CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_263</key>
+		<name>Ensure App Flow flow uses CMK</name>
+		<internalKey>terraform-CKV_AWS_263</internalKey>
+		<description>Ensure App Flow flow uses CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_264</key>
+		<name>Ensure App Flow connector profile uses CMK</name>
+		<internalKey>terraform-CKV_AWS_264</internalKey>
+		<description>Ensure App Flow connector profile uses CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_265</key>
+		<name>Ensure Keyspaces Table uses CMK</name>
+		<internalKey>terraform-CKV_AWS_265</internalKey>
+		<description>Ensure Keyspaces Table uses CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_266</key>
+		<name>Ensure App Flow connector profile uses CMK</name>
+		<internalKey>terraform-CKV_AWS_266</internalKey>
+		<description>Ensure App Flow connector profile uses CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AWS_1</key>
 		<name>Ensure that all NACL are attached to subnets</name>
 		<internalKey>terraform-CKV2_AWS_1</internalKey>
@@ -7518,6 +7653,42 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_161</key>
+		<name>Ensures Spring Cloud API Portal is enabled on for HTTPS</name>
+		<internalKey>terraform-CKV_AZURE_161</internalKey>
+		<description>Ensures Spring Cloud API Portal is enabled on for HTTPS</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AZURE_162</key>
+		<name>Ensures Spring Cloud API Portal Public Access Is Disabled</name>
+		<internalKey>terraform-CKV_AZURE_162</internalKey>
+		<description>Ensures Spring Cloud API Portal Public Access Is Disabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -11526,6 +11697,7 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+
 
 
 </rules>
