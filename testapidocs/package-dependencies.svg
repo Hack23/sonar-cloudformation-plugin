@@ -30,7 +30,7 @@ link com.hack23.sonar.cloudformation.reports.process to org.sonar.api.batch.sens
 link com.hack23.sonar.cloudformation.reports.process to com.hack23.sonar.cloudformation.reports.cfnnag--><g id="link_com.hack23.sonar.cloudformation.reports.process_com.hack23.sonar.cloudformation.reports.cfnnag"><path codeLine="20" d="M832.74,119.04 C873.92,134.41 945.05,160.97 988.43,177.16 " fill="none" id="com.hack23.sonar.cloudformation.reports.process-to-com.hack23.sonar.cloudformation.reports.cfnnag" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="993.32,178.99,986.2791,172.1034,988.6337,177.2469,983.4901,179.6015,993.32,178.99" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[26e3ba61859ca7a137a866f2f74c01fa]
 link com.hack23.sonar.cloudformation.reports.process to org.sonar.api.batch.rule--><g id="link_com.hack23.sonar.cloudformation.reports.process_org.sonar.api.batch.rule"><path codeLine="21" d="M874.72,119.04 C971.55,134.74 1140.3,162.1 1239.46,178.18 " fill="none" id="com.hack23.sonar.cloudformation.reports.process-to-org.sonar.api.batch.rule" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1244.42,178.99,1236.1772,173.5997,1239.4846,178.1889,1234.8954,181.4963,1244.42,178.99" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ebd7f04a16655fbde6e644cf60e638f7]
 link com.hack23.sonar.cloudformation.reports.process to com.hack23.sonar.cloudformation.reports.checkov--><g id="link_com.hack23.sonar.cloudformation.reports.process_com.hack23.sonar.cloudformation.reports.checkov"><path codeLine="22" d="M917.41,119.04 C1070.87,134.83 1338.96,162.43 1494.77,178.47 " fill="none" id="com.hack23.sonar.cloudformation.reports.process-to-com.hack23.sonar.cloudformation.reports.checkov" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1499.8,178.99,1491.2579,174.0876,1494.8264,178.477,1490.4371,182.0454,1499.8,178.99" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[229c5f6c914fdaf3e98336f6444f2f46]
-link com.hack23.sonar.cloudformation.reports.process to org.junit--><g id="link_com.hack23.sonar.cloudformation.reports.process_org.junit"><path codeLine="23" d="M978.27,118.01 C1246.66,134.87 1732.62,166.47 1812.5,179 C1816.67,179.65 1821,180.49 1825.29,181.41 " fill="none" id="com.hack23.sonar.cloudformation.reports.process-to-org.junit" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1830.29,182.52,1822.3757,176.658,1825.4097,181.4323,1820.6354,184.4664,1830.29,182.52" style="stroke:#181818;stroke-width:1.0;"/></g><rect height="11.6406" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="186" x="849.75" y="231.55"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="186" x="849.75" y="240.8322">UMLDoclet 2.0.18, PlantUML 1.2022.6</text><!--MD5=[5b07ab58ae15274b63bca7b585d7b165]
+link com.hack23.sonar.cloudformation.reports.process to org.junit--><g id="link_com.hack23.sonar.cloudformation.reports.process_org.junit"><path codeLine="23" d="M978.27,118.01 C1246.66,134.87 1732.62,166.47 1812.5,179 C1816.67,179.65 1821,180.49 1825.29,181.41 " fill="none" id="com.hack23.sonar.cloudformation.reports.process-to-org.junit" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1830.29,182.52,1822.3757,176.658,1825.4097,181.4323,1820.6354,184.4664,1830.29,182.52" style="stroke:#181818;stroke-width:1.0;"/></g><rect fill="none" height="11.6406" style="stroke:none;stroke-width:1.0;" width="186" x="849.75" y="231.55"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="186" x="849.75" y="240.8322">UMLDoclet 2.0.19, PlantUML 1.2022.8</text><!--MD5=[401227e32b4dcbd7dbe7b935d1f643cd]
 @startuml
     set namespaceSeparator none
     hide circle
@@ -66,7 +66,7 @@ link com.hack23.sonar.cloudformation.reports.process to org.junit--><g id="link_
     class "com.hack23.sonar.cloudformation.reports.checkov" [[com/hack23/sonar/cloudformation/reports/checkov/package-summary.html]] {
     }
 
-    center footer UMLDoclet 2.0.18, PlantUML 1.2022.6
+    center footer UMLDoclet 2.0.19, PlantUML 1.2022.8
 @enduml
 
 @startuml
@@ -103,10 +103,10 @@ link com.hack23.sonar.cloudformation.reports.process to org.junit--><g id="link_
     class "com.hack23.sonar.cloudformation.reports.checkov" [[com/hack23/sonar/cloudformation/reports/checkov/package-summary.html]] {
     }
 
-    center footer UMLDoclet 2.0.18, PlantUML 1.2022.6
+    center footer UMLDoclet 2.0.19, PlantUML 1.2022.8
 @enduml
 
-PlantUML version 1.2022.6(Tue Jun 21 19:34:49 CEST 2022)
+PlantUML version 1.2022.8(Sun Sep 25 11:00:33 CEST 2022)
 (APACHE source distribution)
 Java Runtime: OpenJDK Runtime Environment
 JVM: OpenJDK 64-Bit Server VM
