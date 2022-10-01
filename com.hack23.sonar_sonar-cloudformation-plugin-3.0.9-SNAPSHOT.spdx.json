@@ -1,0 +1,787 @@
+{
+  "SPDXID" : "SPDXRef-DOCUMENT",
+  "spdxVersion" : "SPDX-2.3",
+  "creationInfo" : {
+    "created" : "2022-10-01T16:09:59Z",
+    "creators" : [ "Tool: spdx-maven-plugin" ],
+    "licenseListVersion" : "3.18"
+  },
+  "name" : "Sonar Cloudformation Plugin",
+  "dataLicense" : "CC0-1.0",
+  "documentDescribes" : [ "SPDXRef-11" ],
+  "documentNamespace" : "http://spdx.org/spdxpackages/com.hack23.sonar_sonar-cloudformation-plugin-3.0.9-SNAPSHOT",
+  "packages" : [ {
+    "SPDXID" : "SPDXRef-7",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "JUnit is a unit testing framework for Java, created by Erich Gamma and Kent Beck.",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "http://junit.org",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "EPL-1.0",
+    "name" : "JUnit",
+    "originator" : "Organization:JUnit",
+    "summary" : "JUnit is a unit testing framework for Java, created by Erich Gamma and Kent Beck.",
+    "versionInfo" : "4.13.2"
+  }, {
+    "SPDXID" : "SPDXRef-8",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "This project was born out of a need to validate all POJOs (Plain Old Java Object) are behaving correctly.\n    This project has two main aspects to it:\n    * Make Testing as easy as possible.\n    * Simplifying identity management (hashCode / equals) using annotation.",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "http://openpojo.com/",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "Apache-2.0",
+    "name" : "${project.artifactId}",
+    "summary" : "This project was born out of a need to validate all POJOs (Plain Old Java Object) are behaving correctly.\n    This project has two main aspects to it:\n    * Make Testing as easy as possible.\n    * Simplifying identity management (hashCode / equals) using annotation.",
+    "versionInfo" : "0.9.1"
+  }, {
+    "SPDXID" : "SPDXRef-9",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "Mockito mock objects library core API and implementation",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "https://github.com/mockito/mockito",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "mockito-core",
+    "summary" : "Mockito mock objects library core API and implementation",
+    "versionInfo" : "4.8.0"
+  }, {
+    "SPDXID" : "SPDXRef-3",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "Apache Commons Lang, a package of Java utility classes for the\n  classes that are in java.lang's hierarchy, or are considered to be so\n  standard as to justify existence in java.lang.",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "https://commons.apache.org/proper/commons-lang/",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "Apache Commons Lang",
+    "summary" : "Apache Commons Lang, a package of Java utility classes for the\n  classes that are in java.lang's hierarchy, or are considered to be so\n  standard as to justify existence in java.lang.",
+    "versionInfo" : "3.12.0"
+  }, {
+    "SPDXID" : "SPDXRef-4",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "The Apache Commons IO library contains utility classes, stream implementations, file filters,\nfile comparators, endian transformation classes, and much more.",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "https://commons.apache.org/proper/commons-io/",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "Apache Commons IO",
+    "summary" : "The Apache Commons IO library contains utility classes, stream implementations, file filters,\nfile comparators, endian transformation classes, and much more.",
+    "versionInfo" : "2.11.0"
+  }, {
+    "SPDXID" : "SPDXRef-5",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "StaxMate is a light-weight framework that adds convenience to streaming XML-processing  without significant additional overhead.\nIt builds on top of a Stax (JSR-173) compliant XML processors such as Woodstox or Sjsxp (default Stax implementation of JDK 1.6) and offers two basic abstractions: Cursors, which build on XMLStreamReaders and Output objects, which build on XMLStreamWriters.",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "http://staxmate.codehaus.org",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "StaxMate",
+    "originator" : "Organization:FasterXML",
+    "summary" : "StaxMate is a light-weight framework that adds convenience to streaming XML-processing  without significant additional overhead.\nIt builds on top of a Stax (JSR-173) compliant XML processors such as Woodstox or Sjsxp (default Stax implementation of JDK 1.6) and offers two basic abstractions: Cursors, which build on XMLStreamReaders and Output objects, which build on XMLStreamWriters.",
+    "versionInfo" : "2.4.0"
+  }, {
+    "SPDXID" : "SPDXRef-6",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "General data-binding functionality for Jackson: works on core streaming API",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "http://github.com/FasterXML/jackson",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "Apache-2.0",
+    "name" : "jackson-databind",
+    "summary" : "General data-binding functionality for Jackson: works on core streaming API",
+    "versionInfo" : "2.13.4"
+  }, {
+    "SPDXID" : "SPDXRef-0",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "Open source platform for continuous inspection of code quality",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "http://www.sonarqube.org/",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "SonarQube",
+    "originator" : "Organization:SonarSource",
+    "summary" : "Open source platform for continuous inspection of code quality",
+    "versionInfo" : "7.9"
+  }, {
+    "SPDXID" : "SPDXRef-1",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "Open source platform for continuous inspection of code quality",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "http://www.sonarqube.org/",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "SonarQube",
+    "originator" : "Organization:SonarSource",
+    "summary" : "Open source platform for continuous inspection of code quality",
+    "versionInfo" : "8.9.9.56886"
+  }, {
+    "SPDXID" : "SPDXRef-2",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "Logic useful for a language plugin",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "SonarSource Analyzers Commons",
+    "summary" : "Logic useful for a language plugin"
+  }, {
+    "SPDXID" : "SPDXRef-10",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "The Apache Commons CSV library provides a simple interface for reading and writing CSV files of various types.",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "https://commons.apache.org/proper/commons-csv/",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "Apache Commons CSV",
+    "summary" : "The Apache Commons CSV library provides a simple interface for reading and writing CSV files of various types.",
+    "versionInfo" : "1.9.0"
+  }, {
+    "SPDXID" : "SPDXRef-11",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "27f77b190b6aca1de3d8675230c1703f7d280773"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "description" : "Parent pom of SonarSource public projects",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : true,
+    "homepage" : "https://hack23.github.io/sonar-cloudformation-plugin/",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "licenseInfoFromFiles" : [ "NOASSERTION" ],
+    "name" : "Sonar Cloudformation Plugin",
+    "packageFileName" : "sonar-cloudformation-plugin.sonar-plugin",
+    "packageVerificationCode" : {
+      "packageVerificationCodeValue" : "2d9f628dfdbe1ea7ce041cf6af280267f9a9bccd"
+    },
+    "primaryPackagePurpose" : "LIBRARY",
+    "hasFiles" : [ "SPDXRef-34", "SPDXRef-34", "SPDXRef-17", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45", "SPDXRef-34", "SPDXRef-17", "SPDXRef-18", "SPDXRef-20", "SPDXRef-13", "SPDXRef-46", "SPDXRef-42", "SPDXRef-38", "SPDXRef-28", "SPDXRef-15", "SPDXRef-19", "SPDXRef-23", "SPDXRef-35", "SPDXRef-24", "SPDXRef-40", "SPDXRef-22", "SPDXRef-43", "SPDXRef-25", "SPDXRef-27", "SPDXRef-33", "SPDXRef-49", "SPDXRef-36", "SPDXRef-26", "SPDXRef-14", "SPDXRef-31", "SPDXRef-37", "SPDXRef-47", "SPDXRef-32", "SPDXRef-16", "SPDXRef-29", "SPDXRef-12", "SPDXRef-44", "SPDXRef-48", "SPDXRef-21", "SPDXRef-30", "SPDXRef-41", "SPDXRef-39", "SPDXRef-45" ],
+    "summary" : "Parent pom of SonarSource public projects",
+    "versionInfo" : "3.0.9-SNAPSHOT"
+  } ],
+  "files" : [ {
+    "SPDXID" : "SPDXRef-18",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "71e3b07cd86e697863961c68b2b8a9c9322fa353"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/checkov/package-info.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-19",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "9ec4be75229cd97e79b4f8559a3eaa8d71f39284"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/checkov/CheckovReport.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-16",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "87b128eff65d6109e0605adca1e3fb4866efa96e"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/package-info.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-17",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "8ffd95dc5a727db6f2e3a763b4a12abe86a94f8a"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/CloudformationPlugin.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-14",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "ee975cab4f49c6b9767f5728a266491235c13e13"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/CloudformationRulesDefinition.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-15",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "7ef6fd1f7c3d470c50a47aa913da05b417a025d2"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/CloudformationProperties.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-12",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "756ee449e236de433d718ae0e45ed94bc462314c"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/CloudformationSensorConfiguration.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-13",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "7d6cd1718d8a0579f8325d1d7952c2b51d2d2a5d"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/CloudformationSensor.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-29",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "1b077b99c49cbc29927d6f82500b9ac69f625e72"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/process/AbstractProcessReports.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-27",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "05b7c728a1f7c5d76cbf7dc70811e6fbe9f14ae4"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/cfnnag/CfnNagReport.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-28",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "64a3abf269164c92d39bd05b7e814123201d4dcf"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/process/CfnNagProcessReports.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-25",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "96726714a3bc9c3f39cb6d478671e518e217eba9"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/cfnnag/CfnNagViolation.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-26",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "99ce2f244992ed6c49fcb5502c73b77471e06e25"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/cfnnag/package-info.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-23",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "8e098491ee4511c72639eaf8126a4d368c375270"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/checkov/EntityTags.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-24",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "7f34bbd7fd25c60023c3512a30d7c20d2d1c6898"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/cfnnag/CfnNagScanReport.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-21",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "bd6bd746bbd04a0548156117b75a9afe480f4efb"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/checkov/CheckovResults.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-22",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "efa582d2a20fd53c9dcdd53730884544e0f10529"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/checkov/CheckovPassedCheck.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-20",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "dcc14eb91f3e112f5176e2cb796f008f28a57c78"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/checkov/CheckovSummary.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-38",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "e49532268649aa0a5c64793178b1f988c1e4cb72"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/reports/process/CfnNagScanReportReaderTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-39",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "da4e8dbd8e71ab9d4315a1f4823d796d198d0f89"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/reports/process/CheckovProcessReportsTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-36",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "b200e4f343bcaaf1447cabd34ee297f7791752a5"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/CloudformationPluginTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-37",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "c105a52ff88dab22e7f57d72a0a7f65994812d10"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/reports/checkov/CheckovSonarqubeRuleGeneratorTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-34",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "3feb12757b29efef931123fbbda3ada327225fc0"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/process/CheckovProcessReports.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-35",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "2d0ae838c72e94cdb2ddf006f270938644654513"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/CloudformationQualityProfile.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-32",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "e3c31ca6ce24323eec291b191208b706ae5799bc"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/process/package-info.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-33",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "3268eeff88d8f9fc7b3df3ae16b09183e480342d"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/process/CloudformationConstants.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-30",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "b80f1ebddc34bd7efa398f68f1bde41e43176546"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/process/CheckovReportReader.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-31",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "54d9e20b20f801cc2303cd3879a9c0709d655a4f"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/java/com/hack23/sonar/cloudformation/reports/process/CfnNagScanReportReader.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-49",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "6f1c23e3d593d8fcc14cb2931fb3423cbe94c7c0"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/resources/cloudformation-checkov-terraform-rules.xml",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-40",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "b2bd4ba51a6bb1c42c76f73fefac837f3efafc47"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/reports/process/CheckovReportReaderTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-47",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "6f632e298f598f656fac89f1ff0a380ce8c419c9"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/resources/cloudformation-checkov-cloudformation-rules.xml",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-48",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "a9b33b676504e07820af8aaea116323ba9d654f6"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/main/resources/cloudformation-rules.xml",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-45",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "736e7e1d1bf62b2f0a18fc1f65249bfba16000ad"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/CloudformationSensorTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-46",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "7e82e0f32ac5863276c7e0a5d31d6172f833c597"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/CloudformationQualityProfileTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-43",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "bc7acaaab10c3eaa0af54ae72f79690108c2c4b6"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/CloudformationRulesDefinitionTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-44",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "2f15de6fe4d982c96a44516cd2001a67c2b86d3b"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/CloudformationPropertiesTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-41",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "315683e6f9799d60c1cdac92032f264aa0d9da31"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/reports/process/CfnNagProcessReportsTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  }, {
+    "SPDXID" : "SPDXRef-42",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "c963425b41505a657099cfa236b66dd80bb45510"
+    } ],
+    "copyrightText" : "NOASSERTION",
+    "fileName" : "./src/test/java/com/hack23/sonar/cloudformation/reports/ModelSanityTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseConcluded" : "NOASSERTION",
+    "licenseInfoInFiles" : [ "NOASSERTION" ]
+  } ],
+  "relationships" : [ {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "OTHER",
+    "relatedSpdxElement" : "SPDXRef-0"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-1"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-2"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-3"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-4"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-5"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-6"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-7"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-8"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-9"
+  }, {
+    "spdxElementId" : "SPDXRef-11",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-10"
+  }, {
+    "spdxElementId" : "SPDXRef-18",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-19",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-16",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-17",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-14",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-15",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-12",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-13",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-29",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-27",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-28",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-25",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-26",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-23",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-24",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-21",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-22",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-20",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-38",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-39",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-36",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-37",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-34",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-35",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-32",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-33",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-30",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-31",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-49",
+    "relationshipType" : "CONTAINED_BY",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-40",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-47",
+    "relationshipType" : "CONTAINED_BY",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-48",
+    "relationshipType" : "CONTAINED_BY",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-45",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-46",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-43",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-44",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-41",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  }, {
+    "spdxElementId" : "SPDXRef-42",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-11"
+  } ]
+}
