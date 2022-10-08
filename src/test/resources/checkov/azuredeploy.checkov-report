@@ -319,7 +319,7 @@
             },
             {
                 "check_id": "CKV_AZURE_3",
-                "bc_check_id": null,
+                "bc_check_id": "BC_AZR_GENERAL_85",
                 "check_name": "Ensure that 'supportsHttpsTrafficOnly' is set to 'true'",
                 "check_result": {
                     "result": "PASSED",
@@ -413,7 +413,7 @@
                 "short_description": null,
                 "vulnerability_details": null,
                 "connected_node": null,
-                "guideline": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-azure-secure-transfer-required-feature-is-set-to-enabled",
                 "details": []
             }
         ],
@@ -1260,7 +1260,7 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 7,
-        "checkov_version": "2.1.160"
+        "checkov_version": "2.1.258"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }

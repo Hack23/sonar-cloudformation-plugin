@@ -523,21 +523,6 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
-		<key>terraform-CKV_ALI_34</key>
-		<name>Ensure RDS instance is set to auto upgrade minor versions</name>
-		<internalKey>terraform-CKV_ALI_34</internalKey>
-		<description>Ensure RDS instance is set to auto upgrade minor versions</description>
-		<severity>CRITICAL</severity>
-		<cardinality>SINGLE</cardinality>
-		<status>READY</status>
-		<type>VULNERABILITY</type>
-		<tag>security</tag>
-		<tag>checkov</tag>
-		<tag>terraform</tag>
-		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
-		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
-    </rule>
-    <rule>
 		<key>terraform-CKV_ALI_35</key>
 		<name>Ensure RDS instance has log_duration enabled</name>
 		<internalKey>terraform-CKV_ALI_35</internalKey>
@@ -4705,6 +4690,96 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_AWS_267</key>
+		<name>Ensure that Comprehend Entity Recognizer's model is encrypted by KMS using a customer managed Key (CMK)</name>
+		<internalKey>terraform-CKV_AWS_267</internalKey>
+		<description>Ensure that Comprehend Entity Recognizer's model is encrypted by KMS using a customer managed Key (CMK)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_268</key>
+		<name>Ensure that Comprehend Entity Recognizer's volume is encrypted by KMS using a customer managed Key (CMK)</name>
+		<internalKey>terraform-CKV_AWS_268</internalKey>
+		<description>Ensure that Comprehend Entity Recognizer's volume is encrypted by KMS using a customer managed Key (CMK)</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_269</key>
+		<name>Ensure Connect Instance Kinesis Video Stream Storage Config uses CMK</name>
+		<internalKey>terraform-CKV_AWS_269</internalKey>
+		<description>Ensure Connect Instance Kinesis Video Stream Storage Config uses CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_270</key>
+		<name>Ensure Connect Instance S3 Storage Config uses CMK</name>
+		<internalKey>terraform-CKV_AWS_270</internalKey>
+		<description>Ensure Connect Instance S3 Storage Config uses CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_271</key>
+		<name>Ensure DynamoDB table replica KMS encryption uses CMK</name>
+		<internalKey>terraform-CKV_AWS_271</internalKey>
+		<description>Ensure DynamoDB table replica KMS encryption uses CMK</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_AWS_272</key>
+		<name>Ensure AWS Lambda function is configured to validate code-signing</name>
+		<internalKey>terraform-CKV_AWS_272</internalKey>
+		<description>Ensure AWS Lambda function is configured to validate code-signing</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_AWS_1</key>
 		<name>Ensure that all NACL are attached to subnets</name>
 		<internalKey>terraform-CKV2_AWS_1</internalKey>
@@ -5217,6 +5292,42 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_38</key>
+		<name>Ensure Domain Name System Security Extensions (DNSSEC) signing is enabled for Amazon Route 53 public hosted zones</name>
+		<internalKey>terraform-CKV2_AWS_38</internalKey>
+		<description>Ensure Domain Name System Security Extensions (DNSSEC) signing is enabled for Amazon Route 53 public hosted zones</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV2_AWS_39</key>
+		<name>Ensure Domain Name System (DNS) query logging is enabled for Amazon Route 53 hosted zones</name>
+		<internalKey>terraform-CKV2_AWS_39</internalKey>
+		<description>Ensure Domain Name System (DNS) query logging is enabled for Amazon Route 53 hosted zones</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -9709,6 +9820,84 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>terraform-CKV_GCP_107</key>
+		<name>Cloud functions should not be public</name>
+		<internalKey>terraform-CKV_GCP_107</internalKey>
+		<description>Cloud functions should not be public</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-732</tag>
+		<tag>800-53-ac-4</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_108</key>
+		<name>Ensure hostnames are logged for GCP PostgreSQL databases</name>
+		<internalKey>terraform-CKV_GCP_108</internalKey>
+		<description>Ensure hostnames are logged for GCP PostgreSQL databases</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_109</key>
+		<name>Ensure the GCP PostgreSQL database log levels are set to ERROR or lower</name>
+		<internalKey>terraform-CKV_GCP_109</internalKey>
+		<description>Ensure the GCP PostgreSQL database log levels are set to ERROR or lower</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_110</key>
+		<name>Ensure pgAudit is enabled for your GCP PostgreSQL database</name>
+		<internalKey>terraform-CKV_GCP_110</internalKey>
+		<description>Ensure pgAudit is enabled for your GCP PostgreSQL database</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_GCP_111</key>
+		<name>Ensure GCP PostgreSQL logs SQL statements</name>
+		<internalKey>terraform-CKV_GCP_111</internalKey>
+		<description>Ensure GCP PostgreSQL logs SQL statements</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>terraform-CKV2_GCP_1</key>
 		<name>Ensure GKE clusters are not running using the Compute Engine default service account</name>
 		<internalKey>terraform-CKV2_GCP_1</internalKey>
@@ -9857,9 +10046,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GIT_1</key>
-		<name>Ensure Repository is Private</name>
+		<name>Ensure GitHub repository is Private</name>
 		<internalKey>terraform-CKV_GIT_1</internalKey>
-		<description>Ensure Repository is Private</description>
+		<description>Ensure GitHub repository is Private</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9872,9 +10061,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GIT_2</key>
-		<name>Ensure Repository Webhook uses secure Ssl</name>
+		<name>Ensure GitHub repository webhooks are using HTTPS</name>
 		<internalKey>terraform-CKV_GIT_2</internalKey>
-		<description>Ensure Repository Webhook uses secure Ssl</description>
+		<description>Ensure GitHub repository webhooks are using HTTPS</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9882,6 +10071,9 @@
 		<tag>security</tag>
 		<tag>checkov</tag>
 		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
@@ -9902,9 +10094,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GIT_4</key>
-		<name>Ensure Secrets are encrypted</name>
+		<name>Ensure GitHub Actions secrets are encrypted</name>
 		<internalKey>terraform-CKV_GIT_4</internalKey>
-		<description>Ensure Secrets are encrypted</description>
+		<description>Ensure GitHub Actions secrets are encrypted</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9917,9 +10109,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GIT_5</key>
-		<name>Ensure at least two approving reviews for PRs</name>
+		<name>GitHub pull requests should require at least 2 approvals</name>
 		<internalKey>terraform-CKV_GIT_5</internalKey>
-		<description>Ensure at least two approving reviews for PRs</description>
+		<description>GitHub pull requests should require at least 2 approvals</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9932,9 +10124,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GIT_6</key>
-		<name>Ensure all commits GPG signed</name>
+		<name>Ensure GitHub branch protection rules requires signed commits</name>
 		<internalKey>terraform-CKV_GIT_6</internalKey>
-		<description>Ensure all commits GPG signed</description>
+		<description>Ensure GitHub branch protection rules requires signed commits</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9947,9 +10139,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GLB_1</key>
-		<name>Ensure at least two approving reviews to merge</name>
+		<name>Ensure at least two approving reviews are required to merge a GitLab MR</name>
 		<internalKey>terraform-CKV_GLB_1</internalKey>
-		<description>Ensure at least two approving reviews to merge</description>
+		<description>Ensure at least two approving reviews are required to merge a GitLab MR</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9962,9 +10154,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GLB_2</key>
-		<name>Ensure force push is disabled</name>
+		<name>Ensure GitLab branch protection rules does not allow force pushes</name>
 		<internalKey>terraform-CKV_GLB_2</internalKey>
-		<description>Ensure force push is disabled</description>
+		<description>Ensure GitLab branch protection rules does not allow force pushes</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9977,9 +10169,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GLB_3</key>
-		<name>Ensure prevent secrets is enabled</name>
+		<name>Ensure GitLab prevent secrets is enabled</name>
 		<internalKey>terraform-CKV_GLB_3</internalKey>
-		<description>Ensure prevent secrets is enabled</description>
+		<description>Ensure GitLab prevent secrets is enabled</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -9992,9 +10184,9 @@
     </rule>
     <rule>
 		<key>terraform-CKV_GLB_4</key>
-		<name>Ensure commits are signed</name>
+		<name>Ensure GitLab commits are signed</name>
 		<internalKey>terraform-CKV_GLB_4</internalKey>
-		<description>Ensure commits are signed</description>
+		<description>Ensure GitLab commits are signed</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -10670,6 +10862,39 @@
 		<name>Ensure Outbound Firewall Policy is not set to ACCEPT</name>
 		<internalKey>terraform-CKV_LIN_6</internalKey>
 		<description>Ensure Outbound Firewall Policy is not set to ACCEPT</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_NCP_1</key>
+		<name>Ensure HTTP HTTPS Target group defines Healthcheck</name>
+		<internalKey>terraform-CKV_NCP_1</internalKey>
+		<description>Ensure HTTP HTTPS Target group defines Healthcheck</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>terraform</tag>
+		<tag>owasp-a6</tag>
+		<tag>cweid-311</tag>
+		<tag>800-53-sc-8</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
+		<key>terraform-CKV_NCP_002</key>
+		<name>Ensure every access control groups rule has a description</name>
+		<internalKey>terraform-CKV_NCP_002</internalKey>
+		<description>Ensure every access control groups rule has a description</description>
 		<severity>CRITICAL</severity>
 		<cardinality>SINGLE</cardinality>
 		<status>READY</status>
@@ -11697,6 +11922,7 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+
 
 
 

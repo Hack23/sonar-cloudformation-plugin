@@ -1,20 +1,867 @@
 {
     "check_type": "terraform",
     "results": {
-        "passed_checks": [],
-        "failed_checks": [],
+        "passed_checks": [
+            {
+                "check_id": "CKV_AWS_45",
+                "bc_check_id": "BC_AWS_SECRETS_3",
+                "check_name": "Ensure no hard-coded secrets exist in lambda environment",
+                "check_result": {
+                    "result": "PASSED",
+                    "evaluated_keys": [
+                        "environment"
+                    ]
+                },
+                "code_block": [
+                    [
+                        29,
+                        "resource \"aws_lambda_function\" \"s3_zipfile\" {\n"
+                    ],
+                    [
+                        30,
+                        "  count = \"${var.function_s3_bucket == \"\" ? 0 : 1}\"\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "  # These are SPECIFIC to the deployment method:\n"
+                    ],
+                    [
+                        33,
+                        "  s3_bucket = \"${var.function_s3_bucket}\"\n"
+                    ],
+                    [
+                        34,
+                        "  s3_key    = \"${var.function_zipfile}\"\n"
+                    ],
+                    [
+                        35,
+                        "\n"
+                    ],
+                    [
+                        36,
+                        "  # These are the SAME for both:\n"
+                    ],
+                    [
+                        37,
+                        "  description   = \"${var.comment_prefix}${var.api_domain}\"\n"
+                    ],
+                    [
+                        38,
+                        "  function_name = \"${local.prefix_with_domain}\"\n"
+                    ],
+                    [
+                        39,
+                        "  handler       = \"${var.function_handler}\"\n"
+                    ],
+                    [
+                        40,
+                        "  runtime       = \"${var.function_runtime}\"\n"
+                    ],
+                    [
+                        41,
+                        "  timeout       = \"${var.function_timeout}\"\n"
+                    ],
+                    [
+                        42,
+                        "  memory_size   = \"${var.memory_size}\"\n"
+                    ],
+                    [
+                        43,
+                        "  role          = \"${aws_iam_role.this.arn}\"\n"
+                    ],
+                    [
+                        44,
+                        "  tags          = \"${var.tags}\"\n"
+                    ],
+                    [
+                        45,
+                        "\n"
+                    ],
+                    [
+                        46,
+                        "  environment {\n"
+                    ],
+                    [
+                        47,
+                        "    variables = \"${var.function_env_vars}\"\n"
+                    ],
+                    [
+                        48,
+                        "  }\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/main.tf",
+                "repo_file_path": "/src/test/resources/checkov/main.tf",
+                "file_line_range": [
+                    29,
+                    49
+                ],
+                "resource": "aws_lambda_function.s3_zipfile",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.LambdaEnvironmentCredentials",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_3",
+                "details": []
+            }
+        ],
+        "failed_checks": [
+            {
+                "check_id": "CKV_AWS_115",
+                "bc_check_id": "BC_AWS_GENERAL_63",
+                "check_name": "Ensure that AWS Lambda function is configured for function-level concurrent execution limit",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "reserved_concurrent_executions/[0]"
+                    ]
+                },
+                "code_block": [
+                    [
+                        29,
+                        "resource \"aws_lambda_function\" \"s3_zipfile\" {\n"
+                    ],
+                    [
+                        30,
+                        "  count = \"${var.function_s3_bucket == \"\" ? 0 : 1}\"\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "  # These are SPECIFIC to the deployment method:\n"
+                    ],
+                    [
+                        33,
+                        "  s3_bucket = \"${var.function_s3_bucket}\"\n"
+                    ],
+                    [
+                        34,
+                        "  s3_key    = \"${var.function_zipfile}\"\n"
+                    ],
+                    [
+                        35,
+                        "\n"
+                    ],
+                    [
+                        36,
+                        "  # These are the SAME for both:\n"
+                    ],
+                    [
+                        37,
+                        "  description   = \"${var.comment_prefix}${var.api_domain}\"\n"
+                    ],
+                    [
+                        38,
+                        "  function_name = \"${local.prefix_with_domain}\"\n"
+                    ],
+                    [
+                        39,
+                        "  handler       = \"${var.function_handler}\"\n"
+                    ],
+                    [
+                        40,
+                        "  runtime       = \"${var.function_runtime}\"\n"
+                    ],
+                    [
+                        41,
+                        "  timeout       = \"${var.function_timeout}\"\n"
+                    ],
+                    [
+                        42,
+                        "  memory_size   = \"${var.memory_size}\"\n"
+                    ],
+                    [
+                        43,
+                        "  role          = \"${aws_iam_role.this.arn}\"\n"
+                    ],
+                    [
+                        44,
+                        "  tags          = \"${var.tags}\"\n"
+                    ],
+                    [
+                        45,
+                        "\n"
+                    ],
+                    [
+                        46,
+                        "  environment {\n"
+                    ],
+                    [
+                        47,
+                        "    variables = \"${var.function_env_vars}\"\n"
+                    ],
+                    [
+                        48,
+                        "  }\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/main.tf",
+                "repo_file_path": "/src/test/resources/checkov/main.tf",
+                "file_line_range": [
+                    29,
+                    49
+                ],
+                "resource": "aws_lambda_function.s3_zipfile",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.LambdaFunctionLevelConcurrentExecutionLimit",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-function-level-concurrent-execution-limit",
+                "details": []
+            },
+            {
+                "check_id": "CKV_AWS_50",
+                "bc_check_id": "BC_AWS_SERVERLESS_4",
+                "check_name": "X-ray tracing is enabled for Lambda",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "tracing_config/[0]/mode"
+                    ]
+                },
+                "code_block": [
+                    [
+                        29,
+                        "resource \"aws_lambda_function\" \"s3_zipfile\" {\n"
+                    ],
+                    [
+                        30,
+                        "  count = \"${var.function_s3_bucket == \"\" ? 0 : 1}\"\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "  # These are SPECIFIC to the deployment method:\n"
+                    ],
+                    [
+                        33,
+                        "  s3_bucket = \"${var.function_s3_bucket}\"\n"
+                    ],
+                    [
+                        34,
+                        "  s3_key    = \"${var.function_zipfile}\"\n"
+                    ],
+                    [
+                        35,
+                        "\n"
+                    ],
+                    [
+                        36,
+                        "  # These are the SAME for both:\n"
+                    ],
+                    [
+                        37,
+                        "  description   = \"${var.comment_prefix}${var.api_domain}\"\n"
+                    ],
+                    [
+                        38,
+                        "  function_name = \"${local.prefix_with_domain}\"\n"
+                    ],
+                    [
+                        39,
+                        "  handler       = \"${var.function_handler}\"\n"
+                    ],
+                    [
+                        40,
+                        "  runtime       = \"${var.function_runtime}\"\n"
+                    ],
+                    [
+                        41,
+                        "  timeout       = \"${var.function_timeout}\"\n"
+                    ],
+                    [
+                        42,
+                        "  memory_size   = \"${var.memory_size}\"\n"
+                    ],
+                    [
+                        43,
+                        "  role          = \"${aws_iam_role.this.arn}\"\n"
+                    ],
+                    [
+                        44,
+                        "  tags          = \"${var.tags}\"\n"
+                    ],
+                    [
+                        45,
+                        "\n"
+                    ],
+                    [
+                        46,
+                        "  environment {\n"
+                    ],
+                    [
+                        47,
+                        "    variables = \"${var.function_env_vars}\"\n"
+                    ],
+                    [
+                        48,
+                        "  }\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/main.tf",
+                "repo_file_path": "/src/test/resources/checkov/main.tf",
+                "file_line_range": [
+                    29,
+                    49
+                ],
+                "resource": "aws_lambda_function.s3_zipfile",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.LambdaXrayEnabled",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_serverless_4",
+                "details": []
+            },
+            {
+                "check_id": "CKV_AWS_173",
+                "bc_check_id": "BC_AWS_SERVERLESS_5",
+                "check_name": "Check encryption settings for Lambda environmental variable",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "environment/[0]/variables"
+                    ]
+                },
+                "code_block": [
+                    [
+                        29,
+                        "resource \"aws_lambda_function\" \"s3_zipfile\" {\n"
+                    ],
+                    [
+                        30,
+                        "  count = \"${var.function_s3_bucket == \"\" ? 0 : 1}\"\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "  # These are SPECIFIC to the deployment method:\n"
+                    ],
+                    [
+                        33,
+                        "  s3_bucket = \"${var.function_s3_bucket}\"\n"
+                    ],
+                    [
+                        34,
+                        "  s3_key    = \"${var.function_zipfile}\"\n"
+                    ],
+                    [
+                        35,
+                        "\n"
+                    ],
+                    [
+                        36,
+                        "  # These are the SAME for both:\n"
+                    ],
+                    [
+                        37,
+                        "  description   = \"${var.comment_prefix}${var.api_domain}\"\n"
+                    ],
+                    [
+                        38,
+                        "  function_name = \"${local.prefix_with_domain}\"\n"
+                    ],
+                    [
+                        39,
+                        "  handler       = \"${var.function_handler}\"\n"
+                    ],
+                    [
+                        40,
+                        "  runtime       = \"${var.function_runtime}\"\n"
+                    ],
+                    [
+                        41,
+                        "  timeout       = \"${var.function_timeout}\"\n"
+                    ],
+                    [
+                        42,
+                        "  memory_size   = \"${var.memory_size}\"\n"
+                    ],
+                    [
+                        43,
+                        "  role          = \"${aws_iam_role.this.arn}\"\n"
+                    ],
+                    [
+                        44,
+                        "  tags          = \"${var.tags}\"\n"
+                    ],
+                    [
+                        45,
+                        "\n"
+                    ],
+                    [
+                        46,
+                        "  environment {\n"
+                    ],
+                    [
+                        47,
+                        "    variables = \"${var.function_env_vars}\"\n"
+                    ],
+                    [
+                        48,
+                        "  }\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/main.tf",
+                "repo_file_path": "/src/test/resources/checkov/main.tf",
+                "file_line_range": [
+                    29,
+                    49
+                ],
+                "resource": "aws_lambda_function.s3_zipfile",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.LambdaEnvironmentEncryptionSettings",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_serverless_5",
+                "details": []
+            },
+            {
+                "check_id": "CKV_AWS_272",
+                "bc_check_id": null,
+                "check_name": "Ensure AWS Lambda function is configured to validate code-signing",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "code_signing_config_arn"
+                    ]
+                },
+                "code_block": [
+                    [
+                        29,
+                        "resource \"aws_lambda_function\" \"s3_zipfile\" {\n"
+                    ],
+                    [
+                        30,
+                        "  count = \"${var.function_s3_bucket == \"\" ? 0 : 1}\"\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "  # These are SPECIFIC to the deployment method:\n"
+                    ],
+                    [
+                        33,
+                        "  s3_bucket = \"${var.function_s3_bucket}\"\n"
+                    ],
+                    [
+                        34,
+                        "  s3_key    = \"${var.function_zipfile}\"\n"
+                    ],
+                    [
+                        35,
+                        "\n"
+                    ],
+                    [
+                        36,
+                        "  # These are the SAME for both:\n"
+                    ],
+                    [
+                        37,
+                        "  description   = \"${var.comment_prefix}${var.api_domain}\"\n"
+                    ],
+                    [
+                        38,
+                        "  function_name = \"${local.prefix_with_domain}\"\n"
+                    ],
+                    [
+                        39,
+                        "  handler       = \"${var.function_handler}\"\n"
+                    ],
+                    [
+                        40,
+                        "  runtime       = \"${var.function_runtime}\"\n"
+                    ],
+                    [
+                        41,
+                        "  timeout       = \"${var.function_timeout}\"\n"
+                    ],
+                    [
+                        42,
+                        "  memory_size   = \"${var.memory_size}\"\n"
+                    ],
+                    [
+                        43,
+                        "  role          = \"${aws_iam_role.this.arn}\"\n"
+                    ],
+                    [
+                        44,
+                        "  tags          = \"${var.tags}\"\n"
+                    ],
+                    [
+                        45,
+                        "\n"
+                    ],
+                    [
+                        46,
+                        "  environment {\n"
+                    ],
+                    [
+                        47,
+                        "    variables = \"${var.function_env_vars}\"\n"
+                    ],
+                    [
+                        48,
+                        "  }\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/main.tf",
+                "repo_file_path": "/src/test/resources/checkov/main.tf",
+                "file_line_range": [
+                    29,
+                    49
+                ],
+                "resource": "aws_lambda_function.s3_zipfile",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.LambdaCodeSigningConfigured",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": []
+            },
+            {
+                "check_id": "CKV_AWS_116",
+                "bc_check_id": "BC_AWS_GENERAL_64",
+                "check_name": "Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "dead_letter_config/[0]/target_arn"
+                    ]
+                },
+                "code_block": [
+                    [
+                        29,
+                        "resource \"aws_lambda_function\" \"s3_zipfile\" {\n"
+                    ],
+                    [
+                        30,
+                        "  count = \"${var.function_s3_bucket == \"\" ? 0 : 1}\"\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "  # These are SPECIFIC to the deployment method:\n"
+                    ],
+                    [
+                        33,
+                        "  s3_bucket = \"${var.function_s3_bucket}\"\n"
+                    ],
+                    [
+                        34,
+                        "  s3_key    = \"${var.function_zipfile}\"\n"
+                    ],
+                    [
+                        35,
+                        "\n"
+                    ],
+                    [
+                        36,
+                        "  # These are the SAME for both:\n"
+                    ],
+                    [
+                        37,
+                        "  description   = \"${var.comment_prefix}${var.api_domain}\"\n"
+                    ],
+                    [
+                        38,
+                        "  function_name = \"${local.prefix_with_domain}\"\n"
+                    ],
+                    [
+                        39,
+                        "  handler       = \"${var.function_handler}\"\n"
+                    ],
+                    [
+                        40,
+                        "  runtime       = \"${var.function_runtime}\"\n"
+                    ],
+                    [
+                        41,
+                        "  timeout       = \"${var.function_timeout}\"\n"
+                    ],
+                    [
+                        42,
+                        "  memory_size   = \"${var.memory_size}\"\n"
+                    ],
+                    [
+                        43,
+                        "  role          = \"${aws_iam_role.this.arn}\"\n"
+                    ],
+                    [
+                        44,
+                        "  tags          = \"${var.tags}\"\n"
+                    ],
+                    [
+                        45,
+                        "\n"
+                    ],
+                    [
+                        46,
+                        "  environment {\n"
+                    ],
+                    [
+                        47,
+                        "    variables = \"${var.function_env_vars}\"\n"
+                    ],
+                    [
+                        48,
+                        "  }\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/main.tf",
+                "repo_file_path": "/src/test/resources/checkov/main.tf",
+                "file_line_range": [
+                    29,
+                    49
+                ],
+                "resource": "aws_lambda_function.s3_zipfile",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.LambdaDLQConfigured",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq",
+                "details": []
+            },
+            {
+                "check_id": "CKV_AWS_117",
+                "bc_check_id": "BC_AWS_GENERAL_65",
+                "check_name": "Ensure that AWS Lambda function is configured inside a VPC",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "vpc_config"
+                    ]
+                },
+                "code_block": [
+                    [
+                        29,
+                        "resource \"aws_lambda_function\" \"s3_zipfile\" {\n"
+                    ],
+                    [
+                        30,
+                        "  count = \"${var.function_s3_bucket == \"\" ? 0 : 1}\"\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "  # These are SPECIFIC to the deployment method:\n"
+                    ],
+                    [
+                        33,
+                        "  s3_bucket = \"${var.function_s3_bucket}\"\n"
+                    ],
+                    [
+                        34,
+                        "  s3_key    = \"${var.function_zipfile}\"\n"
+                    ],
+                    [
+                        35,
+                        "\n"
+                    ],
+                    [
+                        36,
+                        "  # These are the SAME for both:\n"
+                    ],
+                    [
+                        37,
+                        "  description   = \"${var.comment_prefix}${var.api_domain}\"\n"
+                    ],
+                    [
+                        38,
+                        "  function_name = \"${local.prefix_with_domain}\"\n"
+                    ],
+                    [
+                        39,
+                        "  handler       = \"${var.function_handler}\"\n"
+                    ],
+                    [
+                        40,
+                        "  runtime       = \"${var.function_runtime}\"\n"
+                    ],
+                    [
+                        41,
+                        "  timeout       = \"${var.function_timeout}\"\n"
+                    ],
+                    [
+                        42,
+                        "  memory_size   = \"${var.memory_size}\"\n"
+                    ],
+                    [
+                        43,
+                        "  role          = \"${aws_iam_role.this.arn}\"\n"
+                    ],
+                    [
+                        44,
+                        "  tags          = \"${var.tags}\"\n"
+                    ],
+                    [
+                        45,
+                        "\n"
+                    ],
+                    [
+                        46,
+                        "  environment {\n"
+                    ],
+                    [
+                        47,
+                        "    variables = \"${var.function_env_vars}\"\n"
+                    ],
+                    [
+                        48,
+                        "  }\n"
+                    ],
+                    [
+                        49,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/main.tf",
+                "repo_file_path": "/src/test/resources/checkov/main.tf",
+                "file_line_range": [
+                    29,
+                    49
+                ],
+                "resource": "aws_lambda_function.s3_zipfile",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.LambdaInVPC",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-inside-a-vpc-1",
+                "details": []
+            }
+        ],
         "skipped_checks": [],
-        "parsing_errors": [
-            "/home/pether/git/sonar-cloudformation-plugin/src/test/resources/checkov/main.tf"
-        ]
+        "parsing_errors": []
     },
     "summary": {
-        "passed": 0,
-        "failed": 0,
+        "passed": 1,
+        "failed": 6,
         "skipped": 0,
-        "parsing_errors": 1,
-        "resource_count": 0,
-        "checkov_version": "2.1.160"
+        "parsing_errors": 0,
+        "resource_count": 2,
+        "checkov_version": "2.1.258"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }

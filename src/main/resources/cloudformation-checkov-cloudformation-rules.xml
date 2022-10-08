@@ -1861,6 +1861,24 @@
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
     <rule>
+		<key>cloudformation-CKV_AWS_197</key>
+		<name>Ensure MQ Broker Audit logging is enabled</name>
+		<internalKey>cloudformation-CKV_AWS_197</internalKey>
+		<description>Ensure MQ Broker Audit logging is enabled</description>
+		<severity>CRITICAL</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<type>VULNERABILITY</type>
+		<tag>security</tag>
+		<tag>checkov</tag>
+		<tag>cloudformation</tag>
+		<tag>owasp-a10</tag>
+		<tag>cweid-778</tag>
+		<tag>800-53-au-12</tag>
+		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
+		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
+    </rule>
+    <rule>
 		<key>cloudformation-CKV_AWS_258</key>
 		<name>Ensure that Lambda function URLs AuthType is not None</name>
 		<internalKey>cloudformation-CKV_AWS_258</internalKey>
@@ -1893,6 +1911,7 @@
 		<remediationFunction>CONSTANT_ISSUE</remediationFunction>
 		<remediationFunctionBaseEffort>10min</remediationFunctionBaseEffort>
     </rule>
+
 
 
 </rules>
