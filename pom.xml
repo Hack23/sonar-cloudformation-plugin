@@ -337,7 +337,7 @@
 	<plugin>
 		<groupId>org.spdx</groupId>
 		<artifactId>spdx-maven-plugin</artifactId>
-		<version>0.6.2</version>
+		<version>0.6.3</version>
 		<executions>
 			<execution>
 				<id>build-spdx</id>
