@@ -49,7 +49,7 @@ The Cloudformation/Terraform rules can added as Quality profile you decided to u
 
 https://github.com/Hack23/sonar-cloudformation-plugin/releases
 
-To install the plugin/profile login to you sonar instance download the jar from the releases page into $SOANRQUBE_HOME/extensions/plugins making sure to remove any previous versions, then restart your sonarqube server.
+To install the plugin/profile login to you sonar instance download the jar from the releases page into $SONARQUBE_HOME/extensions/plugins making sure to remove any previous versions, then restart your sonarqube server.
 
 Example of how to do this with a demo docker instance:
 
