@@ -73,13 +73,24 @@ Assumes all failures start with uppercase F and all warnings with uppercase W.
 
 # Checkov reports 
 
-Prepare checkov reports running (checkov -f template.yml -o json > template.checkov-report)
-and set the property sonar.checkov.reportFiles=template.checkov-report (comma separated if multiple reports)
+Prepare checkov reports by running, in this example we are scanning a single file 'template.yml'
+
+'''
+checkov -f template.yml -o json --output-file-path template.checkov-report
+'''
+
+and set the property when scanning with sonar to the checkov output
+
+'''
+sonar.checkov.reportFiles=template.checkov-report
+''' 
 
 
 # Properties supported
 
+'''
 sonar.checkov.reportFiles=template.checkov-report
+'''
 
 One or multiple checkov report files, note for .checkov-report files the filename should be template filename appended with checkov-report.
 
