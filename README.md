@@ -45,11 +45,14 @@ Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=c
 
 # Configuration of Quality profiles
 
-The Cloudformation/Terraform rules can added as Quality profile you decided to use.
+The Cloudformation/Terraform rules can be added as a Quality profile to your sonar instance.
 
 https://github.com/Hack23/sonar-cloudformation-plugin/releases
 
-To install the plugin/profile login to you sonar instance download the jar from the releases page into $SONARQUBE_HOME/extensions/plugins making sure to remove any previous versions, then restart your sonarqube server.
+To install the plugin/profile, login to your sonar instance and download the jar from the releases page into the location below, making sure to remove any previous versions, once the plugin has downloaded, restart your sonar server to activate it.
+
+```$SONARQUBE_HOME/extensions/plugins/.```
+
 
 Example of how to do this with a demo docker instance:
 
