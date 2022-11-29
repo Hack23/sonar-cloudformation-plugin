@@ -53,14 +53,30 @@ The Cloudformation/Terraform rules can added as Quality profile you decided to u
 
 # Cfn-nag reports 
 
-Prepare cfn_nag reports running (cfn_nag --output-format=json src/main/config/template.yml > target/template.yml.nag)
-and set the property sonar.cfn.nag.reportFiles=target/template.yml.nag (comma separated if multiple reports)
+Prepare cfn_nag reports running 
+```
+cfn_nag --output-format=json src/main/config/template.yml > target/template.yml.nag
+```
+and set the property 
+```
+sonar.cfn.nag.reportFiles=target/template.yml.nag (comma separated if multiple reports)
+```
 
-Or scan directories using cfn_nag_scan running (cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan) and set the property sonar.cfn.nag.reportFiles=target/cfn-nag-scan.nagscan
+Or scan directories using cfn_nag_scan running 
+```
+cfn_nag_scan  --input-path src/main/config/ -o json -> target/cfn-nag-scan.nagscan
+```
+and set the property 
+
+```
+sonar.cfn.nag.reportFiles=target/cfn-nag-scan.nagscan
+```
 
 # Properties supported
 
+```
 sonar.cfn.nag.reportFiles=target/template.yml.nag,target/cfn-nag-scan.nagscan
+````
 
 One or multiple .nag or .nagscan files, note for .nag files the filename should be template filename appended with .nag and for nag_scan any filename with .nagscan suffix.
 
@@ -75,22 +91,22 @@ Assumes all failures start with uppercase F and all warnings with uppercase W.
 
 Prepare checkov reports by running, in this example we are scanning a single file 'template.yml'
 
-'''
+```
 checkov -f template.yml -o json --output-file-path template.checkov-report
-'''
+```
 
 and set the property when scanning with sonar to the checkov output
 
-'''
+```
 sonar.checkov.reportFiles=template.checkov-report
-''' 
+```` 
 
 
 # Properties supported
 
-'''
+```
 sonar.checkov.reportFiles=template.checkov-report
-'''
+```
 
 One or multiple checkov report files, note for .checkov-report files the filename should be template filename appended with checkov-report.
 
