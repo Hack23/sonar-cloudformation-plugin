@@ -10,9 +10,6 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) a
 [![Technical Debt](https://www.hack23.com/sonar/api/project_badges/measure?project=com.hack23.sonar%3Asonar-cloudformation-plugin&metric=sqale_index)](https://www.hack23.com/sonar/dashboard?id=com.hack23.sonar%3Asonar-cloudformation-plugin)
 [![Quality Gate](https://www.hack23.com/sonar/api/project_badges/measure?project=com.hack23.sonar%3Asonar-cloudformation-plugin&metric=alert_status)](https://www.hack23.com/sonar/dashboard?id=com.hack23.sonar%3Asonar-cloudformation-plugin)
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=com.hack23.sonar%3Asonar-cloudformation-plugin)](https://sonarcloud.io/dashboard?id=com.hack23.sonar%3Asonar-cloudformation-plugin)
-[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/Hack23/sonar-cloudformation-plugin/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/Hack23/sonar-cloudformation-plugin/branches/master)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin?ref=badge_shield)
-[![SourceSpy Dashboard](https://sourcespy.com/shield.svg)](https://sourcespy.com/github/hack23sonarcloudformationplugin/)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4545/badge)](https://bestpractices.coreinfrastructure.org/projects/4545)
 
 
@@ -221,6 +218,3 @@ A.14 System acquisition, dev & maintenance A.14.2 Security in Dev & Support
 https://www.isms.online/iso-27001/annex-a-18-compliance/
 
 A.18 Compliance A.18.1 Compliance with Legal and Regulatory Reqs
-
-## License
-[![FOSSA Details](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHack23%2Fsonar-cloudformation-plugin?ref=badge_large)
