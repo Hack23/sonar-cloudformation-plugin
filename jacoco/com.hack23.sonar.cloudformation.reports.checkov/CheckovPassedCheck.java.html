@@ -70,7 +70,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
     private String callerFilePath;
 
     /** The caller file line range. */
-    private String callerFileLineRange;
+    private List&lt;Integer&gt; callerFileLineRange;
 
     /** The fixed definition. */
     private String fixedDefinition;
@@ -381,7 +381,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 * @return the caller file line range
 	 */
     @JsonProperty(&quot;caller_file_line_range&quot;)
-	public String getCallerFileLineRange() {
+	public List&lt;Integer&gt; getCallerFileLineRange() {
 <span class="fc" id="L385">		return callerFileLineRange;</span>
 	}
 
@@ -390,7 +390,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 	 *
 	 * @param callerFileLineRange the new caller file line range
 	 */
-	public void setCallerFileLineRange(final String callerFileLineRange) {
+	public void setCallerFileLineRange(final List&lt;Integer&gt; callerFileLineRange) {
 <span class="fc" id="L394">		this.callerFileLineRange = callerFileLineRange;</span>
 <span class="fc" id="L395">	}</span>
 

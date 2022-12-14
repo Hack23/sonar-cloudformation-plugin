@@ -19,7 +19,7 @@
  */
 package com.hack23.sonar.cloudformation.reports.checkov;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * The Class EntityTags.
@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
      *
      * @return the name
      */
-    @JsonProperty(&quot;Name&quot;)
+    @JsonIgnore
 	public String getName() {
 <span class="fc" id="L39">		return name;</span>
 	}

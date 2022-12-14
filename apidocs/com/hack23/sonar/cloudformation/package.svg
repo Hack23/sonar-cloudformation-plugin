@@ -17,7 +17,7 @@ class org.sonar.api.Plugin--><g id="elem_org.sonar.api.Plugin"><rect codeLine="6
 reverse link org.sonar.api.batch.sensor.Sensor to com.hack23.sonar.cloudformation.CloudformationSensor--><g id="link_org.sonar.api.batch.sensor.Sensor_com.hack23.sonar.cloudformation.CloudformationSensor"><path codeLine="37" d="M331,142.1 C331,162.38 331,184.95 331,204.9 " fill="none" id="org.sonar.api.batch.sensor.Sensor-backto-com.hack23.sonar.cloudformation.CloudformationSensor" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="324,142,331,122,338,142,324,142" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[63fe7b739a87e21952d62265d328e55c]
 reverse link org.sonar.api.server.profile.BuiltInQualityProfilesDefinition to com.hack23.sonar.cloudformation.CloudformationQualityProfile--><g id="link_org.sonar.api.server.profile.BuiltInQualityProfilesDefinition_com.hack23.sonar.cloudformation.CloudformationQualityProfile"><path codeLine="38" d="M1238,133.73 C1238,161.43 1238,195.12 1238,220.81 " fill="none" id="org.sonar.api.server.profile.BuiltInQualityProfilesDefinition-backto-com.hack23.sonar.cloudformation.CloudformationQualityProfile" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1231,133.51,1238,113.51,1245,133.51,1231,133.51" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2bdc00f05ffbda222481780920a1d1de]
 reverse link org.sonar.api.server.rule.RulesDefinition to com.hack23.sonar.cloudformation.CloudformationRulesDefinition--><g id="link_org.sonar.api.server.rule.RulesDefinition_com.hack23.sonar.cloudformation.CloudformationRulesDefinition"><path codeLine="39" d="M1703,133.76 C1703,153.39 1703,176.03 1703,196.69 " fill="none" id="org.sonar.api.server.rule.RulesDefinition-backto-com.hack23.sonar.cloudformation.CloudformationRulesDefinition" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1696,133.51,1703,113.51,1710,133.51,1696,133.51" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a0a45c0a895aca957ae22b311196540e]
-reverse link org.sonar.api.Plugin to com.hack23.sonar.cloudformation.CloudformationPlugin--><g id="link_org.sonar.api.Plugin_com.hack23.sonar.cloudformation.CloudformationPlugin"><path codeLine="40" d="M2448,133.9 C2448,164.73 2448,202.92 2448,229.25 " fill="none" id="org.sonar.api.Plugin-backto-com.hack23.sonar.cloudformation.CloudformationPlugin" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="2441,133.51,2448,113.51,2455,133.51,2441,133.51" style="stroke:#181818;stroke-width:1.0;"/></g><rect fill="none" height="11.6406" style="stroke:none;stroke-width:1.0;" width="186" x="1180.5" y="348"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="186" x="1180.5" y="357.2822">UMLDoclet 2.0.19, PlantUML 1.2022.8</text><!--MD5=[e89c63070096c0ccf0a3cc02ca26b34c]
+reverse link org.sonar.api.Plugin to com.hack23.sonar.cloudformation.CloudformationPlugin--><g id="link_org.sonar.api.Plugin_com.hack23.sonar.cloudformation.CloudformationPlugin"><path codeLine="40" d="M2448,133.9 C2448,164.73 2448,202.92 2448,229.25 " fill="none" id="org.sonar.api.Plugin-backto-com.hack23.sonar.cloudformation.CloudformationPlugin" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="2441,133.51,2448,113.51,2455,133.51,2441,133.51" style="stroke:#181818;stroke-width:1.0;"/></g><rect fill="none" height="11.6406" style="stroke:none;stroke-width:1.0;" width="192" x="1177.5" y="348"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="192" x="1177.5" y="357.2822">UMLDoclet 2.0.20, PlantUML 1.2022.12</text><!--MD5=[7fcc8da191e9fc2d95ecc8c4b63d28de]
 @startuml
     namespace com.hack23.sonar.cloudformation {
 
@@ -86,14 +86,14 @@ reverse link org.sonar.api.Plugin to com.hack23.sonar.cloudformation.Cloudformat
         }
     }
 
-    center footer UMLDoclet 2.0.19, PlantUML 1.2022.8
+    center footer UMLDoclet 2.0.20, PlantUML 1.2022.12
 @enduml
 
-PlantUML version 1.2022.8(Sun Sep 25 11:00:33 CEST 2022)
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
 (APACHE source distribution)
 Java Runtime: OpenJDK Runtime Environment
 JVM: OpenJDK 64-Bit Server VM
-Default Encoding: ANSI_X3.4-1968
+Default Encoding: UTF-8
 Language: en
 Country: US
 --></g></svg>

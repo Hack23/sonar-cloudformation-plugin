@@ -78,7 +78,7 @@
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>      <strong class="jxr_keyword">private</strong> String callerFilePath;
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>  
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>      <em class="jxr_javadoccomment">/** The caller file line range. */</em>
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">private</strong> String callerFileLineRange;
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">private</strong> List&lt;Integer&gt; callerFileLineRange;
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>  
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>      <em class="jxr_javadoccomment">/** The fixed definition. */</em>
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>      <strong class="jxr_keyword">private</strong> String fixedDefinition;
@@ -389,7 +389,7 @@
 <a class="jxr_linenumber" name="L381" href="#L381">381</a> <em class="jxr_javadoccomment">	 * @return the caller file line range</em>
 <a class="jxr_linenumber" name="L382" href="#L382">382</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="L383" href="#L383">383</a>     @JsonProperty(<span class="jxr_string">"caller_file_line_range"</span>)
-<a class="jxr_linenumber" name="L384" href="#L384">384</a> 	<strong class="jxr_keyword">public</strong> String getCallerFileLineRange() {
+<a class="jxr_linenumber" name="L384" href="#L384">384</a> 	<strong class="jxr_keyword">public</strong> List&lt;Integer&gt; getCallerFileLineRange() {
 <a class="jxr_linenumber" name="L385" href="#L385">385</a> 		<strong class="jxr_keyword">return</strong> callerFileLineRange;
 <a class="jxr_linenumber" name="L386" href="#L386">386</a> 	}
 <a class="jxr_linenumber" name="L387" href="#L387">387</a> 
@@ -398,7 +398,7 @@
 <a class="jxr_linenumber" name="L390" href="#L390">390</a> <em class="jxr_javadoccomment">	 *</em>
 <a class="jxr_linenumber" name="L391" href="#L391">391</a> <em class="jxr_javadoccomment">	 * @param callerFileLineRange the new caller file line range</em>
 <a class="jxr_linenumber" name="L392" href="#L392">392</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L393" href="#L393">393</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setCallerFileLineRange(<strong class="jxr_keyword">final</strong> String callerFileLineRange) {
+<a class="jxr_linenumber" name="L393" href="#L393">393</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setCallerFileLineRange(<strong class="jxr_keyword">final</strong> List&lt;Integer&gt; callerFileLineRange) {
 <a class="jxr_linenumber" name="L394" href="#L394">394</a> 		<strong class="jxr_keyword">this</strong>.callerFileLineRange = callerFileLineRange;
 <a class="jxr_linenumber" name="L395" href="#L395">395</a> 	}
 <a class="jxr_linenumber" name="L396" href="#L396">396</a> 
