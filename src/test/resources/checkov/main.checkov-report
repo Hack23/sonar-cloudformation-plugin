@@ -121,7 +121,8 @@
                 "vulnerability_details": null,
                 "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_3",
-                "details": []
+                "details": [],
+                "check_len": null
             }
         ],
         "failed_checks": [
@@ -244,7 +245,8 @@
                 "vulnerability_details": null,
                 "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-function-level-concurrent-execution-limit",
-                "details": []
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_50",
@@ -365,7 +367,8 @@
                 "vulnerability_details": null,
                 "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_aws_serverless_4",
-                "details": []
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_173",
@@ -486,7 +489,8 @@
                 "vulnerability_details": null,
                 "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/bc_aws_serverless_5",
-                "details": []
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_272",
@@ -607,7 +611,8 @@
                 "vulnerability_details": null,
                 "connected_node": null,
                 "guideline": null,
-                "details": []
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_116",
@@ -728,7 +733,8 @@
                 "vulnerability_details": null,
                 "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-for-a-dead-letter-queue-dlq",
-                "details": []
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_117",
@@ -849,7 +855,8 @@
                 "vulnerability_details": null,
                 "connected_node": null,
                 "guideline": "https://docs.bridgecrew.io/docs/ensure-that-aws-lambda-function-is-configured-inside-a-vpc-1",
-                "details": []
+                "details": [],
+                "check_len": null
             }
         ],
         "skipped_checks": [],
@@ -861,7 +868,7 @@
         "skipped": 0,
         "parsing_errors": 0,
         "resource_count": 2,
-        "checkov_version": "2.1.258"
+        "checkov_version": "2.2.157"
     },
     "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }
