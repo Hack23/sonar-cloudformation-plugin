@@ -4,430 +4,8 @@
         "passed_checks": [],
         "failed_checks": [
             {
-                "check_id": "CKV_AZURE_17",
-                "check_name": "Ensure the web app has 'Client Certificates (Incoming client certificates)' set",
-                "check_result": {
-                    "result": "FAILED",
-                    "evaluated_keys": []
-                },
-                "code_block": [
-                    [
-                        129,
-                        "        {\n"
-                    ],
-                    [
-                        130,
-                        "            \"apiVersion\": \"2020-06-01\",\n"
-                    ],
-                    [
-                        131,
-                        "            \"name\": \"[parameters('siteName')]\",\n"
-                    ],
-                    [
-                        132,
-                        "            \"type\": \"Microsoft.Web/sites\",\n"
-                    ],
-                    [
-                        133,
-                        "            \"location\": \"[parameters('location')]\",\n"
-                    ],
-                    [
-                        134,
-                        "            \"dependsOn\": [\n"
-                    ],
-                    [
-                        135,
-                        "                \"[resourceId('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]\"\n"
-                    ],
-                    [
-                        136,
-                        "            ],\n"
-                    ],
-                    [
-                        137,
-                        "            \"properties\": {\n"
-                    ],
-                    [
-                        138,
-                        "                \"name\": \"[parameters('siteName')]\",\n"
-                    ],
-                    [
-                        139,
-                        "                \"serverFarmId\": \"[variables('hostingPlanName')]\"\n"
-                    ],
-                    [
-                        140,
-                        "            },\n"
-                    ],
-                    [
-                        141,
-                        "            \"resources\": [\n"
-                    ],
-                    [
-                        142,
-                        "                {\n"
-                    ],
-                    [
-                        143,
-                        "                    \"apiVersion\": \"2020-06-01\",\n"
-                    ],
-                    [
-                        144,
-                        "                    \"name\": \"connectionstrings\",\n"
-                    ],
-                    [
-                        145,
-                        "                    \"type\": \"config\",\n"
-                    ],
-                    [
-                        146,
-                        "                    \"dependsOn\": [\n"
-                    ],
-                    [
-                        147,
-                        "                        \"[resourceId('Microsoft.Web/sites/', parameters('siteName'))]\"\n"
-                    ],
-                    [
-                        148,
-                        "                    ],\n"
-                    ],
-                    [
-                        149,
-                        "                    \"properties\": {\n"
-                    ],
-                    [
-                        150,
-                        "                        \"defaultConnection\": {\n"
-                    ],
-                    [
-                        151,
-                        "                            \"value\": \"[concat('Database=', variables('databaseName'), ';Data Source=', reference(resourceId('Microsoft.DBforMySQL/servers',variables('serverName'))).fullyQualifiedDomainName, ';User Id=', parameters('administratorLogin'),'@', variables('serverName'),';Password=', parameters('administratorLoginPassword'))]\",\n"
-                    ],
-                    [
-                        152,
-                        "                            \"type\": \"MySql\"\n"
-                    ],
-                    [
-                        153,
-                        "                        }\n"
-                    ],
-                    [
-                        154,
-                        "                    }\n"
-                    ],
-                    [
-                        155,
-                        "                }\n"
-                    ],
-                    [
-                        156,
-                        "            ]\n"
-                    ],
-                    [
-                        157,
-                        "        },\n"
-                    ]
-                ],
-                "file_path": "src/main/config/azuredeploy.json",
-                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/azuredeploy.json",
-                "repo_file_path": "/src/main/config/azuredeploy.json",
-                "file_line_range": [
-                    129,
-                    157
-                ],
-                "resource": "Microsoft.Web/sites.[parameters('siteName')]",
-                "evaluations": {},
-                "check_class": "checkov.arm.checks.resource.AppServiceClientCertificate",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_7"
-            },
-            {
-                "check_id": "CKV_AZURE_14",
-                "check_name": "Ensure web app redirects all HTTP traffic to HTTPS in Azure App Service",
-                "check_result": {
-                    "result": "FAILED",
-                    "evaluated_keys": []
-                },
-                "code_block": [
-                    [
-                        129,
-                        "        {\n"
-                    ],
-                    [
-                        130,
-                        "            \"apiVersion\": \"2020-06-01\",\n"
-                    ],
-                    [
-                        131,
-                        "            \"name\": \"[parameters('siteName')]\",\n"
-                    ],
-                    [
-                        132,
-                        "            \"type\": \"Microsoft.Web/sites\",\n"
-                    ],
-                    [
-                        133,
-                        "            \"location\": \"[parameters('location')]\",\n"
-                    ],
-                    [
-                        134,
-                        "            \"dependsOn\": [\n"
-                    ],
-                    [
-                        135,
-                        "                \"[resourceId('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]\"\n"
-                    ],
-                    [
-                        136,
-                        "            ],\n"
-                    ],
-                    [
-                        137,
-                        "            \"properties\": {\n"
-                    ],
-                    [
-                        138,
-                        "                \"name\": \"[parameters('siteName')]\",\n"
-                    ],
-                    [
-                        139,
-                        "                \"serverFarmId\": \"[variables('hostingPlanName')]\"\n"
-                    ],
-                    [
-                        140,
-                        "            },\n"
-                    ],
-                    [
-                        141,
-                        "            \"resources\": [\n"
-                    ],
-                    [
-                        142,
-                        "                {\n"
-                    ],
-                    [
-                        143,
-                        "                    \"apiVersion\": \"2020-06-01\",\n"
-                    ],
-                    [
-                        144,
-                        "                    \"name\": \"connectionstrings\",\n"
-                    ],
-                    [
-                        145,
-                        "                    \"type\": \"config\",\n"
-                    ],
-                    [
-                        146,
-                        "                    \"dependsOn\": [\n"
-                    ],
-                    [
-                        147,
-                        "                        \"[resourceId('Microsoft.Web/sites/', parameters('siteName'))]\"\n"
-                    ],
-                    [
-                        148,
-                        "                    ],\n"
-                    ],
-                    [
-                        149,
-                        "                    \"properties\": {\n"
-                    ],
-                    [
-                        150,
-                        "                        \"defaultConnection\": {\n"
-                    ],
-                    [
-                        151,
-                        "                            \"value\": \"[concat('Database=', variables('databaseName'), ';Data Source=', reference(resourceId('Microsoft.DBforMySQL/servers',variables('serverName'))).fullyQualifiedDomainName, ';User Id=', parameters('administratorLogin'),'@', variables('serverName'),';Password=', parameters('administratorLoginPassword'))]\",\n"
-                    ],
-                    [
-                        152,
-                        "                            \"type\": \"MySql\"\n"
-                    ],
-                    [
-                        153,
-                        "                        }\n"
-                    ],
-                    [
-                        154,
-                        "                    }\n"
-                    ],
-                    [
-                        155,
-                        "                }\n"
-                    ],
-                    [
-                        156,
-                        "            ]\n"
-                    ],
-                    [
-                        157,
-                        "        },\n"
-                    ]
-                ],
-                "file_path": "src/main/config/azuredeploy.json",
-                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/azuredeploy.json",
-                "repo_file_path": "/src/main/config/azuredeploy.json",
-                "file_line_range": [
-                    129,
-                    157
-                ],
-                "resource": "Microsoft.Web/sites.[parameters('siteName')]",
-                "evaluations": {},
-                "check_class": "checkov.arm.checks.resource.AppServiceHTTPSOnly",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_5"
-            },
-            {
-                "check_id": "CKV_AZURE_18",
-                "check_name": "Ensure that 'HTTP Version' is the latest if used to run the web app",
-                "check_result": {
-                    "result": "FAILED",
-                    "evaluated_keys": []
-                },
-                "code_block": [
-                    [
-                        129,
-                        "        {\n"
-                    ],
-                    [
-                        130,
-                        "            \"apiVersion\": \"2020-06-01\",\n"
-                    ],
-                    [
-                        131,
-                        "            \"name\": \"[parameters('siteName')]\",\n"
-                    ],
-                    [
-                        132,
-                        "            \"type\": \"Microsoft.Web/sites\",\n"
-                    ],
-                    [
-                        133,
-                        "            \"location\": \"[parameters('location')]\",\n"
-                    ],
-                    [
-                        134,
-                        "            \"dependsOn\": [\n"
-                    ],
-                    [
-                        135,
-                        "                \"[resourceId('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]\"\n"
-                    ],
-                    [
-                        136,
-                        "            ],\n"
-                    ],
-                    [
-                        137,
-                        "            \"properties\": {\n"
-                    ],
-                    [
-                        138,
-                        "                \"name\": \"[parameters('siteName')]\",\n"
-                    ],
-                    [
-                        139,
-                        "                \"serverFarmId\": \"[variables('hostingPlanName')]\"\n"
-                    ],
-                    [
-                        140,
-                        "            },\n"
-                    ],
-                    [
-                        141,
-                        "            \"resources\": [\n"
-                    ],
-                    [
-                        142,
-                        "                {\n"
-                    ],
-                    [
-                        143,
-                        "                    \"apiVersion\": \"2020-06-01\",\n"
-                    ],
-                    [
-                        144,
-                        "                    \"name\": \"connectionstrings\",\n"
-                    ],
-                    [
-                        145,
-                        "                    \"type\": \"config\",\n"
-                    ],
-                    [
-                        146,
-                        "                    \"dependsOn\": [\n"
-                    ],
-                    [
-                        147,
-                        "                        \"[resourceId('Microsoft.Web/sites/', parameters('siteName'))]\"\n"
-                    ],
-                    [
-                        148,
-                        "                    ],\n"
-                    ],
-                    [
-                        149,
-                        "                    \"properties\": {\n"
-                    ],
-                    [
-                        150,
-                        "                        \"defaultConnection\": {\n"
-                    ],
-                    [
-                        151,
-                        "                            \"value\": \"[concat('Database=', variables('databaseName'), ';Data Source=', reference(resourceId('Microsoft.DBforMySQL/servers',variables('serverName'))).fullyQualifiedDomainName, ';User Id=', parameters('administratorLogin'),'@', variables('serverName'),';Password=', parameters('administratorLoginPassword'))]\",\n"
-                    ],
-                    [
-                        152,
-                        "                            \"type\": \"MySql\"\n"
-                    ],
-                    [
-                        153,
-                        "                        }\n"
-                    ],
-                    [
-                        154,
-                        "                    }\n"
-                    ],
-                    [
-                        155,
-                        "                }\n"
-                    ],
-                    [
-                        156,
-                        "            ]\n"
-                    ],
-                    [
-                        157,
-                        "        },\n"
-                    ]
-                ],
-                "file_path": "src/main/config/azuredeploy.json",
-                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/azuredeploy.json",
-                "repo_file_path": "/src/main/config/azuredeploy.json",
-                "file_line_range": [
-                    129,
-                    157
-                ],
-                "resource": "Microsoft.Web/sites.[parameters('siteName')]",
-                "evaluations": {},
-                "check_class": "checkov.arm.checks.resource.AppServiceHttps20Enabled",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_8"
-            },
-            {
                 "check_id": "CKV_AZURE_15",
+                "bc_check_id": "BC_AZR_NETWORKING_6",
                 "check_name": "Ensure web app is using the latest version of TLS encryption",
                 "check_result": {
                     "result": "FAILED",
@@ -565,10 +143,325 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_6"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_6",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AZURE_14",
+                "bc_check_id": "BC_AZR_NETWORKING_5",
+                "check_name": "Ensure web app redirects all HTTP traffic to HTTPS in Azure App Service",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        129,
+                        "        {\n"
+                    ],
+                    [
+                        130,
+                        "            \"apiVersion\": \"2020-06-01\",\n"
+                    ],
+                    [
+                        131,
+                        "            \"name\": \"[parameters('siteName')]\",\n"
+                    ],
+                    [
+                        132,
+                        "            \"type\": \"Microsoft.Web/sites\",\n"
+                    ],
+                    [
+                        133,
+                        "            \"location\": \"[parameters('location')]\",\n"
+                    ],
+                    [
+                        134,
+                        "            \"dependsOn\": [\n"
+                    ],
+                    [
+                        135,
+                        "                \"[resourceId('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]\"\n"
+                    ],
+                    [
+                        136,
+                        "            ],\n"
+                    ],
+                    [
+                        137,
+                        "            \"properties\": {\n"
+                    ],
+                    [
+                        138,
+                        "                \"name\": \"[parameters('siteName')]\",\n"
+                    ],
+                    [
+                        139,
+                        "                \"serverFarmId\": \"[variables('hostingPlanName')]\"\n"
+                    ],
+                    [
+                        140,
+                        "            },\n"
+                    ],
+                    [
+                        141,
+                        "            \"resources\": [\n"
+                    ],
+                    [
+                        142,
+                        "                {\n"
+                    ],
+                    [
+                        143,
+                        "                    \"apiVersion\": \"2020-06-01\",\n"
+                    ],
+                    [
+                        144,
+                        "                    \"name\": \"connectionstrings\",\n"
+                    ],
+                    [
+                        145,
+                        "                    \"type\": \"config\",\n"
+                    ],
+                    [
+                        146,
+                        "                    \"dependsOn\": [\n"
+                    ],
+                    [
+                        147,
+                        "                        \"[resourceId('Microsoft.Web/sites/', parameters('siteName'))]\"\n"
+                    ],
+                    [
+                        148,
+                        "                    ],\n"
+                    ],
+                    [
+                        149,
+                        "                    \"properties\": {\n"
+                    ],
+                    [
+                        150,
+                        "                        \"defaultConnection\": {\n"
+                    ],
+                    [
+                        151,
+                        "                            \"value\": \"[concat('Database=', variables('databaseName'), ';Data Source=', reference(resourceId('Microsoft.DBforMySQL/servers',variables('serverName'))).fullyQualifiedDomainName, ';User Id=', parameters('administratorLogin'),'@', variables('serverName'),';Password=', parameters('administratorLoginPassword'))]\",\n"
+                    ],
+                    [
+                        152,
+                        "                            \"type\": \"MySql\"\n"
+                    ],
+                    [
+                        153,
+                        "                        }\n"
+                    ],
+                    [
+                        154,
+                        "                    }\n"
+                    ],
+                    [
+                        155,
+                        "                }\n"
+                    ],
+                    [
+                        156,
+                        "            ]\n"
+                    ],
+                    [
+                        157,
+                        "        },\n"
+                    ]
+                ],
+                "file_path": "src/main/config/azuredeploy.json",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/azuredeploy.json",
+                "repo_file_path": "/src/main/config/azuredeploy.json",
+                "file_line_range": [
+                    129,
+                    157
+                ],
+                "resource": "Microsoft.Web/sites.[parameters('siteName')]",
+                "evaluations": {},
+                "check_class": "checkov.arm.checks.resource.AppServiceHTTPSOnly",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_5",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AZURE_17",
+                "bc_check_id": "BC_AZR_NETWORKING_7",
+                "check_name": "Ensure the web app has 'Client Certificates (Incoming client certificates)' set",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        129,
+                        "        {\n"
+                    ],
+                    [
+                        130,
+                        "            \"apiVersion\": \"2020-06-01\",\n"
+                    ],
+                    [
+                        131,
+                        "            \"name\": \"[parameters('siteName')]\",\n"
+                    ],
+                    [
+                        132,
+                        "            \"type\": \"Microsoft.Web/sites\",\n"
+                    ],
+                    [
+                        133,
+                        "            \"location\": \"[parameters('location')]\",\n"
+                    ],
+                    [
+                        134,
+                        "            \"dependsOn\": [\n"
+                    ],
+                    [
+                        135,
+                        "                \"[resourceId('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]\"\n"
+                    ],
+                    [
+                        136,
+                        "            ],\n"
+                    ],
+                    [
+                        137,
+                        "            \"properties\": {\n"
+                    ],
+                    [
+                        138,
+                        "                \"name\": \"[parameters('siteName')]\",\n"
+                    ],
+                    [
+                        139,
+                        "                \"serverFarmId\": \"[variables('hostingPlanName')]\"\n"
+                    ],
+                    [
+                        140,
+                        "            },\n"
+                    ],
+                    [
+                        141,
+                        "            \"resources\": [\n"
+                    ],
+                    [
+                        142,
+                        "                {\n"
+                    ],
+                    [
+                        143,
+                        "                    \"apiVersion\": \"2020-06-01\",\n"
+                    ],
+                    [
+                        144,
+                        "                    \"name\": \"connectionstrings\",\n"
+                    ],
+                    [
+                        145,
+                        "                    \"type\": \"config\",\n"
+                    ],
+                    [
+                        146,
+                        "                    \"dependsOn\": [\n"
+                    ],
+                    [
+                        147,
+                        "                        \"[resourceId('Microsoft.Web/sites/', parameters('siteName'))]\"\n"
+                    ],
+                    [
+                        148,
+                        "                    ],\n"
+                    ],
+                    [
+                        149,
+                        "                    \"properties\": {\n"
+                    ],
+                    [
+                        150,
+                        "                        \"defaultConnection\": {\n"
+                    ],
+                    [
+                        151,
+                        "                            \"value\": \"[concat('Database=', variables('databaseName'), ';Data Source=', reference(resourceId('Microsoft.DBforMySQL/servers',variables('serverName'))).fullyQualifiedDomainName, ';User Id=', parameters('administratorLogin'),'@', variables('serverName'),';Password=', parameters('administratorLoginPassword'))]\",\n"
+                    ],
+                    [
+                        152,
+                        "                            \"type\": \"MySql\"\n"
+                    ],
+                    [
+                        153,
+                        "                        }\n"
+                    ],
+                    [
+                        154,
+                        "                    }\n"
+                    ],
+                    [
+                        155,
+                        "                }\n"
+                    ],
+                    [
+                        156,
+                        "            ]\n"
+                    ],
+                    [
+                        157,
+                        "        },\n"
+                    ]
+                ],
+                "file_path": "src/main/config/azuredeploy.json",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/azuredeploy.json",
+                "repo_file_path": "/src/main/config/azuredeploy.json",
+                "file_line_range": [
+                    129,
+                    157
+                ],
+                "resource": "Microsoft.Web/sites.[parameters('siteName')]",
+                "evaluations": {},
+                "check_class": "checkov.arm.checks.resource.AppServiceClientCertificate",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_7",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AZURE_16",
+                "bc_check_id": "BC_AZR_IAM_1",
                 "check_name": "Ensure that Register with Azure Active Directory is enabled on App Service",
                 "check_result": {
                     "result": "FAILED",
@@ -706,10 +599,173 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_iam_1"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_iam_1",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AZURE_18",
+                "bc_check_id": "BC_AZR_NETWORKING_8",
+                "check_name": "Ensure that 'HTTP Version' is the latest if used to run the web app",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": []
+                },
+                "code_block": [
+                    [
+                        129,
+                        "        {\n"
+                    ],
+                    [
+                        130,
+                        "            \"apiVersion\": \"2020-06-01\",\n"
+                    ],
+                    [
+                        131,
+                        "            \"name\": \"[parameters('siteName')]\",\n"
+                    ],
+                    [
+                        132,
+                        "            \"type\": \"Microsoft.Web/sites\",\n"
+                    ],
+                    [
+                        133,
+                        "            \"location\": \"[parameters('location')]\",\n"
+                    ],
+                    [
+                        134,
+                        "            \"dependsOn\": [\n"
+                    ],
+                    [
+                        135,
+                        "                \"[resourceId('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]\"\n"
+                    ],
+                    [
+                        136,
+                        "            ],\n"
+                    ],
+                    [
+                        137,
+                        "            \"properties\": {\n"
+                    ],
+                    [
+                        138,
+                        "                \"name\": \"[parameters('siteName')]\",\n"
+                    ],
+                    [
+                        139,
+                        "                \"serverFarmId\": \"[variables('hostingPlanName')]\"\n"
+                    ],
+                    [
+                        140,
+                        "            },\n"
+                    ],
+                    [
+                        141,
+                        "            \"resources\": [\n"
+                    ],
+                    [
+                        142,
+                        "                {\n"
+                    ],
+                    [
+                        143,
+                        "                    \"apiVersion\": \"2020-06-01\",\n"
+                    ],
+                    [
+                        144,
+                        "                    \"name\": \"connectionstrings\",\n"
+                    ],
+                    [
+                        145,
+                        "                    \"type\": \"config\",\n"
+                    ],
+                    [
+                        146,
+                        "                    \"dependsOn\": [\n"
+                    ],
+                    [
+                        147,
+                        "                        \"[resourceId('Microsoft.Web/sites/', parameters('siteName'))]\"\n"
+                    ],
+                    [
+                        148,
+                        "                    ],\n"
+                    ],
+                    [
+                        149,
+                        "                    \"properties\": {\n"
+                    ],
+                    [
+                        150,
+                        "                        \"defaultConnection\": {\n"
+                    ],
+                    [
+                        151,
+                        "                            \"value\": \"[concat('Database=', variables('databaseName'), ';Data Source=', reference(resourceId('Microsoft.DBforMySQL/servers',variables('serverName'))).fullyQualifiedDomainName, ';User Id=', parameters('administratorLogin'),'@', variables('serverName'),';Password=', parameters('administratorLoginPassword'))]\",\n"
+                    ],
+                    [
+                        152,
+                        "                            \"type\": \"MySql\"\n"
+                    ],
+                    [
+                        153,
+                        "                        }\n"
+                    ],
+                    [
+                        154,
+                        "                    }\n"
+                    ],
+                    [
+                        155,
+                        "                }\n"
+                    ],
+                    [
+                        156,
+                        "            ]\n"
+                    ],
+                    [
+                        157,
+                        "        },\n"
+                    ]
+                ],
+                "file_path": "src/main/config/azuredeploy.json",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/azuredeploy.json",
+                "repo_file_path": "/src/main/config/azuredeploy.json",
+                "file_line_range": [
+                    129,
+                    157
+                ],
+                "resource": "Microsoft.Web/sites.[parameters('siteName')]",
+                "evaluations": {},
+                "check_class": "checkov.arm.checks.resource.AppServiceHttps20Enabled",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_8",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AZURE_28",
+                "bc_check_id": "BC_AZR_NETWORKING_9",
                 "check_name": "Ensure 'Enforce SSL connection' is set to 'ENABLED' for MySQL Database Server",
                 "check_result": {
                     "result": "FAILED",
@@ -943,7 +999,17 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_9"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_azr_networking_9",
+                "details": [],
+                "check_len": null
             }
         ],
         "skipped_checks": [],
@@ -954,6 +1020,8 @@
         "failed": 6,
         "skipped": 0,
         "parsing_errors": 0,
-        "checkov_version": "2.0.156"
-    }
+        "resource_count": 6,
+        "checkov_version": "2.2.157"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }

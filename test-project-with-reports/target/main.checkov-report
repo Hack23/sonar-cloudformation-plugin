@@ -4,6 +4,7 @@
         "passed_checks": [
             {
                 "check_id": "CKV_AWS_41",
+                "bc_check_id": "BC_AWS_SECRETS_5",
                 "check_name": "Ensure no hard coded AWS access key and secret key exists in provider",
                 "check_result": {
                     "result": "PASSED",
@@ -37,16 +38,25 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_5"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_5",
+                "details": [],
+                "check_len": null
             },
             {
-                "check_id": "CKV_AWS_23",
-                "check_name": "Ensure every security groups rule has a description",
+                "check_id": "CKV_AWS_277",
+                "bc_check_id": "BC_AWS_NETWORKING_78",
+                "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1",
                 "check_result": {
                     "result": "PASSED",
-                    "evaluated_keys": [
-                        "description"
-                    ]
+                    "evaluated_keys": []
                 },
                 "code_block": [
                     [
@@ -175,15 +185,26 @@
                 ],
                 "resource": "aws_security_group.default",
                 "evaluations": null,
-                "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupRuleDescription",
+                "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedIngressAny",
                 "fixed_definition": null,
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/networking_31"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-aws-security-group-does-not-allow-all-traffic-on-all-ports",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_25",
+                "bc_check_id": "BC_AWS_NETWORKING_2",
                 "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389",
                 "check_result": {
                     "result": "PASSED",
@@ -321,16 +342,25 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/networking_2"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/networking_2",
+                "details": [],
+                "check_len": null
             },
             {
-                "check_id": "CKV_AWS_23",
-                "check_name": "Ensure every security groups rule has a description",
+                "check_id": "CKV_AWS_277",
+                "bc_check_id": "BC_AWS_NETWORKING_78",
+                "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1",
                 "check_result": {
                     "result": "PASSED",
-                    "evaluated_keys": [
-                        "description"
-                    ]
+                    "evaluated_keys": []
                 },
                 "code_block": [
                     [
@@ -443,15 +473,26 @@
                 ],
                 "resource": "aws_security_group.elb",
                 "evaluations": null,
-                "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupRuleDescription",
+                "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedIngressAny",
                 "fixed_definition": null,
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/networking_31"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-aws-security-group-does-not-allow-all-traffic-on-all-ports",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_25",
+                "bc_check_id": "BC_AWS_NETWORKING_2",
                 "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389",
                 "check_result": {
                     "result": "PASSED",
@@ -573,10 +614,21 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/networking_2"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/networking_2",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_24",
+                "bc_check_id": "BC_AWS_NETWORKING_1",
                 "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22",
                 "check_result": {
                     "result": "PASSED",
@@ -698,10 +750,21 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_138",
+                "bc_check_id": "BC_AWS_NETWORKING_43",
                 "check_name": "Ensure that ELB is cross-zone-load-balancing enabled",
                 "check_result": {
                     "result": "PASSED",
@@ -849,10 +912,21 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-elb-is-cross-zone-load-balancing-enabled"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-elb-is-cross-zone-load-balancing-enabled",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_46",
+                "bc_check_id": "BC_AWS_SECRETS_1",
                 "check_name": "Ensure no hard-coded secrets exist in EC2 user data",
                 "check_result": {
                     "result": "PASSED",
@@ -978,14 +1052,27 @@
                 },
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_1"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_secrets_1",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_88",
+                "bc_check_id": "BC_AWS_PUBLIC_12",
                 "check_name": "EC2 instance should not have public IP.",
                 "check_result": {
                     "result": "PASSED",
-                    "evaluated_keys": []
+                    "evaluated_keys": [
+                        "associate_public_ip_address"
+                    ]
                 },
                 "code_block": [
                     [
@@ -1105,324 +1192,107 @@
                 },
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/public_12"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/public_12",
+                "details": [],
+                "check_len": null
             },
             {
-                "check_id": "CKV2_AWS_17",
-                "check_name": "Ensure that EC2 instances belong to a VPC",
+                "check_id": "CKV2_AWS_44",
+                "bc_check_id": null,
+                "check_name": "Ensure AWS route table with VPC peering does not contain routes overly permissive to all traffic",
                 "check_result": {
                     "result": "PASSED",
                     "entity": {
-                        "aws_instance": {
-                            "web": {
-                                "instance_type": [
-                                    "t2.micro"
-                                ],
-                                "ami": [
-                                    "var.aws_amis[var.aws_region]"
-                                ],
-                                "key_name": [
-                                    "var.key_name"
-                                ],
-                                "vpc_security_group_ids": [
-                                    [
-                                        "aws_security_group.default.id"
-                                    ]
-                                ],
-                                "subnet_id": [
-                                    "aws_subnet.tf_test_subnet.id"
-                                ],
-                                "user_data": [
-                                    "file(\"userdata.sh\")"
+                        "aws_route_table": {
+                            "r": {
+                                "__end_line__": 47,
+                                "__start_line__": 36,
+                                "route": [
+                                    {
+                                        "cidr_block": [
+                                            "0.0.0.0/0"
+                                        ],
+                                        "gateway_id": [
+                                            "aws_internet_gateway.gw.id"
+                                        ]
+                                    }
                                 ],
                                 "tags": [
                                     {
-                                        "Name": "elb-example"
+                                        "Name": "aws_route_table"
                                     }
-                                ]
-                            }
-                        }
-                    }
-                },
-                "code_block": [
-                    [
-                        153,
-                        "resource \"aws_instance\" \"web\" {\n"
-                    ],
-                    [
-                        154,
-                        "  instance_type = \"t2.micro\"\n"
-                    ],
-                    [
-                        155,
-                        "\n"
-                    ],
-                    [
-                        156,
-                        "  # Lookup the correct AMI based on the region\n"
-                    ],
-                    [
-                        157,
-                        "  # we specified\n"
-                    ],
-                    [
-                        158,
-                        "  ami = var.aws_amis[var.aws_region]\n"
-                    ],
-                    [
-                        159,
-                        "\n"
-                    ],
-                    [
-                        160,
-                        "  # The name of our SSH keypair you've created and downloaded\n"
-                    ],
-                    [
-                        161,
-                        "  # from the AWS console.\n"
-                    ],
-                    [
-                        162,
-                        "  #\n"
-                    ],
-                    [
-                        163,
-                        "  # https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:\n"
-                    ],
-                    [
-                        164,
-                        "  #\n"
-                    ],
-                    [
-                        165,
-                        "  key_name = var.key_name\n"
-                    ],
-                    [
-                        166,
-                        "\n"
-                    ],
-                    [
-                        167,
-                        "  # Our Security group to allow HTTP and SSH access\n"
-                    ],
-                    [
-                        168,
-                        "  vpc_security_group_ids = [aws_security_group.default.id]\n"
-                    ],
-                    [
-                        169,
-                        "  subnet_id              = aws_subnet.tf_test_subnet.id\n"
-                    ],
-                    [
-                        170,
-                        "  user_data              = file(\"userdata.sh\")\n"
-                    ],
-                    [
-                        171,
-                        "\n"
-                    ],
-                    [
-                        172,
-                        "  #Instance tags\n"
-                    ],
-                    [
-                        173,
-                        "\n"
-                    ],
-                    [
-                        174,
-                        "  tags = {\n"
-                    ],
-                    [
-                        175,
-                        "    Name = \"elb-example\"\n"
-                    ],
-                    [
-                        176,
-                        "  }\n"
-                    ],
-                    [
-                        177,
-                        "}\n"
-                    ]
-                ],
-                "file_path": "/main.tf",
-                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
-                "repo_file_path": "/src/main/config/main.tf",
-                "file_line_range": [
-                    153,
-                    177
-                ],
-                "resource": "aws_instance.web",
-                "evaluations": null,
-                "check_class": "checkov.common.graph.checks_infra.base_check",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-ec2-instances-belong-to-a-vpc"
-            },
-            {
-                "check_id": "CKV2_AWS_5",
-                "check_name": "Ensure that Security Groups are attached to an other resource",
-                "check_result": {
-                    "result": "PASSED",
-                    "entity": {
-                        "aws_security_group": {
-                            "elb": {
-                                "name": [
-                                    "elb_sg"
-                                ],
-                                "description": [
-                                    "Used in the terraform"
                                 ],
                                 "vpc_id": [
                                     "aws_vpc.default.id"
                                 ],
-                                "ingress": [
-                                    {
-                                        "from_port": [
-                                            80
-                                        ],
-                                        "to_port": [
-                                            80
-                                        ],
-                                        "protocol": [
-                                            "tcp"
-                                        ],
-                                        "cidr_blocks": [
-                                            [
-                                                "0.0.0.0/0"
-                                            ]
-                                        ]
-                                    }
-                                ],
-                                "egress": [
-                                    {
-                                        "from_port": [
-                                            0
-                                        ],
-                                        "to_port": [
-                                            0
-                                        ],
-                                        "protocol": [
-                                            "-1"
-                                        ],
-                                        "cidr_blocks": [
-                                            [
-                                                "0.0.0.0/0"
-                                            ]
-                                        ]
-                                    }
-                                ],
-                                "depends_on": [
-                                    [
-                                        "aws_internet_gateway.gw"
-                                    ]
-                                ]
+                                "__address__": "aws_route_table.r"
                             }
                         }
-                    }
+                    },
+                    "evaluated_keys": [
+                        "destination_ipv6_cidr_block",
+                        "destination_cidr_block",
+                        "route/*/ipv6_cidr_block",
+                        "route/*/vpc_peering_connection_id",
+                        "vpc_peering_connection_id",
+                        "route/*/cidr_block"
+                    ]
                 },
                 "code_block": [
                     [
-                        88,
-                        "resource \"aws_security_group\" \"elb\" {\n"
+                        36,
+                        "resource \"aws_route_table\" \"r\" {\n"
                     ],
                     [
-                        89,
-                        "  name        = \"elb_sg\"\n"
-                    ],
-                    [
-                        90,
-                        "  description = \"Used in the terraform\"\n"
-                    ],
-                    [
-                        91,
-                        "\n"
-                    ],
-                    [
-                        92,
+                        37,
                         "  vpc_id = aws_vpc.default.id\n"
                     ],
                     [
-                        93,
+                        38,
                         "\n"
                     ],
                     [
-                        94,
-                        "  # HTTP access from anywhere\n"
+                        39,
+                        "  route {\n"
                     ],
                     [
-                        95,
-                        "  ingress {\n"
+                        40,
+                        "    cidr_block = \"0.0.0.0/0\"\n"
                     ],
                     [
-                        96,
-                        "    from_port   = 80\n"
+                        41,
+                        "    gateway_id = aws_internet_gateway.gw.id\n"
                     ],
                     [
-                        97,
-                        "    to_port     = 80\n"
-                    ],
-                    [
-                        98,
-                        "    protocol    = \"tcp\"\n"
-                    ],
-                    [
-                        99,
-                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
-                    ],
-                    [
-                        100,
+                        42,
                         "  }\n"
                     ],
                     [
-                        101,
+                        43,
                         "\n"
                     ],
                     [
-                        102,
-                        "  # outbound internet access\n"
+                        44,
+                        "  tags = {\n"
                     ],
                     [
-                        103,
-                        "  egress {\n"
+                        45,
+                        "    Name = \"aws_route_table\"\n"
                     ],
                     [
-                        104,
-                        "    from_port   = 0\n"
-                    ],
-                    [
-                        105,
-                        "    to_port     = 0\n"
-                    ],
-                    [
-                        106,
-                        "    protocol    = \"-1\"\n"
-                    ],
-                    [
-                        107,
-                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
-                    ],
-                    [
-                        108,
+                        46,
                         "  }\n"
                     ],
                     [
-                        109,
-                        "\n"
-                    ],
-                    [
-                        110,
-                        "  # ensure the VPC has an Internet gateway or this step will fail\n"
-                    ],
-                    [
-                        111,
-                        "  depends_on = [aws_internet_gateway.gw]\n"
-                    ],
-                    [
-                        112,
+                        47,
                         "}\n"
                     ]
                 ],
@@ -1430,90 +1300,110 @@
                 "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
                 "repo_file_path": "/src/main/config/main.tf",
                 "file_line_range": [
-                    88,
-                    112
+                    36,
+                    47
                 ],
-                "resource": "aws_security_group.elb",
+                "resource": "aws_route_table.r",
                 "evaluations": null,
                 "check_class": "checkov.common.graph.checks_infra.base_check",
                 "fixed_definition": null,
-                "entity_tags": null,
+                "entity_tags": {
+                    "Name": "aws_route_table"
+                },
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-security-groups-are-attached-to-ec2-instances-or-elastic-network-interfaces-enis"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV2_AWS_5",
-                "check_name": "Ensure that Security Groups are attached to an other resource",
+                "bc_check_id": "BC_AWS_NETWORKING_51",
+                "check_name": "Ensure that Security Groups are attached to another resource",
                 "check_result": {
                     "result": "PASSED",
                     "entity": {
                         "aws_security_group": {
                             "default": {
-                                "name": [
-                                    "instance_sg"
-                                ],
+                                "__end_line__": 84,
+                                "__start_line__": 56,
                                 "description": [
                                     "Used in the terraform"
                                 ],
-                                "vpc_id": [
-                                    "aws_vpc.default.id"
-                                ],
-                                "ingress": [
-                                    {
-                                        "from_port": [
-                                            22
-                                        ],
-                                        "to_port": [
-                                            22
-                                        ],
-                                        "protocol": [
-                                            "tcp"
-                                        ],
-                                        "cidr_blocks": [
-                                            [
-                                                "0.0.0.0/0"
-                                            ]
-                                        ]
-                                    },
-                                    {
-                                        "from_port": [
-                                            80
-                                        ],
-                                        "to_port": [
-                                            80
-                                        ],
-                                        "protocol": [
-                                            "tcp"
-                                        ],
-                                        "cidr_blocks": [
-                                            [
-                                                "0.0.0.0/0"
-                                            ]
-                                        ]
-                                    }
-                                ],
                                 "egress": [
                                     {
-                                        "from_port": [
-                                            0
+                                        "cidr_blocks": [
+                                            [
+                                                "0.0.0.0/0"
+                                            ]
                                         ],
-                                        "to_port": [
+                                        "from_port": [
                                             0
                                         ],
                                         "protocol": [
                                             "-1"
                                         ],
+                                        "to_port": [
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "ingress": [
+                                    {
                                         "cidr_blocks": [
                                             [
                                                 "0.0.0.0/0"
                                             ]
+                                        ],
+                                        "from_port": [
+                                            22
+                                        ],
+                                        "protocol": [
+                                            "tcp"
+                                        ],
+                                        "to_port": [
+                                            22
+                                        ]
+                                    },
+                                    {
+                                        "cidr_blocks": [
+                                            [
+                                                "0.0.0.0/0"
+                                            ]
+                                        ],
+                                        "from_port": [
+                                            80
+                                        ],
+                                        "protocol": [
+                                            "tcp"
+                                        ],
+                                        "to_port": [
+                                            80
                                         ]
                                     }
-                                ]
+                                ],
+                                "name": [
+                                    "instance_sg"
+                                ],
+                                "vpc_id": [
+                                    "aws_vpc.default.id"
+                                ],
+                                "__address__": "aws_security_group.default"
                             }
                         }
-                    }
+                    },
+                    "evaluated_keys": [
+                        "networking",
+                        "resource_type"
+                    ]
                 },
                 "code_block": [
                     [
@@ -1644,15 +1534,594 @@
                 "evaluations": null,
                 "check_class": "checkov.common.graph.checks_infra.base_check",
                 "fixed_definition": null,
-                "entity_tags": null,
+                "entity_tags": {},
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-security-groups-are-attached-to-ec2-instances-or-elastic-network-interfaces-enis"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": {
+                    "code_block": [
+                        [
+                            153,
+                            "resource \"aws_instance\" \"web\" {\n"
+                        ],
+                        [
+                            154,
+                            "  instance_type = \"t2.micro\"\n"
+                        ],
+                        [
+                            155,
+                            "\n"
+                        ],
+                        [
+                            156,
+                            "  # Lookup the correct AMI based on the region\n"
+                        ],
+                        [
+                            157,
+                            "  # we specified\n"
+                        ],
+                        [
+                            158,
+                            "  ami = var.aws_amis[var.aws_region]\n"
+                        ],
+                        [
+                            159,
+                            "\n"
+                        ],
+                        [
+                            160,
+                            "  # The name of our SSH keypair you've created and downloaded\n"
+                        ],
+                        [
+                            161,
+                            "  # from the AWS console.\n"
+                        ],
+                        [
+                            162,
+                            "  #\n"
+                        ],
+                        [
+                            163,
+                            "  # https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:\n"
+                        ],
+                        [
+                            164,
+                            "  #\n"
+                        ],
+                        [
+                            165,
+                            "  key_name = var.key_name\n"
+                        ],
+                        [
+                            166,
+                            "\n"
+                        ],
+                        [
+                            167,
+                            "  # Our Security group to allow HTTP and SSH access\n"
+                        ],
+                        [
+                            168,
+                            "  vpc_security_group_ids = [aws_security_group.default.id]\n"
+                        ],
+                        [
+                            169,
+                            "  subnet_id              = aws_subnet.tf_test_subnet.id\n"
+                        ],
+                        [
+                            170,
+                            "  user_data              = file(\"userdata.sh\")\n"
+                        ],
+                        [
+                            171,
+                            "\n"
+                        ],
+                        [
+                            172,
+                            "  #Instance tags\n"
+                        ],
+                        [
+                            173,
+                            "\n"
+                        ],
+                        [
+                            174,
+                            "  tags = {\n"
+                        ],
+                        [
+                            175,
+                            "    Name = \"elb-example\"\n"
+                        ],
+                        [
+                            176,
+                            "  }\n"
+                        ],
+                        [
+                            177,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/main.tf",
+                    "file_line_range": [
+                        153,
+                        177
+                    ],
+                    "resource": "aws_instance.web",
+                    "entity_tags": {
+                        "Name": "elb-example"
+                    },
+                    "evaluations": null,
+                    "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                    "resource_address": null
+                },
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-security-groups-are-attached-to-ec2-instances-or-elastic-network-interfaces-enis",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV2_AWS_5",
+                "bc_check_id": "BC_AWS_NETWORKING_51",
+                "check_name": "Ensure that Security Groups are attached to another resource",
+                "check_result": {
+                    "result": "PASSED",
+                    "entity": {
+                        "aws_security_group": {
+                            "elb": {
+                                "__end_line__": 112,
+                                "__start_line__": 88,
+                                "depends_on": [
+                                    [
+                                        "aws_internet_gateway.gw"
+                                    ]
+                                ],
+                                "description": [
+                                    "Used in the terraform"
+                                ],
+                                "egress": [
+                                    {
+                                        "cidr_blocks": [
+                                            [
+                                                "0.0.0.0/0"
+                                            ]
+                                        ],
+                                        "from_port": [
+                                            0
+                                        ],
+                                        "protocol": [
+                                            "-1"
+                                        ],
+                                        "to_port": [
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "ingress": [
+                                    {
+                                        "cidr_blocks": [
+                                            [
+                                                "0.0.0.0/0"
+                                            ]
+                                        ],
+                                        "from_port": [
+                                            80
+                                        ],
+                                        "protocol": [
+                                            "tcp"
+                                        ],
+                                        "to_port": [
+                                            80
+                                        ]
+                                    }
+                                ],
+                                "name": [
+                                    "elb_sg"
+                                ],
+                                "vpc_id": [
+                                    "aws_vpc.default.id"
+                                ],
+                                "__address__": "aws_security_group.elb"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "networking",
+                        "resource_type"
+                    ]
+                },
+                "code_block": [
+                    [
+                        88,
+                        "resource \"aws_security_group\" \"elb\" {\n"
+                    ],
+                    [
+                        89,
+                        "  name        = \"elb_sg\"\n"
+                    ],
+                    [
+                        90,
+                        "  description = \"Used in the terraform\"\n"
+                    ],
+                    [
+                        91,
+                        "\n"
+                    ],
+                    [
+                        92,
+                        "  vpc_id = aws_vpc.default.id\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  # HTTP access from anywhere\n"
+                    ],
+                    [
+                        95,
+                        "  ingress {\n"
+                    ],
+                    [
+                        96,
+                        "    from_port   = 80\n"
+                    ],
+                    [
+                        97,
+                        "    to_port     = 80\n"
+                    ],
+                    [
+                        98,
+                        "    protocol    = \"tcp\"\n"
+                    ],
+                    [
+                        99,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        100,
+                        "  }\n"
+                    ],
+                    [
+                        101,
+                        "\n"
+                    ],
+                    [
+                        102,
+                        "  # outbound internet access\n"
+                    ],
+                    [
+                        103,
+                        "  egress {\n"
+                    ],
+                    [
+                        104,
+                        "    from_port   = 0\n"
+                    ],
+                    [
+                        105,
+                        "    to_port     = 0\n"
+                    ],
+                    [
+                        106,
+                        "    protocol    = \"-1\"\n"
+                    ],
+                    [
+                        107,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        108,
+                        "  }\n"
+                    ],
+                    [
+                        109,
+                        "\n"
+                    ],
+                    [
+                        110,
+                        "  # ensure the VPC has an Internet gateway or this step will fail\n"
+                    ],
+                    [
+                        111,
+                        "  depends_on = [aws_internet_gateway.gw]\n"
+                    ],
+                    [
+                        112,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    88,
+                    112
+                ],
+                "resource": "aws_security_group.elb",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {},
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": {
+                    "code_block": [
+                        [
+                            114,
+                            "resource \"aws_elb\" \"web\" {\n"
+                        ],
+                        [
+                            115,
+                            "  name = \"example-elb\"\n"
+                        ],
+                        [
+                            116,
+                            "\n"
+                        ],
+                        [
+                            117,
+                            "  # The same availability zone as our instance\n"
+                        ],
+                        [
+                            118,
+                            "  subnets = [aws_subnet.tf_test_subnet.id]\n"
+                        ],
+                        [
+                            119,
+                            "\n"
+                        ],
+                        [
+                            120,
+                            "  security_groups = [aws_security_group.elb.id]\n"
+                        ],
+                        [
+                            121,
+                            "\n"
+                        ],
+                        [
+                            122,
+                            "  listener {\n"
+                        ],
+                        [
+                            123,
+                            "    instance_port     = 80\n"
+                        ],
+                        [
+                            124,
+                            "    instance_protocol = \"http\"\n"
+                        ],
+                        [
+                            125,
+                            "    lb_port           = 80\n"
+                        ],
+                        [
+                            126,
+                            "    lb_protocol       = \"http\"\n"
+                        ],
+                        [
+                            127,
+                            "  }\n"
+                        ],
+                        [
+                            128,
+                            "\n"
+                        ],
+                        [
+                            129,
+                            "  health_check {\n"
+                        ],
+                        [
+                            130,
+                            "    healthy_threshold   = 2\n"
+                        ],
+                        [
+                            131,
+                            "    unhealthy_threshold = 2\n"
+                        ],
+                        [
+                            132,
+                            "    timeout             = 3\n"
+                        ],
+                        [
+                            133,
+                            "    target              = \"HTTP:80/\"\n"
+                        ],
+                        [
+                            134,
+                            "    interval            = 30\n"
+                        ],
+                        [
+                            135,
+                            "  }\n"
+                        ],
+                        [
+                            136,
+                            "\n"
+                        ],
+                        [
+                            137,
+                            "  # The instance is registered automatically\n"
+                        ],
+                        [
+                            138,
+                            "\n"
+                        ],
+                        [
+                            139,
+                            "  instances                   = [aws_instance.web.id]\n"
+                        ],
+                        [
+                            140,
+                            "  cross_zone_load_balancing   = true\n"
+                        ],
+                        [
+                            141,
+                            "  idle_timeout                = 400\n"
+                        ],
+                        [
+                            142,
+                            "  connection_draining         = true\n"
+                        ],
+                        [
+                            143,
+                            "  connection_draining_timeout = 400\n"
+                        ],
+                        [
+                            144,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/main.tf",
+                    "file_line_range": [
+                        114,
+                        144
+                    ],
+                    "resource": "aws_elb.web",
+                    "entity_tags": {},
+                    "evaluations": null,
+                    "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                    "resource_address": null
+                },
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-security-groups-are-attached-to-ec2-instances-or-elastic-network-interfaces-enis",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV2_AWS_35",
+                "bc_check_id": "BC_AWS_NETWORKING_77",
+                "check_name": "AWS NAT Gateways should be utilized for the default route",
+                "check_result": {
+                    "result": "PASSED",
+                    "entity": {
+                        "aws_route_table": {
+                            "r": {
+                                "__end_line__": 47,
+                                "__start_line__": 36,
+                                "route": [
+                                    {
+                                        "cidr_block": [
+                                            "0.0.0.0/0"
+                                        ],
+                                        "gateway_id": [
+                                            "aws_internet_gateway.gw.id"
+                                        ]
+                                    }
+                                ],
+                                "tags": [
+                                    {
+                                        "Name": "aws_route_table"
+                                    }
+                                ],
+                                "vpc_id": [
+                                    "aws_vpc.default.id"
+                                ],
+                                "__address__": "aws_route_table.r"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "route/*/cidr_block",
+                        "destination_cidr_block",
+                        "route/*/instance_id",
+                        "instance_id"
+                    ]
+                },
+                "code_block": [
+                    [
+                        36,
+                        "resource \"aws_route_table\" \"r\" {\n"
+                    ],
+                    [
+                        37,
+                        "  vpc_id = aws_vpc.default.id\n"
+                    ],
+                    [
+                        38,
+                        "\n"
+                    ],
+                    [
+                        39,
+                        "  route {\n"
+                    ],
+                    [
+                        40,
+                        "    cidr_block = \"0.0.0.0/0\"\n"
+                    ],
+                    [
+                        41,
+                        "    gateway_id = aws_internet_gateway.gw.id\n"
+                    ],
+                    [
+                        42,
+                        "  }\n"
+                    ],
+                    [
+                        43,
+                        "\n"
+                    ],
+                    [
+                        44,
+                        "  tags = {\n"
+                    ],
+                    [
+                        45,
+                        "    Name = \"aws_route_table\"\n"
+                    ],
+                    [
+                        46,
+                        "  }\n"
+                    ],
+                    [
+                        47,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    36,
+                    47
+                ],
+                "resource": "aws_route_table.r",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {
+                    "Name": "aws_route_table"
+                },
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-aws-nat-gateways-are-utilized-for-the-default-route",
+                "details": [],
+                "check_len": null
             }
         ],
         "failed_checks": [
             {
                 "check_id": "CKV_AWS_130",
+                "bc_check_id": "BC_AWS_NETWORKING_53",
                 "check_name": "Ensure VPC subnets do not assign public IP by default",
                 "check_result": {
                     "result": "FAILED",
@@ -1713,10 +2182,335 @@
                     "Name": "tf_test_subnet"
                 },
                 "caller_file_path": null,
-                "caller_file_line_range": null
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-vpc-subnets-do-not-assign-public-ip-by-default",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AWS_260",
+                "bc_check_id": "BC_AWS_NETWORKING_67",
+                "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "ingress/[1]/from_port",
+                        "ingress/[1]/to_port",
+                        "ingress/[1]/cidr_blocks",
+                        "ingress/[1]/ipv6_cidr_blocks"
+                    ]
+                },
+                "code_block": [
+                    [
+                        56,
+                        "resource \"aws_security_group\" \"default\" {\n"
+                    ],
+                    [
+                        57,
+                        "  name        = \"instance_sg\"\n"
+                    ],
+                    [
+                        58,
+                        "  description = \"Used in the terraform\"\n"
+                    ],
+                    [
+                        59,
+                        "  vpc_id      = aws_vpc.default.id\n"
+                    ],
+                    [
+                        60,
+                        "\n"
+                    ],
+                    [
+                        61,
+                        "  # SSH access from anywhere\n"
+                    ],
+                    [
+                        62,
+                        "  ingress {\n"
+                    ],
+                    [
+                        63,
+                        "    from_port   = 22\n"
+                    ],
+                    [
+                        64,
+                        "    to_port     = 22\n"
+                    ],
+                    [
+                        65,
+                        "    protocol    = \"tcp\"\n"
+                    ],
+                    [
+                        66,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        67,
+                        "  }\n"
+                    ],
+                    [
+                        68,
+                        "\n"
+                    ],
+                    [
+                        69,
+                        "  # HTTP access from anywhere\n"
+                    ],
+                    [
+                        70,
+                        "  ingress {\n"
+                    ],
+                    [
+                        71,
+                        "    from_port   = 80\n"
+                    ],
+                    [
+                        72,
+                        "    to_port     = 80\n"
+                    ],
+                    [
+                        73,
+                        "    protocol    = \"tcp\"\n"
+                    ],
+                    [
+                        74,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        75,
+                        "  }\n"
+                    ],
+                    [
+                        76,
+                        "\n"
+                    ],
+                    [
+                        77,
+                        "  # outbound internet access\n"
+                    ],
+                    [
+                        78,
+                        "  egress {\n"
+                    ],
+                    [
+                        79,
+                        "    from_port   = 0\n"
+                    ],
+                    [
+                        80,
+                        "    to_port     = 0\n"
+                    ],
+                    [
+                        81,
+                        "    protocol    = \"-1\"\n"
+                    ],
+                    [
+                        82,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        83,
+                        "  }\n"
+                    ],
+                    [
+                        84,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    56,
+                    84
+                ],
+                "resource": "aws_security_group.default",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-aws-security-groups-do-not-allow-ingress-from-00000-to-port-80",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AWS_23",
+                "bc_check_id": "BC_AWS_NETWORKING_31",
+                "check_name": "Ensure every security groups rule has a description",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "description",
+                        "egress/[0]",
+                        "ingress/[0]"
+                    ]
+                },
+                "code_block": [
+                    [
+                        56,
+                        "resource \"aws_security_group\" \"default\" {\n"
+                    ],
+                    [
+                        57,
+                        "  name        = \"instance_sg\"\n"
+                    ],
+                    [
+                        58,
+                        "  description = \"Used in the terraform\"\n"
+                    ],
+                    [
+                        59,
+                        "  vpc_id      = aws_vpc.default.id\n"
+                    ],
+                    [
+                        60,
+                        "\n"
+                    ],
+                    [
+                        61,
+                        "  # SSH access from anywhere\n"
+                    ],
+                    [
+                        62,
+                        "  ingress {\n"
+                    ],
+                    [
+                        63,
+                        "    from_port   = 22\n"
+                    ],
+                    [
+                        64,
+                        "    to_port     = 22\n"
+                    ],
+                    [
+                        65,
+                        "    protocol    = \"tcp\"\n"
+                    ],
+                    [
+                        66,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        67,
+                        "  }\n"
+                    ],
+                    [
+                        68,
+                        "\n"
+                    ],
+                    [
+                        69,
+                        "  # HTTP access from anywhere\n"
+                    ],
+                    [
+                        70,
+                        "  ingress {\n"
+                    ],
+                    [
+                        71,
+                        "    from_port   = 80\n"
+                    ],
+                    [
+                        72,
+                        "    to_port     = 80\n"
+                    ],
+                    [
+                        73,
+                        "    protocol    = \"tcp\"\n"
+                    ],
+                    [
+                        74,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        75,
+                        "  }\n"
+                    ],
+                    [
+                        76,
+                        "\n"
+                    ],
+                    [
+                        77,
+                        "  # outbound internet access\n"
+                    ],
+                    [
+                        78,
+                        "  egress {\n"
+                    ],
+                    [
+                        79,
+                        "    from_port   = 0\n"
+                    ],
+                    [
+                        80,
+                        "    to_port     = 0\n"
+                    ],
+                    [
+                        81,
+                        "    protocol    = \"-1\"\n"
+                    ],
+                    [
+                        82,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        83,
+                        "  }\n"
+                    ],
+                    [
+                        84,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    56,
+                    84
+                ],
+                "resource": "aws_security_group.default",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupRuleDescription",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/networking_31",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_24",
+                "bc_check_id": "BC_AWS_NETWORKING_1",
                 "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22",
                 "check_result": {
                     "result": "FAILED",
@@ -1859,15 +2653,469 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/networking_1-port-security",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AWS_260",
+                "bc_check_id": "BC_AWS_NETWORKING_67",
+                "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "ingress/[0]/from_port",
+                        "ingress/[0]/to_port",
+                        "ingress/[0]/cidr_blocks",
+                        "ingress/[0]/ipv6_cidr_blocks"
+                    ]
+                },
+                "code_block": [
+                    [
+                        88,
+                        "resource \"aws_security_group\" \"elb\" {\n"
+                    ],
+                    [
+                        89,
+                        "  name        = \"elb_sg\"\n"
+                    ],
+                    [
+                        90,
+                        "  description = \"Used in the terraform\"\n"
+                    ],
+                    [
+                        91,
+                        "\n"
+                    ],
+                    [
+                        92,
+                        "  vpc_id = aws_vpc.default.id\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  # HTTP access from anywhere\n"
+                    ],
+                    [
+                        95,
+                        "  ingress {\n"
+                    ],
+                    [
+                        96,
+                        "    from_port   = 80\n"
+                    ],
+                    [
+                        97,
+                        "    to_port     = 80\n"
+                    ],
+                    [
+                        98,
+                        "    protocol    = \"tcp\"\n"
+                    ],
+                    [
+                        99,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        100,
+                        "  }\n"
+                    ],
+                    [
+                        101,
+                        "\n"
+                    ],
+                    [
+                        102,
+                        "  # outbound internet access\n"
+                    ],
+                    [
+                        103,
+                        "  egress {\n"
+                    ],
+                    [
+                        104,
+                        "    from_port   = 0\n"
+                    ],
+                    [
+                        105,
+                        "    to_port     = 0\n"
+                    ],
+                    [
+                        106,
+                        "    protocol    = \"-1\"\n"
+                    ],
+                    [
+                        107,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        108,
+                        "  }\n"
+                    ],
+                    [
+                        109,
+                        "\n"
+                    ],
+                    [
+                        110,
+                        "  # ensure the VPC has an Internet gateway or this step will fail\n"
+                    ],
+                    [
+                        111,
+                        "  depends_on = [aws_internet_gateway.gw]\n"
+                    ],
+                    [
+                        112,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    88,
+                    112
+                ],
+                "resource": "aws_security_group.elb",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-aws-security-groups-do-not-allow-ingress-from-00000-to-port-80",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AWS_23",
+                "bc_check_id": "BC_AWS_NETWORKING_31",
+                "check_name": "Ensure every security groups rule has a description",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "description",
+                        "egress/[0]",
+                        "ingress/[0]"
+                    ]
+                },
+                "code_block": [
+                    [
+                        88,
+                        "resource \"aws_security_group\" \"elb\" {\n"
+                    ],
+                    [
+                        89,
+                        "  name        = \"elb_sg\"\n"
+                    ],
+                    [
+                        90,
+                        "  description = \"Used in the terraform\"\n"
+                    ],
+                    [
+                        91,
+                        "\n"
+                    ],
+                    [
+                        92,
+                        "  vpc_id = aws_vpc.default.id\n"
+                    ],
+                    [
+                        93,
+                        "\n"
+                    ],
+                    [
+                        94,
+                        "  # HTTP access from anywhere\n"
+                    ],
+                    [
+                        95,
+                        "  ingress {\n"
+                    ],
+                    [
+                        96,
+                        "    from_port   = 80\n"
+                    ],
+                    [
+                        97,
+                        "    to_port     = 80\n"
+                    ],
+                    [
+                        98,
+                        "    protocol    = \"tcp\"\n"
+                    ],
+                    [
+                        99,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        100,
+                        "  }\n"
+                    ],
+                    [
+                        101,
+                        "\n"
+                    ],
+                    [
+                        102,
+                        "  # outbound internet access\n"
+                    ],
+                    [
+                        103,
+                        "  egress {\n"
+                    ],
+                    [
+                        104,
+                        "    from_port   = 0\n"
+                    ],
+                    [
+                        105,
+                        "    to_port     = 0\n"
+                    ],
+                    [
+                        106,
+                        "    protocol    = \"-1\"\n"
+                    ],
+                    [
+                        107,
+                        "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                    ],
+                    [
+                        108,
+                        "  }\n"
+                    ],
+                    [
+                        109,
+                        "\n"
+                    ],
+                    [
+                        110,
+                        "  # ensure the VPC has an Internet gateway or this step will fail\n"
+                    ],
+                    [
+                        111,
+                        "  depends_on = [aws_internet_gateway.gw]\n"
+                    ],
+                    [
+                        112,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    88,
+                    112
+                ],
+                "resource": "aws_security_group.elb",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupRuleDescription",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/networking_31",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AWS_127",
+                "bc_check_id": "BC_AWS_GENERAL_67",
+                "check_name": "Ensure that Elastic Load Balancer(s) uses SSL certificates provided by AWS Certificate Manager",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "listener/0"
+                    ]
+                },
+                "code_block": [
+                    [
+                        114,
+                        "resource \"aws_elb\" \"web\" {\n"
+                    ],
+                    [
+                        115,
+                        "  name = \"example-elb\"\n"
+                    ],
+                    [
+                        116,
+                        "\n"
+                    ],
+                    [
+                        117,
+                        "  # The same availability zone as our instance\n"
+                    ],
+                    [
+                        118,
+                        "  subnets = [aws_subnet.tf_test_subnet.id]\n"
+                    ],
+                    [
+                        119,
+                        "\n"
+                    ],
+                    [
+                        120,
+                        "  security_groups = [aws_security_group.elb.id]\n"
+                    ],
+                    [
+                        121,
+                        "\n"
+                    ],
+                    [
+                        122,
+                        "  listener {\n"
+                    ],
+                    [
+                        123,
+                        "    instance_port     = 80\n"
+                    ],
+                    [
+                        124,
+                        "    instance_protocol = \"http\"\n"
+                    ],
+                    [
+                        125,
+                        "    lb_port           = 80\n"
+                    ],
+                    [
+                        126,
+                        "    lb_protocol       = \"http\"\n"
+                    ],
+                    [
+                        127,
+                        "  }\n"
+                    ],
+                    [
+                        128,
+                        "\n"
+                    ],
+                    [
+                        129,
+                        "  health_check {\n"
+                    ],
+                    [
+                        130,
+                        "    healthy_threshold   = 2\n"
+                    ],
+                    [
+                        131,
+                        "    unhealthy_threshold = 2\n"
+                    ],
+                    [
+                        132,
+                        "    timeout             = 3\n"
+                    ],
+                    [
+                        133,
+                        "    target              = \"HTTP:80/\"\n"
+                    ],
+                    [
+                        134,
+                        "    interval            = 30\n"
+                    ],
+                    [
+                        135,
+                        "  }\n"
+                    ],
+                    [
+                        136,
+                        "\n"
+                    ],
+                    [
+                        137,
+                        "  # The instance is registered automatically\n"
+                    ],
+                    [
+                        138,
+                        "\n"
+                    ],
+                    [
+                        139,
+                        "  instances                   = [aws_instance.web.id]\n"
+                    ],
+                    [
+                        140,
+                        "  cross_zone_load_balancing   = true\n"
+                    ],
+                    [
+                        141,
+                        "  idle_timeout                = 400\n"
+                    ],
+                    [
+                        142,
+                        "  connection_draining         = true\n"
+                    ],
+                    [
+                        143,
+                        "  connection_draining_timeout = 400\n"
+                    ],
+                    [
+                        144,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    114,
+                    144
+                ],
+                "resource": "aws_elb.web",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.ELBUsesSSL",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-elastic-load-balancers-uses-ssl-certificates-provided-by-aws-certificate-manager",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_92",
+                "bc_check_id": "BC_AWS_LOGGING_23",
                 "check_name": "Ensure the ELB has access logging enabled",
                 "check_result": {
                     "result": "FAILED",
                     "evaluated_keys": [
-                        "access_logs"
+                        "access_logs/[0]/enabled"
                     ]
                 },
                 "code_block": [
@@ -2010,293 +3258,26 @@
                 "entity_tags": null,
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_logging_23"
-            },
-            {
-                "check_id": "CKV_AWS_127",
-                "check_name": "Ensure that Elastic Load Balancer(s) uses SSL certificates provided by AWS Certificate Manager",
-                "check_result": {
-                    "result": "FAILED",
-                    "evaluated_keys": []
-                },
-                "code_block": [
-                    [
-                        114,
-                        "resource \"aws_elb\" \"web\" {\n"
-                    ],
-                    [
-                        115,
-                        "  name = \"example-elb\"\n"
-                    ],
-                    [
-                        116,
-                        "\n"
-                    ],
-                    [
-                        117,
-                        "  # The same availability zone as our instance\n"
-                    ],
-                    [
-                        118,
-                        "  subnets = [aws_subnet.tf_test_subnet.id]\n"
-                    ],
-                    [
-                        119,
-                        "\n"
-                    ],
-                    [
-                        120,
-                        "  security_groups = [aws_security_group.elb.id]\n"
-                    ],
-                    [
-                        121,
-                        "\n"
-                    ],
-                    [
-                        122,
-                        "  listener {\n"
-                    ],
-                    [
-                        123,
-                        "    instance_port     = 80\n"
-                    ],
-                    [
-                        124,
-                        "    instance_protocol = \"http\"\n"
-                    ],
-                    [
-                        125,
-                        "    lb_port           = 80\n"
-                    ],
-                    [
-                        126,
-                        "    lb_protocol       = \"http\"\n"
-                    ],
-                    [
-                        127,
-                        "  }\n"
-                    ],
-                    [
-                        128,
-                        "\n"
-                    ],
-                    [
-                        129,
-                        "  health_check {\n"
-                    ],
-                    [
-                        130,
-                        "    healthy_threshold   = 2\n"
-                    ],
-                    [
-                        131,
-                        "    unhealthy_threshold = 2\n"
-                    ],
-                    [
-                        132,
-                        "    timeout             = 3\n"
-                    ],
-                    [
-                        133,
-                        "    target              = \"HTTP:80/\"\n"
-                    ],
-                    [
-                        134,
-                        "    interval            = 30\n"
-                    ],
-                    [
-                        135,
-                        "  }\n"
-                    ],
-                    [
-                        136,
-                        "\n"
-                    ],
-                    [
-                        137,
-                        "  # The instance is registered automatically\n"
-                    ],
-                    [
-                        138,
-                        "\n"
-                    ],
-                    [
-                        139,
-                        "  instances                   = [aws_instance.web.id]\n"
-                    ],
-                    [
-                        140,
-                        "  cross_zone_load_balancing   = true\n"
-                    ],
-                    [
-                        141,
-                        "  idle_timeout                = 400\n"
-                    ],
-                    [
-                        142,
-                        "  connection_draining         = true\n"
-                    ],
-                    [
-                        143,
-                        "  connection_draining_timeout = 400\n"
-                    ],
-                    [
-                        144,
-                        "}\n"
-                    ]
-                ],
-                "file_path": "/main.tf",
-                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
-                "repo_file_path": "/src/main/config/main.tf",
-                "file_line_range": [
-                    114,
-                    144
-                ],
-                "resource": "aws_elb.web",
-                "evaluations": null,
-                "check_class": "checkov.terraform.checks.resource.aws.ELBUsesSSL",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-elastic-load-balancers-uses-ssl-certificates-provided-by-aws-certificate-manager"
-            },
-            {
-                "check_id": "CKV_AWS_135",
-                "check_name": "Ensure that EC2 is EBS optimized",
-                "check_result": {
-                    "result": "FAILED",
-                    "evaluated_keys": [
-                        "ebs_optimized"
-                    ]
-                },
-                "code_block": [
-                    [
-                        153,
-                        "resource \"aws_instance\" \"web\" {\n"
-                    ],
-                    [
-                        154,
-                        "  instance_type = \"t2.micro\"\n"
-                    ],
-                    [
-                        155,
-                        "\n"
-                    ],
-                    [
-                        156,
-                        "  # Lookup the correct AMI based on the region\n"
-                    ],
-                    [
-                        157,
-                        "  # we specified\n"
-                    ],
-                    [
-                        158,
-                        "  ami = var.aws_amis[var.aws_region]\n"
-                    ],
-                    [
-                        159,
-                        "\n"
-                    ],
-                    [
-                        160,
-                        "  # The name of our SSH keypair you've created and downloaded\n"
-                    ],
-                    [
-                        161,
-                        "  # from the AWS console.\n"
-                    ],
-                    [
-                        162,
-                        "  #\n"
-                    ],
-                    [
-                        163,
-                        "  # https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:\n"
-                    ],
-                    [
-                        164,
-                        "  #\n"
-                    ],
-                    [
-                        165,
-                        "  key_name = var.key_name\n"
-                    ],
-                    [
-                        166,
-                        "\n"
-                    ],
-                    [
-                        167,
-                        "  # Our Security group to allow HTTP and SSH access\n"
-                    ],
-                    [
-                        168,
-                        "  vpc_security_group_ids = [aws_security_group.default.id]\n"
-                    ],
-                    [
-                        169,
-                        "  subnet_id              = aws_subnet.tf_test_subnet.id\n"
-                    ],
-                    [
-                        170,
-                        "  user_data              = file(\"userdata.sh\")\n"
-                    ],
-                    [
-                        171,
-                        "\n"
-                    ],
-                    [
-                        172,
-                        "  #Instance tags\n"
-                    ],
-                    [
-                        173,
-                        "\n"
-                    ],
-                    [
-                        174,
-                        "  tags = {\n"
-                    ],
-                    [
-                        175,
-                        "    Name = \"elb-example\"\n"
-                    ],
-                    [
-                        176,
-                        "  }\n"
-                    ],
-                    [
-                        177,
-                        "}\n"
-                    ]
-                ],
-                "file_path": "/main.tf",
-                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
-                "repo_file_path": "/src/main/config/main.tf",
-                "file_line_range": [
-                    153,
-                    177
-                ],
-                "resource": "aws_instance.web",
-                "evaluations": null,
-                "check_class": "checkov.terraform.checks.resource.aws.EC2EBSOptimized",
-                "fixed_definition": null,
-                "entity_tags": {
-                    "Name": "elb-example"
-                },
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-ec2-is-ebs-optimized"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_logging_23",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_8",
-                "check_name": "Ensure all data stored in the Launch configuration EBS is securely encrypted",
+                "bc_check_id": "BC_AWS_GENERAL_13",
+                "check_name": "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted",
                 "check_result": {
                     "result": "FAILED",
                     "evaluated_keys": [
-                        "*_block_device/[0]/encrypted"
+                        "root_block_device"
                     ]
                 },
                 "code_block": [
@@ -2417,10 +3398,21 @@
                 },
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/general_13"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/general_13",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_126",
+                "bc_check_id": "BC_AWS_LOGGING_26",
                 "check_name": "Ensure that detailed monitoring is enabled for EC2 instances",
                 "check_result": {
                     "result": "FAILED",
@@ -2546,10 +3538,161 @@
                 },
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-detailed-monitoring-is-enabled-for-ec2-instances"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-detailed-monitoring-is-enabled-for-ec2-instances",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV_AWS_135",
+                "bc_check_id": "BC_AWS_GENERAL_68",
+                "check_name": "Ensure that EC2 is EBS optimized",
+                "check_result": {
+                    "result": "FAILED",
+                    "evaluated_keys": [
+                        "ebs_optimized"
+                    ]
+                },
+                "code_block": [
+                    [
+                        153,
+                        "resource \"aws_instance\" \"web\" {\n"
+                    ],
+                    [
+                        154,
+                        "  instance_type = \"t2.micro\"\n"
+                    ],
+                    [
+                        155,
+                        "\n"
+                    ],
+                    [
+                        156,
+                        "  # Lookup the correct AMI based on the region\n"
+                    ],
+                    [
+                        157,
+                        "  # we specified\n"
+                    ],
+                    [
+                        158,
+                        "  ami = var.aws_amis[var.aws_region]\n"
+                    ],
+                    [
+                        159,
+                        "\n"
+                    ],
+                    [
+                        160,
+                        "  # The name of our SSH keypair you've created and downloaded\n"
+                    ],
+                    [
+                        161,
+                        "  # from the AWS console.\n"
+                    ],
+                    [
+                        162,
+                        "  #\n"
+                    ],
+                    [
+                        163,
+                        "  # https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:\n"
+                    ],
+                    [
+                        164,
+                        "  #\n"
+                    ],
+                    [
+                        165,
+                        "  key_name = var.key_name\n"
+                    ],
+                    [
+                        166,
+                        "\n"
+                    ],
+                    [
+                        167,
+                        "  # Our Security group to allow HTTP and SSH access\n"
+                    ],
+                    [
+                        168,
+                        "  vpc_security_group_ids = [aws_security_group.default.id]\n"
+                    ],
+                    [
+                        169,
+                        "  subnet_id              = aws_subnet.tf_test_subnet.id\n"
+                    ],
+                    [
+                        170,
+                        "  user_data              = file(\"userdata.sh\")\n"
+                    ],
+                    [
+                        171,
+                        "\n"
+                    ],
+                    [
+                        172,
+                        "  #Instance tags\n"
+                    ],
+                    [
+                        173,
+                        "\n"
+                    ],
+                    [
+                        174,
+                        "  tags = {\n"
+                    ],
+                    [
+                        175,
+                        "    Name = \"elb-example\"\n"
+                    ],
+                    [
+                        176,
+                        "  }\n"
+                    ],
+                    [
+                        177,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    153,
+                    177
+                ],
+                "resource": "aws_instance.web",
+                "evaluations": null,
+                "check_class": "checkov.terraform.checks.resource.aws.EC2EBSOptimized",
+                "fixed_definition": null,
+                "entity_tags": {
+                    "Name": "elb-example"
+                },
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-ec2-is-ebs-optimized",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV_AWS_79",
+                "bc_check_id": "BC_AWS_GENERAL_31",
                 "check_name": "Ensure Instance Metadata Service Version 1 is not enabled",
                 "check_result": {
                     "result": "FAILED",
@@ -2676,89 +3819,29 @@
                 },
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_general_31"
-            },
-            {
-                "check_id": "CKV2_AWS_11",
-                "check_name": "Ensure VPC flow logging is enabled in all VPCs",
-                "check_result": {
-                    "result": "FAILED",
-                    "entity": {
-                        "aws_vpc": {
-                            "default": {
-                                "cidr_block": [
-                                    "10.0.0.0/16"
-                                ],
-                                "enable_dns_hostnames": [
-                                    true
-                                ],
-                                "tags": [
-                                    {
-                                        "Name": "tf_test"
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                },
-                "code_block": [
-                    [
-                        9,
-                        "resource \"aws_vpc\" \"default\" {\n"
-                    ],
-                    [
-                        10,
-                        "  cidr_block           = \"10.0.0.0/16\"\n"
-                    ],
-                    [
-                        11,
-                        "  enable_dns_hostnames = true\n"
-                    ],
-                    [
-                        12,
-                        "\n"
-                    ],
-                    [
-                        13,
-                        "  tags = {\n"
-                    ],
-                    [
-                        14,
-                        "    Name = \"tf_test\"\n"
-                    ],
-                    [
-                        15,
-                        "  }\n"
-                    ],
-                    [
-                        16,
-                        "}\n"
-                    ]
-                ],
-                "file_path": "/main.tf",
-                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
-                "repo_file_path": "/src/main/config/main.tf",
-                "file_line_range": [
-                    9,
-                    16
-                ],
-                "resource": "aws_vpc.default",
-                "evaluations": null,
-                "check_class": "checkov.common.graph.checks_infra.base_check",
-                "fixed_definition": null,
-                "entity_tags": null,
-                "caller_file_path": null,
-                "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/logging_9-enable-vpc-flow-logging"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.bridgecrew.io/docs/bc_aws_general_31",
+                "details": [],
+                "check_len": null
             },
             {
                 "check_id": "CKV2_AWS_12",
+                "bc_check_id": "BC_AWS_NETWORKING_4",
                 "check_name": "Ensure the default security group of every VPC restricts all traffic",
                 "check_result": {
                     "result": "FAILED",
                     "entity": {
                         "aws_vpc": {
                             "default": {
+                                "__end_line__": 16,
+                                "__start_line__": 9,
                                 "cidr_block": [
                                     "10.0.0.0/16"
                                 ],
@@ -2769,10 +3852,22 @@
                                     {
                                         "Name": "tf_test"
                                     }
-                                ]
+                                ],
+                                "__address__": "aws_vpc.default"
                             }
                         }
-                    }
+                    },
+                    "evaluated_keys": [
+                        "ingress/protocol",
+                        "egress/protocol",
+                        "egress/from_port",
+                        "egress/to_port",
+                        "egress/cidr_blocks",
+                        "ingress/from_port",
+                        "ingress/self",
+                        "ingress/to_port",
+                        "resource_type"
+                    ]
                 },
                 "code_block": [
                     [
@@ -2819,19 +3914,85 @@
                 "evaluations": null,
                 "check_class": "checkov.common.graph.checks_infra.base_check",
                 "fixed_definition": null,
-                "entity_tags": null,
+                "entity_tags": {
+                    "Name": "tf_test"
+                },
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/networking_4"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": {
+                    "code_block": [
+                        [
+                            18,
+                            "resource \"aws_subnet\" \"tf_test_subnet\" {\n"
+                        ],
+                        [
+                            19,
+                            "  vpc_id                  = aws_vpc.default.id\n"
+                        ],
+                        [
+                            20,
+                            "  cidr_block              = \"10.0.0.0/24\"\n"
+                        ],
+                        [
+                            21,
+                            "  map_public_ip_on_launch = true\n"
+                        ],
+                        [
+                            22,
+                            "\n"
+                        ],
+                        [
+                            23,
+                            "  tags = {\n"
+                        ],
+                        [
+                            24,
+                            "    Name = \"tf_test_subnet\"\n"
+                        ],
+                        [
+                            25,
+                            "  }\n"
+                        ],
+                        [
+                            26,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/main.tf",
+                    "file_line_range": [
+                        18,
+                        26
+                    ],
+                    "resource": "aws_subnet.tf_test_subnet",
+                    "entity_tags": {
+                        "Name": "tf_test_subnet"
+                    },
+                    "evaluations": null,
+                    "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                    "resource_address": null
+                },
+                "guideline": "https://docs.bridgecrew.io/docs/networking_4",
+                "details": [],
+                "check_len": null
             },
             {
-                "check_id": "CKV2_AWS_1",
-                "check_name": "Ensure that all NACL are attached to subnets",
+                "check_id": "CKV2_AWS_11",
+                "bc_check_id": "BC_AWS_LOGGING_9",
+                "check_name": "Ensure VPC flow logging is enabled in all VPCs",
                 "check_result": {
                     "result": "FAILED",
                     "entity": {
                         "aws_vpc": {
                             "default": {
+                                "__end_line__": 16,
+                                "__start_line__": 9,
                                 "cidr_block": [
                                     "10.0.0.0/16"
                                 ],
@@ -2842,10 +4003,15 @@
                                     {
                                         "Name": "tf_test"
                                     }
-                                ]
+                                ],
+                                "__address__": "aws_vpc.default"
                             }
                         }
-                    }
+                    },
+                    "evaluated_keys": [
+                        "networking",
+                        "resource_type"
+                    ]
                 },
                 "code_block": [
                     [
@@ -2892,20 +4058,259 @@
                 "evaluations": null,
                 "check_class": "checkov.common.graph.checks_infra.base_check",
                 "fixed_definition": null,
-                "entity_tags": null,
+                "entity_tags": {
+                    "Name": "tf_test"
+                },
                 "caller_file_path": null,
                 "caller_file_line_range": null,
-                "guideline": "https://docs.bridgecrew.io/docs/ensure-that-all-nacl-are-attached-to-subnets"
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": {
+                    "code_block": [
+                        [
+                            18,
+                            "resource \"aws_subnet\" \"tf_test_subnet\" {\n"
+                        ],
+                        [
+                            19,
+                            "  vpc_id                  = aws_vpc.default.id\n"
+                        ],
+                        [
+                            20,
+                            "  cidr_block              = \"10.0.0.0/24\"\n"
+                        ],
+                        [
+                            21,
+                            "  map_public_ip_on_launch = true\n"
+                        ],
+                        [
+                            22,
+                            "\n"
+                        ],
+                        [
+                            23,
+                            "  tags = {\n"
+                        ],
+                        [
+                            24,
+                            "    Name = \"tf_test_subnet\"\n"
+                        ],
+                        [
+                            25,
+                            "  }\n"
+                        ],
+                        [
+                            26,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/main.tf",
+                    "file_line_range": [
+                        18,
+                        26
+                    ],
+                    "resource": "aws_subnet.tf_test_subnet",
+                    "entity_tags": {
+                        "Name": "tf_test_subnet"
+                    },
+                    "evaluations": null,
+                    "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                    "resource_address": null
+                },
+                "guideline": "https://docs.bridgecrew.io/docs/logging_9-enable-vpc-flow-logging",
+                "details": [],
+                "check_len": null
+            },
+            {
+                "check_id": "CKV2_AWS_41",
+                "bc_check_id": null,
+                "check_name": "Ensure an IAM role is attached to EC2 instance",
+                "check_result": {
+                    "result": "FAILED",
+                    "entity": {
+                        "aws_instance": {
+                            "web": {
+                                "__end_line__": 177,
+                                "__start_line__": 153,
+                                "ami": [
+                                    "var.aws_amis[var.aws_region]"
+                                ],
+                                "instance_type": [
+                                    "t2.micro"
+                                ],
+                                "key_name": [
+                                    "var.key_name"
+                                ],
+                                "subnet_id": [
+                                    "aws_subnet.tf_test_subnet.id"
+                                ],
+                                "tags": [
+                                    {
+                                        "Name": "elb-example"
+                                    }
+                                ],
+                                "user_data": [
+                                    "file(\"userdata.sh\")"
+                                ],
+                                "vpc_security_group_ids": [
+                                    [
+                                        "aws_security_group.default.id"
+                                    ]
+                                ],
+                                "__address__": "aws_instance.web"
+                            }
+                        }
+                    },
+                    "evaluated_keys": [
+                        "iam_instance_profile"
+                    ]
+                },
+                "code_block": [
+                    [
+                        153,
+                        "resource \"aws_instance\" \"web\" {\n"
+                    ],
+                    [
+                        154,
+                        "  instance_type = \"t2.micro\"\n"
+                    ],
+                    [
+                        155,
+                        "\n"
+                    ],
+                    [
+                        156,
+                        "  # Lookup the correct AMI based on the region\n"
+                    ],
+                    [
+                        157,
+                        "  # we specified\n"
+                    ],
+                    [
+                        158,
+                        "  ami = var.aws_amis[var.aws_region]\n"
+                    ],
+                    [
+                        159,
+                        "\n"
+                    ],
+                    [
+                        160,
+                        "  # The name of our SSH keypair you've created and downloaded\n"
+                    ],
+                    [
+                        161,
+                        "  # from the AWS console.\n"
+                    ],
+                    [
+                        162,
+                        "  #\n"
+                    ],
+                    [
+                        163,
+                        "  # https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:\n"
+                    ],
+                    [
+                        164,
+                        "  #\n"
+                    ],
+                    [
+                        165,
+                        "  key_name = var.key_name\n"
+                    ],
+                    [
+                        166,
+                        "\n"
+                    ],
+                    [
+                        167,
+                        "  # Our Security group to allow HTTP and SSH access\n"
+                    ],
+                    [
+                        168,
+                        "  vpc_security_group_ids = [aws_security_group.default.id]\n"
+                    ],
+                    [
+                        169,
+                        "  subnet_id              = aws_subnet.tf_test_subnet.id\n"
+                    ],
+                    [
+                        170,
+                        "  user_data              = file(\"userdata.sh\")\n"
+                    ],
+                    [
+                        171,
+                        "\n"
+                    ],
+                    [
+                        172,
+                        "  #Instance tags\n"
+                    ],
+                    [
+                        173,
+                        "\n"
+                    ],
+                    [
+                        174,
+                        "  tags = {\n"
+                    ],
+                    [
+                        175,
+                        "    Name = \"elb-example\"\n"
+                    ],
+                    [
+                        176,
+                        "  }\n"
+                    ],
+                    [
+                        177,
+                        "}\n"
+                    ]
+                ],
+                "file_path": "/main.tf",
+                "file_abs_path": "/home/pether/git/sonar-cloudformation-plugin/test-project-with-reports/src/main/config/main.tf",
+                "repo_file_path": "/src/main/config/main.tf",
+                "file_line_range": [
+                    153,
+                    177
+                ],
+                "resource": "aws_instance.web",
+                "evaluations": null,
+                "check_class": "checkov.common.graph.checks_infra.base_check",
+                "fixed_definition": null,
+                "entity_tags": {
+                    "Name": "elb-example"
+                },
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": {},
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null
             }
         ],
         "skipped_checks": [],
         "parsing_errors": []
     },
     "summary": {
-        "passed": 12,
-        "failed": 11,
+        "passed": 13,
+        "failed": 15,
         "skipped": 0,
         "parsing_errors": 0,
-        "checkov_version": "2.0.156"
-    }
+        "resource_count": 10,
+        "checkov_version": "2.2.157"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
 }
