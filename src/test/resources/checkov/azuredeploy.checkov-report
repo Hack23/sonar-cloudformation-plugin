@@ -303,7 +303,7 @@
                 "evaluations": {},
                 "check_class": "checkov.arm.checks.resource.SQLServerNoPublicAccess",
                 "fixed_definition": null,
-                "entity_tags": null,
+                "entity_tags": {"Name": ["${var.application_name}-${var.rds_database_name}-aurora-sg"]},
                 "caller_file_path": null,
                 "caller_file_line_range": null,
                 "resource_address": null,
