@@ -70,7 +70,7 @@ public final class CheckovPassedCheck {
     private String callerFilePath;
 
     /** The caller file line range. */
-    private String callerFileLineRange;
+    private List<Integer> callerFileLineRange;
 
     /** The fixed definition. */
     private String fixedDefinition;
@@ -381,7 +381,7 @@ public final class CheckovPassedCheck {
 	 * @return the caller file line range
 	 */
     @JsonProperty("caller_file_line_range")
-	public String getCallerFileLineRange() {
+	public List<Integer> getCallerFileLineRange() {
 		return callerFileLineRange;
 	}
 
@@ -390,7 +390,7 @@ public final class CheckovPassedCheck {
 	 *
 	 * @param callerFileLineRange the new caller file line range
 	 */
-	public void setCallerFileLineRange(final String callerFileLineRange) {
+	public void setCallerFileLineRange(final List<Integer> callerFileLineRange) {
 		this.callerFileLineRange = callerFileLineRange;
 	}
 
