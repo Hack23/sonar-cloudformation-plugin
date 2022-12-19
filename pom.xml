@@ -83,7 +83,7 @@
     <dependency>
       <groupId>org.sonarsource.sonarqube</groupId>
       <artifactId>sonar-testing-harness</artifactId>
-      <version>8.9.10.61524</version>
+      <version>9.8.0.63668</version>
       <scope>test</scope>
     </dependency>
     <dependency>
