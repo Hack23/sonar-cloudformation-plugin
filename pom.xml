@@ -37,23 +37,6 @@
     <system>github</system>
     <url>https://github.com/Hack23/sonar-cloudformation-plugin</url>
   </issueManagement>
-  <ciManagement>
-    <system>jenkins</system>
-    <url>https://www.hack23.com/jenkins/view/Tools/job/sonar-cloudformation-plugin/</url>
-  </ciManagement>
-  <distributionManagement>
-    <repository>
-      <uniqueVersion>false</uniqueVersion>
-      <id>cia-releases</id>
-      <name>CIA Staging Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <uniqueVersion>false</uniqueVersion>
-      <id>hack23nexus</id>
-      <name>CIA hack23 Snapshot Repository</name>
-      <url>https://www.hack23.com/nexus/repository/maven-snapshots/</url>
-    </snapshotRepository>
     <site>
       <id>github</id>
       <url>scm:git:ssh://git@github.com/Hack23/sonar-cloudformation-plugin.git</url>
@@ -142,30 +125,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>hack23.public</id>
-      <url>https://www.hack23.com/nexus/repository/maven-public/</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>hack23.public</id>
-      <url>https://www.hack23.com/nexus/repository/maven-public/</url>
-    </pluginRepository>
-  </pluginRepositories>
   <build>
     <pluginManagement>
       <plugins>
