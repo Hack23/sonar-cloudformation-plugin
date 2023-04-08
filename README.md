@@ -5,12 +5,6 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) a
 [![Maven Central](https://img.shields.io/maven-central/v/com.hack23.sonar/sonar-cloudformation-plugin.svg)](http://mvnrepository.com/artifact/com.hack23.sonar/sonar-cloudformation-plugin)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4545/badge)](https://bestpractices.coreinfrastructure.org/projects/4545)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/sonar-cloudformation-plugin/badge)](https://api.securityscorecards.dev/projects/github.com/Hack23/sonar-cloudformation-plugin)
-[![Jenkins](https://img.shields.io/jenkins/s/https/www.hack23.com/jenkins/job/Hack23/job/sonar-cloudformation-plugin/job/master.svg)](https://www.hack23.com/jenkins/job/Hack23/job/sonar-cloudformation-plugin/job/master/)
-[![Jenkins tests](https://img.shields.io/jenkins/t/https/www.hack23.com/jenkins/job/Hack23/job/sonar-cloudformation-plugin/job/master.svg)](https://www.hack23.com/jenkins/job/Hack23/job/sonar-cloudformation-plugin/job/master/lastCompletedBuild/testReport/)
-[![Coverage](https://www.hack23.com/sonar/api/project_badges/measure?project=com.hack23.sonar%3Asonar-cloudformation-plugin&metric=coverage)](https://www.hack23.com/sonar/dashboard?id=com.hack23.sonar%3Asonar-cloudformation-plugin)
-[![Lines of Code](https://www.hack23.com/sonar/api/project_badges/measure?project=com.hack23.sonar%3Asonar-cloudformation-plugin&metric=ncloc)](https://www.hack23.com/sonar/dashboard?id=com.hack23.sonar%3Asonar-cloudformation-plugin)
-[![Technical Debt](https://www.hack23.com/sonar/api/project_badges/measure?project=com.hack23.sonar%3Asonar-cloudformation-plugin&metric=sqale_index)](https://www.hack23.com/sonar/dashboard?id=com.hack23.sonar%3Asonar-cloudformation-plugin)
-[![Quality Gate](https://www.hack23.com/sonar/api/project_badges/measure?project=com.hack23.sonar%3Asonar-cloudformation-plugin&metric=alert_status)](https://www.hack23.com/sonar/dashboard?id=com.hack23.sonar%3Asonar-cloudformation-plugin)
 
 
 # Runtime
@@ -27,17 +21,6 @@ This plugin is compatible:
  * 1.7.3(EOL) versions with SonarQube >= 7.6 and <= 8.9.x. (Defines cloudformation language only supports cfn-nag)
  * 2.1.8(EOL) versions with SonarQube >= 7.9 and <= 8.9.x. (Requires json or/and yaml plugin supports cfn-nag/checkov)
  * 3.x version with SonarQube >= 9.2 (Uses built in support for terraform/cloudformation supports cfn-nag/checkov)
-
-
-# Demo links
-
-Demo Sonarqube quality profile(Cloudformation) : https://www.hack23.com/sonar/profiles/show?language=cloudformation&name=Cloudformation%28cfn-nag%2Ccheckov%29+Rules
-
-Demo Sonarqube quality profile(Terraform) : https://www.hack23.com/sonar/profiles/show?language=terraform&name=Terraform%28checkov%29+Rules
-
-Demo Sonarqube quality rules : https://www.hack23.com/sonar/coding_rules?repositories=cloudformation-plugin-cfn%2Ccloudformation-plugin-terraform
-
-Demo Sonarqube quality issues : https://www.hack23.com/sonar/project/issues?id=com.hack23.sonar%3Atest-project-with-reports&resolved=false&sinceLeakPeriod=false&types=VULNERABILITY
 
 
 # Configuration of Quality profiles
