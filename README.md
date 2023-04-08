@@ -6,6 +6,7 @@ Cloudformation template rules (cfn-nag (https://github.com/stelligent/cfn_nag) a
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4545/badge)](https://bestpractices.coreinfrastructure.org/projects/4545)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/sonar-cloudformation-plugin/badge)](https://api.securityscorecards.dev/projects/github.com/Hack23/sonar-cloudformation-plugin)
 
+# Project no longer maintained, please feel free to fork !
 
 # Runtime
 
