@@ -37,6 +37,7 @@
     <system>github</system>
     <url>https://github.com/Hack23/sonar-cloudformation-plugin</url>
   </issueManagement>
+  <distributionManagement>
     <site>
       <id>github</id>
       <url>scm:git:ssh://git@github.com/Hack23/sonar-cloudformation-plugin.git</url>
